@@ -182,7 +182,9 @@ def weave_basic(a):
     elif q == 'ns_plateau': v = 1 - 2 / float(a['Nstar']); lab = 'S (leading order; the Weave tilt C is fitted on top)'
     elif q == 'r_plateau': v = 8 / ((int(a.get('D', 10)) - 2) * float(a['Nstar']) ** 2); lab = 'S (UNTILTED leading order r = 8/((D-2) N^2); the Weave prediction is the TILTED exact value r_10 = 5.41e-4 (x1.37), use weave_rladder; joint audit 20 Nov)'
     elif q == 'n_nu_relic': v = 3 * 2 * (3 / 4) * (4 / 11) * 410.7 / 2; lab = 'S (per cm^3, all flavours)'
-    else: return {'error': 'q must be one of Omega_nu_h2, T_nu, dNstar, ns_plateau, r_plateau, n_nu_relic'}
+    elif q == 'axion_f':   # U21 D6 (D1807 #1): K = -3 ln(T+Tbar), e^(-2 pi T)
+        v = math.sqrt(1.5) / (2 * math.pi * float(a['sigma'])); return dict(q=q, value=v, f_GeV=v * 2.435e18, label='A (f/M_P for the dark-cycle axion; K = -3 ln(T+Tbar))')
+    else: return {'error': 'q must be one of Omega_nu_h2, T_nu, dNstar, ns_plateau, r_plateau, n_nu_relic, axion_f'}
     return dict(q=q, value=v, label=lab)
 
 
@@ -199,7 +201,7 @@ def weave_mbb(a):
 def weave_magd7(a):
     """Loop-2 brane repair (U11, D1758/D1759/D1762; candidate, E): visible forces on magnetised D7, f ~ T + g^2 S (g = 3).
     {"alpha_inv": 24.3..40} -> Re T, x, T_R, leptogenesis window, wino fraction at 0.66/1.0/1.85 TeV vs the Einasto line limit."""
-    ainv = float(a.get('alpha_inv', 24.3)); ReS = math.sqrt(3) / 2; flux = 9 * ReS; x = flux / ainv; TR = x * 1.34e9
+    ainv = float(a.get('alpha_inv', 28.0)); ReS = math.sqrt(3) / 2; flux = 9 * ReS; x = flux / ainv; TR = x * 1.34e9   # U21 D1: two-loop alpha^-1 = 28.0 (was 24.3)
     eps = 1.8e-6 * 9e8 / TR; mmin = eps / (3 * 0.0501e-9 / (16 * math.pi * 174 ** 2))
     f = [th + (t - th) * TR / 3.2e8 for t, th in zip((0.14, 0.26, 0.67), (0.05, 0.12, 0.41))]
     return dict(alpha_inv=ainv, ReT=ainv - flux, x=x, T_R_GeV=TR, eps_needed=eps, M_N_window_GeV=[max(mmin, 10 * TR), 2.5e12],
@@ -210,15 +212,16 @@ def weave_magd7(a):
 
 def weave_sidm(a):
     """DM self-interaction (PREREG_C3): Born transfer cross-section, repulsive Yukawa. {"alpha_D","m_A_GeV","v_kms","m_chi_GeV"=12.8}."""
-    aD, mA, v, M = float(a.get('alpha_D', 4.7e-4)), float(a.get('m_A_GeV', 0.3)), float(a.get('v_kms', 1000)) / 299792.458, float(a.get('m_chi_GeV', 12.8))
+    aD, mA, v, M = float(a.get('alpha_D', 0.021)), float(a.get('m_A_GeV', 0.3)), float(a.get('v_kms', 1000)) / 299792.458, float(a.get('m_chi_GeV', 12.8))
     R = M * v / mA; br = math.log1p(R ** 2) - R ** 2 / (1 + R ** 2)
     s = 8 * math.pi * aD ** 2 / (M ** 2 * v ** 4) * br
-    return dict(sigma_over_m_cm2_g=s * 3.894e-28 / (M * 1.783e-24), born_param=aD * M / mA, born_valid=aD * M / mA < 1, label='S (Born; valid only if born_param < 1)')
+    return dict(sigma_over_m_cm2_g=s * 3.894e-28 / (M * 1.783e-24), born_param=aD * M / mA, born_valid=aD * M / mA < 1,
+                label='S (Born; valid only if born_param < 1); default alpha_D = 0.021 is CONDITIONAL (U21 D5: dark cycle = photon-axion cycle or rank rule N_d = 2N, D1807/D1812)')
 
 
 def weave_wino(a):
     """Wino dark-matter fraction vs the Einasto line limit (D735 rescale, D1762). {"T_R_GeV"}."""
-    TR = float(a.get('T_R_GeV', 2.61e8)); M = (0.66, 1.0, 1.85)
+    TR = float(a.get('T_R_GeV', 3.7e8)); M = (0.66, 1.0, 1.85)   # U21 D3
     f = [th + (t - th) * TR / 3.2e8 for t, th in zip((0.14, 0.26, 0.67), (0.05, 0.12, 0.41))]; lim = (0.16, 0.24, 0.44)
     return dict(fraction={str(m): x for m, x in zip(M, f)}, limit={str(m): l for m, l in zip(M, lim)},
                 passing=[m for m, x, l in zip(M, f, lim) if x <= l], f_at_1TeV=f[1], label='E (order-of-magnitude rescale, x2 limit uncertainty)')
@@ -226,7 +229,7 @@ def weave_wino(a):
 
 def weave_genesis(a):
     """Non-thermal leptogenesis window (D1648 method). {"T_R_GeV", "m_phi_GeV"=5e12}."""
-    TR, mphi = float(a.get('T_R_GeV', 2.61e8)), float(a.get('m_phi_GeV', 5e12))
+    TR, mphi = float(a.get('T_R_GeV', 3.7e8)), float(a.get('m_phi_GeV', 5e12))   # U21 D3
     eps = 1.8e-6 * 9e8 / TR; mmin = eps / (3 * 0.0501e-9 / (16 * math.pi * 174 ** 2)); lo = max(mmin, 10 * TR)
     return dict(eps_needed=eps, M_N_min_GeV=mmin, window_GeV=[lo, mphi / 2], viable=lo < mphi / 2, label='E (scaling eps ∝ 1/T_R; gauge-channel dominance assumed)')
 
@@ -240,13 +243,13 @@ def weave_axion_relic(a):
 
 def weave_W0(a):
     """Flux superpotential needed: m_3/2 = sqrt(g_s/2) |W0| M_P / V (D1764). {"volume","m32_GeV","g_s"=1.155}."""
-    V, m, gs = float(a.get('volume', 1e5)), float(a.get('m32_GeV', 5e5)), float(a.get('g_s', 2 / math.sqrt(3)))
+    V, m, gs = float(a.get('volume', 7.5e4)), float(a.get('m32_GeV', 2.6e5)), float(a.get('g_s', 2 / math.sqrt(3)))   # U21 D2 (D1811)
     return dict(W0=m * V / (math.sqrt(gs / 2) * 2.435e18), label='E (leading-order supergravity)')
 
 
 def weave_rinv(a):
     """r with reheating shift and tau_q dilution (D1766: the T_R dependence cancels when tau_q dilutes). {"x","D0"}."""
-    x, D0 = float(a.get('x', 0.32)), float(a.get('D0', 67.2)); D = max(1.0, D0 * x)
+    x, D0 = float(a.get('x', 0.279)), float(a.get('D0', 67.2)); D = max(1.0, D0 * x)   # U21 D3
     dN = math.log(x) / 3 - math.log(D) / 3
     return dict(dNstar=dN, r=5.41e-4 * (50.37 / (50.37 + dN)) ** 2, dilution=D, label='E (r ∝ N^-2, tilt fixed)')
 
@@ -289,10 +292,10 @@ def weave_edm(a):
 
 
 def weave_rg(a):
-    """One-loop gauge running in the split spectrum (PREREG_B11). {"m_wino"=700,"m_gluino"=7000,"m_scalar"=4.7e5,"alpha_s"=0.118}. Returns M12, alpha^-1(M12), triangle Delta3, alpha_s for exact unification."""
+    """One-loop gauge running in the split spectrum (PREREG_B11). {"m_wino"=700,"m_gluino"=5600,"m_scalar"=4.7e5,"alpha_s"=0.118}. Returns M12, alpha^-1(M12), triangle Delta3, alpha_s for exact unification."""
     MZ = 91.1876; aem, s2, a3 = 127.95, 0.23122, float(a.get('alpha_s', 0.118))
     x0 = [0.6 * (1 - s2) * aem, s2 * aem, 1 / a3]
-    th = sorted([(float(a.get('m_wino', 700)), (0, 4 / 3, 0)), (float(a.get('m_gluino', 7000)), (0, 0, 2)), (float(a.get('m_scalar', 4.7e5)), None)])
+    th = sorted([(float(a.get('m_wino', 700)), (0, 4 / 3, 0)), (float(a.get('m_gluino', 5600)), (0, 0, 2)), (float(a.get('m_scalar', 4.7e5)), None)])   # U21 D4: AMSB gluino 5.6 TeV (D1808)
     b = [41 / 10, -19 / 6, -7]
     seg = []; mu = MZ
     for m, d in th:
@@ -321,7 +324,7 @@ def weave_rg2(a):
     import numpy as np
     from scipy.integrate import solve_ivp
     MZ = 91.1876; aem, s2 = 127.95, 0.23122
-    mw, mg, ms = float(a.get('m_wino', 700)), float(a.get('m_gluino', 7000)), float(a.get('m_scalar', 4.7e5))
+    mw, mg, ms = float(a.get('m_wino', 700)), float(a.get('m_gluino', 5600)), float(a.get('m_scalar', 4.7e5))   # U21 D4
     SM1, MS1 = np.array([41 / 10, -19 / 6, -7]), np.array([33 / 5, 1, -3])
     SM2 = np.array([[199 / 50, 27 / 10, 44 / 5], [9 / 10, 35 / 6, 12], [11 / 10, 9 / 2, -26]])
     MS2 = np.array([[199 / 25, 27 / 5, 88 / 5], [9 / 5, 25, 24], [11 / 5, 9, 14]])
@@ -354,23 +357,42 @@ def weave_rg2(a):
 
 def weave_nuclear(a):
     """Hoyle/carbon window (PREREG_E3; Epelbaum et al. 2013 tolerances, elliptic approx). {"dmq":frac,"dalpha":frac} or {"dalpha_s":abs at MZ}."""
-    dmq, da = float(a.get('dmq', 0)), float(a.get('dalpha', 0))
+    dmq, da = float(a.get('dmq', 0)), float(a.get('dalpha', 0)); b0 = float(a.get('b0', 9.0))   # U21 D9 (referee D1807 #8): n_f = 3, was 23/3
     if 'dalpha_s' in a:
-        als = float(a.get('alpha_s', 0.118)); dmq = 2 * math.pi * float(a['dalpha_s']) / ((23 / 3) * als ** 2)
+        als = float(a.get('alpha_s', 0.118)); dmq = 2 * math.pi * float(a['dalpha_s']) / (b0 * als ** 2)
     r = (dmq / 0.025) ** 2 + (da / 0.025) ** 2
-    need = 0.025 * (23 / 3) * float(a.get('alpha_s', 0.118)) ** 2 / (2 * math.pi)
-    return dict(dmq_over_Lambda=dmq, dalpha=da, radius=r ** 0.5, inside=r <= 1, alpha_s_precision_needed=need, label='lit tolerances, elliptic approx')
+    need = 0.025 * b0 * float(a.get('alpha_s', 0.118)) ** 2 / (2 * math.pi)
+    return dict(dmq_over_Lambda=dmq, dalpha=da, radius=r ** 0.5, inside=r <= 1, alpha_s_precision_needed=need, b0=b0,
+                note='dLambda/Lambda = 2 pi dalpha_s / (b0 alpha_s^2), b0 = 11 - 2 n_f/3', label='lit tolerances, elliptic approx')
+
+
+WEAVE_POINT = dict(alpha_inv_M12=28.0, M12_GeV=1.06e16, N=6, chi=90, chi_range=[88, 91], volume=7.5e4, W0=1.0e-8, m32_GeV=2.6e5,
+                   T_R_GeV=3.7e8, x=0.279, m_gluino_GeV=5600, m_gluino_band_GeV=[4500, 6700], alpha_D=[0.021, 0.022],
+                   tau_p_branchG_yr=1.6e35, Lambda='input (U19 withdrawn, D1795)')
+
+
+def weave_point(a):
+    """The adopted Weave consistency point (PREREG_U21_ENGINE_ADOPT, D1795-D1812). {} or {"q": key}. Labels say what is predicted vs selected."""
+    lab = dict(alpha_inv_M12='S/P (two-loop unification, D1800/D1808)', M12_GeV='S/P (D1800)', N='C (consistency selection, exact KKLT, D1811)',
+               chi='C (selection; chi is a free integer, D1807 #7)', volume='C (D1811)', W0='C (D1811)', m32_GeV='P (AMSB from the wino window, D1808)',
+               T_R_GeV='E (x * 1.34e9, D1801)', x='E (flux/alpha_inv, D1801)', m_gluino_GeV='P (AMSB +-20 %, D1808)', alpha_D='CONDITIONAL (no derivation, D1807 #4, D1812)',
+               tau_p_branchG_yr='recorded from D1807 #2 (not computed by the kit)', Lambda='M (measured input)')
+    q = a.get('q')
+    if q:
+        if q not in WEAVE_POINT: return {'error': 'q must be one of ' + ', '.join(WEAVE_POINT)}
+        v = WEAVE_POINT[q]; return dict(q=q, value=v, label=lab.get(q, ''))
+    return dict(WEAVE_POINT, labels=lab, label='adopted point (U21); N, chi, V, W0 are selections, not predictions')
 
 
 TOOLS = {'weave_rung': weave_rung, 'weave_rung_of': weave_rung_of, 'weave_koide': weave_koide, 'weave_koide_slip': weave_koide_slip,
          'weave_tauq': weave_tauq, 'weave_ckm': weave_ckm, 'weave_proton': weave_proton, 'weave_atomic': weave_atomic,
          'weave_arc': weave_arc, 'weave_rladder': weave_rladder, 'weave_negspace': weave_negspace, 'weave_paths': weave_paths, 'weave_basic': weave_basic, 'weave_mbb': weave_mbb, 'weave_magd7': weave_magd7, 'weave_sidm': weave_sidm, 'weave_wino': weave_wino, 'weave_genesis': weave_genesis,
-         'weave_axion_relic': weave_axion_relic, 'weave_W0': weave_W0, 'weave_rinv': weave_rinv, 'weave_walls': weave_walls, 'weave_edm': weave_edm, 'weave_rg': weave_rg, 'weave_rg2': weave_rg2, 'weave_nuclear': weave_nuclear}
+         'weave_axion_relic': weave_axion_relic, 'weave_W0': weave_W0, 'weave_rinv': weave_rinv, 'weave_walls': weave_walls, 'weave_edm': weave_edm, 'weave_rg': weave_rg, 'weave_rg2': weave_rg2, 'weave_nuclear': weave_nuclear, 'weave_point': weave_point}
 
 if __name__ == '__main__':   # self-test: reproduces the published numbers
     assert abs(weave_mbb({})['mbb_max_meV'] - 3.7952) < 1e-3
     assert abs(weave_magd7({'alpha_inv': 40})['T_R_GeV'] - 2.611e8) < 1e6
-    assert abs(weave_sidm({})['sigma_over_m_cm2_g'] - 9.33e-7) < 2e-8 and weave_wino({'T_R_GeV': 2.61e8})['passing'] == [0.66, 1.0]
+    assert abs(weave_sidm({'alpha_D': 4.7e-4})['sigma_over_m_cm2_g'] - 9.33e-7) < 2e-8 and abs(weave_sidm({})['sigma_over_m_cm2_g'] / 1.862e-3 - 1) < 0.02 and weave_wino({'T_R_GeV': 2.61e8})['passing'] == [0.66, 1.0]
     assert weave_genesis({'T_R_GeV': 4.3e8})['viable'] and abs(weave_rinv({'x': 0.195})['r'] - 5.724e-4) < 1e-7
     assert abs(weave_rung({'m': 8})['eps_formula'] - 0.003117) < 2e-5
     k = weave_koide({'masses': [0.51099895, 105.6583755, 1776.93]}); assert abs(k['Q'] - 0.6666645) < 2e-7 and abs(k['delta'] - 0.222225) < 2e-6
@@ -388,6 +410,8 @@ if __name__ == '__main__':   # self-test: reproduces the published numbers
     assert abs(weave_rladder({'D': 6})['r'] - 1.082e-3) < 2e-6
     w = weave_walls({'T_MeV': 10, 'alpha': 0.1}); assert abs(w['f_peak_nHz'] - 1.14) < 0.02 and abs(weave_walls({'f_nHz': [1]})['spectrum']['1'] / weave_walls({'f_nHz': [1]})['h2Omega_peak'] - (lambda x: 4 / (x ** -3 + 3 * x))(1 / weave_walls({})['f_peak_nHz'])) < 1e-9
     e = weave_edm({'m_scalar_GeV': 2.5e5}); assert abs(e['d_e_ecm'] - 4e-33) < 1e-34 and abs(weave_edm({'m_scalar_GeV': 7e5})['d_e_ecm'] - 5.1e-34) < 1e-35
-    g = weave_rg({}); assert 7.2e15 < g['M12_GeV'] < 7.7e15 and abs(g['alpha_inv_M12'] - 28.77) < 0.05 and abs(g['Delta3'] + 0.90) < 0.02
-    assert weave_nuclear({})['inside'] and not weave_nuclear({'dmq': 0.03})['inside'] and abs(weave_nuclear({})['alpha_s_precision_needed'] - 4.25e-4) < 1e-5
+    g = weave_rg({'m_gluino': 7000}); assert 7.2e15 < g['M12_GeV'] < 7.7e15 and abs(g['alpha_inv_M12'] - 28.77) < 0.05 and abs(g['Delta3'] + 0.90) < 0.02
+    assert weave_nuclear({})['inside'] and not weave_nuclear({'dmq': 0.03})['inside'] and abs(weave_nuclear({'b0': 23 / 3})['alpha_s_precision_needed'] - 4.25e-4) < 1e-5 and abs(weave_nuclear({})['alpha_s_precision_needed'] - 5.0e-4) < 1e-5
+    assert abs(weave_rg2({})['alpha_s_unif'] - 0.1147) < 5e-4 and abs(weave_W0({})['W0'] - 1.05e-8) < 2e-10 and weave_wino({})['passing'] == [0.66]
+    assert abs(weave_basic({'q': 'axion_f', 'sigma': 38.6})['value'] - 0.00505) < 2e-5 and weave_point({'q': 'N'})['value'] == 6
     print('weave_tools selftest OK', json.dumps({k: round(v, 5) for k, v in c.items() if isinstance(v, float)}))

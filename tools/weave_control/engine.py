@@ -157,7 +157,7 @@ def bbn(p):
               'shown beside it, never setting the status: Yeh+Olive+Fields theory σ (D/H 4.4%, includes the ω_b error) and observational-only pulls',
               'the two theory conventions differ by ~3% in D/H, mostly from the d(p,γ)³He rate (theory vs LUNA data)'],
              links=[f"ΔN_eff = {dN} from dark sector '{p['dark_sector']}'",
-                    'L4: reheating (T_R ≈ 1.34 × 10⁹ GeV, D1665; was 9 × 10⁸ in D1637) and N* have no direct BBN effect; ΔN_eff is the only BBN link'],
+                    'L4: reheating (inflaton T_R ≈ 1.34 × 10⁹ GeV, D1665; visible T_R = x·1.34e9 = 3.7 × 10⁸ GeV at x = 0.279, D1801/U21) and N* have no direct BBN effect; ΔN_eff is the only BBN link'],
              status=_status(status_pulls))
 
 # ---------------- C. late universe (CLASS results + D1717 closed form) ----------------
@@ -187,7 +187,7 @@ def late(p):
              pulls, ['b_A is consistent with 0 on full Planck (D1725, fix_fails)', 'negative space needs b_A < 0 (D1716/D1717)',
                      'Δχ² are the locked fit results; they do not change with the b_A slider',
                      'd_coupled_at_most = min(coupled, thread): the coupled model contains the thread, so its true value is at most this (nested guard)',
-                     'thread trails w0wa (−9.1 / −19.7 / −15.0, CAMB)',
+                     'thread trails w0wa (−9.1 / −19.7 / −15.0, CAMB)', 'Λ is a constant input (D1795: U19 withdrawn; the dark-cycle axion cannot be the dark energy)',
                      'ΔAIC = Δχ² + 2k charges the extra parameters (thread k = 1, coupled k = 2); negative still favours the model (referee R3)',
                      'L3: S₈ of each locked fit vs KiDS-Legacy and CMB lensing, reported separately (not combined); the lensing combination shares DESI DR2 BAO and Planck data with the fits, so KiDS-Legacy is the cleaner comparison',
                      f'S₈ sub-status: {s8_status} (largest |pull| {max(abs(v) for v in s8.values()):.1f}σ)',
@@ -203,7 +203,7 @@ def colliders(p):
     return L('colliders', 'Colliders (wino)', 'C', 'CERN+1', dict(run=p['run'], m=p['wino_mass_GeV']),
              dict(sigma_fb=pt['sigma_fb'], pairs=pt['produced_pairs'], ctau_cm=pt.get('ctau_cm'), expected_reach_GeV=rc['wino_reach_GeV']),
              [dict(name='ATLAS DT limit', limit=ATLAS_DT[0], kind='lower95', source=ATLAS_DT[1])], pulls,
-             ['a wino below 670 GeV is excluded by ATLAS'], links=['same wino → gamma line (Galaxy level)'])
+             ['a wino below 670 GeV is excluded by ATLAS', 'Weave gluino 5.6 TeV ± 20 % (AMSB, D1808/U21): beyond HL-LHC, an FCC-hh target'], links=['same wino → gamma line (Galaxy level)'])
 
 # ---------------- C. galaxy & dark matter (Hyperion) ----------------
 @functools.lru_cache(maxsize=64)
@@ -336,6 +336,15 @@ def _joint_tauq_nstar(levels):
     inf['links'] = list(inf['links']) + ['τ_q dilution → N* (joint J1, quark level)']
 
 
+def _point():
+    """U21: the adopted consistency point, read from the kit (tools/weave_cm/weave_tools.WEAVE_POINT) so engine and kit carry one copy."""
+    try:
+        import importlib.util as u, os
+        sp = u.spec_from_file_location('_weave_tools_pt', os.path.join(os.path.dirname(os.path.dirname(__file__)), 'weave_cm', 'weave_tools.py'))
+        m = u.module_from_spec(sp); sp.loader.exec_module(m); return dict(m.WEAVE_POINT, prereg='PREREG_U21_ENGINE_ADOPT')
+    except Exception as e:
+        return {'error': repr(e)[:200]}
+
 def run(params=None):
     p = dict(DEFAULTS); p.update(params or {})
     levels = []
@@ -346,7 +355,7 @@ def run(params=None):
     _joint_tauq_nstar(levels)
     card = {}
     for lv in levels: card.setdefault(lv['category'], []).append((lv['id'], lv['status']))
-    return dict(params=p, levels=levels, scorecard=card)
+    return dict(params=p, levels=levels, scorecard=card, point=_point())
 
 if __name__ == '__main__':
     import json; r = run(); print(json.dumps({l['id']: [l['status'], l['outputs']] for l in r['levels']}, indent=1, default=str))
