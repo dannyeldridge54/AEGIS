@@ -158,7 +158,7 @@ The UFE splits into three field equations. They couple only through named interf
 - **T–U:** the matter Kähler metric K_α(T); which brane or twisted modulus hosts the spurion.
 - **S–U:** the knot locations (ρ, i), and no perturbative S-dependence of D7 Yukawas (D1923).
 
-**Where the current imbalances sit:** every open failure lies on the **S–T interface**.
+**Where the current imbalances sit:** every open failure lies on the **S–T interface**. In the knob engine this follows from its construction, a rank-1 Jacobian through m₃/₂ (D1937a).
 - α_s/Δ₃: the threshold in f_vis.
 - The wino/α_s tension through m₃/₂.
 - T_R, boxed by the gravitino.
@@ -198,4 +198,5 @@ To be built: tools/weave_knobs.py, a central-equation engine. It wraps the score
 - The seam must supply Δα_s = +0.0037 (Δ₃ = +0.044).
 - The supergravity-fixed S–T terms (Conlon–Palti 0901.4350; Kaplunovsky–Louis) are gauge-universal on one visible stack, so they cancel in Δ₃ and give **0 of the +0.044**.
 - The missing piece must be **non-universal** and added by hand: threshold states, twisted sectors, or split stacks with f₃ ≠ f₂.
-- **This favours the three-way split at the seam** (Danny 16:50). It is not proof: the literature leaves the D3/D7 seam unresolved.
+- **Correction (D1938a):** this test had no power, because every reading was structurally zero. "Favours the split" is **withdrawn**.
+- **Model caveat (D1942):** α_s is a test only under the single-visible-stack assumption. With split stacks (D1940) unification is not predicted, and α_s becomes a fit (A₃/A₂ ≈ 0.75).

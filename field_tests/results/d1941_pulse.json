@@ -1,0 +1,576 @@
+{
+ "m_phi_readings": [
+  4930184804928.132,
+  4930184804928.131,
+  4988511748726.7295
+ ],
+ "m_phi": 4930184804928.132,
+ "two_MN": 368800000000.0,
+ "decay_open": true,
+ "eps_DI": 2.2810118930967973e-05,
+ "start": {
+  "m32": 258000.0,
+  "T_R": 370000000.0,
+  "margins": {
+   "wino": 0.039366390187555056,
+   "gravitino_box": 1.7500468036000008,
+   "leptogenesis": 2.347644429927762,
+   "alpha_s_seam": 0.8049174903808959
+  }
+ },
+ "final": {
+  "pulse": 28,
+  "m32": 455542.88354425353,
+  "T_R": 494158058.56916183,
+  "margins": {
+   "wino": 0.6078966636250525,
+   "gravitino_box": 0.6078989764515674,
+   "leptogenesis": 2.6369968469199496,
+   "alpha_s_seam": 0.6715612636076591
+  },
+  "min": 0.6078966636250525,
+  "null": true,
+  "pointing": {
+   "wino": "\u25cf",
+   "gravitino_box": "\u25cf",
+   "leptogenesis": "\u25cf",
+   "alpha_s_seam": "\u25cf"
+  }
+ },
+ "pulses": 28,
+ "all_pass": true,
+ "log": [
+  {
+   "pulse": 1,
+   "m32": 315121.9116053238,
+   "T_R": 610026870.1590464,
+   "margins": {
+    "wino": 0.23936639018755435,
+    "gravitino_box": 0.950046803600002,
+    "leptogenesis": 2.8476444299277617,
+    "alpha_s_seam": 0.758224278427937
+   },
+   "min": 0.23936639018755435,
+   "null": false,
+   "pointing": {
+    "wino": "\u25d4",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 2,
+   "m32": 384890.77199144743,
+   "T_R": 610026870.1590464,
+   "margins": {
+    "wino": 0.4393663901875537,
+    "gravitino_box": 0.650046803600003,
+    "leptogenesis": 2.8476444299277617,
+    "alpha_s_seam": 0.7112932614448886
+   },
+   "min": 0.4393663901875537,
+   "null": false,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 3,
+   "m32": 384890.77199144743,
+   "T_R": 610026870.1590464,
+   "margins": {
+    "wino": 0.4393663901875537,
+    "gravitino_box": 0.650046803600003,
+    "leptogenesis": 2.8476444299277617,
+    "alpha_s_seam": 0.7112932614448886
+   },
+   "min": 0.4393663901875537,
+   "null": true,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 4,
+   "m32": 425370.08784063254,
+   "T_R": 538346823.4087336,
+   "margins": {
+    "wino": 0.5393663901875533,
+    "gravitino_box": 0.6250468036000036,
+    "leptogenesis": 2.722644429927762,
+    "alpha_s_seam": 0.6877381978316549
+   },
+   "min": 0.5393663901875533,
+   "null": false,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 5,
+   "m32": 425370.08784063254,
+   "T_R": 538346823.4087336,
+   "margins": {
+    "wino": 0.5393663901875533,
+    "gravitino_box": 0.6250468036000036,
+    "leptogenesis": 2.722644429927762,
+    "alpha_s_seam": 0.6877381978316549
+   },
+   "min": 0.5393663901875533,
+   "null": true,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 6,
+   "m32": 447179.27860978775,
+   "T_R": 505730038.2343038,
+   "margins": {
+    "wino": 0.5893663901875539,
+    "gravitino_box": 0.6125468036000029,
+    "leptogenesis": 2.660144429927762,
+    "alpha_s_seam": 0.6759382108219171
+   },
+   "min": 0.5893663901875539,
+   "null": false,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 7,
+   "m32": 447179.27860978775,
+   "T_R": 505730038.2343038,
+   "margins": {
+    "wino": 0.5893663901875539,
+    "gravitino_box": 0.6125468036000029,
+    "leptogenesis": 2.660144429927762,
+    "alpha_s_seam": 0.6759382108219171
+   },
+   "min": 0.5893663901875539,
+   "null": true,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 8,
+   "m32": 447179.27860978775,
+   "T_R": 505730038.2343038,
+   "margins": {
+    "wino": 0.5893663901875539,
+    "gravitino_box": 0.6125468036000029,
+    "leptogenesis": 2.660144429927762,
+    "alpha_s_seam": 0.6759382108219171
+   },
+   "min": 0.5893663901875539,
+   "null": true,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 9,
+   "m32": 452804.1014957565,
+   "T_R": 497889420.7282811,
+   "margins": {
+    "wino": 0.6018663901875534,
+    "gravitino_box": 0.6094218036000034,
+    "leptogenesis": 2.644519429927762,
+    "alpha_s_seam": 0.6729858717660154
+   },
+   "min": 0.6018663901875534,
+   "null": false,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 10,
+   "m32": 452804.1014957565,
+   "T_R": 497889420.7282811,
+   "margins": {
+    "wino": 0.6018663901875534,
+    "gravitino_box": 0.6094218036000034,
+    "leptogenesis": 2.644519429927762,
+    "alpha_s_seam": 0.6729858717660154
+   },
+   "min": 0.6018663901875534,
+   "null": true,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 11,
+   "m32": 452804.1014957565,
+   "T_R": 497889420.7282811,
+   "margins": {
+    "wino": 0.6018663901875534,
+    "gravitino_box": 0.6094218036000034,
+    "leptogenesis": 2.644519429927762,
+    "alpha_s_seam": 0.6729858717660154
+   },
+   "min": 0.6018663901875534,
+   "null": true,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 12,
+   "m32": 454221.32757533906,
+   "T_R": 495948333.8321243,
+   "margins": {
+    "wino": 0.604991390187554,
+    "gravitino_box": 0.6086405536000025,
+    "leptogenesis": 2.640613179927762,
+    "alpha_s_seam": 0.67224764052672
+   },
+   "min": 0.604991390187554,
+   "null": false,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 13,
+   "m32": 454221.32757533906,
+   "T_R": 495948333.8321243,
+   "margins": {
+    "wino": 0.604991390187554,
+    "gravitino_box": 0.6086405536000025,
+    "leptogenesis": 2.640613179927762,
+    "alpha_s_seam": 0.67224764052672
+   },
+   "min": 0.604991390187554,
+   "null": true,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 14,
+   "m32": 454931.60315796867,
+   "T_R": 494980630.07343495,
+   "margins": {
+    "wino": 0.6065538901875543,
+    "gravitino_box": 0.6082499286000019,
+    "leptogenesis": 2.638660054927762,
+    "alpha_s_seam": 0.6718785029325754
+   },
+   "min": 0.6065538901875543,
+   "null": false,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 15,
+   "m32": 454931.60315796867,
+   "T_R": 494980630.07343495,
+   "margins": {
+    "wino": 0.6065538901875543,
+    "gravitino_box": 0.6082499286000019,
+    "leptogenesis": 2.638660054927762,
+    "alpha_s_seam": 0.6718785029325754
+   },
+   "min": 0.6065538901875543,
+   "null": true,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 16,
+   "m32": 455287.1573432047,
+   "T_R": 494497486.5002235,
+   "margins": {
+    "wino": 0.6073351401875539,
+    "gravitino_box": 0.6080546161000029,
+    "leptogenesis": 2.637683492427762,
+    "alpha_s_seam": 0.6716939286416256
+   },
+   "min": 0.6073351401875539,
+   "null": false,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 17,
+   "m32": 455287.1573432047,
+   "T_R": 494497486.5002235,
+   "margins": {
+    "wino": 0.6073351401875539,
+    "gravitino_box": 0.6080546161000029,
+    "leptogenesis": 2.637683492427762,
+    "alpha_s_seam": 0.6716939286416256
+   },
+   "min": 0.6073351401875539,
+   "null": true,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 18,
+   "m32": 455465.0386292185,
+   "T_R": 494256091.58849406,
+   "margins": {
+    "wino": 0.6077257651875534,
+    "gravitino_box": 0.6079569598500034,
+    "leptogenesis": 2.637195211177762,
+    "alpha_s_seam": 0.6716016401226504
+   },
+   "min": 0.6077257651875534,
+   "null": false,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 19,
+   "m32": 455465.0386292185,
+   "T_R": 494256091.58849406,
+   "margins": {
+    "wino": 0.6077257651875534,
+    "gravitino_box": 0.6079569598500034,
+    "leptogenesis": 2.637195211177762,
+    "alpha_s_seam": 0.6716016401226504
+   },
+   "min": 0.6077257651875534,
+   "null": true,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 20,
+   "m32": 455465.0386292185,
+   "T_R": 494256091.58849406,
+   "margins": {
+    "wino": 0.6077257651875534,
+    "gravitino_box": 0.6079569598500034,
+    "leptogenesis": 2.637195211177762,
+    "alpha_s_seam": 0.6716016401226504
+   },
+   "min": 0.6077257651875534,
+   "null": true,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 21,
+   "m32": 455509.51980879455,
+   "T_R": 494195761.2752838,
+   "margins": {
+    "wino": 0.6078234214375536,
+    "gravitino_box": 0.6079325457875031,
+    "leptogenesis": 2.6370731408652617,
+    "alpha_s_seam": 0.6715785678498324
+   },
+   "min": 0.6078234214375536,
+   "null": false,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 22,
+   "m32": 455509.51980879455,
+   "T_R": 494195761.2752838,
+   "margins": {
+    "wino": 0.6078234214375536,
+    "gravitino_box": 0.6079325457875031,
+    "leptogenesis": 2.6370731408652617,
+    "alpha_s_seam": 0.6715785678498324
+   },
+   "min": 0.6078234214375536,
+   "null": true,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 23,
+   "m32": 455531.76202758466,
+   "T_R": 494165598.88026893,
+   "margins": {
+    "wino": 0.6078722495625528,
+    "gravitino_box": 0.6079203387562544,
+    "leptogenesis": 2.637012105709012,
+    "alpha_s_seam": 0.6715670316919614
+   },
+   "min": 0.6078722495625528,
+   "null": true,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 24,
+   "m32": 455531.76202758466,
+   "T_R": 494165598.88026893,
+   "margins": {
+    "wino": 0.6078722495625528,
+    "gravitino_box": 0.6079203387562544,
+    "leptogenesis": 2.637012105709012,
+    "alpha_s_seam": 0.6715670316919614
+   },
+   "min": 0.6078722495625528,
+   "null": true,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 25,
+   "m32": 455542.88354425353,
+   "T_R": 494150518.3731098,
+   "margins": {
+    "wino": 0.6078966636250525,
+    "gravitino_box": 0.6079142352406299,
+    "leptogenesis": 2.636981588130887,
+    "alpha_s_seam": 0.6715612636076591
+   },
+   "min": 0.6078966636250525,
+   "null": true,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 26,
+   "m32": 455542.88354425353,
+   "T_R": 494150518.3731098,
+   "margins": {
+    "wino": 0.6078966636250525,
+    "gravitino_box": 0.6079142352406299,
+    "leptogenesis": 2.636981588130887,
+    "alpha_s_seam": 0.6715612636076591
+   },
+   "min": 0.6078966636250525,
+   "null": true,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 27,
+   "m32": 455542.88354425353,
+   "T_R": 494158058.56916183,
+   "margins": {
+    "wino": 0.6078966636250525,
+    "gravitino_box": 0.6078989764515674,
+    "leptogenesis": 2.6369968469199496,
+    "alpha_s_seam": 0.6715612636076591
+   },
+   "min": 0.6078966636250525,
+   "null": true,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  },
+  {
+   "pulse": 28,
+   "m32": 455542.88354425353,
+   "T_R": 494158058.56916183,
+   "margins": {
+    "wino": 0.6078966636250525,
+    "gravitino_box": 0.6078989764515674,
+    "leptogenesis": 2.6369968469199496,
+    "alpha_s_seam": 0.6715612636076591
+   },
+   "min": 0.6078966636250525,
+   "null": true,
+   "pointing": {
+    "wino": "\u25cf",
+    "gravitino_box": "\u25cf",
+    "leptogenesis": "\u25cf",
+    "alpha_s_seam": "\u25cf"
+   }
+  }
+ ]
+}

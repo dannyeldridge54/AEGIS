@@ -19100,3 +19100,38 @@ Danny interrupted the D1930 pulse run partway through, and it produced no result
   - Split U(3)/U(2) stacks are standard in brane models. This means gauge unification was never guaranteed: it was an assumption.
   - α_s goes back to being a prediction only if A₃/A₂ is derived (one-loop determinants and brane positions).
 - **COMPASS:** α_s turns from ↑! (FAIL) into ○ (FIT, pending a derivation of A₃/A₂ ≈ 0.75). The proton row becomes "model-dependent". The m₃/₂ tension is relieved: the wino and α_s no longer fight.
+
+## D1942 — REFEREE (tick 20; independent, heterogeneous) on D1936–D1939 and the knob engine
+1. **Bookkeeping: PASS, with MINORs.** The run-1 copies of D1937 were made at the same instant as its DEVIATIONS file, so their original timestamps are lost. The D1937 lock had a wrong bracket, which was disclosed.
+2. **Knob engine: chain PASS, interpretation MAJOR.**
+   - The analytic d ln W₀/d ln σ = −20.17 matches the engine. The wino checks.
+   - The gluino and scalar masses are calibrated, not derived.
+   - **"Every observable moves only through m₃/₂" is a property of the engine** (a rank-1 Jacobian), not a physics finding.
+   - g_s enters only through √g_s. The engine's K_S direction (g_s down ⇒ m₃/₂ down) **contradicts D1929** (S at i ⇒ heavier spectrum, through W₀ and the volume).
+   - −4.07σ uses the experimental error only.
+3. **D1938: MAJOR.** All three readings were structurally zero (`[x]*3`, and reading (c) hard-coded to 0), so **the test had no power**. "Favours the split" is an **overclaim**. The referee could not re-fetch Conlon–Palti §5.2.1 to verify the quotes.
+4. **Field map D1939: MAJOR.**
+   - The ±1 effects are hand judgments.
+   - A pipe bug misplaces the spurion's "+" in the table. The D1938 row's direction disagrees with its effect.
+   - The K_S row contradicts the engine.
+   - "Opposite poles on one line, so the fix must be orthogonal" is the engine's construction restated; the conclusion itself is standard.
+5. **UFE §7–§8 and the battery: MAJOR.**
+   - **α_s unification is a valid test only under the single-visible-stack assumption.** Separate U(3)/U(2) stacks generically do not unify, so a 4σ miss is not a falsification unless that assumption is stated. On the same grounds, "+0.044 predicts new states" is unjustified.
+   - "Each field balanced on its own" is a fit statement.
+   - Moduli decays to gravitinos are not addressed.
+
+## D1937a / D1938a / D1939a — corrections
+- **D1937a.**
+  - "No knob setting balances, because everything moves through m₃/₂" is relabelled as **an engine property** (rank-1 Jacobian).
+  - The K_S row is **dropped** until the engine models S at i through W₀ and 𝒱.
+  - The α_s pull is **experimental error only**. A theory error (two-loop thresholds, the scale of α₃) still has to be added.
+- **D1938a.**
+  - The seam test **had no power**: every reading was structurally zero.
+  - "Favours Danny's three-way split" is **withdrawn**, here, in UFE §8 and in D1939.
+  - The Conlon–Palti quotes came through a fetch summariser and must be verified against the PDF before they are cited.
+- **D1939a.**
+  - The field-map effects are **labelled as hand judgments** from the cited D-notes, not measurements.
+  - The pipe bug is fixed and the D1938 row is set to direction 0.
+  - The K_S row is flagged as inconsistent with the engine and kept only as the D1929 reading.
+  - The poles and orthogonality reading is restated as "a consequence of the chain's structure; the standard remedy is a non-universal threshold or split stacks".
+- **Model caveat (UFE §7–§8):** α_s is a test only under the **single-visible-stack assumption**. With split stacks (D1940) unification is not predicted, and α_s becomes a fit through A₃/A₂.

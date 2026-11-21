@@ -3,7 +3,7 @@
   {
    "d": "D1919/D1929",
    "knob": "K_S: S vacuum rho -> i",
-   "description": "g_s 2/sqrt3 -> 1",
+   "description": "g_s 2/sqrt3 -> 1 [D1929 reading; contradicts the engine, D1939a]",
    "effects": {
     "control(g_s)": 1,
     "inflation": 0,
@@ -39,7 +39,7 @@
   },
   {
    "d": "D1932",
-   "knob": "K_U: one spurion |u|~0.0266",
+   "knob": "K_U: one spurion u~0.0266",
    "description": "single FN flavon",
    "effects": {
     "flavour": 1

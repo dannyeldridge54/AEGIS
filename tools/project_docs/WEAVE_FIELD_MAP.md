@@ -1,14 +1,14 @@
 # The Weave as a field: how the knobs pull on each other (Danny 17:10)
 
-Every fix attempt today was one knob turned. The table records what each attempt did to every sector: **+** helped, **−** hurt, **0** no effect, blank not touched. Source: the D-notes named in each row.
+Every fix attempt today was one knob turned. The table records what each attempt did to every sector: **+** helped, **−** hurt, **0** no effect, blank not touched. **These effects are hand judgments read from the D-notes named in each row, not measurements (referee D1942).**
 
 | attempt (D-note) | knob turned | inflation | forces(alpha_s) | spectrum(wino) | flavour | leptogenesis/DM | gravity/DE | control(g_s) |
 |---|---|---|---|---|---|---|---|---|
-| g_s 2/sqrt3 -> 1 (D1919/D1929) | K_S: S vacuum rho -> i | 0 | − | + |  |  |  | + |
+| g_s 2/sqrt3 -> 1 [D1929 reading; contradicts the engine, D1939a] (D1919/D1929) | K_S: S vacuum rho -> i | 0 | − | + |  |  |  | + |
 | to raise alpha_s (D1931/D1937) | K_T: m3/2 down |  | + | − |  |  |  |  |
 | for thermal leptogenesis / n_s (D1931a/D732) | S-T: T_R up | 0 |  |  |  | − |  |  |
 | modular home (D1922/D1923) | K_U: quark slip on tau |  |  |  | − |  |  |  |
-| single FN flavon (D1932) | K_U: one spurion |u|~0.0266 |  |  |  | + |  |  |  |
+| single FN flavon (D1932) | K_U: one spurion u~0.0266 |  |  |  | + |  |  |  |
 | lambda 0.94 from warped uplift (D1906) | S-T: Kähler thread for DE |  |  |  |  |  | − |  |
 | close Delta3 (D1881b/D1907) | S-T: Higgs-pair threshold / U29 tilt |  | − |  |  |  |  |  |
 | parent-equation threshold (D1938) | S-T: supergravity seam term |  | 0 |  |  |  |  |  |
@@ -48,10 +48,7 @@ Every fix attempt today was one knob turned. The table records what each attempt
 | battery NEED items | mixed | BBN late decays, moduli problem, cosmic strings, birefringence, eta_B |
 
 ## Reading the field
-- **α_s and the wino are opposite poles on one field line: m₃/₂.** Every knob tried so far either turns m₃/₂ directly (K_T) or turns it through g_s (K_S: S at i raises m₃/₂). Each turn helps one pole and hurts the other. Measured slope: d ln α_s/d ln m₃/₂ = −0.025 (D1937).
-- **So the way out has to be orthogonal to m₃/₂**: a move that shifts α_s without touching the spectrum. The candidates are:
-  - split stacks, with SU(3) on its own 4-cycle so that f₃ ≠ f₂;
-  - non-universal threshold states.
-  - The supergravity seam term is universal and moves nothing (D1938).
-- **K_U is decoupled from the forces.** Its hurts all stayed inside flavour, and the single spurion (D1932) is its one success.
-- **The S–T seam is the busiest spot:** three of the hurts are there (α_s, leptogenesis/DM, dark energy). It is the main fault in the field.
+*Restated after referee D1942 (D1939a). The earlier reading is withdrawn.*
+- In the current chain, α_s and the wino both respond only to m₃/₂, because of how the engine is built (a rank-1 Jacobian). So any move along m₃/₂ trades one against the other.
+- The standard remedy is a move orthogonal to m₃/₂: split stacks or non-universal thresholds. D1940 tests split stacks. They are viable, but α_s becomes a fit.
+- The K_S row (S at i) follows D1929 and contradicts the engine, which does not yet model W₀ and 𝒱 at i.
