@@ -1,0 +1,239 @@
+{
+ "moves": [
+  {
+   "d": "D1919/D1929",
+   "knob": "K_S: S vacuum rho -> i",
+   "description": "g_s 2/sqrt3 -> 1",
+   "effects": {
+    "control(g_s)": 1,
+    "inflation": 0,
+    "forces(alpha_s)": -1,
+    "spectrum(wino)": 1
+   }
+  },
+  {
+   "d": "D1931/D1937",
+   "knob": "K_T: m3/2 down",
+   "description": "to raise alpha_s",
+   "effects": {
+    "forces(alpha_s)": 1,
+    "spectrum(wino)": -1
+   }
+  },
+  {
+   "d": "D1931a/D732",
+   "knob": "S-T: T_R up",
+   "description": "for thermal leptogenesis / n_s",
+   "effects": {
+    "leptogenesis/DM": -1,
+    "inflation": 0
+   }
+  },
+  {
+   "d": "D1922/D1923",
+   "knob": "K_U: quark slip on tau",
+   "description": "modular home",
+   "effects": {
+    "flavour": -1
+   }
+  },
+  {
+   "d": "D1932",
+   "knob": "K_U: one spurion |u|~0.0266",
+   "description": "single FN flavon",
+   "effects": {
+    "flavour": 1
+   }
+  },
+  {
+   "d": "D1906",
+   "knob": "S-T: K\u00e4hler thread for DE",
+   "description": "lambda 0.94 from warped uplift",
+   "effects": {
+    "gravity/DE": -1
+   }
+  },
+  {
+   "d": "D1881b/D1907",
+   "knob": "S-T: Higgs-pair threshold / U29 tilt",
+   "description": "close Delta3",
+   "effects": {
+    "forces(alpha_s)": -1
+   }
+  },
+  {
+   "d": "D1938",
+   "knob": "S-T: supergravity seam term",
+   "description": "parent-equation threshold",
+   "effects": {
+    "forces(alpha_s)": 0
+   }
+  },
+  {
+   "d": "D1885a",
+   "knob": "K_U: flux-6 electron offset",
+   "description": "Koide delta",
+   "effects": {
+    "flavour": -1
+   }
+  },
+  {
+   "d": "D1894b",
+   "knob": "K_U: one shared step u*",
+   "description": "the arrow",
+   "effects": {
+    "flavour": -1
+   }
+  },
+  {
+   "d": "D1926",
+   "knob": "K_S: plateau ends at i",
+   "description": "inflation check",
+   "effects": {
+    "inflation": 1
+   }
+  }
+ ],
+ "field": {
+  "K_S": {
+   "inflation": 1,
+   "forces(alpha_s)": -1,
+   "spectrum(wino)": 1,
+   "flavour": null,
+   "leptogenesis/DM": null,
+   "gravity/DE": null,
+   "control(g_s)": 1
+  },
+  "K_T": {
+   "inflation": null,
+   "forces(alpha_s)": 1,
+   "spectrum(wino)": -1,
+   "flavour": null,
+   "leptogenesis/DM": null,
+   "gravity/DE": null,
+   "control(g_s)": null
+  },
+  "K_U": {
+   "inflation": null,
+   "forces(alpha_s)": null,
+   "spectrum(wino)": null,
+   "flavour": -2,
+   "leptogenesis/DM": null,
+   "gravity/DE": null,
+   "control(g_s)": null
+  },
+  "S-T": {
+   "inflation": 0,
+   "forces(alpha_s)": -1,
+   "spectrum(wino)": null,
+   "flavour": null,
+   "leptogenesis/DM": -1,
+   "gravity/DE": -1,
+   "control(g_s)": null
+  }
+ },
+ "hurt_by_knob": {
+  "K_S": [
+   [
+    "D1919/D1929",
+    "forces(alpha_s)"
+   ]
+  ],
+  "K_T": [
+   [
+    "D1931/D1937",
+    "spectrum(wino)"
+   ]
+  ],
+  "S-T": [
+   [
+    "D1931a/D732",
+    "leptogenesis/DM"
+   ],
+   [
+    "D1906",
+    "gravity/DE"
+   ],
+   [
+    "D1881b/D1907",
+    "forces(alpha_s)"
+   ]
+  ],
+  "K_U": [
+   [
+    "D1922/D1923",
+    "flavour"
+   ],
+   [
+    "D1885a",
+    "flavour"
+   ],
+   [
+    "D1894b",
+    "flavour"
+   ]
+  ]
+ },
+ "open_problems": [
+  [
+   "alpha_s / Delta3",
+   "S-T",
+   "FAIL -4.1 sigma; needs non-universal +0.044 (D1937, D1938)"
+  ],
+  [
+   "wino margin",
+   "T",
+   "2 % above the 660 GeV limit; pinned against alpha_s through m3/2"
+  ],
+  [
+   "non-thermal leptogenesis",
+   "S-T",
+   "T_R boxed <~3e9 by gravitino->wino; no mechanism derived"
+  ],
+  [
+   "g_s > 1 control",
+   "S",
+   "rho gives 1.155; i gives 1 but breaks alpha_s"
+  ],
+  [
+   "quark spurion home",
+   "U / T-U",
+   "one spurion fits (PHEN); no geometric source"
+  ],
+  [
+   "dark-energy thread",
+   "S-T",
+   "non-K\u00e4hler only; lambda ~0.95 source missing"
+  ],
+  [
+   "Koide delta, c_e",
+   "U",
+   "TRUST"
+  ],
+  [
+   "neutrino fluxes (4,4,8)",
+   "U",
+   "chosen; ratio margin thin"
+  ],
+  [
+   "v / m_SUSY",
+   "T",
+   "tuned 2.7e-7"
+  ],
+  [
+   "V_inf height, Lambda",
+   "S",
+   "inputs"
+  ],
+  [
+   "N* vs T_R, n_s tilt",
+   "S",
+   "tilt chosen; N* not cross-checked"
+  ],
+  [
+   "battery NEED items",
+   "mixed",
+   "BBN late decays, moduli problem, cosmic strings, birefringence, eta_B"
+  ]
+ ]
+}

@@ -19075,3 +19075,13 @@ Danny interrupted the D1930 pulse run partway through, and it produced no result
   - This **favours Danny's three-way-split reading** at the level of the seam. It does not prove it: the literature itself leaves the D3/D7 seam unresolved (CP's KL mismatch).
   - The strongest candidate to test next is split stacks: SU(3) on a different 4-cycle from SU(2) × U(1), which makes f_3 − f_2 = ΔT, a T-knob seam.
 - **COMPASS:** a new row, S–T seam (supergravity form), ΔΔ₃ = 0 against +0.044 needed: ↑!, with the knob "non-universal threshold" marked +.
+
+## D1939 — the Weave as a field (Danny 17:10): a retrospective map of the knob moves (tools/loom/field_map.py → tools/project_docs/WEAVE_FIELD_MAP.md)
+- **What it maps:** eleven of today's fix attempts, each recorded as a move of one knob with its effect on seven sectors (from the D-notes cited in each row).
+- **Field reading:**
+  - α_s and the wino are opposite poles on one line, m₃/₂. Both K_T and K_S (S at i) move along it, so each move helps one pole and hurts the other.
+  - The way out must be **orthogonal to m₃/₂**: split stacks (f₃ ≠ f₂) or non-universal thresholds.
+  - K_U is decoupled from the forces.
+  - The S–T seam collects 3 of the 8 hurts.
+- **Open-problem net:** 12 items, each tagged by field (see the doc). The loop now casts the net over them in order, and every result is fingerprinted into the compass and the field map.
+- **TRIANGULATE:** none (a retrospective). **COMPASS:** adds the field-line reading. The next move is orthogonal to m₃/₂, which matches tick 20's split-stacks test.
