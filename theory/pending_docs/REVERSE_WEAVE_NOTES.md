@@ -215,3 +215,20 @@ V = V_L(1 − A e^{−βφ}), A = 7.30, published doi:10.5281/zenodo.24380387). 
 - Reading: protection at either elliptic point removes only the linear term. The curvature is O(1) at both
   (−2.6 at i, −1 at ρ in Planck units), so the drift is quadratic and unsuppressed. The thread's α-safety needs
   b^{N=2}_em = 0 on its torus (a model condition), at i or ρ alike.
+
+## D1862 (RW14, research) — NULL: no known modular protection of a quintessence modulus against fifth forces
+- [literature, abstract only] arXiv:2509.22781 (modular-invariant quintessence near the elliptic points) addresses
+  neither fifth forces nor couplings to matter or varying constants, and proposes no protection. The mirror plan already
+  notes "fifth forces left open there too". Nothing new to compute. NULL.
+
+## D1863 (RW15, locked PREREG_RW15_AXION_VS_D1810 + DEVIATIONS D1, lock-order note) — D1810's dark condensate makes the dark-cycle axion ~47 decades too heavy for birefringence (CONFLICT)
+- [estimate] If the dark cycle is held by W ⊃ A_d e^{−2πT_d/N_d} (main session D1810: N_d = 10–12, x = 20.8–24.3),
+  then in KKLT its axion is as heavy as its saxion, m ≈ 2x·m₃/₂ = **1.0e16 – 1.2e16 eV** (1.0e7 GeV). The birefringence
+  window is 1e-33 – 9e-32 eV (D1795) ⇒ **CONFLICT by 47 decades**.
+- Consequence: D1810 (stabilise the dark cycle) and U12-on-the-dark-cycle (D1793–D1795: σ_β = 36.9–40.6 on that same cycle)
+  cannot both hold as stated. [derived] What would remove it: the photon-axion is a DIFFERENT axion combination, left
+  unfixed by the condensate and lifted only by a second, much smaller instanton (e.g. Im T_ℓ of D1760's lepton cycle,
+  or a multi-cycle combination orthogonal to the one in the condensate). Then σ_β refers to that instanton's action,
+  not to the dark-cycle size, and the D1810 "σ_β window reached by N_d = 10–12" match is a coincidence of numbers, not a
+  shared cycle. **Needs a decision (main session):** which axion carries β.
+- The reverse thread itself is unaffected (D1852 already excluded the dark-cycle saxion).
