@@ -1,0 +1,4 @@
+a nearest-rho  Phi = 0.154597  dev = 6.76e-02  
+b top          Phi = 0.320261  dev = 9.80e-02  
+c holonomy     Phi = 0.000000  dev = 2.22e-01  
+holonomy base-dependence spread = 1.11e-16 (invariant if ~0)

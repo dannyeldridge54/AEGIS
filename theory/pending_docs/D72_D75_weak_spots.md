@@ -18098,3 +18098,12 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
 - [computed, locked PREREG_D1844_KNOB] Candidates: Im ρ, |η(ρ)| = 0.801, |η(i)| = 0.768, ½, √(g_s/2), x, 1/g_s, e^{−π/4} = 0.456. None lies in the band (closest e^{−π/4}, 2 % below; ½, 5 % above). Chance per-band hit p = 0.06. Verdict: **NO TIE**.
 - Reading: the outside knob stays an input (A_s), sitting at about half the unification scale. No knot fixes it. Consistent with U22′: the one infinite direction is the only knob, and it is not pinned from inside.
 - Process note (21 Nov 11:47): the referee of D1806–D1836 was stopped from Danny's side before it reported. Per instructions it is not restarted. Loop-4 notes (D1806–D1844) are UNREFEREED, which is flagged in the one-step doc.
+
+## D1845 (LEFT, leptons — 21 Nov 2026): refined golden-loop phase — MISS; the gauge-invariant holonomy is exactly 0, so D1842's "near" value was a gauge artefact
+- [computed, locked PREREG_D1845_BERRY2] Weight −½, golden loop:
+  - from the axis point nearest ρ: Φ = 0.1546;
+  - from the top: 0.3203;
+  - the base-independent holonomy (adding the automorphy phase −k·arg(cz₀ + d)) is **exactly 0** (base spread 1e-16).
+  - Target 0.222226. Verdict: **MISS** (15 tries in total, no hit).
+- **Correction to D1842's reading (dated, the D1842 text unchanged):** the open-path values depend on the base point (0.15–0.32 here, 0.23 there), so they are gauge-dependent and not physical. The one gauge-invariant number, the holonomy around the golden loop, vanishes at this weight. So the "near hit" of D1842 had no physical content.
+- Status of δ = 2/9 (I5): no discrete charge (D1841) and no simple holonomy (D1842, D1845) produces it. It remains an input. The research route left is a holonomy with a non-trivial flat connection (e.g. a Wilson line on the lepton torus), which needs a model of that connection: open.
