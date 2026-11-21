@@ -208,6 +208,49 @@ def weave_magd7(a):
                 label='E (candidate repair U11; normalisation and gauge-channel dominance assumed, D1761)')
 
 
+def weave_sidm(a):
+    """DM self-interaction (PREREG_C3): Born transfer cross-section, repulsive Yukawa. {"alpha_D","m_A_GeV","v_kms","m_chi_GeV"=12.8}."""
+    aD, mA, v, M = float(a.get('alpha_D', 4.7e-4)), float(a.get('m_A_GeV', 0.3)), float(a.get('v_kms', 1000)) / 299792.458, float(a.get('m_chi_GeV', 12.8))
+    R = M * v / mA; br = math.log1p(R ** 2) - R ** 2 / (1 + R ** 2)
+    s = 8 * math.pi * aD ** 2 / (M ** 2 * v ** 4) * br
+    return dict(sigma_over_m_cm2_g=s * 3.894e-28 / (M * 1.783e-24), born_param=aD * M / mA, born_valid=aD * M / mA < 1, label='S (Born; valid only if born_param < 1)')
+
+
+def weave_wino(a):
+    """Wino dark-matter fraction vs the Einasto line limit (D735 rescale, D1762). {"T_R_GeV"}."""
+    TR = float(a.get('T_R_GeV', 2.61e8)); M = (0.66, 1.0, 1.85)
+    f = [th + (t - th) * TR / 3.2e8 for t, th in zip((0.14, 0.26, 0.67), (0.05, 0.12, 0.41))]; lim = (0.16, 0.24, 0.44)
+    return dict(fraction={str(m): x for m, x in zip(M, f)}, limit={str(m): l for m, l in zip(M, lim)},
+                passing=[m for m, x, l in zip(M, f, lim) if x <= l], f_at_1TeV=f[1], label='E (order-of-magnitude rescale, x2 limit uncertainty)')
+
+
+def weave_genesis(a):
+    """Non-thermal leptogenesis window (D1648 method). {"T_R_GeV", "m_phi_GeV"=5e12}."""
+    TR, mphi = float(a.get('T_R_GeV', 2.61e8)), float(a.get('m_phi_GeV', 5e12))
+    eps = 1.8e-6 * 9e8 / TR; mmin = eps / (3 * 0.0501e-9 / (16 * math.pi * 174 ** 2)); lo = max(mmin, 10 * TR)
+    return dict(eps_needed=eps, M_N_min_GeV=mmin, window_GeV=[lo, mphi / 2], viable=lo < mphi / 2, label='E (scaling eps ∝ 1/T_R; gauge-channel dominance assumed)')
+
+
+def weave_axion_relic(a):
+    """Misalignment axion relic with late dilution D: Omega_a/Omega_DM ≈ (f/9e11 GeV)^1.17 theta^2 / D. {"f_GeV","theta","D"}."""
+    f, th, D = float(a.get('f_GeV', 1e17)), float(a.get('theta', 0.02)), float(a.get('D', 1.0))
+    R = (f / 9e11) ** 1.17
+    return dict(omega_ratio=R * th ** 2 / D, theta_max=math.sqrt(D / R), m_a_eV=5.7e-6 * 1e12 / f, label='E (standard QCD-axion scaling)')
+
+
+def weave_W0(a):
+    """Flux superpotential needed: m_3/2 = sqrt(g_s/2) |W0| M_P / V (D1764). {"volume","m32_GeV","g_s"=1.155}."""
+    V, m, gs = float(a.get('volume', 1e5)), float(a.get('m32_GeV', 5e5)), float(a.get('g_s', 2 / math.sqrt(3)))
+    return dict(W0=m * V / (math.sqrt(gs / 2) * 2.435e18), label='E (leading-order supergravity)')
+
+
+def weave_rinv(a):
+    """r with reheating shift and tau_q dilution (D1766: the T_R dependence cancels when tau_q dilutes). {"x","D0"}."""
+    x, D0 = float(a.get('x', 0.32)), float(a.get('D0', 67.2)); D = max(1.0, D0 * x)
+    dN = math.log(x) / 3 - math.log(D) / 3
+    return dict(dNstar=dN, r=5.41e-4 * (50.37 / (50.37 + dN)) ** 2, dilution=D, label='E (r ∝ N^-2, tilt fixed)')
+
+
 def weave_paths(a):
     """Connection map: {\"from\":..,\"to\":..} -> shortest chain of shared quantities; {} -> all cross-sector connections."""
     import weave_paths as P
@@ -216,11 +259,14 @@ def weave_paths(a):
 
 TOOLS = {'weave_rung': weave_rung, 'weave_rung_of': weave_rung_of, 'weave_koide': weave_koide, 'weave_koide_slip': weave_koide_slip,
          'weave_tauq': weave_tauq, 'weave_ckm': weave_ckm, 'weave_proton': weave_proton, 'weave_atomic': weave_atomic,
-         'weave_arc': weave_arc, 'weave_rladder': weave_rladder, 'weave_negspace': weave_negspace, 'weave_paths': weave_paths, 'weave_basic': weave_basic, 'weave_mbb': weave_mbb, 'weave_magd7': weave_magd7}
+         'weave_arc': weave_arc, 'weave_rladder': weave_rladder, 'weave_negspace': weave_negspace, 'weave_paths': weave_paths, 'weave_basic': weave_basic, 'weave_mbb': weave_mbb, 'weave_magd7': weave_magd7, 'weave_sidm': weave_sidm, 'weave_wino': weave_wino, 'weave_genesis': weave_genesis,
+         'weave_axion_relic': weave_axion_relic, 'weave_W0': weave_W0, 'weave_rinv': weave_rinv}
 
 if __name__ == '__main__':   # self-test: reproduces the published numbers
     assert abs(weave_mbb({})['mbb_max_meV'] - 3.7952) < 1e-3
     assert abs(weave_magd7({'alpha_inv': 40})['T_R_GeV'] - 2.611e8) < 1e6
+    assert abs(weave_sidm({})['sigma_over_m_cm2_g'] - 9.33e-7) < 2e-8 and weave_wino({'T_R_GeV': 2.61e8})['passing'] == [0.66, 1.0]
+    assert weave_genesis({'T_R_GeV': 4.3e8})['viable'] and abs(weave_rinv({'x': 0.195})['r'] - 5.724e-4) < 1e-7
     assert abs(weave_rung({'m': 8})['eps_formula'] - 0.003117) < 2e-5
     k = weave_koide({'masses': [0.51099895, 105.6583755, 1776.93]}); assert abs(k['Q'] - 0.6666645) < 2e-7 and abs(k['delta'] - 0.222225) < 2e-6
     q = weave_koide({'masses': [1.29e-3, 0.629, 169.0]}); assert abs(q['Q'] - 0.8870) < 5e-4

@@ -9,6 +9,11 @@ Each tick climbs one rung on BOTH ladders and balances them at the centre, exact
 - **CENTRE (Ma'at):** every postulate from both ladders is pushed through the same filters (α drift ζ ≲ 3.6e-6, moduli/BBN, n_s/r, isocurvature, DM lifetime, ΔN_eff, EDMs, proton decay, fifth forces) and the joint audit (every shared number agrees on both sides). A postulate survives only if BOTH ladders still pass.
 - **Directions:** every rung is tested both ways — forward (does the postulate reproduce data?) and in the negative space (what must NOT be seen; nulls are predictions too), and before/after in time where it applies.
 
+## Calculation pipeline (Danny 08:53: "make every tool … integrate into the main toolkits … every toolkit feeds CubeMind … CubeMind prepares and postulates itself, the toolkits run automatically with the derived math, and we check CubeMind against it")
+1. Every calculation in the loop gets a tool in tools/weave_cm/weave_tools.py (kit) and, where it belongs, in the main toolkit (Weave Control engine, Janus, Hyperion, CERN+1); registered in CubeMind's aegis_tools/registry.py.
+2. The same calculation is appended to CubeMind_janus/weave_data/calc_queue.jsonl (id, task text, tool, args, result key, tolerance). CubeMind's learn loop takes queued items FIRST: it derives the number itself (blind — it does not call the tool), then the toolkit runs automatically on the same inputs, and CubeMind is graded (derivation_checked / derivation_failed, weave_data/derivations.jsonl with the queue id; done ids in calc_done.txt).
+3. The loop reports CubeMind's score on the queued items at each check-in.
+
 ## Postulation stage (automatic, no approval needed)
 At every rung the loop writes a postulate (label **P** principle / **C** conjecture / **E** engineering), the test that can kill it, and then locks and runs that test. Postulates are candidates, never results. Publishing still needs Danny's "Publish".
 
