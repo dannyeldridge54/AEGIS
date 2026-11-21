@@ -18120,3 +18120,12 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
 - [computed, theory/tests/d1847_shapes.py] **Every standard toroidal orbifold is compatible with the N = 6 chain.** χ = 48–168 needs prefactor A = 0.54–1.88 (natural). The closest to A = 1 is T⁶/Z₂ × Z₂ (χ = 96, A = 1.07), then T⁶/Z₃ (χ = 72, A = 0.80). This removes the worry that χ ≈ 90 was an unrealisable choice.
 - Elements: the same symmetry-splitting appears in atoms (2n² shells from SO(4)), bonds (tetrahedral sp³, hexagonal rings, cubic crystals) and nuclear shells. This is universality, not evidence for the Weave.
 - Next (lock first): (a) the χ of the Weave's own mixed fold (Z₃ on the lepton/quark tori × Z₂ on the neutrino torus); (b) the test "families sit on the turnover's 3 corners".
+
+## D1849 (LEFT, U26 — 21 Nov 2026): each Z₃ sector sits on its OWN corner of the turnover — verdict CORNERS
+- [computed, locked PREREG_D1849_CORNERS] Setup: T²/Z₃ at ρ, flux 9, SS phase 1/6, orthonormalised class densities on a 120 × 120 grid. The fixed points are 0, (1/3, 2/3) and (2/3, 1/3) in cell coordinates.
+  - class 0 peaks at the corner 0;
+  - class 1 peaks at (2/3, 1/3);
+  - class 2 peaks at (1/3, 2/3).
+  - Each peak lies within 0.006 of its corner. The density at its own corner is **2.99× the cell mean**, and **≤ 0.01×** at the other two corners.
+- Reading (U24 + U26): the corners are literal LOCKS. Each corner admits only the zero modes whose Z₃ charge matches its local phase (a mode of the "wrong" charge must vanish there). So the 3 × 3 = 9 states split as one Z₃ sector of 3 families per corner. Danny's "splitting points in each direction" are exactly where each sector lives. The 3 families within a sector are the 3 modes sharing that corner; their hierarchy comes from the slips and theta ladders (D1822–D1829).
+- Weight: this localisation is a structural property of orbifold zero modes (charge must match the fixed-point phase), consistent with the localisation-at-fixed-points literature. It is derived, not fitted. It fixes WHERE sectors sit, which a full Yukawa computation (product over tori) now inherits as a labelling rule (the D1825 lesson).
