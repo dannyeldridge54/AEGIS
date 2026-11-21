@@ -45,6 +45,7 @@ fp(2, 'forces', 'alpha_s(M_Z) no threshold', 0.1142, (0.1180, 0.0009), 'data', '
    note='d alpha_s / d ln m3/2 = %+.5f (measured, ±10 %%): wants m3/2 DOWN; opposes the wino arrow' % das_dlnm)
 fp(2, 'forces', 'Delta3 after Higgs pair + gauge', g('Delta_3 after')['value'], -0.05, '>', 'v4 (D1881b)', {'b_prime': '-', 'brane threshold': '+'}, note='needs +0.044 more')
 fp(2, 'forces', 'alpha_s with S at i (self-consistent spectrum)', 0.1112, (0.1180, 0.0009), 'data', 'D1929', {'S vacuum': 'rho'}, note='S at i pushes the wrong way')
+fp(2, 'forces', 'S-T seam: supergravity-form threshold (non-universal part)', 1e-9, 0.044, '>', 'D1938 (Conlon-Palti 0901.4350)', {'non-universal threshold': '+', 'split stacks (f3 != f2)': '+'}, note='universal on one stack: cancels in Delta3; plotted as 1e-9')
 fp(2, 'forces', 'proton lifetime [yr]', g('proton')['value'], 2.4e34, '>', 'v4', {'M12': '+'})
 # ---- ring 3: inflation / cosmology
 fp(3, 'inflation', 'n_s', g('n_s')['value'], (0.9728, 0.0027), 'data', 'v4', {}, note='inside its band (0.8σ): no pull counted (D1935); N* = 50.3 not yet cross-checked against T_R')

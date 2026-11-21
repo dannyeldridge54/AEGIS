@@ -273,6 +273,26 @@
    "id": 15,
    "ring": 2,
    "notch": "forces",
+   "quantity": "S-T seam: supergravity-form threshold (non-universal part)",
+   "value": 1e-09,
+   "spread": null,
+   "target": 0.044,
+   "kind": ">",
+   "direction": "\u2191!",
+   "headroom": -7.643452676486187,
+   "unit": "dex",
+   "pull": null,
+   "knobs": {
+    "non-universal threshold": "+",
+    "split stacks (f3 != f2)": "+"
+   },
+   "source": "D1938 (Conlon-Palti 0901.4350)",
+   "note": "universal on one stack: cancels in Delta3; plotted as 1e-9"
+  },
+  {
+   "id": 16,
+   "ring": 2,
+   "notch": "forces",
    "quantity": "proton lifetime [yr]",
    "value": 1.6e+35,
    "spread": null,
@@ -289,7 +309,7 @@
    "note": ""
   },
   {
-   "id": 16,
+   "id": 17,
    "ring": 3,
    "notch": "inflation",
    "quantity": "n_s",
@@ -309,7 +329,7 @@
    "note": "inside its band (0.8\u03c3): no pull counted (D1935); N* = 50.3 not yet cross-checked against T_R"
   },
   {
-   "id": 17,
+   "id": 18,
    "ring": 3,
    "notch": "inflation",
    "quantity": "n_s with S at i",
@@ -331,7 +351,7 @@
    "note": ""
   },
   {
-   "id": 18,
+   "id": 19,
    "ring": 3,
    "notch": "inflation",
    "quantity": "r",
@@ -348,7 +368,7 @@
    "note": ""
   },
   {
-   "id": 19,
+   "id": 20,
    "ring": 3,
    "notch": "cosmology",
    "quantity": "T_R vs M_N (thermal leptogenesis)",
@@ -365,7 +385,7 @@
    "note": "a bound the model sidesteps (non-thermal leptogenesis): NOT a pull (D1935)"
   },
   {
-   "id": 20,
+   "id": 21,
    "ring": 3,
    "notch": "cosmology",
    "quantity": "non-thermal wino Omega from gravitinos (Omega \u221d T_R)",
@@ -384,7 +404,7 @@
    "note": "D732: Omega 0.017 at T_R 3.2e8 (M2 0.66 TeV), 0.11 at 3.0e9 \u21d2 T_R capped at ~3e9"
   },
   {
-   "id": 21,
+   "id": 22,
    "ring": 3,
    "notch": "cosmology",
    "quantity": "Delta N_eff",
@@ -401,7 +421,7 @@
    "note": "0 exactly; plotted as 1e-6"
   },
   {
-   "id": 22,
+   "id": 23,
    "ring": 3,
    "notch": "cosmology",
    "quantity": "dark-matter mass [GeV]",
@@ -418,7 +438,7 @@
    "note": ""
   },
   {
-   "id": 23,
+   "id": 24,
    "ring": 4,
    "notch": "reverse",
    "quantity": "alpha drift zeta",
@@ -437,7 +457,7 @@
    "note": ""
   },
   {
-   "id": 24,
+   "id": 25,
    "ring": 4,
    "notch": "reverse",
    "quantity": "thread slope lambda (DESI needs ~0.95)",
@@ -514,6 +534,28 @@
    "up": [
     [
      "forces: Delta3 after Higgs pair + gauge",
+     "+",
+     "\u2191!"
+    ]
+   ],
+   "down": [],
+   "tension": false
+  },
+  "non-universal threshold": {
+   "up": [
+    [
+     "forces: S-T seam: supergravity-form threshold (non-universal part)",
+     "+",
+     "\u2191!"
+    ]
+   ],
+   "down": [],
+   "tension": false
+  },
+  "split stacks (f3 != f2)": {
+   "up": [
+    [
+     "forces: S-T seam: supergravity-form threshold (non-universal part)",
      "+",
      "\u2191!"
     ]

@@ -19055,3 +19055,23 @@ Danny interrupted the D1930 pulse run partway through, and it produced no result
 - **JUDGE:** this quantifies Danny's three-body picture. Each body is steered, and the closest approach leaves a residual of fixed size on S–T.
   - Seam test, next: does the supergravity-fixed form of the threshold (Kaplunovsky–Louis, applied to brane models in Conlon–Palti 0901.4350, which gives the volume and matter-metric terms and M_X = (M_P/M_s)^{1/3} M_s) supply +0.044? If yes, a parent equation exists. If no, the split is fundamental.
 - **COMPASS:** the m₃/₂ entry now rests on a measured Jacobian (d ln α_s / d ln m₃/₂ = −0.0254). That supersedes the hand-entered −0.0029 per log, which is the same number expressed per ln m₃/₂ times α_s.
+
+## D1938 — Loom tick 19: the S–T seam test (Danny 16:50, "parent equation or a fundamental split?") — FAIL (locked PREREG_D1938)
+- **TARGET:** the missing S–T seam term (D1937: Δα_s +0.0037, Δ₃ +0.044).
+- **GATHER:** Conlon–Palti, arXiv:0901.4350 §5.2.1 (ar5iv).
+  - The untwisted D3–D7 running is "gauge-group universal" (Eqs. 194, 231).
+  - Matching onto Kaplunovsky–Louis needs Re S → Re S − (2/9)(1/16π²) n₇ ln 𝒱, which they reject as non-local.
+  - In their own words, they "were unable to match onto the KL field theory formula", and they suggest truly local D3/D7 models may not exist, because of D7 backreaction.
+- **TRIANGULATE:** three readings of ΔΔ₃, giving centre 0 ± 0.
+  - (a) the CP universal D7 running: 0;
+  - (b) the KL-matching dilaton shift through f_vis = T + 9S: 0 (all three SM groups share one stack);
+  - (c) the raised matching scale M_X: 0 (Δ₃ is evaluated at the crossing).
+  - This is an analytic cancellation, so the 7-null rule does not apply.
+- **GUARD / power:** the test had **low power to PASS by design**: any gauge-universal term cancels in Δ₃. The prior expectation (FAIL) was written in the lock. The content of the result is structural: **the supergravity-fixed seam terms are universal on one visible stack.**
+- **TEST: FAIL.**
+- **JUDGE:**
+  - The S–T seam needs a **non-universal** piece. Candidates: new threshold states (Δb), twisted-sector contributions, or splitting the visible SM groups across different stacks or cycles (so f_3 ≠ f_2).
+  - None of these follows from the parent-equation form alone; each would be added by hand.
+  - This **favours Danny's three-way-split reading** at the level of the seam. It does not prove it: the literature itself leaves the D3/D7 seam unresolved (CP's KL mismatch).
+  - The strongest candidate to test next is split stacks: SU(3) on a different 4-cycle from SU(2) × U(1), which makes f_3 − f_2 = ΔT, a T-knob seam.
+- **COMPASS:** a new row, S–T seam (supergravity form), ΔΔ₃ = 0 against +0.044 needed: ↑!, with the knob "non-universal threshold" marked +.

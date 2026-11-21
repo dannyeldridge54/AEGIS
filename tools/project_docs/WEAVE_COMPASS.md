@@ -18,16 +18,17 @@ Legend: ● on target (inside the bar by > 0.3 dex or < 1σ); ◔ passes but thi
 | 12 | 2 | forces | alpha_s(M_Z) no threshold | 0.1142 | ↑ | -2.22 σ | m3/2 -, Delta3 threshold + | D1929 run 1 (gluino 4.93 TeV) | d alpha_s / d ln m3/2 = -0.00290 (measured, ±10 %): wants m3/2 DOWN; opposes the wino arrow |
 | 13 | 2 | forces | Delta3 after Higgs pair + gauge | -0.09424 | ↑! | 0.28 dex | b_prime -, brane threshold + | v4 (D1881b) | needs +0.044 more |
 | 14 | 2 | forces | alpha_s with S at i (self-consistent spectrum) | 0.1112 | ↑ | -5.56 σ | S vacuum rho | D1929 | S at i pushes the wrong way |
-| 15 | 2 | forces | proton lifetime [yr] | 1.6e+35 | ● | 0.82 dex | M12 + | v4 |  |
-| 16 | 3 | inflation | n_s | 0.9706 | ● | 1.19 σ | — | v4 | inside its band (0.8σ): no pull counted (D1935); N* = 50.3 not yet cross-checked against T_R |
-| 17 | 3 | inflation | n_s with S at i | 0.9704 | ● | 1.11 σ | S vacuum rho | D1926 |  |
-| 18 | 3 | inflation | r | 0.00054 | ● | 1.82 dex | — | v4 |  |
-| 19 | 3 | cosmology | T_R vs M_N (thermal leptogenesis) | 3.7e+08 | ○ |  | — | v4 (D1897) | a bound the model sidesteps (non-thermal leptogenesis): NOT a pull (D1935) |
-| 20 | 3 | cosmology | non-thermal wino Omega from gravitinos (Omega ∝ T_R) | 0.01966 | ● | 0.79 dex | T_R - | D732 (Y3/2 ∝ T_R) | D732: Omega 0.017 at T_R 3.2e8 (M2 0.66 TeV), 0.11 at 3.0e9 ⇒ T_R capped at ~3e9 |
-| 21 | 3 | cosmology | Delta N_eff | 1e-06 | ● | 5.23 dex | — | v4 | 0 exactly; plotted as 1e-6 |
-| 22 | 3 | cosmology | dark-matter mass [GeV] | 12.8 | ○ |  | — | v4 |  |
-| 23 | 4 | reverse | alpha drift zeta | 3.785e-10 | ● | 3.64 dex | b_bf - | v4 (D1887) |  |
-| 24 | 4 | reverse | thread slope lambda (DESI needs ~0.95) | nan | ○ |  | — | D1906 | OPEN: non-Kähler only |
+| 15 | 2 | forces | S-T seam: supergravity-form threshold (non-universal part) | 1e-09 | ↑! | -7.64 dex | non-universal threshold +, split stacks (f3 != f2) + | D1938 (Conlon-Palti 0901.4350) | universal on one stack: cancels in Delta3; plotted as 1e-9 |
+| 16 | 2 | forces | proton lifetime [yr] | 1.6e+35 | ● | 0.82 dex | M12 + | v4 |  |
+| 17 | 3 | inflation | n_s | 0.9706 | ● | 1.19 σ | — | v4 | inside its band (0.8σ): no pull counted (D1935); N* = 50.3 not yet cross-checked against T_R |
+| 18 | 3 | inflation | n_s with S at i | 0.9704 | ● | 1.11 σ | S vacuum rho | D1926 |  |
+| 19 | 3 | inflation | r | 0.00054 | ● | 1.82 dex | — | v4 |  |
+| 20 | 3 | cosmology | T_R vs M_N (thermal leptogenesis) | 3.7e+08 | ○ |  | — | v4 (D1897) | a bound the model sidesteps (non-thermal leptogenesis): NOT a pull (D1935) |
+| 21 | 3 | cosmology | non-thermal wino Omega from gravitinos (Omega ∝ T_R) | 0.01966 | ● | 0.79 dex | T_R - | D732 (Y3/2 ∝ T_R) | D732: Omega 0.017 at T_R 3.2e8 (M2 0.66 TeV), 0.11 at 3.0e9 ⇒ T_R capped at ~3e9 |
+| 22 | 3 | cosmology | Delta N_eff | 1e-06 | ● | 5.23 dex | — | v4 | 0 exactly; plotted as 1e-6 |
+| 23 | 3 | cosmology | dark-matter mass [GeV] | 12.8 | ○ |  | — | v4 |  |
+| 24 | 4 | reverse | alpha drift zeta | 3.785e-10 | ● | 3.64 dex | b_bf - | v4 (D1887) |  |
+| 25 | 4 | reverse | thread slope lambda (DESI needs ~0.95) | nan | ○ |  | — | D1906 | OPEN: non-Kähler only |
 
 ## Where it points (per knob)
 
@@ -36,6 +37,8 @@ Legend: ● on target (inside the bar by > 0.3 dex or < 1σ); ◔ passes but thi
 - **Delta3 threshold**: wants ↑ from forces: alpha_s(M_Z) no threshold; wants ↓ from none.
 - **b_prime**: wants ↑ from none; wants ↓ from forces: Delta3 after Higgs pair + gauge.
 - **brane threshold**: wants ↑ from forces: Delta3 after Higgs pair + gauge; wants ↓ from none.
+- **non-universal threshold**: wants ↑ from forces: S-T seam: supergravity-form threshold (non-universal part); wants ↓ from none.
+- **split stacks (f3 != f2)**: wants ↑ from forces: S-T seam: supergravity-form threshold (non-universal part); wants ↓ from none.
 - **M12**: wants ↑ from forces: proton lifetime [yr]; wants ↓ from none.
 - **T_R**: wants ↑ from none; wants ↓ from cosmology: non-thermal wino Omega from gravitinos (Omega ∝ T_R).
 - **b_bf**: wants ↑ from none; wants ↓ from reverse: alpha drift zeta.

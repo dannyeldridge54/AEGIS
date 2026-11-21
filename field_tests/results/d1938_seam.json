@@ -1,0 +1,11 @@
+{
+ "readings_dDelta3": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "centre": 0.0,
+ "need": 0.044,
+ "verdict": "FAIL",
+ "note": "every supergravity-fixed S\u2013T seam term on a single visible stack is gauge-universal and cancels in Delta3; the needed +0.044 must be NON-universal (new states / twisted-sector Delta b / split stacks) and is not supplied by the parent-equation form"
+}

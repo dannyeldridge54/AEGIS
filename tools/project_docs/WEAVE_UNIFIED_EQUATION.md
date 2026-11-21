@@ -192,3 +192,10 @@ The S, T and U sectors are each balanced on their own.
 3. Where no setting balances (α_s against the wino on m₃/₂; the T_R box), the residual sizes the missing interface term.
 
 To be built: tools/weave_knobs.py, a central-equation engine. It wraps the scoreboard chain as O(K_S, K_T, K_U) and computes the knob Jacobian ∂O/∂K. The compass then reads its vectors from this Jacobian instead of from hand-entered signs.
+
+**Seam test (D1937, D1938).**
+- No setting of the three knobs balances the data: every observable moves only through m₃/₂.
+- The seam must supply Δα_s = +0.0037 (Δ₃ = +0.044).
+- The supergravity-fixed S–T terms (Conlon–Palti 0901.4350; Kaplunovsky–Louis) are gauge-universal on one visible stack, so they cancel in Δ₃ and give **0 of the +0.044**.
+- The missing piece must be **non-universal** and added by hand: threshold states, twisted sectors, or split stacks with f₃ ≠ f₂.
+- **This favours the three-way split at the seam** (Danny 16:50). It is not proof: the literature leaves the D3/D7 seam unresolved.
