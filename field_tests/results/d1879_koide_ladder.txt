@@ -1,0 +1,8 @@
+x = 0.208712  |u| = 0.043561  Koide Q = 0.666667
+(a) in band 0.0066-0.0435: False
+m_mu/m_tau: pred 0.0436 obs 0.0595 (-27%)
+m_e/m_tau : pred 1.898e-03 obs 2.876e-04 (x6.60)
+(b) within 20%: False
+needed c spread at this |u|: 9.01
+Koide of observed masses: 0.666661
+VERDICT: FAIL
