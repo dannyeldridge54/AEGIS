@@ -1,0 +1,9 @@
+remote:   https://github.com/dannyeldridge54/AEGIS.git        
+{'m32': 257945.66231, 'wino': 686.51049, 'gluino': 4926.40004, 'alpha_s': 0.11422, 'M12': 1.0785291813420438e+16, 'tau_p': 1.633486542792824e+35}
+g_s {'m32': (0.5, 0.0), 'wino': (0.5, 0.0), 'gluino': (0.5, 0.0), 'alpha_s': (-0.013, 0.0), 'M12': (-0.16, 0.0), 'tau_p': (-0.638, 0.0)}
+sigma {'m32': (-20.176, 0.0307), 'wino': (-20.176, 0.0307), 'gluino': (-20.176, 0.0307), 'alpha_s': (0.512, 0.0005), 'M12': (6.441, 0.0119), 'tau_p': (25.764, 0.0476)}
+Vol {'m32': (-1.0, 0.0), 'wino': (-1.0, 0.0), 'gluino': (-1.0, 0.0), 'alpha_s': (0.025, 0.0), 'M12': (0.319, 0.0), 'tau_p': (1.277, 0.0)}
+A {'m32': (1.0, 0.0), 'wino': (1.0, 0.0), 'gluino': (1.0, 0.0), 'alpha_s': (-0.025, 0.0), 'M12': (-0.319, 0.0), 'tau_p': (-1.277, 0.0)}
+{'note': 'all these observables move only through m3/2 (seam I_ST); best alpha_s allowed by the wino bound is at the bound', 'sigma_at_wino_bound': 20.15, 'm32_at_bound': 257945.66231349262, 'alpha_s_best': 0.11421916129129342, 'pull_best': -4.20093189856286, 'balanced': False, 'missing_seam_delta_alpha_s': 0.0037808387087065742, 'verdict': 'NO KNOB SETTING BALANCES: residual must come from a new I_ST term'}
+
+[exited with code 0]

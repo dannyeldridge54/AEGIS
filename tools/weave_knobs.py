@@ -13,8 +13,8 @@ def chain(k):
     r = weave_rg2(dict(m_wino=wino, m_gluino=gluino, m_scalar=4.7e5 * m32 / 257945.66))
     return dict(m32=m32, wino=wino, gluino=gluino, alpha_s=r['alpha_s_unif'], M12=r['M12_GeV'], tau_p=1.6e35 * (r['M12_GeV'] / 1.0729587e16) ** 4)
 O0 = chain(base); obs = list(O0)
-jac = {}
-for kn in base:
+jac = json.load(open('field_tests/results/d1937_knobs_run1.json'))['jacobian_dlnO_dlnK'] if len(sys.argv) > 1 else {}
+for kn in ([] if len(sys.argv) > 1 else base):
     rows = []
     for h in (0.02, 0.05, 0.10):
         up, dn = dict(base), dict(base); up[kn] *= 1 + h; dn[kn] /= 1 + h
@@ -24,15 +24,16 @@ for kn in base:
 # targeting: every observable here depends on the knobs only through m3/2 (the seam I_ST). Scan m3/2 via sigma (the T knob).
 def at_sigma(s): k = dict(base); k['sigma'] = s; return chain(k)
 # bisection on sigma for the wino bound (deterministic: report as bisection to res)
-lo, hi = 19.5, 20.15
+lo, hi = 20.15, 20.40      # DEVIATIONS: wino(lo) > 660 > wino(hi)
+assert at_sigma(lo)['wino'] > 660 > at_sigma(hi)['wino'], 'VOID bracket'
 for _ in range(40):
-    mid = (lo + hi) / 2; (lo, hi) = (lo, mid) if at_sigma(mid)['wino'] < 660 else (mid, hi)
-edge = at_sigma(hi)
+    mid = (lo + hi) / 2; (lo, hi) = (mid, hi) if at_sigma(mid)['wino'] > 660 else (lo, mid)
+edge = at_sigma(lo)
 pull_edge = (edge['alpha_s'] - 0.1180) / 0.0009
 need = 0.1180 - edge['alpha_s']
 out = dict(base_knobs=base, base_observables=O0, jacobian_dlnO_dlnK=jac,
            targeting=dict(note='all these observables move only through m3/2 (seam I_ST); best alpha_s allowed by the wino bound is at the bound',
-                          sigma_at_wino_bound=hi, m32_at_bound=edge['m32'], alpha_s_best=edge['alpha_s'], pull_best=pull_edge,
+                          sigma_at_wino_bound=lo, m32_at_bound=edge['m32'], alpha_s_best=edge['alpha_s'], pull_best=pull_edge,
                           balanced=abs(pull_edge) <= 2, missing_seam_delta_alpha_s=need,
                           verdict='NO KNOB SETTING BALANCES: residual must come from a new I_ST term' if abs(pull_edge) > 2 else 'BALANCED'))
 print(json.dumps(out, indent=1, default=float)); json.dump(out, open('field_tests/results/d1937_knobs.json', 'w'), indent=1, default=float)
