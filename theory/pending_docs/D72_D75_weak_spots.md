@@ -17923,3 +17923,29 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
 - [verdict on U23] The post-hoc factor e^{−π} would need n² = 8, which is not an integer square, so **U23's specific factor has no mechanism here**. But the n = 3 step gives y₃ = g·e^{−9π/8} = 0.0195 and **M_N = 1.9e11 GeV, inside the window 4.5e10–2.5e12**. The steps n ≤ 2 are above the window and n = 4 is below it.
   - So the window selects n = 3 uniquely among the allowed steps, a consistency, not a prediction. One caveat: the absolute normalisation (largest coupling ≈ g) carries an O(1) area/volume factor that was not computed.
 - U23 revised to U23′ (C): "the neutrino Dirac coupling sits on the n = 3 step of the i-knot theta ladder, giving M_N ≈ 2e11 GeV". Kill test: a future M_N proxy outside the window, or an explicit normalisation that moves the steps by more than one.
+
+## D1823 (CENTRE, POSTULATE — 21 Nov 2026, Danny 11:22: "everything is coming from one place … unfolding at certain levels … with light, with heat … through all of them … it will create lock-and-key patterns so the elements build")
+- **Postulate U24 (P-unfolding, Danny):** there is one source. It unfolds through time in stages. At each stage a LOCK (a structure fixed by the previous stage) meets a KEY (a state arriving from the source), and only matching keys pass. The matches are the building blocks of the next stage.
+- **Precise form in the Weave:**
+  - The source is the outside knob, the cusp (D1818): the inflaton S comes in from y → ∞.
+  - Every lock is a SELECTION RULE with a charge set by a knot or a scale. A key passes only if its charges add to zero, the literal lock-and-key. Example computed today: the Z₃ rule at ρ lets a Yukawa through only when ℓ_L + ℓ_R = ℓ_H (D1790, exact to 1e-14).
+- **The unfolding ladder (each stage has its own scaling law, Danny 11:19):**
+
+  | stage | what flows | the lock | the key that fits | Weave status |
+  |---|---|---|---|---|
+  | 0 source | the inflaton from the cusp | the plateau E(S, 3/2) (ζ(3) codon) | the slow-roll state | V∞ = the one outside knob (input) |
+  | 1 stop | inflation ends at ρ | Z₃ at ρ (self-dual) | g_s = 2/√3 | derived |
+  | 2 **heat** | reheating, T_R = 3.7e8 GeV | the flux handle f = T + 9S: only our side is heated | flux 9 = 3 families × 3 | derived chain (x = 0.279) |
+  | 3 matter | leptogenesis (M_N ≈ 2e11 GeV), one asymmetry | the seesaw window, the Z₂ theta step at i (D1822) | the n = 3 step | consistency (U23′) |
+  | 4 dark | 12.8 GeV dark baryon from the SAME asymmetry | n_X/n_B = 11/28 | the shared asymmetry | P (predicted) |
+  | 5 forces | unification at 1.06e16 GeV | the N = 2 threshold at ρ (|η(ρ)|) | Δb = −3 (Higgs pair close) | partial (D1816–D1820) |
+  | 6 **light** | photons decouple, CMB (T ≈ 0.26 eV); birefringence | the photon-axion cycle (perturbatively held) | β = 0.28° | hosted (U12′) |
+  | 7 **elements** | BBN (deuterium bottleneck at ~0.07 MeV), then stars and the Hoyle state (7.65 MeV) | nuclear binding windows: m_q, α within 2–3 % (D1802) | the measured m_q, α | inside the window, but only via data (not derived) |
+  | 8 now | the thread thaws toward i | the Z₂ at i (the hub of all loops, D1818) | w₀ ≈ −0.79 | fits data, OPEN (D1814) |
+
+- **What the postulate asks of the theory (the test):** every lock must come from the one source, i.e. from the knots, the fluxes and the single outside knob, and every key must be the output of the stage before. The Weave passes this for stages 1, 2 and 4, partly for 3 and 5, and FAILS it (by using inputs) for 6, 7 and 8:
+  - the photon-axion cycle size;
+  - the light-quark masses and α at the nuclear window, where α_s from unification is 5× too coarse (D1802);
+  - the thread's α-safety.
+- **Kill test (P):** a stage whose lock CANNOT be traced to a knot, flux or the outside knob even in principle, e.g. an observable needing a second independent outside knob, would refute "one source". Currently the inputs I5–I9, I11 are such candidates. U24 predicts each has a lock/key origin still to be found.
+- Each stage keeps its own law (D1822: theta steps n²; band ladder linear in N; slip ladder harmonic; Markov loops inside). Added to WEAVE_UNIFY_LOOP.md as U24.
