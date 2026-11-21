@@ -1,0 +1,55 @@
+
+== 0 inputs
+  V_inf^(1/4) [GeV]                                    4.9e+15      INPUT              INPUT (one outside knob, D1839/D1844)
+  shared rung step u*                                  0.0521       FIT                FIT (D1894 end run)
+  string coupling g_s                                  1.155        INPUT              INPUT; > 1 = outside perturbative control (D1897)
+
+== 1 geometry
+  Euler number chi (Z6-II)                             48           LIT                LIT hep-th/0609014; D1871
+  x = 2 pi sigma/N                                     21.1         DER                CALC
+  |W0| (exact KKLT)                                    5.577e-09    DER                CALC  A e^-x (1+2x/3)  [D1811/D1871 quote 5.5e-9]
+  gravitino m3/2 [GeV]                                 2.579e+05    DER                CALC  sqrt(gs/2) W0 M_P / V  [quoted 2.6e5]
+  dark sigma_d (SU(12))                                40.3         DER                SRC d1812_rankrule.json
+  alpha_D(12.8 GeV)                                    0.02101      DER                SRC d1812_rankrule.json
+
+== 2 spectrum
+  bino M1 [GeV]                                        2328         DER                CALC AMSB b alpha/(4pi) m3/2
+  wino M2 [GeV]                                        686.5        DER     PASS       CALC AMSB b alpha/(4pi) m3/2  [bound: LHC disappearing-track wino ~660 GeV (marginal; +-O(1) higgsino threshold) / LHC gluino ~2.3 TeV]
+  gluino M3 [GeV]                                      4926         DER     PASS       CALC AMSB b alpha/(4pi) m3/2  [bound: LHC disappearing-track wino ~660 GeV (marginal; +-O(1) higgsino threshold) / LHC gluino ~2.3 TeV]
+
+== 3 forces
+  M_12 [GeV]                                           1.073e+16    DER                SRC d1816_threshold.json (two-loop)
+  Delta_3 before threshold                             -0.2368      DER                SRC d1816_threshold.json
+  Delta_3 after Higgs pair + gauge term                -0.09424     CONS    FAIL       CALC (D1881b; matter weights not counted, U-only assumed)  [closure NOT established]
+  alpha_s(M_Z), no threshold                           0.1147       DER     FAIL (pull -3.67) SRC D1808/D1816 two-loop
+  alpha_s(M_Z), Higgs pair + gauge (post-selected)     0.1167       CONS               CALC from residual  [content selected from a 324-option scan]
+  proton lifetime [yr] (G-branch)                      1.6e+35      DER     PASS       QUOTED (no result file)  [Super-K p -> e+ pi0]
+
+== 4 flavour
+  knot-charge theorem: integer charge gaps per weight  1            LIT                D1874-D1876 (known: Novichkov-Penedo-Petcov 2102.07488)  [structural; value column not a number]
+  quark 7-observable natural fraction                  0.1802       DER     PASS       SRC d1829_cp.json
+  quark CP (J) natural fraction                        0.3077       DER     PASS       SRC d1829_cp.json
+  two-stack quark natural fraction (dk=-1)             0.179        DER     PASS       SRC d1884_mixedweight.txt (parsed)
+  arrow: (m_mu/m_tau)/u_d, one test                    1.301        CONS    PASS (pull +0.72) CALC; u_d is a FIT (D1828)  [1 dof; ~10% chance before trials (D1894a)]
+  up-quark exponent p (u_u = u*^p)                     1.954        CONS               CALC  [~2: two rungs (report only)]
+  electron coefficient c_e                             0.1058       INPUT              INPUT fixed by Koide (D1885a)
+  Koide Q                                              0.6667       INPUT              CALC (input-fixed)  [no test content]
+  Koide delta                                          0.2222       INPUT              INPUT (D1841-D1846, D1885a)
+  neutrino Yukawa y3 = g e^{-9pi/8}                    0.01955      CONS               CALC (theta step n = 3 at i)
+  heavy neutrino M_N [GeV]                             1.844e+11    CONS    PASS       CALC y3^2 v_u^2 / m3  [window applies only to NON-thermal leptogenesis: T_R = 3.7e8 << M_N (D1897)]
+  neutrino ratio natural fraction                      0.0133       DER     PASS       SRC d1821_neutrino.json
+  pyramid rung ratio 3->4 vs u*                        0.064        CONS    FAIL (pull +1.13) CALC (internal, claimed precision x1.2)
+
+== 5 cosmology
+  n_s                                                  0.9706       DER     PASS (pull -0.81) SRC plateau E(S,3/2), A = 7.30 (locked forecast)  [CMB-SPA+DESI]
+  r                                                    0.00054      DER     PASS       SRC (locked forecast)
+  T_R [GeV]                                            3.7e+08      DER                SRC derived chain x = 0.279
+  dark-matter mass [GeV]                               12.8         DER                CALC (Omega_DM/Omega_b) m_p n_B/n_X, n_X/n_B = 11/28  [prediction]
+  Delta N_eff                                          0            DER     PASS       DER (never positive)
+
+== 6 reverse
+  thread alpha drift zeta (dark cycle, no bifundamentals) 3.785e-10    DER     PASS       CALC (D1887)
+  max visible-dark crossing units b_bf                 3.702        DER                CALC (D1887)  [needs <= this]
+  thread w0/wa on the dark cycle                       nan          OPEN               OPEN (to derive)
+
+TESTS: 13 PASS, 3 FAIL of 16 tested lines (39 lines total)

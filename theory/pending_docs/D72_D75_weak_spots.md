@@ -18356,3 +18356,30 @@ Level 1 is moot anyway: the modes are metaplectic, weight ½. The conclusion (a 
 The arrow's ±20 % is one fitted u* against m_μ/m_τ (data) and u_d (a FIT from the D1828 scan). It is one effective test: ratio 1.30 < 1.2² = 1.44.
 Chance coincidence is about 9–10 % before trials; the trials are listed in D1897 E. Δ₃ and the thread do not depend on u* and should not be counted as arrow sectors. The pyramid ratio FAILS at the claimed ×1.2 (pull 1.13).
 **Evidential weight: low.** engine.py is superseded by end_run.py, and centre.json's electron_corner_amp = 0.177 is withdrawn (D1885a).
+
+## D1898 — CENTRE: the one derivation v2, after the independent referee — 13 PASS, 3 FAIL (21 Nov 2026)
+Lock: PREREG_D1898_DERIVATION_V2, pushed with theory/weave_derivation_v2.py before running. Output: field_tests/results/weave_derivation_v2.txt / .json.
+
+**FAILS:**
+1. α_s(M_Z) with no threshold = 0.1147, a −3.7 σ pull.
+2. Δ₃ after the Higgs pair plus the gauge term = −0.094, against a bar of 0.05. This is the gap behind fail 1, now an open problem.
+3. The pyramid rung ratio at the claimed ×1.2 has a pull of 1.13. It is internal only, not a data test.
+
+**Changed numbers:**
+- The gluino is 4.93 TeV (was 5.67).
+- The wino is 0.69 TeV, marginal against the 0.66 TeV LHC limit, with an O(1) higgsino-threshold uncertainty.
+
+**What carries real content:**
+- n_s, 0.8 σ.
+- The single arrow ratio 1.30. This is one test, weak at about a 10 % chance level before trials.
+- The bounds and the naturalness bars.
+
+**D1896 vs this run:** D1896's 16/16 is superseded by this run. The difference is the referee's reclassification, not new data.
+
+**OPEN, ranked:**
+1. Δ₃ / α_s: needs the full IIB/D7 N = 2 spectrum with matter weights.
+2. The per-torus rung steps: a 10⁴ tension with the flux landscape (D1895).
+3. The dark-thread slope: needs λ ≈ 0.95.
+4. Perturbative control at g_s = 2/√3.
+5. A non-thermal leptogenesis mechanism.
+6. δ = 2/9, and v/m_SUSY.

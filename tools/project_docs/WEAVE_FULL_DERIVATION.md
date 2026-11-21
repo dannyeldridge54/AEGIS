@@ -9,7 +9,7 @@ This file is the chain from the postulates to the observables. Every link names 
 - **OPEN**: unresolved
 - **WD**: withdrawn
 
-Refereeing: D1873–D1882 and D1888–D1891 were self-refereed (D1878, D1883, D1892). The rest still needs an independent referee; the referee check (task 4) comes before the paper.
+Refereeing: self-refereed D1878, D1883, D1892; **independently refereed D1897** (corrections D1881b, D1886a, D1894a; rerun D1898: 13 PASS, 3 FAIL). Where this file and D1897/D1898 differ, D1897/D1898 win.
 
 ---
 ## 0. Postulates and the one outside input
@@ -38,11 +38,12 @@ Refereeing: D1873–D1882 and D1888–D1891 were self-refereed (D1878, D1883, D1
 - Because γ² (or γ³) is a scalar, all modes of one weight carry residual charges that differ by **whole numbers**. The fractional part is fixed by the weight: n ≡ k/2 · (½ at i, ¼ at ρ for k = ½).
 - On the pyramid the even and odd parity sectors carry integer and half-integer charges respectively, and they never mix. A product of Z₂-graded tori cannot mix them either (D1875).
 - ⇒ **A half-step gap inside one generation triplet requires generations with different weights (Δk = 1).**
+- This is the known residual-symmetry structure (Novichkov–Penedo–Petcov, JHEP 04 (2021) 206, arXiv:2102.07488); D1874–D1876 apply it to the Weave's knots.
 
 ## 3. Quarks
 1. **Residual-charge lock (FIT + natural):** q_Q = (3/2, 1, 0) and q_u = q_d = (½, 0, 0) form the unique fit out of 117,649 assignments. Their matrix model is natural: 18 % of O(1) draws fit 7 observables, and 31 % of those also fit J (D1828, D1829).
 2. **Geometric home (DER):** by §2, Q₃, u₁ and d₁ sit on a second stack one weight unit away. With the Kähler factor (√3)^{∓1/2} the fit stays natural: f7 = 10.7 % / 17.9 %, fJ = 23.5 % / 40.5 %, with Δk = −1 preferred (D1884).
-3. **Flavour group (DER):** the Yukawa weights then span three consecutive integers. That is impossible at level 1, and works at level ≥ 3 (A₄-type, Γ(3)) (D1886).
+3. **Flavour group (DER):** the Yukawa weights then span three consecutive integers. At level 1 either the odd-weight entries vanish (Y block-diagonal, V_ub = V_cb = 0) or the even ones do, so the model needs level ≥ 3 (A₄-type, Γ(3)) (D1886, corrected D1886a).
 4. **Step sizes (FIT):** u_d = 0.0457 and u_u = 0.00311. The up quarks sit at about u*^{1.95}, two rungs of the shared step (reported only, D1894).
 
 ## 4. Charged leptons
@@ -54,14 +55,14 @@ Refereeing: D1873–D1882 and D1888–D1891 were self-refereed (D1878, D1883, D1
 
 ## 5. Neutrinos (i, the pyramid)
 1. **Ratio (DER):** m₂/m₃ is natural from magnetised Z₂ overlaps at i with flux (4, 4, 8) (1.3 %, D1821).
-2. **Scale (CONS):** the θ-step e^{−πn²/8}, with n = 3 the only value inside the leptogenesis window, gives M_N ≈ 1.9e11 GeV (D1822).
+2. **Scale (CONS):** the θ-step e^{−πn²/8}, with n = 3 the only value inside the leptogenesis window, gives M_N ≈ 1.84e11 GeV (D1822). Since T_R = 3.7e8 GeV ≪ M_N, leptogenesis must be non-thermal (D1897).
 3. **Rung ratio (CONS):** the 3→4 step e^{−7π/8} = 0.064 matches the shared turnover step to 23 % (D1891, D1894).
 
 ## 6. Forces and unification
 1. **Two-loop running (DER):** with the split spectrum, M₁₂ = 1.06e16 GeV and α⁻¹ = 28.0. The AMSB gluino at 5.6 TeV gives α_s(unif) = 0.1147, against 0.1180 measured, which leaves Δ₃ = −0.237 (D1816).
 2. **Threshold (DER + LIT):** the two Z₆-II N = 2 planes (ρ, i) have per-unit shifts 0.0823 and 0.0839.
    - The duality-anomaly normalisation applies (D1881).
-   - One Higgs pair with modular weight 0 on both planes gives Δ₃ → −0.023 (D1880, D1881a). This is **conditional**: n_H = 0 and a universal δ_GS.
+   - ~~One Higgs pair with modular weight 0 on both planes gives Δ₃ → −0.023~~ — corrected (D1881b): with the gauge term −C(G) included, Δ₃ → −0.094, which fails. Matter weights are not counted, and the U-only case is assumed. **Δ₃ is OPEN**; α_s = 0.1147 is −3.7 σ without a threshold.
    - The step from the field content to b′ coefficients still has to be redone for IIB/D7.
 3. **Proton:** the G-branch gives τ ≈ 1.6e35 yr at two loops, or the proton is stable.
 
@@ -69,8 +70,8 @@ Refereeing: D1873–D1882 and D1888–D1891 were self-refereed (D1878, D1883, D1
 | state | mass |
 |---|---|
 | gravitino | 2.6e5 GeV |
-| winos | 0.66–0.69 TeV |
-| gluino | 5.6 TeV ± 20 % |
+| winos | 0.69 TeV (marginal against the 0.66 TeV LHC limit; O(1) higgsino threshold) |
+| gluino | 4.9 TeV (α₃ at its own scale, D1898) |
 | bino | ≈ 2.3 TeV |
 | scalars and higgsinos | 0.25–0.7 PeV |
 
@@ -78,7 +79,7 @@ tan β is between 1 and 4. v/m_SUSY ≈ 2.7e-7 is **INPUT** (tuned).
 
 ## 8. The single arrow (U28): the predictive statement
 - **End run (D1894):** one step, u* = 0.052, threads every data sector to ±20 % and fails at ±10 %.
-- **Data content:** a single relation, that m_μ/m_τ (0.0595) ≈ the down-quark step (0.0457) to within 30 %.
+- **Data content:** one fitted u* against m_μ/m_τ (data) and u_d (a FIT from the D1828 scan). That is one effective test, at about a 10 % chance level before trials (D1894a). Δ₃ and the thread do not depend on u*.
 - **Precision limit (D1895):** the per-torus steps cannot be derived from generic modulus displacement. The step needs |δτ| ≈ 0.09, while the IIB flux landscape prefers |δτ| ≈ 1e-5 (arXiv:2206.04313). **This tension is OPEN and ranked first.**
 
 ## 9. Cosmology (forward)
@@ -98,7 +99,7 @@ tan β is between 1 and 4. v/m_SUSY ≈ 2.7e-7 is **INPUT** (tuned).
    - The actual crossing count.
    - A′ = 4.45 (locked as RW10 for DR3).
 
-## 11. Final list of INPUTS
+## 11. Final list of INPUTS (plus: g_s = 2/√3 > 1 is outside perturbative control, D1897)
 1. V∞ (the one outside knob).
 2. δ = 2/9 and the electron coefficient (Koide).
 3. The per-torus rung steps (u_d, u_ℓ, u_u), against a landscape tension of about 10⁴ (D1895).
