@@ -1,0 +1,71 @@
+TEST 1 — |dtau| off rho (log10 space); need 0.0457 (D1894b), superseded 0.090
+  B1 IIB flux landscape 2206.04313 (typical, no range)             centre 1e-05  sigma 0.50 dex
+  B2 heterotic S+tau+ISS 2304.14437 (AdS 0.024 / dS 0.075)         centre 0.0424  sigma 0.49 dex
+  B3 CW radiative A4 2310.15604 (0.0244..0.2)                      centre 0.0699  sigma 0.91 dex
+  B4 multi-modulus SUGRA King-Wang 2310.10369 (0.012 AdS/dS)       centre 0.0122  sigma 0.40 dex
+  B5 nilpotent-X SUGRA Fan-Wang-Zhang 2412.07642 (6.8e-6..6.6e-5)  centre 2.11e-05  sigma 0.99 dex
+
+== posterior |dtau| near rho
+  gauss    median 0.002285  68% [0.001302, 0.004012]  95% [0.0007538, 0.006929]
+  student  median 0.01377  68% [0.00579, 0.02957]  95% [0.001401, 0.06441]
+  mixture  median 0.01991  68% [0.008113, 0.04371]  95% [9.013e-06, 0.1029]
+  weighted mean 0.002286; chi2 = 39.03 / dof 4  p = 6.87e-08;  BF(common/separate) = 6.31e-07
+  weights (inverse-variance): 0.24, 0.25, 0.07, 0.38, 0.06
+  mixture P(good):           0.06, 0.87, 0.85, 0.87, 0.18
+  gauss    need 0.0457: ratio 20.00 -> FAIL; in68 False  in95 False
+  gauss    need 0.09: ratio 39.38 -> FAIL; in68 False  in95 False
+  student  need 0.0457: ratio 3.32 -> FAIL; in68 False  in95 True
+  student  need 0.09: ratio 6.54 -> FAIL; in68 False  in95 False
+  mixture  need 0.0457: ratio 2.30 -> PARTIAL; in68 False  in95 True
+  mixture  need 0.09: ratio 4.52 -> FAIL; in68 False  in95 True
+  VERDICT (primary mixture, need 0.0457): PARTIAL FRAGILE
+  3-point Loom fix: median 0.027 -> ratio 1.69 -> PARTIAL
+
+MIRROR 1 — dark/thread modulus off i; need |delta_i| < 5.9e-3 (n=1) / 3.4e-3 (n=3)
+  I1 IIB flux landscape 2206.04313 (typical)                       centre 1e-05  sigma 0.50 dex
+  I2 heterotic 2304.14437 (0.010..0.028)                           centre 0.0167  sigma 0.45 dex
+
+== posterior |delta_i| near i (THIN: 2 bearings)
+  gauss    median 0.0006181  68% [0.0002881, 0.001326]  95% [0.0001373, 0.002782]
+  student  median 0.001118  68% [1.657e-05, 0.01528]  95% [3.213e-06, 0.06]
+  mixture  median 0.0003389  68% [5.433e-06, 0.02831]  95% [9.648e-07, 0.1274]
+  weighted mean 0.0006181; chi2 = 23.09 / dof 1  p = 1.54e-06;  BF(common/separate) = 4.02e-05
+  weights: 0.44, 0.56   P(good): 0.44, 0.44
+  gauss    median 0.000618: /5.9e-3 = 0.105 -> PASS;  P(delta_i<5.9e-3) from 95% band: lo 0.00014 hi 0.0028
+  student  median 0.00112: /5.9e-3 = 0.189 -> PASS;  P(delta_i<5.9e-3) from 95% band: lo 3.2e-06 hi 0.06
+  mixture  median 0.000339: /5.9e-3 = 0.0574 -> PASS;  P(delta_i<5.9e-3) from 95% band: lo 9.6e-07 hi 0.13
+  same-mechanism balance (2304.14437 alone): rho 0.024-0.075 vs i 0.010-0.028; mirror need < 5.9e-3 -> ratio 1.7-4.7
+
+
+TEST 2 — volume-direction thread vs PPN gamma
+
+== posterior gamma-1
+  gauss    median 2.296e-05  68% [8.472e-06, 3.744e-05]  95% [-5.592e-06, 5.151e-05]
+  student  median 1.776e-05  68% [2.791e-06, 3.32e-05]  95% [-1.277e-05, 5.051e-05]
+  mixture  median 1.624e-05  68% [1.311e-06, 3.124e-05]  95% [-1.314e-05, 4.586e-05]
+  weighted mean 2.298e-05; chi2 = 15.39 / dof 4  p = 3.95e-03;  BF(common/separate) = 2.26e+05
+  weights: 0.40, 0.34, 0.06, 0.18, 0.02   P(good): 1.00, 1.00, 1.00, 1.00, 0.18
+  B95 (primary) = 4.59e-05;  Cassini-alone 2-sigma |gamma-1| < 6.7e-5 (D1906)
+  C1 Weave n=1 torus, m ~ M_s (D1906a)                 alpha 0.500 +- 0.100
+  C2 Weave n=1 torus, m_e ~ v ~ m3/2 ~ V^-1 (D1906a)   alpha 1.000 +- 0.200
+  C3 overall no-scale volume n=3, m ~ M_s              alpha 0.866 +- 0.346
+  C4 overall volume n=3, m ~ m3/2                      alpha 1.732 +- 0.693
+  C5 two factors n=2, m ~ M_s                          alpha 0.707 +- 0.283
+
+== posterior DEF alpha
+  gauss    median 0.64  68% [0.5582, 0.7218]  95% [0.4788, 0.8011]
+  student  median 0.6817  68% [0.5484, 0.8529]  95% [0.447, 1.021]
+  mixture  median 0.682  68% [0.5437, 0.9698]  95% [0.4301, 1.18]
+  weighted mean 0.64; chi2 = 8.17 / dof 4  p = 8.56e-02;  BF(common/separate) = 0.65
+  weights: 0.68, 0.17, 0.06, 0.01, 0.08   P(good): 0.59, 0.75, 0.88, 0.61, 0.89
+  gauss    |gamma-1| median 0.581 (95% lower 0.373) / B95 = 1.27e+04 -> FAIL
+  student  |gamma-1| median 0.635 (95% lower 0.333) / B95 = 1.38e+04 -> FAIL
+  mixture  |gamma-1| median 0.635 (95% lower 0.312) / B95 = 1.38e+04 -> FAIL
+  smallest single bearing alpha=0.50 -> |gamma-1| = 0.40 -> x8722 over B95; Cassini needs alpha < 4.79e-03
+
+MIRROR 2 — BBN: Delta ln(G m^2) = 2|beta| Delta_phi, Delta_phi = 0.64 M_P (D1853)
+  C1 nucleon beta=0.354: Dln(Gm2) = 0.453 (G_BBN/G0 eff 1.57) vs BBN+Ob h2 upper 1.05 (ln 0.049) -> x9.3 FAIL
+  C1 nucleon beta=0.354: Dln(Gm2) = 0.453 (G_BBN/G0 eff 1.57) vs D+He only upper 1.04 (ln 0.039) -> x11.5 FAIL
+  posterior median beta: Dln(Gm2) = 0.617 (G_BBN/G0 eff 1.85) vs BBN+Ob h2 upper 1.05 (ln 0.049) -> x12.7 FAIL
+  posterior median beta: Dln(Gm2) = 0.617 (G_BBN/G0 eff 1.85) vs D+He only upper 1.04 (ln 0.039) -> x15.7 FAIL
+  late-ladder check: D1906 Gm2 drift 2x1.8e-11/yr vs EPM2021 Gdot/G (0.85 +- 3.75)e-14/yr -> x480
