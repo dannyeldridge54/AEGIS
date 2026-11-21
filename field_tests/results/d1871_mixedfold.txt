@@ -1,0 +1,4 @@
+SU2xSU6 chi 48 A needed 0.536
+SU3xSO8 chi 48 A needed 0.536
+(SU2^2xSU3^2)# chi 48 A needed 0.536
+SU2^2xSU3xG2 chi 48 A needed 0.536

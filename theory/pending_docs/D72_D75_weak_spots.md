@@ -18140,3 +18140,18 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
   - Verdict by the lock: **LOCALISED.**
 - Reading (U24/U26): the pyramid is a 4-corner lock that admits only even states (the odd neutrino mode cannot touch a corner). Its 3 even states split by DIRECTION: one along the real edge pair (0, ½), one along the τ edge pair (τ/2, (1+τ)/2), one shared by all. This is the "splitting points in each direction" structure on the Z₂ shape, compared with the turnover's one-sector-per-corner (D1849).
 - **Map status for our side (forward weave):** both folds are now mapped corner by corner (turnover D1849, pyramid D1870). Loop paused by Danny 11:50 to save credits; it advances only on "Ll". Next items are queued: the mixed-fold χ (D1871) and the quark-charge map (D1872).
+
+## D1871 (CENTRE, U26 — 21 Nov 2026): the Weave's mixed fold is the Z₆-II orbifold; its χ = 48 on every lattice fits the N = 6 chain with A ≈ 0.54
+- [derived] A supersymmetric fold needs twists that sum to zero, so "Z₃ on two tori × Z₂ on one" cannot act separately. The minimal SUSY realisation is **Z₆-II, twist (1/6, 1/3, −1/2)**:
+  - Z₆ on the first torus (allowed only at ρ; it contains both the Z₃ turnover and a Z₂);
+  - Z₃ on the second (at ρ);
+  - Z₂ on the third (the pyramid at i).
+
+  This is exactly the Weave's assignment: lepton/quark tori at ρ, neutrino torus at i.
+- [literature, hep-th/0609014 Table 2.1] Z₆-II Hodge numbers by lattice: SU(2)×SU(6) (25, 1); SU(3)×SO(8) (29, 5); (SU(2)²×SU(3)²)♯ (31, 7); SU(2)²×SU(3)×G₂ (35, 11). **χ = 2(h¹¹ − h²¹) = 48 for all four lattices.** Prefactor needed at N = 6: **A = 48/89.5 = 0.54**, natural (window 0.3–3).
+- Consequences:
+  - The Weave's own fold has a definite χ = 48, not the "≈ 90 selected by data" of D1801/D1811. So the chain now reads **N = 6, χ = 48 (Z₆-II), A ≈ 0.54**.
+  - Then 𝒱 = wχ/(4(2π)³C) = 4.0e4, which passes the volume control 𝒱 ≥ 1e4, and W₀ = A e^{−x}(1 + 2x/3) ≈ 5.6e-9.
+  - The wino and gravitino are unchanged by construction (M₂ ∝ A/χ fixed).
+  - This turns χ from a free integer into a property of the fold the knots force. The remaining freedom is the O(1) prefactor A.
+- Also notable: Z₆-II is the orbifold behind the best-known heterotic MSSM constructions (the "Mini-landscape", 0812.3503, 0901.3059). The Weave's knot assignment lands on the same fold.
