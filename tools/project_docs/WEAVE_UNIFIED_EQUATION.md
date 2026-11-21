@@ -1,4 +1,4 @@
-# THE WEAVE — the unified field equation (v3.2 — band ladder added; v3.1 simplification 1; v3, 21 Nov 2026, after unify loops 1–2: D1753–D1766)
+# THE WEAVE — the unified field equation (v3.3 — flux fixed by the ρ-orbifold, chain closes on one point; v3.2 band ladder; v3.1 simplification 1; v3, 21 Nov 2026, after unify loops 1–2: D1753–D1766)
 Builds on WEAVE_FULL_EQUATION.md (v2, 19 Nov). New in v3: the visible forces on magnetised D7 (the gauge-coupling repair), the dark side on unfluxed D7, the superpartner spectrum, the flux superpotential, the photon-axion, and the reheating chain re-derived. Tags: **[der]** derived and checked · **[lit]** literature · **[P]** principle · **[C]** conjecture with a mechanism · **[E]** estimate · **[F]** fitted · **[A]** hosted/imported · **[OPEN]**.
 
 ## 1. The fields (one string compactification, type IIB on an orientifold with D3/D7-branes)
@@ -75,7 +75,7 @@ The solution is carried across a band of width λ in Re T_vis by one rank N, the
 | I7 | quark O(1) couplings (12) and τ_q's class | quarks | [A] |
 | I8 | V_L (the size of Λ) and the thread's start | dark energy | [OPEN — the cosmological-constant problem] |
 | I9 | m_A′, ε (dark force) | dark matter | α_D DERIVED = 0.035 at 12.8 GeV from a twin dark cycle (D1769, C); m_A′ and ε still free |
-| I10 | the family flux | generations | three = Z₃-invariant modes at the minimal triplet flux |M| = 6 on T²/Z₃, which exists only at τ = ρ (D1774, P); the visible S-coefficient c = 6n′ (6 or 9 both consistent, D1775) |
+| I10 | the family flux | generations | |M| = 9 on T²/Z₃ (exists only at τ = ρ): the smallest flux where EVERY Z₃ sector has three modes (3/3/3) ⇒ three families and c = 9 (D1776, P-democratic-flux; zero-mode count to verify) |
 | I11 | v = 246 GeV given m₃/₂ (tuning ~4e6) | Higgs | [OPEN — the last factor of the hierarchy] |
 Compare: the Standard Model + ΛCDM have ~25–30 free numbers. The Weave fixes or ties: n_s/r/α_s relation, Q = 2/3, TM1 angles and δ_CP branch, θ̄ = 0, m_X, ΔN_eff ≈ 0, the reheating chain, the r-invariance, and W₀ from two others; it still hosts the quark couplings and the neutrino and dark-force scales.
 
