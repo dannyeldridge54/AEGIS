@@ -8,7 +8,7 @@ def E(x, y, nmax=40):
     s = 2 * z3 * y ** 1.5 + 4 * z2 / mp.sqrt(y)
     for n in range(1, nmax + 1):
         sig = mp.fsum(mp.mpf(d) ** -2 for d in range(1, n + 1) if n % d == 0)   # σ_{-2}(n)
-        s += 8 * mp.pi * mp.sqrt(y) * n * sig * mp.besselk(1, 2 * mp.pi * n * y) * mp.cos(2 * mp.pi * n * x)
+        s += 16 * mp.pi * mp.sqrt(y) * n * sig * mp.besselk(1, 2 * mp.pi * n * y) * mp.cos(2 * mp.pi * n * x)
     return s
 def red(x, y):   # reduce to fundamental domain so the q-expansion converges
     t = mp.mpc(x, y)
@@ -29,7 +29,7 @@ def hess(x0, y0, h=mp.mpf('1e-4')):     # canonical masses: φ = coordinate/(√
     ev = mp.eig(M)[0]; return sorted(float(mp.re(e)) for e in ev)
 out = {}
 rx, ry = mp.mpf(0.5), mp.sqrt(3) / 2
-out['check_E_rho'] = float(E(rx, ry)); out['check_S_invariance'] = float(abs(E(0.3, 1.7) - Ef(*(lambda t: (t.real, t.imag))(-1 / mp.mpc(0.3, 1.7)))))
+out['check_E_rho'] = float(E(rx, ry)); _t = -1 / mp.mpc(0.3, 1.7); out['check_S_invariance'] = float(abs(E(0.3, 1.7) - E(_t.real, _t.imag)))
 out['V_at_i'] = float(V(0, 1)); out['V_at_rho'] = float(V(rx, ry))
 mi, mr = hess(mp.mpf(0), mp.mpf(1)), hess(rx, ry)
 out['m2_i'] = mi; out['m2_rho'] = mr
@@ -39,5 +39,6 @@ out['V_ratio_Re0_vs_Rehalf_at_y55.6'] = float(V(0, 55.6) / V(0.5, 55.6) - 1)
 m_i = math.sqrt(min(mi)) if min(mi) > 0 else float('nan'); m_r = math.sqrt(min(mr)) if min(mr) > 0 else float('nan')
 dN = 0.5 * math.log(m_i / m_r) if m_i == m_i and m_r == m_r else float('nan')   # T_R ∝ m^{3/2} (Γ ∝ m³), w = 0 ⇒ ΔN* = ½ ln(m_i/m_ρ)
 Nstar = 50.3; out['dNstar'] = dN; out['dn_s'] = 2 * dN / Nstar ** 2
-out['verdict'] = 'PASS' if (min(mi) > 0 and out['monotonic_Re0'] and abs(out['dn_s']) < 1e-3) else 'FAIL'
+valid = abs(out['check_E_rho'] - 8.893) < 1e-3 and out['check_S_invariance'] < 1e-10
+out['verdict'] = 'VOID' if not valid else 'PASS' if (min(mi) > 0 and out['monotonic_Re0'] and abs(out['dn_s']) < 1e-3) else 'FAIL'
 print(json.dumps(out, indent=1)); json.dump(out, open('field_tests/results/d1926_inflation_S_at_i.json', 'w'), indent=1)
