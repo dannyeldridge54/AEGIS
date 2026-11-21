@@ -4,8 +4,8 @@ Legend: ● on target (inside the bar with margin); ↑ / ↓ the value must mov
 
 | # | ring | notch | quantity | value | dir | headroom | knobs it pulls | source | note |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | 0 | centre: rung step | |u| one-spurion hairline vs median 0.027 | 0.02587 | ● | 1.06 σ | u + | D1925a/D1927 | median of six sectors 0.027; spread taken as the D1927 window 0.0259-0.027 |
-| 2 | 0 | centre: rung step | |u| single-flavon natural window centre | 0.09656 | ↓ | -55.97 σ | u + | D1928 | window 0.063-0.148 sits ABOVE the median: flavour pulls u UP, away from the median |
+| 1 | 0 | centre: rung step | |u| one-spurion window centre (7-null converged) | 0.02663 | ● | 1.54 σ | u 0 | D1932 | window [0.02588, 0.02740] contains the median; one fixed assignment; f7 22-23 %, fJ 61-66 % |
+| 2 | 0 | centre: rung step | |u| single-flavon natural window centre | 0.09656 | ↓ | -55.97 σ | u + | D1928 | SECONDARY window (U32, assignment varies); primary one-spurion window sits on the median (D1932) |
 | 3 | 0 | centre: rung step | lepton slip / down slip | 0.9768 | ● | 1.54 σ | u 0 | v4 (D1832) | same-lock fit; conflicts with Koide at rho |
 | 4 | 1 | quarks | f7 (two-size lock) | 0.1802 | ● | 0.56 dex | u_u 0, u_d 0 | d1829_cp.json | PHENOMENOLOGICAL |
 | 5 | 1 | quarks | fJ | 0.3077 | ↑ | 0.19 dex | — | d1829_cp.json | PHENOMENOLOGICAL |
@@ -30,7 +30,7 @@ Legend: ● on target (inside the bar with margin); ↑ / ↓ the value must mov
 
 ## Where it points (per knob)
 
-- **u**: wants ↑ from centre: rung step: |u| one-spurion hairline vs median 0.027; centre: rung step: |u| single-flavon natural window centre; wants ↓ from none.
+- **u**: wants ↑ from centre: rung step: |u| single-flavon natural window centre; wants ↓ from none.
 - **tan_beta**: wants ↑ from neutrinos: M_N vs leptogenesis window top; wants ↓ from none.
 - **m3/2** — TENSION: wants ↑ from spectrum: wino M2 [GeV]; spectrum: gluino M3 [GeV]; wants ↓ from forces: alpha_s(M_Z) no threshold.
 - **Delta3 threshold**: wants ↑ from forces: alpha_s(M_Z) no threshold; wants ↓ from none.
@@ -46,7 +46,7 @@ Legend: ● on target (inside the bar with margin); ↑ / ↓ the value must mov
 
 - **m3/2 cannot fix α_s.** Closing α_s needs Δ ln m3/2 = -1.31 (m3/2 ×0.27). That puts the wino at 185 GeV, far below the 660 GeV bar, which already has only 4 % room. So α_s must come from a threshold (Δ₃), not from the spectrum.
 - **T_R: two independent arrows agree.** Thermal leptogenesis needs T_R ≳ M_N = 1.8e11 GeV (×500 up). n_s at the data centre needs ΔN* ≈ +2.8, which means T_R ≈ 1.6e+12 GeV (×4227 up, with dN*/d ln T_R = 1/3 for w = 0 reheating, an estimate). Both point to **T_R ~ 1e11–1e12 GeV**, about 3 decades above the derived 3.7e8.
-- **u: the flavour arrow and the median disagree.** The single-flavon window (0.063–0.148) sits a factor of ~3.6 above the six-sector median 0.027. Only the hairline one-spurion fit (0.0259–0.027) sits on the median.
+- **u: flavour sits ON the median (D1932).** The 7-null converged one-spurion window [0.02588, 0.02740] contains the six-sector median 0.027 (its centre 0.02663 is 1.4 % below). One fixed charge pattern covers it, natural throughout. The broad single-flavon window (0.063–0.148, U32) is secondary.
 
 Knob convention: "+" means this measurement wants the knob raised, "−" lowered.
 

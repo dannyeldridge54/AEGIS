@@ -27,8 +27,8 @@ das_dlnm = (a_up - a_dn) / (2 * math.log(1.1))
 Ns = 50.3; dns_dN = 2 / Ns ** 2                           # plateau n_s = 1 - 2/N*
 dN_dlnTR = 1 / 3                                          # instant-reheating-like scaling, w=0 -> dN*/dlnT_R ~ 1/3 (estimate)
 # ---- ring 0: the centre (fold + shared rung step)
-fp(0, 'centre: rung step', '|u| one-spurion hairline vs median 0.027', 0.02587, (0.027, 0.0012), 'data', 'D1925a/D1927', {'u': '+'}, note='median of six sectors 0.027; spread taken as the D1927 window 0.0259-0.027')
-fp(0, 'centre: rung step', '|u| single-flavon natural window centre', math.sqrt(0.063 * 0.148), (0.027, 0.0012), 'data', 'D1928', {'u': '+'}, note='window 0.063-0.148 sits ABOVE the median: flavour pulls u UP, away from the median')
+fp(0, 'centre: rung step', '|u| one-spurion window centre (7-null converged)', 0.026631, (0.027, 0.0008), 'data', 'D1932', {'u': '0'}, spread=0.0015, note='window [0.02588, 0.02740] contains the median; one fixed assignment; f7 22-23 %, fJ 61-66 %')
+fp(0, 'centre: rung step', '|u| single-flavon natural window centre', math.sqrt(0.063 * 0.148), (0.027, 0.0012), 'data', 'D1928', {'u': '+'}, note='SECONDARY window (U32, assignment varies); primary one-spurion window sits on the median (D1932)')
 fp(0, 'centre: rung step', 'lepton slip / down slip', g('lepton slip')['value'], (1.0, 0.05), 'data', 'v4 (D1832)', {'u': '0'}, note='same-lock fit; conflicts with Koide at rho')
 # ---- ring 1: flavour
 fp(1, 'quarks', 'f7 (two-size lock)', g('quark 7-observable')['value'], 0.05, '>', 'd1829_cp.json', {'u_u': '0', 'u_d': '0'}, note='PHENOMENOLOGICAL')
@@ -80,7 +80,7 @@ dN = 0.0022 / dns_dN; TR_ns = 3.7e8 * math.exp(dN / dN_dlnTR)
 L += ['', '## Interactions (where two arrows meet one knob)', '',
       '- **m3/2 cannot fix α_s.** Closing α_s needs Δ ln m3/2 = %.2f (m3/2 ×%.2f). That puts the wino at %.0f GeV, far below the 660 GeV bar, which already has only 4 %% room. So α_s must come from a threshold (Δ₃), not from the spectrum.' % (dln, math.exp(dln), wino_new),
       '- **T_R: two independent arrows agree.** Thermal leptogenesis needs T_R ≳ M_N = 1.8e11 GeV (×500 up). n_s at the data centre needs ΔN* ≈ +%.1f, which means T_R ≈ %.1e GeV (×%.0f up, with dN*/d ln T_R = 1/3 for w = 0 reheating, an estimate). Both point to **T_R ~ 1e11–1e12 GeV**, about 3 decades above the derived 3.7e8.' % (dN, TR_ns, TR_ns / 3.7e8),
-      '- **u: the flavour arrow and the median disagree.** The single-flavon window (0.063–0.148) sits a factor of ~3.6 above the six-sector median 0.027. Only the hairline one-spurion fit (0.0259–0.027) sits on the median.']
+      '- **u: flavour sits ON the median (D1932).** The 7-null converged one-spurion window [0.02588, 0.02740] contains the six-sector median 0.027 (its centre 0.02663 is 1.4 % below). One fixed charge pattern covers it, natural throughout. The broad single-flavon window (0.063–0.148, U32) is secondary.']
 L += ['', 'Knob convention: "+" means this measurement wants the knob raised, "−" lowered.']
 L += ['', 'Measured: dα_s/d ln m₃/₂ = %+.5f; dn_s/dN* = %.2e.' % (das_dlnm, dns_dN)]
 open('tools/project_docs/WEAVE_COMPASS.md', 'w').write('\n'.join(L) + '\n')

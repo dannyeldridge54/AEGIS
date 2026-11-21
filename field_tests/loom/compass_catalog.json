@@ -4,23 +4,23 @@
    "id": 1,
    "ring": 0,
    "notch": "centre: rung step",
-   "quantity": "|u| one-spurion hairline vs median 0.027",
-   "value": 0.02587,
-   "spread": null,
+   "quantity": "|u| one-spurion window centre (7-null converged)",
+   "value": 0.026631,
+   "spread": 0.0015,
    "target": [
     0.027,
-    0.0012
+    0.0008
    ],
    "kind": "data",
    "direction": "\u25cf",
-   "headroom": 1.058333333333334,
+   "headroom": 1.5387499999999985,
    "unit": "\u03c3",
-   "pull": -0.941666666666666,
+   "pull": -0.46125000000000155,
    "knobs": {
-    "u": "+"
+    "u": "0"
    },
-   "source": "D1925a/D1927",
-   "note": "median of six sectors 0.027; spread taken as the D1927 window 0.0259-0.027"
+   "source": "D1932",
+   "note": "window [0.02588, 0.02740] contains the median; one fixed assignment; f7 22-23 %, fJ 61-66 %"
   },
   {
    "id": 2,
@@ -42,7 +42,7 @@
     "u": "+"
    },
    "source": "D1928",
-   "note": "window 0.063-0.148 sits ABOVE the median: flavour pulls u UP, away from the median"
+   "note": "SECONDARY window (U32, assignment varies); primary one-spurion window sits on the median (D1932)"
   },
   {
    "id": 3,
@@ -454,11 +454,6 @@
  "compass": {
   "u": {
    "up": [
-    [
-     "centre: rung step: |u| one-spurion hairline vs median 0.027",
-     "+",
-     "\u25cf"
-    ],
     [
      "centre: rung step: |u| single-flavon natural window centre",
      "+",

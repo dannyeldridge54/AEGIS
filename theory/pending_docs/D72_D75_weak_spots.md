@@ -18957,3 +18957,26 @@ Danny interrupted the D1930 pulse run partway through, and it produced no result
   3. **u — the flavour arrow and the median disagree.** The single-flavon window sits ×3.6 above the median 0.027. Only the hairline one-spurion fit sits on it.
   4. **Thinnest margins:** the wino (0.02 dex), the neutrino ratio (0.12 dex) and quark fJ (0.19 dex).
 - **Status.** This is a measurement catalogue, not a new claim. The T_R convergence is an estimate until it is triangulated to 7 nulls (next tick).
+
+## D1932 — pulse ring 0 (Danny "Ll" 16:20; rule 6h, 7 nulls): the one-spurion window sits ON the median rung step (locked PREREG_D1932)
+- **TARGET:** the centre of the Weave, the shared rung step u (median 0.027).
+- **TRIANGULATE:**
+  - Lower edge: 12 rounds of 3 quarter-point readings, the last 7 null. Converges to **0.0258839** (resolution 2e-10).
+  - Upper edge: 13 rounds, the last 7 null. Converges to **0.0274000**.
+  - So the one-spurion fit window is **[0.02588, 0.02740]**, a factor of 1.059 wide.
+  - Three vectors on u: the window centre 0.02663, the lepton slip 0.0253 and the neutrino θ-step 0.02918. Their centre is **0.02663 ± 0.0039** (spread), which is **−1.4 % from the six-sector median 0.027**.
+- **TEST (measurement; no verdict by lock):**
+  - The window **contains the median 0.027**. It just misses u_d = 0.02587, by 1.4e-5 (0.05 %), and it misses the lepton slip 0.0253.
+  - **One fixed assignment** covers the whole window: q_Q = (3/2, 1, 0), q_u = (2, ½, 0), q_d = (½, 0, 0).
+  - Three quarter-points × three seeds: f7 = 22–23 % and fJ = 61–66 %, natural throughout.
+- **JUDGE:**
+  - The centre holds: one spurion at the median step carries all 7 quark observables plus CP with a single charge pattern.
+  - This beats U32 (window ×3.6 higher, with the assignment changing) on both counts. The flavour reading now points to **|u| ≈ 0.0266 ± 0.0008 (window)**.
+  - D1925's hairline miss is resolved: 0.02587 sits 0.05 % below the edge.
+  - Still phenomenological: one spurion, but no geometric home yet.
+- **COMPASS:** the u arrow flips from "flavour pulls up, away from the median" (U32) to **"flavour sits on the median"**. The window centre and the six-sector median agree to 1.4 %. U32 is demoted to the secondary window.
+
+## D1933 — focus (Danny 16:21): everything serves deriving the UFE
+- The CubeMind loop's pending scheduled task is disabled, and no other agent is running.
+- The monthly DESI/Euclid BAO watch stays on: it is a data feed for the triangulation and fires once a month.
+- From here every tick takes the next term of the unified field equation (tools/project_docs and claude/WEAVE_UNIFIED_EQUATION.md, v3.3 from this morning and now stale), from the centre outwards. Each term is triangulated to 7 nulls, fingerprinted in the compass, and written into **UFE v4**.
