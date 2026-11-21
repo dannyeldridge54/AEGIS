@@ -18023,3 +18023,13 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
   - "Everything" is too strong: non-periodic, non-coupled systems need not show it.
   - Any engineering claim must be tested in that domain on its own terms.
 - Possible engineering test (outside physics proper, proposal only): a driven-oscillator bench test of "low-order Farey ratio = max power transfer, golden = max stability", e.g. a coupled-LC or PLL circuit. Recorded, not scheduled.
+
+## D1831 (CENTRE — 21 Nov 2026, Danny 11:33 "reach into power generation and nuclear physics … find the pattern"): the cross-domain stack confirms U25's split — rational = lock / transfer / loss, noble irrational = barrier / protection
+- Collection: tools/project_docs/PAPERS_CROSSDOMAIN_2026-11-21.md (≈ 30 sources: fusion, accelerators, power grids, Josephson junctions, wireless power, nuclear shells).
+- Findings:
+  1. Tokamak field lines break into islands on rational q surfaces, and the plasma is held by irrational KAM barriers. The barriers are "noble" numbers; the golden mean is the last to break in the standard map (K_c = 0.9716), but not special in the tokamap (physics/0206001).
+  2. Accelerator beams are lost on rational resonance lines n Q_x + m Q_y = p, and tunes can "lock on".
+  3. Power grids, wireless power and Josephson voltage standards all deliver output through low-order rational LOCKS (1:1 synchronisation, tuned resonance, Shapiro steps on a continued-fraction staircase).
+  4. Nuclear shells and resonances are lock-and-key, but not Farey-ordered.
+- Verdict: U25's route rule holds across engineered periodic systems (amplify at low-order locks, protect at noble irrationals), with the refinement **noble rather than strictly golden**. Universality, not evidence for the Weave's specific physics.
+- Renumbering note: the lepton test moves to D1832.
