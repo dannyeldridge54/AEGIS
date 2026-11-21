@@ -53,7 +53,7 @@ Builds on WEAVE_FULL_EQUATION.md (v2, 19 Nov). New in v3: the visible forces on 
     knots ρ & i under S₄ ──► TM1: sin²θ₁₂ = 0.3184, δ_CP 262–286°  ──► m_ββ = 1.59–3.80 meV (NO, m₁ = 0)               [der/P]
     one asymmetry ──► m_X = 12.8 GeV (n_X/n_B = 11/28) ──► dark photon 0.3–12.8 GeV; σ/m ≤ 1e-4 cm²/g (α_D ≲ 5e-3)      [der/E]
     anomaly-free quark weights ──► θ̄ = 0 exactly                                                                    [lit]
-    slip ladder ──► down quarks rung 1, up quarks rung ~8 (mass ratios) vs 2–5 (mixing, B6 running)                  [A]
+    slip ladder ──► up quarks rung 8, DOWN quarks at HALF a rung (|ε_d| ≈ 0.048, m ≈ ½): all 8 quark observables fit with near-equal couplings (score 0.37, D1777)  [A→C]
 
 ## 3b. Simplification 1 — the master relation (D1772, v3.1)
     M₂(wino) = [√(g_s/2) M_P/375] · [4(2π)³ C/(wχ)] · exp[−(2π/N)(α⁻¹ − 9/g_s)],  g_s = 2/√3
@@ -72,7 +72,7 @@ The solution is carried across a band of width λ in Re T_vis by one rank N, the
 | I4 | m₃/₂ (or the wino mass) | SUSY, dark matter | DERIVED from (C, α⁻¹, N, χ) by the master relation (D1772); (N, χ) = (7, ≈50) |
 | I5 | Koide scale (one lepton mass) and δ = 2/9 | leptons | δ: no derivation exists in the literature; not the thawing axion (would drift m_e/m_μ); Berry phase C-δ only (D1768) |
 | I6 | neutrino masses (Σm_ν, m₁ = 0) | neutrinos | seesaw M_N and Yukawas [OPEN] |
-| I7 | quark O(1) couplings (12) and τ_q's class | quarks | [A] |
+| I7 | quark O(1) couplings (12) and τ_q's class | quarks | classes now: up rung 8, down half-rung (m ≈ ½); couplings near-equal (×2) suffice (D1777); the half-rung's origin (double cover, U18) open |
 | I8 | V_L (the size of Λ) and the thread's start | dark energy | [OPEN — the cosmological-constant problem] |
 | I9 | m_A′, ε (dark force) | dark matter | α_D DERIVED = 0.035 at 12.8 GeV from a twin dark cycle (D1769, C); m_A′ and ε still free |
 | I10 | the family flux | generations | |M| = 9 on T²/Z₃ (exists only at τ = ρ): the smallest flux where EVERY Z₃ sector has three modes (3/3/3) ⇒ three families and c = 9 (D1776, P-democratic-flux; zero-mode count to verify) |
