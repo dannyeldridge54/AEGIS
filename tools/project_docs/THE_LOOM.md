@@ -53,6 +53,19 @@ Thread rules, tightened after the methods referee:
 - A claim that brings back a number withdrawn earlier carries the flag **RESTORED**. Example: D1904's R = −0.023, which D1881b had withdrawn and D1900 brought back by a framework argument. A RESTORED claim needs an independent referee before it can be woven.
 - A claim whose content was chosen from a scan carries the flag **POST-SELECTED**, and it cannot be woven on that test alone.
 
+
+### Rule 6h — triangulate to convergence (Danny 16:04, standing; supersedes "re-triangulate once")
+This applies every time data is mined, a target is chased, or the loop steps onto a new rung.
+1. **Three vectors.** Take three independent readings of the same target, from a different method, source or parameter path. Quick-calculate each.
+2. **Centre.** The centre is the median and the spread is max − min.
+3. **Re-triangulate around the centre.** Take three new readings inside the narrowed bracket, or refine each reading's inputs at the centre (a self-consistent fixed point). Repeat.
+4. **Stop: 7 nulls in a row** (Danny 16:05). A round is *null* when the centre moves by less than the resolution AND the spread shrinks by less than 10 %. Keep triangulating until 7 consecutive rounds are null, then move on. The spread that remains is the **systematic floor**; report it rather than hide it.
+4b. **The pulse.** At the start of each sector, first read where every existing result points (the compass). Then triangulate the target from there.
+5. **Known end result.** If the end result is already known (data, or the median), the question becomes how to get there. Triangulate the *path*: which inputs move the centre onto the target, and by how much.
+6. **Order.** Work from the middle outwards. The median sector comes first, then the shared quantities, then the outer sectors.
+7. **Record.** Every D-note carries a `TRIANGULATE:` line: the three readings, the centre ± spread for each round, the number of rounds, the floor, and the distance to the target.
+8. **Code.** tools/loom/triangulate.py is the reusable helper.
+
 A claim with one or two threads is **loose** and is reported as such. A claim that cannot get thread 2 or 3 is labelled **TRUST** (an explicit input). Danny 14:04: "it may just end up being trust".
 
 ## 3. The Loom: tick order (the standing loop from now on)
