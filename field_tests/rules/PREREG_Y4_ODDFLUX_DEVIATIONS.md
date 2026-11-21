@@ -1,0 +1,2 @@
+# PREREG Y4 — DEVIATIONS (written before the rerun)
+D1 (21 Nov): basis-change bug in the first run. Eigenfunctions are eig_a = sum_i V[i,a] psi_i, so psi_k = sum_c Vinv[c,k] eig_c. The first run used Vinv for L and V for H (both transposed roles). Symptom: 30 % of the coupling leaked into Z3-forbidden Higgs classes, impossible for exact eigenfunctions. Fix: ce = einsum('ia,jb,ijk,ck->abc', VL, VL, c, VHi). Same seeds, same thresholds; the first-run FAIL is kept in the results file as run 1. Check added: forbidden-class norm must be < 1e-8 of the allowed one, else NULL.
