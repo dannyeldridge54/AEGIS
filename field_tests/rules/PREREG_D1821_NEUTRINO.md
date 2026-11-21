@@ -1,0 +1,4 @@
+# PREREG D1821 — the neutrino rung at the knot i (locked 21 Nov 2026 before computing; repo at 2fef5a80)
+Rung-specific laws (Danny 11:19: each rung scales differently; U22: integer label, ends on a knot):
+(a) RATIO rung: neutrino Yukawas from magnetised T²/Z₂ zero modes AT τ = i, fluxes (4, 4, 8) (L, N, H; Z₂-even, 3 + 3 + 5 modes). Seesaw with degenerate M_N ⇒ m₂/m₃ = (y₂/y₃)², m₁/m₃ = (y₁/y₃)². Target (NO, NuFIT 6.0): m₂/m₃ = 0.1726, m₁ ≈ 0 (Weave). Haar fraction of 50000 Higgs directions (seed 11) with y₂/y₃ within ×1.5 of √0.1726 = 0.415 AND y₁/y₂ < 0.1. NATURAL if ≥ 1 %; TUNED if > 0 but < 1 %; ABSENT if 0.
+(b) SCALE rung: m₃ = y₃² v_u²/M_N, v_u = 174 sin β GeV, tan β = 2. Report M_N for (i) a gauge-strength Yukawa y₃ = g = √(4π/28.0) and (ii) the y₃ needed for M_N inside the leptogenesis window 4.5e10–2.5e12 GeV (D1767). Label: report only.
