@@ -74,6 +74,13 @@ A claim with one or two threads is **loose** and is reported as such. A claim th
      - always run a SERAPIS mirror check (forward ↔ reverse, early ↔ late, visible ↔ dark), and count a result only if both sides pass at the centre.
      
      Routine ticks keep 3-point fixes. Cost is about 3–4× the web calls.
+   - (g) **Iterated triangulation (Danny 14:59).** At every triangulation:
+     1. Quick-calculate the three points (compute each, do not just quote it).
+     2. Locate the centre they point to (the median, or the crossing or boundary the three values bracket).
+     3. If a centre exists, **triangulate again**: three new points around that centre, spaced at half the previous spread, each computed.
+     4. Stop when the spread is below the quantity's tolerance, or after 3 rounds. Record every round as `ROUND k: points → values → centre ± spread`.
+     
+     A round that fails to bracket a centre gives an open fix. It is recorded as such, not forced.
    - (e) **Verdict sensitivity.** If any allowed alternative extraction flips the verdict, or the value lies within its own uncertainty of a threshold, the verdict is INDETERMINATE. Thresholds are set before any reading is seen.
 
 Each tick is one pass of the shuttle. Every step is mandatory, and its output is one line in the D-note.
