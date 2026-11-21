@@ -51,6 +51,7 @@ Evaluating the action at that one point gives:
 ## 4. Honest limits of "one step"
 - **The integers are not derived.** (7, ≈50, 9, 8, ½) can all be written from the two knot orders (2, 3) — for example 9 = 3², 8 = 2³, ½ = 1/2, 7 = 2·3 + 1, 50 = 2(2 + 3)². That has no evidential weight: one-operation expressions in 2 and 3 reach 43 of the integers 1–60. Only a rule fixed in advance would count; the clean ones so far are families = 3 = |Z₃| ⇒ |M| = 9, and the half class = 1/|Z₂|.
 - **Still inputs:** the inflation height (needs Hubble-scale SUSY breaking); the lepton mass scale and δ = 2/9; the neutrino masses; 12 O(1) quark couplings (D1779: not removable in the generic model); the size of Λ; the dark photon's mass and mixing ε; and the last factor of the electroweak hierarchy (v/m_SUSY ~ 4e6, tuned).
+- **Lepton hierarchy is not from the knot (D1790, Y4 FAIL):** the |M| = 9 Z₃ overlaps at ρ give three families (computed in-house, matches 1309.4925) but near-democratic Yukawas: m_μ/m_τ comes out ≥ 0.20 for every Higgs direction (needs 0.06). The hierarchy needs Higgs misalignment or factors from the other tori.
 - **Consistency selections, not predictions:** the integers N = 7 and χ ≈ 50 were chosen by data — the wino window and the measured coupling.
 - **Not yet refereed:** loop 2 (D1762–D1779); both referee runs were stopped before they reported. The ×28 failure of D3 at ρ and the magnetised-D7 repair passed the loop-1 referee as a candidate.
 
