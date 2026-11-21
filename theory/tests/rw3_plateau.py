@@ -2,6 +2,7 @@
 import json, math, os, sys
 import numpy as np
 from scipy.integrate import solve_ivp
+from scipy.optimize import brentq
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "tools", "weave_cm"))
 import weave_reverse as wr
 
@@ -32,14 +33,14 @@ def run(beta, xi):
     # y = [phi, dphi/dN]; V = VL(1 - x), x = xi e^{-beta (phi - 0)}, phi starts at 0
     def H2(N, phi, dphi, VL):
         aa = math.exp(N)
-        rho = 3 * Om * aa**-3 + 3 * Orad * aa**-4 + VL * (1 - xi * math.exp(-beta * phi))
+        rho = 3 * Om * aa**-3 + 3 * Orad * aa**-4 + VL * (1 - xi * math.exp(min(-beta * phi, 700.0)))
         return rho / (3 - dphi**2 / 2)
 
     def rhs(N, y, VL):
         phi, dphi = y
         h2 = H2(N, phi, dphi, VL)
         aa = math.exp(N)
-        V = VL * (1 - xi * math.exp(-beta * phi)); Vp = VL * beta * xi * math.exp(-beta * phi)
+        V = VL * (1 - xi * math.exp(min(-beta * phi, 700.0))); Vp = VL * beta * xi * math.exp(min(-beta * phi, 700.0))
         # dlnH/dN = -(rho+p)/(2H^2) with rho+p = rho_m + 4/3 rho_r + dphi^2 H^2
         eps = (3 * Om * aa**-3 + 4 * Orad * aa**-4 + dphi**2 * h2) / (2 * h2)
         return [dphi, -(3 - eps) * dphi - Vp / h2]
@@ -48,22 +49,30 @@ def run(beta, xi):
         sol = solve_ivp(rhs, [math.log(1e-3), 0], [0.0, 0.0], args=(VL,), rtol=1e-9, atol=1e-12, dense_output=True)
         phi, dphi = sol.y[:, -1]
         return math.sqrt(H2(0, phi, dphi, VL)), sol
-    # shoot VL: H(1) = 1
-    lo, hi = 1e-3, 1e3
-    for _ in range(50):
-        mid = math.sqrt(lo * hi)
-        if H_today(mid)[0] > 1: hi = mid
-        else: lo = mid
-    VL = math.sqrt(lo * hi)
+
+    def g(VL):  # DEVIATIONS D1: D1692-style shooting; failures -> nan
+        try:
+            h, _ = H_today(VL)
+            return h * h - 1 if math.isfinite(h) else float('nan')
+        except (OverflowError, ValueError, ZeroDivisionError):
+            return float('nan')
+    grid = [0.5 * 2**k for k in range(12)]
+    vals = [g(v) for v in grid]
+    VL = None
+    for a_, b_, fa, fb in zip(grid, grid[1:], vals, vals[1:]):
+        if math.isfinite(fa) and math.isfinite(fb) and fa < 0 < fb:
+            VL = brentq(g, a_, b_, xtol=1e-10); break
+    if VL is None:
+        raise RuntimeError("no_solution")
     _, sol = H_today(VL)
     phi0 = sol.y[0, -1]
-    viable = (1 - xi * math.exp(-beta * phi0)) > 0
+    viable = (1 - xi * math.exp(min(-beta * phi0, 700.0))) > 0
     Ns = np.linspace(math.log(1 / 3), 0, 60)
     w = []
     for N in Ns:
         phi, dphi = sol.sol(N)
         h2 = H2(N, phi, dphi, VL)
-        K = dphi**2 * h2 / 2; V = VL * (1 - xi * math.exp(-beta * phi))
+        K = dphi**2 * h2 / 2; V = VL * (1 - xi * math.exp(min(-beta * phi, 700.0)))
         w.append((K - V) / (K + V))
     aa = np.exp(Ns); A = np.vstack([np.ones_like(aa), 1 - aa]).T
     w0fit, wa = np.linalg.lstsq(A, np.array(w), rcond=None)[0]
