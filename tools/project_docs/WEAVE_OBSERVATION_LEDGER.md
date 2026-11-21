@@ -19,7 +19,7 @@ Goal of the big loop: move every M and A toward P. A row moves only through a lo
 ## 2. Matter content and masses
 | # | Observed | Weave | Notes |
 |---|---|---|---|
-| 2.1 | Three generations | G | flux counting started (D1697a); ladder has room for more — why 3 filled? |
+| 2.1 | Three generations | A (flux M = 4 on T²/Z₂ ⇒ Z₂-even triplet, D1697a/D1757) | why M = 4 is not derived |
 | 2.2 | Charged lepton masses, Koide Q = 2/3 | P (Q) / F (δ = 2/9 empirical) | leptons at the knot ρ |
 | 2.3 | Quark masses (6) | A | twin slip-ladder hosts hierarchies (rungs 1 and ~4–8); not predicted |
 | 2.4 | CKM (3 angles + phase) | A | best hosted fit 1.82 (CubeMind, 21 Nov, rung 4) — needs locked check |
