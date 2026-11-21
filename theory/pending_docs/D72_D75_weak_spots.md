@@ -17258,3 +17258,26 @@ Verdict: no numerical disagreement at any joint; two labelling/range faults fixe
 - [FIXED] Dark-photon window was 0.3–5 GeV in WEAVE_FACTS and the connection map; since D1685/D1688 it is 0.3–12.8 GeV with a sourced LZ ceiling on the mixing. Both updated so CubeMind postulates on the current window.
 - [checked, no change] Late-universe engine defaults Ω_φ 0.70 / Ω_c 0.25 vs D1710's 0.702 / 0.249: the engine's status comes from the D1725 χ² table, the defaults only move the displayed z† by ~1 %; left (a test pins the D1725 point).
 Tests 16/16.
+
+## D1753 — BIG LOOP 1 / research round 1 (Danny 21 Nov 08:09 "everything observed … research until null … unify"): first derivations on the missing rows
+Ledger: tools/project_docs/WEAVE_OBSERVATION_LEDGER.md (70 rows; 21 M). Six M rows researched; derivations written out in full.
+
+**R1 — gauge couplings at ρ (ledger 1.2–1.4). [derived, structural] → TENSION (serious).**
+1. The Weave inflaton τ₁ is the IIB axio-dilaton (its plateau is the R⁴ species term E(τ,3/2), D1523): τ₁ = C₀ + i/g_s.
+2. Inflation ends at the knot ρ = e^{iπ/3} = ½ + i√3/2 ⇒ Im ρ = √3/2 ⇒ g_s = 1/Im ρ = 2/√3 = 1.1547. Every SL(2,Z) image of ρ has smaller Im τ, so 1.1547 is the WEAKEST coupling the knot allows.
+3. Gauge fields on D3-branes: τ_YM = θ/2π + 4πi/g²_YM = τ₁ ⇒ 4π/g²_YM = 1/g_s ⇒ α_YM = g²_YM/4π = g_s = 1.155.
+4. Observed: unified coupling α_GUT ≈ 1/24.3 (MSSM, 2e16 GeV); Standard Model couplings at any scale ≤ 1/8. So D3-brane gauge fields at ρ are ×28 too strong (non-perturbative).
+5. Consequence: the visible gauge sector cannot be on D3-branes if the axio-dilaton sits at ρ. It must live on D7-branes, where 1/g² = Re T_4cycle (Kähler volume), with α_GUT ≈ 1/25 needing Re T ≈ 25/(4π)·… ≈ 2 in string units — natural. But D1665's reheating ("gauge fields feel the string coupling directly, as on D3") then changes: on D7 the inflaton couples via the gauge kinetic function's g_s-dependence only at subleading order ⇒ T_R must be recomputed. Recorded as a requirement R1: visible sector on D7; T_R joint REOPENED. The ledger rows 1.2–1.4 move M → G (the value 1/25 becomes a Kähler-volume statement, not a ρ prediction).
+Source for the D3 relation: standard (Polchinski Vol. 2, §13); IIB S-duality acts on τ₁ as on τ_YM of N = 4.
+
+**R2 — electron EDM (2.14). [derived from literature criterion] → P (conditional): |d_e| unobservable.**
+CP is conserved on the boundary of the fundamental domain (arXiv:2106.10919): ρ and i are CP-conserving. Leptons at ρ, neutrinos at i ⇒ no leptonic modular CP phase. CP violation lives only in τ_q (arg ≈ 50°, off the arc). A τ-induced d_e needs SUSY loops ∝ 1/M²_SUSY; with Weave soft masses ~1e9 GeV (no-scale), d_e ~ 1e-29·(5 TeV/1e9 GeV)² ≈ 2.5e-40 e·cm (estimate scaling from the 2106.10919 benchmark). Prediction: no electron EDM down to ~1e-35 (far below ACME III/JILA reach). A future detection would falsify the heavy-SUSY Weave.
+
+**R3 — gravitational-wave background / modular domain walls (3.14). [derived] → P: no wall signal from the Weave.**
+Modular walls form between degenerate τ = i and τ = ω vacua (arXiv:2411.04900; SUGRA bias lets them collapse). In the Weave the slow moduli choose a basin by their PRE-inflation value (D1610: 69 % of area drains to i); a field light during inflation (m ≪ H) is frozen apart from the de Sitter jitter H/2π (the same logic as D1642 for the thread), so the whole observable patch shares one basin unless its starting point sits within the inflationary jitter of a ridge: δτ ~ H/(2π M_P) = 3.4e-7 ⇒ fraction of initial conditions that make walls inside our horizon ~ (ridge width)/(basin size) ~ 1e-6. Prediction: the nHz PTA background is NOT from Weave modular walls (so astrophysical, SMBH binaries). Weak but clean.
+
+**R4 — large-scale CMB anomalies (3.8). [literature] → G, nothing to explain at significance.** arXiv:2602.16659: infrared-cutoff models give Δχ² ≤ 2, ΔAIC > 0; the quadrupole is only marginally improved; parity asymmetry worsens. "Just-enough inflation" is not required by data; the Weave's total e-fold count is unconstrained by it.
+
+**R5 — cosmic birefringence (5.5). [literature, new] β = 0.277° ± 0.057° (4.8σ, joint ACT + Planck, arXiv:2608.06480);** without instrument priors 0.442° ± 0.098°; miscalibration "not fully controlled" (authors). The Weave's bridge β² = 2.5e-3 (c_γ/f)²(1+w0) deg² (D403) now has a target: with w0 = −0.79, β = 0.277° ⇒ c_γ/f = 0.277/√(2.5e-3·0.21) = 12.1 (in the bridge's units). Needs the thread to couple to F F̃ — which conflicts with sequestering (D1749) unless it is the axion-like option. ⇒ joint: thread identity (sequestered vs axion-like) is now TESTED by β. Next: lock B1-BIREF.
+
+**R6 — neutron lifetime (6.4). [derived] → P: no dark neutron decay.** n → χ + X requires 937.9 < m_χ < 938.8 MeV (arXiv:1801.01124). The Weave's dark particle is 12.8 GeV (D1676) with no other light dark fermion ⇒ no dark decay channel ⇒ the beam–bottle gap must be experimental. Consistent with the recent experiments that see no n → χ signal.
