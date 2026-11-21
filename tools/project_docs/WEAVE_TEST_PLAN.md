@@ -15,7 +15,7 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 | A6 ΔN_eff | ≈ 0 (brane split) | ACT/SPT now; SO, CMB-S4 (σ ≈ 0.03) | Hyperion BBN + engine | L → **R** (21 Nov 10:23: PREREG_A6_NEFF — ΔN_eff = 0 if ε ≥ 1.5–9.5e-11, else ≤ 0; never positive; FAIL if > 0 at 3σ) |
 | A7 Y_p, D/H | standard at ω_b | PRIMAT + Planck | hyperion_bbn | R |
 | A8 Li-7 | postulate C7 (stellar depletion) | stellar Li surveys | — | T |
-| A9 no modular domain walls | no nHz wall signal (D1753 R3) | NANOGrav 20-yr, IPTA DR3 spectral shape (SMBH vs walls) | to build: wall-spectrum template | T |
+| A9 no modular domain walls | no nHz wall signal (D1753 R3) | NANOGrav 20-yr, IPTA DR3 spectral shape (SMBH vs walls) | weave_walls (21 Nov 10:29) | T → **R** (PREREG_A9_WALLS: SL(2,Z) images ⇒ no walls; FAIL if DW vs SMBHB Bayes ≥ 100 or a causal f³ turnover at 3σ) |
 | A10 large-scale CMB cut | none needed (D1753 R4) | Planck PR4 low-ℓ | Janus | L → **R** (21 Nov 10:26: PREREG_A10_LOWELL) |
 
 ## B. Flavour, quarks, leptons

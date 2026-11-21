@@ -257,10 +257,32 @@ def weave_paths(a):
     return P.weave_paths(a)
 
 
+def _gstar(T_MeV):
+    """Rough g*, g*s(T) piecewise (labelled approximate): >200 MeV QGP ~61.75; 150-200 transition; <150 MeV hadron/e,mu,nu,gamma."""
+    pts = [(0.1, 3.36, 3.91), (1, 10.75, 10.75), (100, 10.75, 10.75), (150, 17.25, 17.25), (200, 61.75, 61.75), (1e4, 106.75, 106.75)]
+    T = max(min(T_MeV, 1e4), 0.1)
+    for (t0, g0, s0), (t1, g1, s1) in zip(pts, pts[1:]):
+        if t0 <= T <= t1:
+            w = (math.log(T) - math.log(t0)) / (math.log(t1) - math.log(t0)); return g0 + w * (g1 - g0), s0 + w * (s1 - s0)
+
+
+def weave_walls(a):
+    """Domain-wall GW template (NANOGrav 15-yr 2306.16219 §5; PREREG_A9). {"T_MeV","alpha","f_nHz"(list),"b"=1,"c"=1}. The Weave predicts NO walls."""
+    T, al = float(a.get('T_MeV', 200)), float(a.get('alpha', 0.1)); b, c, A = float(a.get('b', 1)), float(a.get('c', 1)), 3.0
+    g, gs = _gstar(T)
+    fp = 1.14 * (10.75 / gs) ** (1 / 3) * (g / 10.75) ** 0.5 * (T / 10)
+    D = 4.18e-5 * (g / 3.36) * (3.91 / gs) ** (4 / 3)
+    peak = 3 / (32 * math.pi) * D * 0.7 * al ** 2
+    S = lambda x: (A + b) ** c / (b * x ** (-A / c) + A * x ** (b / c)) ** c
+    fs = a.get('f_nHz', [1, 3, 10, 30])
+    return dict(f_peak_nHz=fp, h2Omega_peak=peak, spectrum={str(f): peak * S(f / fp) for f in fs}, g_star=g, D=D,
+                weave_prediction='no domain walls (SL(2,Z) images of rho are one vacuum); nHz background = SMBHB', label='S (template), D approximate')
+
+
 TOOLS = {'weave_rung': weave_rung, 'weave_rung_of': weave_rung_of, 'weave_koide': weave_koide, 'weave_koide_slip': weave_koide_slip,
          'weave_tauq': weave_tauq, 'weave_ckm': weave_ckm, 'weave_proton': weave_proton, 'weave_atomic': weave_atomic,
          'weave_arc': weave_arc, 'weave_rladder': weave_rladder, 'weave_negspace': weave_negspace, 'weave_paths': weave_paths, 'weave_basic': weave_basic, 'weave_mbb': weave_mbb, 'weave_magd7': weave_magd7, 'weave_sidm': weave_sidm, 'weave_wino': weave_wino, 'weave_genesis': weave_genesis,
-         'weave_axion_relic': weave_axion_relic, 'weave_W0': weave_W0, 'weave_rinv': weave_rinv}
+         'weave_axion_relic': weave_axion_relic, 'weave_W0': weave_W0, 'weave_rinv': weave_rinv, 'weave_walls': weave_walls}
 
 if __name__ == '__main__':   # self-test: reproduces the published numbers
     assert abs(weave_mbb({})['mbb_max_meV'] - 3.7952) < 1e-3
@@ -281,4 +303,5 @@ if __name__ == '__main__':   # self-test: reproduces the published numbers
     r1 = weave_arc({'m': 1, 'n': 0}); assert abs(r1['dist_rho'] - 0.02395) < 3e-4, r1
     assert abs(weave_negspace({})['z_switch'] - 2.88) < 0.05
     assert abs(weave_rladder({'D': 6})['r'] - 1.082e-3) < 2e-6
+    w = weave_walls({'T_MeV': 10, 'alpha': 0.1}); assert abs(w['f_peak_nHz'] - 1.14) < 0.02 and abs(weave_walls({'f_nHz': [1]})['spectrum']['1'] / weave_walls({'f_nHz': [1]})['h2Omega_peak'] - (lambda x: 4 / (x ** -3 + 3 * x))(1 / weave_walls({})['f_peak_nHz'])) < 1e-9
     print('weave_tools selftest OK', json.dumps({k: round(v, 5) for k, v in c.items() if isinstance(v, float)}))

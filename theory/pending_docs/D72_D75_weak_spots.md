@@ -17647,3 +17647,13 @@ One thought: every field sits AT one of the two elliptic points of PSL(2,Z) (i, 
 - [estimate, code] With the data-fixed unification point (M₁₂ = 6.6–7.0e15 GeV, α⁻¹ = 28.9, D1767), the standard dim-6 estimate τ(p → e⁺π⁰) ≈ 1e35 yr (M_X/1e16)⁴(0.04/α_GUT)² gives **2.5–3.2e34 yr** (uncertainty ×3). Super-K's bound is 2.4e34 yr; Hyper-K reaches ~1e35.
 - **Consequence:** the old ledger label "proton safe" (2.13) is only true if the visible D7 stack gives the SM group directly (no X/Y bosons). If it is a GUT stack, the Weave predicts a Hyper-K discovery, or is killed by Hyper-K. Split SUSY makes dim-5 negligible either way. Locked as two branches (PREREG_B10_PROTON); ledger 2.13 → "P (two branches)".
 - Locks written this tick (forecast, post-lock data only): B1 Koide m_τ = 1776.969 MeV; B10 proton (branches G/S); A4 f_NL^local ≈ 0.012 (Maldacena); A10 no low-ℓ cut; C1 direct detection mass 12.8 GeV; D6 c_T = c, no extra polarisations. Every 'L' test in the plan except D2/B6/D7 is now locked.
+
+## D1798 (LL, tools/test A9 — 21 Nov 2026): domain-wall GW template built; the Weave's "no walls" now has a reason, not just an estimate
+- [tool] weave_walls in tools/weave_cm/weave_tools.py (self-test passes), template from NANOGrav 15-yr new physics (arXiv:2306.16219 §5):
+  - h²Ω = (3/32π) D ε̃ α*² S(f/f_p), with f_p = 1.14 nHz (10.75/g*s)^{1/3}(g*/10.75)^{1/2}(T*/10 MeV);
+  - S has the causal f³ rise and an f⁻¹ fall;
+  - D is approximate radiation dilution.
+  - Check: T* = 200 MeV, α* = 0.13 ⇒ peak 6.8e-9 at 30 nHz, the size of the NANOGrav signal (h²Ω ~ 4e-9 at 1/yr).
+- [literature] Their wall fit: T* = 110–275 MeV, α* = 0.08–0.19, Bayes factor vs SMBHB 14.8 (dw-sm), not decisive.
+- [derived, sharpens D1753 R3] The Weave's moduli end at ρ and i. ρ and its SL(2,Z) images are the SAME physical vacuum (modular symmetry is a gauge redundancy in string theory), so no wall can separate them. A wall needs physically distinct minima (e.g. ρ vs i for one modulus), which a single inflated patch does not produce.
+- Verdict: the Weave predicts NO wall component; the nHz background is SMBHBs. Locked as PREREG_A9_WALLS. CubeMind registry entry for weave_walls is pending until the PC is next touched (calc pipeline step 1).
