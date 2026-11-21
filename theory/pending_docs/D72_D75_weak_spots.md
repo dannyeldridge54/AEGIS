@@ -18603,3 +18603,12 @@ D1909a said "every reading in that range is below 0.09". That is wrong: T3 reach
    - the paper §4 and abstract;
    - end_run.py and engine.py (marked superseded);
    - centre.json.
+
+## D1911 — CENTRE: scoreboard v3 (after D1894b) — 12 PASS, 2 FAIL (21 Nov 2026)
+Lock PREREG_D1911_DERIVATION_V3 was pushed first. Output: field_tests/results/weave_derivation_v3.txt and .json.
+- The two FAILs are unchanged:
+  - α_s with no threshold, 0.1147 (−3.7 σ);
+  - Δ₃ with the Higgs pair plus the gauge term, −0.094.
+- Removed rows: the arrow (withdrawn, D1894b) and the pyramid-vs-u* comparison (no shared step remains).
+- D1832's u_ℓ/u_d = 0.977 is listed as CONS, with no test.
+- An independent referee is pending.
