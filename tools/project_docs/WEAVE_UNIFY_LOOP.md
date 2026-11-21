@@ -17,7 +17,7 @@ At every rung the loop writes a postulate (label **P** principle / **C** conject
 |---|---|---|---|---|
 | U1 | L1/L2 | ~~P-twist (s_a Re M ≈ 1.07)~~ WITHDRAWN (D1757a: wrong by 4π; the twisted part would have to be 27–45× the dilaton's) → **U1′ C-geom:** visible gauge fields on a cycle whose volume gives α⁻¹ ≈ 24–40; C5's cold-dark-side mechanism must be re-derived on that picture | a consistent brane picture where the dilaton-inflaton still heats only our side | open (L4 next: reheating on the new picture) |
 | U2 | L3 | **P-rung:** one up-quark rung satisfies both the mixing data and the mass ratios | PREREG_B6_RUNG: if no rung is jointly viable, the placement is in tension | running (B6) |
-| U3 | R1 | **C-axion-thread:** the dark thread is axion-like (shift-symmetric: no α drift), coupled to F F̃ with c_γ/f ≈ 12 M_P⁻¹ (from β = 0.277°) | LiteBIRD β_reio/β_rec ≠ 0.997–0.999 (D404); any α drift | locked (D404 ratio) |
+| U3 | R1 | ~~C-axion-thread~~ DOWNGRADED (D1760): an axion thread breaks the A = 7.30 hub; the thread stays sequestered (β = 0 from it) | — | superseded by U12 |
 | U4 | R2 | **P-cold-DM:** the 12.8 GeV dark matter is collisionless (σ/m ≤ 1e-4 cm²/g) | velocity-dependent SIDM signatures | PASS (D1756) |
 | U5 | R3 | **P-no-0νββ-yet:** m_ββ = 1.59–3.80 meV | a LEGEND-1000/nEXO signal > 7.6 meV | locked (D1755) |
 | U6 | R3 | **P-no-light-new:** no 95 GeV scalar, no X17, no light sterile ν, no dark neutron decay | confirmation of any of them | prediction (D1753–D1754) |
@@ -26,3 +26,4 @@ At every rung the loop writes a postulate (label **P** principle / **C** conject
 | U9 | R1 | **P-no-walls:** no modular domain walls in our patch ⇒ the nHz background is astrophysical | a wall-shaped PTA spectrum | prediction (D1753) |
 | U10 | R2 | **P-no-EDM:** |d_e| ~ 1e-40 e·cm | any electron EDM detection | prediction (D1753) |
 | U11 | L1/L4 | **C-magD7:** visible sector on magnetised D7 (f ∝ T + g²S, g = 3 generations), dark on unfluxed D7 (f = T) ⇒ Re T ≈ 16.5–32, T_R = 2.6–4.3e8 GeV (x = 0.19–0.32), the generation flux is the inflaton's only handle on our forces | genesis window (M_N ≥ 3.9–6.4e10 GeV needed), wino window redo, ΔN_eff with a fluxed/unfluxed split | derived (D1758), locks next |
+| U12 | R1 | **C-photon-axion:** β = 0.277° from an axion on a lepton/U(1)-only cycle (no gluon coupling), m_a ≈ 1e-33–1e-28 eV ⇒ Re T_ℓ ≈ 20–22 (≈ visible cycle), f ≈ 0.04 M_P, c_γ ≈ 0.26 | scale-dependent β; β_reio/β_rec ≠ 0.997–0.999 (LiteBIRD); any α drift | estimate (D1760) |
