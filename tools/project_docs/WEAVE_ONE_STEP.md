@@ -61,3 +61,5 @@ Evaluating the action at that one point gives:
 
 
 **Referee corrections 21 Nov 10:55 (D1807):** axion f is 4.4× smaller (the dark-cycle axion has m ≈ 282 H₀; verdicts unchanged); α_D = 0.022 is conditional (no derivation since D1795); the dark modulus at ≈ 38.6 needs its own stabilisation; unification good to 0.55 % (gluino mass dominates the α_s error); proton decay in a GUT stack ≈ 1.6e35 yr; "chain closes" is nearly automatic with χ free — the content is that N = 7 is the unique rank with 𝒱 ≥ 1e4.
+
+**Correction 21 Nov 11:02 (D1810–D1811):** with the exact KKLT condition the natural hidden rank is **N = 6** (χ ≈ 90, 𝒱 ≈ 7.5e4, W₀ ≈ 1.0e-8), not 7 — the band ladder had dropped a log term. Nothing downstream of the gravitino changes (wino 0.66–0.69 TeV, gluino 5.6 TeV, T_R 3.7e8). The dark cycle can be held at ≈ 37–41 by its own SU(N_d = 10–12) condensate (postulate).

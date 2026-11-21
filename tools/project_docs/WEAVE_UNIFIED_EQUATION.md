@@ -61,6 +61,8 @@ Tilt (n_s), gauge running (α⁻¹ ≈ 28.9) and the wino/gravitino mass are ONE
 
 **Correction 21 Nov 10:36 (D1800–D1801, two-loop running):** α⁻¹ = 27.9 at M₁₂ = 1.07e16 GeV (α_s check 0.1158 vs 0.1180, consistent). The chain still closes with N = 7, but at χ ≈ 120, 𝒱 = 1.0e5, W₀ = 1.4e-8, Re T_vis = 20.1, T_R = 3.7e8 GeV; the wino stays at 0.66–0.69 TeV. (χ = 50 survives only within the wino tool's ×2 limit uncertainty.)
 
+**Correction 21 Nov 11:02 (D1810–D1811, exact KKLT condition):** the band ladder dropped ln(1 + 2x/3) ≈ 2.7; with |W₀| = A e^{−x}(1 + 2x/3) and natural A ∈ [0.3, 3], the consistency point is **N = 6, χ ≈ 90, 𝒱 ≈ 7.5e4, W₀ ≈ 1.0e-8** (N = 7 needs A ≈ 0.08). m₃/₂, the wino (0.66–0.69 TeV), the gluino (5.6 TeV), T_R and the α_s check are unchanged. A dark SU(N_d = 10–12) condensate stabilises the dark cycle at ≈ 37–41 (postulate C).
+
 ## 3c. The band ladder of the coupling (D1775, Danny's band postulate, v3.2)
     α⁻¹(M_s) = c/g_s + λ·N,   λ = ln(1/|W₀|)/(2π) ≈ 3.0,   c = 6n′ (visible flux on the ρ-orbifold, three generations at |M| = 6), N = hidden condensate rank
 The solution is carried across a band of width λ in Re T_vis by one rank N, then pushed to the next. Consistent points on the measured α⁻¹ = 28.6–29.1: (c, N) = (6, 8) → 29.2 (χ ≈ 58) and (9, 7) → 28.9 (χ ≈ 50); c = 12 closes the wino window. Same carry-then-push structure as the r ladder and the slip ladder.

@@ -17810,3 +17810,19 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
 - [found, report-only] **Joint with the visible cycle:** the same exact KKLT condition with N = 7 and A = 1 gives σ_vis = 7·20.8/2π = **23.2**, i.e. α⁻¹ = 9/g_s + 23.2 = 31.0, not 27.9–28.0. The band ladder (D1775: λ = ln(1/W₀)/2π) dropped the log term ln(1 + 2x/3) ≈ 2.7. Matching the two-loop α⁻¹ = 28.0 needs A_vis ≈ **0.077**.
   - A one-loop prefactor of 0.08 is not unnatural (instanton/condensate determinants vary by O(10)), but it is a hidden O(1) choice the band ladder had absorbed. Recorded as a joint correction to D1775/D1801: the band ladder holds with λ_eff = (ln(A/W₀) − ln(1 + 2x/3))/2π, and the closure at N = 7 requires A_vis ≈ 0.08.
   - Alternatively N = 6 with A ≈ 1: σ = 6·20.8/2π = 19.9 ≈ 20.15. That would REVIVE N = 6. D1801 rejected N = 6 through the volume control 𝒱 ≥ 1e4 at χ = 6, so that conclusion must be rechecked with the log term included. Queued as D1811 (lock first).
+
+## D1811 (LL, CENTRE — 21 Nov 2026): with the exact KKLT condition the natural hidden rank is N = 6, not 7 (locked verdict "N7 DISFAVOURED")
+- [computed, locked PREREG_D1811_EXACTKKLT, repo hash recorded] Using |W₀| = A e^{−x}(1 + 2x/3), x = 2πσ_vis/N, at σ_vis = 20.15 (two-loop), in the master relation with the wino window 0.66–0.69 TeV and 𝒱 ≥ 1e4:
+
+  | N | passing prefactors A | W₀ | χ | 𝒱 | reading |
+  |---|---|---|---|---|---|
+  | **6** | 0.3–3 | 1.03e-8 at A = 1 | **88–91** at A = 1 | 7.4–7.7e4 | **passes with natural prefactors** |
+  | 7 | only 0.05–0.1 | — | 78–162 | — | needs a small prefactor (D1810's A ≈ 0.08) |
+  | 5 | only 10–30 | — | — | — | — |
+  | 8, 9 | none | — | — | — | — |
+
+  - Verdict by the lock: **N = 7 DISFAVOURED**; with A ∈ [0.3, 3] only N = 6 passes.
+- **Correction chain (dated, not silent):** D1775's band ladder λ = ln(1/W₀)/2π dropped ln(1 + 2x/3) ≈ 2.7. That is why N = 7 looked natural (D1772, D1801). With the exact condition, the Weave's consistency point becomes **N = 6, χ ≈ 90, 𝒱 ≈ 7.5e4, W₀ ≈ 1.0e-8, m₃/₂ ≈ 2.6e5 GeV** (unchanged; the wino window is the same). Everything downstream of m₃/₂ is unchanged: wino, gluino 5.6 TeV, T_R, x, leptogenesis, α_s check.
+  - Band-ladder reading: α⁻¹ = 9/g_s + λ_eff·N with λ_eff = 20.15/6 = 3.36.
+  - D1801's rejection of N = 6 (volume < 1e4 at χ = 6) came from the dropped log term and is withdrawn.
+- Honest status: N and χ are still consistency selections, not predictions; what changed is which integer is natural. The dark-cycle rank N_d = 10–12 (D1810) should be rechecked the same way. It already used the exact condition, so it stands.
