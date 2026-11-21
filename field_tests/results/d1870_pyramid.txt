@@ -1,0 +1,6 @@
+EVEN class density/mean at corners [np.float64(1.343), np.float64(1.343), np.float64(1.343), np.float64(1.343)]
+ODD class density/mean at corners [np.float64(0.002), np.float64(0.002), np.float64(0.002), np.float64(0.002)]
+   even0 [np.float64(2.827), np.float64(2.827), np.float64(0.021), np.float64(0.021)]
+   even1 [np.float64(1.18), np.float64(1.18), np.float64(1.18), np.float64(1.18)]
+   even2 [np.float64(0.021), np.float64(0.021), np.float64(2.827), np.float64(2.827)]
+   odd [np.float64(0.002), np.float64(0.002), np.float64(0.002), np.float64(0.002)]

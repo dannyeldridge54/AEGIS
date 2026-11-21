@@ -18129,3 +18129,14 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
   - Each peak lies within 0.006 of its corner. The density at its own corner is **2.99× the cell mean**, and **≤ 0.01×** at the other two corners.
 - Reading (U24 + U26): the corners are literal LOCKS. Each corner admits only the zero modes whose Z₃ charge matches its local phase (a mode of the "wrong" charge must vanish there). So the 3 × 3 = 9 states split as one Z₃ sector of 3 families per corner. Danny's "splitting points in each direction" are exactly where each sector lives. The 3 families within a sector are the 3 modes sharing that corner; their hierarchy comes from the slips and theta ladders (D1822–D1829).
 - Weight: this localisation is a structural property of orbifold zero modes (charge must match the fixed-point phase), consistent with the localisation-at-fixed-points literature. It is derived, not fitted. It fixes WHERE sectors sit, which a full Yukawa computation (product over tori) now inherits as a labelling rule (the D1825 lesson).
+
+## D1870 (RIGHT, U26 — 21 Nov 2026): the pyramid's corners — the odd mode is shut out of all 4 corners; the 3 even modes share them in a 2 + 2 / all-4 / 2 + 2 pattern (LOCALISED)
+- [computed, locked PREREG_D1870_PYRAMID] Setup: T²/Z₂ at i, flux 4; corners 0, ½, τ/2, (1+τ)/2.
+  - The **odd mode is ≈ 0 at every corner** (0.002× mean). The even class sits at 1.34× mean at every corner.
+  - Per even mode:
+    - ψ⁰ sits on the two corners 0 and ½ (2.83×), with ~0 at τ/2 and (1+τ)/2;
+    - ψ² sits on the other two, τ/2 and (1+τ)/2 (2.83×);
+    - (ψ¹+ψ³)/√2 spreads over all four (1.18×).
+  - Verdict by the lock: **LOCALISED.**
+- Reading (U24/U26): the pyramid is a 4-corner lock that admits only even states (the odd neutrino mode cannot touch a corner). Its 3 even states split by DIRECTION: one along the real edge pair (0, ½), one along the τ edge pair (τ/2, (1+τ)/2), one shared by all. This is the "splitting points in each direction" structure on the Z₂ shape, compared with the turnover's one-sector-per-corner (D1849).
+- **Map status for our side (forward weave):** both folds are now mapped corner by corner (turnover D1849, pyramid D1870). Loop paused by Danny 11:50 to save credits; it advances only on "Ll". Next items are queued: the mixed-fold χ (D1871) and the quark-charge map (D1872).
