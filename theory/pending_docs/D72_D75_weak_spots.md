@@ -18079,3 +18079,8 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
 - The charges' origin: partly mapped (Z₂ ⊂ Z₆ half-units).
 - The outside knob V∞: at the unification scale (0.47 M₁₂).
 - v/m_SUSY: tuned input.
+
+## D1841 (LEFT, leptons — 21 Nov 2026): δ = 2/9 is NOT a residual-charge phase (no 2πk/n with n ≤ 60 matches)
+- [computed, locked PREREG_D1841_DELTA + DEVIATIONS D1 (the run-1 σ had a branch-jump bug, kept)] PDG masses give δ = 0.222226 rad (mod 2π/3) with σ_δ = 7.3e-6 rad from m_τ, i.e. 2/9 = 0.222222 at −0.6σ. **No phase 2πk/n with n ≤ 60 lies within 2σ** (chance of a hit would be p ≈ 1 %). Verdict: **NOT SUPPORTED.**
+- Reading: δ is a rational number IN RADIANS (2/9), not a rational fraction of a turn. No finite residual symmetry (Z_n, stabiliser or metaplectic phases) produces it. A phase that is rational in radians would have to come from a CONTINUOUS quantity: a Berry phase or holonomy (an angle accumulated along a path, e.g. a modulus moving along a loop or arc, which is the C-δ idea of D1768), or a ratio of two such quantities. This sharpens I5: the lepton key under picture A is not a lock (discrete charge) but a path (an accumulated angle), consistent with Danny's "unfolding through time" (U24). An angle gathered along a path is exactly what time evolution gives.
+- Next (lock first): compute the geometric phase accumulated by the τ_ℓ modulus along the shortest path from the cusp to ρ (or along a Markov loop through i, D1818) and test it against 2/9 rad with a guard.

@@ -1,0 +1,4 @@
+delta = 4.411016 rad (mod 2pi/3: 0.222226; 2/9 = 0.222222), sigma = 7.25e-06 rad
+hits: []
+chance p = 0.0112
+VERDICT: NOT SUPPORTED
