@@ -1,0 +1,3 @@
+electron class 2.0 own corner 0 ratios {1: np.float64(0.7009), 2: np.float64(0.7084)} -> Higgs corner 1
+normalised amps at Higgs corner: e 0.0000  mu(class 1) 0.0000  tau(class 0) 2.4496
+c_e = 0.0000  c_mu = 0.0000
