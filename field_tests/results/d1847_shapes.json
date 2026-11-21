@@ -1,0 +1,120 @@
+{
+ "two_d": {
+  "T2 (torus)": {
+   "N": 1,
+   "cones": [],
+   "chi_orb": 0.0,
+   "shape": "torus (square/hexagon with opposite sides glued)",
+   "fixed_points": 0
+  },
+  "T2/Z2": {
+   "N": 2,
+   "cones": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "shape": "PYRAMID: tetrahedron, 4 corners of angle pi (pillowcase)",
+   "chi_orb": 0.0,
+   "fixed_points": 4
+  },
+  "T2/Z3": {
+   "N": 3,
+   "cones": [
+    3,
+    3,
+    3
+   ],
+   "shape": "TURNOVER: 3 corners of angle 2pi/3 (only at tau = rho)",
+   "chi_orb": 0.0,
+   "fixed_points": 3
+  },
+  "T2/Z4": {
+   "N": 4,
+   "cones": [
+    4,
+    4,
+    2
+   ],
+   "shape": "3 corners (pi/2, pi/2, pi) (only at tau = i)",
+   "chi_orb": 0.0,
+   "fixed_points": 3
+  },
+  "T2/Z6": {
+   "N": 6,
+   "cones": [
+    6,
+    3,
+    2
+   ],
+   "shape": "3 corners (pi/3, 2pi/3, pi) (only at tau = rho)",
+   "chi_orb": 0.0,
+   "fixed_points": 3
+  }
+ },
+ "six_d_hodge": {
+  "T6/Z3": [
+   36,
+   0
+  ],
+  "T6/Z2xZ2": [
+   51,
+   3
+  ],
+  "T6/Z3xZ3": [
+   84,
+   0
+  ],
+  "T6/Z4": [
+   31,
+   7
+  ],
+  "T6/Z6-I": [
+   29,
+   5
+  ],
+  "T6/Z7": [
+   24,
+   0
+  ],
+  "T6/Z2xZ4": [
+   61,
+   1
+  ],
+  "T6/Z6xZ6": [
+   84,
+   0
+  ]
+ },
+ "chi": {
+  "T6/Z3": 72,
+  "T6/Z2xZ2": 96,
+  "T6/Z3xZ3": 168,
+  "T6/Z4": 48,
+  "T6/Z6-I": 48,
+  "T6/Z7": 48,
+  "T6/Z2xZ4": 120,
+  "T6/Z6xZ6": 168
+ },
+ "A_needed": {
+  "T6/Z3": 0.804,
+  "T6/Z2xZ2": 1.073,
+  "T6/Z3xZ3": 1.877,
+  "T6/Z4": 0.536,
+  "T6/Z6-I": 0.536,
+  "T6/Z7": 0.536,
+  "T6/Z2xZ4": 1.341,
+  "T6/Z6xZ6": 1.877
+ },
+ "natural_A": {
+  "T6/Z3": true,
+  "T6/Z2xZ2": true,
+  "T6/Z3xZ3": true,
+  "T6/Z4": true,
+  "T6/Z6-I": true,
+  "T6/Z7": true,
+  "T6/Z2xZ4": true,
+  "T6/Z6xZ6": true
+ }
+}
