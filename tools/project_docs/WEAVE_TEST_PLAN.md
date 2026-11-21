@@ -25,7 +25,7 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 | B2 TM1 sin²θ₁₂ | 0.3184 | JUNO 6-yr (±0.0015) | Flavour panel | L (strongest near-term test, ~6σ if centre holds) |
 | B3 δ_CP branch | lower branch at s²₂₃ 0.561 | DUNE, Hyper-K | Flavour panel | L |
 | B4 Σm_ν | 0.0587 eV (NO, m₁ = 0) | DESI DR3 + CMB; KATRIN/Project 8 | engine flavour | L |
-| B5 0νββ m_ββ | NO with m₁ = 0 ⇒ 1.4–3.7 meV (Majorana phases free) | LEGEND-1000, nEXO (reach ~10 meV) ⇒ predict NULL | to build: weave_mbb | T |
+| B5 0νββ m_ββ | 1.59–3.80 meV (D1755; fail if a signal > 7.6 meV) | LEGEND-1000, nEXO ⇒ predict NULL | weave_mbb | R (locked PREREG_B5) |
 | B6 CKM fit | hosted (best 1.82, rung 4) | PDG/CKMfitter | weave_ckm, pool | L (locked re-check of the 1.82 point) |
 | B7 R_μμ / b→sμμ | = SM | LHCb Run 3 | engine quarks | R |
 | B8 θ̄ = 0 ⇒ neutron EDM | d_n from CKM only (~1e-32 e·cm) | n2EDM (PSI), ~1e-27 | to build | T |
@@ -50,7 +50,7 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 | D2 negative space z† | conditional (coupling not detected) | Lyα BAO z 2–3 (DESI) | weave_negspace | L |
 | D3 α drift | ζ ≲ 3.6e-6 needed ⇒ thread sequestered or axion-like | atomic clocks, quasar spectra (ESPRESSO) | Janus clocks | R |
 | D4 equivalence principle | no violation | MICROSCOPE-2 | — | L |
-| D5 cosmic birefringence | bridge β² = 2.5e-3 (c_γ/f)²(1+w0) deg²; data β = 0.277° ± 0.057° | ACT+Planck now; SO, LiteBIRD | to build: biref bridge tool | T (high priority: decides thread identity) |
+| D5 cosmic birefringence | bridge β² = 2.5e-3 (c_γ/f)²(1+w0) deg² ⇒ c_γ/f ≈ 12 at β = 0.277°; ratio β_reio/β_rec = 0.997–0.999 (locked D404) | ACT+Planck now; LiteBIRD (both bumps) | bridges D403/D404 | R (thread must be axion-like with c_γ/f ≈ 12; LiteBIRD ratio test) |
 | D6 GW speed = c, no extra polarisations | standard | LIGO-Virgo-KAGRA | — | L |
 | D7 Hubble / S8 tensions | not resolved by the thread | SH0ES, JWST, DES/KiDS | Janus | L (honest null) |
 

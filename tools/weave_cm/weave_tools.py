@@ -186,6 +186,16 @@ def weave_basic(a):
     return dict(q=q, value=v, label=lab)
 
 
+def weave_mbb(a):
+    """0vbb (PREREG_B5_MBB): normal ordering, m1 = 0, one free Majorana phase phi. {"s12": optional, "phi_deg": optional}."""
+    S13, m2, m3 = 0.02195, math.sqrt(7.49e-5), math.sqrt(2.513e-3)
+    s12 = float(a.get('s12', (1 - 3 * S13) / (3 * (1 - S13)))); A = m2 * s12 * (1 - S13); B = m3 * S13
+    out = dict(mbb_min_meV=abs(A - B) * 1e3, mbb_max_meV=(A + B) * 1e3, s12=s12, sum_mnu_eV=m2 + m3,
+               label='P (band; the Majorana phase is free) — predicts NULL for LEGEND-1000 and nEXO')
+    if 'phi_deg' in a: out['mbb_meV'] = abs(A + B * cmath.exp(1j * math.radians(float(a['phi_deg'])))) * 1e3
+    return out
+
+
 def weave_paths(a):
     """Connection map: {\"from\":..,\"to\":..} -> shortest chain of shared quantities; {} -> all cross-sector connections."""
     import weave_paths as P
@@ -194,9 +204,10 @@ def weave_paths(a):
 
 TOOLS = {'weave_rung': weave_rung, 'weave_rung_of': weave_rung_of, 'weave_koide': weave_koide, 'weave_koide_slip': weave_koide_slip,
          'weave_tauq': weave_tauq, 'weave_ckm': weave_ckm, 'weave_proton': weave_proton, 'weave_atomic': weave_atomic,
-         'weave_arc': weave_arc, 'weave_rladder': weave_rladder, 'weave_negspace': weave_negspace, 'weave_paths': weave_paths, 'weave_basic': weave_basic}
+         'weave_arc': weave_arc, 'weave_rladder': weave_rladder, 'weave_negspace': weave_negspace, 'weave_paths': weave_paths, 'weave_basic': weave_basic, 'weave_mbb': weave_mbb}
 
 if __name__ == '__main__':   # self-test: reproduces the published numbers
+    assert abs(weave_mbb({})['mbb_max_meV'] - 3.7952) < 1e-3
     assert abs(weave_rung({'m': 8})['eps_formula'] - 0.003117) < 2e-5
     k = weave_koide({'masses': [0.51099895, 105.6583755, 1776.93]}); assert abs(k['Q'] - 0.6666645) < 2e-7 and abs(k['delta'] - 0.222225) < 2e-6
     q = weave_koide({'masses': [1.29e-3, 0.629, 169.0]}); assert abs(q['Q'] - 0.8870) < 5e-4
