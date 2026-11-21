@@ -166,3 +166,29 @@ The UFE splits into three field equations. They couple only through named interf
 The S, T and U sectors are each balanced on their own.
 - **Reading:** the missing piece is an S–T coupling term (for example D7 threshold states, or the inflaton's branching into the hidden sector), not a fourth field.
 - **Use as a prediction:** the size of the imbalance fixes what the missing term must supply. Example: Δ₃ needs +0.044, which fixes the charges and masses of the threshold states. That is a testable prediction of new states, made from the residual.
+
+## 8. One central equation, three knobs (Danny 16:49)
+"Think of each equation as being a knob for a central equation."
+
+**The three knob equations.** Each one solves its own field and outputs a small set of numbers, its knob setting.
+
+| knob | its equation | what it outputs (the knob setting) | its own constraints |
+|---|---|---|---|
+| **K_S** (dilaton) | V(S) = V∞ G\|∂ ln E(S, 3/2)\|² | g_s (2/√3 at ρ), V∞, the inflaton mass, N* | n_s, r, A_s |
+| **K_T** (volumes) | \|W₀\| = A e^{−x}(1 + 2x/3), x = 2πσ/N | x = 21.10, W₀, 𝒱, m₃/₂, α⁻¹(M₁₂) | KKLT, N = 6, χ = 48 |
+| **K_U** (matter) | Yukawas at u, ρ, i | \|u\| ≈ 0.0266, the knot charges, fluxes (4, 4, 8) | quark/lepton/neutrino naturalness |
+
+**The central equation** is the 4D effective theory. It takes the three knob settings and returns every observable:
+
+    O = F(K_S, K_T, K_U) + I_ST(K_S, K_T) + I_TU(K_T, K_U) + I_SU(K_S, K_U)
+
+- **I_ST** carries f_vis = T + 9S, m₃/₂ ∝ √g_s, and inflaton → gravitino (T_R). This is **where every current failure sits**.
+- **I_TU** carries the matter metric K_α(T).
+- **I_SU** carries the knot locations.
+
+**How it is used:**
+1. Turn one knob at a time, holding the other two at their own solutions, and read the shift in every observable (the compass vectors).
+2. Find the single setting (K_S, K_T, K_U) that balances all observables. Triangulate it.
+3. Where no setting balances (α_s against the wino on m₃/₂; the T_R box), the residual sizes the missing interface term.
+
+To be built: tools/weave_knobs.py, a central-equation engine. It wraps the scoreboard chain as O(K_S, K_T, K_U) and computes the knob Jacobian ∂O/∂K. The compass then reads its vectors from this Jacobian instead of from hand-entered signs.
