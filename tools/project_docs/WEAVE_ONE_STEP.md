@@ -25,14 +25,14 @@ Evaluating the action at that one point gives:
 | flux part of the visible coupling | 9/g_s = 7.79 | |M| = 9 at ρ |
 | unified coupling at 7e15 GeV | α⁻¹ = 9/g_s + λ·7 = 28.9 | band ladder; matches the running (28.6–29.1) |
 | visible cycle | Re T ≈ 21.1 | unification |
-| dark / photon-axion cycle | Re T ≈ 38.6 (KKLT cross term; was 21 before D1793) | Λ size and birefringence (their agreement is automatic, not evidence) |
+| photon-axion cycle | Re T ≈ 36–39 (KKLT cross term; was 21 before D1793) | birefringence only; it cannot also be Λ (oscillates, m ≈ 64 H₀, D1795) |
 | inflaton's handle on our forces | x = 7.79/28.9 = 0.27 | f = T + 9S |
 | reheating | T_R = 3.6e8 GeV | x |
 | heavy neutrinos | M_N ≥ 4.5e10 GeV (leptogenesis viable) | T_R |
 | W₀, volume, gravitino | 5.9e-9 · 4.2e4 · 2.6e5 GeV | master relation |
 | wino (dark-matter component) | 0.67–0.71 TeV | m₃/₂/375 |
 | scalars, higgsinos; tan β | 0.25–0.7 PeV; 1–4 (m_h = 125) | split SUSY |
-| dark force | α_D = 0.022 at 12.8 GeV (was 0.035) | dark cycle 38.6 |
+| dark force | α_D = 0.022 at 12.8 GeV if the dark cycle is ≈ 38.6 (an input size); collisionless for every dark-photon mass (D1795) | dark cycle |
 | dark matter | 12.8 GeV asymmetric; collisionless for m_A′ ≳ 1 GeV | one asymmetry |
 | cosmic birefringence | β ≈ 0.28°, from the photon-axion | dark/photon-axion cycle |
 | inflation | n_s 0.9706 (tilt C ↔ χ), r = 5.7e-4 (τ_q dilutes) or 5.4e-4, α_s −9.7e-4 | species plateau |
@@ -51,7 +51,7 @@ Evaluating the action at that one point gives:
 
 ## 4. Honest limits of "one step"
 - **The integers are not derived.** (7, ≈50, 9, 8, ½) can all be written from the two knot orders (2, 3) — for example 9 = 3², 8 = 2³, ½ = 1/2, 7 = 2·3 + 1, 50 = 2(2 + 3)². That has no evidential weight: one-operation expressions in 2 and 3 reach 43 of the integers 1–60. Only a rule fixed in advance would count; the clean ones so far are families = 3 = |Z₃| ⇒ |M| = 9, and the half class = 1/|Z₂|.
-- **Still inputs:** the inflation height (needs Hubble-scale SUSY breaking); the lepton mass scale and δ = 2/9; the neutrino masses; 12 O(1) quark couplings (D1779: not removable in the generic model); the size of Λ (the dark-cycle size ≈ 38.6, D1793); the dark photon's mass and mixing ε; and the last factor of the electroweak hierarchy (v/m_SUSY ~ 4e6, tuned).
+- **Still inputs:** the inflation height (needs Hubble-scale SUSY breaking); the lepton mass scale and δ = 2/9; the neutrino masses; 12 O(1) quark couplings (D1779: not removable in the generic model); the size of Λ (a pure constant again: the D1788 leftover was withdrawn, D1795); the dark photon's mass and mixing ε; and the last factor of the electroweak hierarchy (v/m_SUSY ~ 4e6, tuned).
 - **Lepton hierarchy is a fit, not a prediction (D1790–D1792):** the |M| = 9 Z₃ overlaps at ρ give three families (computed in-house, matches 1309.4925). Random Higgs directions give near-democratic masses; a tuned Higgs direction fits both lepton ratios exactly, on both the Z₃ and Z₂ orbifolds. Nothing yet fixes that direction.
 - **Consistency selections, not predictions:** the integers N = 7 and χ ≈ 50 were chosen by data — the wino window and the measured coupling.
 - **Not yet refereed:** loop 2 (D1762–D1779); both referee runs were stopped before they reported. The ×28 failure of D3 at ρ and the magnetised-D7 repair passed the loop-1 referee as a candidate.
