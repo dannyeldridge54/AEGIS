@@ -56,3 +56,10 @@ This takes every tested direction from D1806 to D1887 and records which knot, to
 - The value of V∞ (the one knob).
 - v/m_SUSY (2.7e-7).
 - The absolute flux choices (6 for leptons, (4, 4, 8) for neutrinos) are chosen to fit, not derived.
+
+## 6. End run (D1894, 13:20 CT) and corrections
+- **Correction (D1885a):** the flux-6 electron result in D1885 was an artefact of a degenerate mode class, so it is withdrawn. Koide's bend δ is an input again, and so is the electron's coefficient (fixed by Koide at c_e = 0.106).
+- **End run:** I ran the whole tolerance ladder at once. One shared step, u* = 0.052, passes every data sector down to ±20 % (×1.2), and fails at ±10 %.
+- **What that tests:** the run checks one real relation, the muon-to-tau ratio against the down-quark step. They agree to 30 %. The pyramid's step (0.064) also agrees, to about 23 %.
+- **Up quarks:** their step is close to u*² (two rungs). I'm reporting that number only, not counting it as evidence.
+- **Precision limit:** the single-step picture holds to about 20 %. Going finer needs each torus's own rung law.

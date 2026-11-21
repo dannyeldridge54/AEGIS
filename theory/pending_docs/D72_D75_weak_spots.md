@@ -18290,3 +18290,14 @@ Follow-up check (field note, same tick): recomputing the flux-6 "singlet" class 
 
 ## D1885a — correction to D1885 (21 Nov 2026)
 D1885's PASS (electron one corner off on the flux-6 turnover, r = 0.177) rested on treating the flux-6 dim-1 class as non-degenerate (its DEVIATIONS D2). D1893's seed check shows that class is NOT a stable eigenvector; r = 0.177 was basis-dependent. **D1885 is withdrawn (→ not supported).** Koide's bend δ is again an input. The flux-6 prediction is withdrawn with it. The median arrow's electron sector (coefficient 0.177, D1889–D1891) loses its geometric basis; from now on the electron coefficient is treated as an INPUT fixed by Koide, and the electron/Koide pair carries no test content.
+
+## D1894 — CENTRE: the END RUN (whole tolerance ladder in one shot) — arrow holds to ×1.2, breaks at ×1.1 (21 Nov 2026)
+Lock: PREREG_D1894_END_RUN (pushed with theory/median/end_run.py before running).
+Result (field_tests/results/d1894_end_run.txt): one shared step **u* = 0.0521** passes every data sector at ×2, ×1.5, ×1.3 and **×1.2 (Δ₃ tol 0.025)**; at ×1.1 / 0.020 it fails (μ/τ −1.38, down +1.38, Δ₃ −1.15). Internal pyramid ratio −1.13 at ×1.2 (just over), −2.15 at ×1.1.
+END RESULT, stated plainly:
+- The arrow's real data content is ONE relation: **m_μ/m_τ (0.0595) ≈ the down-quark step (0.0457)** — the turnover's lepton step and quark step agree to 30 %, so one shared u* = 0.052 threads both within ±20 %. Δ₃ and the thread pass independently of u*.
+- The pyramid's rung ratio (0.064) agrees with that same step to ~23 % (internal consistency).
+- The electron is an input after D1885a: Koide fixes c_e = 0.106 (m_e reproduced, trivially).
+- Report: the up-quark step is u_u ≈ u*^{1.95} — **two rungs of the same step** (numerology guard: p ≈ 2 is one number near an integer; no weight until the shifted-stack charges predict it).
+- Precision limit: the single-step picture is good to ~20 %, not ~10 %. Going further needs each torus's own rung law (Danny 11:19), not one shared number.
+Status: median loop closed with this end run; D1806–D1894 still await an independent referee before any write-up.

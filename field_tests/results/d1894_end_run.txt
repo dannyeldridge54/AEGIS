@@ -1,0 +1,9 @@
+rung x2.0 / D3 tol 0.050: u* = 0.0521  m_mu/m_tau -0.19 down step +0.19 Delta_3 -0.46 thread +0.00  | internal nu -0.30 | PASS
+rung x1.5 / D3 tol 0.040: u* = 0.0521  m_mu/m_tau -0.32 down step +0.32 Delta_3 -0.57 thread +0.00  | internal nu -0.51 | PASS
+rung x1.3 / D3 tol 0.030: u* = 0.0521  m_mu/m_tau -0.50 down step +0.50 Delta_3 -0.77 thread +0.00  | internal nu -0.78 | PASS
+rung x1.2 / D3 tol 0.025: u* = 0.0521  m_mu/m_tau -0.72 down step +0.72 Delta_3 -0.92 thread +0.00  | internal nu -1.13 | PASS
+rung x1.1 / D3 tol 0.020: u* = 0.0521  m_mu/m_tau -1.38 down step +1.38 Delta_3 -1.15 thread +0.00  | internal nu -2.15 | FAIL
+
+END RESULT: tightest passing rung x1.2 (Delta_3 tol 0.025); arrow u* = 0.0521
+  electron coefficient from Koide (input): c_e = 0.1058 -> m_e/m_tau = 2.874e-04 (obs 2.876e-04)
+  up-quark exponent p (u_u = u*^p) = 1.95
