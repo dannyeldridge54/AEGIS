@@ -20,6 +20,14 @@ Balance is not "every number matches". It is reached when **all** of the followi
 4. **No term is a fit pretending to be a prediction.** Every fit is labelled FIT and counted. The final count of predictions, fits and TRUST inputs is stated.
 5. **An independent referee signs off** on the whole board.
 
+**Anti-gaming guards (referee D1971, adopted):**
+- **G-T1.** Relabelling is not progress. A node that moves from STRAINED to TRUST or FIT counts as a **null round**, not as balance.
+- **G-T2.** Every TRUST label needs a written reason why the item cannot be derived, plus a referee countersignature.
+- **G-T3.** The **number of TRUST and FIT inputs must not rise** between rounds. The TRUST and FIT inputs must be independent of each other (no TRUST derived from another TRUST).
+- **G-T4.** Balance also requires a pre-registered count of **killable predictions ≥ k** (k is set now to the current count, 4: JUNO sin²θ₁₂, r, the wino, m_X), and that count **must not fall**.
+- **G-T5.** A node with nothing derived (N8 today) scores **zero predictions**. It can be TRUST, but it never counts toward balance.
+- **G-T6.** A round is **null** when the prediction / FIT / TRUST ledger is unchanged. Seven null rounds are needed with every node BALANCED, or TRUST under G-T2.
+
 **The honest scoring of the final equation:** the number of real predictions that survived tests which could have killed them, against the number of fits and TRUST inputs.
 
 ## The nodes

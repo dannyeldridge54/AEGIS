@@ -19327,3 +19327,17 @@ Every check catches the mistake it was built for:
 - **Round-2 moves** (none strains another node): an honest relabel pass with a prediction/FIT/TRUST count; N* from reheating; the y_t and DR→MS fix; scoring D1 and E3; an M_N scan as a diagnostic only.
 - **Deferred:** the tadpoles, U₃ and the full moduli spectrum; the D7 threshold spectrum.
 - The referee on the board comes next.
+
+## D1971 — REFEREE on the balance board (round 1): the endpoint was gameable, so guards are added
+- **Spot-checks:** JUNO (1.05σ JUNO-only, 1.42σ combined; TM2 3.63σ and 4.63σ) and Br (5.1 % only at p = 3; ≤ 2.3 % at natural p) match the files. "0/9 balanced" holds.
+- **"Wino DM ≈ 20 %" was untraceable.** It is now cited as node N6's own rescaling of D732 (≈ 22 %) and marked unverified.
+- **MAJOR:** relabelling everything TRUST would have "reached balance". Guards G-T1 to G-T6 are added to the node charter:
+  - relabelling counts as a null round;
+  - TRUST needs a written reason plus a referee countersignature;
+  - the TRUST and FIT count may not rise;
+  - the count of killable predictions (≥ 4) may not fall;
+  - a node with nothing derived scores zero;
+  - a round is null when the ledger is unchanged.
+- **MINOR:** the round-2 knock-ons were unchecked predictions and are now annotated (y_t feeds m₃/₂ and the wino; N* feeds T_R; M_N³ couples to m_X).
+- An automated check that every PASS carries a FIT / NO-POWER / CONDITIONAL tag where it applies is owed.
+- **Highest-information move:** the wino kill test, first in round 2.
