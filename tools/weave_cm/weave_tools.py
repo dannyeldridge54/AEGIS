@@ -279,10 +279,19 @@ def weave_walls(a):
                 weave_prediction='no domain walls (SL(2,Z) images of rho are one vacuum); nHz background = SMBHB', label='S (template), D approximate')
 
 
+def weave_edm(a):
+    """EDMs (D1763, PREREG_B8B9). {"m_scalar_GeV"=4.7e5,"sin_phi"=1}. One-loop SUSY scaling d_e ~ 1e-29 (5 TeV/m)^2 sin(phi) (2106.10919 scaling, estimate);
+    d_n(SUSY) taken ~10x d_e (quark-mass + chromo-EDM factor, estimate); CKM-only d_n ~ 1e-32 (range 1e-33..1e-31, literature); theta-bar = 0."""
+    m, sp = float(a.get('m_scalar_GeV', 4.7e5)), float(a.get('sin_phi', 1.0))
+    de = 1e-29 * (5e3 / m) ** 2 * sp
+    return dict(d_e_ecm=de, d_n_susy_ecm=10 * de, d_n_ckm_ecm=1e-32, d_n_total_ecm=10 * de + 1e-32,
+                bounds=dict(d_e=4.1e-30, d_n=1.8e-26), label='E (scalings), theta-bar = 0 by anomaly-free weights')
+
+
 TOOLS = {'weave_rung': weave_rung, 'weave_rung_of': weave_rung_of, 'weave_koide': weave_koide, 'weave_koide_slip': weave_koide_slip,
          'weave_tauq': weave_tauq, 'weave_ckm': weave_ckm, 'weave_proton': weave_proton, 'weave_atomic': weave_atomic,
          'weave_arc': weave_arc, 'weave_rladder': weave_rladder, 'weave_negspace': weave_negspace, 'weave_paths': weave_paths, 'weave_basic': weave_basic, 'weave_mbb': weave_mbb, 'weave_magd7': weave_magd7, 'weave_sidm': weave_sidm, 'weave_wino': weave_wino, 'weave_genesis': weave_genesis,
-         'weave_axion_relic': weave_axion_relic, 'weave_W0': weave_W0, 'weave_rinv': weave_rinv, 'weave_walls': weave_walls}
+         'weave_axion_relic': weave_axion_relic, 'weave_W0': weave_W0, 'weave_rinv': weave_rinv, 'weave_walls': weave_walls, 'weave_edm': weave_edm}
 
 if __name__ == '__main__':   # self-test: reproduces the published numbers
     assert abs(weave_mbb({})['mbb_max_meV'] - 3.7952) < 1e-3
@@ -304,4 +313,5 @@ if __name__ == '__main__':   # self-test: reproduces the published numbers
     assert abs(weave_negspace({})['z_switch'] - 2.88) < 0.05
     assert abs(weave_rladder({'D': 6})['r'] - 1.082e-3) < 2e-6
     w = weave_walls({'T_MeV': 10, 'alpha': 0.1}); assert abs(w['f_peak_nHz'] - 1.14) < 0.02 and abs(weave_walls({'f_nHz': [1]})['spectrum']['1'] / weave_walls({'f_nHz': [1]})['h2Omega_peak'] - (lambda x: 4 / (x ** -3 + 3 * x))(1 / weave_walls({})['f_peak_nHz'])) < 1e-9
+    e = weave_edm({'m_scalar_GeV': 2.5e5}); assert abs(e['d_e_ecm'] - 4e-33) < 1e-34 and abs(weave_edm({'m_scalar_GeV': 7e5})['d_e_ecm'] - 5.1e-34) < 1e-35
     print('weave_tools selftest OK', json.dumps({k: round(v, 5) for k, v in c.items() if isinstance(v, float)}))

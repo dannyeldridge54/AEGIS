@@ -28,8 +28,8 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 | B5 0νββ m_ββ | 1.59–3.80 meV (D1755; fail if a signal > 7.6 meV) | LEGEND-1000, nEXO ⇒ predict NULL | weave_mbb | R (locked PREREG_B5) |
 | B6 CKM fit | hosted (best 1.82, rung 4) | PDG/CKMfitter | weave_ckm, pool | L (locked re-check of the 1.82 point) |
 | B7 R_μμ / b→sμμ | = SM | LHCb Run 3 | engine quarks | R |
-| B8 θ̄ = 0 ⇒ neutron EDM | d_n from CKM only (~1e-32 e·cm) | n2EDM (PSI), ~1e-27 | to build | T |
-| B9 electron EDM | unobservable (~1e-40) | ACME III, JILA | to build | T |
+| B8 θ̄ = 0 ⇒ neutron EDM | d_n from CKM only (~1e-32 e·cm) | n2EDM (PSI), ~1e-27 | weave_edm (21 Nov 10:30) | T → **R** (PREREG_B8B9_EDM: d_n ≲ 1e-31) |
+| B9 electron EDM | unobservable: 5e-34 – 4e-33 e·cm (D1763; the ~1e-40 was the old chain) | ACME III, JILA | weave_edm (21 Nov 10:30) | T → **R** (PREREG_B8B9_EDM) |
 | B10 proton decay | TWO BRANCHES (D1797): GUT stack ⇒ τ(e⁺π⁰) ≈ 2.5–3.2e34 yr (Hyper-K discovery or kill); SM-direct ⇒ none | Hyper-K, DUNE | code estimate | L → **R** (21 Nov 10:26: PREREG_B10_PROTON) |
 | B11 gauge couplings | D3 at ρ fails ×28 ⇒ visible on D7 (D1753 R1) | α_s, sin²θ_W, α | to build: RG + Kähler-volume tool | T |
 
@@ -37,7 +37,7 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 | Test | Weave number | Data | Tool | Status |
 |---|---|---|---|---|
 | C1 12.8 GeV asymmetric DM, direct detection | σ_SI below LZ, inside XLZD reach for ε near the ceiling | LZ, XENONnT, XLZD | Hyperion galaxy / engine | L → **R** (21 Nov 10:26: PREREG_C1_DIRECT, mass 12.8 GeV) |
-| C2 dark photon | 0.3–12.8 GeV, ε 1e-11 – LZ ceiling | SHiP, NA64, Belle II | to build: dark-photon window tool | T |
+| C2 dark photon | 0.3–12.8 GeV, ε 1e-11 – LZ ceiling | SHiP, NA64, Belle II | window in lock text (21 Nov 10:30) | T → **R** (PREREG_C2_DARKPHOTON: visible decays only, 0.3–12.8 GeV) |
 | C3 DM self-interaction σ/m | computable from α_D ≥ 4.7e-4, m_A′ | cluster/dwarf bounds (σ/m < ~1 cm²/g) | to build (arXiv:1403.1077 formulas) | T → **R** (weave_sidm; 21 Nov 10:22: at α_D = 0.022, σ/m ≤ 2e-3 cm²/g for every m_A′, D1795) |
 | C4 no galactic-centre DM annihilation | asymmetric ⇒ none | Fermi GCE | — | L → **R** (21 Nov 10:24: PREREG_C4_NO_ANNIHILATION) |
 | C5 wino 0.67–1.0 TeV | disappearing tracks; γ-line | ATLAS/CMS Run 3, HL-LHC; CTA | lhc_*, galaxy γ-line | R |
