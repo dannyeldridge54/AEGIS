@@ -17295,3 +17295,8 @@ Research status: two rounds; round 2 found no new Weave-native mechanism beyond 
 - [computed, locked first] NO, m₁ = 0, Δm² from NuFIT 6.0: m₂ = 8.65 meV, m₃ = 50.13 meV (Σ = 0.05878 eV ✓ D1234). m_ββ = |m₂ s₁₂² c₁₃² + m₃ s₁₃² e^{iφ}|.
 - Weave TM1 (s₁₂² = 0.3184): **m_ββ = 1.59–3.80 meV** (φ free). With the measured 0.307: 1.50–3.70 meV. Fail threshold (locked): a confirmed signal above 7.6 meV.
 - Reach: LEGEND-1000 ≈ 9–21 meV, nEXO ≈ 5–20 meV ⇒ the Weave predicts NO 0νββ signal in either; a discovery there falsifies NO + m₁ = 0 (or the Weave's neutrino sector). Not yet scored (needs post-lock data). Tool weave_mbb added (self-test passes). results: field_tests/results/b5_mbb.json.
+
+## D1756 — BIG LOOP 1 / engineering E2: dark-matter self-interaction (PREREG_C3_SIDM) → PASS (collisionless), no cores
+- [computed, locked first] Born transfer cross-section for the 12.8 GeV asymmetric particle with a repulsive dark-photon Yukawa (Born parameter α_D m_χ/m_A′ ≤ 0.20 everywhere ✓): at α_D = 4.7e-4, σ_T/m ≤ 9.3e-7 cm²/g at 1000 km/s (bound ~0.1) ⇒ PASS. At ×10 α_D the largest value is 9.6e-5 cm²/g (m_A′ = 0.3 GeV).
+- [result, E] No value reaches 0.5 cm²/g at 30 km/s ⇒ the Weave's dark matter is effectively COLLISIONLESS: it does not make dwarf-galaxy cores. Small-scale structure (ledger 4.3) must be baryonic feedback in the Weave — a prediction: SIDM-style velocity-dependent signatures will not be found.
+- [numerical note] for R = m_χ v/m_A′ ≪ 1 the bracket ln(1+R²) − R²/(1+R²) cancels in floating point (rows at m_A′ = 12.8 GeV print −0.0); the true values are ~R⁴/2·(…) ≪ 1e-9 cm²/g, so the verdict is unaffected. Recorded here instead of a rerun.
