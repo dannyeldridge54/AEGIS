@@ -81,14 +81,24 @@
     "proton lifetime [yr] + (\u25cf)"
    ]
   },
-  "Br(phi->NN)": {
-   "net": 1.0,
-   "spread": 0.02179097045221945,
+  "p in M_N \u221d (Re S)^p": {
+   "net": 2.0,
+   "spread": 19.0,
    "all_three_agree": true,
    "direction": "RAISE",
    "contested": false,
    "voters": [
-    "non-thermal leptogenesis: Br(phi->NN) needed + (\u25cf)"
+    "non-thermal leptogenesis: derived Br(phi->NN) vs 9.5 % needed + (\u25d4)"
+   ]
+  },
+  "S-coupled hidden gauge groups": {
+   "net": -2.0,
+   "spread": 19.0,
+   "all_three_agree": true,
+   "direction": "LOWER",
+   "contested": false,
+   "voters": [
+    "non-thermal leptogenesis: derived Br(phi->NN) vs 9.5 % needed - (\u25d4)"
    ]
   },
   "T_R": {
@@ -201,6 +211,18 @@
    "count": 1,
    "by": [
     "one shared rung step (the arrow)"
+   ]
+  },
+  "input: M_N \u221d (Re S)^3 needed (p<=2 fails)": {
+   "count": 1,
+   "by": [
+    "derive Br(phi->NN) from M_N(S)"
+   ]
+  },
+  "hidden sector: f_hid must be S-free": {
+   "count": 1,
+   "by": [
+    "derive Br(phi->NN) from M_N(S)"
    ]
   }
  }

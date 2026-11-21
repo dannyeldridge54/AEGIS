@@ -24,12 +24,15 @@ Legend: ● on target (inside the bar by > 0.3 dex or < 1σ); ◔ passes but thi
 | 18 | 3 | inflation | n_s with S at i | 0.9704 | ● | 1.11 σ | S vacuum rho | D1926 |  |
 | 19 | 3 | inflation | r | 0.00054 | ● | 1.82 dex | — | v4 |  |
 | 20 | 3 | cosmology | T_R vs M_N (thermal leptogenesis) | 3.7e+08 | ○ |  | — | v4 (D1897) | a bound the model sidesteps (non-thermal leptogenesis): NOT a pull (D1935) |
-| 21 | 3 | cosmology | non-thermal leptogenesis: Br(phi->NN) needed | 0.095 | ● | 1.02 dex | Br(phi->NN) + | D1941 (m_phi 4.9e12 > 2 M_N) | viable inside the gravitino box at max DI CP; a branching requirement, not derived |
-| 22 | 3 | cosmology | non-thermal wino Omega from gravitinos (Omega ∝ T_R) | 0.01966 | ● | 0.79 dex | T_R - | D732 (Y3/2 ∝ T_R) | D732: Omega 0.017 at T_R 3.2e8 (M2 0.66 TeV), 0.11 at 3.0e9 ⇒ T_R capped at ~3e9 |
-| 23 | 3 | cosmology | Delta N_eff | 1e-06 | ● | 5.23 dex | — | v4 | 0 exactly; plotted as 1e-6 |
-| 24 | 3 | cosmology | dark-matter mass [GeV] | 12.8 | ○ |  | — | v4 |  |
-| 25 | 4 | reverse | alpha drift zeta | 3.785e-10 | ● | 3.64 dex | b_bf - | v4 (D1887) |  |
-| 26 | 4 | reverse | thread slope lambda (DESI needs ~0.95) | nan | ○ |  | — | D1906 | OPEN: non-Kähler only |
+| 21 | 3 | cosmology | non-thermal leptogenesis: derived Br(phi->NN) vs 9.5 % needed | 0.097 | ◔ | 0.01 dex | p in M_N ∝ (Re S)^p +, S-coupled hidden gauge groups - | D1946 (p=3, SM only) | p<=2 gives <=4.6 %: thin, needs p=3 and an S-free hidden sector |
+| 22 | 3 | cosmology | gravitino lifetime vs BBN (A8) | 0.0014 | ● | 1.85 dex | — | D1946 | decays before BBN |
+| 23 | 2 | spectrum | lightest stabilised modulus vs 30 TeV (F10) | 2.58e+05 | ● | 0.93 dex | — | D1946 |  |
+| 24 | 2 | forces | A3/A2 needed 0.752 vs fixed-point ratio 3/4 | 0.75 | ○ |  | — | D1946 (CANDIDATE, numerology guard: 3 trials, ~2 %) | needs a mechanism A_a ∝ #fixed points on its plane |
+| 25 | 3 | cosmology | non-thermal wino Omega from gravitinos (Omega ∝ T_R) | 0.01966 | ● | 0.79 dex | T_R - | D732 (Y3/2 ∝ T_R) | D732: Omega 0.017 at T_R 3.2e8 (M2 0.66 TeV), 0.11 at 3.0e9 ⇒ T_R capped at ~3e9 |
+| 26 | 3 | cosmology | Delta N_eff | 1e-06 | ● | 5.23 dex | — | v4 | 0 exactly; plotted as 1e-6 |
+| 27 | 3 | cosmology | dark-matter mass [GeV] | 12.8 | ○ |  | — | v4 |  |
+| 28 | 4 | reverse | alpha drift zeta | 3.785e-10 | ● | 3.64 dex | b_bf - | v4 (D1887) |  |
+| 29 | 4 | reverse | thread slope lambda (DESI needs ~0.95) | nan | ○ |  | — | D1906 | OPEN: non-Kähler only |
 
 ## Where it points (per knob)
 
@@ -41,7 +44,8 @@ Legend: ● on target (inside the bar by > 0.3 dex or < 1σ); ◔ passes but thi
 - **non-universal threshold**: wants ↑ from forces: S-T seam: supergravity-form threshold (non-universal part); wants ↓ from none.
 - **split stacks (f3 != f2)**: wants ↑ from forces: S-T seam: supergravity-form threshold (non-universal part); wants ↓ from none.
 - **M12**: wants ↑ from forces: proton lifetime [yr]; wants ↓ from none.
-- **Br(phi->NN)**: wants ↑ from cosmology: non-thermal leptogenesis: Br(phi->NN) needed; wants ↓ from none.
+- **p in M_N ∝ (Re S)^p**: wants ↑ from cosmology: non-thermal leptogenesis: derived Br(phi->NN) vs 9.5 % needed; wants ↓ from none.
+- **S-coupled hidden gauge groups**: wants ↑ from none; wants ↓ from cosmology: non-thermal leptogenesis: derived Br(phi->NN) vs 9.5 % needed.
 - **T_R**: wants ↑ from none; wants ↓ from cosmology: non-thermal wino Omega from gravitinos (Omega ∝ T_R).
 - **b_bf**: wants ↑ from none; wants ↓ from reverse: alpha drift zeta.
 

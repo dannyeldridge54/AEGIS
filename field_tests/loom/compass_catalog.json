@@ -387,23 +387,75 @@
    "id": 21,
    "ring": 3,
    "notch": "cosmology",
-   "quantity": "non-thermal leptogenesis: Br(phi->NN) needed",
-   "value": 0.095,
+   "quantity": "non-thermal leptogenesis: derived Br(phi->NN) vs 9.5 % needed",
+   "value": 0.097,
    "spread": null,
-   "target": 1.0,
-   "kind": "<",
-   "direction": "\u25cf",
-   "headroom": 1.0222763947111522,
+   "target": 0.095,
+   "kind": ">",
+   "direction": "\u25d4",
+   "headroom": 0.009048128977397114,
    "unit": "dex",
    "pull": null,
    "knobs": {
-    "Br(phi->NN)": "+"
+    "p in M_N \u221d (Re S)^p": "+",
+    "S-coupled hidden gauge groups": "-"
    },
-   "source": "D1941 (m_phi 4.9e12 > 2 M_N)",
-   "note": "viable inside the gravitino box at max DI CP; a branching requirement, not derived"
+   "source": "D1946 (p=3, SM only)",
+   "note": "p<=2 gives <=4.6 %: thin, needs p=3 and an S-free hidden sector"
   },
   {
    "id": 22,
+   "ring": 3,
+   "notch": "cosmology",
+   "quantity": "gravitino lifetime vs BBN (A8)",
+   "value": 0.0014,
+   "spread": null,
+   "target": 0.1,
+   "kind": "<",
+   "direction": "\u25cf",
+   "headroom": 1.853871964321762,
+   "unit": "dex",
+   "pull": null,
+   "knobs": {},
+   "source": "D1946",
+   "note": "decays before BBN"
+  },
+  {
+   "id": 23,
+   "ring": 2,
+   "notch": "spectrum",
+   "quantity": "lightest stabilised modulus vs 30 TeV (F10)",
+   "value": 258000.0,
+   "spread": null,
+   "target": 30000.0,
+   "kind": ">",
+   "direction": "\u25cf",
+   "headroom": 0.9344984512435677,
+   "unit": "dex",
+   "pull": null,
+   "knobs": {},
+   "source": "D1946",
+   "note": ""
+  },
+  {
+   "id": 24,
+   "ring": 2,
+   "notch": "forces",
+   "quantity": "A3/A2 needed 0.752 vs fixed-point ratio 3/4",
+   "value": 0.75,
+   "spread": null,
+   "target": null,
+   "kind": "info",
+   "direction": "\u25cb",
+   "headroom": null,
+   "unit": "",
+   "pull": null,
+   "knobs": {},
+   "source": "D1946 (CANDIDATE, numerology guard: 3 trials, ~2 %)",
+   "note": "needs a mechanism A_a \u221d #fixed points on its plane"
+  },
+  {
+   "id": 25,
    "ring": 3,
    "notch": "cosmology",
    "quantity": "non-thermal wino Omega from gravitinos (Omega \u221d T_R)",
@@ -422,7 +474,7 @@
    "note": "D732: Omega 0.017 at T_R 3.2e8 (M2 0.66 TeV), 0.11 at 3.0e9 \u21d2 T_R capped at ~3e9"
   },
   {
-   "id": 23,
+   "id": 26,
    "ring": 3,
    "notch": "cosmology",
    "quantity": "Delta N_eff",
@@ -439,7 +491,7 @@
    "note": "0 exactly; plotted as 1e-6"
   },
   {
-   "id": 24,
+   "id": 27,
    "ring": 3,
    "notch": "cosmology",
    "quantity": "dark-matter mass [GeV]",
@@ -456,7 +508,7 @@
    "note": ""
   },
   {
-   "id": 25,
+   "id": 28,
    "ring": 4,
    "notch": "reverse",
    "quantity": "alpha drift zeta",
@@ -475,7 +527,7 @@
    "note": ""
   },
   {
-   "id": 26,
+   "id": 29,
    "ring": 4,
    "notch": "reverse",
    "quantity": "thread slope lambda (DESI needs ~0.95)",
@@ -586,15 +638,26 @@
    "down": [],
    "tension": false
   },
-  "Br(phi->NN)": {
+  "p in M_N \u221d (Re S)^p": {
    "up": [
     [
-     "cosmology: non-thermal leptogenesis: Br(phi->NN) needed",
+     "cosmology: non-thermal leptogenesis: derived Br(phi->NN) vs 9.5 % needed",
      "+",
-     "\u25cf"
+     "\u25d4"
     ]
    ],
    "down": [],
+   "tension": false
+  },
+  "S-coupled hidden gauge groups": {
+   "up": [],
+   "down": [
+    [
+     "cosmology: non-thermal leptogenesis: derived Br(phi->NN) vs 9.5 % needed",
+     "-",
+     "\u25d4"
+    ]
+   ],
    "tension": false
   },
   "T_R": {

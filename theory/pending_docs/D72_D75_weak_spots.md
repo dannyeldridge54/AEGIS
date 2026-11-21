@@ -19202,3 +19202,39 @@ Danny interrupted the D1930 pulse run partway through, and it produced no result
 - **TEST:** α_s = **0.11401**. The pull is −4.43σ on the experimental error only, and **−3.75σ with the theory error. FAIL**, under the single-stack assumption (D1942).
 - **JUDGE:** the theory error does not rescue α_s. The single-stack Weave misses α_s at about 3.7σ. The split-stack fit (D1940) stays the only way through, and it costs predictivity.
 - **COMPASS:** the α_s row is updated to 0.1140 ± 0.0006 (th). The strong-coupling seam still points to a non-universal threshold or split stacks.
+
+## D1946 — Loom tick 22, three workstreams at once (Danny 17:22; locked PREREG_D1946)
+**(a) Br(φ → NN), derived from S: FAIL at p ≤ 2.**
+- **TRIANGULATE:** with M_N ∝ (Re S)^p against φ → gauge bosons through f = T + 9S (d ln Re f/dφ = 0.394), the branching ratio is:
+
+  | | N_g = 12 (SM only) | N_g = 47 (hidden SU(6) also on S) |
+  |---|---|---|
+  | p = 1 | 1.2 % | 0.3 % |
+  | p = 2 | 4.6 % | 1.2 % |
+  | p = 3 | **9.7 %** | 2.7 % |
+
+- **JUDGE:** the 9.5 % needed is reached only at p = 3, and only if the hidden SU(6) does not couple to S. With p ≤ 2 it is not.
+- **Knock-ons:** p = 3 means M_N ∝ (Re S)³; the hidden gauge kinetic function must be S-free (f_hid = T only).
+- Non-thermal leptogenesis stays viable but needs a specific S-dependence of the Majorana mass. It is not natural at p = 1.
+- **COMPASS:** Br row ● becomes ◔ (thin, needs p = 3).
+
+**(b) A₃/A₂ ≈ 0.752: the fixed-point ratio 3/4 lands at −0.27 %, and the order ratio 2/3 at −11 %.**
+- **TRIANGULATE:** three geometric readings. The η ratio of the ρ and i planes, 1.021, misses by +36 % (FAIL). |Z₂|/|Z₃| = 2/3 is within 30 %. The fixed-point count 3/4 (3 fixed points on T²/Z₃, 4 on T²/Z₂) is within 0.3 %.
+- **NUMEROLOGY GUARD (fixed in the lock):**
+  - 3 trials. The chance that one of 3 simple ratios lands within 0.3 % of the target is about 2 % (estimate).
+  - This counts only if a mechanism makes the condensate prefactor A_a ∝ the number of fixed points on that stack's plane. That would hold if SU(3) sits on the ρ plane (the turnover, 3 corners) and SU(2) on the i plane (the pyramid, 4 corners).
+  - **Labelled CANDIDATE, not derived.** If the mechanism holds, α_s becomes a prediction again.
+- **COMPASS:** α_s ○ (fit) becomes ○ (fit, with a candidate geometric origin 3/4).
+
+**(c) Battery.**
+- **A8, BBN and late gravitino decays: PASS.** τ₃/₂ = 1.4e-3 s, below 0.1 s, so the gravitinos decay before BBN.
+- **F10, the moduli problem: PASS.** The Kähler modulus is m_T ≈ 2x m₃/₂ = 1.1e7 GeV, and the flux moduli are at least m₃/₂ = 2.6e5. Both are well above 30 TeV. The light thread is tested separately.
+- **E2, wino γ-lines: OPEN.**
+  - H.E.S.S. (1808.04388) says its wino calculation "is not reliable below ∼1 TeV", so 0.69 TeV is outside its range.
+  - The signal scales as f² = 0.01–0.16 of a pure wino. A Fermi-dwarf / continuum limit is needed next.
+
+**REVIEW:** knock-ons added to the ledger:
+- (a) p = 3 and an S-free hidden sector;
+- (b) none yet (candidate only).
+
+Script hygiene: line 13 of the script holds a dead placeholder assignment that is overwritten on the next line. It is harmless and is noted here, not edited.

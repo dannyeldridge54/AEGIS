@@ -34,7 +34,7 @@ Only post-lock data counts as strict evidence (G6).
 | A5 | isocurvature | Planck | 0 | S | RUN |
 | A6 | ΔN_eff | Planck + ACT; SO, CMB-S4 | 0 | S–T | DONE / FUT |
 | A7 | BBN Y_p, D/H | PRIMAT, EMPRESS, Cooke D/H | standard (ω_b input) | S–T | RUN |
-| A8 | BBN with late decays (gravitino τ ~ 1.6e-3 s) | Kawasaki–Kohri–Moroi bounds | must pass | S–T | NEED (check against the bounds) |
+| A8 | BBN with late decays (gravitino τ ~ 1.6e-3 s) | Kawasaki–Kohri–Moroi bounds | must pass | S–T | **DONE: PASS** (τ = 1.4e-3 s < 0.1 s, D1946) |
 | A9 | lithium-7 | stellar Li | no Weave fix | — | NEED (honest null) |
 | A10 | CMB spectral distortions μ, y | FIRAS; PIXIE (proposed) | ≈ ΛCDM | S | RUN |
 | A11 | CMB lensing amplitude A_L | Planck, ACT DR6 | standard | S–T | RUN |
@@ -99,7 +99,7 @@ Only post-lock data counts as strict evidence (G6).
 | # | test | experiment / data | Weave value | field | status |
 |---|---|---|---|---|---|
 | E1 | direct detection, 12.8 GeV | LZ 2024/25, XENONnT, PandaX-4T; XLZD | below LZ; in XLZD reach | T | RUN |
-| E2 | wino indirect: γ-lines | H.E.S.S. GC, Fermi; CTA | wino 10–40 % of the DM at 0.69 TeV | T | **RUN (classic "you missed this")** |
+| E2 | wino indirect: γ-lines | H.E.S.S. GC, Fermi; CTA | wino 10–40 % of the DM at 0.69 TeV | T | **OPEN**: H.E.S.S. 1808.04388 is not valid below 1 TeV; signal ∝ f² = 0.01–0.16; the Fermi dwarf limit is next (D1946) |
 | E3 | wino indirect: dwarf continuum | Fermi-LAT dwarfs, MAGIC | — | T | RUN |
 | E4 | antiprotons | AMS-02 | — | T | RUN |
 | E5 | DM self-interaction σ/m | clusters, dwarfs | ≤ 2e-3 cm²/g | T | DONE |
@@ -120,7 +120,7 @@ Only post-lock data counts as strict evidence (G6).
 | F7 | GW polarisations, ringdown | LIGO-Virgo-KAGRA O4 | GR | S | RUN |
 | F8 | Lorentz invariance | Fermi GRB, LHAASO | exact | S | RUN |
 | F9 | black-hole superradiance (ultralight axions) | spin measurements | photon-axion m 1e-33 eV: outside | S–T | RUN |
-| F10 | moduli problem (cosmological moduli) | BBN, CMB | moduli heavy (m ~ m₃/₂ or above) | T | NEED |
+| F10 | moduli problem (cosmological moduli) | BBN, CMB | moduli heavy (m ~ m₃/₂ or above) | T | **DONE: PASS** (lightest ≥ 2.6e5 GeV, D1946) |
 | F11 | swampland / TCC | theory | flags (r, dS) | S | DONE (flags) |
 
 ## G. Quantum and laboratory
