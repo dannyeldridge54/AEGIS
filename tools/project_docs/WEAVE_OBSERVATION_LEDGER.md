@@ -61,7 +61,7 @@ Goal of the big loop: move every M and A toward P. A row moves only through a lo
 | 4.2 | Cold, collisionless (Bullet cluster), self-interaction bound σ/m < ~1 cm²/g | G (computable SIDM class; test C3) | 12.8 GeV + 0.3–12.8 GeV A′ ⇒ σ/m is computable |
 | 4.3 | Small-scale structure (cores, too-big-to-fail, satellites) | G (follows from C3) | |
 | 4.4 | Direct detection limits (LZ) | P (survives, D1688) | |
-| 4.5 | Galactic-centre GeV excess; 3.5 keV line; AMS-02 positrons | **M** | asymmetric DM doesn't annihilate ⇒ predicts NO GCE from DM |
+| 4.5 | Galactic-centre GeV excess; 3.5 keV line; AMS-02 positrons | P (asymmetric DM does not annihilate; no keV sterile ν ⇒ all astrophysical) | asymmetric DM doesn't annihilate ⇒ predicts NO GCE from DM |
 | 4.6 | Wino window 0.67–1.0 TeV (if gravitino chain) | P (collider/γ-line targets) | |
 
 ## 5. The late universe
@@ -75,7 +75,7 @@ Goal of the big loop: move every M and A toward P. A row moves only through a lo
 | 5.6 | JWST early massive galaxies | S (ΛCDM-like at z > 5; eased by systematics, 2511.13708) | |
 | 5.7 | 21-cm (EDGES contested) | G | |
 | 5.8 | Coincidence "why now" | G | thread thawing |
-| 5.9 | Large-scale dipole anomaly (radio/quasar counts) | **M** | |
+| 5.9 | Large-scale dipole anomaly (radio/quasar counts) | S (Weave = FLRW + ΛCDM-like perturbations; no mechanism for an intrinsic dipole ⇒ predicts it is kinematic/systematic) | |
 
 ## 6. High-energy and anomalies
 | # | Observed | Weave | Notes |
@@ -85,7 +85,7 @@ Goal of the big loop: move every M and A toward P. A row moves only through a lo
 | 6.3 | W mass (CDF vs ATLAS/CMS) | S | |
 | 6.4 | Neutron lifetime beam vs bottle | P (no dark decay: needs m_χ ≈ 938 MeV; D1753 R6) | dark decay n→χ+… ruled by 12.8 GeV? no — check |
 | 6.5 | 95 GeV diphoton excess; ATOMKI X17 | P (no such particles in the Weave ⇒ both vanish) | |
-| 6.6 | KM3NeT 220 PeV neutrino; Amaterasu UHECR; ANITA | **M** | |
+| 6.6 | KM3NeT 220 PeV neutrino; Amaterasu UHECR; ANITA | S (astrophysical in the Weave; no super-heavy decaying relic) | |
 | 6.7 | Gallium / reactor anomalies (sterile ν) | P (no light sterile ν) | |
 
 ## 7. Atoms, molecules, chemistry, life
@@ -107,5 +107,6 @@ Goal of the big loop: move every M and A toward P. A row moves only through a lo
 
 **Counts (21 Nov, 70 rows, first status per row):** P 14 · F 2 · A 8 · S 10 · D 1 · G 13 · **M 21** · out of scope 1.
 **After loop 1 round 1 (D1753):** M 21 → 15; P +4 (EDM, walls, neutron, conditional), G +3 (couplings ×3 moved to tension), 1 G sharpened (birefringence). Test plan: WEAVE_TEST_PLAN.md.
+**After derivation mode (D1767–D1771):** M rows left = only the VALUES that are inputs: hierarchy last factor (2.8/8.3), Λ size (5.1/8.4), m_p/m_e as a pure derivation (7.3). Every observed phenomenon now has a place in WEAVE_UNIFIED_EQUATION v3.
 **After round 2 (D1754):** M 15 → 8 (left: gauge group 1.1 is A; hierarchy 2.8/8.3, Λ size 5.1/8.4, 6.6 UHE astrophysical, 5.9 dipole, 3.15 magnetic fields, 4.5 GCE, 7.3). Research null for Weave-native routes ⇒ engineering.
 The unification target: one modulus space whose fixed points (ρ, i, the slip-ladder minima and the arc) set couplings, masses and the vacuum together.
