@@ -1,0 +1,38 @@
+epsilon_mid = 0.0365
+alpha=0.020  tau1=-0.5013+0.8662i  V=0.125  |tau1-omega|=0.0013
+alpha=0.040  tau1=-0.5052+0.8666i  V=0.494  |tau1-omega|=0.0052
+alpha=0.060  tau1=-0.5114+0.8671i  V=1.088  |tau1-omega|=0.0114
+alpha=0.080  tau1=-0.5194+0.8672i  V=1.877  |tau1-omega|=0.0195
+alpha=0.100  tau1=-0.5291+0.8667i  V=2.829  |tau1-omega|=0.0291
+alpha=0.120  tau1=-0.5399+0.8653i  V=3.907  |tau1-omega|=0.0399
+alpha=0.140  tau1=-0.5515+0.8629i  V=5.075  |tau1-omega|=0.0516
+alpha=0.160  tau1=-0.5636+0.8594i  V=6.298  |tau1-omega|=0.0640
+alpha=0.180  tau1=-0.5759+0.8550i  V=7.542  |tau1-omega|=0.0767
+alpha=0.200  tau1=-0.5881+0.8497i  V=8.780  |tau1-omega|=0.0896
+alpha=0.220  tau1=-0.6000+0.8440i  V=9.987  |tau1-omega|=0.1024
+alpha=0.240  tau1=-0.6113+0.8382i  V=11.145  |tau1-omega|=0.1147
+alpha=0.260  tau1=-0.6219+0.8323i  V=12.241  |tau1-omega|=0.1265
+alpha=0.280  tau1=-0.6317+0.8266i  V=13.269  |tau1-omega|=0.1375
+alpha=0.300  tau1=-0.6408+0.8213i  V=14.225  |tau1-omega|=0.1477
+alpha=0.350  tau1=-0.6602+0.8096i  V=16.309  |tau1-omega|=0.1698
+alpha=0.400  tau1=-0.6755+0.8002i  V=17.995  |tau1-omega|=0.1875
+alpha=0.450  tau1=-0.6877+0.7927i  V=19.352  |tau1-omega|=0.2015
+alpha=0.500  tau1=-0.6974+0.7866i  V=20.448  |tau1-omega|=0.2127
+alpha=0.550  tau1=-0.7051+0.7817i  V=21.337  |tau1-omega|=0.2217
+alpha=0.600  tau1=-0.7113+0.7777i  V=22.065  |tau1-omega|=0.2290
+alpha=0.650  tau1=-0.7164+0.7744i  V=22.666  |tau1-omega|=0.2350
+alpha=0.700  tau1=-0.7206+0.7716i  V=23.165  |tau1-omega|=0.2399
+alpha=0.750  tau1=-0.7241+0.7693i  V=23.584  |tau1-omega|=0.2441
+alpha=0.800  tau1=-0.7270+0.7672i  V=23.939  |tau1-omega|=0.2475
+alpha=0.850  tau1=-0.7294+0.7655i  V=24.240  |tau1-omega|=0.2505
+alpha=0.900  tau1=-0.7315+0.7641i  V=24.499  |tau1-omega|=0.2530
+alpha=0.950  tau1=-0.7333+0.7628i  V=24.723  |tau1-omega|=0.2551
+alpha=1.000  tau1=-0.7349+0.7617i  V=24.917  |tau1-omega|=0.2570
+alpha_mid (|eps|=0.0365) = 0.114 ; alpha_need (|eps|=0.0457) = 0.130
+second flux example b3=-4, alpha=0.1: tau1=-0.5907+0.9124i V=11.328 |tau1-omega|=0.1018
+Weave quark lock at |eps_d| = 0.0365 (|u_d| = 0.0207): f7 = 12.6%  fJ = 20.1%
+VERDICT model side: REACHABLE ; Weave side: NATURAL
+alpha=0.100 eps=0.0291 arg=179 deg
+alpha=0.114 eps=0.0374 arg=-180 deg
+alpha=0.130 eps=0.0456 arg=-178 deg
+small-alpha scaling: eps/alpha^2 at 0.02,0.04,0.06,0.1: [3.25, 3.25, 3.17, 2.91]

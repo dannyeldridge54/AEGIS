@@ -18690,3 +18690,25 @@ The Mirror-Loom agent pushed locks PREREG_D1950/D1951 before doing any research,
   
   The rung steps therefore stay **LOOSE with CENTRE TENSION**.
 - **Next for the flavour sector** (cap 1/2): an analogous potential on the Weave's turnover torus, with a separately stabilised dark torus. Both are new postulates; the referee comes first.
+
+## D1917 — LEFT/flavour (Danny 14:55: "map a median between the two results … derive what would be right in between … a quick calculation"): the middle is reachable, natural, and fixes the model's matter ratio (21 Nov 2026)
+Lock: PREREG_D1917, pushed first. Results in field_tests/results/d1917_median_between.txt.
+
+**The two results:**
+- the IIB model, |ε| = 0.0291 (D1915);
+- the Weave's need, |ε| = 0.0457 (D1894b).
+
+Their **median** (log-space) is **ε_mid = 0.0365**.
+
+**Derivation 1 (model side)** uses the reproduced Model III potential and scans the matter ratio α:
+- The displacement grows as **|ε| ≈ 2.9–3.2 α²** at small α, then slows: 0.0013 at α = 0.02, 0.029 at 0.10, 0.09 at 0.20, 0.26 at 1.0.
+- V > 0 (de Sitter) everywhere.
+- **α_mid = 0.114 gives the median, and α_need = 0.130 gives the Weave's full need.** Both are ordinary O(0.1) ratios, just 14 % and 30 % above the paper's illustrative 0.1.
+- So the IIB mechanism **can** supply the Weave's displacement. It is fixed by one matter-coupling ratio, α ≈ 0.13 = Λ-ratio of the two matter sectors.
+- The second flux choice (b₃ = −4, α = 0.1) gives 0.10, overshooting by ×2.2. So the flux choice matters, and a⁰ = 2, b₃ = −3 is the one that brackets the need.
+
+**Derivation 2 (Weave side):** the quark lock at the median |ε_d| = 0.0365 (|u_d| = 0.0207) gives **f7 = 12.6 %, fJ = 20.1 %**. Both bars are met (fJ only just), so it is **NATURAL**.
+
+**Flag: phase mismatch.** The model's displacement points almost exactly along −Re from ω (arg ≈ 177–179°). The Weave's quark vacuum (D1826) sits at arg 49°, and the CP fraction depends on that phase. So the IIB mechanism gives the right *size* but not yet the right *direction*. Next test: rerun the quark lock at arg ≈ 178° with |ε| ∈ {0.0365, 0.0457}, and/or look for a matter-sector phase that rotates the displacement.
+
+**Status:** rung-step displacement LOOSE → **LOOSE, size derived** (α ≈ 0.11–0.13 in an explicit IIB dS model). Direction is open and the mirror tension stays open. New derived parameter: **α_need = 0.130**.
