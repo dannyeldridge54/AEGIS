@@ -18232,3 +18232,8 @@ Found: D1881's counting sentence was muddled (see D1881a). Verdicts unchanged.
 
 ## D1881a — correction to D1881's Higgs counting (21 Nov 2026)
 D1881 said "(0.6, 1, 0) per doublet … T(R)(1+2n) = ½ per doublet, ×2 for the pair". Correct counting: one Higgs PAIR (H_u + H_d, = one N = 2 doublet hypermultiplet) contributes b′ = 2·T(□)(1 + 2n^k) = 1 + 2n^k to SU(2) on EACH plane k (and 0.6(1 + 2n^k) to U(1)_Y). With n² = n³ = 0, one Higgs pair gives (0.6, 1, 0) on plane 2 AND (0.6, 1, 0) on plane 3 — exactly D1880's passing combo ρ(0,1,0) + i(0,1,0), R = −0.023. So D1881's conclusion stands — **one Higgs pair with modular weight 0 on both Z₆-II planes 2 and 3 closes Δ₃ to ≈ −0.02** — but the reason is "one unit on each of the two planes", not "two units from the pair on one plane".
+
+## D1884 — LEFT/CENTRE: D1829's quark model with mixed weights (Q₃, u₁, d₁ on the shifted stack) — PASS (21 Nov 2026)
+Lock: PREREG_D1884_MIXEDWEIGHT (pushed first). Same model and seed as D1829, plus the Kähler normalisation (√3)^{∓1/2} on row Q₃ and columns u₁, d₁.
+Result (field_tests/results/d1884_mixedweight.txt): baseline reproduces D1829 (f7 = 18.0 %, fJ = 30.8 %) ✔. Δk = +1: f7 = 10.7 %, fJ = 23.5 %; Δk = −1: f7 = 17.9 %, fJ = 40.5 %. Both above the bars ⇒ **PASS**; Δk = −1 (the shifted fields more strongly coupled) is mildly preferred, and improves the CP fraction.
+Reading (central lens): the quark sector is consistent as TWO stacks — the main stack (Q₁, Q₂; u₂, u₃; d₂, d₃) and a shifted one (Q₃, u₁, d₁) one weight unit apart — the turnover's splitting into two directions at the knot. The ½ charges (D1828) now have a geometric home that keeps the natural fit and the CP result. Open: which brane intersection realises Δk = −1 for exactly those three fields.
