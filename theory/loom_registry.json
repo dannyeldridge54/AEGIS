@@ -49,5 +49,8 @@
  },
  "S_vacuum": {
   "status": "S at i: inflation PASS (D1926: n_s 0.9704, r 5.46e-4, strict minimum); g_s = 1 CONDITIONAL (D1919a); Lambda_sp tie at rho lost."
+ },
+ "U32_single_flavon": {
+  "status": "PHENOMENOLOGICAL postulate (D1928 PASS): one FN flavon, natural window |u| = 0.063-0.148 (factor 2.34, P = 0.29); assignment varies across window; no geometric home yet."
  }
 }

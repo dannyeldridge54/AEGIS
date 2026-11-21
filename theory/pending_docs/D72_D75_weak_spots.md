@@ -18912,3 +18912,21 @@ Result: **12 PASS (3 PHENOMENOLOGICAL, no geometric home), 2 FAIL (α_s, Δ₃) 
   - What is lost: the Λ_sp tie at ρ (2310.07708).
   - What remains for D1919 (S at i): g_s = 1 control, still CONDITIONAL.
 - **KEEP:** field_tests/results/d1926_inflation_S_at_i.json/.txt; run 1 kept as *_run1_VOID.*.
+
+## D1928 — Loom v3 tick 13: single Froggatt–Nielsen flavon, |u| free — PASS (locked PREREG_D1928; postulate U32, PHENOMENOLOGICAL)
+- **TARGET:** flavour, queue item 1. It runs under the referee's lock rules (D1927) because the postulate cap is 2/2. Trials +1.
+- **GATHER:** 25 log-spaced values of |u| from 0.01 to 0.3, using the D1925 scan and naturalness code unchanged (2,000 draws per fit, seed 28).
+- **GUARD:** ε ≠ u holds. The phase was fixed beforehand. No tolerance was changed.
+- **TEST: PASS.**
+  - The longest contiguous natural window is |u| = 0.063–0.148, 7 points spanning a factor of 2.34 (the bar was 1.5). The prior fraction P = 0.29 of the log range.
+  - Isolated natural points also appear at 0.020, 0.027 and 0.041–0.048. The gaps are set by the discrete charge grid.
+  - There are no fits below 0.02 or above 0.15.
+  - Best fits in the window: f7 = 16–28 % and fJ = 28–72 %. One example, at |u| = 0.084–0.097: q_Q = (5/2, 3/2, 0), q_u = (5/2, 1, 0), q_d = (½, ½, 0).
+  - **Caveat:** the charge assignment changes across the window (three different assignments). The window is natural *for some assignment*, not for a single fixed one.
+- **JUDGE:**
+  - **U32** (one FN flavon with |u| ≈ 0.06–0.15, that is √u ≈ 0.25–0.38, Cabibbo-sized) is viable and natural. It has one fitted size, against D1828's two.
+  - It enters as PHENOMENOLOGICAL. Its geometric home is still open.
+  - The scoreboard is unchanged (no new pass counted).
+  - The flavour postulate count is now 3/2, over the cap, so **the next flavour step needs a referee first**.
+- **KEEP:** field_tests/results/d1928_flavon_sweep.json/.txt.
+- Next for flavour, after the referee: can U₃ near i supply |u| ≈ 0.1? That means |τ − i| ≈ 2|u| ≈ 0.2, a large displacement that would be shared with the neutrinos and the dark mirror (Mirror-Loom mode).

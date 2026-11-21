@@ -8,3 +8,5 @@
 Running total: 7. Net postulates: 1 (C1, U31).
 | Loom tick 11 (D1925) | one-spurion quark scan at locked |u| = 0.0259 (NONE; knife-edge 2.005 vs ×2); reports at 0.1 (4 natural fits) and 0.0018 | 1 |
 Running total: 8. Net postulates: 1.
+| Loom tick 13 (D1928) | single-flavon |u| sweep 0.01-0.3, 25 points (PASS: natural window 0.063-0.148, factor 2.34; P = 0.29) | 1 |
+Running total: 9. Net postulates: 2 (U31, U32) — flavour over cap: referee before next flavour step.
