@@ -1,3 +1,15 @@
+> **CURRENT METHOD (Danny 17:55): LOOM_METHODS_DATASHEET.md is the standing checklist.**
+> Every round applies all of its layers in this order:
+> 1. Integrity: A1–A6.
+> 2. Triangulation: B1–B7.
+> 3. Guard: C1–C9, with tools/loom/check.py run before every verdict.
+> 4. Direction: D1–D7.
+> 5. Coverage: E1–E3.
+> 6. Agents: F1–F5, the node round with the anti-gaming guards.
+> 7. Cadence: G1–G6, with the next round scheduled first.
+>
+> The rules below remain in force wherever they add detail.
+
 # The Loom v3: 25 methods ranked by today's record, then woven together (Danny 15:04, 21 Nov 2026)
 Danny: "research online … ways for improving data collection, data mining, target acquisition … a list of 25 … the best results, the largest percentage … then we weave them together."
 

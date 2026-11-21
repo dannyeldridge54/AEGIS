@@ -1,5 +1,5 @@
 # Loom methods data sheet: every way we optimised data collection and checking (kept for CubeMind)
-Compiled 21 Nov 2026, 17:55 CT, from today's record (D1873–D1971). Danny 17:51: "put them all on one thing … we're going to implement that into CubeMind later."
+Compiled 21 Nov 2026, 17:55 CT, from today's record (D1873–D1971). **Adopted as the Loom's current method (Danny 17:55).** Every round runs through layers A to G in order. Danny 17:51: "put them all on one thing … we're going to implement that into CubeMind later."
 
 Each row gives:
 - the method;
@@ -102,3 +102,18 @@ Status:
 5. The node agents (F3).
 
 **Weakest:** hand-entered arrows and judgments (D3, D4), and raw speed (G2).
+
+## Per-round checklist (the current method in one pass)
+1. **Schedule the next round first** (G1).
+2. **Read the board, the compass and the ledger.** Pick the moves with the highest information gain (B6, D6).
+3. **For each move:**
+   - lock it (A1);
+   - gather three independent, tagged readings (B1, B2, B7);
+   - run check.py C1–C7: independence, power, validation, numerology, lint, four corners, benchmarks;
+   - then run it;
+   - if a fix is needed, write the DEVIATIONS before the one rerun (A2).
+4. **Label** each result PASS, FIT, TRUST, PHEN, CONDITIONAL, INDETERMINATE or NO-POWER (C8). Count trials (C9).
+5. **Record** the fingerprint in the compass (D1) and the knock-on in the ledger (D5). Run review.py (D6). Update the battery row (E1).
+6. **Node round:** re-spawn only the nodes whose inputs changed (F3, G4). Merge them into the board (F4) and apply guards G-T1 to G-T6 (F5).
+7. **Referee** every second round, plus any time a verdict changes (F1).
+8. **Write** the D-note, with TRIANGULATE:, COMPASS: and REVIEW: lines. Correct earlier claims with dated notes (A3) and propagate the change (A5). Commit and push. Send one short message.
