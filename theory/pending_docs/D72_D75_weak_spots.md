@@ -17634,3 +17634,11 @@ One thought: every field sits AT one of the two elliptic points of PSL(2,Z) (i, 
 - **Consequence (correction chain D1788 → D1793 → D1795):** the dark-cycle instanton sets the height of an oscillating axion potential, not the vacuum energy. The vacuum energy at its minimum is whatever the tuned uplift leaves. So **U19 "Λ size computed from the dark cycle" is WITHDRAWN.** Λ is a pure input constant again, ledger rows 5.1/8.4 back to M. D1788's claim that the 120 decades come from 4π × 20.6 no longer holds.
 - **Birefringence axion (U12) survives on its own:** energy share m²f²/ρ_Λ = 1.1e-4 at m = 1e-33 eV. It must stay < 1, which caps m ≲ 9e-32 eV; the window becomes 1e-33 – 9e-32 eV. c_γ = 4.2/Δθ = 8.4 / 4.2 / 2.1 for Δθ = 0.5 / 1 / 2, which is natural. Its cycle size (σ ≈ 36–39 by the cross term) is an input, not tied to the forces.
 - **SIDM at α_D = 0.022 (weave_sidm, Born valid everywhere now):** σ/m = 2.1e-3 (m_A′ = 0.3 GeV) down to 6e-10 cm²/g (12.8 GeV) at v = 30–1000 km/s, all ≪ 1. **Collisionless for the whole m_A′ window**, no longer conditional (U4 upgraded). Direct-detection rates ∝ α_D ε² drop ×0.63, so the LZ ceiling on ε relaxes by ×1.26.
+
+## D1796 (LL, LEFT/flavour — 21 Nov 2026): NULL — no known rule fixes the Higgs direction on magnetised T²/Z₃
+- [literature] "Yukawa textures due to selection rules in magnetized orbifold models" (arXiv:2610.30640) covers T²/Z₂ and T²/Z₄ only:
+  - Its selection rules (Z₂-gauged Z_M, non-invertible) fix which Yukawa entries vanish for each Higgs class (e.g. NNI in 66 of 167 Z₂ three-generation cases).
+  - They do NOT fix the direction inside a class or reduce the Higgs to one mode; the authors say multi-Higgs models may be needed.
+  - No mass fits.
+- 2403.17280 (flavour structures ↔ 4D modular models) and 1806.10369 (μ-terms, Z₂ only) were already covered; 2112.01680 tunes the Higgs angles by hand.
+- [verdict] **NULL.** Nothing in the literature fixes the Higgs direction on T²/Z₃. The lepton mass ratios stay fitted (I7-ℓ′ open). Possible engineering route, not attempted: an extra discrete symmetry under which only one of the 6 class-modes is neutral. That would turn Y4b into a 0-parameter test; it needs a model of the symmetry first.
