@@ -17959,3 +17959,17 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
 - [computed, locked PREREG_D1825_T6LADDER] Setup: the ρ torus (c = 0.151, shift 1/6) times two i tori (c = π/8), labels 0…6 each, giving 189 distinct levels. The lepton ratios are hit, but the coverage guard is **f₂ = 1.00**: every random pair of ratios is hit. Verdict by the lock: **HIT-BUT-VACUOUS**, no evidence.
 - Reading: with three tori, each with its own ladder, the product spectrum is dense enough to host any hierarchy. "The leptons fit the T⁶ ladder" says nothing until the labels (n₁, n₂, n₃) are FIXED by something independent: the flux/intersection numbers of an explicit brane model, or a U24 lock (the selection rule that picks which modes couple). That is the honest status of the charged-lepton key: hostable, not derived.
 - Lesson for U22/U24 (recorded): a ladder only predicts when its integer labels are fixed in advance. Single-torus ladders are sparse enough to test (D1822 passed at i; D1824 missed at ρ). Product ladders are not, without a labelling rule.
+
+## D1826 (LEFT, quarks — U24 lock-and-key — 21 Nov 2026): the published residual-charge rule, with the Weave's own ρ-slips, gives BOTH quark hierarchies with all coefficients = 1 (PASS, post-data consistency)
+- [literature] 2506.23343 (UCI review): near τ₀ = ω the mass ratios are integer powers of u = (τ−τ₀)/(τ−τ̄₀), with the integers fixed by the residual-stabiliser charges, bounded by 3. This is the labelling rule D1825 lacked, a published lock-and-key mechanism (Papers doc, PAPERS_2026-11-21.md).
+- [computed, locked PREREG_D1826_RESIDUALCHARGE] Pattern fixed in advance (2, 1, 0) for both sectors, c_i = 1:
+
+  | sector | slip | \|u\| | predicted | data (GUT scale) | pred/data |
+  |---|---|---|---|---|---|
+  | up | rung 8, \|ε\| = 0.00311 | 1.79e-3 | 3.2e-6 : 1.8e-3 : 1 | 5.6e-6 : 2.7e-3 : 1 | 0.58, 0.67 |
+  | down | class ½, \|ε\| = 0.0457 | 0.0259 | 6.7e-4 : 2.6e-2 : 1 | 6.9e-4 : 1.4e-2 : 1 | 0.98, 1.89 |
+
+  Both sectors **PASS** (within ×2). The review's statement "quarks need i∞" does not hold for these slips.
+- **Honest weight:** the rungs are not independent of the data. Rung 8 was preferred by mass-ratio scaling (L1), and the down class ½ came from the B7 fit that included masses. So this is a post-data CONSISTENCY. What it adds: the six quark masses follow from two slips plus one integer pattern, with NO O(1) coefficients. Previously the hosted fits needed 12 near-equal couplings (D1779). It strongly supports U24: the lock is the residual Z₃ charge at ρ, the key is the slip ε, and the hierarchy is u^n.
+- **Strict test (forward):** the same rule with the SAME u must also give the CKM mixing (|V_us| ≈ u_d^{1/2}-type scalings, from the charge differences) and the CP phase. Lock that next, before computing. If it fails, D1826 is a coincidence of two numbers.
+- **Leptons:** by the same rule the charged leptons need |u_ℓ| ≈ m_μ/m_τ ≈ 0.06 at ρ, i.e. |ε_ℓ| ≈ 0.10. But Koide requires |ε_ℓ| ≲ 6e-5 (B1). The two pictures conflict for leptons: either Koide's Z₃ is exact (no slip, no u-hierarchy, and the masses need another lock), or the leptons slip and Koide holds only approximately. Recorded as the main tension this rule exposes.
