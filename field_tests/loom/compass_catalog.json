@@ -208,7 +208,7 @@
    "id": 12,
    "ring": 2,
    "notch": "forces",
-   "quantity": "alpha_s(M_Z) no threshold",
+   "quantity": "alpha_s(M_Z) single-stack (no threshold)",
    "value": 0.1142,
    "spread": null,
    "target": [
@@ -221,10 +221,9 @@
    "unit": "\u03c3",
    "pull": -4.22222222222222,
    "knobs": {
-    "m3/2": "-",
     "Delta3 threshold": "+"
    },
-   "source": "D1929 run 1 (gluino 4.93 TeV)",
+   "source": "D1929 run 1; valid only under the single-stack assumption (D1942)",
    "note": "d alpha_s / d ln m3/2 = -0.00290 (measured, \u00b110 %): wants m3/2 DOWN; opposes the wino arrow"
   },
   {
@@ -388,6 +387,25 @@
    "id": 21,
    "ring": 3,
    "notch": "cosmology",
+   "quantity": "non-thermal leptogenesis: Br(phi->NN) needed",
+   "value": 0.095,
+   "spread": null,
+   "target": 1.0,
+   "kind": "<",
+   "direction": "\u25cf",
+   "headroom": 1.0222763947111522,
+   "unit": "dex",
+   "pull": null,
+   "knobs": {
+    "Br(phi->NN)": "+"
+   },
+   "source": "D1941 (m_phi 4.9e12 > 2 M_N)",
+   "note": "viable inside the gravitino box at max DI CP; a branching requirement, not derived"
+  },
+  {
+   "id": 22,
+   "ring": 3,
+   "notch": "cosmology",
    "quantity": "non-thermal wino Omega from gravitinos (Omega \u221d T_R)",
    "value": 0.01965625,
    "spread": null,
@@ -404,7 +422,7 @@
    "note": "D732: Omega 0.017 at T_R 3.2e8 (M2 0.66 TeV), 0.11 at 3.0e9 \u21d2 T_R capped at ~3e9"
   },
   {
-   "id": 22,
+   "id": 23,
    "ring": 3,
    "notch": "cosmology",
    "quantity": "Delta N_eff",
@@ -421,7 +439,7 @@
    "note": "0 exactly; plotted as 1e-6"
   },
   {
-   "id": 23,
+   "id": 24,
    "ring": 3,
    "notch": "cosmology",
    "quantity": "dark-matter mass [GeV]",
@@ -438,7 +456,7 @@
    "note": ""
   },
   {
-   "id": 24,
+   "id": 25,
    "ring": 4,
    "notch": "reverse",
    "quantity": "alpha drift zeta",
@@ -457,7 +475,7 @@
    "note": ""
   },
   {
-   "id": 25,
+   "id": 26,
    "ring": 4,
    "notch": "reverse",
    "quantity": "thread slope lambda (DESI needs ~0.95)",
@@ -499,19 +517,13 @@
      "\u25cf"
     ]
    ],
-   "down": [
-    [
-     "forces: alpha_s(M_Z) no threshold",
-     "-",
-     "\u2191"
-    ]
-   ],
-   "tension": true
+   "down": [],
+   "tension": false
   },
   "Delta3 threshold": {
    "up": [
     [
-     "forces: alpha_s(M_Z) no threshold",
+     "forces: alpha_s(M_Z) single-stack (no threshold)",
      "+",
      "\u2191"
     ]
@@ -567,6 +579,17 @@
    "up": [
     [
      "forces: proton lifetime [yr]",
+     "+",
+     "\u25cf"
+    ]
+   ],
+   "down": [],
+   "tension": false
+  },
+  "Br(phi->NN)": {
+   "up": [
+    [
+     "cosmology: non-thermal leptogenesis: Br(phi->NN) needed",
      "+",
      "\u25cf"
     ]

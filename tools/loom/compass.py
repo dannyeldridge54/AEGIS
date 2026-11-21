@@ -41,7 +41,7 @@ fp(1, 'leptons', 'Koide delta', 2 / 9, None, 'input', 'v4', {}, note='TRUST')
 m32 = g('gravitino')['value']
 fp(2, 'spectrum', 'wino M2 [GeV]', g('wino')['value'], 660.0, '>', 'v4', {'m3/2': '+'}, note='marginal: wants m3/2 UP')
 fp(2, 'spectrum', 'gluino M3 [GeV]', g('gluino')['value'], 2300.0, '>', 'v4', {'m3/2': '+'})
-fp(2, 'forces', 'alpha_s(M_Z) no threshold', 0.1142, (0.1180, 0.0009), 'data', 'D1929 run 1 (gluino 4.93 TeV)', {'m3/2': '-', 'Delta3 threshold': '+'},
+fp(2, 'forces', 'alpha_s(M_Z) single-stack (no threshold)', 0.1142, (0.1180, 0.0009), 'data', 'D1929 run 1; valid only under the single-stack assumption (D1942)', {'Delta3 threshold': '+'},
    note='d alpha_s / d ln m3/2 = %+.5f (measured, ±10 %%): wants m3/2 DOWN; opposes the wino arrow' % das_dlnm)
 fp(2, 'forces', 'Delta3 after Higgs pair + gauge', g('Delta_3 after')['value'], -0.05, '>', 'v4 (D1881b)', {'b_prime': '-', 'brane threshold': '+'}, note='needs +0.044 more')
 fp(2, 'forces', 'alpha_s with S at i (self-consistent spectrum)', 0.1112, (0.1180, 0.0009), 'data', 'D1929', {'S vacuum': 'rho'}, note='S at i pushes the wrong way')
@@ -52,6 +52,7 @@ fp(3, 'inflation', 'n_s', g('n_s')['value'], (0.9728, 0.0027), 'data', 'v4', {},
 fp(3, 'inflation', 'n_s with S at i', 0.9704, (0.9728, 0.0027), 'data', 'D1926', {'S vacuum': 'rho'})
 fp(3, 'inflation', 'r', g('r')['value'], 0.036, '<', 'v4', {})
 fp(3, 'cosmology', 'T_R vs M_N (thermal leptogenesis)', g('T_R')['value'], None, 'info', 'v4 (D1897)', {}, note='a bound the model sidesteps (non-thermal leptogenesis): NOT a pull (D1935)')
+fp(3, 'cosmology', 'non-thermal leptogenesis: Br(phi->NN) needed', 0.095, 1.0, '<', 'D1941 (m_phi 4.9e12 > 2 M_N)', {'Br(phi->NN)': '+'}, note='viable inside the gravitino box at max DI CP; a branching requirement, not derived')
 fp(3, 'cosmology', 'non-thermal wino Omega from gravitinos (Omega ∝ T_R)', 0.017 * g('T_R')['value'] / 3.2e8, 0.12, '<', 'D732 (Y3/2 ∝ T_R)', {'T_R': '-'}, note='D732: Omega 0.017 at T_R 3.2e8 (M2 0.66 TeV), 0.11 at 3.0e9 ⇒ T_R capped at ~3e9')
 fp(3, 'cosmology', 'Delta N_eff', 1e-6, 0.17, '<', 'v4', {}, note='0 exactly; plotted as 1e-6')
 fp(3, 'cosmology', 'dark-matter mass [GeV]', g('dark-matter')['value'], None, 'prediction', 'v4', {})

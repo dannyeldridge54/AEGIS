@@ -19135,3 +19135,24 @@ Danny interrupted the D1930 pulse run partway through, and it produced no result
   - The K_S row is flagged as inconsistent with the engine and kept only as the D1929 reading.
   - The poles and orthogonality reading is restated as "a consequence of the chain's structure; the standard remedy is a non-universal threshold or split stacks".
 - **Model caveat (UFE §7–§8):** α_s is a test only under the **single-visible-stack assumption**. With split stacks (D1940) unification is not predicted, and α_s becomes a fit through A₃/A₂.
+
+## D1941 — the pulsing Loom over all tension points (Danny 17:12; locked PREREG_D1941) — PASS at a balance point, with honest labels
+- **Tension points marked:** P1 the wino bound; P2 the gravitino → wino box; P3 non-thermal leptogenesis (φ → NN); P4 the α_s seam through split stacks (D1940).
+- **TRIANGULATE:**
+  - Inflaton mass, three readings: from D1926's m²(ρ) with V∞ = 2.25 V₀; the same through H; and from V(r = 5.4e-4). They give **m_φ = 4.93e12 / 4.93e12 / 4.99e12 GeV**. Centre 4.93e12; spread 1.2 %.
+  - The gravitino-box exponent p has three readings (1.44 / 1.50 / 1.54), with the median taken at each step.
+- **The new physics content:**
+  - **m_φ = 4.9e12 > 2M_N = 3.7e11**, so the inflaton can decay directly to heavy neutrinos.
+  - At the derived T_R = 3.7e8 and the maximal Davidson–Ibarra CP (ε = 2.3e-5), the baryon asymmetry needs only **Br(φ → NN) ≈ 9.5 %**.
+  - **Non-thermal leptogenesis is viable inside the gravitino box.** It is a branching-ratio requirement, not a derivation.
+- **The pulse:** a coordinate 3-point search over (ln m₃/₂, ln T_R), maximising the minimum margin. The pulses ran together, re-reading the compass each time. It **stopped after 28 pulses, the last 7 null**. This is a deterministic search, reported as such.
+  - Start margins: wino 0.04 (thin), box 1.75, leptogenesis 2.35, seam 0.80.
+  - **Balance point:** m₃/₂ = 4.56e5 GeV (wino 1.21 TeV) and T_R = 4.9e8. All four margins are now **0.61–2.64 (●)**.
+- **JUDGE:**
+  - The balance point is where the four tension points pull equally. **Adopting it is a postulate, not a derivation.**
+    - m₃/₂ ×1.77 needs σ_vis 20.15 → ≈ 19.58, a different hidden-sector value.
+    - T_R ×1.34 needs the x-chain moved.
+    - The engine's α_s slope is linear (D1937a).
+  - The derived point (2.58e5, 3.7e8) also passes all four, but the wino margin there is only 0.04.
+  - The wino prediction would shift from 0.69 to about 1.2 TeV if the balance point is adopted. It is not adopted. Test plan C5 keeps 0.69 and notes the alternative.
+- **COMPASS:** leptogenesis ↑! becomes ● (viable non-thermal channel, Br ≳ 10 %). The wino stays ◔ at the derived point and ● at the balance point. α_s is ○ (a fit, via split stacks).
