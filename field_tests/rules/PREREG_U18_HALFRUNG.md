@@ -1,0 +1,3 @@
+# PREREG U18 — does a half-integer SUGRA class put the down quarks at |ε| ≈ 0.045–0.05? Locked BEFORE computing.
+Method: the validated Q11 potential (theory/quarks/q11_minima.py; |W|² ∝ |j − 1728|^m |η|^{−12}, 2201.02020 conventions) depends on m only through |j − 1728|^m and (m/2) j′/(j − 1728), so it is well defined LOCALLY for non-integer m (globally the superpotential needs a double cover branched at i, where E₆ = 0). Compute the minimum near ρ for m ∈ {0.25, 0.5, 0.75} (same search grid as Q11) and report τ, |ε| = |τ − ρ|, arg ε.
+Reading (decided now): U18 SUPPORTED if m = ½ gives |ε| ∈ [0.036, 0.060] (B7's passing range is 0.036–0.048; 0.060 failed) with arg within 50° ± 15°; otherwise record the miss. One run. Code theory/quarks/u18_halfrung.py.
