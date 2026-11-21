@@ -17590,3 +17590,10 @@ One thought: every field sits AT one of the two elliptic points of PSL(2,Z) (i, 
   1. Y4 (D1790) sampled the Higgs directions without optimising. Its FAIL means "not natural", not "impossible" on T²/Z₃. A locked optimiser check (Y4b) is next.
   2. Moving the leptons to T²/Z₂ would cost the Z₃-orbifold reading of Koide at ρ (D1776). The two pictures are in tension unless the leptons see both, e.g. Z₂ on one torus and Z₃ on another of the T⁶ factors.
 - Status: the lepton mass ratios stay an input (I7-ℓ). The knot gives the families; the Higgs direction carries the hierarchy as tuned data.
+
+## D1792 (LEFT, flavour — 21 Nov 2026): Y4b — on T²/Z₃ at ρ the lepton hierarchy is HOSTED too; the D1790 FAIL meant "unnatural", not "impossible"
+- Locked PREREG_Y4b_OPTIMISE: Nelder–Mead over the 6 complex Higgs components, 40 starts, every (class_L, class_R) pair. Every pair hits both m_e/m_μ = 4.84e-3 and m_μ/m_τ = 5.95e-2 to < 1e-9 relative. The down-quark control (0.050, 0.0137) is hit too. Verdict: **HOSTED**. (Results: field_tests/results/y4b_optimise.json.)
+- **Reading:** with a multi-mode Higgs (5–6 complex components) both orbifolds (Z₂ at ω, Y5; Z₃ at ρ, Y4b) fit any two mass ratios, but random directions never land within ×3 (0 of 20000–50000). Neither predicts the hierarchy. Each holds it as data placed in the Higgs direction, 3–4 spare directions beyond the 2 ratios.
+- **Consequence for D1791:** there is no need to move the leptons off the Z₃ orbifold. The Koide/Z₃ reading at ρ survives, and the D1791 tension dissolves.
+- **What would make it a prediction:** a mechanism that FIXES the Higgs direction, e.g. localized μ-terms at the Z₃ fixed points (a 1806.10369 analogue on Z₃, not in the literature, and those authors note τ is frozen for N > 2, which takes away their Im τ knob) or a residual symmetry. This is open; logged as I7-ℓ′ "Higgs direction".
+- Corrects the wording of D1790's verdict, which is kept as written: its FAIL holds for the Haar-sampling criterion only.
