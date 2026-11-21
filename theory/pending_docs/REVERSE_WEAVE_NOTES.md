@@ -80,3 +80,32 @@ V = V_L(1 − A e^{−βφ}), A = 7.30, published doi:10.5281/zenodo.24380387). 
 - Reading: the Z₂ protection helps by a factor ~ Δφ/M_P ~ 0.5. Closing the D1851 gap (×237) needs ~10⁻² –
   10⁻³ more. A Z₂-even leak would fit only if c itself were ≲ 5e-6 per M_P², i.e. the thread's Kähler leak
   were already sequestered, so the knot does not rescue it alone. Row 5 of the mirror table stays ✗.
+
+## D1854 (RW5, locked PREREG_RW5_ZETA5) — the ζ(5) flip: A′ = 4.45 is invisible to background data; the doubled tilt β′ = 4√2 ties with 2√2 (Δχ² = −0.21, TIE)
+- [computed, check] A′ = (16/5)(4/3)ζ(4)/ζ(5) = 4.4535; A = (8/3)·2ζ(2)/ζ(3) = 7.2983 (both reproduced).
+- R0 [derived + computed]: at leading order φ → φ + c maps A → A e^{−βc} and V_L is shot to H₀, so A and the
+  (5/3)² height norm are absorbed. On the D1692 likelihood χ²(A = 4.45) − χ²(A = 7.30) = **−1.5e-8** at the
+  same (Ω_m, amp) = (0.3049, 0.1739). Danny's pass rule for A is therefore **UNTESTABLE at leading order**
+  (not a fail). A becomes physical only once the field's origin is pinned to the knot (exact curve, D1638),
+  which for the ζ(5) copy is not built.
+- R1 [computed]: sanity ✓ (β = 2√2 gives χ² = 1638.3155, D1692's value). β′ = 4√2: χ² = 1638.104,
+  Ω_m = 0.306, amp = 0.078; Δ = χ²(4√2) − χ²(2√2) = **−0.21** ⇒ verdict **TIE**. Against ΛCDM: −7.22 (4√2)
+  vs −7.01 (2√2). For comparison CPL (2 parameters) is −7.21 (D1692).
+- Reading: the data cannot tell the forward copy from the ζ(5) flip. The steeper tilt is marginally
+  better, but far inside noise, and this is post-data. Row 2 of the mirror table stays "≈ / ?". The decisive
+  version needs (a) the exact ζ(5) curve with its knot-fixed origin, so that A′ enters, and (b) future data
+  (DR3/Euclid). Both A′ = 4.45 and β′ = 4√2 are now on record before those data.
+
+## D1855 (RW7, locked PREREG_RW7_UPLADDER) — the dark-dimension up-ladder is in HARD CONFLICT with the Weave's scales
+- [computed] For R = 1 – 10 μm: m_KK = 0.20 – 0.020 eV and species scale Λ_sp = m_KK^{1/3}M_P^{2/3}
+  = 1.05e9 – 4.9e8 GeV (5.7e8 – 2.7e8 GeV with the 2π variant).
+  - H_inf/Λ_sp = 5.5e3 – 1.2e4 (C1 fails).
+  - M_N(≥ 4.5e10)/Λ_sp = 43 – 92 (C2 fails): the leptogenesis neutrino would sit above the 5D cutoff.
+  - T_R/Λ_sp = 0.35 – 0.76 (C3 passes, marginally).
+  - Scalars and m₃/₂: ≲ 1e-3 Λ_sp (pass).
+  - KK-graviton measure X = (T_R R)T_R/M_P = 2.9e8 – 2.9e9 (C6 fails: overproduction if open at reheating).
+  - Verdict by the lock: **HARD CONFLICT** (C1, C2 and C6 each fail at every R).
+- Reading: this sharpens D1625 with today's scales. A micron dark dimension can only open AFTER reheating
+  and after leptogenesis, which D1625 found needs ≥ 28 e-folds of radion kination. Mirror row 3 stays
+  "≈ (direction only)". The ζ(5) codon of D1854 does not need the dimension to be open: it is a D⁴R⁴
+  coefficient in 10D, so D1854 is unaffected.
