@@ -81,6 +81,12 @@ A claim with one or two threads is **loose** and is reported as such. A claim th
      4. Stop when the spread is below the quantity's tolerance, or after 3 rounds. Record every round as `ROUND k: points → values → centre ± spread`.
      
      A round that fails to bracket a centre gives an open fix. It is recorded as such, not forced.
+     
+     **Hardened after referee D1920:**
+     - Round-1 points must span the full allowed range.
+     - Lock the tolerance in the PREREG.
+     - Run a **power check** before any verdict: show that the score can vary across the range. A score that is invariant by construction means the test has no power (see D1918a).
+     - A spread smaller than the Monte Carlo σ does not count as a boundary or as agreement.
    - (e) **Verdict sensitivity.** If any allowed alternative extraction flips the verdict, or the value lies within its own uncertainty of a threshold, the verdict is INDETERMINATE. Thresholds are set before any reading is seen.
 
 Each tick is one pass of the shuttle. Every step is mandatory, and its output is one line in the D-note.

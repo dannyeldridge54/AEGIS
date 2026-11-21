@@ -18753,3 +18753,34 @@ Their **median** (log-space) is **ε_mid = 0.0365**.
   3. **T_R, the wino relic, T_R vs M_N.**
   4. The knots swap roles (the visible dilaton at the hub i, not the still point ρ), which touches U22′ and the central lens.
 - **Status:** perturbative control goes from OPEN to **CONDITIONAL on S = i**, pending the inflation recompute (next tick, Mirror-Loom mode, since this is a shared quantity).
+
+## D1920 — REFEREE (independent, Loom tick 8): flavour D1913–D1918 and reverse sector D1902–D1906a (21 Nov 2026)
+The referee read all the cited files and ran its own check in the scratchpad. Verdicts:
+- **D1915: MINOR.** Y⁽⁴⁾ = E₄ and Y⁽⁶⁾ = E₆ to machine precision. The weights (4, 6) are *forced* by modular invariance, and the alternatives give different minima, so the 4-digit match does discriminate. But it only reproduces the paper's 2D minimisation along the paper's own flat direction. D1913's "compute" thread was just a ratio and adds no independence. Kähler stabilisation and the de Sitter claim were not checked.
+- **D1917: MAJOR.** α is a free illustrative ratio, so tuning it to the need is a fit. The log-median between a model output and a target is only a planning point. fJ = 20.1 % sits at the 20 % bar with σ ≈ 0.8 %, so it is INDETERMINATE under rule (e). The Weave's ρ torus carries the Z₃ twist, which **freezes** its complex structure at ρ (D1774). If the down-quark torus is that torus, no F-term can displace it. That must be settled before the mechanism is transferred.
+- **D1918: MAJOR on meaning; the procedure was honoured.** The insensitivity is exact by construction: the phase of ε_d multiplies entry (i, j) by e^{iE_ij φ}, and the iid uniform coefficient phases absorb it exactly. **The test had zero power**, and the spread is Monte Carlo noise. In CP-constrained models with real coefficients, φ is the only CP source.
+- **Status line: MAJOR.** "Size and direction consistent" dropped the centre tension. The §3.6(f) mirror check was not run for D1917/D1918. In the explicit model the second modulus sits at τ₂ = −3/(2τ₁), nowhere near i.
+- **Reverse sector: PASS (exclusion holds) + one MAJOR correction.** A τ₃-localised uplift is **not** a loophole. With 𝒱 ∝ √(τ₁τ₂τ₃) and τ₁, τ₂ heavy, a rolling τ₃ still gives β = −0.354 kinematically; the uplift's form changes only λ. **Every Kähler-modulus thread is excluded.** The cap is reset only for the non-Kähler class (complex structure, axion, open string). Must-tests for the next thread postulate, each locked:
+  - α_DEF < 4.8e-3;
+  - Δln(G m²) since BBN < 0.05;
+  - the MICROSCOPE η bound;
+  - D1853 (the dark modulus within 5.9e-3 of i);
+  - λ ≈ 0.94 from a named source.
+- **Loom §3.6(g): MINOR.** Round 1 must span the full allowed range. Lock the tolerance. Run a power check (the score must vary across the range). A spread below the Monte Carlo σ is not a boundary.
+
+## D1915a — correction to D1915
+"It is promoted to WOVEN" becomes: **the numerics of the paper's Eqs. B.10–B.11 minimum are reproduced** (weights (4, 6) forced by modular invariance; alternatives give different minima). The physics (flat direction, Kähler stabilisation, de Sitter) remains **single-source**.
+
+## D1917a — correction to D1917
+- "LOOSE, size derived" becomes "**LOOSE, size fitted** (one free α tuned to the need; non-Weave orbifold)".
+- "New derived parameter" becomes "**required** parameter".
+- The Weave-side "NATURAL" becomes "**INDETERMINATE** (fJ = 20.1 ± 0.8 % at the bar, rule e)".
+- "the CP fraction depends on that phase" becomes "the generic-coefficient lock cannot see this phase (D1918a)".
+- **Transfer is blocked** pending the Z₃-frozen-U check (D1774).
+
+## D1918a — correction to D1918
+"CP comes from the O(1) coefficient phases … D1917's phase flag is closed" becomes: **the insensitivity is exact by construction** (uniform coefficient phases absorb e^{iEφ}). The test had no power, and **the flag stays open** for CP-constrained (real-coefficient) models.
+Status "LOOSE (size and direction consistent)" becomes **"LOOSE with CENTRE TENSION; size fitted; direction untested; transfer blocked pending the Z₃-frozen-U check (D1774)"**.
+
+## D1906b — correction to D1906a
+Remove "an uplift that depends on τ₃ rather than 𝒱 (for example a D-term, or a throat localised on τ₃)" from the loopholes. **Any Kähler direction inside 𝒱 keeps β = −0.354.** Only non-Kähler thread directions remain open.
