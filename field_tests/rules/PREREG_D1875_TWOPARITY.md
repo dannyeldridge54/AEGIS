@@ -1,0 +1,3 @@
+# PREREG D1875 — two-parity generations: can a T²/Z₂ × T²/Z₂ product give 3 generations whose residual charges match D1828? (locked 21 Nov 2026 before computing; repo at 61a9f386)
+Using D1874's machinery (weight ½ per torus, residual n per mode, both S-phase signs, same sign on both tori). Product sector with overall Z₂ parity P = ±1: modes = (even⊗even ⊕ odd⊗odd) for P = +1, (even⊗odd ⊕ odd⊗even) for P = −1; charge n = n₁ + n₂; generation count = sector dimension. Fluxes M₁ ≤ M₂ ∈ 1..12 (M = 1: one even mode, n from its S-eigenvalue).
+PASS if some (M₁, M₂, P) has exactly 3 modes whose n multiset matches q_Q = {3/2,1,0} up to a common shift AND some (possibly different) has exactly 3 matching q_u = {½,0,0}; PARTIAL if only one; FAIL if neither. Report all hits.
