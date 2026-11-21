@@ -18307,3 +18307,14 @@ Status: median loop closed with this end run; D1806–D1894 still await an indep
 [literature] Ishiguro–Kobayashi–Otsuka (arXiv:2206.04313): in the type IIB flux landscape the complex-structure modulus sits at a fixed point up to non-perturbative/uplift shifts, and the landscape "prefers |δτ| ≃ 10⁻⁵". No flux-quanta scaling law is given.
 Verdict: the Weave's rung steps need a displacement **~10⁴ larger than the landscape's typical value**. A per-torus rung law therefore cannot be derived from generic displacement; it needs either (a) a specific stabilisation with large SUSY-breaking/uplift shift (to be modelled), or (b) steps that are intrinsic to the knot (θ-function exponents, like the pyramid's e^{−πn²/8}, D1822) rather than displacements — but the turnover's intrinsic θ-steps miss the leptons (D1824). **Open tension, ranked first among inputs.** The per-torus step values stay inputs (one per torus); with one input per torus the ±10 % end test carries no content, so D1894's ±20 % single-step result is the predictive statement.
 Source: arXiv:2206.04313.
+
+## D1896 — CENTRE: THE ONE DERIVATION (inputs → every observable, one pass, quantified and tested) (21 Nov 2026)
+Lock: PREREG_D1896_ONE_DERIVATION (pushed with theory/weave_derivation.py before running). Output: field_tests/results/weave_derivation.txt / .json (38 lines).
+- Computed in the pass (not copied): x = 21.10; |W₀| = 5.58e-9; m₃/₂ = 2.58e5 GeV; AMSB bino 2.33 TeV, wino 0.69 TeV, gluino 5.67 TeV; Δ₃ −0.237 → −0.023 with the Higgs pair; α_s(M_Z) = 0.1177 (pull −0.36 σ); y₃ = 0.0196; M_N = 1.84e11 GeV; m_DM = 12.8 GeV; thread ζ_α = 3.8e-10; b_bf ≤ 3.7.
+- **Tests: 16 PASS, 0 FAIL of 16 tested lines.** Honest weight of the 16:
+  - genuine data pulls: α_s, n_s, the m_μ/m_τ–down-step relation (arrow);
+  - bounds: wino, gluino, proton, r, ΔN_eff, ζ_α, M_N window;
+  - naturalness bars: quarks, CP, two-stack, neutrino ratio;
+  - one internal consistency: the pyramid ratio.
+- INPUT lines (no test content): V∞, u*, c_e, Koide δ.
+- **OPEN line: the thread's w₀/w_a on the dark cycle.** Quantified requirement, not yet derived: a thawing thread with 1 + w₀ ≈ 0.25 (DESI DR2 + DESY5) needs an exponential slope λ ≈ 0.95. For a dark-cycle modulus with K = −n ln(T + T̄) and V ∝ (Re T)^{−p}, λ = p√(2/n). So n = 1 needs p ≈ 0.67 and n = 3 needs p ≈ 1.2. Neither has been derived yet. Kept as OPEN, ranked with D1895.
