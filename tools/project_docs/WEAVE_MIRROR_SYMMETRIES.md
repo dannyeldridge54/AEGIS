@@ -29,3 +29,13 @@ Tags: **✔** in place · **≈** partial flip · **✗** does not flip · **?**
 5. **RW9 — the CP flip.** Consistency only: the birefringence axion is CP-odd late while θ̄ = 0 early. Check that the photon-axion does not feed θ̄ (no gluon coupling, D1760). Record.
 
 Sources: 2509.22781 (modular quintessence near τ ≈ i; fifth forces left open there too); 2603.19819 (Casimir-induced quintessence in the dark dimension, a hilltop radion); 2205.12293 (dark dimension); 2405.08924 (modular hilltop inflation).
+
+## 4. Results of the reverse-weave run (agent, D1850–D1865; 21 Nov 11:05)
+- Row 1 (knot) clarified from D1641–D1648: the thread PASSES ρ (a ≈ 1.9) and settles at i (τ = (1+i)/2 image) for DESY5/Union3; for Pantheon+ it ends at ρ. So "ends at i" holds for the data that prefer the thread. ✔ with that caveat.
+- Row 2 (ζ(5) codon): A′ = 4.45 is invisible at leading order; the doubled tilt ties (Δχ² = −0.21). Locked for DESI DR3 (PREREG_RW10). Undecided.
+- Row 3 (dimensions up): the dark dimension is in HARD CONFLICT with the Weave's H_inf, M_N and KK-graviton production (D1855). ✗.
+- Row 5 (handle off): FAILS in every form tried. Dark D7: 237× the α-drift bound (D1851). Z₂ at i: linear leak gone, quadratic 80× (D1853). k = 1 thread at i: 310× (D1860). At ρ: 119× (D1861).
+- The thread's own mass: the dark-cycle saxion is 282 H₀ (D1852). A k = 1 modulus reproduces the fitted tilts √2 and 2√2 exactly, but at m₃/₂ = 2.5e5 GeV the potential is ~1e68 ρ_Λ (the F-term problem; OPEN).
+- Row 6 (CP flip): consistent (D1857). Row 7 (late bands): NULL (D1856).
+- Birefringence carrier: it cannot be the condensate-held dark cycle's axion (1e16 eV, D1863), so U12 needs a cycle NOT stabilised by a condensate.
+- Bottom line: the thread still FITS the data (Δχ² ≈ −7), but no string mechanism in the Weave yet makes it light AND keeps α fixed. What would: no visible N = 2 sector on the thread's torus (b^{N=2}_em = 0) together with a solution of the late-time F-term problem. Both are open.
