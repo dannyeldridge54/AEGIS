@@ -18732,3 +18732,24 @@ Their **median** (log-space) is **ε_mid = 0.0365**.
 - **Still open:**
   1. Putting the same mechanism on the Weave's own Z₆-II turnover torus (not T⁶/Z₂).
   2. The mirror: the dark torus near i must not move (D1914).
+
+## D1919 — CENTRE (Loom tick 9, iterated triangulation): the Weave at g_s ≤ 1 — PASS at the knot i (S = i ⇒ g_s = 1), with large knock-on effects (21 Nov 2026)
+- **Fact found during the review step:** g_s = 2/√3 is not free. It comes from putting the axio-dilaton at the knot ρ (Im S = √3/2), and Re T_vis = α⁻¹ − 9/g_s (D1758, D1767). So g_s ≤ 1 means **moving S off ρ**. The only other knot, i, gives exactly g_s = 1.
+- **Lock** PREREG_D1919, pushed first. ROUND 1 is computed at fixed α⁻¹ = 28 and 𝒱 = 4e4 (field_tests/results/d1919_gs_triangulation.txt):
+
+| g_s | where S sits | σ | m₃/₂ (GeV) | wino (TeV) | gluino (TeV) | σ_d | checks |
+|---|---|---|---|---|---|---|---|
+| 2/√3 | ρ (today's point) | 20.2 | 2.4e5 | 0.65 | 4.7 | 40.4 | fails; the wino is just under 0.66 TeV with α⁻¹ = 28 exactly |
+| **1.0** | **i** | **19.0** | **7.6e5** | **2.0** | **14.5** | **38.0** (inside the D1812 window 36.9–40.6) | **all pass** |
+| 0.7 | off-knot | 15.1 | 2.9e7 | 78 | 560 | 30.3 | pass |
+| 0.5 | off-knot | 10.0 | 3.7e9 | 9,900 | 71,000 | 20.0 | pass |
+
+  Scaling: m₃/₂ ∝ √g_s · e^{18π/(N g_s)}, so the spectrum climbs steeply below g_s = 1.
+- **Verdict: PASS.** A knot-consistent point at the edge of perturbative control exists: **S at i**. It shifts the spectrum up ×3.1, giving a wino of 2.0 TeV and a gluino of 14.5 TeV, and keeps the dark rank rule in its window.
+- **Centre:** g_s = 1 is the point nearest the current value that passes. Lower g_s pushes SUSY out of reach quickly, so no second round is needed; the centre sits on a knot.
+- **Non-target sectors (recompute needed, flagged):**
+  1. **Inflation.** The plateau E(S, 3/2) uses S, so S ending at i instead of ρ changes the inflation end-point, n_s and r. **This must be recomputed before S = i can be adopted.**
+  2. **Δ₃/α_s.** A gluino at 14.5 TeV moves α_s(unif) and the Δ₃ gap (direction not computed).
+  3. **T_R, the wino relic, T_R vs M_N.**
+  4. The knots swap roles (the visible dilaton at the hub i, not the still point ρ), which touches U22′ and the central lens.
+- **Status:** perturbative control goes from OPEN to **CONDITIONAL on S = i**, pending the inflation recompute (next tick, Mirror-Loom mode, since this is a shared quantity).

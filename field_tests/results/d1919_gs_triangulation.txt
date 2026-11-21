@@ -1,0 +1,7 @@
+ROUND 1
+g_s=1.155 (current, S at rho)  sigma=20.21 x=21.16 W0=5.27e-09 m3/2=2.44e+05 GeV  wino=0.65 TeV gluino=4.7 TeV sigma_d=40.4  checks=fail
+g_s=1.000                      sigma=19.00 x=19.90 W0=1.76e-08 m3/2=7.58e+05 GeV  wino=2.02 TeV gluino=14.5 TeV sigma_d=38.0  checks=PASS
+g_s=0.700                      sigma=15.14 x=15.86 W0=8.11e-07 m3/2=2.92e+07 GeV  wino=77.72 TeV gluino=557.7 TeV sigma_d=30.3  checks=PASS
+g_s=0.500                      sigma=10.00 x=10.47 W0=1.22e-04 m3/2=3.71e+09 GeV  wino=9887.24 TeV gluino=70950.8 TeV sigma_d=20.0  checks=PASS
+scaling: m3/2 ~ sqrt(g_s) exp(+18 pi/(N g_s)) at fixed alpha^-1, V
+VERDICT: PASS
