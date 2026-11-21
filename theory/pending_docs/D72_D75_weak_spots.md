@@ -17789,3 +17789,11 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
 11. **Wording (MINOR).** D1790's best r₂₃ = 0.196 (not "≥ 0.20"). The Y5/Y4b optimiser control shows the optimiser reaches targets, not that "the code is sound".
 12. **Process (MINOR).** Locks carry no code hash, and two DEVIATIONS time labels postdate their commits. The U20 rerun script state was not committed before the run; it is committed now in its final form (theory/tests/u20_chain.py), and its run-1 artefact is kept. From now on each lock records the git hash of the script it will run.
 13. **Minor.** A4: f_NL^local is physically ≈ 0 (the Maldacena term is not observable as local f_NL), and the number is 0.0146 at n_s = 0.965. weave_edm should note the two-loop Barr–Zee term (not yet added).
+
+## D1808 (LL, LEFT/B11d — 21 Nov 2026): the Weave's own gluino is 5.6 TeV (AMSB), so α_s(unif) = 0.1147 vs 0.1180, CONSISTENT with a 0.0033 gap
+- [computed, locked PREREG_B11d, code hash recorded] AMSB with M₂ = 0.68 TeV gives m₃/₂ = **2.61e5 GeV** (agrees with D1772's 2.6e5). M₃ = 3g₃² m₃/₂/16π² = 4.84 TeV running, so **m_g̃ ≈ 5.6 TeV** pole (+15 % ± 5 %, estimate).
+- weave_rg2 at that gluino gives **α_s(unif) = 0.1147**: 0.1136 at −20 % (4.5 TeV), 0.1156 at +20 % (6.7 TeV). The lock's verdict is CONSISTENT (|Δ| = 0.0033 ≤ 0.007). This replaces the 7 TeV assumption of B11/B11b (which gave 0.1158).
+- Consequences:
+  1. The gluino is now a Weave number, **5.6 TeV ± 20 %**: above the LHC limits (~2.3 TeV), beyond HL-LHC (~3 TeV), and a target for FCC-hh / 100 TeV colliders. Lockable (next: C7).
+  2. The remaining α_s gap of −0.0033 is the string-threshold target (Δ₃ ≈ −0.25 in α₃⁻¹).
+  3. The bino from AMSB is M₁ = (33/5)g₁² m₃/₂/16π² ≈ 2.3 TeV; it does not enter the gauge running at this order.
