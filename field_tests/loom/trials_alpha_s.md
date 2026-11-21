@@ -13,3 +13,5 @@ Every option ever tried for closing Δ₃ = −0.237 counts here. The count feed
 
 **Running total: ≈ 347 configurations / choices.**
 Net new postulates in this sector: U29 (D1900), U29′ (D1904) = 2, so the cap is reached. Independent referee required before any further postulate (Loom tick 1).
+
+**Referee D1907: WITHDRAW.** U29 and U29′ failed. The sector stays at α_s = 0.1147 (−3.7 σ), with no threshold. The next postulate here must be brane-native: fractional Z₆′ branes with the Z₂-twisted aa term included, eq. 62 with its 2π V constant, and Higgs counted per torus.

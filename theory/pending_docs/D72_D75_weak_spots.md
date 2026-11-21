@@ -18487,3 +18487,18 @@ A fresh-context methods referee reviewed the design. All six of its improvements
 - **TRIANGULATE:** compute (this script) + source (Cassini, checked against the coupling) + check (PPN formula −2β²/(1+β²), an independent textbook route). That makes the FAIL **woven**.
 - **PROPAGATE:** the D1902 PASS is superseded. The paper §5 line "still open: slope", WEAVE_FULL_DERIVATION §10 and the scoreboard OPEN row become "volume-direction threads excluded (D1906); the thread must be a direction orthogonal to 𝒱 with its own slope source (e.g. a complex-structure or axion-like dark-cycle field) — OPEN".
 - **Cap:** the reverse sector has now reached 2 net postulates, so an independent referee is due before the next thread postulate.
+
+## D1907 — REFEREE (independent, fresh context; Loom tick 1 completion): the RESTORED Δ₃ claim — WITHDRAW (21 Nov 2026)
+The referee read D1816–D1904 and the trials ledger, and checked against Gmeiner–Honecker (arXiv:0910.0843, first 100k characters). Findings:
+1. **U29 cannot work on the ρ plane.** On Z₆′, θ³ = (½, 0, ½) maps every 1-cycle on tori 1 and 3 to minus itself. So every factorisable 3-cycle is θ³-invariant (fractional branes), and the Z₂-twisted aa annulus always has zero angle on the Z₂-invariant torus T²₂, the ρ plane. Its threshold term is always present and cannot be tilted away. Its η form also holds only for zero displacement and Wilson line; otherwise it is a theta function. D1900's "parallel to the image" condition applies only to aa′ sectors.
+2. **Higgs counting.** One N = 2 hyper comes from a sector parallel on ONE torus and feeds only that torus's threshold. D1881a's "one pair, one unit on each plane" is heterotic counting. In branes it needs two pairs, and the extra light pair spoils MSSM running. D1901b also fails: c ∥ b on two tori plus the SUSY angle conditions forces c ∥ b on the third, so that sector is not a supersymmetric N = 2 sector.
+3. **T-duality and the knot.** In IIA Z₆′, ρ is the FROZEN complex structure of the Z₃ torus. The threshold depends on its free Kähler modulus v₂, at v ≈ 1–30 in the GH models. A geometric Z₃ does not commute with T-duality on one circle, so "IIB U at ρ" is a separate IIB-native assumption, not the dual of the IIA formula. **The i plane (T²₃) is acted on only by Z₂, so U = i is a CHOICE, not a knot.**
+4. **The dropped constant.** GH eq. 62 is ln(2π v V η⁴(iv)), and ln 2π = 1.84 outweighs ln(Im U|η|⁴) ≈ −1.03.
+   - With V = 1 the per-unit shift flips sign (−0.064 ρ, −0.062 i), and R = −0.40.
+   - One Higgs pair on one plane, the brane-consistent count, gives R = −0.131 (ρ) or −0.129 (i).
+   - Split stacks also have non-universal tree couplings, and k_Y need not be 5/3.
+5. **Weight.** About 347 trials, the postulate cap reached, and a withdraw-then-restore by a framework switch made after the fact. The evidential weight is essentially nil.
+**VERDICT: WITHDRAW.** D1900's restoration, D1901b's U29 support and D1904's "exactly one Higgs pair" prediction are all **withdrawn**. **Δ₃ returns to OPEN; the honest figure is α_s(M_Z) = 0.1147 (−3.7 σ), with no threshold.** U29 and U29′ are marked failed.
+**New TRUST/choice flag:** the pyramid's U = i is a choice. Z₂ does not fix it. This weakens the neutrino-on-i lines (D1821, D1822, D1891), which now carry the label "U = i assumed".
+**PROPAGATE (done in this commit):** paper §3 (the U29 paragraph); WEAVE_FULL_DERIVATION §6 and §5; trials ledger (cap note); scoreboard row unchanged (it already showed the no-threshold FAIL).
+**Loom lesson, recorded in THE_LOOM.md §1:** the restore was the selection bias the methods referee warned about. The RESTORED flag plus an independent referee caught it within one tick.

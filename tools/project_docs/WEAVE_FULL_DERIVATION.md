@@ -53,7 +53,7 @@ Refereeing: self-refereed D1878, D1883, D1892; **independently refereed D1897** 
    - The corner-offset explanation of the bend (D1885) is **WD** (D1885a: a degenerate-class artefact).
    - **δ = 2/9 and the electron coefficient (c_e = 0.106 from Koide) are INPUT.**
 
-## 5. Neutrinos (i, the pyramid)
+## 5. Neutrinos (i, the pyramid; **U = i is a choice, not fixed by the Z₂ action — D1907**)
 1. **Ratio (DER):** m₂/m₃ is natural from magnetised Z₂ overlaps at i with flux (4, 4, 8) (1.3 %, D1821).
 2. **Scale (CONS):** the θ-step e^{−πn²/8}, with n = 3 the only value inside the leptogenesis window, gives M_N ≈ 1.84e11 GeV (D1822). Since T_R = 3.7e8 GeV ≪ M_N, leptogenesis must be non-thermal (D1897).
 3. **Rung ratio (CONS):** the 3→4 step e^{−7π/8} = 0.064 matches the shared turnover step to 23 % (D1891, D1894).
@@ -62,7 +62,7 @@ Refereeing: self-refereed D1878, D1883, D1892; **independently refereed D1897** 
 1. **Two-loop running (DER):** with the split spectrum, M₁₂ = 1.06e16 GeV and α⁻¹ = 28.0. The AMSB gluino at 5.6 TeV gives α_s(unif) = 0.1147, against 0.1180 measured, which leaves Δ₃ = −0.237 (D1816).
 2. **Threshold (DER + LIT):** the two Z₆-II N = 2 planes (ρ, i) have per-unit shifts 0.0823 and 0.0839.
    - The duality-anomaly normalisation applies (D1881).
-   - ~~One Higgs pair with modular weight 0 on both planes gives Δ₃ → −0.023~~ — corrected (D1881b): with the gauge term −C(G) included, Δ₃ → −0.094, which fails. Matter weights are not counted, and the U-only case is assumed. **Δ₃ is OPEN**; α_s = 0.1147 is −3.7 σ without a threshold.
+   - ~~One Higgs pair with modular weight 0 on both planes gives Δ₃ → −0.023~~ — corrected (D1881b): with the gauge term −C(G) included, Δ₃ → −0.094, which fails. Matter weights are not counted, and the U-only case is assumed. **Δ₃ is OPEN**; α_s = 0.1147 is −3.7 σ without a threshold. The brane-picture restoration (U29, D1900–D1904) was WITHDRAWN by the independent referee (D1907). Reasons: the Z₂-twisted aa term is unavoidable on the ρ plane, the Higgs counting was heterotic, U = i is not fixed by the orbifold, and the dropped 2π V constant outweighs the knot term.
    - The step from the field content to b′ coefficients still has to be redone for IIB/D7.
 3. **Proton:** the G-branch gives τ ≈ 1.6e35 yr at two loops, or the proton is stable.
 

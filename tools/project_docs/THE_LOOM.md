@@ -27,6 +27,9 @@ The data set is the 37 notes D1873–D1904 (21 Nov, 11:54–14:17 CT), with 22 l
 | Hard-coded numbers in the scoreboard | proton, two-stack, theorem rows | independent referee | traceability |
 | Stale or duplicate ticks | 4 stale fired ticks today | manual | credits |
 
+### First Loom result (tick 1, D1907)
+The RESTORED flag plus the independent referee withdrew the Δ₃ restoration within one tick, before anything was built on it. That is the intended behaviour.
+
 ### Diagnosis
 - The loop's integrity layer (locks, dated corrections) is strong.
 - Its **epistemic layer** is weak. Three things are missing:
