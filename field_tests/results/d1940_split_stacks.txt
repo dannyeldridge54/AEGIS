@@ -1,0 +1,20 @@
+{
+ "dReT3_minus_ReT2_needed": {
+  "r1_bare_4p93TeV": -0.2819911543827356,
+  "r2_wino_bound": -0.2720344171718203,
+  "r3_higgs_pair_CONS": -0.094
+ },
+ "centre": -0.2720344171718203,
+ "spread": 0.1879911543827356,
+ "A3_over_A2": {
+  "r1_bare_4p93TeV": 0.7443079292841744,
+  "r2_wino_bound": 0.7521091829310089,
+  "r3_higgs_pair_CONS": 0.9062531746000102
+ },
+ "natural": true,
+ "wino_unchanged": true,
+ "note_wino": "m3/2 is set by W0 and the overall volume; the split moves only Re T3 - Re T2, not m3/2 (orthogonal to the m3/2 line, D1939)",
+ "proton": "no single GUT gauge group on split stacks \u21d2 the G-branch X-boson proton decay (1.6e35 yr) no longer follows; proton becomes model-dependent (likely longer-lived)",
+ "label": "FIT: one prefactor ratio A3/A2 is chosen to reproduce alpha_s; alpha_s stops being a prediction unless A3/A2 is derived (one-loop determinants)",
+ "verdict": "PASS (viable, natural)"
+}

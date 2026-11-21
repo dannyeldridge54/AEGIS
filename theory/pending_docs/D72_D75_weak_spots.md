@@ -19085,3 +19085,18 @@ Danny interrupted the D1930 pulse run partway through, and it produced no result
   - The S–T seam collects 3 of the 8 hurts.
 - **Open-problem net:** 12 items, each tagged by field (see the doc). The loop now casts the net over them in order, and every result is fingerprinted into the compass and the field map.
 - **TRIANGULATE:** none (a retrospective). **COMPASS:** adds the field-line reading. The next move is orthogonal to m₃/₂, which matches tick 20's split-stacks test.
+
+## D1940 — Loom tick 20: split stacks, the first move orthogonal to m₃/₂ — PASS (viable, natural) but α_s becomes a FIT (locked PREREG_D1940)
+- **TARGET:** the S–T seam residual (D1937, D1938), along the orthogonal direction identified in D1939. Field tag: S–T / T.
+- **TRIANGULATE:** three readings of the needed Re T₃ − Re T₂:
+  - −0.282 (bare, gluino 4.93 TeV);
+  - −0.272 (at the wino bound, D1937);
+  - −0.094 (with the post-selected Higgs pair, CONS).
+  - Centre **−0.272**, spread 0.19. The CONS reading is the outlier because it includes a post-selected threshold.
+- **TEST:** the needed prefactor ratio A₃/A₂ = exp(2πΔT/N) is 0.744, 0.752 and 0.906. All lie inside [1/3, 3], so the ratio is natural. m₃/₂ is unchanged, so the wino bound is untouched. **PASS (viable).**
+- **JUDGE (labels fixed in the lock):**
+  - With A₃/A₂ ≈ 0.75 chosen, **α_s becomes a FIT**, not a prediction.
+  - Proton decay loses its G-branch prediction: there is no single GUT group.
+  - Split U(3)/U(2) stacks are standard in brane models. This means gauge unification was never guaranteed: it was an assumption.
+  - α_s goes back to being a prediction only if A₃/A₂ is derived (one-loop determinants and brane positions).
+- **COMPASS:** α_s turns from ↑! (FAIL) into ○ (FIT, pending a derivation of A₃/A₂ ≈ 0.75). The proton row becomes "model-dependent". The m₃/₂ tension is relieved: the wino and α_s no longer fight.
