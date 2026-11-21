@@ -32,12 +32,12 @@ This takes every tested direction from D1806 to D1887 and records which knot, to
 ## 3. The median step (the rung size the sectors ask for)
 | sector | step \|u\| |
 |---|---|
-| up quarks | 0.0031 (the outlier; it sits on the shifted stack) |
+| up quarks | 0.0018 (corrected D1894b; was |ε| = 0.0031) |
 | leptons (ladder band, geometric middle) | 0.0169 |
 | leptons (slip, D1832) | 0.0253 |
 | neutrinos, e^{−9π/8} | 0.0292 |
 | Koide equal-weight root | 0.0436 |
-| down quarks | 0.0457 |
+| down quarks | 0.0259 (corrected D1894b; was |ε| = 0.0457) |
 
 - Median 0.027; geometric mean 0.021.
 - The neutrino θ-step 0.0292 sits on the median.

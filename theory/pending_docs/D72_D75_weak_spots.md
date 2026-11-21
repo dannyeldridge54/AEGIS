@@ -18612,3 +18612,24 @@ Lock PREREG_D1911_DERIVATION_V3 was pushed first. Output: field_tests/results/we
 - Removed rows: the arrow (withdrawn, D1894b) and the pyramid-vs-u* comparison (no shared step remains).
 - D1832's u_ℓ/u_d = 0.977 is listed as CONS, with no test.
 - An independent referee is pending.
+
+## D1912 — REFEREE (independent, on the variable-error correction and scoreboard v3) — PASS with MINOR corrections, all applied (21 Nov 2026)
+The referee re-ran D1829's logic. |u_d| = 0.02587 and |u_u| = 0.00179, the scan values reproduce, and the u = 0.0259 baseline gives 18.0 % = D1829. The variable error is confirmed and fully explains the baseline gap.
+Verdicts:
+- D1894b: PASS.
+- D1910: MINOR.
+- Displacement statement: MINOR.
+- v3 and lock order: PASS. v3 is the old 13/3 minus the arrow row (a pass) and the pyramid row (a fail).
+
+Corrections applied:
+- **D1910 lock erratum.** "|u_u| = 0.00311" in the lock text is |ε_u|; |u_u| = 0.0018, and the script used 0.0018. The power-check anchor 0.0457 should read 0.0259. The scan brackets the existing fit, so **U31 is satisfied by the baseline and carries no new content.** The exact |ε| column is 0.028 / 0.053 / 0.071.
+- **D1894b item 2 addendum.** Under the minimum-extraction rule (median 0.010) the ratio is 4.6, a FAIL. The displacement verdict stays rule-dependent, and T2/T3 are non-IIB (D1909).
+- **D1888 and D1891.** D1888's median 0.027 and D1891's "0.064 next to the turnover step 0.055" used ε values; D1891's statement is void. Report line: the pyramid's 3→4 ratio 0.064 is ×2.5 from u_d = 0.0259.
+- **D1895.** "|δτ| ≈ 0.090 … 0.0054" becomes "|ε| = 0.0457 … 0.00311".
+- **D1911 lock.** "repo at 532f572e" is the parent of the lock's own commit. That is noted, and no change is needed.
+- **Docs and code.**
+  - WEAVE_FULL_DERIVATION §3.4 and §11.3 updated.
+  - THE_LOOM §5.3 updated.
+  - WEAVE_MEDIAN_MAP §3 rows: the median becomes 0.0256.
+  - weave_derivation.py and weave_derivation_v2.py headed SUPERSEDED.
+  - v3 outputs committed in D1911.

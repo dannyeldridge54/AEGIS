@@ -118,7 +118,7 @@ Each tick is one pass of the shuttle. Every step is mandatory, and its output is
 ## 5. First Loom queue (from the median now)
 1. **α_s / Δ₃ (largest strain).** Impose the Z₆-II projections and RR tadpoles on the U29 family. There must be exactly one N = 2 Higgs pair per plane (D1904).
 2. **The thread's fifth force.** Check U30 (the second dark torus factor) against Ġ/G and Cassini γ.
-3. **The rung-step displacement**, which is 10⁴ larger than the landscape prefers.
+3. **The rung-step displacement** (|ε| ≈ 0.045): ×4,600 vs the IIB clustering statistic, and inside the T2/T3 range (D1894b).
 4. **g_s < 1.**
 5. **Non-thermal leptogenesis.**
 6. **Koide δ and v/m_SUSY.** These are labelled TRUST until a second thread exists.

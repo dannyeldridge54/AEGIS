@@ -44,7 +44,7 @@ Refereeing: self-refereed D1878, D1883, D1892; **independently refereed D1897** 
 1. **Residual-charge lock (FIT + natural):** q_Q = (3/2, 1, 0) and q_u = q_d = (½, 0, 0) form the unique fit out of 117,649 assignments. Their matrix model is natural: 18 % of O(1) draws fit 7 observables, and 31 % of those also fit J (D1828, D1829).
 2. **Geometric home (DER):** by §2, Q₃, u₁ and d₁ sit on a second stack one weight unit away. With the Kähler factor (√3)^{∓1/2} the fit stays natural: f7 = 10.7 % / 17.9 %, fJ = 23.5 % / 40.5 %, with Δk = −1 preferred (D1884).
 3. **Flavour group (DER):** the Yukawa weights then span three consecutive integers. At level 1 either the odd-weight entries vanish (Y block-diagonal, V_ub = V_cb = 0) or the even ones do, so the model needs level ≥ 3 (A₄-type, Γ(3)) (D1886, corrected D1886a).
-4. **Step sizes (FIT):** u_d = 0.0457 and u_u = 0.00311. The up quarks sit at about u*^{1.95}, two rungs of the shared step (reported only, D1894).
+4. **Step sizes (FIT):** |u_d| = 0.0259 and |u_u| = 0.0018, i.e. displacements |ε| = 0.0457 and 0.00311. The u*^{1.95} remark is void (D1894b).
 
 ## 4. Charged leptons
 1. **Ladder (DER, modest):** one turnover with one weight and three whole rungs (τ 0, μ 1, e 2). It is natural for |u| between 0.0066 and 0.0435, at 5.3 %, and most of that comes from the ordering (D1877).
@@ -102,7 +102,7 @@ tan β is between 1 and 4. v/m_SUSY ≈ 2.7e-7 is **INPUT** (tuned).
 ## 11. Final list of INPUTS (plus: g_s = 2/√3 > 1 is outside perturbative control, D1897)
 1. V∞ (the one outside knob).
 2. δ = 2/9 and the electron coefficient (Koide).
-3. The per-torus rung steps (u_d, u_ℓ, u_u), against a landscape tension of about 10⁴ (D1895).
+3. The per-torus rung steps (u_d, u_ℓ, u_u). They need |ε| ≈ 0.045, which is ×4,600 vs the IIB clustering statistic and inside the T2/T3 (non-IIB) range (D1894b).
 4. v/m_SUSY.
 5. The flux choices: (4, 4, 8) on the pyramid, and the turnover fluxes.
 6. The dark-thread potential parameters.

@@ -1,3 +1,4 @@
+# SUPERSEDED (D1894b): 0.0457 is |eps| = |tau - rho|, not the step u (u_d = 0.0259); see weave_derivation_v3.py
 """v2 after the independent referee (D1897/D1898). THE WEAVE — the one derivation (Danny 13:35: "just one derivation … completely mapped out and quantified, every bit of it, and then tested").
 One pass from the inputs to every observable. Each line: value, how it is obtained (CALC = computed here; SRC = read from the locked result
 file named), status label (DER/LIT/FIT/INPUT/CONS/OPEN), and, where data exist, the test against data.
