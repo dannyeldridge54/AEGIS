@@ -59,6 +59,8 @@ Builds on WEAVE_FULL_EQUATION.md (v2, 19 Nov). New in v3: the visible forces on 
     M₂(wino) = [√(g_s/2) M_P/375] · [4(2π)³ C/(wχ)] · exp[−(2π/N)(α⁻¹ − 9/g_s)],  g_s = 2/√3
 Tilt (n_s), gauge running (α⁻¹ ≈ 28.9) and the wino/gravitino mass are ONE relation through two integers of the compactification: a hidden SU(N) condensate on the visible cycle and the Euler number χ. Consistent point: **N = 7, χ ≈ 50** (𝒱 = 4.2e4, |W₀| = 5.9e-9, m₃/₂ = 2.6e5 GeV, M₂ ≈ 0.70 TeV). (Consistency selection; KKLT-type, leading log; LVS excluded by the χ > 0 tilt, D1767a.)
 
+**Correction 21 Nov 10:36 (D1800–D1801, two-loop running):** α⁻¹ = 27.9 at M₁₂ = 1.07e16 GeV (α_s check 0.1158 vs 0.1180, consistent). The chain still closes with N = 7, but at χ ≈ 120, 𝒱 = 1.0e5, W₀ = 1.4e-8, Re T_vis = 20.1, T_R = 3.7e8 GeV; the wino stays at 0.66–0.69 TeV. (χ = 50 survives only within the wino tool's ×2 limit uncertainty.)
+
 ## 3c. The band ladder of the coupling (D1775, Danny's band postulate, v3.2)
     α⁻¹(M_s) = c/g_s + λ·N,   λ = ln(1/|W₀|)/(2π) ≈ 3.0,   c = 6n′ (visible flux on the ρ-orbifold, three generations at |M| = 6), N = hidden condensate rank
 The solution is carried across a band of width λ in Re T_vis by one rank N, then pushed to the next. Consistent points on the measured α⁻¹ = 28.6–29.1: (c, N) = (6, 8) → 29.2 (χ ≈ 58) and (9, 7) → 28.9 (χ ≈ 50); c = 12 closes the wino window. Same carry-then-push structure as the r ladder and the slip ladder.

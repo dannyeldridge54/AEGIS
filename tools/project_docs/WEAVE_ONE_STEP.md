@@ -24,6 +24,7 @@ Evaluating the action at that one point gives:
 | string coupling | g_s = 2/√3 = 1.155 | ρ |
 | flux part of the visible coupling | 9/g_s = 7.79 | |M| = 9 at ρ |
 | unified coupling at 7e15 GeV | α⁻¹ = 9/g_s + λ·7 = 28.9 | band ladder; matches the running (28.6–29.1) |
+| unified coupling, two-loop (corr. 21 Nov 10:36, D1800–D1801) | α⁻¹ = 27.9 at 1.07e16 GeV; α_s(M_Z) = 0.1158 for exact unification (measured 0.1180) | two-loop split-SUSY running; chain closes with N = 7, χ ≈ 120, 𝒱 = 1.0e5, W₀ = 1.4e-8 |
 | visible cycle | Re T ≈ 21.1 | unification |
 | photon-axion cycle | Re T ≈ 36–39 (KKLT cross term; was 21 before D1793) | birefringence only; it cannot also be Λ (oscillates, m ≈ 64 H₀, D1795) |
 | inflaton's handle on our forces | x = 7.79/28.9 = 0.27 | f = T + 9S |

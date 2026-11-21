@@ -17685,3 +17685,33 @@ One thought: every field sits AT one of the two elliptic points of PSL(2,Z) (i, 
 
   The master relation's (N, χ) consistency point must be recomputed at α⁻¹ = 27.9. N = 7 may move to χ ≠ 50, and the wino window must be rechecked. Engine adoption needs a lock plus DEVIATIONS for each tool, the same as the pending U11 T_R change.
 - The strong-coupling check is now the cleanest quantitative success of the forces sector: one knot (g_s = 2/√3) plus the PeV split spectrum puts the three couplings on one point to 0.2 % in α⁻¹. Label S (split SUSY gauge unification is known to work; Arkani-Hamed–Dimopoulos, Giudice–Romanino). The Weave-specific part is the spectrum (wino 0.7 TeV from the master relation, scalars 0.47 PeV), not unification itself.
+
+## D1801 (LL, CENTRE/U20 — 21 Nov 2026): the chain still closes at the two-loop unification point — N = 7 stays, χ moves from ≈ 50 to ≈ 120
+- [computed, locked PREREG_U20 + DEVIATIONS D1 (the run-1 "BROKEN" was a zero-width-window artefact, kept as u20_chain_run1_artefact.json)] At α⁻¹ = 27.94 (D1800):
+  - x = 0.279, T_R = **3.74e8 GeV**, Re T_vis = **20.15**.
+  - Wino window at that T_R (weave_wino, crossing of fraction = limit): **0.66–0.69 TeV**; with the tool's ×2 limit uncertainty, 0.66–1.85 TeV.
+  - Master relation M₂ = 8.24e4 GeV·(50/χ)·W₀/1.4e-8:
+
+    | N | W₀ | χ for the strict window | 𝒱 | volume control |
+    |---|---|---|---|---|
+    | 6 | 6.9e-10 | 6 | 5e3 | FAILS (< 1e4) |
+    | **7** | **1.40e-8** | **119–124** | **1.0e5** | passes |
+    | 8 | 1.3e-7 | none (M₂ ≥ 2 TeV) | — | — |
+
+  - With the ×2 window, N = 7 allows χ = 45–124, so the old χ = 50 survives inside the tool's own uncertainty.
+  - Verdict by the lock: **CLOSES**.
+- **What moved (dated corrections, not silent):**
+
+  | quantity | one loop | two loops |
+  |---|---|---|
+  | α⁻¹ | 28.9 | 27.9 |
+  | M₁₂ (GeV) | 7e15 | 1.07e16 |
+  | Re T_vis | 21.1 | 20.1 |
+  | T_R (GeV) | 3.6e8 | 3.7e8 |
+  | λ | 3.0 | 2.88 |
+  | W₀ | 5.9e-9 | 1.4e-8 |
+  | χ (strict) | ≈ 50 | ≈ 120 |
+  | 𝒱 | 4.2e4 | 1.0e5 |
+
+  Unchanged: m₃/₂ ≈ 375 × 0.68 TeV = 2.5e5 GeV, the wino 0.66–0.69 TeV and N = 7. Leptogenesis (M_N ≥ 4.5e10 GeV) is unaffected at this precision.
+- Band ladder: α⁻¹ = 9/g_s + λN with λ = ln(1/W₀)/2π = 2.88 at N = 7 is still exact by construction, i.e. a consistency, not a prediction.
