@@ -1,0 +1,3 @@
+r = 0.100  area frac 0.126  s = 2.112e-01  
+r = 0.171  area frac 0.367  s = 5.272e-01  FAIL
+r = 0.250  area frac 0.786  s = 8.660e-01  
