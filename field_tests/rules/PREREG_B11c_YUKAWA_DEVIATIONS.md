@@ -1,0 +1,2 @@
+# PREREG B11c — DEVIATIONS (before rerun)
+D1 (21 Nov 10:42): run 1 crashed at tan β = 1 (root bracket for α_s failed; likely y_t non-perturbative above the scalar scale, y_t^MSSM = y_t/sin β). Fix: each tan β is wrapped; if y_t > 4π anywhere or the bracket fails, that tan β is reported as "non-perturbative / no unification" with y_t(M₁₂) shown. Thresholds, inputs and the central tan β = 2 verdict rule unchanged.
