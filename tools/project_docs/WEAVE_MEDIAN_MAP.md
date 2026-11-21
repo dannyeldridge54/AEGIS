@@ -12,7 +12,7 @@ This takes every tested direction from D1806 to D1887 and records which knot, to
 | Quark sector | **two stacks one weight apart** (Q₃, u₁, d₁ shifted): natural 18 %, CP 41 % | PASS (D1884) |
 | Quark flavour group | consecutive weights ⇒ **level-3 (A₄-type)** | derived (D1886) |
 | Charged leptons | **turnover, one weight, three whole rungs** (τ 0, μ 1, e 2) | PASS, modest (D1877) |
-| Koide's bend δ | **electron one corner off the Higgs on a flux-6 turnover** (0.177 vs 0.152) | PASS, modest (D1885) |
+| Koide's bend δ | **electron one corner off the Higgs on a flux-6 turnover** (0.177 vs 0.152) | **WITHDRAWN (D1885a)** |
 | Neutrinos | **pyramid at i**, flux (4, 4, 8), θ-step n = 3 ⇒ M_N ≈ 1.9e11 GeV | candidate (D1821, D1822) |
 | Unification | M₁₂ = 1.06e16 GeV, α⁻¹ = 28, gluino 5.6 TeV | computed (two-loop) |
 | Dark sector | dark SU(12) = 2 × 6 on its own cycle, α_D ≈ 0.021 | computed (D1812) |
@@ -22,7 +22,7 @@ This takes every tested direction from D1806 to D1887 and records which knot, to
 ## 2. The median: the one configuration every arrow meets at
 - **Centre:** the Z₆-II fold. Its two splitting directions are the two knots.
 - **ρ, the still point (turnover, Z₃).** Leptons and quarks live here.
-  - Leptons: one stack, three whole rungs, flux 6, with the electron one corner off the Higgs. That offset is the Koide bend.
+  - Leptons: one stack, three whole rungs. ~~flux 6, electron one corner off the Higgs~~ — WITHDRAWN (D1885a); the Koide bend δ and the electron coefficient are inputs.
   - Quarks: two stacks one weight apart, under a level-3 flavour group.
 - **i, the hub (pyramid, Z₂).** Neutrinos live here: flux (4, 4, 8), one θ-step down, which fixes the heavy-neutrino scale.
 - **Shared between the two:** one Higgs pair with weight 0 on both planes. It is the bridge that closes the strong-force gap at unification.
@@ -44,8 +44,8 @@ This takes every tested direction from D1806 to D1887 and records which knot, to
 - Numerology guard: silver⁻⁴ = 0.0294 and φ⁻⁸ = 0.0213 lie close to these numbers. Close matches like this are easy to find by chance, so they carry no evidential weight until a mechanism ties them in.
 
 ## 4. What the median predicts (tests the loop runs next)
-1. Koide on the flux-6 turnover with the electron one corner off. Does Q = 2/3 hold with the real corner amplitudes?
-2. The level-3 flavour group must come from a flux in the magnetised picture. Does flux 6 give a Γ(3)-type group?
+1. ~~Koide on the flux-6 turnover with the electron one corner off~~ — WITHDRAWN (D1885a).
+2. The level-3 flavour group must come from a flux in the magnetised picture (the flux-6 link is void per D1885a).
 3. The thread on the dark cycle must still fit DESI w₀/w_a once its mass and slope are re-derived on that cycle.
 4. Count the visible–dark crossing strings in the Z₆-II stack set. They must be at most 3.
 5. Check that the Higgs pair's weight-0 assignment fits the two-stack quark weights in the full stack picture.
@@ -63,3 +63,14 @@ This takes every tested direction from D1806 to D1887 and records which knot, to
 - **What that tests:** the run checks one real relation, the muon-to-tau ratio against the down-quark step. They agree to 30 %. The pyramid's step (0.064) also agrees, to about 23 %.
 - **Up quarks:** their step is close to u*² (two rungs). I'm reporting that number only, not counting it as evidence.
 - **Precision limit:** the single-step picture holds to about 20 %. Going finer needs each torus's own rung law.
+
+## 7. Independent referee (D1897) and corrections
+- **Bookkeeping:** every lock came before its result, and every checksum verifies.
+- **Δ₃ closure withdrawn (D1881b).** Including the gauge term −C(G) gives R = −0.094, which fails. Δ₃ is OPEN again: α_s is 0.1147 (−3.7 σ) without any threshold, and 0.1167 (−1.5 σ, post-selected) with the Higgs pair.
+- **The arrow is one weak test (D1894a).** It checks a single ratio, 1.30, which two unrelated numbers would match by chance about 10 % of the time, before counting how many choices were tried.
+- **The knot-charge theorem is sound and already known.** Cite Novichkov–Penedo–Petcov, JHEP 04 (2021) 206.
+- **Corrections to the inputs:**
+  - the gluino is about 4.9 TeV once α₃ is taken at its own scale;
+  - the wino is marginal against the LHC disappearing-track limit;
+  - leptogenesis must be non-thermal, since T_R ≪ M_N;
+  - g_s > 1 is outside perturbative control.

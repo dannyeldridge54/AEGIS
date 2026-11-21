@@ -18249,7 +18249,7 @@ Honest weight: one basis-independent number landing in a ±30 % window; with ~2 
 - Level 1 (SL(2,Z)) has no odd-weight forms ⇒ one of the three rows/columns would vanish identically ⇒ two-stack model **impossible at level 1**.
 - Finite level N ≥ 3 (Γ(3) ↔ A₄ at ρ: dim M₁(Γ(3)) = 2, forms of every weight ≥ 1) has forms of all three consecutive weights ⇒ **compatible**. The ½ charges then follow from the weight shift alone: D1876 found frac(n) = k/2 at the knot, so Δk = 1 ⇒ Δn = ½ — exactly D1828's ½ gaps. The chain D1828 → D1876 → D1884 → D1886 closes on the turnover with an A₄-type (level-3) flavour group.
 - n_H (heterotic/b′) is independent of k_H (flavour), so D1881a's n_H = 0 places no constraint here.
-Verdict: compatible; carries the prediction **level-3 (A₄-type) modular flavour on the turnover for the quarks**. Caveat: in the Weave's magnetised-D7 picture the "level" is set by the flux (metaplectic Γ̃(2M)-type groups); level-3 compatibility must be matched to a flux there (flux-6 leptons from D1885 sit naturally with Γ(3)-type structure — to check).
+Verdict: compatible; carries the prediction **level-3 (A₄-type) modular flavour on the turnover for the quarks**. Caveat: in the Weave's magnetised-D7 picture the "level" is set by the flux (metaplectic Γ̃(2M)-type groups); level-3 compatibility must be matched to a flux there (the flux-6 link is void per D1885a; see D1886a).
 
 ## D1887 — RIGHT/CENTRE (reverse): the thread on the dark SU(12) cycle — loop-only α leak — PASS (estimate) (21 Nov 2026)
 Lock: PREREG_D1887_DARKCYCLE_THREAD (pushed first). [estimate]
@@ -18318,3 +18318,41 @@ Lock: PREREG_D1896_ONE_DERIVATION (pushed with theory/weave_derivation.py before
   - one internal consistency: the pyramid ratio.
 - INPUT lines (no test content): V∞, u*, c_e, Koide δ.
 - **OPEN line: the thread's w₀/w_a on the dark cycle.** Quantified requirement, not yet derived: a thawing thread with 1 + w₀ ≈ 0.25 (DESI DR2 + DESY5) needs an exponential slope λ ≈ 0.95. For a dark-cycle modulus with K = −n ln(T + T̄) and V ∝ (Re T)^{−p}, λ = p√(2/n). So n = 1 needs p ≈ 0.67 and n = 3 needs p ≈ 1.2. Neither has been derived yet. Kept as OPEN, ranked with D1895.
+
+## D1897 — REFEREE (independent agent, fresh context): D1873–D1896 — bookkeeping PASS; physics claims MAJOR (21 Nov 2026)
+An independent referee agent, which had not seen the work being done, re-checked the chain read-only and re-ran the numbers in a scratch copy.
+- **A. Lock order: PASS.** Every PREREG D1870–D1896 was committed before its result (14–89 s) and all 19 .sha256 verify. D1885's DEVIATIONS cites run 1 openly, so it is a declared deviation.
+- **B. Arithmetic: reproduced.** x, W₀, m₃/₂, AMSB masses, the residual, α_s, y₃, M_N, m_DM, ζ, b_bf and u* all check.
+- **B. Physics inputs: MAJOR.**
+  - g_s = 2/√3 > 1, outside perturbative control.
+  - α₃ = 0.092 is the ~1 TeV value; at 5.6 TeV it is ≈ 0.080, which gives the gluino 13 % lower.
+  - The wino ignores the higgsino threshold and was checked against LEP (103 GeV) instead of the LHC disappearing-track limit (~660 GeV), so 686 GeV is marginal.
+  - T_R = 3.7e8 ≪ M_N = 1.8e11, so thermal leptogenesis is impossible.
+  - Proton, two-stack and theorem rows were hard-coded.
+- **C. Logic.**
+  - Knot theorem: sound, but it is the known residual-symmetry structure (Novichkov–Penedo–Petcov, JHEP 04 (2021) 206, arXiv:2102.07488) and must be cited.
+  - D1886: the conclusion is right but the argument is wrong (see D1886a).
+  - D1881/D1881a: inconsistent b′ (see D1881b).
+- **D. Overclaims: MAJOR.**
+  - Only n_s is a clean data pull. α_s is post-selected.
+  - The arrow is ONE effective test, counted as two.
+  - The down-quark step is a FIT.
+  - The pyramid line used ×1.3, and fails at the claimed ×1.2.
+  - D1885a was not carried into the median map and centre.json.
+- **E. Look-elsewhere: MAJOR.** The ±20 % arrow is one ratio, 1.30. Two log-flat values coincide within ×1.3 about 9 % of the time, before trials. Trials include 61 lepton patterns, 117,649 charge assignments, the choice of which sectors share u*, the neutrino rung choice made after computing both, mid-loop demotions, and four engine variants. So the arrow carries little evidential weight (p ≲ 0.1 before trials).
+All 17 required corrections are applied in D1881b, D1886a, D1894a, D1896a and the D1898 rerun.
+
+## D1881b — correction to D1881/D1881a (21 Nov 2026)
+D1881 adopted b′ = −C(G) + Σ T(R)(1 + 2n), but D1881a counted only the Higgs pair. The gauge term −C(G) = (0, −2, −3) on each plane is always present.
+Recomputed per plane: b′ = (0.6, −1, −3) ⇒ X = 0.858 ⇒ **R = −0.094**, which fails the |R| ≤ 0.05 bar. That gives α_s(M_Z) = 0.1167 (pull −1.5 σ), and that figure is still content-selected.
+The quark and lepton modular weights also enter b′ and are not counted. The closure also assumes no Kähler-T dependence (D1816's U-only case); with Im T = 20.15 the thresholds are ×18 stronger.
+**The Δ₃ closure is NOT established.** Without any threshold, α_s = 0.1147 (−3.7 σ). Δ₃ returns to OPEN.
+
+## D1886a — correction to D1886 (21 Nov 2026)
+"One of the three rows/columns would vanish identically" is wrong. At level 1, either the single-shift (odd-weight) entries vanish or the even ones do. In the first case Y is block-diagonal, Q₃ couples only to u₁/d₁, and V_ub = V_cb = 0. That is a phenomenological exclusion, not a rank argument.
+Level 1 is moot anyway: the modes are metaplectic, weight ½. The conclusion (a finite level ≥ 3 is needed) stands. The "flux-6 leptons from D1885" caveat is void per D1885a.
+
+## D1894a — correction to D1894 (21 Nov 2026)
+The arrow's ±20 % is one fitted u* against m_μ/m_τ (data) and u_d (a FIT from the D1828 scan). It is one effective test: ratio 1.30 < 1.2² = 1.44.
+Chance coincidence is about 9–10 % before trials; the trials are listed in D1897 E. Δ₃ and the thread do not depend on u* and should not be counted as arrow sectors. The pyramid ratio FAILS at the claimed ×1.2 (pull 1.13).
+**Evidential weight: low.** engine.py is superseded by end_run.py, and centre.json's electron_corner_amp = 0.177 is withdrawn (D1885a).

@@ -14,5 +14,6 @@
  "free": [
   "u_star"
  ],
- "tolerance_level": "factor 3 masses, 1 % Koide, 0.05 Delta_3"
+ "tolerance_level": "factor 3 masses, 1 % Koide, 0.05 Delta_3",
+ "electron_corner_amp_status": "WITHDRAWN (D1885a): 0.177 was a degenerate-class artefact; engine.py superseded by end_run.py (D1894a)"
 }
