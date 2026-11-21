@@ -109,3 +109,32 @@ V = V_L(1 − A e^{−βφ}), A = 7.30, published doi:10.5281/zenodo.24380387). 
   and after leptogenesis, which D1625 found needs ≥ 28 e-folds of radion kination. Mirror row 3 stays
   "≈ (direction only)". The ζ(5) codon of D1854 does not need the dimension to be open: it is a D⁴R⁴
   coefficient in 10D, so D1854 is unaffected.
+
+## D1856 (RW8, research only, no lock) — late bands: NULL (no mechanism, no step signal found)
+- [literature, 1 search + 1 fetch, partial] The DR2-era work found (2503.19898, Pan–Ye; 2506.18477, non-parametric
+  interacting DE; 2503.17342) bins the coupling functions or uses CPL. 2503.19898 explicitly takes CPL as
+  "good enough" and finds no binned-w(z) step structure. 2506.18477 reconstructs a sign reversal of an IDE coupling,
+  which is the D2 "negative space" branch already locked (D1803), not a band ladder. Not re-read today: DESI's own
+  DR2 non-parametric w(z) (extended-DE paper), which as far as I know shows smooth evolution [unverified here].
+- [derived] The forward band ladder (α⁻¹ = 9/g_s + λN, λ = ln(1/W₀)/2π) steps in an integer rank N of a hidden
+  condensate. A late analogue would need a quantised parameter in the thread's potential that changes during the
+  roll. The plateau V_L(1 − A e^{−βφ}) has none; a condensate rank cannot change while a field rolls.
+- Verdict: NULL, so no lock is written (plan rule: lock only if a concrete mechanism appears). Row 7 of the
+  mirror table stays "?".
+
+## D1857 (RW9, consistency, derivation only) — the CP flip is consistent: the late photon-axion cannot feed θ̄
+- [derived] The birefringence axion (U12, D1760) is Im T_ℓ of a cycle wrapped only by the lepton/U(1) stacks, so
+  at tree level it enters f only for U(1)s: L ⊃ (a/f)F F̃, with no G G̃ term. Hypercharge's U(1)_a part (from the
+  quark stack) sits on f_vis = T_vis + 9S, not on T_ℓ.
+- [derived, standard] An axion coupled only through a gauge kinetic function does not give quark masses a phase,
+  so no a G G̃ is generated perturbatively. U(1) has no instantons, so none is generated non-perturbatively by QED.
+  Its rolling (Δa ~ f) therefore shifts θ̄ by 0. Strong CP (θ̄ = 0 by anomaly-free weights, E18) and the late
+  CP-odd rotation (β = 0.28°) live in different sectors. The early-CP-even / late-CP-odd flip is consistent.
+- [derived] The photon-axion is shift-symmetric, so it carries no α drift (D1760 item 4). This is unchanged by
+  D1851/D1853, which concern the saxion thread.
+- Caveats: (i) if T_ℓ's axion is eaten by an anomalous U(1) (GS mechanism), it is not light. U12 needs T_ℓ free of
+  anomalous U(1)s; this is assumed, not shown. (ii) Kinetic mixing between Im T_ℓ and Im T_vis (the QCD-axion-like
+  mode, D1760 item 2 branch B) would give a small a G G̃ admixture. In branch A (Im T_vis eaten, preferred) there is
+  no light partner to mix with.
+- (Referee correction carried, D1850a: f is 4.4× smaller. The rotation β = c_γ α Δa/(2πf) with Δa = Δθ·f is
+  f-independent, so c_γ = 4.2/Δθ (D1760a) is unchanged. [derived])
