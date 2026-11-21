@@ -1,0 +1,5 @@
+# PREREG D1913 — Loom tick 6: pre-registered search for an IIB mechanism displacing τ from ρ by |ε| ≈ 0.03–0.05 (locked 21 Nov 2026 before searching; repo at bf19d257)
+Search (fixed here): ONE WebSearch, standard mode, query exactly: "type IIB flux moduli stabilization complex structure deviation from fixed point omega uplift SUSY breaking modular flavor symmetry". Inclusion: every result that (i) is type IIB or F-theory, (ii) reports a numerical deviation |τ − τ_fixed| (or ε) near ω/ρ from a dynamical effect (uplift, SUSY breaking, matter F-terms, loops, α′). Open each included hit (max 3 fetches; if more qualify, take them in search order and note the rest).
+Extraction rule: the log-centre of the reported deviation range for each included source.
+Fix: consensus if ≥ 2 IIB readings agree within 0.3 dex. Verdict on the Weave's need |ε| = 0.0457 (leptons 0.044):
+ PASS if a consensus IIB fix lies within ×1.5 of 0.045; PARTIAL if any single IIB reading reaches the range 0.015–0.135 (×3); FAIL if every IIB reading is below 0.015 or none qualifies; INDETERMINATE if the min/max extraction flips the verdict. Thresholds set here, before any reading.
