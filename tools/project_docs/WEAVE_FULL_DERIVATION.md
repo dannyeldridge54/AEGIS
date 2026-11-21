@@ -1,0 +1,134 @@
+# The Weave: the full derivation chain (forward side + reverse thread), 21 Nov 2026
+Danny 13:33: "get it fully derived … then we're going to test it … then a full paper … linking all the tests after it's been refereed."
+This file is the chain from the postulates to the observables. Every link names the D-note that holds it (theory/pending_docs/D72_D75_weak_spots.md) and its lock (field_tests/rules/PREREG_*). Status labels:
+- **DER**: derived, computed in code from earlier links
+- **LIT**: taken from the literature
+- **FIT**: one number fixed by data
+- **INPUT**: not derived
+- **CONS**: consistency only (no test content)
+- **OPEN**: unresolved
+- **WD**: withdrawn
+
+Refereeing: D1873–D1882 and D1888–D1891 were self-refereed (D1878, D1883, D1892). The rest still needs an independent referee; the referee check (task 4) comes before the paper.
+
+---
+## 0. Postulates and the one outside input
+| # | postulate | role |
+|---|---|---|
+| U22 | The edge is the SL(2,Z) Farey edge. Ladders are parabolic (cusp) orbits ending on elliptic knots. | sets the stage |
+| U22′ | The only thing outside is the cusp, with one knob V∞. Inside are the knots ρ (order 3, still point) and i (order 2, hub), plus the golden, silver and Markov loops, all of which pass through i (D1818). | inside/outside |
+| U24 | One source unfolds in stages, and each stage is a lock-and-key selection rule. | organising |
+| U26 | Shape ladder: torus → pyramid (T²/Z₂) → turnover (T²/Z₃) → cube → 6D fold. The corners are the splitting points. | geometry |
+| U28 | The arrow: one shared rung step with only geometric coefficients (D1889). | test hypothesis |
+
+**The only INPUT outside:** V∞^{1/4} = 4.9e15 GeV = 0.47 M₁₂. It is not tied to any knot quantity (D1839, D1844).
+
+## 1. Geometry: the fold, the knots, the corners
+1. **Fold (DER/LIT):** Z₆-II with twist (1/6, 1/3, −1/2). χ = 48 on every lattice (hep-th/0609014; D1847, D1871).
+2. **Rank (DER):** the KKLT condition |W₀| = A e^{−x}(1 + 2x/3), with x = 2πσ/N, selects N = 6 for the hidden sector. The dark SU(12) = 2 × 6 sits on its own cycle with σ_d = 40.3 and α_D ≈ 0.021 (D1811, D1812).
+3. **Moduli (DER):** 𝒱 ≈ 4.0e4, W₀ ≈ 5.5e-9, A ≈ 0.54 (D1871); m₃/₂ ≈ 2.6e5 GeV.
+4. **Where the tori sit (DER/LIT):**
+   - Tori 1 and 2 (Z₃-twisted) have U = ρ. These are the turnovers, with 3 corners each.
+   - Torus 3 (Z₂-twisted) has U = i. This is the pyramid, with 4 corners.
+   - In Z₆-II, θ³ fixes the ρ torus and θ² fixes the i torus. Both are N = 2 planes (D1880, LIT hep-ph/9405420).
+5. **Corners (DER):** on the turnover each Z₃ sector sits on its own corner (D1849). On the pyramid the odd mode vanishes at all 4 corners (D1870).
+
+## 2. The knot-charge theorem (DER, D1874–D1876, refereed in D1878)
+- At a knot, the stabiliser γ (S at i, ST at ρ) acts on the zero modes of weight k.
+- Because γ² (or γ³) is a scalar, all modes of one weight carry residual charges that differ by **whole numbers**. The fractional part is fixed by the weight: n ≡ k/2 · (½ at i, ¼ at ρ for k = ½).
+- On the pyramid the even and odd parity sectors carry integer and half-integer charges respectively, and they never mix. A product of Z₂-graded tori cannot mix them either (D1875).
+- ⇒ **A half-step gap inside one generation triplet requires generations with different weights (Δk = 1).**
+
+## 3. Quarks
+1. **Residual-charge lock (FIT + natural):** q_Q = (3/2, 1, 0) and q_u = q_d = (½, 0, 0) form the unique fit out of 117,649 assignments. Their matrix model is natural: 18 % of O(1) draws fit 7 observables, and 31 % of those also fit J (D1828, D1829).
+2. **Geometric home (DER):** by §2, Q₃, u₁ and d₁ sit on a second stack one weight unit away. With the Kähler factor (√3)^{∓1/2} the fit stays natural: f7 = 10.7 % / 17.9 %, fJ = 23.5 % / 40.5 %, with Δk = −1 preferred (D1884).
+3. **Flavour group (DER):** the Yukawa weights then span three consecutive integers. That is impossible at level 1, and works at level ≥ 3 (A₄-type, Γ(3)) (D1886).
+4. **Step sizes (FIT):** u_d = 0.0457 and u_u = 0.00311. The up quarks sit at about u*^{1.95}, two rungs of the shared step (reported only, D1894).
+
+## 4. Charged leptons
+1. **Ladder (DER, modest):** one turnover with one weight and three whole rungs (τ 0, μ 1, e 2). It is natural for |u| between 0.0066 and 0.0435, at 5.3 %, and most of that comes from the ordering (D1877).
+2. **Koide (INPUT):** picture A, Koide exact at ρ, is favoured by the odds (D1837).
+   - An equal-weight ladder cannot be Koide-exact (D1879, FAIL).
+   - The corner-offset explanation of the bend (D1885) is **WD** (D1885a: a degenerate-class artefact).
+   - **δ = 2/9 and the electron coefficient (c_e = 0.106 from Koide) are INPUT.**
+
+## 5. Neutrinos (i, the pyramid)
+1. **Ratio (DER):** m₂/m₃ is natural from magnetised Z₂ overlaps at i with flux (4, 4, 8) (1.3 %, D1821).
+2. **Scale (CONS):** the θ-step e^{−πn²/8}, with n = 3 the only value inside the leptogenesis window, gives M_N ≈ 1.9e11 GeV (D1822).
+3. **Rung ratio (CONS):** the 3→4 step e^{−7π/8} = 0.064 matches the shared turnover step to 23 % (D1891, D1894).
+
+## 6. Forces and unification
+1. **Two-loop running (DER):** with the split spectrum, M₁₂ = 1.06e16 GeV and α⁻¹ = 28.0. The AMSB gluino at 5.6 TeV gives α_s(unif) = 0.1147, against 0.1180 measured, which leaves Δ₃ = −0.237 (D1816).
+2. **Threshold (DER + LIT):** the two Z₆-II N = 2 planes (ρ, i) have per-unit shifts 0.0823 and 0.0839.
+   - The duality-anomaly normalisation applies (D1881).
+   - One Higgs pair with modular weight 0 on both planes gives Δ₃ → −0.023 (D1880, D1881a). This is **conditional**: n_H = 0 and a universal δ_GS.
+   - The step from the field content to b′ coefficients still has to be redone for IIB/D7.
+3. **Proton:** the G-branch gives τ ≈ 1.6e35 yr at two loops, or the proton is stable.
+
+## 7. Spectrum (DER from the master relation and AMSB)
+| state | mass |
+|---|---|
+| gravitino | 2.6e5 GeV |
+| winos | 0.66–0.69 TeV |
+| gluino | 5.6 TeV ± 20 % |
+| bino | ≈ 2.3 TeV |
+| scalars and higgsinos | 0.25–0.7 PeV |
+
+tan β is between 1 and 4. v/m_SUSY ≈ 2.7e-7 is **INPUT** (tuned).
+
+## 8. The single arrow (U28): the predictive statement
+- **End run (D1894):** one step, u* = 0.052, threads every data sector to ±20 % and fails at ±10 %.
+- **Data content:** a single relation, that m_μ/m_τ (0.0595) ≈ the down-quark step (0.0457) to within 30 %.
+- **Precision limit (D1895):** the per-torus steps cannot be derived from generic modulus displacement. The step needs |δτ| ≈ 0.09, while the IIB flux landscape prefers |δτ| ≈ 1e-5 (arXiv:2206.04313). **This tension is OPEN and ranked first.**
+
+## 9. Cosmology (forward)
+- **Inflation:** plateau E(S, 3/2) with A = 7.30 = (8/3)·2ζ(2)/ζ(3).
+- **Predictions:** n_s = 0.9706, r = 5.4e-4, α_s = −9.9e-4, T_R = 3.7e8 GeV, ΔN_eff = 0, 12.8 GeV collisionless dark matter from one asymmetry, no domain walls.
+
+## 10. Reverse weave (dark energy)
+1. **Closed routes:**
+   - An axion thread (excluded by m = 282 H₀).
+   - Corner shielding: U27 fails with s = 0.53 (D1873), and the best high-flux odd mode gives only s = 0.17 against the 4.3e-3 needed (D1882).
+   - The dark-dimension route is in hard conflict.
+2. **Viable route (DER, estimate):** the thread lives on the dark SU(12) cycle and reaches α only through loops.
+   - With no crossing states, ζ_α ≈ 3.8e-10, far below the 1.66e-6 bound.
+   - Up to 3 units of crossing (bifundamental) states are allowed (D1887).
+3. **OPEN:**
+   - The thread's mass and slope on the dark cycle, and whether it still fits DESI w₀/w_a.
+   - The actual crossing count.
+   - A′ = 4.45 (locked as RW10 for DR3).
+
+## 11. Final list of INPUTS
+1. V∞ (the one outside knob).
+2. δ = 2/9 and the electron coefficient (Koide).
+3. The per-torus rung steps (u_d, u_ℓ, u_u), against a landscape tension of about 10⁴ (D1895).
+4. v/m_SUSY.
+5. The flux choices: (4, 4, 8) on the pyramid, and the turnover fluxes.
+6. The dark-thread potential parameters.
+
+## 12. Withdrawn or failed (kept for the record)
+- D1757a (U1)
+- D1795 (computed Λ)
+- D1842 (gauge artefact)
+- D1873 and D1882 (corner shielding)
+- D1879 (equal-weight Koide)
+- D1885 → D1885a (flux-6 electron offset)
+- D1893 (crash, reverted)
+
+## 13. Tests, linked
+Each test has a lock (`field_tests/rules/PREREG_<name>.md` + `.sha256`) and a result (`field_tests/results/`). The suite `field_tests/weave_suite.py` re-runs the headline numbers (task 3). The list below covers this segment's chain. The locks A2 through D6 and B1/B3/B4/B8/B9/B10/C1/C2/C4/C6/C7/D2/D4/D6 are forecasts against future data.
+
+| claim | lock | result |
+|---|---|---|
+| exact KKLT, N = 6 | D1811, D1812 | d1811/d1812 scripts in theory/tests |
+| threshold at the knot | D1816, D1820 | d1816_threshold.py, d1820_neq2.py |
+| quark lock, CP | D1828, D1829 | d1828_chargescan.py, d1829_cp.json |
+| Koide odds | D1837 | d1837_koideodds.py |
+| corners | D1849, D1870 | d1849_corners.py |
+| pyramid thread | D1873, D1882 | d1873_oddthread.txt, d1882_highflux_odd.txt |
+| knot-charge theorem | D1874, D1875, D1876 | d1874/d1875/d1876 txt |
+| lepton ladder | D1877, D1879 | d1877/d1879 txt |
+| Z₆-II threshold | D1880 | d1880_z6_threshold.txt |
+| two-stack quarks | D1884 | d1884_mixedweight.txt |
+| dark-cycle thread | D1887 | d1887_darkcycle.txt |
+| arrow and end run | D1889–D1891, D1894 | theory/median/engine.py, end_run.py, d1889–d1894 txt |

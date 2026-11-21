@@ -1,0 +1,3 @@
+# PREREG D1896 — the one derivation, run once (locked 21 Nov 2026 before running; repo at c1c53d98)
+Script theory/weave_derivation.py (committed with this lock) computes the whole chain inputs → observables in one pass, labels every number (DER/LIT/FIT/INPUT/CONS/OPEN) and tests every line that has data or a bound: data with σ → PASS if |pull| ≤ 2; tolerance-factor tests → PASS if |ln ratio / ln tol| ≤ 1; bounds → PASS if satisfied. Inputs used are fixed in the script header (tanβ = 2 inside 1–4; u* = 0.0521 from D1894; AMSB couplings at TeV as written).
+Verdict reported as the PASS/FAIL count; every FAIL is recorded as an open item, nothing refitted.
