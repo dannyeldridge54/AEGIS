@@ -1,0 +1,602 @@
+{
+ "catalog": [
+  {
+   "id": 1,
+   "ring": 0,
+   "notch": "centre: rung step",
+   "quantity": "|u| one-spurion hairline vs median 0.027",
+   "value": 0.02587,
+   "spread": null,
+   "target": [
+    0.027,
+    0.0012
+   ],
+   "kind": "data",
+   "direction": "\u25cf",
+   "headroom": 1.058333333333334,
+   "unit": "\u03c3",
+   "pull": -0.941666666666666,
+   "knobs": {
+    "u": "+"
+   },
+   "source": "D1925a/D1927",
+   "note": "median of six sectors 0.027; spread taken as the D1927 window 0.0259-0.027"
+  },
+  {
+   "id": 2,
+   "ring": 0,
+   "notch": "centre: rung step",
+   "quantity": "|u| single-flavon natural window centre",
+   "value": 0.09656086163658648,
+   "spread": null,
+   "target": [
+    0.027,
+    0.0012
+   ],
+   "kind": "data",
+   "direction": "\u2193",
+   "headroom": -55.9673846971554,
+   "unit": "\u03c3",
+   "pull": 57.9673846971554,
+   "knobs": {
+    "u": "+"
+   },
+   "source": "D1928",
+   "note": "window 0.063-0.148 sits ABOVE the median: flavour pulls u UP, away from the median"
+  },
+  {
+   "id": 3,
+   "ring": 0,
+   "notch": "centre: rung step",
+   "quantity": "lepton slip / down slip",
+   "value": 0.9768339768339769,
+   "spread": null,
+   "target": [
+    1.0,
+    0.05
+   ],
+   "kind": "data",
+   "direction": "\u25cf",
+   "headroom": 1.5366795366795376,
+   "unit": "\u03c3",
+   "pull": -0.4633204633204624,
+   "knobs": {
+    "u": "0"
+   },
+   "source": "v4 (D1832)",
+   "note": "same-lock fit; conflicts with Koide at rho"
+  },
+  {
+   "id": 4,
+   "ring": 1,
+   "notch": "quarks",
+   "quantity": "f7 (two-size lock)",
+   "value": 0.1802,
+   "spread": null,
+   "target": 0.05,
+   "kind": ">",
+   "direction": "\u25cf",
+   "headroom": 0.5567847823070253,
+   "unit": "dex",
+   "pull": null,
+   "knobs": {
+    "u_u": "0",
+    "u_d": "0"
+   },
+   "source": "d1829_cp.json",
+   "note": "PHENOMENOLOGICAL"
+  },
+  {
+   "id": 5,
+   "ring": 1,
+   "notch": "quarks",
+   "quantity": "fJ",
+   "value": 0.3077136514983352,
+   "spread": null,
+   "target": 0.2,
+   "kind": ">",
+   "direction": "\u2191",
+   "headroom": 0.18711676817815348,
+   "unit": "dex",
+   "pull": null,
+   "knobs": {},
+   "source": "d1829_cp.json",
+   "note": "PHENOMENOLOGICAL"
+  },
+  {
+   "id": 6,
+   "ring": 1,
+   "notch": "neutrinos",
+   "quantity": "ratio natural fraction",
+   "value": 0.0133,
+   "spread": null,
+   "target": 0.01,
+   "kind": ">",
+   "direction": "\u2191",
+   "headroom": 0.12385164096708574,
+   "unit": "dex",
+   "pull": null,
+   "knobs": {
+    "flux(4,4,8)": "0"
+   },
+   "source": "d1821_neutrino.json",
+   "note": "thin: 0.12 dex headroom"
+  },
+  {
+   "id": 7,
+   "ring": 1,
+   "notch": "neutrinos",
+   "quantity": "M_N vs leptogenesis window top",
+   "value": 184411319650.2405,
+   "spread": null,
+   "target": 2500000000000.0,
+   "kind": "<",
+   "direction": "\u25cf",
+   "headroom": 1.132152433002404,
+   "unit": "dex",
+   "pull": null,
+   "knobs": {
+    "n_theta": "0",
+    "tan_beta": "+"
+   },
+   "source": "v4 (D1822)",
+   "note": ""
+  },
+  {
+   "id": 8,
+   "ring": 1,
+   "notch": "neutrinos",
+   "quantity": "M_N vs window bottom",
+   "value": 184411319650.2405,
+   "spread": null,
+   "target": 45000000000.0,
+   "kind": ">",
+   "direction": "\u25cf",
+   "headroom": 0.61257506189429,
+   "unit": "dex",
+   "pull": null,
+   "knobs": {},
+   "source": "v4 (D1822)",
+   "note": ""
+  },
+  {
+   "id": 9,
+   "ring": 1,
+   "notch": "leptons",
+   "quantity": "Koide delta",
+   "value": 0.2222222222222222,
+   "spread": null,
+   "target": null,
+   "kind": "input",
+   "direction": "\u25cb",
+   "headroom": null,
+   "unit": "",
+   "pull": null,
+   "knobs": {},
+   "source": "v4",
+   "note": "TRUST"
+  },
+  {
+   "id": 10,
+   "ring": 2,
+   "notch": "spectrum",
+   "quantity": "wino M2 [GeV]",
+   "value": 686.5104883997519,
+   "spread": null,
+   "target": 660.0,
+   "kind": ">",
+   "direction": "\u2191",
+   "headroom": 0.017103241164685798,
+   "unit": "dex",
+   "pull": null,
+   "knobs": {
+    "m3/2": "+"
+   },
+   "source": "v4",
+   "note": "marginal: wants m3/2 UP"
+  },
+  {
+   "id": 11,
+   "ring": 2,
+   "notch": "spectrum",
+   "quantity": "gluino M3 [GeV]",
+   "value": 4926.39926475662,
+   "spread": null,
+   "target": 2300.0,
+   "kind": ">",
+   "direction": "\u25cf",
+   "headroom": 0.33080177072499733,
+   "unit": "dex",
+   "pull": null,
+   "knobs": {
+    "m3/2": "+"
+   },
+   "source": "v4",
+   "note": ""
+  },
+  {
+   "id": 12,
+   "ring": 2,
+   "notch": "forces",
+   "quantity": "alpha_s(M_Z) no threshold",
+   "value": 0.1142,
+   "spread": null,
+   "target": [
+    0.118,
+    0.0009
+   ],
+   "kind": "data",
+   "direction": "\u2191",
+   "headroom": -2.2222222222222197,
+   "unit": "\u03c3",
+   "pull": -4.22222222222222,
+   "knobs": {
+    "m3/2": "-",
+    "Delta3 threshold": "+"
+   },
+   "source": "D1929 run 1 (gluino 4.93 TeV)",
+   "note": "d alpha_s / d ln m3/2 = -0.00290 (measured, \u00b110 %): wants m3/2 DOWN; opposes the wino arrow"
+  },
+  {
+   "id": 13,
+   "ring": 2,
+   "notch": "forces",
+   "quantity": "Delta3 after Higgs pair + gauge",
+   "value": -0.09423555864829054,
+   "spread": null,
+   "target": -0.05,
+   "kind": ">",
+   "direction": "\u2191!",
+   "headroom": 0.27524480515292593,
+   "unit": "dex",
+   "pull": null,
+   "knobs": {
+    "b_prime": "-",
+    "brane threshold": "+"
+   },
+   "source": "v4 (D1881b)",
+   "note": "needs +0.044 more"
+  },
+  {
+   "id": 14,
+   "ring": 2,
+   "notch": "forces",
+   "quantity": "alpha_s with S at i (self-consistent spectrum)",
+   "value": 0.1112,
+   "spread": null,
+   "target": [
+    0.118,
+    0.0009
+   ],
+   "kind": "data",
+   "direction": "\u2191",
+   "headroom": -5.555555555555556,
+   "unit": "\u03c3",
+   "pull": -7.555555555555556,
+   "knobs": {
+    "S vacuum": "rho"
+   },
+   "source": "D1929",
+   "note": "S at i pushes the wrong way"
+  },
+  {
+   "id": 15,
+   "ring": 2,
+   "notch": "forces",
+   "quantity": "proton lifetime [yr]",
+   "value": 1.6e+35,
+   "spread": null,
+   "target": 2.4e+34,
+   "kind": ">",
+   "direction": "\u25cf",
+   "headroom": 0.8239087409443188,
+   "unit": "dex",
+   "pull": null,
+   "knobs": {
+    "M12": "+"
+   },
+   "source": "v4",
+   "note": ""
+  },
+  {
+   "id": 16,
+   "ring": 3,
+   "notch": "inflation",
+   "quantity": "n_s",
+   "value": 0.9706,
+   "spread": null,
+   "target": [
+    0.9728,
+    0.0027
+   ],
+   "kind": "data",
+   "direction": "\u25cf",
+   "headroom": 1.1851851851851927,
+   "unit": "\u03c3",
+   "pull": -0.8148148148148072,
+   "knobs": {
+    "N*": "+",
+    "T_R": "+"
+   },
+   "source": "v4",
+   "note": "\u0394n_s needed +0.0022 \u21d2 \u0394N* \u2248 +2.8 \u21d2 T_R up"
+  },
+  {
+   "id": 17,
+   "ring": 3,
+   "notch": "inflation",
+   "quantity": "n_s with S at i",
+   "value": 0.9704,
+   "spread": null,
+   "target": [
+    0.9728,
+    0.0027
+   ],
+   "kind": "data",
+   "direction": "\u25cf",
+   "headroom": 1.1111111111111267,
+   "unit": "\u03c3",
+   "pull": -0.8888888888888732,
+   "knobs": {
+    "S vacuum": "rho"
+   },
+   "source": "D1926",
+   "note": ""
+  },
+  {
+   "id": 18,
+   "ring": 3,
+   "notch": "inflation",
+   "quantity": "r",
+   "value": 0.00054,
+   "spread": null,
+   "target": 0.036,
+   "kind": "<",
+   "direction": "\u25cf",
+   "headroom": 1.8239087409443187,
+   "unit": "dex",
+   "pull": null,
+   "knobs": {},
+   "source": "v4",
+   "note": ""
+  },
+  {
+   "id": 19,
+   "ring": 3,
+   "notch": "cosmology",
+   "quantity": "T_R vs M_N (thermal leptogenesis)",
+   "value": 370000000.0,
+   "spread": null,
+   "target": 184411319650.2405,
+   "kind": ">",
+   "direction": "\u2191!",
+   "headroom": -2.6975858516026388,
+   "unit": "dex",
+   "pull": null,
+   "knobs": {
+    "T_R": "+",
+    "M_N": "-"
+   },
+   "source": "v4 (D1897)",
+   "note": "fails by 2.7 dex \u21d2 non-thermal; T_R arrow agrees with n_s"
+  },
+  {
+   "id": 20,
+   "ring": 3,
+   "notch": "cosmology",
+   "quantity": "Delta N_eff",
+   "value": 1e-06,
+   "spread": null,
+   "target": 0.17,
+   "kind": "<",
+   "direction": "\u25cf",
+   "headroom": 5.230448921378274,
+   "unit": "dex",
+   "pull": null,
+   "knobs": {},
+   "source": "v4",
+   "note": "0 exactly; plotted as 1e-6"
+  },
+  {
+   "id": 21,
+   "ring": 3,
+   "notch": "cosmology",
+   "quantity": "dark-matter mass [GeV]",
+   "value": 12.801414690909093,
+   "spread": null,
+   "target": null,
+   "kind": "prediction",
+   "direction": "\u25cb",
+   "headroom": null,
+   "unit": "",
+   "pull": null,
+   "knobs": {},
+   "source": "v4",
+   "note": ""
+  },
+  {
+   "id": 22,
+   "ring": 4,
+   "notch": "reverse",
+   "quantity": "alpha drift zeta",
+   "value": 3.7846829210515235e-10,
+   "spread": null,
+   "target": 1.66e-06,
+   "kind": "<",
+   "direction": "\u25cf",
+   "headroom": 3.642078587666565,
+   "unit": "dex",
+   "pull": null,
+   "knobs": {
+    "b_bf": "-"
+   },
+   "source": "v4 (D1887)",
+   "note": ""
+  },
+  {
+   "id": 23,
+   "ring": 4,
+   "notch": "reverse",
+   "quantity": "thread slope lambda (DESI needs ~0.95)",
+   "value": NaN,
+   "spread": null,
+   "target": null,
+   "kind": "open",
+   "direction": "\u25cb",
+   "headroom": null,
+   "unit": "",
+   "pull": null,
+   "knobs": {},
+   "source": "D1906",
+   "note": "OPEN: non-K\u00e4hler only"
+  }
+ ],
+ "compass": {
+  "u": {
+   "up": [
+    [
+     "centre: rung step: |u| one-spurion hairline vs median 0.027",
+     "+",
+     "\u25cf"
+    ],
+    [
+     "centre: rung step: |u| single-flavon natural window centre",
+     "+",
+     "\u2193"
+    ]
+   ],
+   "down": [],
+   "tension": false
+  },
+  "tan_beta": {
+   "up": [
+    [
+     "neutrinos: M_N vs leptogenesis window top",
+     "+",
+     "\u25cf"
+    ]
+   ],
+   "down": [],
+   "tension": false
+  },
+  "m3/2": {
+   "up": [
+    [
+     "spectrum: wino M2 [GeV]",
+     "+",
+     "\u2191"
+    ],
+    [
+     "spectrum: gluino M3 [GeV]",
+     "+",
+     "\u25cf"
+    ]
+   ],
+   "down": [
+    [
+     "forces: alpha_s(M_Z) no threshold",
+     "-",
+     "\u2191"
+    ]
+   ],
+   "tension": true
+  },
+  "Delta3 threshold": {
+   "up": [
+    [
+     "forces: alpha_s(M_Z) no threshold",
+     "+",
+     "\u2191"
+    ]
+   ],
+   "down": [],
+   "tension": false
+  },
+  "b_prime": {
+   "up": [],
+   "down": [
+    [
+     "forces: Delta3 after Higgs pair + gauge",
+     "-",
+     "\u2191!"
+    ]
+   ],
+   "tension": false
+  },
+  "brane threshold": {
+   "up": [
+    [
+     "forces: Delta3 after Higgs pair + gauge",
+     "+",
+     "\u2191!"
+    ]
+   ],
+   "down": [],
+   "tension": false
+  },
+  "M12": {
+   "up": [
+    [
+     "forces: proton lifetime [yr]",
+     "+",
+     "\u25cf"
+    ]
+   ],
+   "down": [],
+   "tension": false
+  },
+  "N*": {
+   "up": [
+    [
+     "inflation: n_s",
+     "+",
+     "\u25cf"
+    ]
+   ],
+   "down": [],
+   "tension": false
+  },
+  "T_R": {
+   "up": [
+    [
+     "inflation: n_s",
+     "+",
+     "\u25cf"
+    ],
+    [
+     "cosmology: T_R vs M_N (thermal leptogenesis)",
+     "+",
+     "\u2191!"
+    ]
+   ],
+   "down": [],
+   "tension": false
+  },
+  "M_N": {
+   "up": [],
+   "down": [
+    [
+     "cosmology: T_R vs M_N (thermal leptogenesis)",
+     "-",
+     "\u2191!"
+    ]
+   ],
+   "tension": false
+  },
+  "b_bf": {
+   "up": [],
+   "down": [
+    [
+     "reverse: alpha drift zeta",
+     "-",
+     "\u25cf"
+    ]
+   ],
+   "tension": false
+  }
+ },
+ "sensitivities": {
+  "dalpha_s_dlnm32": -0.002895863758946015,
+  "dns_dNstar": 0.0007904857139469348
+ }
+}

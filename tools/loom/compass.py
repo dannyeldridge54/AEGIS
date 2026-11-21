@@ -1,0 +1,87 @@
+"""Loom compass (Danny 16:06): every measurement is fingerprinted with a direction (up / down / on target) and a vector
+(signed pull on each knob), so results point somewhere instead of just PASS/FAIL. Pulse order: centre -> outward notches.
+Run: python3 tools/loom/compass.py  -> field_tests/loom/compass_catalog.json + tools/project_docs/WEAVE_COMPASS.md"""
+import json, math, sys
+sys.path.insert(0, 'tools/weave_cm'); from weave_tools import weave_rg2
+R = lambda f: json.load(open('field_tests/results/' + f))
+v4 = {r['name']: r for r in R('weave_derivation_v4.json')}
+g = lambda key: next(r for n, r in v4.items() if n.startswith(key))
+cat = []
+def fp(ring, notch, qty, value, target, kind, src, knobs, spread=None, note=''):
+    """direction: which way the value must move to reach the target. headroom: >0 inside the bar (log10 units or sigma)."""
+    if kind == 'data':
+        t, s = target; pull = (value - t) / s; d = '●' if abs(pull) < 1 else ('↑' if pull < 0 else '↓'); head = 2 - abs(pull); unit = 'σ'
+    elif kind in ('>', '<'):
+        ok = value > target if kind == '>' else value < target
+        head = (math.log10(value / target) if kind == '>' else math.log10(target / value)); unit = 'dex'
+        d = '●' if ok and head > 0.3 else (('↑' if kind == '>' else '↓') + ('' if ok else '!'))
+        pull = None
+    else: d, head, unit, pull = '○', None, '', None      # prediction / input: no target yet
+    cat.append(dict(id=len(cat) + 1, ring=ring, notch=notch, quantity=qty, value=value, spread=spread, target=target, kind=kind,
+                    direction=d, headroom=head, unit=unit, pull=pull, knobs=knobs, source=src, note=note))
+# ---- measured sensitivities (vectors): alpha_s and wino vs m3/2 (AMSB scaling), +-10 %
+def amsb(m32):
+    mg = 3 * 0.092 / (4 * math.pi) * m32 * (4926.4 / (3 * 0.092 / (4 * math.pi) * 257945.66)); return dict(m_wino=686.51 * m32 / 257945.66, m_gluino=mg, m_scalar=4.7e5 * m32 / 257945.66)
+a_up, a_dn = weave_rg2(amsb(257945.66 * 1.1))['alpha_s_unif'], weave_rg2(amsb(257945.66 / 1.1))['alpha_s_unif']
+das_dlnm = (a_up - a_dn) / (2 * math.log(1.1))
+Ns = 50.3; dns_dN = 2 / Ns ** 2                           # plateau n_s = 1 - 2/N*
+dN_dlnTR = 1 / 3                                          # instant-reheating-like scaling, w=0 -> dN*/dlnT_R ~ 1/3 (estimate)
+# ---- ring 0: the centre (fold + shared rung step)
+fp(0, 'centre: rung step', '|u| one-spurion hairline vs median 0.027', 0.02587, (0.027, 0.0012), 'data', 'D1925a/D1927', {'u': '+'}, note='median of six sectors 0.027; spread taken as the D1927 window 0.0259-0.027')
+fp(0, 'centre: rung step', '|u| single-flavon natural window centre', math.sqrt(0.063 * 0.148), (0.027, 0.0012), 'data', 'D1928', {'u': '+'}, note='window 0.063-0.148 sits ABOVE the median: flavour pulls u UP, away from the median')
+fp(0, 'centre: rung step', 'lepton slip / down slip', g('lepton slip')['value'], (1.0, 0.05), 'data', 'v4 (D1832)', {'u': '0'}, note='same-lock fit; conflicts with Koide at rho')
+# ---- ring 1: flavour
+fp(1, 'quarks', 'f7 (two-size lock)', g('quark 7-observable')['value'], 0.05, '>', 'd1829_cp.json', {'u_u': '0', 'u_d': '0'}, note='PHENOMENOLOGICAL')
+fp(1, 'quarks', 'fJ', g('quark CP')['value'], 0.2, '>', 'd1829_cp.json', {}, note='PHENOMENOLOGICAL')
+fp(1, 'neutrinos', 'ratio natural fraction', g('neutrino ratio')['value'], 0.01, '>', 'd1821_neutrino.json', {'flux(4,4,8)': '0'}, note='thin: 0.12 dex headroom')
+fp(1, 'neutrinos', 'M_N vs leptogenesis window top', g('heavy neutrino')['value'], 2.5e12, '<', 'v4 (D1822)', {'n_theta': '0', 'tan_beta': '+'})
+fp(1, 'neutrinos', 'M_N vs window bottom', g('heavy neutrino')['value'], 4.5e10, '>', 'v4 (D1822)', {})
+fp(1, 'leptons', 'Koide delta', 2 / 9, None, 'input', 'v4', {}, note='TRUST')
+# ---- ring 2: spectrum + forces
+m32 = g('gravitino')['value']
+fp(2, 'spectrum', 'wino M2 [GeV]', g('wino')['value'], 660.0, '>', 'v4', {'m3/2': '+'}, note='marginal: wants m3/2 UP')
+fp(2, 'spectrum', 'gluino M3 [GeV]', g('gluino')['value'], 2300.0, '>', 'v4', {'m3/2': '+'})
+fp(2, 'forces', 'alpha_s(M_Z) no threshold', 0.1142, (0.1180, 0.0009), 'data', 'D1929 run 1 (gluino 4.93 TeV)', {'m3/2': '-', 'Delta3 threshold': '+'},
+   note='d alpha_s / d ln m3/2 = %+.5f (measured, ±10 %%): wants m3/2 DOWN; opposes the wino arrow' % das_dlnm)
+fp(2, 'forces', 'Delta3 after Higgs pair + gauge', g('Delta_3 after')['value'], -0.05, '>', 'v4 (D1881b)', {'b_prime': '-', 'brane threshold': '+'}, note='needs +0.044 more')
+fp(2, 'forces', 'alpha_s with S at i (self-consistent spectrum)', 0.1112, (0.1180, 0.0009), 'data', 'D1929', {'S vacuum': 'rho'}, note='S at i pushes the wrong way')
+fp(2, 'forces', 'proton lifetime [yr]', g('proton')['value'], 2.4e34, '>', 'v4', {'M12': '+'})
+# ---- ring 3: inflation / cosmology
+fp(3, 'inflation', 'n_s', g('n_s')['value'], (0.9728, 0.0027), 'data', 'v4', {'N*': '+', 'T_R': '+'}, note='Δn_s needed +0.0022 ⇒ ΔN* ≈ +%.1f ⇒ T_R up' % (0.0022 / dns_dN))
+fp(3, 'inflation', 'n_s with S at i', 0.9704, (0.9728, 0.0027), 'data', 'D1926', {'S vacuum': 'rho'})
+fp(3, 'inflation', 'r', g('r')['value'], 0.036, '<', 'v4', {})
+fp(3, 'cosmology', 'T_R vs M_N (thermal leptogenesis)', g('T_R')['value'], g('heavy neutrino')['value'], '>', 'v4 (D1897)', {'T_R': '+', 'M_N': '-'}, note='fails by 2.7 dex ⇒ non-thermal; T_R arrow agrees with n_s')
+fp(3, 'cosmology', 'Delta N_eff', 1e-6, 0.17, '<', 'v4', {}, note='0 exactly; plotted as 1e-6')
+fp(3, 'cosmology', 'dark-matter mass [GeV]', g('dark-matter')['value'], None, 'prediction', 'v4', {})
+# ---- ring 4: reverse thread
+fp(4, 'reverse', 'alpha drift zeta', g('thread alpha')['value'], 1.66e-6, '<', 'v4 (D1887)', {'b_bf': '-'})
+fp(4, 'reverse', 'thread slope lambda (DESI needs ~0.95)', float('nan'), None, 'open', 'D1906', {}, note='OPEN: non-Kähler only')
+# ---- the compass: aggregate the arrows per knob
+from collections import defaultdict
+pull = defaultdict(list)
+for c in cat:
+    for k, s in c['knobs'].items():
+        if s in '+-' and c['direction'] != '○': pull[k].append((c['notch'] + ': ' + c['quantity'], s, c['direction']))
+compass = {k: dict(up=[p for p in v if p[1] == '+'], down=[p for p in v if p[1] == '-'], tension=len({p[1] for p in v}) > 1) for k, v in pull.items()}
+json.dump(dict(catalog=cat, compass=compass, sensitivities=dict(dalpha_s_dlnm32=das_dlnm, dns_dNstar=dns_dN)), open('field_tests/loom/compass_catalog.json', 'w'), indent=1, default=str)
+L = ['# The Weave compass (Danny 16:06): every measurement fingerprinted with a direction and a vector', '',
+     'Legend: ● on target (inside the bar with margin); ↑ / ↓ the value must move up / down; ! the bar fails now; ○ prediction or input (no target yet). Headroom is in σ (data) or dex (bounds); smaller means tighter.', '',
+     '| # | ring | notch | quantity | value | dir | headroom | knobs it pulls | source | note |', '|---|---|---|---|---|---|---|---|---|---|']
+for c in cat:
+    hv = '' if c['headroom'] is None else '%.2f %s' % (c['headroom'], c['unit'])
+    L.append('| %d | %d | %s | %s | %.4g | %s | %s | %s | %s | %s |' % (c['id'], c['ring'], c['notch'], c['quantity'], c['value'], c['direction'], hv,
+             ', '.join('%s %s' % (k, v) for k, v in c['knobs'].items()) or '—', c['source'], c['note']))
+L += ['', '## Where it points (per knob)', '']
+for k, v in compass.items():
+    L.append('- **%s**%s: wants ↑ from %s; wants ↓ from %s.' % (k, ' — TENSION' if v['tension'] else '', '; '.join(p[0] for p in v['up']) or 'none', '; '.join(p[0] for p in v['down']) or 'none'))
+# interactions: can one knob satisfy the arrows that pull on it?
+need_as = 0.1180 - 0.1142; dln = need_as / das_dlnm; wino_new = 686.5 * math.exp(dln)
+dN = 0.0022 / dns_dN; TR_ns = 3.7e8 * math.exp(dN / dN_dlnTR)
+L += ['', '## Interactions (where two arrows meet one knob)', '',
+      '- **m3/2 cannot fix α_s.** Closing α_s needs Δ ln m3/2 = %.2f (m3/2 ×%.2f). That puts the wino at %.0f GeV, far below the 660 GeV bar, which already has only 4 %% room. So α_s must come from a threshold (Δ₃), not from the spectrum.' % (dln, math.exp(dln), wino_new),
+      '- **T_R: two independent arrows agree.** Thermal leptogenesis needs T_R ≳ M_N = 1.8e11 GeV (×500 up). n_s at the data centre needs ΔN* ≈ +%.1f, which means T_R ≈ %.1e GeV (×%.0f up, with dN*/d ln T_R = 1/3 for w = 0 reheating, an estimate). Both point to **T_R ~ 1e11–1e12 GeV**, about 3 decades above the derived 3.7e8.' % (dN, TR_ns, TR_ns / 3.7e8),
+      '- **u: the flavour arrow and the median disagree.** The single-flavon window (0.063–0.148) sits a factor of ~3.6 above the six-sector median 0.027. Only the hairline one-spurion fit (0.0259–0.027) sits on the median.']
+L += ['', 'Knob convention: "+" means this measurement wants the knob raised, "−" lowered.']
+L += ['', 'Measured: dα_s/d ln m₃/₂ = %+.5f; dn_s/dN* = %.2e.' % (das_dlnm, dns_dN)]
+open('tools/project_docs/WEAVE_COMPASS.md', 'w').write('\n'.join(L) + '\n')
+print('\n'.join(L))

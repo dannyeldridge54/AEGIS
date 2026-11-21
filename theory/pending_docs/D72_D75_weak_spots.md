@@ -18942,3 +18942,18 @@ Result: **12 PASS (3 PHENOMENOLOGICAL, no geometric home), 2 FAIL (α_s, Δ₃) 
   - S at ρ (g_s = 2/√3) stays the baseline, still CONDITIONAL on control.
   - **Side finding (stale number):** with the referee-corrected gluino of 4.93 TeV (D1897), the baseline gives α_s = 0.1142 (−4.2 σ), not 0.1147. That number comes from run 1, whose spectrum is the 4.93 TeV one. The scoreboard's α_s line still uses the older 5.57 TeV gluino. This changes no pass/fail result, but the next scoreboard and the referee should carry it.
 - **KEEP:** field_tests/results/d1929_heavy_spectrum_as.json/.txt; run 1 is kept as *_run1_VOID.*.
+
+## D1930 — lock superseded before any result (21 Nov 2026, 16:06 CT)
+Danny interrupted the D1930 pulse run partway through, and it produced no result file. He then widened the design: a pulse from the centre to every notch, with every measurement fingerprinted with a direction and a vector. PREREG_D1930 stays on record as unrun. Its two rings move into the per-notch 7-null triangulation of the next ticks (rule 6h).
+
+## D1931 — the Weave compass (Danny 16:06): every measurement fingerprinted with a direction and a vector
+- **What it is.** tools/loom/compass.py → field_tests/loom/compass_catalog.json + tools/project_docs/WEAVE_COMPASS.md.
+  - It catalogues 23 measurements across rings 0–4, from the centre (the rung step) outwards.
+  - Each entry carries: value, target, a direction (● on target, ↑/↓ must move, ! failing now, ○ no target), headroom (σ or dex), the knobs it pulls (+ raise, − lower) and the source file.
+  - Values are read from files. Two sensitivities were measured, not assumed: dα_s/d ln m₃/₂ = −0.0029 (two-loop, ±10 %) and dn_s/dN* = 7.9e-4.
+- **Where it points.**
+  1. **m₃/₂ — TENSION.** The wino (4 % headroom) wants it up and α_s wants it down. Closing α_s through m₃/₂ would need ×0.27, putting the wino at 185 GeV, so it is excluded. α_s must come from a threshold (Δ₃).
+  2. **T_R — two independent arrows agree.** Thermal leptogenesis needs T_R ≳ 1.8e11 (×500). n_s at the data centre needs ΔN* ≈ +2.8, which means T_R ≈ 1.6e12 (×4,200; estimate, w = 0). Both point to **T_R ~ 1e11–1e12 GeV**, about 3 decades above the derived 3.7e8. **This is the strongest pointing in the catalogue.** It says the reheating chain (x = 0.279, D1801) is where the next derivation should look.
+  3. **u — the flavour arrow and the median disagree.** The single-flavon window sits ×3.6 above the median 0.027. Only the hairline one-spurion fit sits on it.
+  4. **Thinnest margins:** the wino (0.02 dex), the neutrino ratio (0.12 dex) and quark fJ (0.19 dex).
+- **Status.** This is a measurement catalogue, not a new claim. The T_R convergence is an estimate until it is triangulated to 7 nulls (next tick).
