@@ -99,7 +99,7 @@ Only post-lock data counts as strict evidence (G6).
 | # | test | experiment / data | Weave value | field | status |
 |---|---|---|---|---|---|
 | E1 | direct detection, 12.8 GeV | LZ 2024/25, XENONnT, PandaX-4T; XLZD | below LZ; in XLZD reach | T | RUN |
-| E2 | wino indirect: γ-lines | H.E.S.S. GC, Fermi; CTA | wino 10–40 % of the DM at 0.69 TeV | T | **OPEN**: H.E.S.S. 1808.04388 is not valid below 1 TeV; signal ∝ f² = 0.01–0.16; the Fermi dwarf limit is next (D1946) |
+| E2 | wino indirect: γ-lines | H.E.S.S. GC, Fermi; CTA | wino 10–40 % of the DM at 0.69 TeV | T | **OPEN**: H.E.S.S. 1808.04388 is not valid below 1 TeV; signal ∝ f² = 0.01–0.16; Fermi inner Galaxy (2507.15934) robustly excludes only 1.85 TeV up to the thermal mass; 0.69 TeV at 10–40 % is not excluded (D1947) |
 | E3 | wino indirect: dwarf continuum | Fermi-LAT dwarfs, MAGIC | — | T | RUN |
 | E4 | antiprotons | AMS-02 | — | T | RUN |
 | E5 | DM self-interaction σ/m | clusters, dwarfs | ≤ 2e-3 cm²/g | T | DONE |
