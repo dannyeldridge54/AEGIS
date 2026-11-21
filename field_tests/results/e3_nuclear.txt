@@ -1,0 +1,9 @@
+{
+ "dmq_over_Lambda": 0.129488724589964,
+ "dalpha": 0.0,
+ "radius": 5.1795489835985595,
+ "inside": false,
+ "alpha_s_precision_needed": 0.00042474740695888055,
+ "label": "lit tolerances, elliptic approx"
+}
+{'dmq_over_Lambda': 0.3531510670635392, 'dalpha': 0.0, 'radius': 14.126042682541568, 'inside': False, 'alpha_s_precision_needed': 0.00042474740695888055, 'label': 'lit tolerances, elliptic approx'}

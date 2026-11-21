@@ -59,7 +59,7 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 |---|---|---|---|---|
 | E1 m_p response to quark slips | σ_πN, σ_s propagation | lattice QCD | weave_proton | R |
 | E2 atomic/molecular constants | follow from α, m_e, m_p | CODATA | weave_atomic | R |
-| E3 nuclear window (deuteron binding, Hoyle state) | the Weave's quark-mass freedom must stay inside | nuclear lattice EFT | to build | T |
+| E3 nuclear window (deuteron binding, Hoyle state) | inside at the data point (inputs); exact-unification α_s would move m_q/Λ by 13 % (outside); a true prediction needs δα_s ≲ 4e-4 | nuclear lattice EFT | weave_nuclear (21 Nov 10:38) | T → **R** (PREREG_E3_NUCLEAR, D1802; calibration) |
 
 ## F. Whole-model tests
 | Test | Data | Tool | Status |

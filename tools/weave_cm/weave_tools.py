@@ -352,10 +352,20 @@ def weave_rg2(a):
     return dict(M12_GeV=M, alpha_inv_M12=float(x[0]), Delta3=float(x[2] - x[0]), alpha_s_unif=au, label='S (two-loop gauge; Yukawa 2-loop neglected, +-0.004)')
 
 
+def weave_nuclear(a):
+    """Hoyle/carbon window (PREREG_E3; Epelbaum et al. 2013 tolerances, elliptic approx). {"dmq":frac,"dalpha":frac} or {"dalpha_s":abs at MZ}."""
+    dmq, da = float(a.get('dmq', 0)), float(a.get('dalpha', 0))
+    if 'dalpha_s' in a:
+        als = float(a.get('alpha_s', 0.118)); dmq = 2 * math.pi * float(a['dalpha_s']) / ((23 / 3) * als ** 2)
+    r = (dmq / 0.025) ** 2 + (da / 0.025) ** 2
+    need = 0.025 * (23 / 3) * float(a.get('alpha_s', 0.118)) ** 2 / (2 * math.pi)
+    return dict(dmq_over_Lambda=dmq, dalpha=da, radius=r ** 0.5, inside=r <= 1, alpha_s_precision_needed=need, label='lit tolerances, elliptic approx')
+
+
 TOOLS = {'weave_rung': weave_rung, 'weave_rung_of': weave_rung_of, 'weave_koide': weave_koide, 'weave_koide_slip': weave_koide_slip,
          'weave_tauq': weave_tauq, 'weave_ckm': weave_ckm, 'weave_proton': weave_proton, 'weave_atomic': weave_atomic,
          'weave_arc': weave_arc, 'weave_rladder': weave_rladder, 'weave_negspace': weave_negspace, 'weave_paths': weave_paths, 'weave_basic': weave_basic, 'weave_mbb': weave_mbb, 'weave_magd7': weave_magd7, 'weave_sidm': weave_sidm, 'weave_wino': weave_wino, 'weave_genesis': weave_genesis,
-         'weave_axion_relic': weave_axion_relic, 'weave_W0': weave_W0, 'weave_rinv': weave_rinv, 'weave_walls': weave_walls, 'weave_edm': weave_edm, 'weave_rg': weave_rg, 'weave_rg2': weave_rg2}
+         'weave_axion_relic': weave_axion_relic, 'weave_W0': weave_W0, 'weave_rinv': weave_rinv, 'weave_walls': weave_walls, 'weave_edm': weave_edm, 'weave_rg': weave_rg, 'weave_rg2': weave_rg2, 'weave_nuclear': weave_nuclear}
 
 if __name__ == '__main__':   # self-test: reproduces the published numbers
     assert abs(weave_mbb({})['mbb_max_meV'] - 3.7952) < 1e-3
@@ -379,4 +389,5 @@ if __name__ == '__main__':   # self-test: reproduces the published numbers
     w = weave_walls({'T_MeV': 10, 'alpha': 0.1}); assert abs(w['f_peak_nHz'] - 1.14) < 0.02 and abs(weave_walls({'f_nHz': [1]})['spectrum']['1'] / weave_walls({'f_nHz': [1]})['h2Omega_peak'] - (lambda x: 4 / (x ** -3 + 3 * x))(1 / weave_walls({})['f_peak_nHz'])) < 1e-9
     e = weave_edm({'m_scalar_GeV': 2.5e5}); assert abs(e['d_e_ecm'] - 4e-33) < 1e-34 and abs(weave_edm({'m_scalar_GeV': 7e5})['d_e_ecm'] - 5.1e-34) < 1e-35
     g = weave_rg({}); assert 7.2e15 < g['M12_GeV'] < 7.7e15 and abs(g['alpha_inv_M12'] - 28.77) < 0.05 and abs(g['Delta3'] + 0.90) < 0.02
+    assert weave_nuclear({})['inside'] and not weave_nuclear({'dmq': 0.03})['inside'] and abs(weave_nuclear({})['alpha_s_precision_needed'] - 4.25e-4) < 1e-5
     print('weave_tools selftest OK', json.dumps({k: round(v, 5) for k, v in c.items() if isinstance(v, float)}))

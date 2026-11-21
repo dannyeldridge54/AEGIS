@@ -17715,3 +17715,9 @@ One thought: every field sits AT one of the two elliptic points of PSL(2,Z) (i, 
 
   Unchanged: m₃/₂ ≈ 375 × 0.68 TeV = 2.5e5 GeV, the wino 0.66–0.69 TeV and N = 7. Leptogenesis (M_N ≥ 4.5e10 GeV) is unaffected at this precision.
 - Band ladder: α⁻¹ = 9/g_s + λN with λ = ln(1/W₀)/2π = 2.88 at N = 7 is still exact by construction, i.e. a consistency, not a prediction.
+
+## D1802 (LL, RIGHT/E3 — 21 Nov 2026): the carbon window is ~5× tighter than the unification prediction of α_s; the Weave cannot yet "predict" carbon, it uses m_q and α as inputs
+- [tool, locked PREREG_E3_NUCLEAR] weave_nuclear (self-test passes) uses the Epelbaum–Krebs–Lähde–Lee–Meißner tolerances (Hoyle state within ~100 keV ⇔ |δm_q/m_q| ≲ 2–3 %, |δα/α| ≲ 2.5 %; elliptic approximation).
+- At the data point (the Weave's m_q, α are inputs) the check is trivially **inside**.
+- If α_s were taken from exact two-loop unification (0.1158, D1800): Λ_QCD shifts by 13 %, so m_q/Λ_QCD shifts by 13 %. That is radius 5.2, far **outside** the carbon window. A true prediction of α_s would need |δα_s| ≲ **4e-4** to stay inside, ≈ 10× better than the two-loop + threshold uncertainty (±0.004–0.005).
+- **Reading:** "the Weave unifies the forces" (D1800) and "the Weave allows carbon life" are compatible only because α_s is taken from data. Unification at the ~2 % level in α_s is far too coarse to land inside the anthropic window. This is a property of every GUT-like scheme, not a Weave failure. A threshold calculation good to 4e-4 in α_s would be needed to call carbon "predicted". E3 → R (calibration; no strict test).
