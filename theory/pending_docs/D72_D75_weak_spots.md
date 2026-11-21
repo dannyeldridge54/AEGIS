@@ -17871,3 +17871,16 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
 - Reading: which case applies depends on the brane geometry. For D7 stacks the N = 2 sectors come from the torus transverse to the stack, and the Kähler dependence enters through the winding/KK split. This is not determined here; both are recorded.
 - Numerology guard: Δb ≈ −3 = −|Z₃| is suggestive but carries no weight. One rational difference fits any target approximately (D1780).
 - Status: the last −0.24 in α₃⁻¹ is "hostable by a ρ-valued threshold with Δb = −3", or requires universality (U+T). An explicit D7 spectrum with its N = 2 sectors would decide this, which is the next model-building item.
+
+## D1817 (CENTRE, POSTULATE — 21 Nov 2026, Danny 11:11: "the edge of our equation is going to be infinite, and it keeps scaling our derivations because it's fractal")
+- **Postulate U22 (P-fractal, Danny):** the Weave's equation has an infinite, self-similar edge, and every derivation ladder is a piece of it.
+- **Precise form (derived mapping):** the modular group SL(2,Z) tiles the upper half-plane with copies of one fundamental domain. Toward the boundary (the real axis plus the cusp at i∞) the tiles shrink without end: the Farey tessellation, a genuinely self-similar edge. Every element of the group is one of three types, and the Weave already uses each one:
+  - **elliptic:** fixed points ρ (order 3) and i (order 2). These are the knots, where things STOP: the inflaton, leptons, neutrinos and the thread's end.
+  - **parabolic (infinite order, fixes the cusp):** τ → τ + 1. This is the infinite edge itself. Its orbits are ARITHMETIC ladders, and three Weave ladders are of this type:
+    - the band ladder α⁻¹ = 9/g_s + λ_eff N (linear in N);
+    - the slip ladder |ε_m| = 0.0251/(m + 1/16) (harmonic, accumulating);
+    - the species/inflation plateau, which IS the approach from the cusp (y → ∞, E(S, 3/2) at large y, infinite towers: the distance conjecture).
+  - **hyperbolic (two fixed points on the real edge, geometric scaling by λ = ((t + √(t² − 4))/2)², t = |trace| ≥ 3):** **not used anywhere in the Weave so far.**
+- **Reading:** "the edge is infinite and keeps scaling our derivations" means each new rung is the next term of a parabolic orbit from the cusp, and every ladder ends on an elliptic knot. The scaling is arithmetic (fractal Farey refinement), not geometric.
+- **Prediction / kill test (P):** no observable of the Weave should need a hyperbolic (fixed-ratio geometric) ladder. Any new derived ladder must be arithmetic/harmonic in an integer label and end at ρ or i. Weak check on present data: a hyperbolic ladder would give EQUAL successive generation ratios. Observed: up quarks m_c/m_u ≈ 590 vs m_t/m_c ≈ 136; leptons 207 vs 16.8. Unequal, consistent (weak; no lock needed for this). Strong test: lock the form of the next ladder BEFORE deriving it. The first candidate is the neutrino scale (D1820): the seesaw rung M_N must sit on a parabolic (arithmetic in N or m) orbit.
+- Label: P (principle), Danny's postulate, with a precise modular meaning. Added to WEAVE_UNIFY_LOOP.md as U22.
