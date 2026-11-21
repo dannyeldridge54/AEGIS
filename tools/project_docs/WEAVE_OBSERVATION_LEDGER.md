@@ -25,14 +25,14 @@ Goal of the big loop: move every M and A toward P. A row moves only through a lo
 | 2.4 | CKM (3 angles + phase) | A | best hosted fit 1.82 (CubeMind, 21 Nov, rung 4) — needs locked check |
 | 2.5 | First-row CKM unitarity deficit ("Cabibbo anomaly", ~2–3σ) | S (Weave = SM; predicts it goes away; D1754 R11) | |
 | 2.6 | Strong CP: θ̄ < 1e-10 | P (structure) | anomaly-free weights → θ̄ = 0 |
-| 2.7 | Higgs mass 125.2 GeV | G | consistent conditionally (no-scale soft masses) |
+| 2.7 | Higgs mass 125.2 GeV | P (cond., E): split SUSY with scalars ≈ 0.25–0.7 PeV ⇒ tan β ≈ 1–4 (D1763) | the old 1e9 GeV soft-mass chain is excluded by m_h |
 | 2.8 | Electroweak scale v = 246 GeV (hierarchy problem) | **M** | |
 | 2.9 | Neutrino mass splittings, Σm_ν | A (Σ input 0.0587) | normal ordering, m₁ = 0 assumed |
 | 2.10 | PMNS mixing (TM1) | P post hoc (after JUNO) | δ_CP branch chosen by data |
 | 2.11 | Dirac vs Majorana (0νββ) | G | seesaw ⇒ Majorana; m_ββ not given as a number |
 | 2.12 | Proton mass from QCD (938 MeV), proton spin, m_n − m_p | S | m_p shifts propagate (weave_proton); m_n − m_p not covered |
 | 2.13 | Proton stability (τ_p > 2.4e34 yr) | P (filter) | "proton safe" |
-| 2.14 | Electron EDM (|d_e| < 4.1e-30 e·cm) | P (cond.: ~1e-40, unobservable; D1753 R2) | CP phases of the ladder must respect it |
+| 2.14 | Electron EDM (|d_e| < 4.1e-30 e·cm) | E: ~5e-34 – 4e-33 e·cm from PeV scalars (D1763; corrects D1753 R2) | leptonic CP phases exist (D1761) |
 
 ## 3. The early universe
 | # | Observed | Weave | Notes |
