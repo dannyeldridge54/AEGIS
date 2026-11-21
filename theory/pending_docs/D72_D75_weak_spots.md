@@ -18517,3 +18517,6 @@ The referee read D1816–D1904 and the trials ledger, and checked against Gmeine
   - (b) the hierarchy needs one more rung per generation at |u| ≈ 0.03, with the charges rescaled. That is a new postulate for the flavour sector (cap 0/2) and must be scored on the quark lock (D1828), which it would change.
 - **Triangulation of the FAIL:** three source threads plus this compute ⇒ **woven**.
 - **PROPAGATE:** the rung steps stay **TRUST** (input). The scoreboard is unchanged.
+
+## D1909a — METHOD: triangulated data points ("fixes") made mandatory in the Loom; CubeMind design note (Danny 14:32) (21 Nov 2026)
+THE_LOOM.md §3 now requires that every data need be met with a **fix**: three independent bearings, a median with a spread error box, consensus or open, and the outlier's direction and reason. Only consensus fixes may enter a lock as data. §7 and CUBEMIND_ENGINEERING_NOTES E2 record the plan to build CubeMind's retrieval the same way: one independent sub-agent per link, consensus triangulation, and a referee link. Retro-check: D1908's fix is "readings 1e-5 / 0.075 / 0.030 → fix 0.030, open (the IIB reading points 10³ low: frozen flux vacua vs dynamical shifts)". So D1908's input should have been a range, not a single number. Its FAIL stands, because every reading in that range is below 0.09.

@@ -55,6 +55,13 @@ A claim with one or two threads is **loose** and is reported as such. A claim th
 ## 3. The Loom: tick order (the standing loop from now on)
 **Median and triangulation at EVERY step** (Danny 14:30). Every step that produces a number, a choice or a reading gathers **three independent readings**: three sources at RESEARCH, three candidate postulates at POSTULATE, three estimates or code paths at EXECUTE. The step records all three, takes the **median** as the working value and the **spread** as its uncertainty. MEDIAN at step 0 is the same rule applied to the sectors. First used in D1908.
 
+**Triangulated data points (Danny 14:32): "triangulate exactly where it's pointing."** Whenever a tick needs data (a measured value, a literature number, a bound, a parameter), it does not take one number. It takes a **fix**, the way a navigator plots a position from three bearings:
+1. **Three bearings.** Three independent readings: different sources, methods or code paths, each with its own uncertainty and framework tag.
+2. **The fix.** The point they converge on: the median, with the spread (min–max of the two nearest readings) as the error box.
+3. **The pointing.** Where the three agree (overlapping error boxes means a *consensus fix*). Where one disagrees, record which way it points away and why (framework mismatch, regime, older data). Three readings that do not converge give an *open fix*: the number is labelled TRUST and the disagreement is a finding.
+4. **The fix line in the D-note:** `FIX <quantity>: readings r1/r2/r3 (sources) → fix = <median> ± <spread>; consensus | open; outlier points <direction> because <reason>`.
+5. **Only a consensus fix may enter a lock** as data. An open fix enters only as a range to scan.
+
 Each tick is one pass of the shuttle. Every step is mandatory, and its output is one line in the D-note.
 
 0. **MEDIAN.**
@@ -122,3 +129,10 @@ Each tick is one pass of the shuttle. Every step is mandatory, and its output is
   4. A propagation step after withdrawals.
   5. Postulates scored on the non-target sectors, with a per-sector cap.
   6. RESTORED and POST-SELECTED flags, plus a power check before running.
+
+## 7. Next: CubeMind built the same way (Danny 14:32, design note)
+CubeMind's data retrieval will be designed as a Loom:
+- **Every link is its own independent sub-agent.** Each one does a single simplified job: fetch one source, run one code path, read one bound. Each has its own fresh context and does not see the others' answers.
+- **They work it together to triangulate.** Each link returns a bearing (value, uncertainty, framework, provenance). A consensus step plots the fix (median, spread, agreement) and flags outliers with the direction they point.
+- **Consensus decides.** Only consensus fixes feed CubeMind's derivations, and open fixes are surfaced as TRUST or as findings. A referee link (fresh context) audits the consensus step.
+- Engineering items, to be locked when started: the link interface (bearing schema), the consensus rule (median + overlapping error boxes, 2-of-3 minimum), cost caps per link, and a test harness that replays today's D1908 and D1906 fixes to check that CubeMind reproduces them.
