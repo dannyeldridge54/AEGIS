@@ -1,3 +1,6 @@
+# The Loom: the Weave's research loop (v3 weave in LOOM_V3_WEAVE.md — that tick order supersedes §3's where they differ)
+
+# (v2 text follows)
 # The Loom: the Weave's research loop, examined as a theory and rebuilt (21 Nov 2026; v2 after the methods referee)
 Danny 14:15–14:17: "do the same big weave loop … add the median at the beginning … then researching, reviewing, then postulating and executing … that's the way I want the loop going forward." Then: "we've been building this pattern that's most effective. Examine this with the triangulation, reviewing, referees … look at it like it's the theory … how we can improve it … set that to the weave loop. Call it the loom."
 

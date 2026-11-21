@@ -18784,3 +18784,13 @@ Status "LOOSE (size and direction consistent)" becomes **"LOOSE with CENTRE TENS
 
 ## D1906b — correction to D1906a
 Remove "an uplift that depends on τ₃ rather than 𝒱 (for example a D-term, or a throat localised on τ₃)" from the loopholes. **Any Kähler direction inside 𝒱 keeps β = −0.354.** Only non-Kähler thread directions remain open.
+
+## D1921 — METHOD: Loom v3, 25 improvements ranked by today's error record and woven into five layers (Danny 15:04) (21 Nov 2026)
+Research: blind analysis (Klein–Roodman, physics/0312102), Bayesian experimental design and expected information gain (arXiv:2302.14545), multi-agent debate (arXiv:2305.14325; arXiv:2502.08788: debate needs heterogeneity to beat self-consistency).
+Ranking: each of 25 methods is scored by the share of today's 19 recorded errors it would have caught (field_tests/loom/method_ranking.py, a stated retro-judgement):
+- the independent heterogeneous referee catches 79 %;
+- the framework gate, forking-paths ledger and kill-first step each catch 26 %;
+- the registry, multiverse analysis, constraint graph, blind analysis and null runs each catch 21 %.
+The top 8 cover 84 %. With null runs, a single source of truth and idempotent ticks, the set covers 19/19.
+The weave (tools/project_docs/LOOM_V3_WEAVE.md) runs in five layers: TARGET (median + information gain) → GATHER → GUARD (registry, conflict graph, kill-first, fit-vs-derive) → TEST (blinded verdict, power + null, multiverse, stability, limits, reproduce-first) → JUDGE (heterogeneous referee, adversarial collaboration) → KEEP.
+The registry theory/loom_registry.json is seeded with the symbols behind today's errors.
