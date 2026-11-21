@@ -12,7 +12,7 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 | A3 n_s | FITTED — not a test | — | — | — |
 | A4 f_NL | ≈ 0 (single field) | Planck, SPHEREx | Janus | L |
 | A5 isocurvature | ≈ 0 | Planck PR4 | Janus | R |
-| A6 ΔN_eff | ≈ 0 (brane split) | ACT/SPT now; SO, CMB-S4 (σ ≈ 0.03) | Hyperion BBN + engine | L |
+| A6 ΔN_eff | ≈ 0 (brane split) | ACT/SPT now; SO, CMB-S4 (σ ≈ 0.03) | Hyperion BBN + engine | L → **R** (21 Nov 10:23: PREREG_A6_NEFF — ΔN_eff = 0 if ε ≥ 1.5–9.5e-11, else ≤ 0; never positive; FAIL if > 0 at 3σ) |
 | A7 Y_p, D/H | standard at ω_b | PRIMAT + Planck | hyperion_bbn | R |
 | A8 Li-7 | postulate C7 (stellar depletion) | stellar Li surveys | — | T |
 | A9 no modular domain walls | no nHz wall signal (D1753 R3) | NANOGrav 20-yr, IPTA DR3 spectral shape (SMBH vs walls) | to build: wall-spectrum template | T |
@@ -24,7 +24,7 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 | B1 Koide Q | 2/3 (needs |ε| ≲ 6e-5 at ρ) | m_τ (Belle II, BESIII) | weave_koide / slip | L |
 | B2 TM1 sin²θ₁₂ | 0.3184 | JUNO 6-yr (±0.0015) | Flavour panel | L (strongest near-term test, ~6σ if centre holds) |
 | B3 δ_CP branch | lower branch at s²₂₃ 0.561 | DUNE, Hyper-K | Flavour panel | L |
-| B4 Σm_ν | 0.0587 eV (NO, m₁ = 0) | DESI DR3 + CMB; KATRIN/Project 8 | engine flavour | L |
+| B4 Σm_ν | 0.0587 eV (NO, m₁ = 0) | DESI DR3 + CMB; KATRIN/Project 8 | engine flavour | L → **R** (21 Nov 10:23: PREREG_B4_SUMMNU — scored in w0waCDM; FAIL if 95 % limit < 0.055 eV, Σ > 0.10 eV at 3σ, or IO at 3σ; m_β = 8.8 meV) |
 | B5 0νββ m_ββ | 1.59–3.80 meV (D1755; fail if a signal > 7.6 meV) | LEGEND-1000, nEXO ⇒ predict NULL | weave_mbb | R (locked PREREG_B5) |
 | B6 CKM fit | hosted (best 1.82, rung 4) | PDG/CKMfitter | weave_ckm, pool | L (locked re-check of the 1.82 point) |
 | B7 R_μμ / b→sμμ | = SM | LHCb Run 3 | engine quarks | R |
