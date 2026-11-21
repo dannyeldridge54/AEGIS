@@ -18383,3 +18383,8 @@ Lock: PREREG_D1898_DERIVATION_V2, pushed with theory/weave_derivation_v2.py befo
 4. Perturbative control at g_s = 2/√3.
 5. A non-thermal leptogenesis mechanism.
 6. δ = 2/9, and v/m_SUSY.
+
+## D1899 — PAPER: "The Weave: One Derivation, Tested" (Docs artifact, 21 Nov 2026)
+Written after the independent referee (D1897) and the corrected rerun (D1898). Every claim in it is tied to a lock and a result file at commit 5835fe36.
+Sections: abstract; postulates and geometry; flavour; forces and spectrum; the single arrow; cosmology and the reverse weave; results table (16 tested lines, 13 pass / 3 fail); referee report; inputs, open problems, withdrawn results and forecasts.
+It is not submitted anywhere. No Zenodo or arXiv without Danny's "Publish".
