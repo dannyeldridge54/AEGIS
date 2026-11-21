@@ -18472,3 +18472,18 @@ tools/project_docs/THE_LOOM.md (v2) uses the 37 notes D1873–D1904 as data.
 - **Independent referee:** on every scoreboard change, promotion or restore, and at least every 4th tick.
 A fresh-context methods referee reviewed the design. All six of its improvements were adopted.
 **Flag applied now:** D1904's R = −0.023 is RESTORED (D1881b had withdrawn it; D1900 brought it back by a framework argument). It needs an independent referee before it can be woven.
+
+## D1906 — RIGHT (Loom tick 2): the D1902/U30 volume thread fails the fifth-force bound — FAIL, and the reason is general (21 Nov 2026)
+- **MEDIAN:** α_s is capped (2 postulates) and its referee is still running, so the tick moved to the next strained sector, the reverse thread. Trials ledger field_tests/loom/trials_thread.md (≈ 25).
+- **RESEARCH:** Cassini γ − 1 = (2.1 ± 2.3)e-5 (Bertotti 2003, via arXiv:2410.07281). The framework is GR/PPN, which matches the Weave.
+- **REVIEW / CONFLICT:** the 𝒱^{−4/3} slope rolls along the volume, and M_s = M_P/√𝒱, so every visible mass scales as 𝒱^{−1/2}.
+- **POSTULATE** tested: U30.
+- **EXECUTE:** lock PREREG_D1906, pushed first. Power check: the 3 options are exhaustive.
+  - Options S1/S2: β = −0.354, so **γ − 1 = −0.22**. That is ×3,300 over the Cassini 2σ bound. The mass drift is 1.8e-11 /yr, about ×180 over LLR (LLR value from memory; Cassini decides).
+  - Option S3 (thread orthogonal to 𝒱): β = 0, but the uplift then gives no slope (λ = 0).
+  - ⇒ **FAIL.**
+- **Why (general):** any thread whose slope comes from a 𝒱-dependent potential couples to all matter through M_s/M_P. It is a universally coupled modulus, so Solar-System tests exclude it. The D1902 "pass" (λ = 0.943) is therefore **withdrawn as a thread candidate**. The slope number is right; the field cannot be the volume.
+- **Non-target sectors:** unaffected.
+- **TRIANGULATE:** compute (this script) + source (Cassini, checked against the coupling) + check (PPN formula −2β²/(1+β²), an independent textbook route). That makes the FAIL **woven**.
+- **PROPAGATE:** the D1902 PASS is superseded. The paper §5 line "still open: slope", WEAVE_FULL_DERIVATION §10 and the scoreboard OPEN row become "volume-direction threads excluded (D1906); the thread must be a direction orthogonal to 𝒱 with its own slope source (e.g. a complex-structure or axion-like dark-cycle field) — OPEN".
+- **Cap:** the reverse sector has now reached 2 net postulates, so an independent referee is due before the next thread postulate.

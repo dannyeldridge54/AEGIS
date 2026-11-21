@@ -95,7 +95,7 @@ tan β is between 1 and 4. v/m_SUSY ≈ 2.7e-7 is **INPUT** (tuned).
    - With no crossing states, ζ_α ≈ 3.8e-10, far below the 1.66e-6 bound.
    - Up to 3 units of crossing (bifundamental) states are allowed (D1887).
 3. **OPEN:**
-   - The thread's mass and slope on the dark cycle, and whether it still fits DESI w₀/w_a.
+   - The thread's slope: a volume-direction thread (λ = 0.943 from the warped uplift, D1902) is EXCLUDED by Cassini (γ − 1 = −0.22, D1906). The thread must be orthogonal to 𝒱 and have its own slope source — OPEN.
    - The actual crossing count.
    - A′ = 4.45 (locked as RW10 for DR3).
 

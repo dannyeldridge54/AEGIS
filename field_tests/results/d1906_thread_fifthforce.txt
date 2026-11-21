@@ -1,0 +1,5 @@
+S1 none              beta=-0.354  gamma-1=-2.22e-01  d ln(m/MP)/dt=-1.8e-11 /yr  lambda=0.943 
+S2 running only      beta=-0.354  gamma-1=-2.22e-01  d ln(m/MP)/dt=-1.8e-11 /yr  lambda=0.943 
+S3 orthogonal to V   beta=+0.000  gamma-1=-0.00e+00  d ln(m/MP)/dt=+0.0e+00 /yr  lambda=0.000 
+Cassini 2-sigma |gamma-1| < 6.7e-5 ; LLR |Gdot/G| ~ 1e-13 /yr (memory)
+VERDICT: FAIL
