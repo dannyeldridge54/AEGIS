@@ -19309,3 +19309,21 @@ Every check catches the mistake it was built for:
 **Limit:** C7 catches a formula error only if a benchmark for that formula exists. New formulas need a benchmark added before they are used.
 
 **Main-note numbering:** this is D1949. The next main notes **jump to D1970+**, because D1950–D1969 belong to Mirror-Loom.
+
+## D1970 — node round 1 (Danny 17:46: one agent per node, toward balance). Main numbering jumps here; D1950–D1969 belong to Mirror-Loom.
+- **What ran:** nine independent, read-only node agents, one per node in tools/project_docs/WEAVE_NODE_CHARTER.md, each reported on its node. The merged result is tools/project_docs/WEAVE_BALANCE_BOARD.md.
+- **Result:** 0 of 9 BALANCED. 2 TRUST (N4 flavour, N8 dark thread), 2 INDETERMINATE (N6 spectrum/DM, N9 battery), 5 STRAINED (N1 fold, N2 dilaton, N3 volumes, N5 forces, N7 genesis).
+- **REVIEW (pattern across all nine):**
+  - Many passes are fits: C, A, |u|, A₃/A₂, 11/28.
+  - U₃ is the shared bottleneck.
+  - m₃/₂ is tuned to the wino window, and the wino margin is about 0.
+  - The S–T seam has no derived mechanism for α_s or for the baryon asymmetry.
+  - The verdict files overclaim in places.
+- **New facts from the nodes:**
+  - The wino DM share is about 20 %, not 10–40 % (N6).
+  - JUNO: 0.3184 is 1.05σ from current data, and TM2 is 3.6σ off (N9; first release, so not strict evidence yet).
+  - The B4 Σm_ν lock assumes the excluded thawing thread (N9).
+  - Affleck–Dine is already walled in by D790–D792 (N7).
+- **Round-2 moves** (none strains another node): an honest relabel pass with a prediction/FIT/TRUST count; N* from reheating; the y_t and DR→MS fix; scoring D1 and E3; an M_N scan as a diagnostic only.
+- **Deferred:** the tadpoles, U₃ and the full moduli spectrum; the D7 threshold spectrum.
+- The referee on the board comes next.
