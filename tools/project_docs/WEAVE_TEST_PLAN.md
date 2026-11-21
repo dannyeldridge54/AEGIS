@@ -26,7 +26,7 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 | B3 δ_CP branch | lower branch at s²₂₃ 0.561 | DUNE, Hyper-K | Flavour panel | L → **R** (21 Nov 10:24: PREREG_B3_DCP_FUTURE, δ ∈ 255–295° on the TM1 curve) |
 | B4 Σm_ν | 0.0587 eV (NO, m₁ = 0) | DESI DR3 + CMB; KATRIN/Project 8 | engine flavour | L → **R** (21 Nov 10:23: PREREG_B4_SUMMNU — scored in w0waCDM; FAIL if 95 % limit < 0.055 eV, Σ > 0.10 eV at 3σ, or IO at 3σ; m_β = 8.8 meV) |
 | B5 0νββ m_ββ | 1.59–3.80 meV (D1755; fail if a signal > 7.6 meV) | LEGEND-1000, nEXO ⇒ predict NULL | weave_mbb | R (locked PREREG_B5) |
-| B6 CKM fit | hosted (best 1.82, rung 4) | PDG/CKMfitter | weave_ckm, pool | L (locked re-check of the 1.82 point) |
+| B6 CKM fit | hosted (best 1.82, rung 4) | PDG/CKMfitter | weave_ckm, pool | **closed 21 Nov 10:40** — a 12-parameter fit to 8 observables is not evidence; the locked B6/B7 runs (D1777: score 0.37, all 8 fitted at the down half-class) settle the hosted status; no further lock |
 | B7 R_μμ / b→sμμ | = SM | LHCb Run 3 | engine quarks | R |
 | B8 θ̄ = 0 ⇒ neutron EDM | d_n from CKM only (~1e-32 e·cm) | n2EDM (PSI), ~1e-27 | weave_edm (21 Nov 10:30) | T → **R** (PREREG_B8B9_EDM: d_n ≲ 1e-31) |
 | B9 electron EDM | unobservable: 5e-34 – 4e-33 e·cm (D1763; the ~1e-40 was the old chain) | ACME III, JILA | weave_edm (21 Nov 10:30) | T → **R** (PREREG_B8B9_EDM) |
@@ -47,7 +47,7 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 | Test | Weave number | Data | Tool | Status |
 |---|---|---|---|---|
 | D1 thawing thread w0, wa | w0 ≈ −0.79 | DESI DR2/DR3, Euclid | Janus late, engine | R |
-| D2 negative space z† | conditional (coupling not detected) | Lyα BAO z 2–3 (DESI) | weave_negspace | L |
+| D2 negative space z† | conditional (coupling not detected) | Lyα BAO z 2–3 (DESI) | weave_negspace | L → **R** (21 Nov 10:40: PREREG_D2_NEGSPACE, branch U no switch / branch C z† = 2.88) |
 | D3 α drift | ζ ≲ 3.6e-6 needed ⇒ thread sequestered or axion-like | atomic clocks, quasar spectra (ESPRESSO) | Janus clocks | R |
 | D4 equivalence principle | no violation | MICROSCOPE-2 | — | L → **R** (21 Nov 10:24: PREREG_D4_EQUIV, |η| < 1e-18) |
 | D5 cosmic birefringence (21 Nov 10:22: carrier is now the photon-axion on its OWN cycle ≈ 36–39, m 1e-33–9e-32 eV, c_γ ≈ 4.2/Δθ — D1793–D1795; the thread is sequestered) | bridge β² = 2.5e-3 (c_γ/f)²(1+w0) deg² ⇒ c_γ/f ≈ 12 at β = 0.277°; ratio β_reio/β_rec = 0.997–0.999 (locked D404) | ACT+Planck now; LiteBIRD (both bumps) | bridges D403/D404 | R (thread must be axion-like with c_γ/f ≈ 12; LiteBIRD ratio test) |

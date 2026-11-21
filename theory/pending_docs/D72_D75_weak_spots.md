@@ -17721,3 +17721,17 @@ One thought: every field sits AT one of the two elliptic points of PSL(2,Z) (i, 
 - At the data point (the Weave's m_q, α are inputs) the check is trivially **inside**.
 - If α_s were taken from exact two-loop unification (0.1158, D1800): Λ_QCD shifts by 13 %, so m_q/Λ_QCD shifts by 13 %. That is radius 5.2, far **outside** the carbon window. A true prediction of α_s would need |δα_s| ≲ **4e-4** to stay inside, ≈ 10× better than the two-loop + threshold uncertainty (±0.004–0.005).
 - **Reading:** "the Weave unifies the forces" (D1800) and "the Weave allows carbon life" are compatible only because α_s is taken from data. Unification at the ~2 % level in α_s is far too coarse to land inside the anthropic window. This is a property of every GUT-like scheme, not a Weave failure. A threshold calculation good to 4e-4 in α_s would be needed to call carbon "predicted". E3 → R (calibration; no strict test).
+
+## D1803 (LL, test prep — 21 Nov 2026): the test plan is fully prepared; the loop reaches NULL
+- Locked D2 (negative space): branch U (no switch; the coupling was not detected, D1725) vs branch C (z† = 2.88). B6 is closed without a new lock: a 12-parameter fit is not evidence, and the locked B6/B7 runs settle the hosted status.
+- Status of the test plan: every row is now R (locked, tool ready), W (waiting for data), closed, or the honest-null D7. No 'L' or 'T' items remain, apart from the optional two-loop Yukawa terms for B11b and a Higgs-direction symmetry (Y6), which needs a model first.
+- Derivation walls unchanged (all research-null this loop):
+  - inflation height (I1);
+  - δ = 2/9 (I5);
+  - neutrino scale (I6);
+  - quark/lepton O(1) couplings and the Higgs direction (I7, D1792/D1796);
+  - Λ size (I8, withdrawn D1795);
+  - dark-photon m_A′ and ε (I9);
+  - v/m_SUSY (I11).
+- Due: the full-loop referee of D1790–D1803 (awaiting Danny's go-ahead, since two earlier referee runs were stopped).
+- Loop status: **NULL** — no reschedule (cadence rule).
