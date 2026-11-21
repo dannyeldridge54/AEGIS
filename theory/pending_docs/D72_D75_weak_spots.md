@@ -18005,3 +18005,21 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
   - Medians over all draws: m_u/m_t 3.9e-6, m_c/m_t 1.2e-3, m_d/m_b 7.6e-4, m_s/m_b 0.017, V_us 0.160, V_cb 0.017, V_ub 2.8e-3.
 - **Reading:** the lock (charges (3/2, 1, 0) / (½, 0, 0)) plus the two ρ-slips is a working Froggatt–Nielsen model. It is NATURAL in the strict sense: random O(1) coefficients land on the data about 1 time in 5 for the 7 CP-even observables, and about 1 in 3 of those also give J. The systematic lows (V_cb ×0.4, J ×0.2 at the median) are the places a real modular-form computation of the coefficients would have to lift.
 - Status: the quark sector moves from "12 hosted couplings" (D1779) to "2 slips + 1 charge set, natural with O(1) coefficients". Still post-data in the slip choices. Forward tests continue: leptons (D1830) and realisability of the charges (D1831).
+
+## D1830 (CENTRE, POSTULATE — 21 Nov 2026, Danny 11:32: "this is fractal … the same pattern in everything — circuitry, engineering, nature, medicine, alchemy … once mapped we'll see the best route for amplification of power")
+- **Postulate U25 (P-universality, Danny):** the knot/loop/cusp pattern (modular group, Farey edge, lock-and-key) recurs in every domain. The map shows the best route to amplify power.
+- **Where this is ESTABLISHED science (literature, not Weave claims):** wherever a periodic system is driven or coupled, the circle map / modular structure appears.
+  - **Circuitry and engineering:** driven oscillators and Josephson junctions mode-lock in Farey-ordered "Arnold tongues" with a fractal Devil's staircase of locked ratios (Jensen, Bak & Bohr, PRA 30, 1960 (1984)). Phase-locked loops, power-grid synchronisation and laser locking obey the same map.
+  - **Electrons in magnetic fields:** the Hofstadter butterfly is a fractal spectrum from magnetic flux through a lattice, the same "flux on a torus" physics the Weave uses for families (Hofstadter, PRB 14, 2239 (1976)). Quantum-Hall plateaus are organised by a modular group acting on the conductivity plane (Lütken & Ross, PRB 45, 11837 (1992)).
+  - **Medicine:** periodically stimulated heart cells lock in Farey-ordered rhythms; arrhythmia patterns follow the Arnold-tongue structure (Glass & Mackey, *From Clocks to Chaos*, 1988).
+  - **Nature:** phyllotaxis settles on the golden angle, the "most irrational" rotation, which avoids locking (Douady & Couder, PRL 68, 2098 (1992)).
+  - **"Alchemy":** the modern form is nucleosynthesis. Elements build through lock-and-key resonances (the Hoyle state, magic numbers), stage 7 of U24.
+- **The concrete rule for "amplification of power" (testable, and well known in physics):**
+  - Energy transfer and locking are STRONGEST at low-order rationals: 1:1, 1:2, 2:3, …, the widest Arnold tongues, the big tiles near the top of the Farey tessellation.
+  - The GOLDEN ratio is the most resistant to locking. It is the route for STABILITY (KAM tori survive longest at golden-mean frequency ratios), not for amplification. Silver is next.
+  - So the map has two directions: to amplify, tune to the lowest-order rational lock (resonance); to stabilise or protect, sit at golden/silver (anti-resonance). In the Weave this matches the roles of the knots (locks, where things stop) and the golden/silver loops (the bounded paths that never lock to the cusp).
+- **Honest limits:**
+  - The recurrence is a mathematical universality (any periodic, driven, coupled system obeys it). It is NOT evidence that the Weave is the correct physics of the universe. A wrong theory built on the same mathematics would share it.
+  - "Everything" is too strong: non-periodic, non-coupled systems need not show it.
+  - Any engineering claim must be tested in that domain on its own terms.
+- Possible engineering test (outside physics proper, proposal only): a driven-oscillator bench test of "low-order Farey ratio = max power transfer, golden = max stability", e.g. a coupled-LC or PLL circuit. Recorded, not scheduled.
