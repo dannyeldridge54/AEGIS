@@ -196,3 +196,22 @@ V = V_L(1 − A e^{−βφ}), A = 7.30, published doi:10.5281/zenodo.24380387). 
   torus, i.e. no visible-sector N = 2 sector on it, plus no U-dependence of the visible matter metrics. That is a
   condition on a concrete compactification, not something the Weave fixes today. Even then, D1852/D1859 (the height)
   still stand.
+
+## D1861 (RW13, locked PREREG_RW13_RHO_KNOT) — at the knot the thread actually reaches (ρ), the Z₃-protected leak is still 119× too big (FAIL); FLAG: which knot does the thread end at?
+- [found] The repo's own derivation puts the reverse thread's end at **ρ**, not i:
+  - D1641 ("the same 1/4 applies to the reverse thread when it reaches ρ: m_DE = 0.866 H_Λ");
+  - the D1644 lock and json ("reaches_rho", a = 1.89; path along Re τ = ½);
+  - D1642 (start at y ≈ 6.1, amp = 7.30/y²).
+  D1637 does not mention i. The RW brief and the mirror table row 1 ("thread ends at i, Z₂, D1637") disagree with
+  these. RW6 (D1853) used the generic D1851 coefficient, so it does not depend on which knot. RW12 (D1860) was specific
+  to i; this note repeats it at ρ. **Needs a decision (main session / Danny):** correct row 1 of
+  WEAVE_MIRROR_SYMMETRIES.md (not edited here, per collision rules), or show a thread path that ends at i.
+- [computed, 40 digits] G(y) = ln(y|η(½ + iy)|⁴) at y = √3/2: G′ = −6e-43 (Z₃ zero ✓), G″ = −0.66667,
+  **d²G/dφ² = −1.0000** (an exact-looking pure number; conjecture: exactly −1, from Ê₂(ρ) = 0, not proven).
+  c = 5.8e-4 (b = 1) – 7.0e-3 (b = 12).
+  - T1 = 1.2e-4 (b = 1), 119× the 1e-6 level.
+  - T2 = 2.7e-4, 163× MICROSCOPE.
+  - Verdict by the lock: **FAIL**.
+- Reading: protection at either elliptic point removes only the linear term. The curvature is O(1) at both
+  (−2.6 at i, −1 at ρ in Planck units), so the drift is quadratic and unsuppressed. The thread's α-safety needs
+  b^{N=2}_em = 0 on its torus (a model condition), at i or ρ alike.
