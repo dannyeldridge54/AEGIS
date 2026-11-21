@@ -40,9 +40,10 @@ Refereeing: self-refereed D1878, D1883, D1892; **independently refereed D1897** 
 - ⇒ **A half-step gap inside one generation triplet requires generations with different weights (Δk = 1).**
 - This is the known residual-symmetry structure (Novichkov–Penedo–Petcov, JHEP 04 (2021) 206, arXiv:2102.07488); D1874–D1876 apply it to the Weave's knots.
 
-## 3. Quarks
+## 3. Quarks — **PHENOMENOLOGICAL (D1922/D1923, scoreboard v4 D1924)**
+> The lock below is a phenomenological fit. In Z₆-II it has **no modular-τ home**: tori 1 and 2 are frozen at ρ, and untwisted h²¹ = 1. Its possible homes are **Froggatt–Nielsen spurions** (twisted complex-structure moduli, bulk-brane positions, recombination flavons). Those need **two independent sizes** (u_u ≠ u_d), which one τ cannot give. Scoreboard v4: 12 PASS, 3 of them phenomenological; 2 FAIL.
 1. **Residual-charge lock (FIT + natural):** q_Q = (3/2, 1, 0) and q_u = q_d = (½, 0, 0) form the unique fit out of 117,649 assignments. Their matrix model is natural: 18 % of O(1) draws fit 7 observables, and 31 % of those also fit J (D1828, D1829).
-2. **Geometric home (DER):** by §2, Q₃, u₁ and d₁ sit on a second stack one weight unit away. With the Kähler factor (√3)^{∓1/2} the fit stays natural: f7 = 10.7 % / 17.9 %, fJ = 23.5 % / 40.5 %, with Δk = −1 preferred (D1884).
+2. **Stack structure (DER *if* modular; now PHEN):** by §2, Q₃, u₁ and d₁ sit on a second stack one weight unit away. With the Kähler factor (√3)^{∓1/2} the fit stays natural: f7 = 10.7 % / 17.9 %, fJ = 23.5 % / 40.5 %, with Δk = −1 preferred (D1884).
 3. **Flavour group (DER):** the Yukawa weights then span three consecutive integers. At level 1 either the odd-weight entries vanish (Y block-diagonal, V_ub = V_cb = 0) or the even ones do, so the model needs level ≥ 3 (A₄-type, Γ(3)) (D1886, corrected D1886a).
 4. **Step sizes (FIT):** |u_d| = 0.0259 and |u_u| = 0.0018, i.e. displacements |ε| = 0.0457 and 0.00311. The u*^{1.95} remark is void (D1894b).
 
