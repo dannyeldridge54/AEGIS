@@ -18851,3 +18851,18 @@ Rescue attempts:
 
 ## D1924 — scoreboard v4 run under lock PREREG_D1924 (21 Nov 2026)
 Result: **12 PASS (3 PHENOMENOLOGICAL, no geometric home), 2 FAIL (α_s, Δ₃) of 14 tested lines**. No numbers changed from v3; the three quark-lock passes are now counted apart. Files: field_tests/results/weave_derivation_v4.txt/.json. v3 is superseded for headline counts.
+
+## D1925 — Loom v3 tick 11: one spurion for both quark sectors? NONE at the locked step (21 Nov 2026)
+- **TARGET:** flavour, kill-first on D1923 point 8 ("two sizes needed"). Expected information gain is highest here, because the answer decides whether option (b) (U₃ near i) and a single FN flavon can still work. Trials +1 (rungstep ledger).
+- **GATHER:** I ran the D1828 grid (7⁶) with u_u = u_d = u, and |u| = 0.02587 unchanged.
+  - A hand estimate gives the closest candidate as q_Q = (3/2, 1, 0), q_u = (2, ½, 0), q_d = (½, 0, 0).
+- **GUARD:** ε ≠ u respected (u = U(ε), not ε). No tolerance changed.
+- **TEST** (PREREG_D1925, locked first): **NONE.** No assignment passes the ×2/×3 filters at the locked |u|.
+  - The candidate above misses on m_u/m_t by a factor of 2.0048 against the ×2 bar. It is a knife-edge miss, but the lock stands: no loosening and no re-tune.
+  - Report only, at |u| = 0.1: 4 fits, all natural. The best is q_Q = (5/2, 3/2, 0), q_u = (3, 1, 0), q_d = (½, ½, 0), with f7 = 26 % and fJ = 53 %. This is the classic single-flavon Froggatt–Nielsen pattern.
+  - Report only, at |u| = 0.0018: no fits.
+- **JUDGE:**
+  - D1923 point 8 stands for the D1828 step size: one spurion of size 0.026 cannot carry both sectors, so a single-modulus home (U₃ near i) at that size is excluded.
+  - A single flavon of size ≈ 0.1 does work. It is a different fit (the step is not derived) and would be a new postulate, so it is not promoted. The flavour postulate cap of 2/2 is reached, so it needs a referee first.
+  - Status: quarks stay PHENOMENOLOGICAL; the scoreboard is unchanged.
+- **KEEP:** results in field_tests/results/d1925_onespurion.json/.txt. Next tick 12 is the referee tick; then queue item 3 (inflation with S at i).
