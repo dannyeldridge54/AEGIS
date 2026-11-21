@@ -1,0 +1,9 @@
+n=1 warped anti-D3 (q=4/3)             lambda=0.943  1+w0~0.25 IN WINDOW
+n=1 unwarped anti-D3 / D-term (q=2)    lambda=1.414  1+w0~0.56 
+n=1 alpha-prime^3 BBHL (q=3)           lambda=2.121  1+w0~1.26 
+n=1 string loop (q=10/3)               lambda=2.357  1+w0~1.56 
+n=3 warped anti-D3 (q=4/3)             lambda=1.633  1+w0~0.75 
+n=3 unwarped anti-D3 / D-term (q=2)    lambda=2.449  1+w0~1.68 
+n=3 alpha-prime^3 BBHL (q=3)           lambda=3.674  1+w0~3.78 
+n=3 string loop (q=10/3)               lambda=4.082  1+w0~4.67 
+VERDICT: PASS [(1, 'warped anti-D3 (q=4/3)', 0.9428090415820634)]

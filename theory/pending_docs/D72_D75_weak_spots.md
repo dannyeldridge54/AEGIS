@@ -18412,3 +18412,13 @@ Both were locked before running. Toy model: factorisable intersecting branes T-d
   ⇒ **PASS**. Example: b = ((−3,−2), (−3,−2), (−3,−2)) and a = ((−3,−1), (−2,−1), (−2,−1)), with c parallel to b on tori 2 and 3 (c₁ = (−2,−1)).
 Honest weight: this is only a necessary condition, and a very loose one, since so many configurations pass. **U29 survives as a four-stack brane picture (leptons on their own stack), and Δ₃ stays conditional** until the orbifold projections, the Z₃/Z₂ lattice shapes and the RR tadpoles are imposed. That is the next forward tick for this line.
 Median and equilibrium reading: the Higgs pair is the shared bridge between the two knots' tori, and the leptons need their own stack.
+
+## D1902 — RIGHT (reverse): the dark-thread slope from standard string sources — PASS for one source, with a serious caveat (21 Nov 2026)
+Lock: PREREG_D1902_THREAD_SLOPE (pushed first; the planning value 0.943 was declared in the lock).
+Formula: λ = q√(n/2) for a runaway term V ∝ 𝒱^{−q}, when one 4-cycle with K = −n ln(T + T̄) rolls.
+Result (field_tests/results/d1902_thread_slope.txt):
+- **Inside the window:** only one of the 8 source/Kähler pairs, **n = 1 (one factor of the toroidal orbifold) with q = 4/3 (a warped anti-D3 uplift). It gives λ = 0.943 and 1 + w₀ ≈ 0.25 ⇒ PASS.**
+- **Too steep:** every other source, λ = 1.41–4.08. The single-modulus n = 3 case gives λ ≥ 1.63, the usual "string runaways are too steep" result.
+- Central lens: the thread is ONE torus factor of the dark fold (n = 1) feeling the uplift from a warped throat. The reverse weave's slope then comes from the same anti-D3 that lifts the vacuum.
+**Serious caveat (next test):** if the rolling modulus changes the overall volume 𝒱, then M_s/M_P and every particle mass in Planck units drift with it. That brings fifth-force and Ġ/G bounds. The thread is safe only if τ_D changes the dark factor without changing the visible masses' dependence on 𝒱 (sequestering). With 𝒱 ∝ √(τ₁τ₂τ₃) a rolling τ₃ changes 𝒱, so a mechanism is needed. Ranked first for the reverse weave.
+Status: thread slope OPEN → **CONDITIONAL** (warped uplift on one torus factor, plus a fifth-force check still to pass).
