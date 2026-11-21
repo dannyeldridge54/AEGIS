@@ -17797,3 +17797,7 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
   1. The gluino is now a Weave number, **5.6 TeV ± 20 %**: above the LHC limits (~2.3 TeV), beyond HL-LHC (~3 TeV), and a target for FCC-hh / 100 TeV colliders. Lockable (next: C7).
   2. The remaining α_s gap of −0.0033 is the string-threshold target (Δ₃ ≈ −0.25 in α₃⁻¹).
   3. The bino from AMSB is M₁ = (33/5)g₁² m₃/₂/16π² ≈ 2.3 TeV; it does not enter the gauge running at this order.
+
+## D1809 (LL, test prep — 21 Nov 2026): C7 superpartner-spectrum lock; EDM tool annotated
+- Locked PREREG_C7_SPECTRUM (code hash recorded). Wino 0.66–0.69 TeV (disappearing tracks, a possible HL-LHC strict P); gluino 5.6 TeV ± 20 % (FCC-hh); bino ≈ 2.3 TeV; scalars, higgsinos and heavy Higgs 0.25–0.7 PeV. FAIL conditions: any squark/slepton/heavy Higgs below 0.2 PeV, a gluino outside 4.5–6.7 TeV, or a non-wino LSP.
+- weave_edm: the referee's Barr–Zee caveat (two-loop chargino/neutralino–W term not included; suppressed by the 0.25–0.7 PeV higgsinos) is added to the label. Self-test passes.

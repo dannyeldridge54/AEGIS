@@ -285,7 +285,7 @@ def weave_edm(a):
     m, sp = float(a.get('m_scalar_GeV', 4.7e5)), float(a.get('sin_phi', 1.0))
     de = 1e-29 * (5e3 / m) ** 2 * sp
     return dict(d_e_ecm=de, d_n_susy_ecm=10 * de, d_n_ckm_ecm=1e-32, d_n_total_ecm=10 * de + 1e-32,
-                bounds=dict(d_e=4.1e-30, d_n=1.8e-26), label='E (scalings), theta-bar = 0 by anomaly-free weights')
+                bounds=dict(d_e=4.1e-30, d_n=1.8e-26), label='E (scalings), theta-bar = 0 by anomaly-free weights; NOTE (referee D1807): the two-loop Barr-Zee chargino/neutralino-W loop is not included; with higgsinos at 0.25-0.7 PeV it is suppressed ~1/mu and expected below the one-loop estimate')
 
 
 def weave_rg(a):
