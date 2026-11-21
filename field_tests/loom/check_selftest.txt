@@ -1,0 +1,13 @@
+D1941_mphi_independence      FLAG  DUPLICATE readings (move together exactly): [('m_a', 'm_b')]
+D1938_seam_power             FLAG  NO POWER: verdict always FAIL (structural)
+D1926_run1_validation        FLAG  VOID: 8.95 vs reference 8.893
+D1946_numerology_real        FLAG  chance of a match by luck = 20 % (n = 3, band ±8 %); hits [0.75]
+D1946_numerology_claimed     ok    chance of a match by luck = 1 % (n = 3, band ±0 %); hits [0.75]
+D1931_lint                   FLAG  OVERCLAIM words ['strongest'] — cite a powered test or soften
+clean_lint                   ok    clean
+ns_four_corners              ok    corners agree within 0.5 %
+alpha_s_four_corners         FLAG  corners agree within 3.4 %; MISSING ['early', 'late']
+D1946_gauge_width_formula    FLAG  as written 0.002487 vs benchmark 0.004974 (factor 2.0)
+bench_muon_width             ok    muon_width: 3.009e-19 vs 2.996e-19 (PDG tau_mu 2.1970e-6 s; tree-level formula, QED correction ~0.4 % ⇒ 1 % tolerance)
+bench_scalar_to_2photons_per_kappa ok    scalar_to_2photons_per_kappa: 0.004974 vs 0.004974 (L = -(k/4) phi F^2 ⇒ Gamma = k^2 m^3 / (64 pi) per massless gauge boson)
+bench_gravitino_width_allchannels ok    gravitino_width_allchannels: 0.16 vs 0.16 (Moroi: Gamma = (193/384 pi) m^3/M_P^2 (all MSSM channels open))

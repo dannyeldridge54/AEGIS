@@ -19295,3 +19295,17 @@ Script hygiene: line 13 of the script holds a dead placeholder assignment that i
   - The FAIL is **conditional**. It becomes a powered test only once the D7 threshold spectrum is computed. The y_t running fix is still owed.
 - **D1941a.** The m_φ readings are two. The vacuum curvature mass still has to be checked. ε_DI is an upper bound. The balance point is optimiser output.
 - **D1940a.** The hidden-stack assumption is stated.
+
+## D1949 — the automatic checks (Danny 17:44), tested on today's real mistakes (tools/loom/check.py, tools/loom/test_check.py)
+Every check catches the mistake it was built for:
+- **C1 independence:** catches D1941's duplicate m_φ readings (m_a ≡ m_b).
+- **C2 power:** catches D1938's seam test ("NO POWER: verdict always FAIL").
+- **C3 validation:** catches D1926 run 1 (8.950 against 8.893).
+- **C4 numerology:** puts the 3/4 match at a 20 % chance with the real ±8 % band, against the 1 % that was implied.
+- **C5 claim lint:** catches "strongest pointing" (D1931).
+- **C6 four corners:** n_s agrees across forward, reverse, early and late within 0.5 %. α_s is missing its early and late corners.
+- **C7 formula benchmarks:** catches D1946's 128π, a factor of 2 against the textbook Γ = κ²m³/64π. The muon-width and gravitino-width benchmarks pass.
+
+**Limit:** C7 catches a formula error only if a benchmark for that formula exists. New formulas need a benchmark added before they are used.
+
+**Main-note numbering:** this is D1949. The next main notes **jump to D1970+**, because D1950–D1969 belong to Mirror-Loom.
