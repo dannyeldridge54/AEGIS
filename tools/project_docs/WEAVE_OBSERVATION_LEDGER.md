@@ -23,7 +23,7 @@ Goal of the big loop: move every M and A toward P. A row moves only through a lo
 | 2.2 | Charged lepton masses, Koide Q = 2/3 | P (Q) / F (δ = 2/9 empirical) | leptons at the knot ρ |
 | 2.3 | Quark masses (6) | A | twin slip-ladder hosts hierarchies (rungs 1 and ~4–8); not predicted |
 | 2.4 | CKM (3 angles + phase) | A | best hosted fit 1.82 (CubeMind, 21 Nov, rung 4) — needs locked check |
-| 2.5 | First-row CKM unitarity deficit ("Cabibbo anomaly", ~3σ) | **M** | |
+| 2.5 | First-row CKM unitarity deficit ("Cabibbo anomaly", ~2–3σ) | S (Weave = SM; predicts it goes away; D1754 R11) | |
 | 2.6 | Strong CP: θ̄ < 1e-10 | P (structure) | anomaly-free weights → θ̄ = 0 |
 | 2.7 | Higgs mass 125.2 GeV | G | consistent conditionally (no-scale soft masses) |
 | 2.8 | Electroweak scale v = 246 GeV (hierarchy problem) | **M** | |
@@ -58,8 +58,8 @@ Goal of the big loop: move every M and A toward P. A row moves only through a lo
 | # | Observed | Weave | Notes |
 |---|---|---|---|
 | 4.1 | Ω_c h² = 0.120; Ω_DM/Ω_b ≈ 5.4 | P (12.8 GeV asymmetric, same asymmetry) | |
-| 4.2 | Cold, collisionless (Bullet cluster), self-interaction bound σ/m < ~1 cm²/g | **M** (dark photon mediates!) | 12.8 GeV + 0.3–12.8 GeV A′ ⇒ σ/m is computable |
-| 4.3 | Small-scale structure (cores, too-big-to-fail, satellites) | **M** | |
+| 4.2 | Cold, collisionless (Bullet cluster), self-interaction bound σ/m < ~1 cm²/g | G (computable SIDM class; test C3) | 12.8 GeV + 0.3–12.8 GeV A′ ⇒ σ/m is computable |
+| 4.3 | Small-scale structure (cores, too-big-to-fail, satellites) | G (follows from C3) | |
 | 4.4 | Direct detection limits (LZ) | P (survives, D1688) | |
 | 4.5 | Galactic-centre GeV excess; 3.5 keV line; AMS-02 positrons | **M** | asymmetric DM doesn't annihilate ⇒ predicts NO GCE from DM |
 | 4.6 | Wino window 0.67–1.0 TeV (if gravitino chain) | P (collider/γ-line targets) | |
@@ -72,7 +72,7 @@ Goal of the big loop: move every M and A toward P. A row moves only through a lo
 | 5.3 | Hubble tension (73 vs 67) | G (not resolved) | |
 | 5.4 | S8 tension | G | |
 | 5.5 | Cosmic birefringence β = 0.277° ± 0.057° (4.8σ, ACT+Planck 2608.06480) | G (bridge D403 ⇒ c_γ/f ≈ 12; decides thread identity; test D5) | |
-| 5.6 | JWST early massive galaxies | **M** | |
+| 5.6 | JWST early massive galaxies | S (ΛCDM-like at z > 5; eased by systematics, 2511.13708) | |
 | 5.7 | 21-cm (EDGES contested) | G | |
 | 5.8 | Coincidence "why now" | G | thread thawing |
 | 5.9 | Large-scale dipole anomaly (radio/quasar counts) | **M** | |
@@ -84,15 +84,15 @@ Goal of the big loop: move every M and A toward P. A row moves only through a lo
 | 6.2 | b→sμμ angular (P5′) tensions; R_K now SM | S (Weave = SM; R_μμ checked) | |
 | 6.3 | W mass (CDF vs ATLAS/CMS) | S | |
 | 6.4 | Neutron lifetime beam vs bottle | P (no dark decay: needs m_χ ≈ 938 MeV; D1753 R6) | dark decay n→χ+… ruled by 12.8 GeV? no — check |
-| 6.5 | 95 GeV diphoton excess; ATOMKI X17 | **M** | |
+| 6.5 | 95 GeV diphoton excess; ATOMKI X17 | P (no such particles in the Weave ⇒ both vanish) | |
 | 6.6 | KM3NeT 220 PeV neutrino; Amaterasu UHECR; ANITA | **M** | |
-| 6.7 | Gallium / reactor anomalies (sterile ν) | **M** | |
+| 6.7 | Gallium / reactor anomalies (sterile ν) | P (no light sterile ν) | |
 
 ## 7. Atoms, molecules, chemistry, life
 | # | Observed | Weave | Notes |
 |---|---|---|---|
 | 7.1 | Rydberg, bond lengths, spectra | S (weave_atomic) | follow from α, m_e, m_p |
-| 7.2 | Nuclear binding, deuteron, Hoyle state (carbon) | **M** | sensitive to m_q, α: anthropic window checkable |
+| 7.2 | Nuclear binding, deuteron, Hoyle state (carbon) | S (window m_q ±2–3 %, α ±2.5 %; test E3) | sensitive to m_q, α: anthropic window checkable |
 | 7.3 | m_p/m_e = 1836.15 | S once both are given; **M** as a derivation | |
 
 ## 8. Coincidences and "why" questions
@@ -107,4 +107,5 @@ Goal of the big loop: move every M and A toward P. A row moves only through a lo
 
 **Counts (21 Nov, 70 rows, first status per row):** P 14 · F 2 · A 8 · S 10 · D 1 · G 13 · **M 21** · out of scope 1.
 **After loop 1 round 1 (D1753):** M 21 → 15; P +4 (EDM, walls, neutron, conditional), G +3 (couplings ×3 moved to tension), 1 G sharpened (birefringence). Test plan: WEAVE_TEST_PLAN.md.
+**After round 2 (D1754):** M 15 → 8 (left: gauge group 1.1 is A; hierarchy 2.8/8.3, Λ size 5.1/8.4, 6.6 UHE astrophysical, 5.9 dipole, 3.15 magnetic fields, 4.5 GCE, 7.3). Research null for Weave-native routes ⇒ engineering.
 The unification target: one modulus space whose fixed points (ρ, i, the slip-ladder minima and the arc) set couplings, masses and the vacuum together.
