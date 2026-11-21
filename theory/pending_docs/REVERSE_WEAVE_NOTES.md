@@ -232,3 +232,17 @@ V = V_L(1 − A e^{−βφ}), A = 7.30, published doi:10.5281/zenodo.24380387). 
   not to the dark-cycle size, and the D1810 "σ_β window reached by N_d = 10–12" match is a coincidence of numbers, not a
   shared cycle. **Needs a decision (main session):** which axion carries β.
 - The reverse thread itself is unaffected (D1852 already excluded the dark-cycle saxion).
+
+## D1864 (RW16, check) — NULL: the main session's D1811 rescan (exact KKLT) cannot move any reverse-side verdict
+- [computed] D1811's scan has χ ≤ 300 ⇒ 𝒱 = wχ/(4(2π)³C) ≤ 2.5e5 (1.0e5 at χ = 120). D1851's ζ ∝ 𝒱^{−1/2} ⇒ ζ ≥ 2.5e-4
+  at 𝒱 = 2.5e5, still 150× the bound; passing needs 𝒱 ≳ 5.6e9. R5 (D1852) needs m₃/₂ ~ meV, which no wino-window point
+  gives. D1853/D1860/D1861 do not depend on 𝒱. Nothing new. NULL.
+
+## D1865 (RW17, review) — NULL; the loop stops (two NULL cycles in a row: D1864, D1865)
+- Every item the derivation raised is either computed above, locked for future data (RW10), or blocked by a known wall:
+  the F-term problem (thread height/mass, D1852/D1859); b^{N=2}_em = 0 on the thread's torus (D1860/D1861), which needs a
+  concrete compactification; the axion choice for β (D1863), which is a main-session decision. No further computable step.
+- Summary status of the reverse thread: phenomenology unchanged (D1692, Δχ² ≈ −7; the ζ(5) tilt ties, D1854). Microscopic
+  status: OPEN. It is not the dark-cycle modulus (D1851, D1852). Its shape is that of a k = 1 inverse-power plateau
+  (exact tilts, D1852 R2). Its α-safety fails at one loop by ×80–400 at either knot unless b^{N=2}_em = 0
+  (D1853, D1860, D1861). Its lightness fails by the F-term problem (D1852 R5, D1859).
