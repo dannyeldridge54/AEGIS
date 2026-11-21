@@ -1,0 +1,5 @@
+# PREREG D1894 — the end run: the whole tolerance ladder in one shot (Danny 13:19 "skip the ticks and just get to an end result") (locked 21 Nov 2026 before running; repo at fc893c70)
+Centre: theory/median/centre.json as committed. One shared arrow u* (fitted), no per-sector knobs.
+Data sectors: m_μ/m_τ (= u*), down-quark step (= u*), Δ₃ residual (−0.023), thread α drift. Internal sector (reported, not used for the verdict): pyramid rung ratio e^{−7π/8} (= u*). Electron + Koide: INPUT after D1885a — the electron coefficient is solved from Koide Q = 2/3 at the fitted u* and reported; no test content claimed. Up-quark step: reported as the exponent p with u_u = u*^p.
+Ladder (all tightened together, never loosened): masses/steps ×2, ×1.5, ×1.3, ×1.2, ×1.1; Δ₃ tolerance 0.05, 0.04, 0.03, 0.025, 0.02 (paired).
+End result = the tightest rung where every DATA sector has |strain| ≤ 1; report u* there, all strains, the internal sector, c_e(Koide) and p_up. Script theory/median/end_run.py (new).
