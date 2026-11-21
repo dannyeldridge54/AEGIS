@@ -82,23 +82,23 @@
    ]
   },
   "p in M_N \u221d (Re S)^p": {
-   "net": 2.0,
-   "spread": 19.0,
+   "net": 3.0,
+   "spread": 2.70160024618204,
    "all_three_agree": true,
    "direction": "RAISE",
    "contested": false,
    "voters": [
-    "non-thermal leptogenesis: derived Br(phi->NN) vs 9.5 % needed + (\u25d4)"
+    "non-thermal leptogenesis: derived Br(phi->NN) vs 9.5 % needed + (\u2191!)"
    ]
   },
   "S-coupled hidden gauge groups": {
-   "net": -2.0,
-   "spread": 19.0,
+   "net": -3.0,
+   "spread": 2.70160024618204,
    "all_three_agree": true,
    "direction": "LOWER",
    "contested": false,
    "voters": [
-    "non-thermal leptogenesis: derived Br(phi->NN) vs 9.5 % needed - (\u25d4)"
+    "non-thermal leptogenesis: derived Br(phi->NN) vs 9.5 % needed - (\u2191!)"
    ]
   },
   "T_R": {
@@ -213,13 +213,7 @@
     "one shared rung step (the arrow)"
    ]
   },
-  "input: M_N \u221d (Re S)^3 needed (p<=2 fails)": {
-   "count": 1,
-   "by": [
-    "derive Br(phi->NN) from M_N(S)"
-   ]
-  },
-  "hidden sector: f_hid must be S-free": {
+  "leptogenesis: Br(phi->NN) max 5.1 % < 9.5 % after the 64 pi fix (D1946a)": {
    "count": 1,
    "by": [
     "derive Br(phi->NN) from M_N(S)"

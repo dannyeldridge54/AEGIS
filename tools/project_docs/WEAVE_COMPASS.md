@@ -24,10 +24,10 @@ Legend: ● on target (inside the bar by > 0.3 dex or < 1σ); ◔ passes but thi
 | 18 | 3 | inflation | n_s with S at i | 0.9704 | ● | 1.11 σ | S vacuum rho | D1926 |  |
 | 19 | 3 | inflation | r | 0.00054 | ● | 1.82 dex | — | v4 |  |
 | 20 | 3 | cosmology | T_R vs M_N (thermal leptogenesis) | 3.7e+08 | ○ |  | — | v4 (D1897) | a bound the model sidesteps (non-thermal leptogenesis): NOT a pull (D1935) |
-| 21 | 3 | cosmology | non-thermal leptogenesis: derived Br(phi->NN) vs 9.5 % needed | 0.097 | ◔ | 0.01 dex | p in M_N ∝ (Re S)^p +, S-coupled hidden gauge groups - | D1946 (p=3, SM only) | p<=2 gives <=4.6 %: thin, needs p=3 and an S-free hidden sector |
+| 21 | 3 | cosmology | non-thermal leptogenesis: derived Br(phi->NN) vs 9.5 % needed | 0.051 | ↑! | -0.27 dex | p in M_N ∝ (Re S)^p +, S-coupled hidden gauge groups - | D1946a (64 pi; best case p=3, SM only) | FAILS even at p=3 after the factor-2 fix; other channels only lower it |
 | 22 | 3 | cosmology | gravitino lifetime vs BBN (A8) | 0.0014 | ● | 1.85 dex | — | D1946 | decays before BBN |
 | 23 | 2 | spectrum | lightest stabilised modulus vs 30 TeV (F10) | 2.58e+05 | ● | 0.93 dex | — | D1946 |  |
-| 24 | 2 | forces | A3/A2 needed 0.752 vs fixed-point ratio 3/4 | 0.75 | ○ |  | — | D1946 (CANDIDATE, numerology guard: 3 trials, ~2 %) | needs a mechanism A_a ∝ #fixed points on its plane |
+| 24 | 2 | forces | A3/A2 needed 0.752 vs fixed-point ratio 3/4 | 0.75 | ○ |  | — | D1946a: UNCONSTRAINED COINCIDENCE (target ±8 %, ~50 % chance) | no mechanism; fixed points enter ln A additively |
 | 25 | 3 | cosmology | non-thermal wino Omega from gravitinos (Omega ∝ T_R) | 0.01966 | ● | 0.79 dex | T_R - | D732 (Y3/2 ∝ T_R) | D732: Omega 0.017 at T_R 3.2e8 (M2 0.66 TeV), 0.11 at 3.0e9 ⇒ T_R capped at ~3e9 |
 | 26 | 3 | cosmology | Delta N_eff | 1e-06 | ● | 5.23 dex | — | v4 | 0 exactly; plotted as 1e-6 |
 | 27 | 3 | cosmology | dark-matter mass [GeV] | 12.8 | ○ |  | — | v4 |  |

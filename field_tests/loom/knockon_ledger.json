@@ -114,12 +114,9 @@
  {
   "d": "D1946",
   "adjustment": "derive Br(phi->NN) from M_N(S)",
-  "fixed": [
-   "leptogenesis: viable at p=3"
-  ],
+  "fixed": [],
   "disturbed": [
-   "input: M_N \u221d (Re S)^3 needed (p<=2 fails)",
-   "hidden sector: f_hid must be S-free"
+   "leptogenesis: Br(phi->NN) max 5.1 % < 9.5 % after the 64 pi fix (D1946a)"
   ]
  },
  {

@@ -388,20 +388,20 @@
    "ring": 3,
    "notch": "cosmology",
    "quantity": "non-thermal leptogenesis: derived Br(phi->NN) vs 9.5 % needed",
-   "value": 0.097,
+   "value": 0.051,
    "spread": null,
    "target": 0.095,
    "kind": ">",
-   "direction": "\u25d4",
-   "headroom": 0.009048128977397114,
+   "direction": "\u2191!",
+   "headroom": -0.2701534291909114,
    "unit": "dex",
    "pull": null,
    "knobs": {
     "p in M_N \u221d (Re S)^p": "+",
     "S-coupled hidden gauge groups": "-"
    },
-   "source": "D1946 (p=3, SM only)",
-   "note": "p<=2 gives <=4.6 %: thin, needs p=3 and an S-free hidden sector"
+   "source": "D1946a (64 pi; best case p=3, SM only)",
+   "note": "FAILS even at p=3 after the factor-2 fix; other channels only lower it"
   },
   {
    "id": 22,
@@ -451,8 +451,8 @@
    "unit": "",
    "pull": null,
    "knobs": {},
-   "source": "D1946 (CANDIDATE, numerology guard: 3 trials, ~2 %)",
-   "note": "needs a mechanism A_a \u221d #fixed points on its plane"
+   "source": "D1946a: UNCONSTRAINED COINCIDENCE (target \u00b18 %, ~50 % chance)",
+   "note": "no mechanism; fixed points enter ln A additively"
   },
   {
    "id": 25,
@@ -643,7 +643,7 @@
     [
      "cosmology: non-thermal leptogenesis: derived Br(phi->NN) vs 9.5 % needed",
      "+",
-     "\u25d4"
+     "\u2191!"
     ]
    ],
    "down": [],
@@ -655,7 +655,7 @@
     [
      "cosmology: non-thermal leptogenesis: derived Br(phi->NN) vs 9.5 % needed",
      "-",
-     "\u25d4"
+     "\u2191!"
     ]
    ],
    "tension": false
