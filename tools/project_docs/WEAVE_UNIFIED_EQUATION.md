@@ -73,7 +73,7 @@ The solution is carried across a band of width λ in Re T_vis by one rank N, the
 | I5 | Koide scale (one lepton mass) and δ = 2/9 | leptons | δ: no derivation exists in the literature; not the thawing axion (would drift m_e/m_μ); Berry phase C-δ only (D1768) |
 | I6 | neutrino masses (Σm_ν, m₁ = 0) | neutrinos | seesaw M_N and Yukawas [OPEN] |
 | I7 | quark O(1) couplings (12) and τ_q's class | quarks | classes FIXED: up m = 8, down m = ½ (computed minimum |ε| = 0.0457, D1778; half-integer class = double cover branched at i); 12 near-equal couplings (×2) fit all 8 observables (D1777) |
-| I8 | V_L (the size of Λ) and the thread's start | dark energy | [OPEN — the cosmological-constant problem] |
+| I8 | V_L (the size of Λ) and the thread's start | dark energy | LEFTOVER computed (D1788): V_Λ ≈ (2π)² e^{−4π Re T_dark}/(2 Re S 𝒱²) = ρ_Λ at Re T_dark = 20.57 — the same twin-cycle size as the forces, α_D and birefringence; the big cancellation (uplift vs −3e^K|W₀|²) is still assumed, not solved |
 | I9 | m_A′, ε (dark force) | dark matter | α_D DERIVED = 0.035 at 12.8 GeV from a twin dark cycle (D1769, C); m_A′ and ε still free |
 | I10 | the family flux | generations | |M| = 9 on T²/Z₃ (exists only at τ = ρ): the smallest flux where EVERY Z₃ sector has three modes (3/3/3) ⇒ three families and c = 9 (D1776, P-democratic-flux; zero-mode count to verify) |
 | I11 | v = 246 GeV given m₃/₂ (tuning ~4e6) | Higgs | [OPEN — the last factor of the hierarchy] |
