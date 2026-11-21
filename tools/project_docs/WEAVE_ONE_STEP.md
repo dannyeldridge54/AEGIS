@@ -58,3 +58,6 @@ Evaluating the action at that one point gives:
 - **Not yet refereed:** loop 2 (D1762–D1779); both referee runs were stopped before they reported. The ×28 failure of D3 at ρ and the magnetised-D7 repair passed the loop-1 referee as a candidate.
 
 **Status in one line:** one modular group, two knots and one compactification hold every observed sector in a single action; the discrete data are now a handful of integers tied to the knots; the remaining continuous inputs are listed above.
+
+
+**Referee corrections 21 Nov 10:55 (D1807):** axion f is 4.4× smaller (the dark-cycle axion has m ≈ 282 H₀; verdicts unchanged); α_D = 0.022 is conditional (no derivation since D1795); the dark modulus at ≈ 38.6 needs its own stabilisation; unification good to 0.55 % (gluino mass dominates the α_s error); proton decay in a GUT stack ≈ 1.6e35 yr; "chain closes" is nearly automatic with χ free — the content is that N = 7 is the unique rank with 𝒱 ≥ 1e4.

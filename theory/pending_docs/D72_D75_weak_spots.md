@@ -17768,3 +17768,24 @@ One thought: every field sits AT one of the two elliptic points of PSL(2,Z) (i, 
 - [computed] **A = 7.30 = (8/3)·2ζ(2)/ζ(3)** from E(S, 3/2) (verified with mpmath: 7.2983). The flipped codon E(·, 5/2) gives **A′ = (16/5)·(4/3)ζ(4)/ζ(5) = 4.45**, correction ∝ y⁻⁴ (twice the exponent) and height norm (5/3)². This is a concrete, lockable alternative to the shared-A reverse thread (RW5).
 - [conjecture] Z₂ protection at i: linear couplings in (τ − i) vanish at the knot, so the α-drift leak becomes quadratic. This is a possible fix for D1851 (RW6).
 - The plan (RW5–RW9) has been handed to the reverse-weave agent.
+
+## D1807 (CENTRE — 21 Nov 2026 10:55): referee of loop 3 (D1790–D1803; theory/pending_docs/REFEREE_2026-11-21_loop3.md) — no fatal errors; corrections recorded (nothing silently edited)
+Every key number reproduces, every lock precedes its result, and no threshold was loosened. The cross term, the frozen criterion, the two-loop matrices and the wall template are all verified. Corrections:
+1. **Axion f (MAJOR; D1760, D1793–D1795).** For K = −3 ln(T+T̄) with e^{−2πT}, f = √(3/2)/(2πσ) M_P, not √3/(2σ) M_P (4.4× smaller). Corrected values:
+   - at σ = 38.6: f = 0.0050 M_P, m = **282 H₀** (was 64);
+   - σ_β = 36.9–40.6 (was 36.4–40.1);
+   - birefringence-axion energy share 5.8e-6 (was 1.1e-4).
+
+   Verdicts unchanged (the axion cannot be Λ; U12 survives). c_γ = 4.2/Δθ is f-independent.
+2. **Proton (MAJOR; D1797/B10).** At the two-loop point branch G gives τ ≈ **1.6e35 yr**, not ~3e34 (DEVIATIONS D1 to PREREG_B10). "Hyper-K decides" is withdrawn: branch G is mostly beyond Hyper-K's reach. Ledger 2.13 is corrected below.
+3. **α_s budget (MAJOR; D1800/D1804).** Over gluino 4.8–20 TeV, α_s(unif) = 0.114–0.121; over scalars 0.25–0.7 PeV, 0.1148–0.1175. CONSISTENT holds but is marginal at the low gluino edge. The unification is good to **0.55 %** in α⁻¹, not 0.2 %. The gluino mass is the dominant uncertainty.
+4. **α_D = 0.022 (MAJOR).** After U19's withdrawal it has no derivation. It holds only if the dark gauge cycle is taken equal to the photon-axion cycle (assumption, label C); 0.0186 if that cycle carried a flux term. Relabelled "conditional". The SIDM pass holds for any α_D ≤ 0.035.
+5. **Dark modulus not stabilised (MAJOR).** Neither KKLT nor LVS as used here stabilises a second Kähler modulus at σ ≈ 38.6. A separate mechanism (its own condensate) is needed; label C.
+6. **Koide overclaim (MAJOR; D1792).** "Koide survives" was too strong: random Higgs directions give Q ≈ 0.37, never 2/3. The B1 m_τ forecast rests on the circulant/Z₃ structure of D1776 alone, not on the magnetised Yukawas.
+7. **"CLOSES" is nearly automatic (MAJOR; D1801).** χ is a free integer, so some χ always fits. The content is only that N = 7 remains the unique rank with 𝒱 ≥ 1e4. "χ = 50 survives" used the information-only window and is withdrawn. Also a typo: the M₂ prefactor is 8.24e4 GeV/χ·(W₀/1.4e-8), as coded, not ·(50/χ).
+8. **Λ_QCD sensitivity (MINOR; D1802).** Use b₀ = 9 (n_f = 3 at the nuclear scale): the shift is 11–12.5 %, radius ≈ 4.4–5, and the needed |δα_s| ≲ **5e-4** (was 4e-4). Conclusion unchanged.
+9. **e^K consistency (MINOR; D1793).** With a single-modulus e^K, σ_Λ moves by +1.4, outside the locked ±0.37. The "10^48" should be 1.8e46. With the two-loop W₀, 𝒱: σ_Λ = 38.49. The verdict (SHIFTED; tie to forces broken) stands.
+10. **No-walls caveats (MINOR; D1798).** Fluxes break SL(2,Z) to a subgroup, so the "images are one vacuum" argument holds only for images related by the unbroken subgroup. The real reason for no walls is pre-inflation selection (one inflated patch). Axion domain walls (photon-axion, N_DW) need separate mention: they are post-inflationary only if the PQ-like symmetry is restored after inflation, which it is not for a string axion with f ~ 0.005 M_P > H_inf.
+11. **Wording (MINOR).** D1790's best r₂₃ = 0.196 (not "≥ 0.20"). The Y5/Y4b optimiser control shows the optimiser reaches targets, not that "the code is sound".
+12. **Process (MINOR).** Locks carry no code hash, and two DEVIATIONS time labels postdate their commits. The U20 rerun script state was not committed before the run; it is committed now in its final form (theory/tests/u20_chain.py), and its run-1 artefact is kept. From now on each lock records the git hash of the script it will run.
+13. **Minor.** A4: f_NL^local is physically ≈ 0 (the Maldacena term is not observable as local f_NL), and the number is 0.0146 at n_s = 0.965. weave_edm should note the two-loop Barr–Zee term (not yet added).
