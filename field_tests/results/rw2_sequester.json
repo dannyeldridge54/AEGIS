@@ -1,0 +1,47 @@
+{
+  "inputs": {
+    "Vol": 100000.0,
+    "tau_vis": 20.15,
+    "tau_dark": 38.6
+  },
+  "dK_dphi_swiss_move_td": 0.1690341379289932,
+  "K_d": 0.00018638669480410883,
+  "K_dd": 2.4317054249236896e-06,
+  "dlnalpha_dK_variants": {
+    "KL+Z": 0.002322819450245123,
+    "KL+Z+soft": 0.0025163877377655497,
+    "KL(noZ)+soft": 0.00445207061296982
+  },
+  "C1_tree": 0.0,
+  "C2_range": [
+    0.0003926357833368823,
+    0.0007525519180623578
+  ],
+  "C4_adiabatic": 4.915204471817624e-97,
+  "C5_kinetic_mixing": 8.223996069925602e-97,
+  "largest_lower": 0.0003926357833368823,
+  "bound": 1.66e-06,
+  "ratio_to_bound": 236.52758032342308,
+  "ratio_to_Martins_bound": 6654.8437853708865,
+  "verdict": "FAIL",
+  "report_K_minus3ln": {
+    "dK_dphi": 2.449489742783178,
+    "zeta_range": [
+      0.0056897224177126894,
+      0.010905301300615988
+    ]
+  },
+  "report_Vol_needed_for_bound": {
+    "KL+Z": 5634779616.559359,
+    "KL+Z+soft": 6613039966.656467,
+    "KL(noZ)+soft": 20699989008.05487
+  },
+  "report_Vol_needed_for_Martins": {
+    "KL+Z": 4460556940933.917,
+    "KL+Z+soft": 5234959187623.832,
+    "KL(noZ)+soft": 16386351539958.63
+  },
+  "report_C7_fixed_volume_direction": "dK = 0 along the light direction (only C4/C5-size leaks remain)",
+  "report_C6": "zero if visible/dark intersection numbers vanish; else O(b_ab/4pi) per unit dln t (condition)",
+  "report_uplift_slope_ratio": 8.872646258665174e+92
+}

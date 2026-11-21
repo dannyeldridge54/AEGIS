@@ -24,3 +24,30 @@ V = V_L(1 − A e^{−βφ}), A = 7.30, published doi:10.5281/zenodo.24380387). 
   3. Its plateau shape 1 − A e^{−βφ} needs a microscopic origin with β of order √2 … 2√2 (D1627: all three
      tilts pass DESI DR2) (RW3).
 - Status: reverse_thread stays a postulate; this note only removes the alternative.
+
+## D1851 (RW2, locked PREREG_RW2_SEQUESTER + DEVIATIONS D1–D2) — a thread on the dark D7 cycle is NOT sequestered: the one-loop Kähler leak gives ζ ≈ 4e-4, 237× the MICROSCOPE bound (FAIL)
+- DEVIATIONS (both written and pushed before any result): D1, finite-difference roundoff in K_dd caught by the
+  tool self-test; D2, a factor ½ in D1's formula text. No RW2 number came from the bad code.
+- [derived] Tree level is clean (f_vis = T_vis + 9S has no T_dark). But at one loop the visible coupling
+  depends on the Kähler potential itself (Kaplunovsky–Louis; with local matter metrics Z ∝ e^{K/3} the
+  coefficient is 16π² δ(1/g_a²) = (b_a/3) δK, which reproduces the in-repo D400 coefficient). With
+  K = −2 ln 𝒱 and 𝒱 = τ_b^{3/2} − τ_vis^{3/2} − τ_d^{3/2}, moving τ_d moves 𝒱, so δK ≠ 0.
+- [computed] At 𝒱 = 1e5, τ_d = 38.6: δK/δφ = 0.169 (≈ √(12 τ_d^{3/2}/𝒱)). |d ln α_em/dK| = 2.32e-3 (KL+Z),
+  2.52e-3 (+ soft thresholds m_soft ∝ e^{K/2}), 4.45e-3 (no Z dependence). ⇒ **ζ = 3.9e-4 – 7.5e-4**.
+  Adiabatic heavy-moduli shift (C4) 4.9e-97, kinetic mixing (C5) 8.2e-97. Largest (lower end) / bound
+  = **237** (6.7e3 against the combined 5.9e-8 bound). Verdict by the lock: **FAIL**.
+- [computed, report] D1793's single-modulus convention K = −3 ln: δK/δφ = √6, ζ = 5.7e-3 – 1.1e-2 (worse).
+  To pass with a small dark cycle at τ_d = 38.6 would need 𝒱 ≳ 5.6e9 – 2.1e10 (and ≳ 4e12 for the combined
+  bound), versus the Weave's 1.0e5 (D1801).
+- [computed, consistency] In KKLT the uplifted vacuum depends on τ_d through e^K: the resulting slope along
+  τ_d is ~m₃/₂²|δK/δφ| ≈ 9e92 × the thread's own slope ρ_Λβ. So a τ_d that moves 𝒱 cannot be light at all;
+  it is held at m ~ m₃/₂ scale. The same quantity δK/δφ makes it both heavy and α-leaking.
+- [derived] What would be sequestered (C7): a light direction along which 𝒱, τ_vis and S stay fixed (δK = 0),
+  e.g. a fibre-type modulus at fixed volume. Then only C4/C5-size leaks (~1e-96) remain, plus C6: N=2 annulus
+  thresholds between the stacks, which vanish if visible and dark D7s have zero intersection numbers.
+  [literature, partial read] Conlon–Palti, arXiv:0906.1920: for local models the bulk enters the visible
+  gauge running through the KL/winding-scale term, and one-loop holomorphic couplings become non-universal
+  through the local twisted (blow-up) moduli; the excerpt read does not address non-intersecting blow-ups,
+  so C6 = 0 is an assumption here, not a quoted result.
+- Reading: "thread on the dark D7 cycle ⇒ sequestered" is WRONG as a tree-level argument: Kähler mixing
+  through the volume leaks. The thread has to be a volume-preserving direction (→ RW3), not τ_dark itself.
