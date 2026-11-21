@@ -1,0 +1,19 @@
+{
+ "Delta3": -0.23675859249753373,
+ "M12": 1.0729587128117186e+16,
+ "eta_rho": 0.800579402820038,
+ "L_U": -1.0335192759626153,
+ "L_T": -18.09782636821875,
+ "U": {
+  "shift_per_unit_b": 0.08224485077510346,
+  "db_needed": -2.8787041409430523,
+  "nearest_half_integer": -3.0,
+  "verdict": "NATURAL"
+ },
+ "U+T": {
+  "shift_per_unit_b": 1.5224241136355325,
+  "db_needed": -0.15551421603022086,
+  "nearest_half_integer": 0.0,
+  "verdict": "UNNATURAL"
+ }
+}

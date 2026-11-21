@@ -17856,3 +17856,18 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
   - axion f formula;
   - proton branch G 1.6e35 yr.
 - Adoption needs, per tool: a DEVIATIONS entry, then a rerun of that tool's self-test and the engine tests (16/16). Deferred because CubeMind and the tests are on hold (Danny 08:56).
+
+## D1816 (LEFT, forces — 21 Nov 2026): the knot ρ can supply the last unification threshold if only the torus complex structure enters — it needs b₃^{N=2} − b₁₂^{N=2} ≈ −3
+- [computed, locked PREREG_D1816_THRESHOLD] With the Weave's own gluino (5.6 TeV), two-loop running at the measured α_s leaves **Δ₃ = −0.237** at M₁₂ = 1.07e16 GeV. N = 2 threshold form (DKL / Bachas–Fabre; [lit form], normalisation 16π²/g²): δ_a = −(b_a^{N=2}/4π) ln(Im U |η(U)|⁴) [+ T term].
+  - |η(ρ)| = 0.8006, so ln(Im ρ |η(ρ)|⁴) = **−1.034**.
+
+  | case | shift per unit b^{N=2} | Δb needed | verdict |
+  |---|---|---|---|
+  | U at the knot only | 0.082 | **−2.88 ≈ −3** | NATURAL |
+  | U + Kähler T (Im T = 20.15) | 1.52 | −0.16 | UNNATURAL |
+
+  - In the U-only case, unification needs the N = 2 sector of SU(3) to have a beta coefficient 3 below that of SU(2) × U(1) (with b₁ = b₂).
+  - In the U+T case the thresholds are ~10× too strong for any non-zero integer difference. There, unification needs universal b_a^{N=2}, and the residual must come from elsewhere.
+- Reading: which case applies depends on the brane geometry. For D7 stacks the N = 2 sectors come from the torus transverse to the stack, and the Kähler dependence enters through the winding/KK split. This is not determined here; both are recorded.
+- Numerology guard: Δb ≈ −3 = −|Z₃| is suggestive but carries no weight. One rational difference fits any target approximately (D1780).
+- Status: the last −0.24 in α₃⁻¹ is "hostable by a ρ-valued threshold with Δb = −3", or requires universality (U+T). An explicit D7 spectrum with its N = 2 sectors would decide this, which is the next model-building item.
