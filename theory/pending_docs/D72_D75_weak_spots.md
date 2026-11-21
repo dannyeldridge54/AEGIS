@@ -17496,3 +17496,17 @@ Caveats: the table entries were read from a partly garbled extraction (the sum r
 ## D1776a — VERIFICATION and CORRECTION of D1776 (zero-mode index formula)
 - [verified, literature formula] Sakamoto–Takeuchi–Tatsuta (arXiv:2004.05570, eq. 4.71): n_η = (M − V_η)/N + 1 on T²/Z_N, V_η = sum of winding numbers at the three Z₃ fixed points (0, (2+τ)/3, (1+2τ)/3). At M = 9 with Scherk–Schwarz phase α = 1/6 (or 5/6): (χ's) give V = 3 in every sector ⇒ **n = (3, 3, 3)** ✓ (α = 1/2 gives 4/3/2). D1776's table reading is confirmed independently.
 - [correction] D1776 said |M| = 9 is "the smallest flux at which every Z₃ sector is equal". WRONG: at M = 3 (α = 1/6) the split is (1, 1, 1), also equal; the democratic sequence is n = 1, 3, 5 at M = 3, 9, 15 (n = (M − 3)/3 + 1). The principle is restated: **each Z₃ sector carries as many families as the order of the knot's residual symmetry (n_η = |Z₃| = 3) ⇒ M = 9, uniquely** (the next democratic flux, 15, gives 5). U17′ keeps its content (M = 9, c = 9) with this sharper, unique statement. [P]
+
+## D1777 — LL (09:30) / PREREG_B7_DOWNSHIFT result: the down quarks sit at HALF a rung — and then every quark observable fits
+| |ε_d| | score (BOX-2) | fails | m_s/m_b | m_d/m_b | m_c/m_t | m_u/m_t | V_us | V_cb | V_ub | J |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 0.024 (rung 1, control) | 8.30 | m_s/m_b, V_cb, V_ub | 0.53 | 0.83 | 0.73 | 1.23 | 0.97 | 1.36 | 0.71 | 0.94 |
+| 0.036 | 2.31 | none | 0.71 | 1.08 | 0.89 | 1.01 | 0.98 | 1.19 | 0.85 | 0.89 |
+| **0.048** | **0.37** | **none** | 1.25 | 1.06 | 1.00 | 1.00 | 1.01 | 0.99 | 1.00 | 1.06 |
+| 0.060 | 3.71 | m_s/m_b, m_d/m_b | 1.59 | 1.72 | 0.99 | 1.00 | 1.01 | 1.08 | 1.11 | 0.81 |
+(ratios = model/observed; up quarks on rung 8; all 12 couplings within ×2 of equal.)
+- Control check (locked): 8.30 vs B6's rung-8 BOX-2 7.81 → +6 % (within 10 %) ⇒ run valid.
+- **Locked reading: U16 PASSES** — |ε_d| = 0.036 and 0.048 give 0 fails; 0.048 fits all eight quark observables to within 25 % (seven within 6 %), score 0.37.
+- [derived reading] On the ladder formula |ε_m| = 0.0251/(m + 1/16): 0.048 ⇒ **m = 0.46 ≈ ½**, 0.036 ⇒ m = 0.63. The down quarks sit at a HALF-rung between rung 0 and rung 1 — the "carry-then-push" band picture again (Danny 09:13): the up sector on integer rung 8, the down sector on rung ½.
+- [caveat, honest] still 12 O(1) couplings for 8 observables (consistency, not prediction); but with near-equal couplings the rung-1 placement FAILS (8.30) and the half-rung placement fits (0.37) — the improvement is structural, not from tuning couplings.
+- Open (next): what gives a half-integer SUGRA class? W ∝ (j − 1728)^{m/2} with m = ½ is not a single-valued modular form ⇒ a half rung needs either a double cover (level-2/Γ(2) structure, natural for the Z₂ at i) or the mixed (m,n) arc classes. Postulate U18 (C-half-rung, written automatically): the down modulus sits on the m = ½ class of a double cover; test: compute the SUGRA minimum for W ∝ (j − 1728)^{1/4}·(η-factor) on Γ(2) and check |ε| ≈ 0.045–0.05.
