@@ -17894,3 +17894,10 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
   - τ_d: OFF (p = 0.69). τ_u: OFF (p = 0.21).
 - Reading: the golden/silver structure is real geometry of the Weave's stage. i is the crossing hub of all simple loops, and ρ is the still point they bend around. This matches the roles the Weave assigns, but no derived number is placed by a loop yet. That is consistent with D1817: the derived ladders are parabolic.
 - Next tests (each locked with chance calibration): whether any ratio the Weave derives (λ_eff = 3.36, σ_d/σ_vis = 2, the r ladder, the band step) equals a Markov multiplier.
+
+## D1819 (CENTRE — 21 Nov 2026): no Weave ratio sits on the golden/silver/Markov ladder beyond chance (NO SIGNAL)
+- [computed, locked PREREG_D1819_MARKOVRATIOS] Setup: 10 derived ratios × 12 Markov targets (multipliers, square roots and loop lengths for m = 1, 2, 5, 13), 1 % tolerance. One hit: **A = 7.298 vs the m = 13 loop length 7.326** (−0.38 %).
+  - Chance: a random number hits some target with p₁ = 0.040, so 0.40 hits are expected; 1 was observed; Poisson p = 0.33. Verdict by the lock: **NO SIGNAL.**
+  - The hit is a coincidence: A = (8/3)·2ζ(2)/ζ(3) exactly (D1806), with no Markov content.
+  - Golden (φ, φ²) and silver (1+√2, (1+√2)²) themselves match nothing: the cycle-size ratio 2, the r-ladder ratio 1.98, λ_eff 3.36, 1/x 3.58, the gluino/wino ratio 8.2 and the gravitino/wino ratio 384 are all off.
+- Reading, consistent with D1817–D1818: the golden/silver loops are the inside geometry (they cross at i and avoid ρ), but the Weave's ladders are cusp-type (parabolic). No derived number is a loop multiplier. The loops remain a structural map, and a ratio would only count if a mechanism predicts it in advance.
