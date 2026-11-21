@@ -18712,3 +18712,23 @@ Their **median** (log-space) is **ε_mid = 0.0365**.
 **Flag: phase mismatch.** The model's displacement points almost exactly along −Re from ω (arg ≈ 177–179°). The Weave's quark vacuum (D1826) sits at arg 49°, and the CP fraction depends on that phase. So the IIB mechanism gives the right *size* but not yet the right *direction*. Next test: rerun the quark lock at arg ≈ 178° with |ε| ∈ {0.0365, 0.0457}, and/or look for a matter-sector phase that rotates the displacement.
 
 **Status:** rung-step displacement LOOSE → **LOOSE, size derived** (α ≈ 0.11–0.13 in an explicit IIB dS model). Direction is open and the mirror tension stays open. New derived parameter: **α_need = 0.130**.
+
+## D1918 — LEFT/flavour (first ITERATED triangulation, Loom §3.6g, Danny 14:59): the quark lock survives the IIB model's displacement direction — PASS (21 Nov 2026)
+- Lock PREREG_D1918 (pushed first). |ε_d| = 0.0457 (the need, α_need = 0.130); phase φ of ε_d scanned.
+- **ROUND 1** (computed, D1829 logic, seed 21; results in field_tests/results/d1918_phase_iterated.txt):
+
+| φ | f7 | fJ |
+|---|---|---|
+| 49° | 18.0 % | 30.8 % |
+| 113° | 17.8 % | 29.9 % |
+| 178° | 18.2 % | 32.4 % |
+
+  All three pass both bars ⇒ centre = 178°, the IIB model's own direction. The locked rule stops after one round. Spread across the round: f7 ±0.2 %, fJ ±1.3 %. **PASS.**
+- **Reading:**
+  - The quark lock is insensitive to the phase of the displacement. CP comes from the O(1) coefficient phases, not from the direction of τ's shift. So D1917's phase flag is closed.
+  - **One explicit IIB de Sitter mechanism now supplies both the size (α = 0.13) and an acceptable direction of the Weave's down-quark displacement.**
+- **Data-mining note (iteration):** one round sufficed here because the three bearings already agreed. The iteration earns its cost when round 1 brackets a boundary.
+- **Status:** rung-step displacement goes from LOOSE (size derived) to **LOOSE (size and direction consistent)**.
+- **Still open:**
+  1. Putting the same mechanism on the Weave's own Z₆-II turnover torus (not T⁶/Z₂).
+  2. The mirror: the dark torus near i must not move (D1914).

@@ -1,0 +1,4 @@
+phi=  49.0 deg  f7=18.0%  fJ=30.8%  both=True
+phi= 113.0 deg  f7=17.8%  fJ=29.9%  both=True
+phi= 178.0 deg  f7=18.2%  fJ=32.4%  both=True
+Centre rule: 178 deg passes 'both' => centre = 178 deg; stop after ROUND 1 (as locked). VERDICT: PASS
