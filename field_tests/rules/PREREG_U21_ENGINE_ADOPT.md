@@ -1,0 +1,3 @@
+# PREREG U21 — engine/kit adoption list (locked TODO, 21 Nov 2026; repo at 2c2a5a93). No code changed by this file.
+Change → source: α⁻¹(M₁₂) 28.9@7e15 → 28.0@1.06e16 GeV (D1800, D1804) · N 7 → 6, χ 50 → ≈90, 𝒱 4.2e4 → 7.5e4, W₀ 5.9e-9 → 1.0e-8 (D1811) · T_R 3.6e8 → 3.7e8 GeV, x 0.27 → 0.279 (D1801) · gluino 7 → 5.6 TeV (D1808) · α_D 0.035 → 0.021–0.022 conditional (D1795, D1812) · axion f = √(3/2)/(2πσ) M_P (D1807) · proton branch G 1.6e35 yr (D1807) · Λ input (D1795).
+Procedure when adopted: one DEVIATIONS entry per tool, written before the change; rerun weave_tools self-test and engine tests (must stay 16/16); results compared before/after and recorded.

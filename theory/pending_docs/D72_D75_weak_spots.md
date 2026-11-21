@@ -17826,3 +17826,33 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
   - Band-ladder reading: α⁻¹ = 9/g_s + λ_eff·N with λ_eff = 20.15/6 = 3.36.
   - D1801's rejection of N = 6 (volume < 1e4 at χ = 6) came from the dropped log term and is withdrawn.
 - Honest status: N and χ are still consistency selections, not predictions; what changed is which integer is natural. The dark-cycle rank N_d = 10–12 (D1810) should be rechecked the same way. It already used the exact condition, so it stands.
+
+## D1812 (CENTRE — 21 Nov 2026): the rank rule N_d = 2N places the dark cycle at 40.3 (in window), α_D = 0.021 — consistency only
+- [computed, locked PREREG_D1812_RANKRULE] With the same W₀ and prefactors, σ_d/σ_vis = N_d/N exactly. At N = 6 (D1811), N_d = 12 gives **σ_d = 40.3**, inside 36.9–40.6, and **α_D(12.8 GeV) = 0.021** (one-loop dark running).
+- Numerology guard (D1780): a small-integer rule hits one of N_d ∈ {10, 11, 12} almost automatically. This is a consistency of the picture (dark rank = |Z₂| × visible rank, i ↔ ρ), not evidence. α_D stays conditional, now = 1/(2σ_vis + 7.2) if the rule holds.
+
+## D1813 (RIGHT — 21 Nov 2026): the birefringence carrier — postulate U12′
+- The agent's D1863 shows that the photon-axion cannot sit on a condensate-held cycle (its mass would be ~1e16 eV).
+- **Postulate U12′ (C):** the photon-axion's saxion is stabilised PERTURBATIVELY (α′/string-loop terms, LVS-type small or fibre cycle), so the axion's only potential is the single-instanton cross term of D1793. That is exactly the case already computed: m in 1e-33 – 9e-32 eV for σ_β = 36.9–40.6 (corrected f, D1807), c_γ = 4.2/Δθ.
+- Kills it: no perturbative minimum at σ ≈ 37–41 with natural loop coefficients, or a scale-dependent β (LiteBIRD). Hosted, not derived. The equal size of the photon-axion cycle (≈ 39) and the N_d = 2N dark cycle (40.3) is a coincidence of this picture, flagged, not used.
+
+## D1814 (RIGHT — 21 Nov 2026): the reverse thread is OPEN, with a quantified requirement
+- The agent's run (D1851–D1865): every shielding route fails by 80–310×.
+  - dark D7: 237×;
+  - Z₂ at i: 80× after removing the linear term;
+  - k = 1 at i: 310×;
+  - ρ: 119×.
+- The thread's mass and height hit the late F-term problem (~1e68 ρ_Λ). It still FITS the data (Δχ² ≈ −7).
+- [computed, locked D1812 part 2] The universal Kaplunovsky–Louis leak scales as 𝒱^{−1/2}. Reaching the bound needs **𝒱_thread ≈ 5.5e9**, ≈ 7.4e4 × the visible chain's 𝒱 = 7.5e4. So the thread must live in a sector whose effective volume is LVS-sized while the visible sector is KKLT-sized: a two-throat / sequestered picture. That is the requirement any future mechanism must meet. Status OPEN (label C for the requirement).
+
+## D1815 (CENTRE — 21 Nov 2026): adoption list for the engine (locked TODO; no engine code changed today)
+- PREREG_U21_ENGINE_ADOPT lists the parameter changes from D1800–D1814 that tools/weave_control/engine.py and the kit still carry at old values:
+  - α⁻¹ 28.9 → 28.0 at 1.06e16 GeV;
+  - N 7 → 6, χ 50 → ≈ 90;
+  - 𝒱 4.2e4 → 7.5e4, W₀ 5.9e-9 → 1.0e-8;
+  - T_R 3.6e8 → 3.7e8;
+  - gluino 7 → 5.6 TeV;
+  - α_D 0.035 → 0.021–0.022 (conditional);
+  - axion f formula;
+  - proton branch G 1.6e35 yr.
+- Adoption needs, per tool: a DEVIATIONS entry, then a rerun of that tool's self-test and the engine tests (16/16). Deferred because CubeMind and the tests are on hold (Danny 08:56).
