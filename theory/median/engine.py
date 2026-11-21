@@ -3,7 +3,7 @@
 import json, math, sys
 import numpy as np
 from scipy.optimize import minimize_scalar
-OBS = dict(mmu_mtau=105.658/1776.86, me_mtau=0.51100/1776.86, u_d=0.0457, u_u=0.00311, nu_step=math.exp(-9*math.pi/8))
+OBS = dict(mmu_mtau=105.658/1776.86, me_mtau=0.51100/1776.86, u_d=0.0457, u_u=0.00311, nu_step=math.exp(-7*math.pi/8))   # D1891: rung 3 -> 4 ratio (like with like)
 L3 = math.log(2)   # D1890: tightened from ln 3
 def sectors(c, u):
     a = c['electron_corner_amp']; r = c['lepton_rungs']
@@ -12,7 +12,7 @@ def sectors(c, u):
     return {'lepton m_mu/m_tau': math.log(m[1]/OBS['mmu_mtau'])/L3,
             'lepton m_e/m_tau': math.log(m[0]/OBS['me_mtau'])/L3,
             'Koide Q (1% tol)': (Q - 2/3)/(0.01*2/3),
-            'neutrino step = u*': math.log(u/OBS['nu_step'])/L3,
+            'neutrino rung ratio 3->4 = u*': math.log(u/OBS['nu_step'])/L3,
             'down-quark step = u*': math.log(u/OBS['u_d'])/L3,
             'Delta_3 (tol 0.05)': c['delta3_residual']/0.05,
             'thread alpha drift (bound 1.66e-6)': math.log10(c['thread_zeta_alpha']/1.66e-6) if c['thread_zeta_alpha'] > 1.66e-6 else 0.0}

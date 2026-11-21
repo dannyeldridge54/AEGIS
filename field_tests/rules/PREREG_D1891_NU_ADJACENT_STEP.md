@@ -1,0 +1,4 @@
+# PREREG D1891 — median loop tick 3: compare like with like for the neutrino ladder (locked 21 Nov 2026 before running; repo at 8880efc6)
+Problem: the engine compared u* (a rung-to-rung ratio: m_μ/m_τ = rung 1 / rung 0, heaviest downward) with the neutrino ABSOLUTE step e^{−π·3²/8} (rung 3 relative to gauge strength) — not like with like.
+Change (one, geometric): neutrino sector := the pyramid's rung-to-rung ratio from the heaviest selected rung (n = 3, D1822) to the next lighter rung (n = 4): e^{−π(4² − 3²)/8} = e^{−7π/8}, by the same "heaviest downward one step" rule as the leptons. Stated openly: the values e^{−7π/8} = 0.064 (3→4) and e^{−5π/8} = 0.140 (2→3) were computed in planning; the rule (heaviest → next lighter) is fixed by the lepton analogue, not by the numbers.
+Accept rule: accept if total χ² falls below 1.93 AND no sector > 1; else revert engine.py and keep the record.
