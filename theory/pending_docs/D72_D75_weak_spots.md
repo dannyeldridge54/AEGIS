@@ -17980,3 +17980,19 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
   - **Secondary** (q_L = (2, 1, 0)): V_us = 0.026 (×0.11 ✗), V_cb = 0.026 (×0.63 ✓), V_ub = 6.7e-4 (×0.18 ✗). FAIL.
 - **Consequence (per the lock):** D1826's mass match is downgraded to "two numbers that line up, unless a charge assignment FIXED IN ADVANCE also fits the mixing". The pattern seen in the failures: a single expansion parameter cannot give both V_us ≈ 0.22 (needs √u_d) and V_cb ≈ 0.04 (needs ~u_d^{1}) with one integer step between generations. The 1–2 and 2–3 charge gaps must differ, i.e. the residual charges are not equally spaced.
 - Next (lock first): ask whether a residual-charge assignment allowed by the Z₆ stabiliser at ω (charges mod 6, with the review's bound) gives unequal gaps, (q₁, q₂, q₃) with q₁ − q₂ = ½ and q₂ − q₃ = 1 in units where m ∝ u^{2q}. Count how many allowed assignments fit masses AND mixing (look-elsewhere), before claiming anything.
+
+## D1828 (LEFT, quarks — U24 lock-and-key — 21 Nov 2026): ONE charge assignment out of 117,649 fits all four quark mass ratios AND all three CKM angles with c = 1 — q_Q = (3/2, 1, 0), q_u = q_d = (½, 0, 0)
+- [computed, locked PREREG_D1828_CHARGESCAN] Froggatt–Nielsen-type rule with the D1826 slip parameters (u_u = 1.79e-3, u_d = 0.0259), charges in half-units 0…3, third generation 0. All 7⁶ = 117,649 assignments were scanned. **Exactly 1 fits** (f = 8.5e-6). Verdict by the lock: **RARE-FIT.**
+  - Charges: quark doublets q_Q = (3/2, 1, 0); right-handed up and down EQUAL, q_u = q_d = (½, 0, 0). The mass exponents are (2, 1, 0) in both sectors (as D1826).
+  - Mixing: |V_us| = u_d^{1/2} = 0.161 (data 0.225), |V_cb| = u_d = 0.0259 (0.041), |V_ub| = u_d^{3/2} = 4.2e-3 (3.8e-3). All within ×3; V_ub to 9 %.
+- **What it means (U24):** the quark lock is a single, simple set of residual charges. The doublets step by ½ then 1 (the unequal gap D1827 asked for), and the singlets carry one common ½ on the first generation. Turned by the two ρ-slips (the keys), it gives 7 observables with no free O(1) coefficients. That replaces the 12 hosted couplings of D1779.
+- **Honest weight:**
+  1. The slips u_u, u_d were not independent of data: the rungs were data-selected (D1826). The rarity is computed GIVEN those slips.
+  2. Half-integer charges are assumed allowed by the Z₆ stabiliser at ω. Whether these exact charges arise from modular weights and Z₃ × Z₂ phases is to be checked (next).
+  3. c = 1 everywhere; real coefficients are O(1), and ×2–3 tolerances absorb them.
+
+  Label: C (strong consistency), not a prediction yet.
+- **Forward tests now possible (lock before computing):**
+  - (a) the CP phase and the Jarlskog invariant from the same charges with modular-form phases at ρ + ε (arg 49–50°);
+  - (b) the same lock applied to the charged leptons and neutrinos (lepton doublet charges given by an SU(5)-type relation to q_d), giving the D1828 prediction of the PMNS structure;
+  - (c) whether (3/2, 1, 0) / (½, 0, 0) are realisable modular weights at ω.
