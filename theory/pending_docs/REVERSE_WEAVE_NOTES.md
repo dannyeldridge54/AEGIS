@@ -143,3 +143,56 @@ V = V_L(1 − A e^{−βφ}), A = 7.30, published doi:10.5281/zenodo.24380387). 
 - The DR2 best fits of the forward (β = 2√2) and mirror (β′ = 4√2) threads are frozen by hash. On DR3 / a new SN set,
   both are refit: the mirror is preferred if Δχ² ≤ −2, the forward if ≥ +2. Today's −0.21 (D1854) is post-data and does
   not count. Not a duplicate: the existing DR3 locks cover the forward tilt vs CPL/ΛsCDM and the flagship only.
+
+## D1852 (RW3, locked PREREG_RW3_PLATEAU + DEVIATIONS D1) — the dark-cycle saxion cannot be the thread (282 H₀ / 8.1e3 H₀); the plateau SHAPE is easy to host, its HEIGHT is not: verdict OPEN
+- DEVIATIONS D1: run 1's V_L shooting overflowed past the cliff, the validation gate failed, so run-1 R3 = INVALID
+  (kept as rw3_plateau_run1_overflow.json). Run 2 used the D1692 shooting; the gate passes (β = 2√2 reaches
+  w₀ = −0.807 / −0.779 with w_a = −0.23 / −0.26). R1, R2 and R5 have no ODE and are identical in both runs.
+- R1 [computed]: V = cσe^{−aσ} at σ = 38.6 with height ρ_Λ gives m = **282 H₀** (K = −3 ln) and **8.1e3 H₀**
+  (swiss-cheese small cycle, 𝒱 = 1e5); thawing needs ≲ 3 H₀ ⇒ **FAIL**. [derived] dV/dσ ∝ (1 − aσ) < 0, so this
+  potential has no minimum and is a runaway. Together with D1851 (KKLT gives τ_d a slope ~9e92 × the thread's) and the
+  main session's note (σ ≈ 38.6 is not stabilised by KKLT/LVS as used, label C), the dark-cycle modulus is not the thread.
+  This confirms the main session's 10:36 check, now locked.
+- R2 [computed]: tilts of known plateau mechanisms:
+  - K = −ln (k = 1) with 1/τ, 1/τ² gives β = √2 and 2√2, **exactly the Weave's 4D and 10D tilts**;
+  - K = −3 ln gives √(2/3), 2√(2/3);
+  - a fibre modulus at fixed 𝒱 gives 2m/√3 = 0.577, 1.155, 1.732, 2.309.
+  So the Weave's tilts are those of a k = 1 field (dilaton-like or a torus complex-structure modulus U). This is
+  consistent with the codon construction: E(·, s) corrections are y^{−(2s−1)} relative, so β = (2s−1)√2, i.e. 2√2 at
+  s = 3/2 and 4√2 at s = 5/2 (D1854).
+- R3 [computed, forecast-type, counts only on future data]: every tested tilt can thaw into the data region.
+  - fibre 1/√3: (w₀, w_a) = (−0.815, −0.25), (−0.772, −0.30);
+  - √(2/3): (−0.796, −0.27);
+  - 2√2: (−0.807, −0.23), (−0.779, −0.26).
+  All are VIABLE. w₀–w_a do not identify β (agrees with D1627).
+- R4 [derived; numerically confirmed in D1854, Δχ² = 1.5e-8]: A is degenerate with the start value at leading order.
+  "The same A = 7.30 on the late side" has no background-data content unless the origin is pinned to the knot.
+- R5 [estimate + literature, Cicoli–Pedro–Tasinato 1203.6655]: a modulus-type thread's potential is naturally
+  V ~ m₃/₂⁴. At the Weave's m₃/₂ = 2.5e5 GeV that is **1.6e68 ρ_Λ**, with m ~ m₃/₂²/M_P = **1.8e34 H₀**. It would be
+  natural only for m₃/₂ ≈ 2.2 meV, ~1e17 below the Weave's value (which is fixed by the wino chain, D1801).
+- Decision by the lock: **OPEN**. The shape is hosted (k = 1 inverse-power plateaus give the exact tilts; small tilts
+  thaw too), but at the Weave's SUSY scale no known mechanism makes the thread light. This is the F-term problem of
+  stringy quintessence (D1859).
+
+## D1859 (RW11, research) — the R5 obstruction is the known "F-term problem"; nothing Weave-specific escapes it (NULL #1)
+- [literature, partial read] Hebecker–Skrzypek–Wrase, arXiv:1909.08625: "The positive energy density of
+  standard-model SUSY breaking is higher than the depth of all known negative contributions", so a rolling light
+  modulus needs large cancellations, which "appear unavoidable in general". In their LVS fibre setup m_φ ~ W₀/𝒱² must
+  be ≲ 1e-60 M_P, which they cannot reach under control.
+- For the Weave: the split spectrum (scalars 0.47 PeV, m₃/₂ 2.5e5 GeV) makes the SM F-term energy larger than in
+  their low-SUSY cases. So the thread needs a field-dependent cancellation of ~1e-68 on top of the constant one
+  (the 1e-93 uplift tuning of D1789). This is a second tuning, not the same one. Nothing new to compute; recorded.
+
+## D1860 (RW12, locked PREREG_RW12_K1_THREAD) — a k = 1 modular thread ending at i: the Z₂-protected DKL leak is still ≥ 300× too big (FAIL)
+- [computed, 40 digits] G(y) = ln(y|η(iy)|⁴): G′(1) = 1e-50 (Z₂ zero ✓), G″(1) = −1.298, d²G/dφ² = −2.596
+  (dφ = dy/(√2y)).
+- c = α_em·b/(4π)·|d²G/dφ²| = **1.5e-3** (b^{N=2}_em = 1) – 1.8e-2 (b = 12). Even with the field at i today:
+  - T1 = c(0.64)²/2 = **3.1e-4** (b = 1), 310× the ~1e-6 quasar level;
+  - T2 = c·0.467 = 7.0e-4, 420× MICROSCOPE.
+  - The exact G difference agrees within 20 % (3.7e-4).
+  - Verdict by the lock: **FAIL** (fails at b = 1).
+- Reading: a modular-invariant threshold is protected at linear order, but its curvature at i is O(1) in Planck units,
+  so the leak is quadratic and unsuppressed. The only remaining escape is structural: b^{N=2}_em = 0 for the thread's
+  torus, i.e. no visible-sector N = 2 sector on it, plus no U-dependence of the visible matter metrics. That is a
+  condition on a concrete compactification, not something the Weave fixes today. Even then, D1852/D1859 (the height)
+  still stand.
