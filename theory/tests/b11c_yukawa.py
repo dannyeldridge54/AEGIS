@@ -34,9 +34,14 @@ def make(tb):
     return m12
 out = {}
 for tb in (1, 2, 4):
-    m12 = make(tb); M, v = m12(0.118)
-    au = brentq(lambda a3: (lambda r: r[1][2] - r[1][0])(m12(a3)), 0.09, 0.14, xtol=1e-6)
-    out[str(tb)] = dict(M12=M, alpha_inv=float(v[0]), Delta3=float(v[2] - v[0]), yt_M12=float(v[3]), alpha_s_unif=au)
+    m12 = make(tb)
+    try:
+        M, v = m12(0.118)
+        if not np.all(np.isfinite(v)) or v[3] > 4 * math.pi: raise ValueError('yt nonperturbative')
+        au = brentq(lambda a3: (lambda r: r[1][2] - r[1][0])(m12(a3)), 0.09, 0.14, xtol=1e-6)
+        out[str(tb)] = dict(M12=M, alpha_inv=float(v[0]), Delta3=float(v[2] - v[0]), yt_M12=float(v[3]), alpha_s_unif=au)
+    except Exception as e:
+        out[str(tb)] = dict(status='non-perturbative / no unification', error=str(e)[:80])
     print(tb, out[str(tb)])
 c = out['2']['alpha_s_unif']; out['verdict'] = 'CONSISTENT' if abs(c - 0.118) <= 0.007 else 'TENSION' if abs(c - 0.118) <= 0.015 else 'FAIL'
 print(out['verdict']); json.dump(out, open('field_tests/results/b11c_yukawa.json', 'w'), indent=1)

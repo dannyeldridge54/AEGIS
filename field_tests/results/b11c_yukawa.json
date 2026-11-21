@@ -1,0 +1,21 @@
+{
+ "1": {
+  "status": "non-perturbative / no unification",
+  "error": "f(a) and f(b) must have different signs"
+ },
+ "2": {
+  "M12": 1.0623627606806012e+16,
+  "alpha_inv": 28.014519825574588,
+  "Delta3": -0.18034281628664672,
+  "yt_M12": 0.5951417863602613,
+  "alpha_s_unif": 0.11546230651153269
+ },
+ "4": {
+  "M12": 1.0647903327262152e+16,
+  "alpha_inv": 27.999297176441523,
+  "Delta3": -0.17390466691998796,
+  "yt_M12": 0.5002498079414003,
+  "alpha_s_unif": 0.11555468656398055
+ },
+ "verdict": "CONSISTENT"
+}

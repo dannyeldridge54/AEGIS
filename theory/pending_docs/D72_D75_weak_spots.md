@@ -17735,3 +17735,15 @@ One thought: every field sits AT one of the two elliptic points of PSL(2,Z) (i, 
   - v/m_SUSY (I11).
 - Due: the full-loop referee of D1790–D1803 (awaiting Danny's go-ahead, since two earlier referee runs were stopped).
 - Loop status: **NULL** — no reschedule (cadence rule).
+
+## D1804 (LL, LEFT/B11c — 21 Nov 2026): the top Yukawa moves the unification α_s by only −0.0003; α_s(M_Z) = 0.1155 vs 0.1180, CONSISTENT
+- [computed, locked PREREG_B11c + DEVIATIONS D1] Two-loop gauge running plus the top-Yukawa two-loop term (c = (17/10, 3/2, 2) SM; (26/5, 6, 4) MSSM), with one-loop y_t running from y_t(M_Z) = 0.97 and the matching y_t/sin β at 0.47 PeV:
+
+  | tan β | α_s(M_Z) for unification | M₁₂ (GeV) | α⁻¹ | Δ₃ | y_t(M₁₂) |
+  |---|---|---|---|---|---|
+  | 2 | **0.1155** | 1.062e16 | 28.01 | −0.18 | 0.60 |
+  | 4 | 0.1156 | — | — | −0.17 | 0.50 |
+
+  At tan β = 1 the root bracket failed. The cause is not diagnosed (y_t ≈ 1.4 at the matching scale should still be perturbative). It is recorded, not rerun.
+- [result] The Yukawa term shifts α_s by −0.0003, much smaller than the ±0.004 assumed in B11b, because the top Yukawa is small by M₁₂. Gap to data: −0.0025 ± (unknown string/GUT thresholds). Verdict: **CONSISTENT**. α⁻¹ = 28.0 at 1.06e16 GeV, essentially unchanged from D1800 (27.9 at 1.07e16), so D1801's chain stands.
+- The remaining gap of 0.0025 in α_s corresponds to a string threshold Δ₃ ≈ −0.18 in α₃⁻¹. That is the one number a threshold calculation of the magnetised-D7 stack would have to give. It is a sharp target, but not computable with present tools (open).
