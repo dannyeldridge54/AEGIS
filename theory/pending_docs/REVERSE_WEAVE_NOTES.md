@@ -51,3 +51,14 @@ V = V_L(1 − A e^{−βφ}), A = 7.30, published doi:10.5281/zenodo.24380387). 
   so C6 = 0 is an assumption here, not a quoted result.
 - Reading: "thread on the dark D7 cycle ⇒ sequestered" is WRONG as a tree-level argument: Kähler mixing
   through the volume leaks. The thread has to be a volume-preserving direction (→ RW3), not τ_dark itself.
+
+## D1850a (correction to D1850, 21 Nov 2026; from the referee of D1790–D1803, relayed by the main session)
+- D1850 used the axion decay constant f = √3/(2σ) M_P (from D1793/D1795). For K = −3 ln(T+T̄) with an
+  instanton e^{−2πT} the correct value is **f = √(3/2)/(2πσ) M_P**, 4.44× smaller. [computed] At σ = 38.6:
+  f = 5.05e-3 M_P, m = **282 H₀** (281 H₀ at σ_Λ = 38.49, the two-loop value with W₀ = 1.4e-8, 𝒱 = 1.0e5).
+  The f needed to stay frozen (≈ 1.42 M_P for m = H₀) is unchanged.
+- The conclusion of D1850 is unchanged and stronger: an axion with f < M_P cannot be the dark energy, so the
+  saxion-type plateau thread is the only dark-energy carrier left. D1850 is kept as written.
+- Also noted (main session): the dark modulus at σ ≈ 38.6 is NOT stabilised by KKLT/LVS as used (label C).
+  This agrees with D1851's consistency check (a τ_d that moves 𝒱 gets a slope ~9e92 × the thread's).
+  D1851 and RW3 use σ_d = 38.6; with 38.49 the RW2 ζ changes by (38.49/38.6)^{3/4} − 1 = −0.2 %, verdict unchanged.
