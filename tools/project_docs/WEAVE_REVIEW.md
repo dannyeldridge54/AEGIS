@@ -8,7 +8,7 @@ Every fingerprint in the compass votes on the knobs it pulls. Three weightings g
 | b_prime | **LOWER** | -3.00 | 2.63 | yes | Delta3 after Higgs pair + gauge - (↑!) |
 | brane threshold | **RAISE** | +3.00 | 2.63 | yes | Delta3 after Higgs pair + gauge + (↑!) |
 | tan_beta | **RAISE** | +1.00 | 0.12 | yes | M_N vs leptogenesis window top + (●) |
-| Delta3 threshold | **RAISE** | +1.00 | 0.55 | yes | alpha_s(M_Z) single-stack (no threshold) + (↑) |
+| Delta3 threshold | **RAISE** | +1.00 | 0.43 | yes | alpha_s(M_Z) single-stack (no threshold, +top-Yukawa 2-loop) + (↑) |
 | non-universal threshold | **RAISE** | +1.00 | 2.87 | yes | S-T seam: supergravity-form threshold (non-universal part) + (↑!) |
 | split stacks (f3 != f2) | **RAISE** | +1.00 | 2.87 | yes | S-T seam: supergravity-form threshold (non-universal part) + (↑!) |
 | M12 | **RAISE** | +1.00 | 0.21 | yes | proton lifetime [yr] + (●) |

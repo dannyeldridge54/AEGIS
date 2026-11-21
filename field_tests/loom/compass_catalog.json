@@ -208,22 +208,22 @@
    "id": 12,
    "ring": 2,
    "notch": "forces",
-   "quantity": "alpha_s(M_Z) single-stack (no threshold)",
-   "value": 0.1142,
+   "quantity": "alpha_s(M_Z) single-stack (no threshold, +top-Yukawa 2-loop)",
+   "value": 0.11401,
    "spread": null,
    "target": [
     0.118,
-    0.0009
+    0.0010653168542738823
    ],
    "kind": "data",
    "direction": "\u2191",
-   "headroom": -2.2222222222222197,
+   "headroom": -1.745364568290407,
    "unit": "\u03c3",
-   "pull": -4.22222222222222,
+   "pull": -3.745364568290407,
    "knobs": {
     "Delta3 threshold": "+"
    },
-   "source": "D1929 run 1; valid only under the single-stack assumption (D1942)",
+   "source": "D1944 (th err 0.00057); valid only under the single-stack assumption (D1942)",
    "note": "d alpha_s / d ln m3/2 = -0.00290 (measured, \u00b110 %): wants m3/2 DOWN; opposes the wino arrow"
   },
   {
@@ -523,7 +523,7 @@
   "Delta3 threshold": {
    "up": [
     [
-     "forces: alpha_s(M_Z) single-stack (no threshold)",
+     "forces: alpha_s(M_Z) single-stack (no threshold, +top-Yukawa 2-loop)",
      "+",
      "\u2191"
     ]

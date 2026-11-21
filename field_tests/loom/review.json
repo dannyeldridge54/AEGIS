@@ -23,12 +23,12 @@
   },
   "Delta3 threshold": {
    "net": 1.0,
-   "spread": 0.5499999999999995,
+   "spread": 0.427053798290689,
    "all_three_agree": true,
    "direction": "RAISE",
    "contested": false,
    "voters": [
-    "alpha_s(M_Z) single-stack (no threshold) + (\u2191)"
+    "alpha_s(M_Z) single-stack (no threshold, +top-Yukawa 2-loop) + (\u2191)"
    ]
   },
   "b_prime": {

@@ -19191,3 +19191,14 @@ Danny interrupted the D1930 pulse run partway through, and it produced no result
 - **Verified verbatim** against the arXiv abstract of 0901.4350: "We also study D3/D7 models and discuss discrepancies with the effective field theory analysis."
 - **Not yet verified verbatim:** the internal phrase "unable to match onto the KL field theory formula" and the Eq. 194/231 details. These came through a fetch summariser (D1938). They are labelled *paraphrase, unverified* until the PDF §5.2.1 is read directly.
 - The gist is confirmed: D3/D7 thresholds are not matched to Kaplunovsky–Louis. D1938's use is downgraded to "the abstract confirms the discrepancy".
+
+## D1944 — Loom tick 21: α_s theory error, the top-Yukawa two-loop term — FAIL stands (locked PREREG_D1944)
+- **TRIANGULATE:** three readings of the theory error.
+  - (1) The computed top-Yukawa two-loop shift: **−0.00021** (it lowers α_s).
+  - (2) Gluino ± 20 %: ± 0.00053.
+  - (3) The engine's own label: ± 0.004. This label was **too conservative by ×7** and is replaced by the computation.
+  - The computed σ_th = 0.00057, from (1) and (2) in quadrature.
+- **GUARD:** validation passes (Yukawa term off reproduces 0.11422).
+- **TEST:** α_s = **0.11401**. The pull is −4.43σ on the experimental error only, and **−3.75σ with the theory error. FAIL**, under the single-stack assumption (D1942).
+- **JUDGE:** the theory error does not rescue α_s. The single-stack Weave misses α_s at about 3.7σ. The split-stack fit (D1940) stays the only way through, and it costs predictivity.
+- **COMPASS:** the α_s row is updated to 0.1140 ± 0.0006 (th). The strong-coupling seam still points to a non-universal threshold or split stacks.

@@ -15,7 +15,7 @@ Legend: ● on target (inside the bar by > 0.3 dex or < 1σ); ◔ passes but thi
 | 9 | 1 | leptons | Koide delta | 0.2222 | ○ |  | — | v4 | TRUST |
 | 10 | 2 | spectrum | wino M2 [GeV] | 686.5 | ◔ | 0.02 dex | m3/2 + | v4 | marginal: wants m3/2 UP |
 | 11 | 2 | spectrum | gluino M3 [GeV] | 4926 | ● | 0.33 dex | m3/2 + | v4 |  |
-| 12 | 2 | forces | alpha_s(M_Z) single-stack (no threshold) | 0.1142 | ↑ | -2.22 σ | Delta3 threshold + | D1929 run 1; valid only under the single-stack assumption (D1942) | d alpha_s / d ln m3/2 = -0.00290 (measured, ±10 %): wants m3/2 DOWN; opposes the wino arrow |
+| 12 | 2 | forces | alpha_s(M_Z) single-stack (no threshold, +top-Yukawa 2-loop) | 0.114 | ↑ | -1.75 σ | Delta3 threshold + | D1944 (th err 0.00057); valid only under the single-stack assumption (D1942) | d alpha_s / d ln m3/2 = -0.00290 (measured, ±10 %): wants m3/2 DOWN; opposes the wino arrow |
 | 13 | 2 | forces | Delta3 after Higgs pair + gauge | -0.09424 | ↑! | 0.28 dex | b_prime -, brane threshold + | v4 (D1881b) | needs +0.044 more |
 | 14 | 2 | forces | alpha_s with S at i (self-consistent spectrum) | 0.1112 | ↑ | -5.56 σ | S vacuum rho | D1929 | S at i pushes the wrong way |
 | 15 | 2 | forces | S-T seam: supergravity-form threshold (non-universal part) | 1e-09 | ↑! | -7.64 dex | non-universal threshold +, split stacks (f3 != f2) + | D1938 (Conlon-Palti 0901.4350) | universal on one stack: cancels in Delta3; plotted as 1e-9 |
@@ -35,7 +35,7 @@ Legend: ● on target (inside the bar by > 0.3 dex or < 1σ); ◔ passes but thi
 
 - **tan_beta**: wants ↑ from neutrinos: M_N vs leptogenesis window top; wants ↓ from none.
 - **m3/2**: wants ↑ from spectrum: wino M2 [GeV]; spectrum: gluino M3 [GeV]; wants ↓ from none.
-- **Delta3 threshold**: wants ↑ from forces: alpha_s(M_Z) single-stack (no threshold); wants ↓ from none.
+- **Delta3 threshold**: wants ↑ from forces: alpha_s(M_Z) single-stack (no threshold, +top-Yukawa 2-loop); wants ↓ from none.
 - **b_prime**: wants ↑ from none; wants ↓ from forces: Delta3 after Higgs pair + gauge.
 - **brane threshold**: wants ↑ from forces: Delta3 after Higgs pair + gauge; wants ↓ from none.
 - **non-universal threshold**: wants ↑ from forces: S-T seam: supergravity-form threshold (non-universal part); wants ↓ from none.

@@ -1,0 +1,15 @@
+{
+ "alpha_s_no_yukawa": 0.1142191896600088,
+ "alpha_s_with_yukawa": 0.11400925504306343,
+ "yukawa_shift": -0.00020993461694536475,
+ "theory_readings": {
+  "yukawa": 0.00020993461694536475,
+  "spectrum_20pc": 0.0005288564933610882,
+  "engine_label": 0.004
+ },
+ "sigma_theory_computed": 0.0005690006449576167,
+ "pull_exp_only": -4.434161063262847,
+ "pull_with_theory": -3.7479438518387456,
+ "valid": true,
+ "verdict": "FAIL"
+}

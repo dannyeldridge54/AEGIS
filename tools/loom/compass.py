@@ -41,7 +41,7 @@ fp(1, 'leptons', 'Koide delta', 2 / 9, None, 'input', 'v4', {}, note='TRUST')
 m32 = g('gravitino')['value']
 fp(2, 'spectrum', 'wino M2 [GeV]', g('wino')['value'], 660.0, '>', 'v4', {'m3/2': '+'}, note='marginal: wants m3/2 UP')
 fp(2, 'spectrum', 'gluino M3 [GeV]', g('gluino')['value'], 2300.0, '>', 'v4', {'m3/2': '+'})
-fp(2, 'forces', 'alpha_s(M_Z) single-stack (no threshold)', 0.1142, (0.1180, 0.0009), 'data', 'D1929 run 1; valid only under the single-stack assumption (D1942)', {'Delta3 threshold': '+'},
+fp(2, 'forces', 'alpha_s(M_Z) single-stack (no threshold, +top-Yukawa 2-loop)', 0.11401, (0.1180, (0.0009**2 + 0.00057**2) ** 0.5), 'data', 'D1944 (th err 0.00057); valid only under the single-stack assumption (D1942)', {'Delta3 threshold': '+'},
    note='d alpha_s / d ln m3/2 = %+.5f (measured, ±10 %%): wants m3/2 DOWN; opposes the wino arrow' % das_dlnm)
 fp(2, 'forces', 'Delta3 after Higgs pair + gauge', g('Delta_3 after')['value'], -0.05, '>', 'v4 (D1881b)', {'b_prime': '-', 'brane threshold': '+'}, note='needs +0.044 more')
 fp(2, 'forces', 'alpha_s with S at i (self-consistent spectrum)', 0.1112, (0.1180, 0.0009), 'data', 'D1929', {'S vacuum': 'rho'}, note='S at i pushes the wrong way')
