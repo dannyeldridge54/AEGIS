@@ -72,7 +72,7 @@ The solution is carried across a band of width λ in Re T_vis by one rank N, the
 | I4 | m₃/₂ (or the wino mass) | SUSY, dark matter | DERIVED from (C, α⁻¹, N, χ) by the master relation (D1772); (N, χ) = (7, ≈50) |
 | I5 | Koide scale (one lepton mass) and δ = 2/9 | leptons | δ: no derivation exists in the literature; not the thawing axion (would drift m_e/m_μ); Berry phase C-δ only (D1768) |
 | I6 | neutrino masses (Σm_ν, m₁ = 0) | neutrinos | seesaw M_N and Yukawas [OPEN] |
-| I7 | quark O(1) couplings (12) and τ_q's class | quarks | classes now: up rung 8, down half-rung (m ≈ ½); couplings near-equal (×2) suffice (D1777); the half-rung's origin (double cover, U18) open |
+| I7 | quark O(1) couplings (12) and τ_q's class | quarks | classes FIXED: up m = 8, down m = ½ (computed minimum |ε| = 0.0457, D1778; half-integer class = double cover branched at i); 12 near-equal couplings (×2) fit all 8 observables (D1777) |
 | I8 | V_L (the size of Λ) and the thread's start | dark energy | [OPEN — the cosmological-constant problem] |
 | I9 | m_A′, ε (dark force) | dark matter | α_D DERIVED = 0.035 at 12.8 GeV from a twin dark cycle (D1769, C); m_A′ and ε still free |
 | I10 | the family flux | generations | |M| = 9 on T²/Z₃ (exists only at τ = ρ): the smallest flux where EVERY Z₃ sector has three modes (3/3/3) ⇒ three families and c = 9 (D1776, P-democratic-flux; zero-mode count to verify) |
