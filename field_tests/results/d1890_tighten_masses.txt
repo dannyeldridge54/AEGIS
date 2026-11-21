@@ -1,0 +1,9 @@
+arrow: u* = 0.0546 (centre file 0.0550)   total strain chi2 = 1.93 over 7 sectors
+  neutrino step = u*                     strain  +0.90 
+  lepton m_e/m_tau                       strain  +0.87 
+  Delta_3 (tol 0.05)                     strain  -0.46 
+  down-quark step = u*                   strain  +0.26 
+  Koide Q (1% tol)                       strain  +0.24 
+  lepton m_mu/m_tau                      strain  -0.12 
+  thread alpha drift (bound 1.66e-6)     strain  +0.00 
+  [report only] up-quark step = u*       strain  +4.13
