@@ -17609,3 +17609,22 @@ One thought: every field sits AT one of the two elliptic points of PSL(2,Z) (i, 
 - **What stays true:** the visible cycle 21.1 (forces, from unification) and its chain (x, T_R, N = 7, wino) are untouched. The dark cycle is now an independent size ≈ 38.6, an INPUT, and Λ moves back to "set by a cycle size", no longer "shared with the forces". U19/U12 are downgraded. α_D 0.035 → 0.022 must be propagated wherever used (SIDM C3 conditional still holds; direct-detection numbers scale with α_D).
 - Way back (a new postulate, NOT a rescue, label C): if the dark-cycle instanton is sequestered from W₀ (no cross term, e.g. a separate gaugino condensate whose W₀-coupling vanishes by a symmetry), the D1788 reading returns. No mechanism is known; logged as open.
 - Kills/next: a referee check of the cross-term derivation for a multi-modulus K (the dark cycle as a blow-up or second Kähler modulus changes the 4σ factor by O(1), i.e. ±0.37 in σ, which does not change the verdict).
+
+## D1794 (pp, CENTRE — 21 Nov 2026): no known way to keep the W₀ cross term away from the dark instanton, so Re T_dark ≈ 34–44 under every standard scaling
+- [literature] Svrcek, hep-th/0607086 ("Cosmological constant and axions in string theory"):
+  - Without low-energy SUSY breaking: V ~ M⁴ e^{−S}(1 − cos a).
+  - With SUSY breaking through W₀: V ~ m_S² M² e^{−S}, the interference (cross) term.
+  - No e^{−2S} form appears, and no suppression of the cross term is offered.
+  - The dark-energy action is S ≈ 210–290, and for IIB D7 (a D3-instanton) S ~ 240.
+- [estimate, arithmetic in code] Dark-cycle size needed for ρ_Λ = 7.1e-121 M_P⁴ (a = 2π, S = 2πσ):
+
+  | scaling | σ_dark |
+  |---|---|
+  | cross term 4aσ e^K W₀ e^{−S} (D1793) | 38.6 (S = 243) |
+  | Kähler-type instanton m₃/₂² M_P² e^{−S} (extra fermion zero modes) | 34.5 |
+  | no SUSY breaking in that sector, M_P⁴ e^{−S} | 44.0 |
+  | only |∂W|² ~ e^{−2S}, which needs W₀'s coupling to vanish (D1788) | 20.6 |
+
+  No mechanism is found for the last row.
+- [verdict] The research is NULL for a sequestering mechanism. The dark cycle sits at σ ≈ 34–44 (S ≈ 217–277, consistent with Svrcek's generic IIB estimate ~240) under every known scaling, so it is NOT the visible cycle (21.1). D1793 stands. U19 becomes "Λ = one hidden instanton with S ≈ 240": standard, not Weave-specific. Label C, not evidence.
+- Side note for the RIGHT ladder: Svrcek's bound δρ ≲ ρ_vac/S² means a single axion carries ≲ 1.7e-5 of ρ_Λ if f ≲ M_P/S. Our f = √3/(2σ) M_P = 0.022 M_P ≈ 5.4 M_P/S sits above that bound's f, so the photon-axion's share needs checking against β = 0.28° (needs Δa ~ f). Queued as D1795.
