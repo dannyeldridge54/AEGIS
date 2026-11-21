@@ -17361,3 +17361,9 @@ Minors (fixes):
 13. B5 wording: nEXO's 5–20 meV is a sensitivity, not a discovery reach; a signal falsifies NO + m₁ = 0 for light-neutrino exchange only.
 Confirmed by the referee: B5 numbers; c_γ/f = 12.09 (D403 form); Re T = 16.5/32.2; x; ΔN*; r; τ_q minima (∝ T_R^{2/3} ✓); K/M = 20.3; the D1757a 4π diagnosis; LRS g = 3, sign + and wrapping factor.
 Status after referee: loop 1's surviving content — U11 magnetised-D7 repair (candidate, E), genesis viable (post-hoc), τ_q window wider, B5 band (P, locked), C3 (conditional), U12 photon-axion (E). Loop 2 starts from these.
+
+## D1762 — LL tick (08:43) / loop 2, RIGHT rung R2: the wino window now depends on the string-scale coupling (PREREG_R2_WINO_MAGD7, locked first)
+- [computed, E — D735's order-of-magnitude rescale] Non-thermal winos (from thermal gravitinos) scale ∝ T_R. At T_R = 4.30e8 GeV (α⁻¹ = 24.3) the wino fraction is 0.171 / 0.308 / 0.759 at 0.66 / 1.0 / 1.85 TeV against the Einasto line limit 0.16 / 0.24 / 0.44 ⇒ **no allowed mass** (fails already at the collider edge, by 7 %, inside the ×2 read-off uncertainty). At T_R = 2.61e8 GeV (α⁻¹ = 40): 0.123 / 0.234 / 0.622 ⇒ **window 0.67–1.02 TeV**.
+- [joint, NEW] The string-scale gauge coupling (α⁻¹ ≈ 24 vs 40, i.e. a SUSY-unified vs a non-SUSY-like value), through x = 9 Re S/α⁻¹ → T_R → gravitinos → winos, decides whether a cuspy Galaxy allows the wino at all. Weak-coupling end (α⁻¹ ≈ 40): wino 0.67–1.0 TeV, a HL-LHC disappearing-track target. Strong end (α⁻¹ ≈ 24): needs a kpc-cored halo (gamma-ray limits ×1e2–1e3 weaker) or a lighter gravitino chain.
+- Negative space: a CTA/H.E.S.S. line at 0.67–1.0 TeV with f ≈ 0.12–0.23 would be the signal; NO wino above ≈ 1.0 TeV for Einasto; for α⁻¹ ≈ 24 a wino found at the collider edge with a cuspy halo would contradict U11's T_R.
+- CENTRE: the joint links L1 (couplings) → L4 (reheating) → R2 (dark matter) — the loop is closing across both ladders.
