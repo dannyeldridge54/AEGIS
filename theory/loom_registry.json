@@ -45,6 +45,9 @@
  },
  "flavour_tau": {
   "def": "the modulus whose distance from a knot sets the residual-charge hierarchy",
-  "status": "NO modular-tau home near rho in Z6-II (D1922/D1923). Candidates: U3 (near i), discrete data, Froggatt-Nielsen spurions (twisted moduli, bulk-brane positions, recombination flavons) needing TWO independent sizes (u_u != u_d); S excluded (no perturbative S-dependence of D7 Yukawas)."
+  "status": "NO modular-tau home near rho in Z6-II (D1922/D1923). Candidates: U3 (near i), discrete data, Froggatt-Nielsen spurions (twisted moduli, bulk-brane positions, recombination flavons). One-spurion viability OPEN (D1925a/D1927: knife-edge NONE at 0.02587; natural one-spurion fits at 0.0259-0.027 per unlocked referee sweep); \"two sizes needed\" UNPROVEN (D1923a). S excluded."
+ },
+ "S_vacuum": {
+  "status": "S at i: inflation PASS (D1926: n_s 0.9704, r 5.46e-4, strict minimum); g_s = 1 CONDITIONAL (D1919a); Lambda_sp tie at rho lost."
  }
 }

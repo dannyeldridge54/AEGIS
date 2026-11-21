@@ -18866,3 +18866,49 @@ Result: **12 PASS (3 PHENOMENOLOGICAL, no geometric home), 2 FAIL (α_s, Δ₃) 
   - A single flavon of size ≈ 0.1 does work. It is a different fit (the step is not derived) and would be a new postulate, so it is not promoted. The flavour postulate cap of 2/2 is reached, so it needs a referee first.
   - Status: quarks stay PHENOMENOLOGICAL; the scoreboard is unchanged.
 - **KEEP:** results in field_tests/results/d1925_onespurion.json/.txt. Next tick 12 is the referee tick; then queue item 3 (inflation with S at i).
+
+## D1927 — REFEREE (Loom tick 12; independent, heterogeneous model) on D1922–D1925 and scoreboard v4 (21 Nov 2026)
+1. **Bookkeeping: PASS.** Every lock precedes its result and both sha256 files verify.
+   - The referee's MINOR (D1925's .txt "not committed") is itself wrong: `git ls-files` shows d1925_onespurion.txt in 634ca10e.
+2. **Reproduction: PASS on arithmetic, MAJOR on robustness.** The run reproduces exactly, and the knife-edge miss (2.005 against the ×2 bar) is confirmed.
+   - The referee also ran an *unlocked* |u| sweep (referee data, not a locked result). The same assignment q_Q = (3/2, 1, 0), q_u = (2, ½, 0), q_d = (½, 0, 0) fits at |u| = 0.0259 (a 0.1 % shift) and at 0.027, with f7 ≈ 23 % and fJ ≈ 66 %.
+   - There are fits at 0.02, none at 0.03–0.04, and 1–8 at 0.05–0.12.
+   - The NONE is therefore a hairline, the rounding difference between 0.02587 and 0.0259.
+3. **Judgement: MAJOR.** D1925 does not show that two sizes are needed. It only shows that one point, 0.5 % over the bar, fails.
+   - The |u| = 0.1 list was post-selected, and its fourth fit has f7 = 4.1 %, below the 5 % bar, so "all natural" is wrong.
+   - A single flavon may enter only as a new, separately locked postulate. The lock needs a log-spaced |u| sweep, a penalty for the free size, and a natural-window-width rule.
+4. **Honesty: MINOR.** The labels are honest. Two lines overclaim:
+   - "two sizes needed … one τ cannot give" (WEAVE_FULL_DERIVATION §3, the v4 docstring, D1923 point 8, D1922a, and the paper's status paragraph);
+   - "unique fit out of 117,649" should read "unique at the fitted sizes".
+
+## D1925a — correction to D1925
+- **TEST** is unchanged: NONE at the locked |u| = 0.02587, a knife-edge miss of 2.005 against ×2.
+- **JUDGE** becomes: "This is no evidence against a single spurion. A 0.1 % change in |u| gives a natural one-spurion fit (referee, unlocked). One-spurion viability is OPEN, with the step size to be determined."
+- "Single-modulus home at that size is excluded" is **withdrawn**.
+- "4 natural fits at 0.1" becomes "4 fits, 3 natural (the fourth has f7 = 4.1 %)".
+
+## D1923a — correction to D1923 point 8 and D1922a
+"Two independent breaking parameters are needed … in any geometry" becomes **"UNPROVEN: D1828 as locked uses two fitted sizes; whether one spurion suffices is open (D1925a)."**
+- D1922a's "need two independent sizes (u_u ≠ u_d)" is downgraded the same way.
+- The v4 docstring (a locked file, not edited) carries the old wording; this note supersedes it.
+- The quark lines stay PHENOMENOLOGICAL: there is still no modular-τ home in Z₆-II.
+
+## D1926 — Loom v3 tick 12 (Mirror-Loom mode): inflation with S ending at i — PASS (locked PREREG_D1926; DEVIATIONS written before the one rerun)
+- **TARGET:** queue item 2 (D1919a requires redoing inflation for S at i).
+- **GATHER:** the P3-S plateau V ∝ G^{SS̄}|∂_S ln E(S,3/2)|² (D1523), on two paths: Re S = 0 (ending at i) and Re S = ½ (ending at ρ).
+- **GUARD:**
+  - Run 1 was **VOID** by the lock's validation: E(ρ) = 8.950 against 8.893. The Fourier non-zero modes were short by a factor of 2.
+  - An independent lattice sum gives E(ρ) = 8.8927 and E(i) = 9.0336. After the fix the series matches both, and S-invariance holds to 30 digits.
+  - The DEVIATIONS file was committed before the rerun.
+- **TEST (rerun):**
+  - V(i) = V(ρ) = 0 to round-off. Both elliptic points are Minkowski vacua of the same potential, so no new uplift is needed at i.
+  - Canonical m²/V₀ at i is (0.193, 3.76), a strict minimum. At ρ it is (0.5625, 0.5625), isotropic as Z₃ requires.
+  - V rises monotonically along Re S = 0 (no barrier).
+  - The plateau is identical on both paths at horizon exit, y* = 55.6 (difference 0 to double precision; the expected size is e^{−2πy*} ~ 1e-152).
+  - Reheating: m_i/m_ρ = 0.586 for the lighter mode, so ΔN* = −0.27 and **Δn_s = −2.1e-4**. **n_s goes 0.9706 → 0.9704** (still 0.9 σ from CMB-SPA+DESI). r rises by 1.1 %, 5.4e-4 → 5.46e-4 (estimate, gravitational decay Γ ∝ m³).
+- **JUDGE:**
+  - Inflation survives S at i. n_s and r are unchanged to within 2e-4.
+  - D762 carries over, because Re S = 0 is also a CP-symmetric line.
+  - What is lost: the Λ_sp tie at ρ (2310.07708).
+  - What remains for D1919 (S at i): g_s = 1 control, still CONDITIONAL.
+- **KEEP:** field_tests/results/d1926_inflation_S_at_i.json/.txt; run 1 kept as *_run1_VOID.*.
