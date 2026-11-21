@@ -18093,3 +18093,8 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
 
   Target 0.222226 ± 7e-6. Nothing lands within 2σ, so the verdict by the lock is **MISS**. The closest is NEAR (4.3 % high): the golden loop, at exactly the Weave's own zero-mode weight.
 - Reading: a path phase is the right KIND of object (rational in radians is possible: 0.9273 = arctan(4/3)·…). The simplest Weave paths do not give 2/9 exactly. The near hit on the golden loop with weight −½ is suggestive of "the lepton key is an angle gathered around the golden loop through i", but it is 1300σ off and was one of 12 tries. It is not evidence. Logged as a hint for a refined path: the loop's period segment depends on the base point; a base point at τ_ν = 1.0685 i (the neutrino offset) or at ρ's nearest approach would change Φ. That is a possible next lock, to be stated BEFORE computing, with a look-elsewhere count.
+
+## D1844 (CENTRE, the outside knob — 21 Nov 2026): NO TIE — V∞^{1/4}/M₁₂ = 0.465–0.475 matches none of 8 knot quantities
+- [computed, locked PREREG_D1844_KNOB] Candidates: Im ρ, |η(ρ)| = 0.801, |η(i)| = 0.768, ½, √(g_s/2), x, 1/g_s, e^{−π/4} = 0.456. None lies in the band (closest e^{−π/4}, 2 % below; ½, 5 % above). Chance per-band hit p = 0.06. Verdict: **NO TIE**.
+- Reading: the outside knob stays an input (A_s), sitting at about half the unification scale. No knot fixes it. Consistent with U22′: the one infinite direction is the only knob, and it is not pinned from inside.
+- Process note (21 Nov 11:47): the referee of D1806–D1836 was stopped from Danny's side before it reported. Per instructions it is not restarted. Loop-4 notes (D1806–D1844) are UNREFEREED, which is flagged in the one-step doc.
