@@ -19037,3 +19037,21 @@ Danny interrupted the D1930 pulse run partway through, and it produced no result
 - **The battery:** tools/project_docs/WEAVE_TEST_BATTERY.md (also in the project). It lists about 75 tests in 7 groups (cosmology, particle physics, flavour, neutrinos, dark matter, gravity, quantum), each tagged by field or interface and by status RUN/FUT/NEED/DONE.
   - First targets are the classic "you missed this" checks: wino γ-lines (H.E.S.S./Fermi), BBN with late gravitino decays, the moduli problem, Higgs mass and stability, muon g−2, SUSY flavour, cosmic strings.
 - **TRIANGULATE:** none (a catalogue, no data mined). **COMPASS:** unchanged.
+
+## D1937 — Loom tick 18: the central-equation knob engine and targeting (Danny 16:49–16:55; locked PREREG_D1937; DEVIATIONS before the targeting rerun)
+- **TARGET:** UFE v4 §8. Three knob equations (K_S, K_T, K_U) feed one central map, and the engine "steers each body to the destination".
+- **GATHER:** tools/weave_knobs.py wraps the chain from KKLT through m₃/₂ and AMSB to the two-loop weave_rg2. Knobs: g_s (K_S); σ_vis, 𝒱, A (K_T); |u| (K_U, decoupled here, I_TU = 0).
+- **TRIANGULATE:** each Jacobian entry d ln O/d ln K was read at 2, 5 and 10 % steps; the centre is the median.
+  - σ_vis: d ln m₃/₂ = −20.18 (floor 0.03), d ln α_s = +0.512 (floor 0.0005), d ln M₁₂ = +6.44, d ln τ_p = +25.8.
+  - g_s: ±0.5 on the spectrum, −0.013 on α_s.
+  - 𝒱: −1 on the spectrum. A: +1 on the spectrum.
+  - All floors are ≤ 1.5 % of the centre.
+- **GUARD:** in run 1 the targeting bracket missed the wino bound (it returned the bracket end). The DEVIATIONS were written first and only the targeting step was rerun.
+- **TEST:**
+  - Targeting is a bisection on σ_vis to 1e-12, against the wino bound of 660 GeV. It gives σ = 20.1893 and m₃/₂ = 2.48e5.
+  - Best α_s = **0.11433 (−4.07σ)**. **Not balanced.**
+  - **Every observable in the chain moves only through m₃/₂**, which is the S–T seam. So no setting of the three knobs closes α_s within the wino bound.
+  - The **missing seam term must supply Δα_s = +0.0037** (Δ₃ ≈ +0.044).
+- **JUDGE:** this quantifies Danny's three-body picture. Each body is steered, and the closest approach leaves a residual of fixed size on S–T.
+  - Seam test, next: does the supergravity-fixed form of the threshold (Kaplunovsky–Louis, applied to brane models in Conlon–Palti 0901.4350, which gives the volume and matter-metric terms and M_X = (M_P/M_s)^{1/3} M_s) supply +0.044? If yes, a parent equation exists. If no, the split is fundamental.
+- **COMPASS:** the m₃/₂ entry now rests on a measured Jacobian (d ln α_s / d ln m₃/₂ = −0.0254). That supersedes the hand-entered −0.0029 per log, which is the same number expressed per ln m₃/₂ times α_s.
