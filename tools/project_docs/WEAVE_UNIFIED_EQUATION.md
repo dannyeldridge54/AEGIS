@@ -66,17 +66,18 @@ The solution is carried across a band of width λ in Re T_vis by one rank N, the
 ## 4. What is still put in by hand (the honest input list)
 | # | input | where it enters | could be derived from |
 |---|---|---|---|
-| I1 | V∞ (sets A_s) | inflation height | species count / volume [OPEN] |
+| I1 | V∞ (sets A_s) | inflation height | INPUT: needs Hubble-scale F_S during inflation; not from late-time W₀ (D1773) |
 | I2 | tilt C (sets n_s) | inflation | now tied to χ and 𝒱 by the master relation (D1772): with N = 7, χ ≈ 50 it is no longer independent of m₃/₂ |
-| I3 | α⁻¹ at the string scale ⇔ Re T_vis | forces | FIXED BY DATA (D1767): α⁻¹ = 28.9 at 7e15 GeV (split-SUSY running) ⇒ Re T_vis = 21.1, T_R = 3.6e8 GeV, M_N ≥ 4.5e10 GeV, wino 0.67–0.71 TeV; theory (LVS SU(N) condensate) gives 26.0–26.7 (N = 4) / 30.6–31.4 (N = 5): not selected |
+| I3 | α⁻¹ at the string scale ⇔ Re T_vis | forces | FIXED BY DATA (D1767): α⁻¹ = 28.9 at 7e15 GeV ⇒ Re T_vis = 21.1, T_R = 3.6e8 GeV, M_N ≥ 4.5e10 GeV, wino 0.67–0.71 TeV; theory: band ladder α⁻¹ = 9/g_s + λN (KKLT, N = 7) — LVS withdrawn (D1767a, D1775) |
 | I4 | m₃/₂ (or the wino mass) | SUSY, dark matter | DERIVED from (C, α⁻¹, N, χ) by the master relation (D1772); (N, χ) = (7, ≈50) |
 | I5 | Koide scale (one lepton mass) and δ = 2/9 | leptons | δ: no derivation exists in the literature; not the thawing axion (would drift m_e/m_μ); Berry phase C-δ only (D1768) |
-| I6 | neutrino masses (Σm_ν, m₁ = 0) | neutrinos | seesaw M_N and Yukawas [OPEN] |
-| I7 | quark O(1) couplings (12) and τ_q's class | quarks | classes FIXED: up m = 8, down m = ½ (computed minimum |ε| = 0.0457, D1778; half-integer class = double cover branched at i); 12 near-equal couplings (×2) fit all 8 observables (D1777) |
+| I6 | neutrino masses (Σm_ν, m₁ = 0) | neutrinos | INPUT: seesaw with M ≈ 1e11 GeV and y ~ 1e-2 (natural, not derived; y_ν = y_ℓ rejected, D1773) |
+| I7 | quark O(1) couplings (12) and τ_q's class | quarks | classes FIXED: up m = 8, down m = ½ (D1778); 12 near-equal couplings needed (not removable, D1779); best known constructions use 7 (D1781); magnetised Yukawas trade them for a Higgs direction and are disfavoured at ρ (D1784–D1786) |
 | I8 | V_L (the size of Λ) and the thread's start | dark energy | LEFTOVER computed (D1788): V_Λ ≈ (2π)² e^{−4π Re T_dark}/(2 Re S 𝒱²) = ρ_Λ at Re T_dark = 20.57 — the same twin-cycle size as the forces, α_D and birefringence; the big cancellation (uplift vs −3e^K|W₀|²) is still assumed, not solved |
 | I9 | m_A′, ε (dark force) | dark matter | α_D DERIVED = 0.035 at 12.8 GeV from a twin dark cycle (D1769, C); m_A′ and ε still free |
-| I10 | the family flux | generations | |M| = 9 on T²/Z₃ (exists only at τ = ρ): the smallest flux where EVERY Z₃ sector has three modes (3/3/3) ⇒ three families and c = 9 (D1776, P-democratic-flux; zero-mode count to verify) |
-| I11 | v = 246 GeV given m₃/₂ (tuning ~4e6) | Higgs | [OPEN — the last factor of the hierarchy] |
+| I10 | the family flux | generations | DERIVED by principle: |M| = 9 on T²/Z₃ (exists only at τ = ρ), families per Z₃ sector = |Z₃| = 3 (verified by the index formula, D1776a) ⇒ c = 9 |
+| I11 | v = 246 GeV given m₃/₂ (tuning ~4e6) | Higgs | INPUT (split-SUSY tuning; no Weave mechanism found, D1764) |
+**Count after loops 1–2 (21 Nov 10:00):** DERIVED or tied: I2 (tilt ↔ χ), I3 (by data + band ladder), I4 (master relation), I8-leftover (twin cycle), I9-α_D, I10 (family flux). STILL INPUT: I1 inflation height · I5 lepton scale + δ = 2/9 · I6 neutrino scale/Yukawas · I7 12 O(1) quark couplings · I8 the big uplift cancellation · I9 m_A′, ε · I11 v/m_SUSY · plus the discrete choices N = 7, χ ≈ 50 (selected by data).
 Compare: the Standard Model + ΛCDM have ~25–30 free numbers. The Weave fixes or ties: n_s/r/α_s relation, Q = 2/3, TM1 angles and δ_CP branch, θ̄ = 0, m_X, ΔN_eff ≈ 0, the reheating chain, the r-invariance, and W₀ from two others; it still hosts the quark couplings and the neutrino and dark-force scales.
 
 ## 5. What would unify it completely (the remaining derivations)
