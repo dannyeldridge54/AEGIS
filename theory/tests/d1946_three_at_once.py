@@ -15,7 +15,7 @@ for p in (1, 2, 3):
     c = math.sqrt(2) * p
     G_NN = m_phi * (c * MN / MP) ** 2 / (16 * math.pi) * ph
     for Ng in (12, 47):
-        G_gg = Ng * dlnf ** 2 * m_phi ** 3 / (128 * math.pi * MP ** 2)
+        G_gg = Ng * dlnf ** 2 * m_phi ** 3 / (64 * math.pi * MP ** 2)  # DEVIATIONS: 64 pi (D1948)
         a['p%d_Ng%d' % (p, Ng)] = G_NN / (G_NN + G_gg)
 br_need = 0.095
 a_pass_natural = any(v >= br_need for k, v in a.items() if k.startswith(('p1', 'p2')))

@@ -1,0 +1,40 @@
+{
+ "a_Br": {
+  "p1_Ng12": 0.01179499530520656,
+  "p1_Ng47": 0.003038173985936103,
+  "p2_Ng12": 0.04556757328203255,
+  "p2_Ng47": 0.012042930390265974,
+  "p3_Ng12": 0.09700186537345007,
+  "p3_Ng47": 0.02669473976217083
+ },
+ "a_pass_natural_p_le_2": false,
+ "b_ratios": {
+  "eta_ratio": 1.0213703132534184,
+  "order_ratio": 0.6666666666666666,
+  "fixed_point_ratio": 0.75
+ },
+ "b_dev": {
+  "eta_ratio": 0.35820520379443943,
+  "order_ratio": -0.11347517730496459,
+  "fixed_point_ratio": -0.0026595744680850686
+ },
+ "b_within_30pc": [
+  "order_ratio",
+  "fixed_point_ratio"
+ ],
+ "A8": {
+  "tau_s": 0.0014204321031656088,
+  "pass_": true,
+  "rule": "hadronic BBN bounds vanish for tau < ~0.1 s (decay before n/p freeze-out/D formation)"
+ },
+ "F10": {
+  "m_T": 10887600.0,
+  "m_flux_min": 258000.0,
+  "bound": 30000.0,
+  "pass_": true,
+  "note": "the dark-energy thread is light by design (sequestered, D1887); its own BBN/fifth-force tests are the five must-tests"
+ },
+ "E2": {
+  "status": "OPEN: H.E.S.S. wino analysis (1808.04388) is \"not reliable below ~1 TeV\"; 0.69 TeV non-thermal wino at 10-40 % of DM has signal \u221d f^2 = 0.01-0.16 of a pure wino; Fermi dwarf / continuum limit needed (next tick)"
+ }
+}

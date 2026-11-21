@@ -19256,3 +19256,42 @@ Script hygiene: line 13 of the script holds a dead placeholder assignment that i
 - **Indirect detection:** Fermi inner-Galaxy data (2507.15934) "robustly rule out all wino masses between 1.85 TeV and the thermal mass", with the wino "less than 50% of the DM at the lower end". Our non-thermal wino is 0.69 TeV at 10–40 % (signal ∝ f² = 0.01–0.16). That is outside their stated robust range, and no limit at 0.7 TeV appears in the fetched text. **E2 stays OPEN, not excluded.**
 - **Knock-on (REVIEW):** the wino arrow strengthens. The derived point sits at the bound, and the D1941 balance point (wino 1.2 TeV, m₃/₂ ×1.77) is the margin-safe alternative. The cost is a new input (σ_vis 20.15 → 19.58).
 - **COMPASS:** the wino row's bar is now 660–700 GeV (INDETERMINATE, ◔/!). Battery B5 and E2 are updated.
+
+## D1948 — REFEREE (tick 23; independent, heterogeneous) on D1940–D1946
+1. **Bookkeeping: PASS.** Lock-before-result ordering is by file mtimes, because the commits fall in the same minute.
+2. **D1940: MINOR.**
+   - The ΔRe T ↔ Δln A conversion is correct.
+   - It needs each visible stack stabilised by its own condensate at the same N and W₀. That is unargued; the condensate is normally a separate hidden stack.
+   - The spread of 0.19 mixes in a post-selected reading.
+3. **D1941: MINOR–MAJOR.**
+   - The m_φ readings are **two, not three**: m_a and m_b are algebraically identical.
+   - m_φ is the plateau scale. The **vacuum curvature mass** still needs checking.
+   - ε_DI is an **upper bound**.
+   - The balance point is **optimiser output**, not evidence.
+4. **D1944: MAJOR (error budget).**
+   - y_t should run with the MSSM β above m_s, and y_t(M_Z) ≈ 0.96.
+   - **Omitted:** DR→MS (about 1e-3) and unknown GUT/string thresholds (about 4e-3). The ±0.004 label was **not** too conservative.
+   - −3.75σ holds **only for exact unification with no thresholds**.
+5. **D1946: MAJOR.**
+   - **Γ(φ → gauge) is a factor 2 too small** (64π, not 128π), so even p = 3 fails.
+   - M_N ∝ (Re S)^p is ill-defined in supergravity.
+   - The channels φ → gauginos, Higgs, gravitinos and moduli are omitted.
+   - **The 3/4 numerology guard is invalid.** The target carries about ±8 %, so the chance of a match is about 50 %, not 2 %.
+   - No mechanism makes A ∝ the number of fixed points.
+   - A8: τ ≈ 2e-3 s, still PASS. F10: PASS, but "flux moduli ≥ m₃/₂" is asserted.
+6. **Review and ledger: MINOR.**
+   - The prefix categories are crude.
+   - There is a stale count (9 against 8).
+   - The gravitino hub is partly structural.
+
+## D1946a / D1944a / D1941a / D1940a — corrections
+- **D1946a.**
+  - Γ_gg is corrected to 64π; the DEVIATIONS file was written first, then the rerun.
+  - **"p = 3 viable" is withdrawn.** The Br(φ → NN) row goes back to ↑!. The omitted channels only lower Br further.
+  - **3/4 becomes "unconstrained coincidence".**
+- **D1944a: α_s has two honest readings.**
+  - Exact unification with no thresholds: **−3.75σ (FAIL)**.
+  - With the unknown thresholds and DR→MS as σ_th ≈ 0.004: **≈ −1σ**.
+  - The FAIL is **conditional**. It becomes a powered test only once the D7 threshold spectrum is computed. The y_t running fix is still owed.
+- **D1941a.** The m_φ readings are two. The vacuum curvature mass still has to be checked. ε_DI is an upper bound. The balance point is optimiser output.
+- **D1940a.** The hidden-stack assumption is stated.
