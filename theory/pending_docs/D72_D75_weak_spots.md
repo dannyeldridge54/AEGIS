@@ -18388,3 +18388,15 @@ Lock: PREREG_D1898_DERIVATION_V2, pushed with theory/weave_derivation_v2.py befo
 Written after the independent referee (D1897) and the corrected rerun (D1898). Every claim in it is tied to a lock and a result file at commit 5835fe36.
 Sections: abstract; postulates and geometry; flavour; forces and spectrum; the single arrow; cosmology and the reverse weave; results table (16 tested lines, 13 pass / 3 fail); referee report; inputs, open problems, withdrawn results and forecasts.
 It is not submitted anywhere. No Zenodo or arXiv without Danny's "Publish".
+
+## D1900 — LEFT (loop restart, research): the Δ₃ threshold in the BRANE picture — the referee's gauge term is heterotic; for D-branes it is a geometric condition (21 Nov 2026)
+Danny 14:03–14:04: "review, research, do the loop … we're going for equilibrium. It may just end up being trust." From now on the loop's goal is EQUILIBRIUM: every sector's strain balanced, with anything that cannot be derived labelled TRUST (an explicit input) and never hidden.
+[literature] Gmeiner–Honecker et al., "Complete gauge threshold corrections for intersecting fractional D6-branes: the Z6 and Z6′ standard models" (arXiv:0910.0843), eq. 62: for brane stacks parallel on one two-torus (an N = 2-type sector) the threshold is Λ = ln(2π v V η⁴(iv)). Here v is the parallel torus's volume, the Kähler modulus in IIA, and V is the one-cycle length; displacements and Wilson lines give the theta-function form. Under T-duality this matches the IIB D9 result with Wilson lines (their ref. [3]).
+Consequences for D1880/D1881b:
+1. **Which modulus.** In IIA the N = 2 threshold depends on the parallel torus's Kähler modulus. T-duality (one circle per T²) maps IIA Kähler ↔ IIB complex structure. So in the Weave's IIB magnetised-D7 picture the dependence is on **U at the knots** (ρ, i). This supports D1816's U-only case, conditional on that T-duality map. The referee's ×18 Kähler-T worry is removed in this picture.
+2. **Which b.** The −C(G) term that the referee added (D1881b) belongs to the heterotic duality-anomaly coefficient. In D-brane models b^{N=2} counts only the multiplets from annuli of branes parallel on that torus. The adjoint (N = 2 vector) term appears only if the visible stack is parallel to its own orbifold/orientifold image on that torus. So whether the gauge term is there is a **geometric condition on the brane angles**, not automatic.
+**Postulate U29 (C):** the visible stacks are tilted (not parallel to their images) on the ρ and i tori, so they have no N = 2 vectors there, while the Higgs pair comes from one parallel brane pair (an N = 2 hypermultiplet) on each plane.
+- Under U29, D1880's minimal content is physical: R = −0.023, α_s = 0.1177.
+- Under the referee's heterotic counting it is R = −0.094.
+**Status:** Δ₃ moves from OPEN to **CONDITIONAL on U29**. The next tick tests U29 against chirality: tilted stacks need nonzero intersection numbers on all three tori. Does that still allow parallel Higgs branes on tori 2 and 3? (Lock first.)
+Sources: arXiv:0910.0843; arXiv:hep-th/0302221 (Lüst–Stieberger; ar5iv text unavailable, not read).
