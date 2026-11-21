@@ -23,7 +23,7 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 |---|---|---|---|---|
 | B1 Koide Q | 2/3 (needs |ε| ≲ 6e-5 at ρ) | m_τ (Belle II, BESIII) | weave_koide / slip | L |
 | B2 TM1 sin²θ₁₂ | 0.3184 | JUNO 6-yr (±0.0015) | Flavour panel | L (strongest near-term test, ~6σ if centre holds) |
-| B3 δ_CP branch | lower branch at s²₂₃ 0.561 | DUNE, Hyper-K | Flavour panel | L |
+| B3 δ_CP branch | lower branch at s²₂₃ 0.561 | DUNE, Hyper-K | Flavour panel | L → **R** (21 Nov 10:24: PREREG_B3_DCP_FUTURE, δ ∈ 255–295° on the TM1 curve) |
 | B4 Σm_ν | 0.0587 eV (NO, m₁ = 0) | DESI DR3 + CMB; KATRIN/Project 8 | engine flavour | L → **R** (21 Nov 10:23: PREREG_B4_SUMMNU — scored in w0waCDM; FAIL if 95 % limit < 0.055 eV, Σ > 0.10 eV at 3σ, or IO at 3σ; m_β = 8.8 meV) |
 | B5 0νββ m_ββ | 1.59–3.80 meV (D1755; fail if a signal > 7.6 meV) | LEGEND-1000, nEXO ⇒ predict NULL | weave_mbb | R (locked PREREG_B5) |
 | B6 CKM fit | hosted (best 1.82, rung 4) | PDG/CKMfitter | weave_ckm, pool | L (locked re-check of the 1.82 point) |
@@ -39,9 +39,9 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 | C1 12.8 GeV asymmetric DM, direct detection | σ_SI below LZ, inside XLZD reach for ε near the ceiling | LZ, XENONnT, XLZD | Hyperion galaxy / engine | L |
 | C2 dark photon | 0.3–12.8 GeV, ε 1e-11 – LZ ceiling | SHiP, NA64, Belle II | to build: dark-photon window tool | T |
 | C3 DM self-interaction σ/m | computable from α_D ≥ 4.7e-4, m_A′ | cluster/dwarf bounds (σ/m < ~1 cm²/g) | to build (arXiv:1403.1077 formulas) | T → **R** (weave_sidm; 21 Nov 10:22: at α_D = 0.022, σ/m ≤ 2e-3 cm²/g for every m_A′, D1795) |
-| C4 no galactic-centre DM annihilation | asymmetric ⇒ none | Fermi GCE | — | L |
+| C4 no galactic-centre DM annihilation | asymmetric ⇒ none | Fermi GCE | — | L → **R** (21 Nov 10:24: PREREG_C4_NO_ANNIHILATION) |
 | C5 wino 0.67–1.0 TeV | disappearing tracks; γ-line | ATLAS/CMS Run 3, HL-LHC; CTA | lhc_*, galaxy γ-line | R |
-| C6 no dark neutron decay | none (D1753 R6) | UCNτ, BL3 beam | — | L |
+| C6 no dark neutron decay | none (D1753 R6) | UCNτ, BL3 beam | — | L → **R** (21 Nov 10:24: PREREG_C6_NO_DARK_NEUTRON) |
 
 ## D. Late universe and gravity
 | Test | Weave number | Data | Tool | Status |
@@ -49,7 +49,7 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 | D1 thawing thread w0, wa | w0 ≈ −0.79 | DESI DR2/DR3, Euclid | Janus late, engine | R |
 | D2 negative space z† | conditional (coupling not detected) | Lyα BAO z 2–3 (DESI) | weave_negspace | L |
 | D3 α drift | ζ ≲ 3.6e-6 needed ⇒ thread sequestered or axion-like | atomic clocks, quasar spectra (ESPRESSO) | Janus clocks | R |
-| D4 equivalence principle | no violation | MICROSCOPE-2 | — | L |
+| D4 equivalence principle | no violation | MICROSCOPE-2 | — | L → **R** (21 Nov 10:24: PREREG_D4_EQUIV, |η| < 1e-18) |
 | D5 cosmic birefringence (21 Nov 10:22: carrier is now the photon-axion on its OWN cycle ≈ 36–39, m 1e-33–9e-32 eV, c_γ ≈ 4.2/Δθ — D1793–D1795; the thread is sequestered) | bridge β² = 2.5e-3 (c_γ/f)²(1+w0) deg² ⇒ c_γ/f ≈ 12 at β = 0.277°; ratio β_reio/β_rec = 0.997–0.999 (locked D404) | ACT+Planck now; LiteBIRD (both bumps) | bridges D403/D404 | R (thread must be axion-like with c_γ/f ≈ 12; LiteBIRD ratio test) |
 | D6 GW speed = c, no extra polarisations | standard | LIGO-Virgo-KAGRA | — | L |
 | D7 Hubble / S8 tensions | not resolved by the thread | SH0ES, JWST, DES/KiDS | Janus | L (honest null) |
