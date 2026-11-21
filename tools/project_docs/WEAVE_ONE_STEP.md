@@ -78,3 +78,5 @@ Evaluating the action at that one point gives:
 **Full pass 21 Nov 11:48 (D1837–D1840):** Koide decides the lepton question — under the quark-lock picture B, Q = 2/3 to data precision happens 7e-5 of the time, so the leptons stay exactly at ρ (picture A); their hierarchy is the main open item. The quark lock stands. The one outside knob (the inflation height) sits at 0.47 × the unification scale (V∞^{1/4} = 4.9e15 GeV). v/m_SUSY remains a tuned input (2.7e-7).
 
 **Referee status (21 Nov 11:47):** D1806–D1844 are UNREFEREED (the loop-4 referee was stopped before reporting); treat these results as provisional until a referee pass.
+
+**The fold is fixed (21 Nov 11:53, D1871):** the knot assignment forces the Z₆-II orbifold (χ = 48 on every lattice), so χ is no longer a free integer: N = 6, χ = 48, A ≈ 0.54, 𝒱 ≈ 4.0e4, W₀ ≈ 5.5e-9. On its corners, each Z₃ sector sits on its own corner of the turnover and the pyramid shuts its odd mode out (D1849, D1870).

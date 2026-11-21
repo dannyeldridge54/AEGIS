@@ -45,3 +45,6 @@ ALL of them sit inside the natural window 0.3–3. So the Weave's chain is compa
 ## 5. What is derived vs open
 - Derived/computed: the corner counts; the multiplication rule; the per-torus assignments (from D1790–D1845); the χ compatibility of every standard fold with N = 6.
 - Open: the Weave's own mixed fold and its χ; whether the 3 corners of the turnover are literally where the 3 lepton families sit (in some orbifold models, families localise at fixed points). That is a lockable test: compare the family count to the fixed points per direction.
+
+## 6. The Weave's own fold (D1871)
+SUSY forces the twists to sum to zero, so the Weave's "Z₃ at ρ on two tori × Z₂ at i on one" is the **Z₆-II orbifold**, twist (1/6, 1/3, −1/2). Its Euler number is **χ = 48 on every lattice** (hep-th/0609014: (25,1), (29,5), (31,7), (35,11)). The chain becomes N = 6, χ = 48, A ≈ 0.54, 𝒱 ≈ 4.0e4, W₀ ≈ 5.5e-9, with the wino and gravitino unchanged. Z₆-II is also the fold behind the heterotic "Mini-landscape" MSSMs.
