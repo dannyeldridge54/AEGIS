@@ -1,4 +1,7 @@
-"""Loom rule 6h: triangulate to convergence, stopping after 7 null rounds in a row (Danny 16:04-16:05).
+"""NOTE (referee D1935): for a DETERMINISTIC boolean, bracket() is plain bisection (x4 per round); its null rounds are vacuous
+(they only start once width < res). The 7-null rule carries evidence only for multi-reader / stochastic readings (fixed_point,
+or bracket with independent readers / seeds). Report bracket results as "bisection to <res>", not as 7-null convergence.
+Loom rule 6h: triangulate to convergence, stopping after 7 null rounds in a row (Danny 16:04-16:05).
 A round is NULL when the centre moves < res AND the spread shrinks < 10 %.
 bracket(f, lo, hi, res): edge where boolean f flips; 3 readings per round at the quarter points.
 fixed_point(readers, x0, res): 3 readers x -> estimate; centre = median; x <- centre."""

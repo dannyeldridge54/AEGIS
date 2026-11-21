@@ -47,7 +47,7 @@ No physical theory can be made irrefutable; a theory that could not be refuted w
 | 3 | r | 5.4e-4 | **P** | **LiteBIRD, CMB-S4 (σ_r ≈ 5e-4)** | r excluded below 2.5e-4, or r > 1.5e-3 | PREREG A1 | R |
 | 3 | running α_s(k) | −9.7e-4 | P | CMB-S4, SPHEREx | outside −1.05e-3 to −0.95e-3 at 3σ | PREREG_A2_RUNNING | R |
 | 3 | f_NL, isocurvature | ≈ 0 | P | SPHEREx, Planck | f_NL^local > 1 at 3σ | PREREG_A4 | R |
-| 3 | **T_R** | **3.7e8 GeV** | I | through N* (n_s) and leptogenesis | no consistent baryogenesis path | to write (ring 3) | **↑! strongest pointing** |
+| 3 | **T_R** | **3.7e8 GeV** | I | through N* (n_s) and leptogenesis | no consistent baryogenesis path | to write (ring 3) | **boxed ≲ 3e9 by gravitino → wino (D1931a)** |
 | 3 | dark matter, asymmetric | m_X = 12.8 GeV | **P** | LZ, XENONnT, XLZD | excluded at 12.8 GeV down to the ε floor, or annihilation seen | PREREG_C1, C4 | R |
 | 3 | dark photon | 0.3–12.8 GeV | P | SHiP, NA64, Belle II | — (a window, not a kill) | PREREG_C2 | R |
 | 3 | ΔN_eff | 0 (never positive) | P | SO, CMB-S4 (σ 0.03) | ΔN_eff > 0 at 3σ | PREREG_A6 | R |

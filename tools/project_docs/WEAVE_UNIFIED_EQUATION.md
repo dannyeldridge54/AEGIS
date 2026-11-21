@@ -66,7 +66,7 @@ v4 rebuilds v3.3 (written this morning) from the record D1806–D1933. Every ter
 2. **Quarks: one Froggatt–Nielsen spurion, |u| ∈ [0.02588, 0.02740]** [PHEN], converged to 7 nulls in D1932.
    - Charges q_Q = (3/2, 1, 0), q_u = (2, ½, 0), q_d = (½, 0, 0).
    - Natural: f7 = 22–23 %, fJ = 61–66 %.
-   - The window contains the six-sector median step 0.027. **Compass: ●.**
+   - The window is narrow (×1.059), with one fixed charge pattern. It contains 0.027 by construction, since the search started there (D1935); u_d = 0.02587 still fails by 0.05 %. **Compass: ○ (measurement).**
    - Its geometric home is OPEN. There is no modular-τ home (D1922, D1923). Candidates: twisted moduli, bulk-brane positions, recombination flavons, and U₃ near i.
    - Secondary window: U32, |u| = 0.063–0.148, with an assignment that varies across it (D1928).
 3. **Charged leptons at ρ.** One stack, three whole rungs (τ 0, μ 1, e 2) [der, modest]. Koide δ = 2/9 and c_e = 0.106 are [TRUST]. **Compass: ○.**
@@ -94,12 +94,12 @@ v4 rebuilds v3.3 (written this morning) from the record D1806–D1933. Every ter
 | wino | 0.687 TeV (bar 0.66) | [der] | ↑ (0.02 dex of headroom, the thinnest) |
 | gluino | 4.93 TeV | [der] | ● |
 | unification M₁₂, α⁻¹ | 1.07e16 GeV, 28.0 | [der] | — |
-| **α_s(M_Z)** | **0.1142** (−4.2 σ; gluino 4.93 TeV, D1929) | [der] | **↑!**; it must come from Δ₃, since m₃/₂ would need ×0.27 |
+| **α_s(M_Z)** | **0.1142** (−4.2 σ; gluino 4.93 TeV, D1929; the scoreboard JSON still carries 0.1147) | [der] | **↑!**; it must come from Δ₃, since m₃/₂ would need ×0.27 |
 | **Δ₃** after Higgs pair + gauge term | **−0.094** (bar −0.05) | [der] | **↑!** |
 | proton lifetime | 1.6e35 yr | [der] | ● |
 | n_s | 0.9706 (data 0.9728 ± 0.0027) | [der] | ● (soft pull: N*, T_R ↑) |
 | r | 5.4e-4 | [der] | ● |
-| **T_R** = x-chain | **3.7e8 GeV** | [E] | **↑! STRONGEST POINTING**: n_s wants ≈ 1.6e12 and thermal leptogenesis wants ≳ 1.8e11, so both point to 1e11–1e12 |
+| **T_R** = x-chain | **3.7e8 GeV** | [E] | **BOXED** (D1931a): gravitino → wino caps T_R at ≲ 3e9 (Ω ∝ T_R, D732). The "strongest pointing" was withdrawn by referee D1935. N* = 50.3 vs T_R still to be cross-checked |
 | leptogenesis | non-thermal (T_R ≪ M_N) | [OPEN] | ↑ |
 | m_X = (Ω_DM/Ω_b) m_p · 28/11 | 12.8 GeV | [der] | ○ (prediction) |
 | ΔN_eff | 0 | [der] | ● |
@@ -132,8 +132,8 @@ v4 rebuilds v3.3 (written this morning) from the record D1806–D1933. Every ter
 | the S-at-i branch | Minkowski, and inflation passes (D1926), but **α_s 0.1112 (−7.5 σ)** fails (D1929). Disfavoured |
 
 ## 6. What closes the UFE (the pulse, from the centre outwards)
-- **Ring 0, the rung step:** CONVERGED (D1932). The quark spurion sits on the median.
-- **Ring 3, T_R:** the strongest pointing. Find which UFE input moves T_R up about 3 dex. The candidates are the x-chain, the decay channel and the inflaton coupling.
+- **Ring 0, the rung step:** measured (D1932, D1932a). The one-spurion window is ×1.059 wide with one assignment; its median match is by construction.
+- **Ring 3, T_R:** boxed by gravitinos (≲ 3e9). Derive non-thermal leptogenesis within the box, and cross-check N*.
 - **Ring 2, forces:** a brane-native Δ₃ path to −0.05. That is the only remaining route for α_s.
 - **Ring 1, neutrinos and leptons:** thin margins (the neutrino ratio at 0.12 dex). Koide δ is [TRUST].
 - **Ring 4, the reverse thread:** a non-Kähler slope source.

@@ -14,7 +14,7 @@ def fp(ring, notch, qty, value, target, kind, src, knobs, spread=None, note=''):
     elif kind in ('>', '<'):
         ok = value > target if kind == '>' else value < target
         head = (math.log10(value / target) if kind == '>' else math.log10(target / value)); unit = 'dex'
-        d = '●' if ok and head > 0.3 else (('↑' if kind == '>' else '↓') + ('' if ok else '!'))
+        d = ('●' if head > 0.3 else '◔') if ok else (('↑' if kind == '>' else '↓') + '!')
         pull = None
     else: d, head, unit, pull = '○', None, '', None      # prediction / input: no target yet
     cat.append(dict(id=len(cat) + 1, ring=ring, notch=notch, quantity=qty, value=value, spread=spread, target=target, kind=kind,
@@ -24,11 +24,11 @@ def amsb(m32):
     mg = 3 * 0.092 / (4 * math.pi) * m32 * (4926.4 / (3 * 0.092 / (4 * math.pi) * 257945.66)); return dict(m_wino=686.51 * m32 / 257945.66, m_gluino=mg, m_scalar=4.7e5 * m32 / 257945.66)
 a_up, a_dn = weave_rg2(amsb(257945.66 * 1.1))['alpha_s_unif'], weave_rg2(amsb(257945.66 / 1.1))['alpha_s_unif']
 das_dlnm = (a_up - a_dn) / (2 * math.log(1.1))
-Ns = 50.3; dns_dN = 2 / Ns ** 2                           # plateau n_s = 1 - 2/N*
+Ns = 50.3; dns_dN = (1 - 0.9706) / Ns                     # D1935: (1-n_s)/N* ~ 5.9e-4 (estimate; to be measured on the plateau), NOT 2/N*^2
 dN_dlnTR = 1 / 3                                          # instant-reheating-like scaling, w=0 -> dN*/dlnT_R ~ 1/3 (estimate)
 # ---- ring 0: the centre (fold + shared rung step)
-fp(0, 'centre: rung step', '|u| one-spurion window centre (7-null converged)', 0.026631, (0.027, 0.0008), 'data', 'D1932', {'u': '0'}, spread=0.0015, note='window [0.02588, 0.02740] contains the median; one fixed assignment; f7 22-23 %, fJ 61-66 %')
-fp(0, 'centre: rung step', '|u| single-flavon natural window centre', math.sqrt(0.063 * 0.148), (0.027, 0.0012), 'data', 'D1928', {'u': '+'}, note='SECONDARY window (U32, assignment varies); primary one-spurion window sits on the median (D1932)')
+fp(0, 'centre: rung step', '|u| one-spurion window (bisected to 2e-10)', 0.026631, None, 'info', 'D1932/D1932a', {}, spread=0.0015, note='window [0.02588, 0.02740], width x1.059, ONE fixed assignment, f7 22-23 %, fJ 61-66 %. Contains 0.027 BY CONSTRUCTION (search started there, D1935); upper edge is a x2-cut artefact; window non-monotone (0.0203 isolated point)')
+fp(0, 'centre: rung step', '|u| single-flavon window centre (U32)', math.sqrt(0.063 * 0.148), None, 'info', 'D1928', {}, note='SECONDARY window, assignment varies')
 fp(0, 'centre: rung step', 'lepton slip / down slip', g('lepton slip')['value'], (1.0, 0.05), 'data', 'v4 (D1832)', {'u': '0'}, note='same-lock fit; conflicts with Koide at rho')
 # ---- ring 1: flavour
 fp(1, 'quarks', 'f7 (two-size lock)', g('quark 7-observable')['value'], 0.05, '>', 'd1829_cp.json', {'u_u': '0', 'u_d': '0'}, note='PHENOMENOLOGICAL')
@@ -47,10 +47,11 @@ fp(2, 'forces', 'Delta3 after Higgs pair + gauge', g('Delta_3 after')['value'], 
 fp(2, 'forces', 'alpha_s with S at i (self-consistent spectrum)', 0.1112, (0.1180, 0.0009), 'data', 'D1929', {'S vacuum': 'rho'}, note='S at i pushes the wrong way')
 fp(2, 'forces', 'proton lifetime [yr]', g('proton')['value'], 2.4e34, '>', 'v4', {'M12': '+'})
 # ---- ring 3: inflation / cosmology
-fp(3, 'inflation', 'n_s', g('n_s')['value'], (0.9728, 0.0027), 'data', 'v4', {'N*': '+', 'T_R': '+'}, note='Δn_s needed +0.0022 ⇒ ΔN* ≈ +%.1f ⇒ T_R up' % (0.0022 / dns_dN))
+fp(3, 'inflation', 'n_s', g('n_s')['value'], (0.9728, 0.0027), 'data', 'v4', {}, note='inside its band (0.8σ): no pull counted (D1935); N* = 50.3 not yet cross-checked against T_R')
 fp(3, 'inflation', 'n_s with S at i', 0.9704, (0.9728, 0.0027), 'data', 'D1926', {'S vacuum': 'rho'})
 fp(3, 'inflation', 'r', g('r')['value'], 0.036, '<', 'v4', {})
-fp(3, 'cosmology', 'T_R vs M_N (thermal leptogenesis)', g('T_R')['value'], g('heavy neutrino')['value'], '>', 'v4 (D1897)', {'T_R': '+', 'M_N': '-'}, note='fails by 2.7 dex ⇒ non-thermal; T_R arrow agrees with n_s')
+fp(3, 'cosmology', 'T_R vs M_N (thermal leptogenesis)', g('T_R')['value'], None, 'info', 'v4 (D1897)', {}, note='a bound the model sidesteps (non-thermal leptogenesis): NOT a pull (D1935)')
+fp(3, 'cosmology', 'non-thermal wino Omega from gravitinos (Omega ∝ T_R)', 0.017 * g('T_R')['value'] / 3.2e8, 0.12, '<', 'D732 (Y3/2 ∝ T_R)', {'T_R': '-'}, note='D732: Omega 0.017 at T_R 3.2e8 (M2 0.66 TeV), 0.11 at 3.0e9 ⇒ T_R capped at ~3e9')
 fp(3, 'cosmology', 'Delta N_eff', 1e-6, 0.17, '<', 'v4', {}, note='0 exactly; plotted as 1e-6')
 fp(3, 'cosmology', 'dark-matter mass [GeV]', g('dark-matter')['value'], None, 'prediction', 'v4', {})
 # ---- ring 4: reverse thread
@@ -61,11 +62,11 @@ from collections import defaultdict
 pull = defaultdict(list)
 for c in cat:
     for k, s in c['knobs'].items():
-        if s in '+-' and c['direction'] != '○': pull[k].append((c['notch'] + ': ' + c['quantity'], s, c['direction']))
+        if s in '+-' and c['direction'] not in ('○',): pull[k].append((c['notch'] + ': ' + c['quantity'], s, c['direction']))
 compass = {k: dict(up=[p for p in v if p[1] == '+'], down=[p for p in v if p[1] == '-'], tension=len({p[1] for p in v}) > 1) for k, v in pull.items()}
 json.dump(dict(catalog=cat, compass=compass, sensitivities=dict(dalpha_s_dlnm32=das_dlnm, dns_dNstar=dns_dN)), open('field_tests/loom/compass_catalog.json', 'w'), indent=1, default=str)
 L = ['# The Weave compass (Danny 16:06): every measurement fingerprinted with a direction and a vector', '',
-     'Legend: ● on target (inside the bar with margin); ↑ / ↓ the value must move up / down; ! the bar fails now; ○ prediction or input (no target yet). Headroom is in σ (data) or dex (bounds); smaller means tighter.', '',
+     'Legend: ● on target (inside the bar by > 0.3 dex or < 1σ); ◔ passes but thin; ↑! / ↓! fails now and must move up / down; ↑ / ↓ (data) outside 1σ; ○ prediction, input or info (no pull). Corrected after referee D1935. Headroom is in σ (data) or dex (bounds); smaller means tighter.', '',
      '| # | ring | notch | quantity | value | dir | headroom | knobs it pulls | source | note |', '|---|---|---|---|---|---|---|---|---|---|']
 for c in cat:
     hv = '' if c['headroom'] is None else '%.2f %s' % (c['headroom'], c['unit'])
@@ -79,8 +80,8 @@ need_as = 0.1180 - 0.1142; dln = need_as / das_dlnm; wino_new = 686.5 * math.exp
 dN = 0.0022 / dns_dN; TR_ns = 3.7e8 * math.exp(dN / dN_dlnTR)
 L += ['', '## Interactions (where two arrows meet one knob)', '',
       '- **m3/2 cannot fix α_s.** Closing α_s needs Δ ln m3/2 = %.2f (m3/2 ×%.2f). That puts the wino at %.0f GeV, far below the 660 GeV bar, which already has only 4 %% room. So α_s must come from a threshold (Δ₃), not from the spectrum.' % (dln, math.exp(dln), wino_new),
-      '- **T_R: two independent arrows agree.** Thermal leptogenesis needs T_R ≳ M_N = 1.8e11 GeV (×500 up). n_s at the data centre needs ΔN* ≈ +%.1f, which means T_R ≈ %.1e GeV (×%.0f up, with dN*/d ln T_R = 1/3 for w = 0 reheating, an estimate). Both point to **T_R ~ 1e11–1e12 GeV**, about 3 decades above the derived 3.7e8.' % (dN, TR_ns, TR_ns / 3.7e8),
-      '- **u: flavour sits ON the median (D1932).** The 7-null converged one-spurion window [0.02588, 0.02740] contains the six-sector median 0.027 (its centre 0.02663 is 1.4 % below). One fixed charge pattern covers it, natural throughout. The broad single-flavon window (0.063–0.148, U32) is secondary.']
+      '- **T_R is boxed, not pulled (corrected D1935).** Gravitino→wino production caps T_R at ~3e9 GeV (Ω ∝ T_R; 0.11 at 3e9, D732). Thermal leptogenesis (T_R ≳ M_N) is a bound the model sidesteps, and n_s already sits inside its band. So T_R cannot rise 3 dex, and leptogenesis must be non-thermal. The earlier "two arrows agree, T_R ~ 1e11–1e12" is withdrawn.',
+      '- **u (corrected D1935):** the one-spurion window [0.02588, 0.02740] is narrow (×1.059) and has one fixed charge pattern, natural throughout. That it contains 0.027 is by construction (the search started there), so it is not a convergence. u_d = 0.02587 still fails by 0.05 %. The window is non-monotone in u (isolated point 0.0203; U32 0.063–0.148).']
 L += ['', 'Knob convention: "+" means this measurement wants the knob raised, "−" lowered.']
 L += ['', 'Measured: dα_s/d ln m₃/₂ = %+.5f; dn_s/dN* = %.2e.' % (das_dlnm, dns_dN)]
 open('tools/project_docs/WEAVE_COMPASS.md', 'w').write('\n'.join(L) + '\n')

@@ -18987,3 +18987,43 @@ Danny interrupted the D1930 pulse run partway through, and it produced no result
 - The CubeMind loop had re-armed itself (B7, 22:54 UTC). It is disabled again, per D1933 (Danny 16:21).
 - **TRIANGULATE:** none. This tick rewrote a document; it did not mine new data.
 - **COMPASS:** unchanged. The arrows were copied from compass_catalog.json.
+
+## D1935 — REFEREE (tick 16; independent, heterogeneous) on D1926, D1928, D1929, D1931–D1934 and UFE v4
+1. **Bookkeeping: PASS.** All locks precede their results, the checksums verify, and the DEVIATIONS were written before the reruns. Caveat: D1929's DEVIATIONS changed the baseline after run 1's heavy value was visible. The heavy spectrum and the rule are untouched, so the verdict is robust.
+2. **D1926: MINOR.**
+   - The 16π fix is confirmed by an independent lattice sum (8.8927 at ρ, 9.0336 at i). S-invariance is a real check.
+   - "Minkowski at both ρ and i" is structural (∂E = 0 at the elliptic points), not a non-trivial result.
+   - The lighter eigenmode was chosen without justification. The heavier mode gives Δn_s = +3.8e-4. The PASS is robust either way.
+   - The axion (x) direction is flat to e^{−2πy*} on the plateau, so the path's endpoint is set by the initial x, not by the dynamics.
+3. **D1932: MAJOR (framing).**
+   - The edges reproduce.
+   - The 7-null rule is **vacuous** for a deterministic boolean bisection: the nulls start only once the width is below the resolution.
+   - "The window contains the median 0.027" is **true by construction**, because the search started at 0.027.
+   - The upper edge is an artefact of the ×2 cut, the window is non-monotone (an isolated point at 0.0203), and the "three vectors" centre is the window's own centre.
+   - "D1925 resolved" is overstated: u_d = 0.02587 still fails.
+4. **D1931 compass: MAJOR (the T_R claim).**
+   - dn_s/dN* = 2/N*² is wrong for this plateau (it would give n_s = 0.960). The value is ≈ (1 − n_s)/N* = 5.9e-4.
+   - n_s is already inside its band, so it exerts no pull.
+   - Thermal leptogenesis is a bound the model sidesteps.
+   - The two arrows are not independent (N* comes from the same T_R chain).
+   - The compass **omitted gravitino → wino overproduction**, Ω ∝ T_R (D732).
+   - "↑" was used for thin passes, against the legend. The m₃/₂ ×0.27 arithmetic is right but is extrapolated from a ±10 % derivative (order of magnitude only).
+5. **UFE v4: MINOR.** Its numbers match the files. T_R "strongest pointing" contradicts the same document's non-thermal leptogenesis line. The quark "●" inherits the circular framing. α_s 0.1142 should note that the scoreboard JSON still says 0.1147.
+
+## D1931a / D1932a / D1926a / D1929a — corrections (applied; compass rerun)
+- **D1931a: T_R "two arrows agree, T_R ~ 1e11–1e12" is WITHDRAWN.**
+  - Gravitino → wino caps T_R at ~3e9 GeV (Ω = 0.11 at 3e9, D732). **T_R is boxed, not pulled**, and leptogenesis must be non-thermal.
+  - Compass changes: a new row for wino Ω from gravitinos; n_s and thermal leptogenesis set to "info" (no pull); dn_s/dN* = 5.84e-4 (estimate, to be measured on the plateau); thin passes marked ◔; the legend fixed.
+  - Open check: N* = 50.3 against T_R = 3.7e8.
+- **D1932a.**
+  - The measured content is the window [0.02588, 0.02740], ×1.059 wide, holding one fixed assignment that is natural throughout.
+  - "Contains the median" is by construction and is not evidence. The "compass ●" is removed (now info).
+  - u_d still fails by 0.05 %, so "resolved" is withdrawn.
+  - Edges are reported as "bisection to 2e-10", not as 7-null convergence.
+- **Rule 6h clarification:** the 7-null rule carries evidence only for multi-reader or stochastic readings. tools/loom/triangulate.py is annotated to say so.
+- **D1926a:**
+  - Δn_s for S at i is within **±(2–4)e-4** depending on which eigenmode reheats; the sign is not determined. PASS either way.
+  - The Minkowski property at both knots is structural.
+  - The endpoint is set by the initial x.
+  - The docstring is fixed (16π).
+- **D1929a:** the like-for-like α_s shift for S at i is **−0.0030** (against 0.1142), not −0.0035.

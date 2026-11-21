@@ -1,5 +1,5 @@
 """D1926: the P3-S plateau V ∝ G^{SS̄}|∂_S ln E(S,3/2)|² ending at S = i (path Re S = 0) instead of S = ρ (Re S = ½).
-E normalised as 2ζ(3)y^{3/2} + 4ζ(2)y^{-1/2} + 8π√y Σ n^{-1}... (Green–Gutperle); validated by E(ρ) = 8.893 (D1622) and S-invariance."""
+E normalised as 2ζ(3)y^{3/2} + 4ζ(2)y^{-1/2} + 16π√y Σ N σ₋₂(N) K₁ cos (fixed per DEVIATIONS) (Green–Gutperle); validated by E(ρ) = 8.893 (D1622) and S-invariance."""
 import json, math, mpmath as mp
 mp.mp.dps = 30
 z3, z2 = mp.zeta(3), mp.zeta(2)

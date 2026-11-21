@@ -1,53 +1,51 @@
 # The Weave compass (Danny 16:06): every measurement fingerprinted with a direction and a vector
 
-Legend: ● on target (inside the bar with margin); ↑ / ↓ the value must move up / down; ! the bar fails now; ○ prediction or input (no target yet). Headroom is in σ (data) or dex (bounds); smaller means tighter.
+Legend: ● on target (inside the bar by > 0.3 dex or < 1σ); ◔ passes but thin; ↑! / ↓! fails now and must move up / down; ↑ / ↓ (data) outside 1σ; ○ prediction, input or info (no pull). Corrected after referee D1935. Headroom is in σ (data) or dex (bounds); smaller means tighter.
 
 | # | ring | notch | quantity | value | dir | headroom | knobs it pulls | source | note |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | 0 | centre: rung step | |u| one-spurion window centre (7-null converged) | 0.02663 | ● | 1.54 σ | u 0 | D1932 | window [0.02588, 0.02740] contains the median; one fixed assignment; f7 22-23 %, fJ 61-66 % |
-| 2 | 0 | centre: rung step | |u| single-flavon natural window centre | 0.09656 | ↓ | -55.97 σ | u + | D1928 | SECONDARY window (U32, assignment varies); primary one-spurion window sits on the median (D1932) |
+| 1 | 0 | centre: rung step | |u| one-spurion window (bisected to 2e-10) | 0.02663 | ○ |  | — | D1932/D1932a | window [0.02588, 0.02740], width x1.059, ONE fixed assignment, f7 22-23 %, fJ 61-66 %. Contains 0.027 BY CONSTRUCTION (search started there, D1935); upper edge is a x2-cut artefact; window non-monotone (0.0203 isolated point) |
+| 2 | 0 | centre: rung step | |u| single-flavon window centre (U32) | 0.09656 | ○ |  | — | D1928 | SECONDARY window, assignment varies |
 | 3 | 0 | centre: rung step | lepton slip / down slip | 0.9768 | ● | 1.54 σ | u 0 | v4 (D1832) | same-lock fit; conflicts with Koide at rho |
 | 4 | 1 | quarks | f7 (two-size lock) | 0.1802 | ● | 0.56 dex | u_u 0, u_d 0 | d1829_cp.json | PHENOMENOLOGICAL |
-| 5 | 1 | quarks | fJ | 0.3077 | ↑ | 0.19 dex | — | d1829_cp.json | PHENOMENOLOGICAL |
-| 6 | 1 | neutrinos | ratio natural fraction | 0.0133 | ↑ | 0.12 dex | flux(4,4,8) 0 | d1821_neutrino.json | thin: 0.12 dex headroom |
+| 5 | 1 | quarks | fJ | 0.3077 | ◔ | 0.19 dex | — | d1829_cp.json | PHENOMENOLOGICAL |
+| 6 | 1 | neutrinos | ratio natural fraction | 0.0133 | ◔ | 0.12 dex | flux(4,4,8) 0 | d1821_neutrino.json | thin: 0.12 dex headroom |
 | 7 | 1 | neutrinos | M_N vs leptogenesis window top | 1.844e+11 | ● | 1.13 dex | n_theta 0, tan_beta + | v4 (D1822) |  |
 | 8 | 1 | neutrinos | M_N vs window bottom | 1.844e+11 | ● | 0.61 dex | — | v4 (D1822) |  |
 | 9 | 1 | leptons | Koide delta | 0.2222 | ○ |  | — | v4 | TRUST |
-| 10 | 2 | spectrum | wino M2 [GeV] | 686.5 | ↑ | 0.02 dex | m3/2 + | v4 | marginal: wants m3/2 UP |
+| 10 | 2 | spectrum | wino M2 [GeV] | 686.5 | ◔ | 0.02 dex | m3/2 + | v4 | marginal: wants m3/2 UP |
 | 11 | 2 | spectrum | gluino M3 [GeV] | 4926 | ● | 0.33 dex | m3/2 + | v4 |  |
 | 12 | 2 | forces | alpha_s(M_Z) no threshold | 0.1142 | ↑ | -2.22 σ | m3/2 -, Delta3 threshold + | D1929 run 1 (gluino 4.93 TeV) | d alpha_s / d ln m3/2 = -0.00290 (measured, ±10 %): wants m3/2 DOWN; opposes the wino arrow |
 | 13 | 2 | forces | Delta3 after Higgs pair + gauge | -0.09424 | ↑! | 0.28 dex | b_prime -, brane threshold + | v4 (D1881b) | needs +0.044 more |
 | 14 | 2 | forces | alpha_s with S at i (self-consistent spectrum) | 0.1112 | ↑ | -5.56 σ | S vacuum rho | D1929 | S at i pushes the wrong way |
 | 15 | 2 | forces | proton lifetime [yr] | 1.6e+35 | ● | 0.82 dex | M12 + | v4 |  |
-| 16 | 3 | inflation | n_s | 0.9706 | ● | 1.19 σ | N* +, T_R + | v4 | Δn_s needed +0.0022 ⇒ ΔN* ≈ +2.8 ⇒ T_R up |
+| 16 | 3 | inflation | n_s | 0.9706 | ● | 1.19 σ | — | v4 | inside its band (0.8σ): no pull counted (D1935); N* = 50.3 not yet cross-checked against T_R |
 | 17 | 3 | inflation | n_s with S at i | 0.9704 | ● | 1.11 σ | S vacuum rho | D1926 |  |
 | 18 | 3 | inflation | r | 0.00054 | ● | 1.82 dex | — | v4 |  |
-| 19 | 3 | cosmology | T_R vs M_N (thermal leptogenesis) | 3.7e+08 | ↑! | -2.70 dex | T_R +, M_N - | v4 (D1897) | fails by 2.7 dex ⇒ non-thermal; T_R arrow agrees with n_s |
-| 20 | 3 | cosmology | Delta N_eff | 1e-06 | ● | 5.23 dex | — | v4 | 0 exactly; plotted as 1e-6 |
-| 21 | 3 | cosmology | dark-matter mass [GeV] | 12.8 | ○ |  | — | v4 |  |
-| 22 | 4 | reverse | alpha drift zeta | 3.785e-10 | ● | 3.64 dex | b_bf - | v4 (D1887) |  |
-| 23 | 4 | reverse | thread slope lambda (DESI needs ~0.95) | nan | ○ |  | — | D1906 | OPEN: non-Kähler only |
+| 19 | 3 | cosmology | T_R vs M_N (thermal leptogenesis) | 3.7e+08 | ○ |  | — | v4 (D1897) | a bound the model sidesteps (non-thermal leptogenesis): NOT a pull (D1935) |
+| 20 | 3 | cosmology | non-thermal wino Omega from gravitinos (Omega ∝ T_R) | 0.01966 | ● | 0.79 dex | T_R - | D732 (Y3/2 ∝ T_R) | D732: Omega 0.017 at T_R 3.2e8 (M2 0.66 TeV), 0.11 at 3.0e9 ⇒ T_R capped at ~3e9 |
+| 21 | 3 | cosmology | Delta N_eff | 1e-06 | ● | 5.23 dex | — | v4 | 0 exactly; plotted as 1e-6 |
+| 22 | 3 | cosmology | dark-matter mass [GeV] | 12.8 | ○ |  | — | v4 |  |
+| 23 | 4 | reverse | alpha drift zeta | 3.785e-10 | ● | 3.64 dex | b_bf - | v4 (D1887) |  |
+| 24 | 4 | reverse | thread slope lambda (DESI needs ~0.95) | nan | ○ |  | — | D1906 | OPEN: non-Kähler only |
 
 ## Where it points (per knob)
 
-- **u**: wants ↑ from centre: rung step: |u| single-flavon natural window centre; wants ↓ from none.
 - **tan_beta**: wants ↑ from neutrinos: M_N vs leptogenesis window top; wants ↓ from none.
 - **m3/2** — TENSION: wants ↑ from spectrum: wino M2 [GeV]; spectrum: gluino M3 [GeV]; wants ↓ from forces: alpha_s(M_Z) no threshold.
 - **Delta3 threshold**: wants ↑ from forces: alpha_s(M_Z) no threshold; wants ↓ from none.
 - **b_prime**: wants ↑ from none; wants ↓ from forces: Delta3 after Higgs pair + gauge.
 - **brane threshold**: wants ↑ from forces: Delta3 after Higgs pair + gauge; wants ↓ from none.
 - **M12**: wants ↑ from forces: proton lifetime [yr]; wants ↓ from none.
-- **N***: wants ↑ from inflation: n_s; wants ↓ from none.
-- **T_R**: wants ↑ from inflation: n_s; cosmology: T_R vs M_N (thermal leptogenesis); wants ↓ from none.
-- **M_N**: wants ↑ from none; wants ↓ from cosmology: T_R vs M_N (thermal leptogenesis).
+- **T_R**: wants ↑ from none; wants ↓ from cosmology: non-thermal wino Omega from gravitinos (Omega ∝ T_R).
 - **b_bf**: wants ↑ from none; wants ↓ from reverse: alpha drift zeta.
 
 ## Interactions (where two arrows meet one knob)
 
 - **m3/2 cannot fix α_s.** Closing α_s needs Δ ln m3/2 = -1.31 (m3/2 ×0.27). That puts the wino at 185 GeV, far below the 660 GeV bar, which already has only 4 % room. So α_s must come from a threshold (Δ₃), not from the spectrum.
-- **T_R: two independent arrows agree.** Thermal leptogenesis needs T_R ≳ M_N = 1.8e11 GeV (×500 up). n_s at the data centre needs ΔN* ≈ +2.8, which means T_R ≈ 1.6e+12 GeV (×4227 up, with dN*/d ln T_R = 1/3 for w = 0 reheating, an estimate). Both point to **T_R ~ 1e11–1e12 GeV**, about 3 decades above the derived 3.7e8.
-- **u: flavour sits ON the median (D1932).** The 7-null converged one-spurion window [0.02588, 0.02740] contains the six-sector median 0.027 (its centre 0.02663 is 1.4 % below). One fixed charge pattern covers it, natural throughout. The broad single-flavon window (0.063–0.148, U32) is secondary.
+- **T_R is boxed, not pulled (corrected D1935).** Gravitino→wino production caps T_R at ~3e9 GeV (Ω ∝ T_R; 0.11 at 3e9, D732). Thermal leptogenesis (T_R ≳ M_N) is a bound the model sidesteps, and n_s already sits inside its band. So T_R cannot rise 3 dex, and leptogenesis must be non-thermal. The earlier "two arrows agree, T_R ~ 1e11–1e12" is withdrawn.
+- **u (corrected D1935):** the one-spurion window [0.02588, 0.02740] is narrow (×1.059) and has one fixed charge pattern, natural throughout. That it contains 0.027 is by construction (the search started there), so it is not a convergence. u_d = 0.02587 still fails by 0.05 %. The window is non-monotone in u (isolated point 0.0203; U32 0.063–0.148).
 
 Knob convention: "+" means this measurement wants the knob raised, "−" lowered.
 
-Measured: dα_s/d ln m₃/₂ = -0.00290; dn_s/dN* = 7.90e-04.
+Measured: dα_s/d ln m₃/₂ = -0.00290; dn_s/dN* = 5.84e-04.
