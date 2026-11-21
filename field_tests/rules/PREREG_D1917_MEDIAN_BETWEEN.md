@@ -1,0 +1,5 @@
+# PREREG D1917 — the median between the IIB model (|ε| = 0.0291, D1915) and the Weave's need (|ε| = 0.0457, D1894b) (Danny 14:55: "map a median between the two results … derive what would be right in between … do a quick calculation") (locked 21 Nov 2026 before computing; repo at d977104f)
+Median (log-space, the Loom's extraction rule): ε_mid = √(0.0291 × 0.0457) = 0.0365 (planning arithmetic, declared).
+Derivation 1 (model side): in the reproduced Model III potential (theory/tests/d1915_reproduce_2405.py, fluxes a⁰ = 2, b₃ = −3), scan the matter ratio α ∈ [0.02, 1.0] and find α_mid and α_need where |τ₁ − ω| = 0.0365 and 0.0457 (minimum from the start nearest ω; 3 starts for stability). Also report the second flux example b₃ = −4 at α = 0.1.
+Derivation 2 (Weave side): the quark lock (D1829 logic, seed 21, N = 20000) at |ε_d| = 0.0365 (phase 49°): f7 and fJ.
+Verdict: the middle is REACHABLE if Derivation 1 finds α_mid ∈ [0.02, 1] (a natural O(0.1–1) ratio) with V > 0; the middle is NATURAL on the Weave side if f7 ≥ 5 % and fJ ≥ 20 %. Report α_need too (is the full need reachable?).
