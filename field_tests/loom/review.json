@@ -11,13 +11,13 @@
    ]
   },
   "m3/2": {
-   "net": 3.0,
+   "net": 4.0,
    "spread": 21.02295842555003,
    "all_three_agree": true,
    "direction": "RAISE",
    "contested": false,
    "voters": [
-    "wino M2 [GeV] + (\u25d4)",
+    "wino M2 [GeV] vs 700 GeV (ATLAS+CMS, 2507.15934) + (\u2191!)",
     "gluino M3 [GeV] + (\u25cf)"
    ]
   },
@@ -223,6 +223,12 @@
    "count": 1,
    "by": [
     "derive Br(phi->NN) from M_N(S)"
+   ]
+  },
+  "spectrum: derived wino 686.5 GeV now INDETERMINATE at the edge": {
+   "count": 1,
+   "by": [
+    "update the wino collider bound with current data (660 -> 660-700 GeV)"
    ]
   }
  }

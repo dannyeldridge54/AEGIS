@@ -19238,3 +19238,21 @@ Danny interrupted the D1930 pulse run partway through, and it produced no result
 - (b) none yet (candidate only).
 
 Script hygiene: line 13 of the script holds a dead placeholder assignment that is overwritten on the next line. It is harmless and is noted here, not edited.
+
+## D1947 — Loom tick 23, three at once (Danny 17:31 "do another one")
+**(1) Referee:** spawned (independent, fresh) on D1940–D1946. It is running, and its report will be recorded first when it arrives.
+
+**(2) The 3/4 mechanism: NOT FOUND, so the candidate stays unconfirmed.**
+- One literature search (hep-th/0502168, hep-th/0404087, 2303.04819, 2511.04367 and others) turned up no quoted mechanism that makes the gaugino-condensate prefactor A_a scale with the number of fixed points on its plane.
+- By the D1946 lock, the 3/4 match stays a **CANDIDATE (numerology-guarded)**, and α_s stays a fit.
+
+**(3) E2 and the wino bound: the wino lands ON the collider edge.**
+- **TRIANGULATE** (the wino collider bound, two verbatim readings plus the existing scoreboard value):
+  - ATLAS 2201.02472 (abstract): "Chargino masses up to 660 (210) GeV are excluded in scenarios where the chargino is a pure wino (higgsino)." Run 2, 136 fb⁻¹.
+  - 2507.15934 §I: ATLAS and CMS "have ruled out the minimal model up to masses ∼700 GeV".
+  - The scoreboard bar used so far: 660 GeV (D1897).
+  - Centre 660–700 GeV; the readings differ by 0.026 dex (consensus).
+- **Verdict:** the derived wino (686.5 GeV) passes 660 but fails about 700. It lies inside the spread of the bound, so by rule 6e it is **INDETERMINATE**. The wino prediction sits on the edge of current exclusion, and the next disappearing-track update decides it.
+- **Indirect detection:** Fermi inner-Galaxy data (2507.15934) "robustly rule out all wino masses between 1.85 TeV and the thermal mass", with the wino "less than 50% of the DM at the lower end". Our non-thermal wino is 0.69 TeV at 10–40 % (signal ∝ f² = 0.01–0.16). That is outside their stated robust range, and no limit at 0.7 TeV appears in the fetched text. **E2 stays OPEN, not excluded.**
+- **Knock-on (REVIEW):** the wino arrow strengthens. The derived point sits at the bound, and the D1941 balance point (wino 1.2 TeV, m₃/₂ ×1.77) is the margin-safe alternative. The cost is a new input (σ_vis 20.15 → 19.58).
+- **COMPASS:** the wino row's bar is now 660–700 GeV (INDETERMINATE, ◔/!). Battery B5 and E2 are updated.

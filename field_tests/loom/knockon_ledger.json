@@ -121,5 +121,13 @@
    "input: M_N \u221d (Re S)^3 needed (p<=2 fails)",
    "hidden sector: f_hid must be S-free"
   ]
+ },
+ {
+  "d": "D1947",
+  "adjustment": "update the wino collider bound with current data (660 -> 660-700 GeV)",
+  "fixed": [],
+  "disturbed": [
+   "spectrum: derived wino 686.5 GeV now INDETERMINATE at the edge"
+  ]
  }
 ]

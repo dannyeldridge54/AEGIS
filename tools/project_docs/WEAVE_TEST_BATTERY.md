@@ -59,7 +59,7 @@ Only post-lock data counts as strict evidence (G6).
 | B2 | sin²θ_W and α at M_Z | PDG | inputs to the running | T | DONE (inputs) |
 | B3 | Higgs mass 125.1 GeV | ATLAS, CMS | split SUSY, tan β 1–4 | T | RUN |
 | B4 | Higgs couplings and self-coupling | LHC Run 3, HL-LHC | SM-like (heavy scalars) | T | RUN / FUT |
-| B5 | wino, disappearing tracks | ATLAS, CMS Run 2/3 | 0.687 TeV | T | RUN (2 % margin) |
+| B5 | wino, disappearing tracks | ATLAS (660 GeV, 2201.02472); ATLAS + CMS ~700 GeV (2507.15934) | 0.687 TeV | T | **INDETERMINATE**: on the edge (D1947) |
 | B6 | gluino searches | ATLAS, CMS | 4.93 TeV | T | RUN |
 | B7 | W mass (CDF vs ATLAS/CMS) | PDG | SM-like | T | RUN |
 | B8 | muon g−2 | FNAL final (2025) + lattice | SM-like (PeV scalars) | T | RUN |

@@ -170,20 +170,20 @@
    "id": 10,
    "ring": 2,
    "notch": "spectrum",
-   "quantity": "wino M2 [GeV]",
+   "quantity": "wino M2 [GeV] vs 700 GeV (ATLAS+CMS, 2507.15934)",
    "value": 686.5104883997519,
    "spread": null,
-   "target": 660.0,
+   "target": 700.0,
    "kind": ">",
-   "direction": "\u25d4",
-   "headroom": 0.017103241164685798,
+   "direction": "\u2191!",
+   "headroom": -0.008450863307702347,
    "unit": "dex",
    "pull": null,
    "knobs": {
     "m3/2": "+"
    },
-   "source": "v4",
-   "note": "marginal: wants m3/2 UP"
+   "source": "D1947: bar 660 (ATLAS 2201.02472) - 700; INDETERMINATE",
+   "note": "on the collider edge"
   },
   {
    "id": 11,
@@ -559,9 +559,9 @@
   "m3/2": {
    "up": [
     [
-     "spectrum: wino M2 [GeV]",
+     "spectrum: wino M2 [GeV] vs 700 GeV (ATLAS+CMS, 2507.15934)",
      "+",
-     "\u25d4"
+     "\u2191!"
     ],
     [
      "spectrum: gluino M3 [GeV]",

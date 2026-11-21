@@ -13,7 +13,7 @@ Legend: ● on target (inside the bar by > 0.3 dex or < 1σ); ◔ passes but thi
 | 7 | 1 | neutrinos | M_N vs leptogenesis window top | 1.844e+11 | ● | 1.13 dex | n_theta 0, tan_beta + | v4 (D1822) |  |
 | 8 | 1 | neutrinos | M_N vs window bottom | 1.844e+11 | ● | 0.61 dex | — | v4 (D1822) |  |
 | 9 | 1 | leptons | Koide delta | 0.2222 | ○ |  | — | v4 | TRUST |
-| 10 | 2 | spectrum | wino M2 [GeV] | 686.5 | ◔ | 0.02 dex | m3/2 + | v4 | marginal: wants m3/2 UP |
+| 10 | 2 | spectrum | wino M2 [GeV] vs 700 GeV (ATLAS+CMS, 2507.15934) | 686.5 | ↑! | -0.01 dex | m3/2 + | D1947: bar 660 (ATLAS 2201.02472) - 700; INDETERMINATE | on the collider edge |
 | 11 | 2 | spectrum | gluino M3 [GeV] | 4926 | ● | 0.33 dex | m3/2 + | v4 |  |
 | 12 | 2 | forces | alpha_s(M_Z) single-stack (no threshold, +top-Yukawa 2-loop) | 0.114 | ↑ | -1.75 σ | Delta3 threshold + | D1944 (th err 0.00057); valid only under the single-stack assumption (D1942) | d alpha_s / d ln m3/2 = -0.00290 (measured, ±10 %): wants m3/2 DOWN; opposes the wino arrow |
 | 13 | 2 | forces | Delta3 after Higgs pair + gauge | -0.09424 | ↑! | 0.28 dex | b_prime -, brane threshold + | v4 (D1881b) | needs +0.044 more |
@@ -37,7 +37,7 @@ Legend: ● on target (inside the bar by > 0.3 dex or < 1σ); ◔ passes but thi
 ## Where it points (per knob)
 
 - **tan_beta**: wants ↑ from neutrinos: M_N vs leptogenesis window top; wants ↓ from none.
-- **m3/2**: wants ↑ from spectrum: wino M2 [GeV]; spectrum: gluino M3 [GeV]; wants ↓ from none.
+- **m3/2**: wants ↑ from spectrum: wino M2 [GeV] vs 700 GeV (ATLAS+CMS, 2507.15934); spectrum: gluino M3 [GeV]; wants ↓ from none.
 - **Delta3 threshold**: wants ↑ from forces: alpha_s(M_Z) single-stack (no threshold, +top-Yukawa 2-loop); wants ↓ from none.
 - **b_prime**: wants ↑ from none; wants ↓ from forces: Delta3 after Higgs pair + gauge.
 - **brane threshold**: wants ↑ from forces: Delta3 after Higgs pair + gauge; wants ↓ from none.

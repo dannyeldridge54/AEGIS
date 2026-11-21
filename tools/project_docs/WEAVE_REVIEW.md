@@ -4,7 +4,7 @@ Every fingerprint in the compass votes on the knobs it pulls. Three weightings g
 
 | knob | pointing | net (median) | spread | the 3 weightings agree? | voters |
 |---|---|---|---|---|---|
-| m3/2 | **RAISE** | +3.00 | 21.02 | yes | wino M2 [GeV] + (◔); gluino M3 [GeV] + (●) |
+| m3/2 | **RAISE** | +4.00 | 21.02 | yes | wino M2 [GeV] vs 700 GeV (ATLAS+CMS, 2507.15934) + (↑!); gluino M3 [GeV] + (●) |
 | b_prime | **LOWER** | -3.00 | 2.63 | yes | Delta3 after Higgs pair + gauge - (↑!) |
 | brane threshold | **RAISE** | +3.00 | 2.63 | yes | Delta3 after Higgs pair + gauge + (↑!) |
 | p in M_N ∝ (Re S)^p | **RAISE** | +2.00 | 19.00 | yes | non-thermal leptogenesis: derived Br(phi->NN) vs 9.5 % needed + (◔) |
@@ -36,10 +36,11 @@ Every fingerprint in the compass votes on the knobs it pulls. Three weightings g
 - **variables: eps confused with u** was disturbed 1× by: one shared rung step (the arrow)
 - **input: M_N ∝ (Re S)^3 needed (p<=2 fails)** was disturbed 1× by: derive Br(phi->NN) from M_N(S)
 - **hidden sector: f_hid must be S-free** was disturbed 1× by: derive Br(phi->NN) from M_N(S)
+- **spectrum: derived wino 686.5 GeV now INDETERMINATE at the edge** was disturbed 1× by: update the wino collider bound with current data (660 -> 660-700 GeV)
 
 ## The pattern in the knock-ons (three kinds)
 
-- **strain moved to another sector** (9): S vacuum rho -> i (g_s 1.155 -> 1) ⇒ forces: alpha_s 0.1142 -> 0.1112 (D1919/D1929); S vacuum rho -> i (g_s 1.155 -> 1) ⇒ spectrum: wino 0.69 -> 2.0 TeV (D1919/D1929); lower m3/2 to raise alpha_s ⇒ spectrum: wino below 660 GeV (D1931/D1937); raise T_R for thermal leptogenesis ⇒ dark matter: gravitino->wino overclosure (D1931a/D732); Kähler-modulus dark-energy thread (lambda 0.94) ⇒ gravity: PPN gamma-1 = -0.40 (D1906); Kähler-modulus dark-energy thread (lambda 0.94) ⇒ BBN: x9-16 (D1906); one spurion for both quark sectors ⇒ flavour: u_d 0.02587 just outside window (D1925/D1932); split stacks (SU(3) on its own cycle) ⇒ proton: G-branch prediction lost (D1940); derive Br(phi->NN) from M_N(S) ⇒ hidden sector: f_hid must be S-free (D1946)
+- **strain moved to another sector** (10): S vacuum rho -> i (g_s 1.155 -> 1) ⇒ forces: alpha_s 0.1142 -> 0.1112 (D1919/D1929); S vacuum rho -> i (g_s 1.155 -> 1) ⇒ spectrum: wino 0.69 -> 2.0 TeV (D1919/D1929); lower m3/2 to raise alpha_s ⇒ spectrum: wino below 660 GeV (D1931/D1937); raise T_R for thermal leptogenesis ⇒ dark matter: gravitino->wino overclosure (D1931a/D732); Kähler-modulus dark-energy thread (lambda 0.94) ⇒ gravity: PPN gamma-1 = -0.40 (D1906); Kähler-modulus dark-energy thread (lambda 0.94) ⇒ BBN: x9-16 (D1906); one spurion for both quark sectors ⇒ flavour: u_d 0.02587 just outside window (D1925/D1932); split stacks (SU(3) on its own cycle) ⇒ proton: G-branch prediction lost (D1940); derive Br(phi->NN) from M_N(S) ⇒ hidden sector: f_hid must be S-free (D1946); update the wino collider bound with current data (660 -> 660-700 GeV) ⇒ spectrum: derived wino 686.5 GeV now INDETERMINATE at the edge (D1947)
 - **predictivity spent (fit / new input)** (4): split stacks (SU(3) on its own cycle) ⇒ prediction: alpha_s becomes a fit (D1940); balance point (m3/2 x1.77, T_R x1.34) ⇒ input: sigma_vis 20.15 -> 19.58 (new postulate) (D1941); balance point (m3/2 x1.77, T_R x1.34) ⇒ prediction: wino 0.69 -> 1.2 TeV (D1941); derive Br(phi->NN) from M_N(S) ⇒ input: M_N ∝ (Re S)^3 needed (p<=2 fails) (D1946)
 - **the fix was an error** (4): quark slip as a modular-tau displacement ⇒ geometry: no free tau at rho (frozen U) (D1922/D1923); Higgs-pair threshold / U29 brane tilt ⇒ consistency: gauge term -C(G) / Z2 twist on rho plane (D1881b/D1907); flux-6 electron corner offset for Koide delta ⇒ numerics: degenerate-class artefact (D1885a); one shared rung step (the arrow) ⇒ variables: eps confused with u (D1894b)
 
