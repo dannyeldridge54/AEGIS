@@ -1,0 +1,3 @@
+configurations meeting (1)-(4): 0
+example (a, b, c) wrapping numbers per torus: None
+VERDICT: FAIL
