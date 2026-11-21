@@ -51,7 +51,7 @@ Goal of the big loop: move every M and A toward P. A row moves only through a lo
 | 3.12 | Lithium-7 (×3 too low observed) | G (postulate C7: stellar depletion) | |
 | 3.13 | N_eff = 2.99 ± 0.07 | P (ΔN_eff ≈ 0, brane split) | |
 | 3.14 | Gravitational-wave background (NANOGrav/EPTA/PPTA/CPTA, nHz) | P (no modular-wall signal; D1753 R3) | Z₃ at ρ ⇒ possible domain walls ⇒ GWs, or a danger |
-| 3.15 | Primordial magnetic fields (≥1e-16 G in voids, blazar γ-ray deficit) | **M** | |
+| 3.15 | Primordial magnetic fields (≥1e-16 G in voids, blazar γ-ray deficit) | P (E): built-in f_vis(S)F² coupling is too weak (α ≈ 0.08 vs 2 needed) ⇒ none from the Weave (D1771) | |
 | 3.16 | Primordial black holes (bounds) | G | |
 
 ## 4. Dark matter
