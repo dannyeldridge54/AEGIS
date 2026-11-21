@@ -140,3 +140,29 @@ v4 rebuilds v3.3 (written this morning) from the record D1806–D1933. Every ter
 - **The quark spurion's home:** U₃ near i, or a twisted modulus, sized to |u| ≈ 0.0266.
 
 Rule 6h applies to every ring: triangulate from 3 vectors and repeat to 7 nulls in a row. Each ring is locked first and fingerprinted into the compass (tools/project_docs/WEAVE_COMPASS.md).
+
+## 7. Three fields in tandem (Danny 16:48)
+The UFE splits into three field equations. They couple only through named interface terms, so any imbalance can be located on a specific interface.
+
+| field | what it governs | its own equation | status alone |
+|---|---|---|---|
+| **S** (axio-dilaton) | time and cosmology: inflation, reheating, the S vacuum, g_s | V(S) = V∞ G\|∂ ln E(S, 3/2)\|² | balanced (n_s ●, r ●, ΔN_eff ●) |
+| **T** (Kähler volumes) | forces and scales: σ_vis, N = 6, W₀, m₃/₂, the dark cycle | KKLT: \|W₀\| = A e^{−x}(1 + 2x/3) | balanced (proton ●, gluino ●) |
+| **U** (matter / flavour) | quarks (the spurion), leptons at ρ, neutrinos at i | Yukawas Y(u), Y(ρ), Y(i) | balanced as a fit (PHEN); its home is open |
+
+**Interfaces (the coupling terms):**
+- **S–T:**
+  - f_vis = T + 9S (the forces);
+  - m₃/₂ = √(g_s/2) W₀ M_P/𝒱 (the spectrum);
+  - inflaton decay to gravitinos (T_R).
+- **T–U:** the matter Kähler metric K_α(T); which brane or twisted modulus hosts the spurion.
+- **S–U:** the knot locations (ρ, i), and no perturbative S-dependence of D7 Yukawas (D1923).
+
+**Where the current imbalances sit:** every open failure lies on the **S–T interface**.
+- α_s/Δ₃: the threshold in f_vis.
+- The wino/α_s tension through m₃/₂.
+- T_R, boxed by the gravitino.
+
+The S, T and U sectors are each balanced on their own.
+- **Reading:** the missing piece is an S–T coupling term (for example D7 threshold states, or the inflaton's branching into the hidden sector), not a fourth field.
+- **Use as a prediction:** the size of the imbalance fixes what the missing term must supply. Example: Δ₃ needs +0.044, which fixes the charges and masses of the threshold states. That is a testable prediction of new states, made from the residual.
