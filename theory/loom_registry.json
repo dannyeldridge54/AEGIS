@@ -1,11 +1,50 @@
-{"_doc": "THE LOOM symbol & convention registry (Loom v3, method #5). One definition per symbol; scripts and notes must use these names. Add before use; never redefine.",
- "eps":   {"def": "tau - tau0 (displacement of the modulus from the knot)", "example": "|eps_d| = 0.0457 (D1826)", "not": "u"},
- "u":     {"def": "(tau - tau0)/(tau - conj(tau0)); |u| ~ |eps|/(2 Im tau0)", "example": "|u_d| = 0.0259 (D1894b)", "not": "eps"},
- "beta_c":{"def": "d ln m / d phi with canonical phi (L = 1/2 (dphi)^2)", "example": "-0.354 (D1906)"},
- "alpha_DEF": {"def": "Damour-Esposito-Farese coupling = sqrt(2) beta_c; gamma-1 = -2 alpha^2/(1+alpha^2)", "example": "0.50 (D1906a)"},
- "b_prime": {"def": "heterotic duality-anomaly coefficient -C(G) + sum T(R)(1+2n); NOT the brane N=2 sector beta", "framework": "heterotic"},
- "b_N2_brane": {"def": "beta coefficient of massless N=2 multiplets from annuli of branes parallel on the torus (incl. Z2-twisted aa on Z6')", "framework": "IIA/IIB branes"},
- "U_rho_torus": {"def": "complex structure of a Z3-twisted torus: FROZEN at rho (cannot be displaced by F-terms)", "source": "D1774, D1920"},
- "U_i_torus": {"def": "complex structure of the Z2-only torus: FREE modulus; U = i is a choice", "source": "D1907"},
- "g_s": {"def": "1/Im S", "note": "S at rho => 2/sqrt3; S at i => 1 (D1919)"}
+{
+ "_doc": "THE LOOM symbol & convention registry (Loom v3, method #5). One definition per symbol; scripts and notes must use these names. Add before use; never redefine.",
+ "eps": {
+  "def": "tau - tau0 (displacement of the modulus from the knot)",
+  "example": "|eps_d| = 0.0457 (D1826)",
+  "not": "u"
+ },
+ "u": {
+  "def": "(tau - tau0)/(tau - conj(tau0)); |u| ~ |eps|/(2 Im tau0)",
+  "example": "|u_d| = 0.0259 (D1894b)",
+  "not": "eps"
+ },
+ "beta_c": {
+  "def": "d ln m / d phi with canonical phi (L = 1/2 (dphi)^2)",
+  "example": "-0.354 (D1906)"
+ },
+ "alpha_DEF": {
+  "def": "Damour-Esposito-Farese coupling = sqrt(2) beta_c; gamma-1 = -2 alpha^2/(1+alpha^2)",
+  "example": "0.50 (D1906a)"
+ },
+ "b_prime": {
+  "def": "heterotic duality-anomaly coefficient -C(G) + sum T(R)(1+2n); NOT the brane N=2 sector beta",
+  "framework": "heterotic"
+ },
+ "b_N2_brane": {
+  "def": "beta coefficient of massless N=2 multiplets from annuli of branes parallel on the torus (incl. Z2-twisted aa on Z6')",
+  "framework": "IIA/IIB branes"
+ },
+ "U_rho_torus": {
+  "def": "complex structure of a Z3-twisted torus: FROZEN at rho (cannot be displaced by F-terms)",
+  "source": "D1774, D1920"
+ },
+ "U_i_torus": {
+  "def": "complex structure of the Z2-only torus: FREE modulus; U = i is a choice",
+  "source": "D1907"
+ },
+ "g_s": {
+  "def": "1/Im S",
+  "note": "S at rho => 2/sqrt3; S at i => 1 (D1919)"
+ },
+ "h21_Z6II": {
+  "def": "number of complex-structure moduli of the Z6-II fold",
+  "value": "1 untwisted (U3, the Z2 torus) on SU(2)xSU(6); others twisted",
+  "source": "hep-th/0609014 Table 2.1 via D1871; D1922"
+ },
+ "flavour_tau": {
+  "def": "the modulus whose distance from a knot sets the residual-charge hierarchy",
+  "status": "NO geometric home near rho in Z6-II (D1922); candidates S, U3 (near i), discrete data"
+ }
 }

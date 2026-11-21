@@ -18794,3 +18794,25 @@ Ranking: each of 25 methods is scored by the share of today's 19 recorded errors
 The top 8 cover 84 %. With null runs, a single source of truth and idempotent ticks, the set covers 19/19.
 The weave (tools/project_docs/LOOM_V3_WEAVE.md) runs in five layers: TARGET (median + information gain) → GATHER → GUARD (registry, conflict graph, kill-first, fit-vs-derive) → TEST (blinded verdict, power + null, multiverse, stability, limits, reproduce-first) → JUDGE (heterogeneous referee, adversarial collaboration) → KEEP.
 The registry theory/loom_registry.json is seeded with the symbols behind today's errors.
+
+## D1922 — LEFT/flavour (Loom v3 tick 10): THE BLOCKER confirmed — the Weave's fold has NO complex-structure modulus near ρ; the quark slip off ρ has no geometric home (21 Nov 2026)
+- **TARGET:** the down-quark torus blocker (D1920). It has the highest information gain: P(pass) ≈ ½, and every flavour line depends on it. Ledger: trials_rungstep.md.
+- **GATHER:** three independent bearings, all consistent (consensus fix):
+  1. **Twist.** Z₆-II acts as (1/6, 1/3, −1/2) (D1871). Tori 1 and 2 carry Z₆ and Z₃ rotations, which exist only on the hexagonal lattice, so **U₁ = U₂ = ρ is frozen** (D1774).
+  2. **Hodge numbers** (hep-th/0609014 Table 2.1, via D1871). Z₆-II has **h²¹ = 1** on the SU(2)×SU(6) lattice: exactly one untwisted complex-structure modulus, U₃ of the Z₂ (pyramid) torus. The other lattices' extra h²¹ are twisted-sector moduli, not torus shapes.
+  3. **Open-string moduli.** On T²/Z₃, Wilson lines and brane positions must be Z₃-invariant, so they are **discrete** (they move a mode corner to corner, D1885). No continuous shift is available.
+- **GUARD (kill-first):**
+  - Could the residual-charge τ be something other than U₁/U₂? Candidates: (a) the axio-dilaton S, which is free; (b) a Kähler modulus T_k, which in IIB magnetised models enters Yukawas only through normalisation and not holomorphically; (c) U₃ near i, which is free but sits at the wrong knot, since the D1828 lock is an expansion around ω/ρ.
+  - Fit-vs-derive: the quark slip |ε_d| = 0.0457 was a FIT (D1826), and so was |ε_u| = 0.00311.
+- **Result (derivation, no new compute):** **BLOCKER CONFIRMED.** In the Weave's own Z₆-II IIB fold, no field whose Yukawas depend on U₁ or U₂ can be displaced continuously from ρ. So the D1828 residual-charge lock (|ε_d| = 0.0457 and |ε_u| = 0.00311 off ρ) **has no geometric modulus in the Weave.**
+- **Consequences:**
+  - The quark naturalness lines on the scoreboard (D1829 18 %, D1884 two-stack 17.9 %) stay valid as phenomenology of a modular-flavour model. They are **not** a property of the Weave's geometry: relabel CONS → **PHENOMENOLOGICAL (no geometric home)**. This is a scoreboard relabel, so the referee is due.
+  - D1913–D1918 (IIB displacement mechanisms) are moot for tori 1/2. A displacement mechanism is irrelevant if the modulus cannot move.
+  - D1872's "double cover branched at i" picture also needs a modulus near ρ, so it is affected too.
+- **Ways forward** (three candidates for the next postulate; flavour cap 1/2 → this would be 2/2):
+  - **(a) Flavour modulus = S**, the axio-dilaton, near ρ. It conflicts with D1919 (S at i for g_s ≤ 1), and S at ρ + 0.046 gives g_s ≈ 1.12.
+  - **(b) Flavour from the free U₃ near i.** The quark charges would have to be re-fit around i, where D1874's parity grading applies.
+  - **(c) Hierarchies from discrete data only**: fluxes, corner positions, discrete Wilson lines. Hard; D1824 and D1885a showed misses.
+- **Mirror note:** U₃ is the ONLY free complex-structure modulus, and it is also the pyramid/neutrino torus and the dark-mirror quantity (D1914). So whatever moves U₃ moves the neutrinos and the dark protection. That is a centre-balance constraint for option (b).
+- **JUDGE:** a structural claim with three threads (twist rule, Hodge number, discrete Wilson lines) ⇒ **woven as a constraint**. Its scoreboard consequence (the relabel) waits for the referee.
+- **KEEP:** registry entries U_rho_torus and U_i_torus already state this. To propagate (after the referee): the paper §2 quarks paragraph and WEAVE_FULL_DERIVATION §3.
