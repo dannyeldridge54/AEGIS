@@ -18057,3 +18057,25 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
 
 ## D1836 (RIGHT, U24 stage 7 — 21 Nov 2026): the element lock is still on inputs
 - The nuclear window (D1802) needs m_q/Λ_QCD to 2–3 % and α to 2.5 %. The D1829 quark model gives only RATIOS within a sector. m_u/m_d needs m_t/m_b (tan β and y_t/y_b), and the absolute scale needs v and Λ_QCD, which comes from α_s (5× too coarse, D1802). So stage 7 stays on inputs. The element lock cannot be derived until α_s is predicted to ~4e-4 and m_t/m_b is fixed.
+
+## D1837 (LEFT, leptons — 21 Nov 2026): Koide decides between the lepton pictures — under picture B it is a 1-in-15,000 accident, so picture A is favoured
+- [computed, locked PREREG_D1837_KOIDEODDS] In the picture-B lock (leptons on the down slip, random complex O(1) coefficients), 43,956 of 200,000 draws fit both lepton ratios. Of those, **P(|Q − 2/3| ≤ 2e-5) = 6.8e-5** (3 draws) and P(≤ 1e-3) = 1.6e-3. Reading fixed by the lock: Koide is a < 1e-3 accident under B, so **picture A (Koide exact at ρ, Z₃ circulant) is favoured by Koide itself.**
+- Consequence: the charged leptons sit at ρ (A), and their hierarchy must come from a source other than the quark lock. It remains OPEN (I5 + the D1790–D1825 chain); D1832's natural fit becomes "a near-miss that Koide rules out". The quarks keep the lock (D1828–D1829). Open question for A: what sets δ = 2/9 and the lepton scale. The lock idea suggests looking for a Z₃-circulant whose phase is a residual charge (2/9 = (2/3)·(1/3)?). Numerology guard applies; queued only as a hint.
+
+## D1838 (LEFT — 21 Nov 2026): mapping the quark charges to zero modes — partial
+- [derived, partial] On magnetised tori every zero mode carries modular weight −½ per torus (metaplectic, 2102.11286), so the residual-charge DIFFERENCES cannot come from weights alone. They come from the eigen-phases under the stabiliser of ω. The Z₃ classes (ω^ℓ, computed in D1790) give exponents in thirds. The extra Z₂ of the Z₆ stabiliser (S² = −1 acting as the metaplectic phase on weight −½ modes) supplies half-units. So the D1828 set (3/2, 1, 0) / (½, 0, 0) needs the Z₂ ⊂ Z₆ phases of the quark modes.
+- An explicit (flux, SS-phase) assignment that reproduces exactly these charges is NOT done; it needs the stabiliser action on the metaplectic modes at ω, the next computation with z3_modes.py. Status: plausible mechanism, explicit mapping open.
+
+## D1839 (CENTRE — the outside knob — 21 Nov 2026): V∞ is the source's single input, fixed by A_s; its scale lands at the unification scale
+- [computed] With r = 5.41e-4 (predicted plateau) and A_s = 2.1e-9 (measured): V∞ = (3π²/2) A_s r M_P⁴ = 1.68e-11 M_P⁴, so **V∞^{1/4} = 4.9e15 GeV = 0.47 M₁₂** (M₁₂ = 1.06e16, D1804).
+- Reading: in U22′/U24 terms the one outside knob is the height of the source. It sits at the scale where the forces meet (within a factor of 2). This is not derived: A_s is an input, and the factor 0.47 is not predicted. It is consistent with "one source": no second scale is needed between inflation and unification. Kill test: an r measurement far from 5.4e-4 would move V∞^{1/4} off the unification scale (LiteBIRD).
+
+## D1840 (LEFT — 21 Nov 2026): v/m_SUSY stays the tuned input
+- [computed] The electroweak scale vs the 0.47 PeV scalars needs a cancellation of (v/m̃)² ≈ **2.7e-7** in the Higgs mass parameter. No lock or key in the Weave sets it. Split SUSY accepts it as landscape/anthropic selection. Status: input (I11), unchanged; research NULL this pass.
+
+## One-pass summary (D1837–D1840)
+- Leptons: picture A (Koide exact at ρ) is favoured; their hierarchy is open.
+- Quarks: the residual-charge lock stands (natural, with CP).
+- The charges' origin: partly mapped (Z₂ ⊂ Z₆ half-units).
+- The outside knob V∞: at the unification scale (0.47 M₁₂).
+- v/m_SUSY: tuned input.
