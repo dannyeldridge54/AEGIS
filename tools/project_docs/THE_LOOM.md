@@ -180,3 +180,9 @@ CubeMind's data retrieval will be designed as a Loom:
 - **Consensus decides.** Only consensus fixes feed CubeMind's derivations, and open fixes are surfaced as TRUST or as findings. A referee link (fresh context) audits the consensus step.
 - **Must-have safeguard (referee D1909):** every bearing carries an exact quote and a locator (arXiv ID, equation, table or page). A non-model step fetches the source and string-matches both the quote and the number; a bearing that fails is dropped. The harness includes blind cases and a known-wrong case, such as the D1907 error. Links built on the same model or search are treated as correlated, not independent.
 - Engineering items, to be locked when started: the link interface (bearing schema), the consensus rule (median + overlapping error boxes, 2-of-3 minimum), cost caps per link, and a test harness that replays today's D1908 and D1906 fixes to check that CubeMind reproduces them.
+
+### Rule 6i — mark every knock-on, then review all the arrows (Danny 17:17)
+1. Every adjustment gets a row in field_tests/loom/knockon_ledger.json: what it fixed and **exactly what it disturbed**.
+2. Every derivation or test result is fingerprinted with a direction in the compass.
+3. **At every result,** run tools/loom/review.py. It reviews *all* the pointed fingerprints and the whole knock-on ledger together, finds the pattern, and triangulates where they all point (three weightings, then the median).
+4. Then pulse again.

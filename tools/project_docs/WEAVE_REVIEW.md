@@ -1,0 +1,43 @@
+# Pattern review: where all the arrows point (Danny 17:17)
+
+Every fingerprint in the compass votes on the knobs it pulls. Three weightings give the three vectors: one vote each; weighted by tightness (1/headroom); weighted by failure (! ×3, ◔ ×2). The pointing is the median of the three.
+
+| knob | pointing | net (median) | spread | the 3 weightings agree? | voters |
+|---|---|---|---|---|---|
+| m3/2 | **RAISE** | +3.00 | 21.02 | yes | wino M2 [GeV] + (◔); gluino M3 [GeV] + (●) |
+| b_prime | **LOWER** | -3.00 | 2.63 | yes | Delta3 after Higgs pair + gauge - (↑!) |
+| brane threshold | **RAISE** | +3.00 | 2.63 | yes | Delta3 after Higgs pair + gauge + (↑!) |
+| tan_beta | **RAISE** | +1.00 | 0.12 | yes | M_N vs leptogenesis window top + (●) |
+| Delta3 threshold | **RAISE** | +1.00 | 0.55 | yes | alpha_s(M_Z) single-stack (no threshold) + (↑) |
+| non-universal threshold | **RAISE** | +1.00 | 2.87 | yes | S-T seam: supergravity-form threshold (non-universal part) + (↑!) |
+| split stacks (f3 != f2) | **RAISE** | +1.00 | 2.87 | yes | S-T seam: supergravity-form threshold (non-universal part) + (↑!) |
+| M12 | **RAISE** | +1.00 | 0.21 | yes | proton lifetime [yr] + (●) |
+| Br(phi->NN) | **RAISE** | +1.00 | 0.02 | yes | non-thermal leptogenesis: Br(phi->NN) needed + (●) |
+| T_R | **LOWER** | -1.00 | 0.27 | yes | non-thermal wino Omega from gravitinos (Omega ∝ T_R) - (●) |
+| b_bf | **LOWER** | -1.00 | 0.73 | yes | alpha drift zeta - (●) |
+
+## Knock-on ledger: what each adjustment disturbed
+
+- **forces: alpha_s 0.1142 -> 0.1112** was disturbed 1× by: S vacuum rho -> i (g_s 1.155 -> 1)
+- **spectrum: wino 0.69 -> 2.0 TeV** was disturbed 1× by: S vacuum rho -> i (g_s 1.155 -> 1)
+- **spectrum: wino below 660 GeV** was disturbed 1× by: lower m3/2 to raise alpha_s
+- **dark matter: gravitino->wino overclosure** was disturbed 1× by: raise T_R for thermal leptogenesis
+- **gravity: PPN gamma-1 = -0.40** was disturbed 1× by: Kähler-modulus dark-energy thread (lambda 0.94)
+- **BBN: x9-16** was disturbed 1× by: Kähler-modulus dark-energy thread (lambda 0.94)
+- **geometry: no free tau at rho (frozen U)** was disturbed 1× by: quark slip as a modular-tau displacement
+- **flavour: u_d 0.02587 just outside window** was disturbed 1× by: one spurion for both quark sectors
+- **prediction: alpha_s becomes a fit** was disturbed 1× by: split stacks (SU(3) on its own cycle)
+- **proton: G-branch prediction lost** was disturbed 1× by: split stacks (SU(3) on its own cycle)
+- **input: sigma_vis 20.15 -> 19.58 (new postulate)** was disturbed 1× by: balance point (m3/2 x1.77, T_R x1.34)
+- **prediction: wino 0.69 -> 1.2 TeV** was disturbed 1× by: balance point (m3/2 x1.77, T_R x1.34)
+- **consistency: gauge term -C(G) / Z2 twist on rho plane** was disturbed 1× by: Higgs-pair threshold / U29 brane tilt
+- **numerics: degenerate-class artefact** was disturbed 1× by: flux-6 electron corner offset for Koide delta
+- **variables: eps confused with u** was disturbed 1× by: one shared rung step (the arrow)
+
+## The pattern in the knock-ons (three kinds)
+
+- **strain moved to another sector** (8): S vacuum rho -> i (g_s 1.155 -> 1) ⇒ forces: alpha_s 0.1142 -> 0.1112 (D1919/D1929); S vacuum rho -> i (g_s 1.155 -> 1) ⇒ spectrum: wino 0.69 -> 2.0 TeV (D1919/D1929); lower m3/2 to raise alpha_s ⇒ spectrum: wino below 660 GeV (D1931/D1937); raise T_R for thermal leptogenesis ⇒ dark matter: gravitino->wino overclosure (D1931a/D732); Kähler-modulus dark-energy thread (lambda 0.94) ⇒ gravity: PPN gamma-1 = -0.40 (D1906); Kähler-modulus dark-energy thread (lambda 0.94) ⇒ BBN: x9-16 (D1906); one spurion for both quark sectors ⇒ flavour: u_d 0.02587 just outside window (D1925/D1932); split stacks (SU(3) on its own cycle) ⇒ proton: G-branch prediction lost (D1940)
+- **predictivity spent (fit / new input)** (3): split stacks (SU(3) on its own cycle) ⇒ prediction: alpha_s becomes a fit (D1940); balance point (m3/2 x1.77, T_R x1.34) ⇒ input: sigma_vis 20.15 -> 19.58 (new postulate) (D1941); balance point (m3/2 x1.77, T_R x1.34) ⇒ prediction: wino 0.69 -> 1.2 TeV (D1941)
+- **the fix was an error** (4): quark slip as a modular-tau displacement ⇒ geometry: no free tau at rho (frozen U) (D1922/D1923); Higgs-pair threshold / U29 brane tilt ⇒ consistency: gauge term -C(G) / Z2 twist on rho plane (D1881b/D1907); flux-6 electron corner offset for Koide delta ⇒ numerics: degenerate-class artefact (D1885a); one shared rung step (the arrow) ⇒ variables: eps confused with u (D1894b)
+
+**Where they all point:** every case of strain moving to another sector passed through the **gravitino**, either its mass m₃/₂ (wino, α_s via the spectrum) or its abundance ∝ T_R (dark-matter overclosure). The only exception is the Kähler thread (gravity/BBN), which passes through a light modulus. The gravitino is the hub of the knock-ons. A fix that leaves m₃/₂ and the gravitino abundance alone (split stacks, Br(φ → NN)) moves no strain; it only spends predictivity.

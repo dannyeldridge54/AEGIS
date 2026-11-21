@@ -1,0 +1,207 @@
+{
+ "pointing": {
+  "tan_beta": {
+   "net": 1.0,
+   "spread": 0.11672671378000155,
+   "all_three_agree": true,
+   "direction": "RAISE",
+   "contested": false,
+   "voters": [
+    "M_N vs leptogenesis window top + (\u25cf)"
+   ]
+  },
+  "m3/2": {
+   "net": 3.0,
+   "spread": 21.02295842555003,
+   "all_three_agree": true,
+   "direction": "RAISE",
+   "contested": false,
+   "voters": [
+    "wino M2 [GeV] + (\u25d4)",
+    "gluino M3 [GeV] + (\u25cf)"
+   ]
+  },
+  "Delta3 threshold": {
+   "net": 1.0,
+   "spread": 0.5499999999999995,
+   "all_three_agree": true,
+   "direction": "RAISE",
+   "contested": false,
+   "voters": [
+    "alpha_s(M_Z) single-stack (no threshold) + (\u2191)"
+   ]
+  },
+  "b_prime": {
+   "net": -3.0,
+   "spread": 2.6331294225313364,
+   "all_three_agree": true,
+   "direction": "LOWER",
+   "contested": false,
+   "voters": [
+    "Delta3 after Higgs pair + gauge - (\u2191!)"
+   ]
+  },
+  "brane threshold": {
+   "net": 3.0,
+   "spread": 2.6331294225313364,
+   "all_three_agree": true,
+   "direction": "RAISE",
+   "contested": false,
+   "voters": [
+    "Delta3 after Higgs pair + gauge + (\u2191!)"
+   ]
+  },
+  "non-universal threshold": {
+   "net": 1.0,
+   "spread": 2.869169072888181,
+   "all_three_agree": true,
+   "direction": "RAISE",
+   "contested": false,
+   "voters": [
+    "S-T seam: supergravity-form threshold (non-universal part) + (\u2191!)"
+   ]
+  },
+  "split stacks (f3 != f2)": {
+   "net": 1.0,
+   "spread": 2.869169072888181,
+   "all_three_agree": true,
+   "direction": "RAISE",
+   "contested": false,
+   "voters": [
+    "S-T seam: supergravity-form threshold (non-universal part) + (\u2191!)"
+   ]
+  },
+  "M12": {
+   "net": 1.0,
+   "spread": 0.21372665479171293,
+   "all_three_agree": true,
+   "direction": "RAISE",
+   "contested": false,
+   "voters": [
+    "proton lifetime [yr] + (\u25cf)"
+   ]
+  },
+  "Br(phi->NN)": {
+   "net": 1.0,
+   "spread": 0.02179097045221945,
+   "all_three_agree": true,
+   "direction": "RAISE",
+   "contested": false,
+   "voters": [
+    "non-thermal leptogenesis: Br(phi->NN) needed + (\u25cf)"
+   ]
+  },
+  "T_R": {
+   "net": -1.0,
+   "spread": 0.2727818745013726,
+   "all_three_agree": true,
+   "direction": "LOWER",
+   "contested": false,
+   "voters": [
+    "non-thermal wino Omega from gravitinos (Omega \u221d T_R) - (\u25cf)"
+   ]
+  },
+  "b_bf": {
+   "net": -1.0,
+   "spread": 0.7254315150182721,
+   "all_three_agree": true,
+   "direction": "LOWER",
+   "contested": false,
+   "voters": [
+    "alpha drift zeta - (\u25cf)"
+   ]
+  }
+ },
+ "knockon_by_sector": {
+  "forces: alpha_s 0.1142 -> 0.1112": {
+   "count": 1,
+   "by": [
+    "S vacuum rho -> i (g_s 1.155 -> 1)"
+   ]
+  },
+  "spectrum: wino 0.69 -> 2.0 TeV": {
+   "count": 1,
+   "by": [
+    "S vacuum rho -> i (g_s 1.155 -> 1)"
+   ]
+  },
+  "spectrum: wino below 660 GeV": {
+   "count": 1,
+   "by": [
+    "lower m3/2 to raise alpha_s"
+   ]
+  },
+  "dark matter: gravitino->wino overclosure": {
+   "count": 1,
+   "by": [
+    "raise T_R for thermal leptogenesis"
+   ]
+  },
+  "gravity: PPN gamma-1 = -0.40": {
+   "count": 1,
+   "by": [
+    "K\u00e4hler-modulus dark-energy thread (lambda 0.94)"
+   ]
+  },
+  "BBN: x9-16": {
+   "count": 1,
+   "by": [
+    "K\u00e4hler-modulus dark-energy thread (lambda 0.94)"
+   ]
+  },
+  "geometry: no free tau at rho (frozen U)": {
+   "count": 1,
+   "by": [
+    "quark slip as a modular-tau displacement"
+   ]
+  },
+  "flavour: u_d 0.02587 just outside window": {
+   "count": 1,
+   "by": [
+    "one spurion for both quark sectors"
+   ]
+  },
+  "prediction: alpha_s becomes a fit": {
+   "count": 1,
+   "by": [
+    "split stacks (SU(3) on its own cycle)"
+   ]
+  },
+  "proton: G-branch prediction lost": {
+   "count": 1,
+   "by": [
+    "split stacks (SU(3) on its own cycle)"
+   ]
+  },
+  "input: sigma_vis 20.15 -> 19.58 (new postulate)": {
+   "count": 1,
+   "by": [
+    "balance point (m3/2 x1.77, T_R x1.34)"
+   ]
+  },
+  "prediction: wino 0.69 -> 1.2 TeV": {
+   "count": 1,
+   "by": [
+    "balance point (m3/2 x1.77, T_R x1.34)"
+   ]
+  },
+  "consistency: gauge term -C(G) / Z2 twist on rho plane": {
+   "count": 1,
+   "by": [
+    "Higgs-pair threshold / U29 brane tilt"
+   ]
+  },
+  "numerics: degenerate-class artefact": {
+   "count": 1,
+   "by": [
+    "flux-6 electron corner offset for Koide delta"
+   ]
+  },
+  "variables: eps confused with u": {
+   "count": 1,
+   "by": [
+    "one shared rung step (the arrow)"
+   ]
+  }
+ }
+}

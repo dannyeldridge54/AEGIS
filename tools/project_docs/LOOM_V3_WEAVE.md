@@ -108,3 +108,9 @@ This applies every time data is mined, a target is chased, or the loop steps ont
 6. **Order.** Work from the middle outwards. The median sector comes first, then the shared quantities, then the outer sectors.
 7. **Record.** Every D-note carries a `TRIANGULATE:` line: the three readings, the centre ± spread for each round, the number of rounds, the floor, and the distance to the target.
 8. **Code.** tools/loom/triangulate.py is the reusable helper.
+
+### Rule 6i — mark every knock-on, then review all the arrows (Danny 17:17)
+1. Every adjustment gets a row in field_tests/loom/knockon_ledger.json: what it fixed and **exactly what it disturbed**.
+2. Every derivation or test result is fingerprinted with a direction in the compass.
+3. **At every result,** run tools/loom/review.py. It reviews *all* the pointed fingerprints and the whole knock-on ledger together, finds the pattern, and triangulates where they all point (three weightings, then the median).
+4. Then pulse again.

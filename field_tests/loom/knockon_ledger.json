@@ -1,0 +1,13 @@
+[
+ {"d": "D1919/D1929", "adjustment": "S vacuum rho -> i (g_s 1.155 -> 1)", "fixed": ["control(g_s)"], "disturbed": ["forces: alpha_s 0.1142 -> 0.1112", "spectrum: wino 0.69 -> 2.0 TeV"]},
+ {"d": "D1931/D1937", "adjustment": "lower m3/2 to raise alpha_s", "fixed": ["forces: alpha_s"], "disturbed": ["spectrum: wino below 660 GeV"]},
+ {"d": "D1931a/D732", "adjustment": "raise T_R for thermal leptogenesis", "fixed": ["leptogenesis (thermal)"], "disturbed": ["dark matter: gravitino->wino overclosure"]},
+ {"d": "D1906", "adjustment": "Kähler-modulus dark-energy thread (lambda 0.94)", "fixed": ["dark energy slope"], "disturbed": ["gravity: PPN gamma-1 = -0.40", "BBN: x9-16"]},
+ {"d": "D1922/D1923", "adjustment": "quark slip as a modular-tau displacement", "fixed": [], "disturbed": ["geometry: no free tau at rho (frozen U)"]},
+ {"d": "D1925/D1932", "adjustment": "one spurion for both quark sectors", "fixed": ["flavour: one size"], "disturbed": ["flavour: u_d 0.02587 just outside window"]},
+ {"d": "D1940", "adjustment": "split stacks (SU(3) on its own cycle)", "fixed": ["forces: alpha_s"], "disturbed": ["prediction: alpha_s becomes a fit", "proton: G-branch prediction lost"]},
+ {"d": "D1941", "adjustment": "balance point (m3/2 x1.77, T_R x1.34)", "fixed": ["spectrum: wino margin 0.04 -> 0.61"], "disturbed": ["input: sigma_vis 20.15 -> 19.58 (new postulate)", "prediction: wino 0.69 -> 1.2 TeV"]},
+ {"d": "D1881b/D1907", "adjustment": "Higgs-pair threshold / U29 brane tilt", "fixed": ["forces: Delta3"], "disturbed": ["consistency: gauge term -C(G) / Z2 twist on rho plane"]},
+ {"d": "D1885a", "adjustment": "flux-6 electron corner offset for Koide delta", "fixed": ["leptons: delta size"], "disturbed": ["numerics: degenerate-class artefact"]},
+ {"d": "D1894b", "adjustment": "one shared rung step (the arrow)", "fixed": ["cross-sector step"], "disturbed": ["variables: eps confused with u"]}
+]

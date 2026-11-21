@@ -19156,3 +19156,26 @@ Danny interrupted the D1930 pulse run partway through, and it produced no result
   - The derived point (2.58e5, 3.7e8) also passes all four, but the wino margin there is only 0.04.
   - The wino prediction would shift from 0.69 to about 1.2 TeV if the balance point is adopted. It is not adopted. Test plan C5 keeps 0.69 and notes the alternative.
 - **COMPASS:** leptogenesis ↑! becomes ● (viable non-thermal channel, Br ≳ 10 %). The wino stays ◔ at the derived point and ● at the balance point. α_s is ○ (a fit, via split stacks).
+
+## D1943 — the pattern review (Danny 17:17): review all the pointed fingerprints together and triangulate where they point
+- **New tools:**
+  - field_tests/loom/knockon_ledger.json: every adjustment today, what it fixed and **exactly what it disturbed**, with D-numbers.
+  - tools/loom/review.py → tools/project_docs/WEAVE_REVIEW.md.
+- **TRIANGULATE:** every compass fingerprint votes on the knobs it pulls. The three vectors are three weightings: one vote each; 1/headroom; and failure-weighted (! ×3, ◔ ×2). The pointing is their median. **All three weightings agree in sign for every knob.**
+  - m₃/₂: RAISE (wino).
+  - The Δ₃ / non-universal / brane threshold: RAISE.
+  - b′: LOWER.
+  - T_R: LOWER (gravitino box).
+  - Br(φ → NN): RAISE.
+  - M₁₂: RAISE (proton).
+  - b_bf: LOWER.
+- **The knock-on pattern** (15 disturbances, three kinds):
+  - (1) **6** moved strain to another sector;
+  - (2) **4** spent predictivity (a fit or a new input);
+  - (3) **5** turned out to be errors (an artefact, a variable mix-up, a consistency slip, a frozen modulus).
+- **Where they point:** every case of moved strain passed through **the gravitino**, either its mass m₃/₂ or its abundance ∝ T_R. The one exception is the Kähler thread, which passes through a light modulus. **The gravitino is the hub of the knock-ons.**
+  - Fixes that leave m₃/₂ and the gravitino abundance alone (split stacks, the inflaton branching) moved no strain. They spent predictivity instead.
+- **Reading:**
+  - The next derivations should hold m₃/₂ and the gravitino abundance fixed. They should derive the quantities that were spent (A₃/A₂ and Br(φ → NN)) rather than turn the gravitino knobs.
+  - This is a pattern in hand judgments plus the compass. It is not a measurement.
+- **COMPASS:** unchanged. **Standing rule (Danny 17:17):** after every result, run review.py (all fingerprints together plus the knock-on ledger), add any adjustment's knock-ons to the ledger, and triangulate the pointing again.
