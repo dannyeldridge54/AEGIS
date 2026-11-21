@@ -66,6 +66,14 @@ A claim with one or two threads is **loose** and is reported as such. A claim th
    - (b) **One estimand, one extraction rule.** Every reading is extracted by the same symmetric rule (the log-centre of its reported range), and the full envelope is reported too.
    - (c) **Framework-matched readings set the fix.** Mismatched readings may only bound it.
    - (d) **Consensus** means |Δlog₁₀| ≤ 0.3 dex between readings, using each source's own error boxes. The spread uses all readings.
+   - (f) **Mirror-Loom mode (adopted D1914).** At data ticks whose verdict lies near a bar, or whose quantity is shared by both ladders:
+     - use a posterior fix from ≥ 5 bearings (log-space likelihoods, inflated ×2 for a framework mismatch);
+     - make the good-or-bad mixture the primary combiner;
+     - label the result FRAGILE if the Gaussian, Student-t and mixture combiners disagree on the verdict;
+     - report the clusters, not a median, when the Bayes factor for one common value is < 1;
+     - always run a SERAPIS mirror check (forward ↔ reverse, early ↔ late, visible ↔ dark), and count a result only if both sides pass at the centre.
+     
+     Routine ticks keep 3-point fixes. Cost is about 3–4× the web calls.
    - (e) **Verdict sensitivity.** If any allowed alternative extraction flips the verdict, or the value lies within its own uncertainty of a threshold, the verdict is INDETERMINATE. Thresholds are set before any reading is seen.
 
 Each tick is one pass of the shuttle. Every step is mandatory, and its output is one line in the D-note.

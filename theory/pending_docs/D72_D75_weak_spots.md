@@ -18648,3 +18648,32 @@ Corrections applied:
 - **Next for this sector:** reproduce R2's minimum in code, an independent path, on the Weave's Z₆-II/ρ set-up. That would make the claim woven.
 - **TRIANGULATE:** threads are R2 (source) + this note (compute = ratio). The independent check is pending.
 - **PROPAGATE:** WEAVE_FULL_DERIVATION §11.3 updated.
+
+## D1914 — METHOD: Mirror-Loom result (D1950–D1953, separate agent) compared with the 3-point Loom; adopted for data ticks (21 Nov 2026)
+The Mirror-Loom agent pushed locks PREREG_D1950/D1951 before doing any research, with the corrected need of 0.0457. Results are in field_tests/mirror/ and theory/pending_docs/LOOM_MIRROR_NOTES.md (commits c1d7ba9f, 72df2e92).
+
+**Test 1, displacement off ρ** (5 bearings: 1e-5, 0.042, 0.070, 0.012, 2e-5):
+- Posterior (mixture): median 0.020, 68 % [0.008, 0.044]. Need ×2.3 ⇒ **PARTIAL, FRAGILE**. The Gaussian combination gives FAIL ×20 and the Student-t gives FAIL ×3.3.
+- **The bearings are inconsistent** (χ² = 39 on 4 dof, BF for one common value 6e-7). They form two clusters, about 1e-5 and 0.01–0.07.
+- The only IIB bearing gets P(good) = 0.06.
+- **Mirror** (dark modulus near i, must stay < 5.9e-3 for D1853's α protection): it passes on the frozen cluster but fails ×1.7–4.7 on the dynamical cluster. The same mechanism that helps the forward side breaks the dark side ⇒ **CENTRE TENSION: the result does not count.**
+- Escapes: separate stabilisation sources per torus, the dark modulus pinned exactly at i, or dropping U = i.
+- The Mirror run did not include D1913's IIB dynamical model (2405.18813, 0.029). It would join the dynamical cluster and raise the IIB weight. The mirror tension stands unless the dark torus is stabilised differently.
+
+**Test 2, volume thread** (5 PPN bounds and 5 coupling variants):
+- Bound γ−1 < 4.6e-5 (95 %); prediction α = 0.68, |γ−1| = 0.64 ⇒ **FAIL ×1.4e4** under every combiner. The 3-point result was FAIL ×6,000.
+- **Mirror:** Δln(G m²) since BBN = 0.45–0.62 against the bound +0.05 ⇒ **FAIL ×9–16**. This bound is cosmological and unscreened, so it is a second, screening-proof kill.
+- The ephemeris Ġ/G check (×480) replaces D1906's memory-only LLR value.
+
+**Comparison:**
+- No clear verdict changed between the two methods.
+- The Mirror-Loom caught three things the 3-point Loom missed: source inconsistency (two clusters), a combiner-dependent verdict, and the forward/dark centre tension.
+- It also added one robust second kill (BBN).
+- Cost: about 3–4× the web calls.
+- Hazard: a median of a two-cluster posterior can land in the gap; when BF < 1, report the clusters instead.
+
+**Adopted in THE_LOOM §3.6(f):** at data ticks whose verdict is near a bar, or whose quantity is shared by both ladders, use posterior fixes with ≥ 5 bearings (mixture combiner primary, a FRAGILE label when combiners disagree, clusters reported when BF < 1) plus a mandatory SERAPIS mirror check. Routine ticks keep 3-point fixes.
+
+**Status changes:**
+- Rung-step displacement: LOOSE (D1913) → **LOOSE with CENTRE TENSION.** A new postulate is needed for the dark torus's stabilisation (flavour cap 1/2).
+- Volume thread: FAIL (woven), with a second kill from BBN.
