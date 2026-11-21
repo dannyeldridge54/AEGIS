@@ -18502,3 +18502,18 @@ The referee read D1816–D1904 and the trials ledger, and checked against Gmeine
 **New TRUST/choice flag:** the pyramid's U = i is a choice. Z₂ does not fix it. This weakens the neutrino-on-i lines (D1821, D1822, D1891), which now carry the label "U = i assumed".
 **PROPAGATE (done in this commit):** paper §3 (the U29 paragraph); WEAVE_FULL_DERIVATION §6 and §5; trials ledger (cap note); scoreboard row unchanged (it already showed the no-threshold FAIL).
 **Loom lesson, recorded in THE_LOOM.md §1:** the restore was the selection bias the methods referee warned about. The RESTORED flag plus an independent referee caught it within one tick.
+
+## D1908 — LEFT/flavour (Loom tick 3; first tick with median + triangulation at every step, Danny 14:30): can the modulus sit 0.09 off ρ? — FAIL (at the edge of PARTIAL) (21 Nov 2026)
+- **MEDIAN (sector):** α_s and the reverse thread are both capped, so the next strain is the rung-step displacement (D1895). Ledger: field_tests/loom/trials_rungstep.md.
+- **RESEARCH (triangulated: three independent source threads, all opened):**
+  - T1, flux landscape (IIB, 2206.04313): |δτ| ≈ 1e-5.
+  - T2, matter F-terms + ISS uplift (heterotic toy SUGRA, 2304.14437): 0.024 (AdS) and **0.075 (dS)** near ω; 0.010–0.021 near i.
+  - T3, one-loop Coleman–Weinberg (bottom-up A₄ level 3, 2310.15604): 0.024–0.036 where it works, ~0.2 in an extreme corner; needs a large species number.
+  - Framework flags: T2 and T3 do not match the Weave's IIB setting.
+- **EXECUTE** (lock PREREG_D1908, pushed first): median of the thread centres = **0.030**. The need is 0.090, a ratio of **3.01**. Two of the three threads reach ≥ 0.06 somewhere in their range. **FAIL** by the locked rule (PARTIAL needed ≤ 3), missing by 0.3 %.
+- **Reading:** the mechanisms people actually use move τ by 0.01–0.08. The Weave needs 0.09, about 3× the median, and its own IIB thread (T1) sits 10⁴ below that. The closest thread is T2's dS uplift, which carries the same kind of uplift the Weave uses, but in a heterotic toy.
+- **Options:**
+  - (a) a smaller step, which the arrow forbids (u* is fixed by m_μ/m_τ);
+  - (b) the hierarchy needs one more rung per generation at |u| ≈ 0.03, with the charges rescaled. That is a new postulate for the flavour sector (cap 0/2) and must be scored on the quark lock (D1828), which it would change.
+- **Triangulation of the FAIL:** three source threads plus this compute ⇒ **woven**.
+- **PROPAGATE:** the rung steps stay **TRUST** (input). The scoreboard is unchanged.

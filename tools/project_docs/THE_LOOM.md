@@ -53,6 +53,8 @@ Thread rules, tightened after the methods referee:
 A claim with one or two threads is **loose** and is reported as such. A claim that cannot get thread 2 or 3 is labelled **TRUST** (an explicit input). Danny 14:04: "it may just end up being trust".
 
 ## 3. The Loom: tick order (the standing loop from now on)
+**Median and triangulation at EVERY step** (Danny 14:30). Every step that produces a number, a choice or a reading gathers **three independent readings**: three sources at RESEARCH, three candidate postulates at POSTULATE, three estimates or code paths at EXECUTE. The step records all three, takes the **median** as the working value and the **spread** as its uncertainty. MEDIAN at step 0 is the same rule applied to the sectors. First used in D1908.
+
 Each tick is one pass of the shuttle. Every step is mandatory, and its output is one line in the D-note.
 
 0. **MEDIAN.**

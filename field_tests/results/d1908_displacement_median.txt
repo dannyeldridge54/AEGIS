@@ -1,0 +1,5 @@
+T1 flux landscape (IIB)                    centre 1.0e-05  range 1.0e-05-1.0e-05
+T2 matter F-terms + ISS (heterotic toy)    centre 7.5e-02  range 1.0e-02-7.5e-02
+T3 radiative CW (bottom-up A4)             centre 3.0e-02  range 2.4e-02-2.0e-01
+needed |dtau| = 0.090 ; median = 0.030 ; ratio needed/median = 3.01 ; threads reaching >=0.06: 2
+VERDICT: FAIL
