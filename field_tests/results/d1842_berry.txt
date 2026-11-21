@@ -1,0 +1,13 @@
+cusp->rho        k= -0.5  Phi=0.000000  dev=2.22e-01 
+cusp->rho        k=   -1  Phi=0.000000  dev=2.22e-01 
+cusp->rho        k=    1  Phi=0.000000  dev=2.22e-01 
+cusp->rho        k=    2  Phi=0.000000  dev=2.22e-01 
+arc i->rho       k= -0.5  Phi=0.130900  dev=9.13e-02 
+arc i->rho       k=   -1  Phi=0.261799  dev=3.96e-02 
+arc i->rho       k=    1  Phi=0.261799  dev=3.96e-02 
+arc i->rho       k=    2  Phi=0.523599  dev=3.01e-01 
+golden i->M(i)   k= -0.5  Phi=0.231824  dev=9.60e-03 NEAR
+golden i->M(i)   k=   -1  Phi=0.463648  dev=2.41e-01 
+golden i->M(i)   k=    1  Phi=0.463648  dev=2.41e-01 
+golden i->M(i)   k=    2  Phi=0.927295  dev=7.05e-01 
+closest: (0.009597804500403123, 'golden i->M(i)', -0.5, 0.23182380450040313)  VERDICT: NEAR
