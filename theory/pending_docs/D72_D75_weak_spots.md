@@ -17996,3 +17996,12 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
   - (a) the CP phase and the Jarlskog invariant from the same charges with modular-form phases at ρ + ε (arg 49–50°);
   - (b) the same lock applied to the charged leptons and neutrinos (lepton doublet charges given by an SU(5)-type relation to q_d), giving the D1828 prediction of the PMNS structure;
   - (c) whether (3/2, 1, 0) / (½, 0, 0) are realisable modular weights at ω.
+
+## D1829 (LEFT, quarks — 21 Nov 2026): the quark lock survives as a real matrix model and gives CP violation of the right size (both locked tests PASS)
+- [found before computing, stated in the lock] With c = 1 the D1828 texture is rank 1, and the modular phases n·arg u factorise and rephase away. So the light masses AND CP need generic complex O(1) coefficients: D1828 was a scaling estimate, and this is the matrix test. Note arg u ≈ −40° in both sectors, from τ − ρ̄ = ρ + ε − ρ̄.
+- [computed, locked PREREG_D1829_CP] 20000 draws with c_ij = r e^{iθ} (r in 0.5–2, θ free):
+  - **Matrix consistency: f₇ = 18 %** of draws give all 4 mass ratios AND all 3 |V| within ×3 (bar 5 %). **PASS.**
+  - **CP:** among those, **f_J = 31 %** have J within ×3 of 3.08e-5 (bar 20 %). **PASS.** The median J is 6.5e-6, low by ×4.7; median sin δ = 0.67 (δ ≈ 42° or 138°; data δ = 66°, sin δ = 0.91).
+  - Medians over all draws: m_u/m_t 3.9e-6, m_c/m_t 1.2e-3, m_d/m_b 7.6e-4, m_s/m_b 0.017, V_us 0.160, V_cb 0.017, V_ub 2.8e-3.
+- **Reading:** the lock (charges (3/2, 1, 0) / (½, 0, 0)) plus the two ρ-slips is a working Froggatt–Nielsen model. It is NATURAL in the strict sense: random O(1) coefficients land on the data about 1 time in 5 for the 7 CP-even observables, and about 1 in 3 of those also give J. The systematic lows (V_cb ×0.4, J ×0.2 at the median) are the places a real modular-form computation of the coefficients would have to lift.
+- Status: the quark sector moves from "12 hosted couplings" (D1779) to "2 slips + 1 charge set, natural with O(1) coefficients". Still post-data in the slip choices. Forward tests continue: leptons (D1830) and realisability of the charges (D1831).
