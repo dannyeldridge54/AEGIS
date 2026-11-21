@@ -8,7 +8,7 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 | Test | Weave number | Data / experiment | Tool | Status |
 |---|---|---|---|---|
 | A1 tensor ratio r | 5.41e-4 (10D); 5.7–5.9e-4 with τ_q (J1); 1.07e-3 if 6D | BICEP/Keck now; SO, LiteBIRD (σ_r ≈ 5e-4–1e-3) | Janus, weave_rladder | R (W for LiteBIRD) |
-| A2 running α_s | −9.7e-4 | CMB-S4 / SPHEREx (σ ~ 1e-3) | Janus | L |
+| A2 running α_s | −9.7e-4 | CMB-S4 / SPHEREx (σ ~ 1e-3) | Janus | L → **R** (21 Nov 10:22: PREREG_A2_RUNNING locked, band −1.05e-3 to −0.95e-3) |
 | A3 n_s | FITTED — not a test | — | — | — |
 | A4 f_NL | ≈ 0 (single field) | Planck, SPHEREx | Janus | L |
 | A5 isocurvature | ≈ 0 | Planck PR4 | Janus | R |
@@ -38,7 +38,7 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 |---|---|---|---|---|
 | C1 12.8 GeV asymmetric DM, direct detection | σ_SI below LZ, inside XLZD reach for ε near the ceiling | LZ, XENONnT, XLZD | Hyperion galaxy / engine | L |
 | C2 dark photon | 0.3–12.8 GeV, ε 1e-11 – LZ ceiling | SHiP, NA64, Belle II | to build: dark-photon window tool | T |
-| C3 DM self-interaction σ/m | computable from α_D ≥ 4.7e-4, m_A′ | cluster/dwarf bounds (σ/m < ~1 cm²/g) | to build (arXiv:1403.1077 formulas) | T |
+| C3 DM self-interaction σ/m | computable from α_D ≥ 4.7e-4, m_A′ | cluster/dwarf bounds (σ/m < ~1 cm²/g) | to build (arXiv:1403.1077 formulas) | T → **R** (weave_sidm; 21 Nov 10:22: at α_D = 0.022, σ/m ≤ 2e-3 cm²/g for every m_A′, D1795) |
 | C4 no galactic-centre DM annihilation | asymmetric ⇒ none | Fermi GCE | — | L |
 | C5 wino 0.67–1.0 TeV | disappearing tracks; γ-line | ATLAS/CMS Run 3, HL-LHC; CTA | lhc_*, galaxy γ-line | R |
 | C6 no dark neutron decay | none (D1753 R6) | UCNτ, BL3 beam | — | L |
@@ -50,7 +50,7 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 | D2 negative space z† | conditional (coupling not detected) | Lyα BAO z 2–3 (DESI) | weave_negspace | L |
 | D3 α drift | ζ ≲ 3.6e-6 needed ⇒ thread sequestered or axion-like | atomic clocks, quasar spectra (ESPRESSO) | Janus clocks | R |
 | D4 equivalence principle | no violation | MICROSCOPE-2 | — | L |
-| D5 cosmic birefringence | bridge β² = 2.5e-3 (c_γ/f)²(1+w0) deg² ⇒ c_γ/f ≈ 12 at β = 0.277°; ratio β_reio/β_rec = 0.997–0.999 (locked D404) | ACT+Planck now; LiteBIRD (both bumps) | bridges D403/D404 | R (thread must be axion-like with c_γ/f ≈ 12; LiteBIRD ratio test) |
+| D5 cosmic birefringence (21 Nov 10:22: carrier is now the photon-axion on its OWN cycle ≈ 36–39, m 1e-33–9e-32 eV, c_γ ≈ 4.2/Δθ — D1793–D1795; the thread is sequestered) | bridge β² = 2.5e-3 (c_γ/f)²(1+w0) deg² ⇒ c_γ/f ≈ 12 at β = 0.277°; ratio β_reio/β_rec = 0.997–0.999 (locked D404) | ACT+Planck now; LiteBIRD (both bumps) | bridges D403/D404 | R (thread must be axion-like with c_γ/f ≈ 12; LiteBIRD ratio test) |
 | D6 GW speed = c, no extra polarisations | standard | LIGO-Virgo-KAGRA | — | L |
 | D7 Hubble / S8 tensions | not resolved by the thread | SH0ES, JWST, DES/KiDS | Janus | L (honest null) |
 
@@ -69,3 +69,14 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 | F3 joints (every shared number agrees) | — | joint audit (D1750–D1752) | R |
 
 **Next to prepare on null ticks (in order):** D5 birefringence bridge tool + lock · B5 m_ββ tool + lock (predict NULL for LEGEND/nEXO) · B2 JUNO lock refresh · C3 σ/m tool · B11 gauge-coupling (D7 volume) derivation · A9 wall-spectrum template · B6 locked re-check of the 1.82 CKM point.
+
+## Y. Flavour model-building tests (added 21 Nov 10:22)
+| Test | Result | Status |
+|---|---|---|
+| Y1–Y3 theta/orbifold/hosting | D1783–D1785 | done |
+| Y4 odd flux M=9 Z₃ at ρ, Haar Higgs | FAIL (not natural; r₂₃ ≥ 0.20) | done (D1790) |
+| Y4b same, optimised Higgs | HOSTED (exact fit, all 9 pairs) | done (D1792) |
+| Y5 T²/Z₂ at ω, 4-4-8 | HOSTED (tuned fit; control passes) | done (D1791) |
+| Y6 (future) | a symmetry that fixes the Higgs direction ⇒ 0-parameter lepton test | T (no mechanism in the literature, D1796) |
+
+**21 Nov 10:22 corrections:** Λ is an INPUT (D1795: the dark-cycle axion oscillates, m ≈ 64 H₀), so no Λ-size test exists; the twin-cycle tie (forces = birefringence = α_D) is broken (D1793) and is not a test any more.
