@@ -60,7 +60,7 @@ Builds on WEAVE_FULL_EQUATION.md (v2, 19 Nov). New in v3: the visible forces on 
 |---|---|---|---|
 | I1 | V∞ (sets A_s) | inflation height | species count / volume [OPEN] |
 | I2 | tilt C (sets n_s) | inflation | α′³ with χ, 𝒱 (estimate exists) |
-| I3 | α⁻¹ at the string scale ⇔ Re T_vis | forces | moduli stabilisation of T_vis [OPEN] |
+| I3 | α⁻¹ at the string scale ⇔ Re T_vis | forces | FIXED BY DATA (D1767): α⁻¹ = 28.9 at 7e15 GeV (split-SUSY running) ⇒ Re T_vis = 21.1, T_R = 3.6e8 GeV, M_N ≥ 4.5e10 GeV, wino 0.67–0.71 TeV; theory (LVS SU(N) condensate) gives 26.0–26.7 (N = 4) / 30.6–31.4 (N = 5): not selected |
 | I4 | m₃/₂ (or the wino mass) | SUSY, dark matter | W₀ and 𝒱 [OPEN: flux choice] |
 | I5 | Koide scale (one lepton mass) and δ = 2/9 | leptons | δ: Berry-phase conjecture [OPEN] |
 | I6 | neutrino masses (Σm_ν, m₁ = 0) | neutrinos | seesaw M_N and Yukawas [OPEN] |
@@ -72,6 +72,7 @@ Builds on WEAVE_FULL_EQUATION.md (v2, 19 Nov). New in v3: the visible forces on 
 Compare: the Standard Model + ΛCDM have ~25–30 free numbers. The Weave fixes or ties: n_s/r/α_s relation, Q = 2/3, TM1 angles and δ_CP branch, θ̄ = 0, m_X, ΔN_eff ≈ 0, the reheating chain, the r-invariance, and W₀ from two others; it still hosts the quark couplings and the neutrino and dark-force scales.
 
 ## 5. What would unify it completely (the remaining derivations)
+0. (done, D1767) the data fix α⁻¹ ≈ 29 and with it the whole reheating chain; the visible-cycle size 21.1 equals the birefringence cycle size 20–22 (U15, C-twin-cycles).
 1. Stabilise T_vis (and T_dark, T_ℓ) inside the same species/flux structure ⇒ α⁻¹ predicted (I3), and with it T_R, the wino window and the genesis window become predictions.
 2. δ = 2/9 from a Berry phase on Re τ_ℓ (C-δ) ⇒ all three lepton masses from one scale (I5).
 3. What selects τ_q's class and the up-quark rung (B6 decides the data side) ⇒ quark couplings reduced (I7).
