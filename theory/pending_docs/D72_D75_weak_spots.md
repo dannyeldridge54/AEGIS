@@ -18033,3 +18033,27 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
   4. Nuclear shells and resonances are lock-and-key, but not Farey-ordered.
 - Verdict: U25's route rule holds across engineered periodic systems (amplify at low-order locks, protect at noble irrationals), with the refinement **noble rather than strictly golden**. Universality, not evidence for the Weave's specific physics.
 - Renumbering note: the lepton test moves to D1832.
+
+## D1832 (LEFT, leptons — 21 Nov 2026): by the SAME lock the charged leptons fit naturally — and they pick the down quarks' own slip (u_ℓ = 0.0253 vs u_d = 0.0259); this conflicts with Koide-at-ρ
+- [computed, locked PREREG_D1832_D1834] SU(5)-type charges q_L = q_d, q_e = q_Q; |u_ℓ| scanned from 1e-5 to 0.3 with 4000 random complex O(1) draws each:
+  - best **u_ℓ = 0.0253, f_max = 22 %** (NATURAL); at exactly u_d = 0.0259, f = 23 %.
+  - The lepton ratios come out naturally from the same lock and the same slip as the down quarks. This is a b–τ-type unification: τ_ℓ ≈ τ_d = ρ + 0.046 e^{i49°}, the half class.
+- **Tension (KOIDE-INCOMPATIBLE by the lock):** Koide's Q = 2/3 at the 1e-5 level needs the leptons exactly at ρ (|ε| ≲ 6e-5, i.e. |u| ≲ 3.5e-5). There f ≈ 0: the hierarchy cannot form. Random O(1) coefficients at u = 0.025 give Q scattered over O(0.1), never 2/3 to 1e-5. So the two lepton pictures exclude each other:
+  - **(A) Koide picture (D1776):** leptons at ρ exactly, Z₃ circulant. Koide is exact, but the hierarchy must come from somewhere else (the D1790–D1796 problem, still open).
+  - **(B) Lock picture (D1832):** leptons on the down slip. The hierarchy and b–τ unification are natural, but Koide becomes an accident (it holds to 1e-5 in data, which picture B does not explain).
+- Honest status: OPEN. A decisive test exists. Picture B predicts the GUT-scale relation m_τ ≈ m_b and m_μ/m_τ ≈ m_s/m_b up to O(1) factors; picture A predicts Koide survives improved m_τ (B1 lock). Recorded; no choice made.
+
+## D1833 (LEFT — 21 Nov 2026): the half-integer charges are native to magnetised tori
+- [literature] Magnetised-torus zero modes transform with weight ½ under the metaplectic double cover of SL(2,Z) ("Metaplectic flavor symmetries from magnetized tori", 2102.11286). Half-integral-weight modular forms are used in flavour models (2007.13706; A₅ double/metaplectic covers 2011.03501).
+- So the D1828 charges (3/2, 1, 0) and (½, 0, 0) are of the kind the Weave's own flux construction produces. Status: PLAUSIBLE, not an explicit assignment. Next: map each charge to a (flux, SS phase) of the zero mode.
+
+## D1834 (CENTRE, U25 inside the Weave — 21 Nov 2026)
+- [computed, locked PREREG_D1832_D1834] The knots (Re ρ = ½, Re i = 0), flux 9, ranks N = 6 and N_d = 12, charges (3/2, 1, 0) and (½, 0, 0), and the theta step n = 3 are all low-order rational, as U25 predicts for LOCKS. Verdict by the lock: SUPPORTED. This is close to automatic: locks in string models are integers or simple fractions by construction, so the weight is low.
+- The derived continuous numbers are OTHER (neither low-order nor noble):
+  - A = 7.2983, continued fraction [7; 3, 2, 1, 5, 4, 1, 2, …];
+  - λ_eff = 3.3583 = 403/120, continued fraction [3; 2, 1, 3, 1, 3, …].
+
+  No noble/golden structure appears in the Weave's continuous outputs, consistent with D1819.
+
+## D1836 (RIGHT, U24 stage 7 — 21 Nov 2026): the element lock is still on inputs
+- The nuclear window (D1802) needs m_q/Λ_QCD to 2–3 % and α to 2.5 %. The D1829 quark model gives only RATIOS within a sector. m_u/m_d needs m_t/m_b (tan β and y_t/y_b), and the absolute scale needs v and Λ_QCD, which comes from α_s (5× too coarse, D1802). So stage 7 stays on inputs. The element lock cannot be derived until α_s is predicted to ~4e-4 and m_t/m_b is fixed.
