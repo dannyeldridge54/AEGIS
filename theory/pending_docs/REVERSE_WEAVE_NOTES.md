@@ -138,3 +138,8 @@ V = V_L(1 − A e^{−βφ}), A = 7.30, published doi:10.5281/zenodo.24380387). 
   no light partner to mix with.
 - (Referee correction carried, D1850a: f is 4.4× smaller. The rotation β = c_γ α Δa/(2πf) with Δa = Δθ·f is
   f-independent, so c_γ = 4.2/Δθ (D1760a) is unchanged. [derived])
+
+## D1858 (RW10, lock only) — the ζ(5) tilt is now a future-data test (PREREG_RW10_DR3_TILT)
+- The DR2 best fits of the forward (β = 2√2) and mirror (β′ = 4√2) threads are frozen by hash. On DR3 / a new SN set,
+  both are refit: the mirror is preferred if Δχ² ≤ −2, the forward if ≥ +2. Today's −0.21 (D1854) is post-data and does
+  not count. Not a duplicate: the existing DR3 locks cover the forward tilt vs CPL/ΛsCDM and the flagship only.
