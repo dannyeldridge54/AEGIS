@@ -20995,3 +20995,21 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Read:**
     - The still centre i (the neutrino knot, TM1) is the one point where the golden and silver spiral axes meet. The spiral moves come *through* the centre; they do not set the centre's numbers.
     - That matches the data: golden mixing angles fail at ~4σ, while TM1 at i passes at +1.1σ.
+- **D2095 (CENTRE, bookkeeping; tools/seed/ledger.py; Danny 07:51–07:53 "split at every node, like neurons"): the budget ledger and synapse map for the D2083 unified PS model.**
+  - **The ledger:**
+    - **Root** (O-plane charge) (16, −8, −8, −16), split exactly:
+      - colour node a (0, −4, 0, −8);
+      - weak node b (12, −2, 0, 0);
+      - right node c (0, 0, −6, −4).
+    - Each node's share is half brane and half mirror image.
+    - That leaves (4, −2, −2, −4), closed by 4 hidden N = 2 rings (one per O-plane direction).
+    - **Remainder 0**: conservation holds at every node.
+  - **Synapses** (intersection numbers = chiral particles):
+    - **a–b direct = 3**: the 3 left-handed families;
+    - **a–c via the mirror = −3**: the 3 right-handed families come **through the orientifold image** (the "negative space").
+    - **New finding:** the hidden rings connect to the visible nodes:
+      - a–h0 (1, 1) and a–h2 (−1, −1);
+      - b–h2 (1, 1) and b–h3 (−3, −3);
+      - c–h0 (1, 1) and c–h1 (−3, −3).
+    - These are **chiral exotics**, unfiltered in D2083 as stated. They now must be filtered (the next Seed goalpost), or removed by choosing another of the 6 completions.
+  - **Labels:** the ledger and the synapse counts are PHYSICS (tadpole sum rule, I_ab). The cosmogony and neuron reading is ANALOGY: a design picture, not evidence.
