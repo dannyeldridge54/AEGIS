@@ -9,13 +9,17 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'
 from loomcore import Agent, Centre
 D = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'bloom_data.json')))
 LN95 = 1.6449  # one-sided 95% -> sigma
+ZCL = {0.95: 1.6449, 0.90: 1.2816}   # D2033 wiring: each limit uses its own confidence level
 
 # ---- lens 1: the pull of one term (bypass trace: every dataset feeds the target directly) ----
 def lnL_term(t, ours=None):
-    x = t['ours'] if ours is None else ours; k = t['kind']
-    if k == 'gauss': z = (x - t['mu']) / t['sigma']
-    elif k == 'upper': s = t['bound'] / LN95; z = max(0.0, x / s - LN95) if x > 0 else 0.0
-    elif k == 'lower': s = t['bound'] / LN95; z = max(0.0, LN95 - x / s)
+    x = t['ours'] if ours is None else ours; k = t['kind']; zc = ZCL[t.get('cl', 0.95)]
+    if k == 'gauss':
+        dx = x - t['mu']
+        if t.get('angle'): dx = (dx + 180) % 360 - 180          # D2033 wiring: phases compare on the circle
+        z = dx / t['sigma']
+    elif k == 'upper': s = t['bound'] / zc; z = max(0.0, x / s - zc) if x > 0 else 0.0
+    elif k == 'lower': s = t['bound'] / zc; z = max(0.0, zc - x / s)
     elif k == 'band': z = 0.0 if t['lo'] <= x <= t['hi'] else min(abs(x - t['lo']), abs(x - t['hi'])) / t['width']
     return -0.5 * z * z, z
 
@@ -36,7 +40,8 @@ def apply_levers(terms, s):
 def balance(knobs, steps=((1.1, 0.9), (1.03, 0.97), (1.01, 0.99), (1.003, 0.997), (1.001, 0.999)), rounds=200):
     """Plug knobs (multipliers on levers) in and let the Centre tune until BALANCED (every agent null)."""
     kfit = sum(f['n'] for f in D['fitted_knobs'])
-    def ev(s, split): return -target(apply_levers(D['terms'], s), kfit)[0] + 1.0   # held split = same terms (no tuning data here; the gate is the goalpost)
+    def held_terms(): return [dict(t, **t['alt']) if 'alt' in t else t for t in D['terms']]   # D2033 wiring: held-out = the shadow datasets
+    def ev(s, split): return -target(apply_levers(D['terms'] if split == 'tune' else held_terms(), s), kfit)[0] + 1.0
     a = Agent('balance', dict(knobs), ev, steps=steps); c = Centre([a], explore=0.0); c.run(rounds)
     T = apply_levers(D['terms'], a.settings()); lnL, tgt, N, k = target(T, kfit)
     return {'knobs': a.settings(), 'state': c.log[-1].get('event', 'budget'), 'bits': round(-tgt / math.log(2), 3),
@@ -45,11 +50,11 @@ def balance(knobs, steps=((1.1, 0.9), (1.03, 0.97), (1.01, 0.99), (1.003, 0.997)
 # ---- lens 2: shadow datasets (multiplexer, D2011): score each alternate dataset side by side ----
 def shadow(t):
     if 'alt' not in t: return None
-    a = dict(t, **t['alt']); return {'main': lnL_term(t)[1], 'alt': lnL_term(a)[1], 'alt_data': t['alt']['data']}
+    a = dict(t, **t['alt']); return {'main': round(lnL_term(t)[1], 2), 'alt': round(lnL_term(a)[1], 2), 'alt_data': t['alt']['data']}
 
 # ---- lens 3: tension between the two datasets of a term (do not combine hidden conflicts) ----
 def tension(t):
-    if 'alt' not in t: return None
+    if 'alt' not in t or 'sigma' not in t['alt']: return None
     a = t['alt']; return abs(t['mu'] - a['mu']) / math.hypot(t['sigma'], a['sigma'])
 
 # ---- lens 4: scale ladder (FILTRATION 2.9): a value counts only if stable over its last two rungs ----
@@ -106,7 +111,7 @@ def compass(terms):
     for t in terms:
         l, z = lnL_term(t); out.append({'id': t['id'], 'agent': t['agent'], 'z': round(z, 2), 'lnL': round(l, 2),
                                       'direction': 'up' if t['kind'] == 'gauss' and t['ours'] < t['mu'] else ('down' if t['kind'] == 'gauss' else '-'),
-                                      'headroom_sigma': round(LN95 - z, 2) if t['kind'] in ('upper', 'lower') else (round(2 - abs(z), 2) if t['kind'] == 'gauss' else None)})
+                                      'headroom_sigma': round(ZCL[t.get('cl', 0.95)] - z, 2) if t['kind'] in ('upper', 'lower') else (round(2 - abs(z), 2) if t['kind'] == 'gauss' else None)})
     return out
 
 # ---- injection-recovery (FILTRATION 2.5): plant a known shift, the engine must recover it ----
@@ -126,7 +131,7 @@ def report():
     terms = D['terms']; kfit = sum(f['n'] for f in D['fitted_knobs'])
     lnL, tgt, N, k = target(terms, kfit)
     out = {'target': {'lnL': round(lnL, 3), 'k_fit': k, 'N': N, 'bic_target': round(tgt, 3)}, 'compass': compass(terms),
-           'shadows': {t['id']: shadow(t) for t in terms if 'alt' in t}, 'tension': {t['id']: tension(t) for t in terms if 'alt' in t},
+           'shadows': {t['id']: shadow(t) for t in terms if 'alt' in t}, 'tension': {t['id']: tension(t) for t in terms if tension(t) is not None},
            'ladder': {t['id']: ladder(t) for t in terms if 'ladder' in t}, 'negative_space': negative_space(), 'hygiene_ok': hygiene(terms),
            'injection': injection_test(), 'theory_nuisance': {t['id']: theory_nuisance(t) for t in terms if 'ladder' in t}, 'gof': gof_bootstrap(terms), 'prequential': prequential(terms)}
     # T1 demonstration through the Centre: a FREE Delta3 knob (a fitted knob) vs the derived value. alpha_s(Delta3) linearised from v4:

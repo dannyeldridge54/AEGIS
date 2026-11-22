@@ -88,6 +88,11 @@
      "ref": "CMB-SPA+DESI (notes, SPT-3G D1 2025)",
      "value": 0.9728,
      "sigma": 0.0027
+    },
+    {
+     "ref": "ACT DR6 P-ACT-LB, 2503.14452 (n_s 0.974 +- 0.003)",
+     "value": 0.974,
+     "sigma": 0.003
     }
    ]
   },
@@ -115,6 +120,11 @@
     {
      "ref": "SPA+BK, 2512.10613 (95% upper)",
      "value": 0.034,
+     "sigma": null
+    },
+    {
+     "ref": "Planck+BK18+BAO+lensing profile likelihood, 2205.05617 (95% upper 0.037)",
+     "value": 0.037,
      "sigma": null
     }
    ]
@@ -172,7 +182,8 @@
      "value": -0.184,
      "sigma": 0.13
     }
-   ]
+   ],
+   "owed_source": "an independent third N_eff (SPT-3G) source"
   },
   {
    "id": "wino",
@@ -200,7 +211,8 @@
      "sigma": null
     }
    ],
-   "note_sources": "CMS SUS-24-012 is higgsino-only (185 GeV); a CMS pure-wino limit is still to be mined"
+   "note_sources": "CMS SUS-24-012 is higgsino-only (185 GeV); a CMS pure-wino limit is still to be mined",
+   "owed_source": "CMS pure-wino disappearing-track limit"
   },
   {
    "id": "gluino",
@@ -248,7 +260,8 @@
      "value": 2.4,
      "sigma": null
     }
-   ]
+   ],
+   "cl": 0.9
   },
   {
    "id": "alpha_drift",
@@ -300,6 +313,10 @@
    "shadow_bound": {
     "data": "Feldman-Cousins profile, 0.053 eV",
     "bound": 0.053
+   },
+   "alt": {
+    "data": "DESI DR2+CMB Feldman-Cousins profile (95% upper 0.053)",
+    "bound": 0.053
    }
   },
   {
@@ -326,6 +343,11 @@
     {
      "ref": "NuFIT 6.0 NO IC19, 2410.05380",
      "value": 0.307,
+     "sigma": 0.0115
+    },
+    {
+     "ref": "NuFIT 6.0 NO IC24 (with SK-atm), 2410.05380",
+     "value": 0.308,
      "sigma": 0.0115
     }
    ]
@@ -357,7 +379,8 @@
      "value": -183.0,
      "sigma": 81.7
     }
-   ]
+   ],
+   "angle": true
   },
   {
    "id": "m_bb",
@@ -377,8 +400,14 @@
      "ref": "KamLAND-Zen, 2406.11438 (90% upper, 28-122 meV)",
      "value": 28.0,
      "sigma": null
+    },
+    {
+     "ref": "LEGEND-200+GERDA+MAJORANA 76Ge, 2505.10440 (90% upper 75-200 meV)",
+     "value": 75.0,
+     "sigma": null
     }
-   ]
+   ],
+   "cl": 0.9
   }
  ],
  "fitted_knobs": [

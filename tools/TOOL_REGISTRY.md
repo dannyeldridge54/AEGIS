@@ -11,6 +11,16 @@
 - **The Unified Field Bloom (UFB):** the UFE derivation toolkit. It lives in tools/bloom (bloom.py, bloom_data.json, BLOOM.md) and tools/loom (core standard, loomcore, derivation_agents).
 - **The Forge:** the compressor, tools/compress (loomz v1–v19). It is **paused**.
 
+## 0a. The Unified Field Bloom (UFE derivation toolkit)
+| tool | what it is | status | D-note |
+|---|---|---|---|
+| tools/bloom/bloom.py | one target (lnL − BIC, in bits), 7 lenses per term, levers (B1), Centre balance with held-out = shadow datasets | **current** | D2026–D2033 |
+| tools/bloom/bloom_data.json | 13 terms, each with lock/release dates and sources; fitted knobs; levers; owed list | **current** | D2026–D2033 |
+| tools/bloom/bloom_loop.py | Loom loop: triangulate → mining queue → balance | **current** | D2032 |
+| tools/bloom/test_bloom.py | readiness battery (12 checks); must print READY | **current** | D2033 |
+| tools/bloom/BLOOM_STEPS.md | steps B1–B14 with goalposts plus the lead board | **current** | D2028, D2031 |
+| tools/loom/loom_engine.py | one engine for both directions (Forge bits, Bloom bits) | **current** | D2027 |
+
 ## 0. Core field engines (the Loom: the UFE as a self-balancing field)
 | tool | what it is | status | notes |
 |---|---|---|---|

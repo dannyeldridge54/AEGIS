@@ -20269,3 +20269,18 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - **α drift:** quasars give < 0.55 ppm (a different observable).
   - **Balance:** BALANCED, m₃/₂ × 0.973, 31.4 bits.
   - **Queue next:** wino (CMS), m_ββ, θ₁₂ (third source), n_s, r, ΔN_eff.
+- **D2033 (CENTRE): everything left folded in, plus a wiring audit and readiness battery.**
+  - **Mined:**
+    - n_s source 3: ACT P-ACT-LB 0.974 ± 0.003 (2503.14452). Consensus holds.
+    - θ₁₂ source 3: NuFIT IC24 0.308 ± 0.0115. **DONE.**
+    - r source 3: profile likelihood < 0.037 (2205.05617).
+    - m_ββ source 2: LEGEND-200 + GERDA + MAJORANA < 75–200 meV (2505.10440).
+    - Still owed: a CMS pure-wino limit and an independent third N_eff (SPT-3G).
+  - **Wiring fixes found by the audit:**
+    1. δ_CP is compared on the circle, not as a line.
+    2. Each limit uses its own confidence level (90% for m_ββ and proton, which had used the 95% form).
+    3. **The Centre's held-out split is now the shadow datasets.** Before, the held split was the same data, which broke the held-out rule. The rebalance gives m₃/₂ × 0.970.
+    4. The shadow lens now carries bound-type alternates (the Σm_ν FC 0.053 limit).
+    5. Compass headroom uses each term's confidence level.
+  - **Readiness battery** test_bloom.py: **12/12 PASS, READY.** It checks hygiene; dates and sources; the exact χ²; injection; the circle; the 90% form; B1 calibration (±0.0002, the goalpost tolerance, unchanged); BALANCED; the FIT label; agent-ledger coherence; the loop; and speed.
+  - Registry and derivation_agents.json now point at the Bloom.

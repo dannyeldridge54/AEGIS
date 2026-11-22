@@ -283,7 +283,7 @@
     {
      "data": "every release dated after its lock",
      "observable": "any locked prediction",
-     "ours": "—",
+     "ours": "\u2014",
      "role": "E1 strict evidence"
     }
    ]
@@ -329,5 +329,6 @@
    "n=35",
    "n=40"
   ]
- }
+ },
+ "engine": "tools/bloom (Unified Field Bloom): bloom.py target + 7 lenses + levers; bloom_loop.py mining/triangulation/balance; test_bloom.py readiness battery (must print READY before a step is scored); BLOOM_STEPS.md B1-B14 goalposts + lead board"
 }
