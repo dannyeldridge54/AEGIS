@@ -20390,3 +20390,13 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     2. **Sequestering:** ≤ 1.2e-3 of the visible-cycle F-term reaches the gauginos. This is the LVS/D3 sequestered regime (mutation cube axis V or K), not a partial fix.
     3. **Stabiliser:** volume mass ≥ 3.7e3 × the KKLT value (≥ ~5.7e11 GeV) during inflation (cube axis I or K).
   - **Approximation:** m₃/₂ enters only through the gaugino thresholds (stated in the lock).
+- **D2040 (CENTRE, loop iteration on the D2039 targets): target 2 (sequestering ≤ 1.2e-3) is narrowed.**
+  - Sequestered LVS (visible on D3s at a singularity, 0906.3297) has F^a = 0 on the visible cycle, so the soft terms are sub-leading: ~m₃/₂/√𝒱 down to M_P/𝒱².
+  - TeV gauginos there need **m₃/₂ ~ 1e9–5e10 GeV** (my rough scaling; loop factors ignored). Our m₃/₂ = 2.58e5 GeV would give gauginos far below the LHC bounds **if anomaly mediation is suppressed too**. The paper text read so far does not settle that point.
+  - **So target 2 must be: suppress the modulus F-term but keep anomaly mediation.** Only one class of setups does that:
+    - **warped-throat sequestering** (visible D3s at the tip of a KKLT throat, Randall–Sundrum style). Its feasibility is disputed (Kachru–McGreevy–Svrček, hep-th/0601111; Berg–Marsh–McAllister–Pajer, 1012.1858).
+  - **Mutation cube update:**
+    - **corner 010x00 (LVS-sequestered) is incompatible with v4's m₃/₂** unless AMSB survives;
+    - corner 000100 (flux-scaling) remains the nearest consistent corner;
+    - the warped-throat D3 option is added as the realisation of axis V = 1.
+  - Next lock: does flux-scaling (1503.07634) give F^T_vis/m₃/₂ ≤ 1.2e-3/at while keeping W₀ small? Read the paper under a lock.
