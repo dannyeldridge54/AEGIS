@@ -19700,3 +19700,53 @@ Corrections, each adopted:
   2. The data margins' whitened residuals are over-dispersed (std 1.11–1.27) with heavy tails (P(\|w\| > 4) = 0.04–0.4 % against 0.006 % for a Gaussian).
   3. The deterministic margins (quark window, M_N, split, gravitino box) have no data noise. Their sd falls to the 1e-6 floor, so the balancer's own second-order residuals read as huge z.
 - **The scored run was therefore not performed under D1986.** Seed 2026 is still unused. The fix is a new lock (D1987): a different detector design, not a retune of D1986.
+
+## D1987 — the woven field, engine v3 (two detectors), blind held-out run. PREREG_D1987 (6c5bc38d) plus DEVIATIONS 1; code ff930838 committed before calibration
+**Calibration (training seeds 1–5, 7 s each, 2 s warm-up excluded; 72,069 counted pulses): PASS.**
+- Detector A (exact explained-change test, 6 deterministic margins): **0 false alarms**.
+- Detector B (self-normalised CUSUM, 5 data margins): admissible start **k = 0.16, h = 20**. False-alarm rate 5.6e-6, 0 of 70 probes missed, mean delay 97 pulses.
+- 10 of the 15 configs were admissible. The rule picked the lowest delay.
+
+**Scored run, seed 2026, 60 s: 158,026 pulses (2,634 per s). Verdict FAIL (A5).** The scorer was fixed before the run.
+| bar | result |
+|---|---|
+| A1 | PASS (copy check, max \|Δ\| = 0) |
+| A2 recall | **1.0** |
+| A2 precision | **1.0 within 0.5 s and 1.0 over the full window** (D1983 got 0.57). The predicted set for E2, from the lens, was {5, 8} |
+| latency | 0.1–2.6 ms |
+| A3 false alarms | **0 in every quiet window** (edges excluded) |
+| A4 recovery | **PASS on 15 non-trivial checks**: layers 1, 2, 5, 6 and 7 were RESONANT before each event, and all were RESONANT again within 3 s |
+| **A5 runaway** | **FAIL: a knob was at its bound in 80.6 % of pulses** |
+
+**A5 detail.** T_R sat at its ×3 ceiling (1.11e9 GeV). The L8 balancer chases leptogenesis, and **Y_B still FAILS at the ceiling**. This is the N7 shortfall (Br ×4–16 short) showing up as a pinned knob.
+
+Online tuning moved the live detector to (0.2, 24) over 11 updates. The controller escalated L6, L5 and L8 once each, just after event edges: its 1 s window check overlaps the excluded edges. That is harmless to the bars and logged for the next lock.
+
+**Fits spent:** T_R (×3), m₃/₂ (+8.8 %) and split (the FIT switch).
+**Final states:**
+- RESONANT 100 %: L1, L2, L5, L7;
+- L6 82 %; L8 21 % (final LOST); L4 OPAQUE.
+- LOST flips: L6 1, L8 1. D1983's chatter (9,857 flips) is gone.
+
+**Goalpost scoreboard (61):** PASS 21, PASS (null) 7, PASS (FIT) 3, PASS (bound) 2, TRUST 1, FAIL 3, OPEN 15, UNSCORED 9.
+- **FAIL:** the L4 cube rung (−0.0034); Y_B / baryogenesis (×0.74 of the needed value).
+- **Correction to the scorer's "surviving predictions" list (21).** **B1 α_s and OP-unification pass only through the split FIT**: a_s_eff = 0.1180 by switch at split = 0.002. **B5 wino passes only through the m₃/₂ FIT** (+8.8 %). Those three are not surviving predictions.
+  - **The honest count is 18.** All are static numbers from earlier D-notes, and most are bounds with large margins.
+  - Among the killable set (G-T4), only JUNO sin²θ₁₂ (1.06σ) and r (a bound) actually survive here. Σm_ν passes with a 9 % margin.
+  - **Next lock:** a live PRED computed at fitted knobs is scored PASS (FIT).
+- **Open problems (16):**
+  - passing: strong CP (by the geometric postulate), neutrino mass scale, unification (FIT, see above), horizon;
+  - null: muon g − 2;
+  - **FAIL:** baryogenesis;
+  - FIT: flavour;
+  - **OPEN:** Λ, hierarchy, dark matter identity (FIT-dependent), H₀, S₈, evolving dark energy, Li-7, neutron lifetime; monopoles unscored.
+- **Nodes DONE (strict rule): one, L2 (pyramid, neutrinos), for 57.0 s.**
+  - It held resonance, every scored goalpost PASSed (JUNO 1.06σ, Σm_ν, m_ββ, m_β, the M_N bounds), it has no FIT, and M_N moved only 0.4 %.
+  - Caveats: the mass ordering is unscored (future data), and M_N sits at its derived value only because nothing pulls it.
+  - All other nodes have OPEN goalposts, a FIT, a FAIL or an opaque lens.
+
+**Honest reading.**
+1. The real-time machinery now works as specified on synthetic streams. Detection is self-consistent; it is not real data arriving.
+2. The field **does not balance**. Holding L5, L7 and L8 costs three fits plus a pinned T_R, and baryogenesis still fails. That is where the derivation must go: the M_N(S) or Br channel and the cube's new axis.
+3. One node, the neutrinos, meets every goalpost it has. That is the first DONE node, with its caveats.
+4. 15 goalposts stay OPEN because the Weave has no value for them: dark energy, H₀, S₈, Λ, the hierarchy, Li-7, the neutron lifetime, the Higgs mass, and others. These are derivation targets, not test failures.
