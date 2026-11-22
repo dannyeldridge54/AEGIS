@@ -20976,3 +20976,8 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **New leads:**
     1. the tadpole cost of large hidden ranks on T_vis;
     2. a re-scoring of D2044's W₀ reachability at W₀ ≈ 5e-6 to 2e-5 (ranks 13–16).
+- **D2093a (CORRECTION, 22 Nov 2026 07:50):** D2093's line "expected count of vacua with |W₀| ≲ 1e-5 of ~1e-3 × 1.35e6 ≈ O(1e2–1e3)" is **WRONG**.
+  - In Denef–Douglas statistics the density is uniform in the complex W₀ plane, so the count scales as **|W₀|²**.
+  - Scaling D2044's own result (N_hit = 4e-11 at 5.6e-9) gives **N_hit ≈ 4e-11 × (8e-6/5.6e-9)² ≈ 8e-5 at W₀ = 8e-6**: still ≪ 1.
+  - **So the small-W₀ gap does NOT soften enough for ranks 13–16 on the rigid Z₆-II (b₃ = 4). It stays FAIL.** The proposed re-score of lead 2 is dropped; lead 1 (tadpole cost) stands.
+  - The rest of D2093 is unchanged.
