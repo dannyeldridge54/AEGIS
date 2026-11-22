@@ -20835,3 +20835,16 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - So the low part of v4's own band (0.25–0.30 PeV) is within 2σ; the centre and top are not.
   - **Assumptions (stated):** m_H = μ and m_l̃/m_q̃ = 1 (3/19 powers); no Yukawa two-loop terms (−O(0.001)); the "unified" boundary is the PS one (no T1 thresholds).
   - **Status change:** the "α_s seam" gap becomes a sharp, derivable target. v4 must put μ ≲ 0.3 PeV, i.e. derive μ, the higgsino mass from the Giudice–Masiero / KKLT μ-term, below ~0.3 PeV. That is a new owed item for the Bloom: derive μ, rather than taking it as the scalar scale.
+- **D2086 (CENTRE, HYBRID; PREREG_D2086; tools/seed/wino_mu.py): with μ freed and the wino's higgsino threshold included (PGM, 1207.5453 Eqs. 6, 7, 9), α_s, wino and gluino are JOINTLY satisfiable at natural μ = O(m₃/₂). Inside v4's own m₃/₂ band this requires μ < 0, and it predicts a heavier gluino.**
+  - **Table check:** the interpolated α_s(T) equals the direct two-loop value at 1, 7 and 40 TeV (5 decimals).
+  - **Feasible points (wino 0.670–0.700 TeV, gluino ≥ 2.3 TeV, α_s within 2σ):**
+    - 189 points in total, **every one with |c| = |μ/m₃/₂| ∈ [0.33, 1.8]**, i.e. the PGM-natural range.
+    - **μ > 0 branch:** m₃/₂ = 124–175 TeV, μ = 58–165 TeV, gluino 3.1–4.2 TeV. This is **below** v4's m₃/₂ band.
+    - **μ < 0 branch inside v4's band (m₃/₂ = 250–700 TeV):** 61 points, tan β = 2–4, μ = −(0.14–1.0) PeV, **c = −0.47 to −1.44**, T_SUSY = 1.5–2.4 TeV, **gluino 6.7–15 TeV**.
+  - **v4 as used so far** (L = 0, gluino 4.93 TeV): α_s = 0.1166–0.1141 (−1.5σ to −4.3σ). This reproduces D2085.
+  - **Read:**
+    - The α_s seam closes inside v4's m₃/₂ band, with no new knob beyond the already-owed μ, **if** the Giudice–Masiero μ comes out negative (relative to the gaugino phase) with |μ| ≈ 0.5–1.4 m₃/₂.
+    - The negative higgsino threshold lowers the wino, so m₃/₂ rises within the band and the gluino goes up to ~7–15 TeV. That is out of LHC reach and within FCC-hh reach (a **new conditional prediction**).
+    - The earlier v4 gluino of 4.93 TeV assumed L = 0 and is superseded under this branch.
+  - **Assumptions (stated):** m_A = |μ|; the PGM coefficients with log = log₁₀ (~1% effect); m_l̃ = m_q̃; the exact-unification boundary (PS hybrid, D2083); no Yukawa two-loop terms.
+  - **Owed (sharp):** derive sign(μ) and c = μ/m₃/₂ from v4's Kähler potential (the Giudice–Masiero term Z(T) H_u H_d at the KKLT point). Target: c ∈ [−1.44, −0.47] at tan β = 2–4. Formula first, per the referee rule.
