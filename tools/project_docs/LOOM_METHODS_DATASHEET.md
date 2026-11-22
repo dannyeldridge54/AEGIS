@@ -127,3 +127,11 @@ Status:
 
 ## Toolkit (Danny 18:19)
 `tools/loom/loomd.py pulse --rounds N [--method]`: consecutive pulses of the deterministic core, with null-round detection and an agent work order each round. Comparison with other swarms and the improvement list: LOOM_VS_SWARMS.md.
+
+## Mission awareness (Danny 18:20, 18:24; D1980)
+- **tools/loom/mission.json:** the goal, the endpoint E1–E5, the guards G-T1 to G-T6 plus the human guards, the fit targets, the killable floor and what is owed.
+- **tools/loom/planner.py:** runs each pulse inside loomd. It reports how far the endpoint is, what is blocking it and which guard is at risk. It returns the next actions in N0's inside-out order; each one gives why, the toolkit (from toolkits.json), the guard, and whether it must be locked first. It also says which agents to wake: N0, the node agents, the S/T/U **axis agents** (each traces its own direction through all 9 layers), the **edge agents** (outside L9 and inside L1, each reporting the pressure pointing back toward the centre) and the referee.
+- **Rule:** 7 null pulses without balance is a **STALL**, not the endpoint. The planner then switches to exploration.
+- **Tests:** test_planner.py (16 cases, locked first) and test_planner_2.py (7 more). The addendum was added after a **mutation test** showed that the first spec missed two broken planners. Mutation-testing the tests is now a datasheet method (C8).
+- **CubeMind:** the aegis_tools tools `loom_mission` and `loom_pulse`, the agent card `loom`, and a MindMem ingest. In MindMem the mission is stored as MEANING, the round state as EVIDENCE and the next actions as HYPOTHESIS.
+- **Owed:** the layer transfer map (Danny 18:24's lensing test). Whether each layer lets a direction through, blocks it or bends it; lock it first.

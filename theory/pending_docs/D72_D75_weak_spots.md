@@ -19493,3 +19493,30 @@ Every check catches the mistake it was built for:
 | L9 late universe | HOLD | TRUST; write the G-T2 reason |
 
 **Fix applied now:** resonance.py's status label, through D1979a. Any lock whose layer knobs moved more than 1 % off their derived values now reads LOCKED-BY-FIT.
+
+## D1980 — METHOD: the mission-aware Loom (Danny 18:20, 18:24), round 3 (22 Nov 2026 00:22Z)
+**What was built:**
+- **mission.json**, holding the goal, the endpoint E1–E5, the guards and the fit targets.
+- **planner.py**, wired into loomd. Each pulse it writes field_tests/loom/next_actions.{json,md}.
+- **toolkits.json**, which maps 31 toolkit entries across the 9 layers and 6 action kinds. All of them resolve.
+- The S/T/U axis agents and the two edge agents, now part of the work order.
+- The CubeMind wiring (cubemind 20aea08): `loom_mission`, `loom_pulse`, and the MindMem ingest.
+
+**Tests:**
+- The spec was locked before the planner was written (d1803df7, 16 cases).
+- A mutation test then broke the planner six ways. **Two mutants survived:** reversing the inside-out order when several layers are unlocked, and declaring the endpoint while an alarm fires. That makes the first spec too weak.
+- The addendum (3f11af42, 7 cases) was locked, then it caught one real planner bug: N0's "test only" layers were being turned into "derive" actions. Fixed. All 23 cases pass.
+- Deviation logged: tools/loom/PLANNER_DEVIATIONS.md (one owed item was added to mission.json after the lock).
+
+**Round 3 pulse:**
+- NULL (streak 2). No physics moved; this round was spent on the build Danny asked for at 18:20.
+- The planner's order, under N0's lead D1979: (1) derive the L4 cube mismatch; (2) test the L5 wino at the edge; (3) the referee, due; (4) derive M_N(S) without the ×1.49 fit; (5) owed: the PASS-label check; (6) explore.
+- Endpoint 0 of 5. Axis agents S, T and U are all hot. Both edge agents are awake.
+
+**Answer to Danny 18:24 (honest):**
+- Before this round there were node agents but no axis agents and no edge agents.
+- The "lensing between layers" picture is **not yet tested**. In the current model the layers couple only through shared knobs.
+- The still-point eigen-directions are nearly pure S, T and U, so the axes barely couple. That may be built into the knob engine and is not yet ruled out.
+- The layer transfer map (pass / block / bend for each pair of neighbouring layers) is owed, to be locked before it is computed. If the maps come out near identity, the lensing picture is wrong for this model.
+
+TRIANGULATE: n/a (tooling). COMPASS: no new fingerprint. REVIEW: the knock-on ledger is unchanged (14).
