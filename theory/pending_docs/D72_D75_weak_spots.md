@@ -21164,3 +21164,14 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Status:**
     - v6 now has a validated bulk layer.
     - Still owed for the full engine: the exceptional (Z₂-twisted) layer, i.e. the 1209.3010 Tables 7/8/36 wrapping rules, the twisted tadpoles and the exceptional part of χ. That is needed to reproduce the 3 + 3 families and the "no chiral exotics" claim, and then to spin outward.
+
+## D2110 (DEEP, Seed v6): Z₂×Z₆′ AAA full positive control PASSES. Locked in PREREG_D2110, run once.
+- **Result:** the Table 27 global Pati-Salam model (1209.3010) was rebuilt from scratch with the transcribed exceptional-wrapping table, the orientifold images and the AAA twisted tadpoles (η_(k) = −1).
+  - Bulk tadpole = 32.
+  - **All 24 twisted RR residuals are 0.**
+  - The chiral intersections match Table 28 exactly with sign +1: ab 1, ab′ 2, ac −1, ac′ −2, bc 1, bd 1, bd′ −3, be′ −1, cd −1, cd′ 3, ce′ 1.
+  - All other pairs are 0, so there are **no chiral exotics**.
+  - That gives 3 + 3 PS families: a–b gives 1 + 2 left-handed, and a–c gives 1 + 2 right-handed.
+- **Ordering:** P1 (cyclic) and P2 (increasing) both pass, so this model does not resolve the (j, k) ordering. Rule going forward: outward scans compute both and keep a model only if P1 and P2 agree. Any disagreement is flagged, not used.
+- **Transcription:** the typo-corrected block-3 α₁ was declared in the PREREG before the run, and the control is consistent with it.
+- **Verdict:** v6 exceptional layer VALIDATED (PHYSICS: reproduces a published global model). Next: D2111, an outward Z₂×Z₆′ scan with tadpole-solving plus the v4 α_s chain, under a new lock.
