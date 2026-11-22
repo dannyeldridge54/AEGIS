@@ -20549,3 +20549,11 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Net:** Q1 via warped D3 is **incompatible with S = ρ** as written. Q1 stays OPEN.
   - Remaining Q1 options: (i) twisted-sector f at a singularity; (ii) accept mirage and fold it into Q4 (T1 then needs +0.09 to +0.12).
   - **Loop count:** 1 tick, partial progress (a cost found, a lead narrowed).
+- **D2055 (CENTRE; PREREG_D2055): Q2, Kallosh–Linde. CONDITIONAL. A published mechanism exists. It costs knobs and one tuning.**
+  - **(a) Two-stage stabilisation** (1112.4488): a Kähler coupling −β(T+T̄)|X|² lets the inflaton sector's F_X hold the volume during inflation, with "m_T² ≈ O(10) H²". KKLT takes over after inflation, so **m₃/₂ is decoupled from H**.
+    - The boost this implies is √10·H/m_T,KKLT ≈ **1.2e5**, well above the D2039 need (≥ 3.7e3).
+    - Costs: two knobs (β, γ) and a **tuning**: the inflationary and late minima must nearly coincide ("without a dynamical mechanism").
+  - **(b) Instant uplifted inflation** (1211.1455): reaches H/m₃/₂ ~ 1e5–1e6, which is **below our 2.2e7**. Admitted tunings (μ_X, μ_Y).
+  - **Mapping to v4:** v4's inflaton is S itself, not a separate X. Mechanism (a) needs a coupling −β(T+T̄)·(the S-sector F-term)², which has to be written into K.
+  - **Verdict:** Q2 moves from FAIL to **CONDITIONAL (FIT: β, γ + minima coincidence)**. The D2039 "boost" knob now has a named physical origin.
+  - **Loop count:** tick 2, progress (a mechanism found).
