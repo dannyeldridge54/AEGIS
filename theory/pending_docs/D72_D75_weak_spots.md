@@ -19765,3 +19765,41 @@ Online tuning moved the live detector to (0.2, 24) over 11 updates. The controll
 | O9 | debate heterogeneity (Du 2023); effort scaling (Anthropic multi-agent research system) | referees on a different model; at most one high-effort action per pulse | **PASS** (B8) |
 
 **Planner fix D1980a:** the endpoint now needs E1–E5 (E3 four corners from field_tests/loom/four_corners.json, E5 from referee_signoff.json) and no alarms. **Test B8a PASS.**
+
+## D1989 — the complete field and the self-driving Loom (Danny 19:19). PREREG_D1989 (3d45fed7); code b5f9a38f committed before any scored run
+**P1 tooling: all done.**
+- Fit-aware scorer.
+- Quiet-window fix.
+- STUCK rule.
+- Physical bounds: T_R ≤ m_φ; M_N and u inside their windows.
+- KNOBS_OF corrected (L4 [], L8 [TR, MN, m₃/₂]).
+- Kink-aware R2. **With it, the three lensing readings now agree on every transfer, and the lensing verdict is DECOUPLED.** D1981's MIXED came from the faulty R2/R3.
+- **Determinism: PASS** (rounds 4 and 5: the state is identical and the second round is NULL).
+- **PASS-label check (C8):** it flags exactly the 3 known D1987 mislabels, and finds 0 in D1989.
+
+**Scored run, seed 2027 (never used before), 60 s, 173,175 pulses (2,886 per s): PASS on A1–A5.**
+- Precision 1.0/1.0, recall 1, latency 0.1–2.0 ms.
+- 0 quiet false alarms.
+- 18 recoveries.
+- **0 % of pulses at a bound.**
+- No STUCK.
+- Fits spent: T_R (×4.84, to 1.79e9 GeV), m₃/₂ (+8.8 %), split.
+- Goalposts: PASS 18 (all static), PASS (FIT) 8, PASS (null) 7, PASS (bound) 2, TRUST 1, **FAIL 1 (the cube)**, OPEN 15, UNSCORED 9.
+- Baryogenesis now reads **PASS (FIT)**, through T_R.
+- Nodes DONE: L2 (neutrinos), 57 s.
+- L8 had no free knob in 84 % of pulses, because inner layers held T_R, M_N and m₃/₂.
+
+**P2 real-data replay** (published n_s, α_s, wino-limit and Y_B histories, 70 s, seed 2028):
+- **recall 4 of 6** detectable releases; **specificity 7 of 7**.
+- Missed: n_s P-ACT 2025 (2.76σ) and SPA + DESI (1.63σ).
+- **Why:** the L6 balancer chased every n_s release by moving T_R (3.7e8 → 9.8e6 GeV over the replay). The shifts were absorbed as *explained* self-moves. **An active balancer can hide incoming data.** Owed: a data-residual detector, and freezing a layer's balancing while its stream steps. This is now in mistakes.jsonl.
+
+**P3 derivations (no new fit):**
+- **C1 cube axis, H_Imτ: FAIL out-of-sample.**
+  - In-sample it is a post-hoc 0.1 % match: lepton slip 0.0253 against e^{−9π/8} × Im ρ = 0.02527. The chance figure is 2 %, but it carries no weight, because the slip is a best-fit point inside the broad range 0.0066–0.0435.
+  - Quarks: 0.02527 (ρ) misses the window [0.02588, 0.02740] by 2.4 %; 0.02918 (i) misses by 6.5 %. **Recorded as an unsupported coincidence.**
+- **C2 baryogenesis: FEASIBLE-BY-FIT.**
+  - Y_B ≥ 0.87e-10 with Ω_w h² ≤ 0.12 and n_s within 2σ, for **T_R ∈ [1.54e9, 2.09e9] GeV = ×4.16–5.66 the derived 3.7e8**. The top is set by the gravitino box.
+  - **A derivation target:** T_R ≈ 1.5–2.1e9 from the inflaton couplings would turn this into a prediction.
+
+**P4 self-driving:** `loomd auto`. Each pulse runs the core, a 20 s woven-field scored run, the battery, the PASS-label check, online FDR, the planner and a report. It stops at the ENDPOINT or a STALL. The decision logic passes its self-test. CubeMind gets loom_auto and loom_report (243fb11).
