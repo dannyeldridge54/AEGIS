@@ -16,7 +16,7 @@ def model(v1, v2, v3, gs, MP, var):
     T = math.sqrt(v1*v2*v3)/K/(4*gs); Ms = MP*gs/math.sqrt(4*math.pi*v1*v2*v3)
     da, db, dc = thr(v1, v2, v3, var); return T, Ms, (T + da, T + db, T + dc)
 def resid(x, v3, MP, var, iso):
-    v1, v2, lg = (x[0], x[0], x[1]) if iso else (x[0], x[1], x[2]); gs = math.exp(lg)
+    v1, v2, lg = (math.exp(x[0]), math.exp(x[0]), x[1]) if iso else (math.exp(x[0]), math.exp(x[1]), x[2]); gs = math.exp(lg)
     T, Ms, (A4, Ab, Ac) = model(v1, v2, v3, gs, MP, var); m = alpha_inv(Ms)
     r = [m[2] - A4, m[1] - Ab, m[0] - (0.4*A4 + 0.6*Ac)]
     return r[:2] if iso else r
@@ -29,20 +29,25 @@ for MPn, MP in (('reduced', 2.435e18), ('nonreduced', 1.221e19)):
             best = None
             for g0 in (-6, -3, -1):
                 for v0 in (2, 50, 500, 5000):
-                    x, info, ok, _ = fsolve(resid, [v0, g0], args=(v3, MP, var, True), full_output=True)
-                    if ok == 1 and x[0] > 0:
+                    x, info, ok, _ = fsolve(resid, [math.log(v0), g0], args=(v3, MP, var, True), full_output=True)
+                    if ok == 1 and max(abs(r) for r in resid(x, v3, MP, var, True)) < 1e-6:
+                        x = [math.exp(x[0]), x[1]]
                         T, Ms, A = model(x[0], x[0], v3, math.exp(x[1]), MP, var); m = alpha_inv(Ms)
                         r1 = m[0] - (0.4*A[0] + 0.6*A[2]); best = (abs(r1), dict(v3=v3, v=x[0], gs=math.exp(x[1]), Ms=Ms, T=T, alpha1_resid=r1)); break
                 if best: break
             if best: iso.append(best[1])
         sols_i = [s for s in iso if abs(s['alpha1_resid']) < 0.05 and s['v'] >= 1 and s['v3'] >= 1 and 0 < s['gs'] < 1]
+        for s1, s2 in zip(iso, iso[1:]):
+            if s1['alpha1_resid']*s2['alpha1_resid'] < 0 and min(s1['v'], s2['v']) >= 1 and max(s1['gs'], s2['gs']) < 1:
+                sols_i.append({'bracket_v3': [s1['v3'], s2['v3']], 'v': [s1['v'], s2['v']], 'gs': [s1['gs'], s2['gs']], 'Ms': [s1['Ms'], s2['Ms']]})
         sgn = [round(s['alpha1_resid'], 2) for s in iso]
         gen = []
         for v3 in [1, 3, 10, 30, 100, 300, 1000, 3000, 1e4, 3e4, 1e5, 3e5]:
             for g0 in (-6, -4, -2):
                 for v0 in ((2, 2), (300, 2), (300, 50), (3000, 300)):
-                    x, info, ok, _ = fsolve(resid, [v0[0], v0[1], g0], args=(v3, MP, var, False), full_output=True)
+                    x, info, ok, _ = fsolve(resid, [math.log(v0[0]), math.log(v0[1]), g0], args=(v3, MP, var, False), full_output=True)
                     if ok == 1 and max(abs(r) for r in resid(x, v3, MP, var, False)) < 1e-6:
+                        x = [math.exp(x[0]), math.exp(x[1]), x[2]]
                         gs = math.exp(x[2]); T, Ms, A = model(x[0], x[1], v3, gs, MP, var); d = thr(x[0], x[1], v3, var)
                         gen.append(dict(v3=v3, v1=x[0], v2=x[1], gs=gs, Ms=Ms, T=T, ctrl=max(abs(t) for t in d)/T,
                                         geometric=bool(min(x[0], x[1], v3) >= 1 and 0 < gs < 1))); break
