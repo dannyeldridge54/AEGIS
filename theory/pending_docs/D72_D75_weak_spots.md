@@ -21150,3 +21150,17 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     5. FI D-terms freeze the visible twisted moduli.
   - **Next:** Seed v6 on Z₂×Z₆′. Positive control = 1209.3010 Table 27. The exceptional-cycle tables (7, 8, 36) are owed before coding.
   - Danny's "twist / hourglass" picture maps onto discrete torsion and the fixed-point cones (physics); "three hands on one clock" is an analogy.
+- **D2109 (CENTRE; PREREG_D2109; tools/seed/z2z6p_bulk.py): Seed v6 step 1, the Z₂×Z₆′ discrete-torsion bulk positive control. PASS, with a unique reading.**
+  - The 1209.3010 Table-27 Pati-Salam model is reproduced at bulk level **only** with the cyclic reading of Σ_{i≠j≠k≠i} and N = rank:
+    - X = (1, 1, 1, 3, 1) and Y = 0 for a–e;
+    - AAA SUSY holds for every stack;
+    - **bulk tadpole Σ N(2X + Y) = 32 exactly** (η_ΩR = −1);
+    - **Σ_hidden N X = 8**, matching the paper's text.
+  - The other three readings fail: permutation-sum, 2 × rank, and both together.
+  - **Unification:** visible lengths L_a = L_b = L_c, so tree-level unification is geometric (Eq. 65). With exact unification the D2084/D2100/D2089 α_s chain applies unchanged:
+    - 0.1167 at one loop;
+    - 0.1181 with v4's spectrum at μ = 0.55 m₃/₂;
+    - the KL + GM branch at −1.6σ to −2σ.
+  - **Status:**
+    - v6 now has a validated bulk layer.
+    - Still owed for the full engine: the exceptional (Z₂-twisted) layer, i.e. the 1209.3010 Tables 7/8/36 wrapping rules, the twisted tadpoles and the exceptional part of χ. That is needed to reproduce the 3 + 3 families and the "no chiral exotics" claim, and then to spin outward.
