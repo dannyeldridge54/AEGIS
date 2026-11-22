@@ -44,6 +44,14 @@ def neighbours(chi, A, B, C, LAD):
                 W2 = [list(v) for v in V]; W2[i][j] += d; w = tuple(W2[i])
                 if math.gcd(w[2*(j//2)], w[2*(j//2) + 1]) != 1 or max(map(abs, w)) > K['L_pool'] or not is_susy(w, chi): continue
                 yield chi, tuple(W2[0]), tuple(W2[1]), tuple(W2[2]), ('wrap', i, j, d)
+    if K.get('ping_radius', 1) >= 2:
+        for i in range(3):
+            for j, k2 in itertools.combinations(range(6), 2):
+                for d1 in (1, -1):
+                    for d2 in (1, -1):
+                        W2 = [list(v) for v in V]; W2[i][j] += d1; W2[i][k2] += d2; w = tuple(W2[i])
+                        if any(math.gcd(w[2*t], w[2*t+1]) != 1 for t in range(3)) or max(map(abs, w)) > K['L_pool'] or not is_susy(w, chi): continue
+                        yield chi, tuple(W2[0]), tuple(W2[1]), tuple(W2[2]), ('wrap2', i, j, k2, d1, d2)
     for ax in range(3):
         idx = LAD.index(chi[ax]) if chi[ax] in LAD else None
         if idx is None: continue
