@@ -126,5 +126,16 @@
   "disturbed": [
    "spectrum: derived wino 686.5 GeV now INDETERMINATE at the edge"
   ]
+ },
+ {
+  "d": "D1972",
+  "adjustment": "layered resonance: rebalance all knobs together centre-out (3 sweeps)",
+  "fixed": [
+   "layers 1,2,6 locked at derived values; 5,7,8 locked"
+  ],
+  "disturbed": [
+   "predictivity: 4 fits spent (M_N x1.49, m3/2 x1.22, T_R x1.49, A3/A2 0.74)",
+   "cube layer: lepton/neutrino rung mismatch 15.3 % unresolvable by knobs"
+  ]
  }
 ]

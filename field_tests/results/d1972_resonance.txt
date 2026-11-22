@@ -1,0 +1,337 @@
+[
+{
+"1": [
+[
+1,
+"LOCKED",
+{
+"quark_window": 0.0285
+},
+[]
+],
+[
+2,
+"LOCKED",
+{
+"nu_ratio": 0.2852,
+"MN_top": 2.6069,
+"MN_bottom": 1.4104
+},
+[]
+],
+[
+3,
+"TRUST (no",
+{},
+[]
+],
+[
+4,
+"NO LOCK",
+{
+"rung_agreement": -0.0029
+},
+[]
+],
+[
+5,
+"LOCKED",
+{
+"wino": 0.1805
+},
+[
+"m32"
+]
+],
+[
+6,
+"LOCKED",
+{
+"n_s": 1.1852
+},
+[
+"m32"
+]
+],
+[
+7,
+"LOCKED",
+{
+"alpha_s": 2.0,
+"split_natural": 0.7986
+},
+[
+"m32",
+"split"
+]
+],
+[
+8,
+"LOCKED",
+{
+"gravitino_box": 1.05,
+"leptogenesis": 0.1884
+},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+],
+[
+9,
+"TRUST (no",
+{},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+]
+]
+},
+{
+"2": [
+[
+1,
+"LOCKED",
+{
+"quark_window": 0.0285
+},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+],
+[
+2,
+"LOCKED",
+{
+"nu_ratio": 0.2852,
+"MN_top": 2.2069,
+"MN_bottom": 1.8104
+},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+],
+[
+3,
+"TRUST (no",
+{},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+],
+[
+4,
+"NO LOCK",
+{
+"rung_agreement": -0.0029
+},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+],
+[
+5,
+"LOCKED",
+{
+"wino": 0.1805
+},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+],
+[
+6,
+"LOCKED",
+{
+"n_s": 1.214
+},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+],
+[
+7,
+"LOCKED",
+{
+"alpha_s": 2.0,
+"split_natural": 0.7986
+},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+],
+[
+8,
+"LOCKED",
+{
+"gravitino_box": 1.05,
+"leptogenesis": 0.1884
+},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+],
+[
+9,
+"TRUST (no",
+{},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+]
+]
+},
+{
+"3": [
+[
+1,
+"LOCKED",
+{
+"quark_window": 0.0285
+},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+],
+[
+2,
+"LOCKED",
+{
+"nu_ratio": 0.2852,
+"MN_top": 2.2069,
+"MN_bottom": 1.8104
+},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+],
+[
+3,
+"TRUST (no",
+{},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+],
+[
+4,
+"NO LOCK",
+{
+"rung_agreement": -0.0029
+},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+],
+[
+5,
+"LOCKED",
+{
+"wino": 0.1805
+},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+],
+[
+6,
+"LOCKED",
+{
+"n_s": 1.214
+},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+],
+[
+7,
+"LOCKED",
+{
+"alpha_s": 2.0,
+"split_natural": 0.7986
+},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+],
+[
+8,
+"LOCKED",
+{
+"gravitino_box": 1.05,
+"leptogenesis": 0.1884
+},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+],
+[
+9,
+"TRUST (no",
+{},
+[
+"MN",
+"m32",
+"TR",
+"split"
+]
+]
+]
+}
+]

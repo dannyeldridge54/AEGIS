@@ -42,3 +42,18 @@ Deferred (high cost, high value): N1/N3 Z₆-II tadpoles, U₃ stabilisation and
 - **MAJOR: the endpoint could be gamed by relabelling.** Guards G-T1 to G-T6 have been added to the charter.
 - **MINOR:** the knock-on predictions for round 2 were not checked; they are now annotated. The N7 wording was too kind; fixed.
 - **Highest-information move:** the wino kill test (Fermi limit plus disappearing-track limit).
+
+## Layered resonance (D1972, Danny 17:58): centre outwards, 9 layers, 3 sweeps
+| layer | state |
+|---|---|
+| 1 torus | LOCKED |
+| 2 pyramid | LOCKED |
+| 3 turnover | TRUST |
+| 4 cube | **NO LOCK** (lepton vs neutrino step mismatch 15.3 %) |
+| 5 fold | LOCKED-BY-FIT |
+| 6 dilaton | LOCKED |
+| 7 forces | LOCKED-BY-FIT |
+| 8 cosmology | LOCKED-BY-FIT |
+| 9 late universe | TRUST |
+
+The outer locks spend **4 fits**: M_N × 1.49, m₃/₂ × 1.22, T_R × 1.49, A₃/A₂ ≈ 0.74. Under guard G-T3 that is **not balance**. Those four fits are now the derivation targets that would turn the locks into predictions.

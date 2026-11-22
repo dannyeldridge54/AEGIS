@@ -1,0 +1,621 @@
+{
+ "sweeps": [
+  {
+   "sweep": 1,
+   "rows": [
+    {
+     "layer": 1,
+     "name": "torus (centre, rung step)",
+     "status": "LOCKED",
+     "margins": {
+      "quark_window": 0.0285
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 184400000000.0,
+      "m32": 258000.0,
+      "TR": 370000000.0,
+      "split": 0.0
+     },
+     "fits_spent": []
+    },
+    {
+     "layer": 2,
+     "name": "pyramid (i, neutrinos)",
+     "status": "LOCKED",
+     "margins": {
+      "nu_ratio": 0.2852,
+      "MN_top": 2.6069,
+      "MN_bottom": 1.4104
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 184400000000.0,
+      "m32": 258000.0,
+      "TR": 370000000.0,
+      "split": 0.0
+     },
+     "fits_spent": []
+    },
+    {
+     "layer": 3,
+     "name": "turnover (rho, leptons)",
+     "status": "TRUST (no margin; cannot lock, G-T5)",
+     "margins": {},
+     "knobs": {
+      "u": 0.02663,
+      "MN": 184400000000.0,
+      "m32": 258000.0,
+      "TR": 370000000.0,
+      "split": 0.0
+     },
+     "fits_spent": []
+    },
+    {
+     "layer": 4,
+     "name": "cube (three tori together)",
+     "status": "NO LOCK",
+     "margins": {
+      "rung_agreement": -0.0029
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 184400000000.0,
+      "m32": 258000.0,
+      "TR": 370000000.0,
+      "split": 0.0
+     },
+     "fits_spent": []
+    },
+    {
+     "layer": 5,
+     "name": "fold (volumes, m3/2)",
+     "status": "LOCKED",
+     "margins": {
+      "wino": 0.1805
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 184400000000.0,
+      "m32": 315121.91160532384,
+      "TR": 370000000.0,
+      "split": 0.0
+     },
+     "fits_spent": [
+      "m32"
+     ]
+    },
+    {
+     "layer": 6,
+     "name": "dilaton (inflation)",
+     "status": "LOCKED",
+     "margins": {
+      "n_s": 1.1852
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 184400000000.0,
+      "m32": 315121.91160532384,
+      "TR": 370000000.0,
+      "split": 0.0
+     },
+     "fits_spent": [
+      "m32"
+     ]
+    },
+    {
+     "layer": 7,
+     "name": "forces (S-T seam)",
+     "status": "LOCKED",
+     "margins": {
+      "alpha_s": 2.0,
+      "split_natural": 0.7986
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 184400000000.0,
+      "m32": 315121.91160532384,
+      "TR": 370000000.0,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "m32",
+      "split"
+     ]
+    },
+    {
+     "layer": 8,
+     "name": "cosmology (reheating, genesis)",
+     "status": "LOCKED",
+     "margins": {
+      "gravitino_box": 1.05,
+      "leptogenesis": 0.1884
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    },
+    {
+     "layer": 9,
+     "name": "late universe (thread)",
+     "status": "TRUST (no margin; cannot lock, G-T5)",
+     "margins": {},
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    }
+   ],
+   "locked": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    8
+   ],
+   "final_knobs": {
+    "u": 0.02663,
+    "MN": 275092474245.05023,
+    "m32": 315121.91160532384,
+    "TR": 551975138.12727,
+    "split": -0.3
+   },
+   "fits_spent": [
+    "MN",
+    "m32",
+    "TR",
+    "split"
+   ]
+  },
+  {
+   "sweep": 2,
+   "rows": [
+    {
+     "layer": 1,
+     "name": "torus (centre, rung step)",
+     "status": "LOCKED",
+     "margins": {
+      "quark_window": 0.0285
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    },
+    {
+     "layer": 2,
+     "name": "pyramid (i, neutrinos)",
+     "status": "LOCKED",
+     "margins": {
+      "nu_ratio": 0.2852,
+      "MN_top": 2.2069,
+      "MN_bottom": 1.8104
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    },
+    {
+     "layer": 3,
+     "name": "turnover (rho, leptons)",
+     "status": "TRUST (no margin; cannot lock, G-T5)",
+     "margins": {},
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    },
+    {
+     "layer": 4,
+     "name": "cube (three tori together)",
+     "status": "NO LOCK",
+     "margins": {
+      "rung_agreement": -0.0029
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    },
+    {
+     "layer": 5,
+     "name": "fold (volumes, m3/2)",
+     "status": "LOCKED",
+     "margins": {
+      "wino": 0.1805
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    },
+    {
+     "layer": 6,
+     "name": "dilaton (inflation)",
+     "status": "LOCKED",
+     "margins": {
+      "n_s": 1.214
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    },
+    {
+     "layer": 7,
+     "name": "forces (S-T seam)",
+     "status": "LOCKED",
+     "margins": {
+      "alpha_s": 2.0,
+      "split_natural": 0.7986
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    },
+    {
+     "layer": 8,
+     "name": "cosmology (reheating, genesis)",
+     "status": "LOCKED",
+     "margins": {
+      "gravitino_box": 1.05,
+      "leptogenesis": 0.1884
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    },
+    {
+     "layer": 9,
+     "name": "late universe (thread)",
+     "status": "TRUST (no margin; cannot lock, G-T5)",
+     "margins": {},
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    }
+   ],
+   "locked": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    8
+   ],
+   "final_knobs": {
+    "u": 0.02663,
+    "MN": 275092474245.05023,
+    "m32": 315121.91160532384,
+    "TR": 551975138.12727,
+    "split": -0.3
+   },
+   "fits_spent": [
+    "MN",
+    "m32",
+    "TR",
+    "split"
+   ]
+  },
+  {
+   "sweep": 3,
+   "rows": [
+    {
+     "layer": 1,
+     "name": "torus (centre, rung step)",
+     "status": "LOCKED",
+     "margins": {
+      "quark_window": 0.0285
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    },
+    {
+     "layer": 2,
+     "name": "pyramid (i, neutrinos)",
+     "status": "LOCKED",
+     "margins": {
+      "nu_ratio": 0.2852,
+      "MN_top": 2.2069,
+      "MN_bottom": 1.8104
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    },
+    {
+     "layer": 3,
+     "name": "turnover (rho, leptons)",
+     "status": "TRUST (no margin; cannot lock, G-T5)",
+     "margins": {},
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    },
+    {
+     "layer": 4,
+     "name": "cube (three tori together)",
+     "status": "NO LOCK",
+     "margins": {
+      "rung_agreement": -0.0029
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    },
+    {
+     "layer": 5,
+     "name": "fold (volumes, m3/2)",
+     "status": "LOCKED",
+     "margins": {
+      "wino": 0.1805
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    },
+    {
+     "layer": 6,
+     "name": "dilaton (inflation)",
+     "status": "LOCKED",
+     "margins": {
+      "n_s": 1.214
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    },
+    {
+     "layer": 7,
+     "name": "forces (S-T seam)",
+     "status": "LOCKED",
+     "margins": {
+      "alpha_s": 2.0,
+      "split_natural": 0.7986
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    },
+    {
+     "layer": 8,
+     "name": "cosmology (reheating, genesis)",
+     "status": "LOCKED",
+     "margins": {
+      "gravitino_box": 1.05,
+      "leptogenesis": 0.1884
+     },
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    },
+    {
+     "layer": 9,
+     "name": "late universe (thread)",
+     "status": "TRUST (no margin; cannot lock, G-T5)",
+     "margins": {},
+     "knobs": {
+      "u": 0.02663,
+      "MN": 275092474245.05023,
+      "m32": 315121.91160532384,
+      "TR": 551975138.12727,
+      "split": -0.3
+     },
+     "fits_spent": [
+      "MN",
+      "m32",
+      "TR",
+      "split"
+     ]
+    }
+   ],
+   "locked": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    8
+   ],
+   "final_knobs": {
+    "u": 0.02663,
+    "MN": 275092474245.05023,
+    "m32": 315121.91160532384,
+    "TR": 551975138.12727,
+    "split": -0.3
+   },
+   "fits_spent": [
+    "MN",
+    "m32",
+    "TR",
+    "split"
+   ]
+  }
+ ]
+}

@@ -224,6 +224,18 @@
    "by": [
     "update the wino collider bound with current data (660 -> 660-700 GeV)"
    ]
+  },
+  "predictivity: 4 fits spent (M_N x1.49, m3/2 x1.22, T_R x1.49, A3/A2 0.74)": {
+   "count": 1,
+   "by": [
+    "layered resonance: rebalance all knobs together centre-out (3 sweeps)"
+   ]
+  },
+  "cube layer: lepton/neutrino rung mismatch 15.3 % unresolvable by knobs": {
+   "count": 1,
+   "by": [
+    "layered resonance: rebalance all knobs together centre-out (3 sweeps)"
+   ]
   }
  }
 }

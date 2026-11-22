@@ -19341,3 +19341,35 @@ Every check catches the mistake it was built for:
 - **MINOR:** the round-2 knock-ons were unchecked predictions and are now annotated (y_t feeds m₃/₂ and the wino; N* feeds T_R; M_N³ couples to m_X).
 - An automated check that every PASS carries a FIT / NO-POWER / CONDITIONAL tag where it applies is owed.
 - **Highest-information move:** the wino kill test, first in round 2.
+
+## D1972 — layered resonance, centre outwards, 9 layers, 3 sweeps (Danny 17:58; locked PREREG_D1972)
+- **Method:** tools/loom/resonance.py.
+  - At each layer k, all knobs of layers 1..k are re-balanced together by a maximin coordinate search, stopping after 7 null passes (deterministic).
+  - LOCK = all of the layer's margins ≥ 0 in 3 consecutive passes.
+  - Three full sweeps, each starting from the previous sweep's knobs.
+- **Result (all three sweeps identical, so the map is stable after sweep 1):**
+
+  | layer | state | how |
+  |---|---|---|
+  | L1 torus (rung step) | **LOCKED** | at the derived u |
+  | L2 pyramid (neutrinos at i) | **LOCKED** | at the derived values (ratio margin 0.29 in log) |
+  | L3 turnover (leptons at ρ) | **TRUST** | cannot lock |
+  | L4 cube (three tori together) | **NO LOCK** | lepton slip 0.0253 vs neutrino θ-step 0.0292 differ by 15.3 %, just over the 15 % tolerance set in the code. No knob moves either reading, so the three tori do not fully resonate |
+  | L5 fold | **LOCKED-BY-FIT** | wino ≥ 700 GeV needs m₃/₂ × 1.22 (wino 838 GeV) |
+  | L6 dilaton | **LOCKED** | at derived values; n_s margin improves slightly as T_R rises |
+  | L7 forces | **LOCKED-BY-FIT** | split stacks with A₃/A₂ = e^{−0.30} = 0.74. α_s is absorbed by construction, so this is a fit |
+  | L8 cosmology | **LOCKED-BY-FIT** | needs M_N × 1.49 (2.75e11) and T_R × 1.49 (5.5e8). The gravitino box margin stays 1.05 and the leptogenesis margin is 0.19 |
+  | L9 late universe | **TRUST** | cannot lock |
+
+- **Fits spent: 4** (M_N, m₃/₂, T_R, A₃/A₂). By guard G-T3 these locks are **not balance**: they buy resonance with fits.
+- **TRIANGULATE:** three sweeps agree to every digit. This is a stable deterministic map, not independent evidence.
+- **REVIEW:**
+  - Resonance through all 9 layers is blocked at three places:
+    - **the cube**, a geometric mismatch between the ρ-plane and i-plane steps of 15 %;
+    - **the two TRUST layers**, the leptons and the late universe.
+  - The outer layers (fold, forces, cosmology) lock only by spending 4 fits. The fit they ask for is coherent: one push toward a heavier spectrum and hotter reheating (m₃/₂ ↑, T_R ↑, M_N ↑) together with the strong force on its own cycle.
+- **COMPASS:** a new joint direction. The derivation tasks that would turn these fits into predictions are, in order:
+  1. a heavier m₃/₂ (σ_vis 20.15 → about 20.14);
+  2. M_N ≈ 2.8e11, a different θ-step normalisation;
+  3. T_R ≈ 5.5e8 (the x-chain);
+  4. A₃/A₂ ≈ 0.74.
