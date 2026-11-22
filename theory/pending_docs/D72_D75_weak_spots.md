@@ -20199,3 +20199,8 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - Goodness of fit p = 0.0009. Injection recovered. Hygiene OK.
   - Missing: the Δ₃ → wino Jacobian (D1937a).
   - α_s triangulation: 1 of 3 sources so far (PDG 2025 unchanged, 0.1180 ± 0.0009).
+- **D2027 (CENTRE): one Loom engine for both directions, plus the engine ladder.** Notes are in tools/loom/ENGINE_LOOP_NOTES.md.
+  - **Both directions in bits.** The Forge (inward) and the Bloom (outward) now both report description length in bits (MDL; BIC = its large-N form). One Centre tunes either (loom_engine.py).
+  - **Engine ladder:** 0.13 s → 0.032 s. The exact χ² survival function agrees with the toys (8.35e-4 vs 8.5e-4). Rung 3 is NULL (start-up bound).
+  - **Finding: steps must be scaled per knob.** A free α_s what-if shortens the description from 30.3 to 19.5 bits even after its penalty. So the **FIT label, not the BIC penalty, is the guard against tuned seams.**
+  - **Owed:** prequential (post-lock) dates on every term; the Δ₃ → wino Jacobian.

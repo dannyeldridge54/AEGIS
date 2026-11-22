@@ -58,8 +58,15 @@ def theory_nuisance(t):
 
 # ---- lens 7: goodness of fit by parametric bootstrap (toys), dof = N - k ----
 def gof_bootstrap(terms, n=20000, seed=3):
-    g = [t for t in terms if t['kind'] == 'gauss']; chi2 = sum(lnL_term(t)[1] ** 2 for t in g); rng = random.Random(seed)
-    hits = sum(sum(rng.gauss(0, 1) ** 2 for _ in g) >= chi2 for _ in range(n)); return {'chi2_gauss_terms': round(chi2, 2), 'n_terms': len(g), 'p_toys': hits / n}
+    # engine ladder rung 2 (D2027): exact chi2 survival (regularised upper gamma), no numpy import; toys only with --toys
+    g = [t for t in terms if t['kind'] == 'gauss']; chi2 = sum(lnL_term(t)[1] ** 2 for t in g); a, x = len(g) / 2.0, chi2 / 2.0
+    term = s = 1.0 / a; k = 1
+    while term > 1e-15 * s: term *= x / (a + k); s += term; k += 1
+    p = 1.0 - math.exp(-x + a * math.log(x) - math.lgamma(a)) * s
+    out = {'chi2_gauss_terms': round(chi2, 2), 'n_terms': len(g), 'p_exact': p}
+    if '--toys' in sys.argv:
+        rng = random.Random(seed); out['p_toys'] = sum(sum(rng.gauss(0, 1) ** 2 for _ in g) >= chi2 for _ in range(n)) / n
+    return out
 
 # ---- negative space (D2012): what is owed, and what has zero strict evidence ----
 def negative_space(): return {'owed': D['owed'], 'post_lock_tests': 0}
@@ -114,4 +121,4 @@ if __name__ == '__main__':
     t = r['target']; print('UNIFIED FIELD BLOOM v1 | lnL %.2f | fitted knobs %d | N %d | target lnL - BIC = %.2f' % (t['lnL'], t['k_fit'], t['N'], t['bic_target']))
     for c in r['compass']: print('  %-12s %-7s z %+6.2f  lnL %+7.2f  dir %-4s headroom %s' % (c['id'], c['agent'], c['z'], c['lnL'], c['direction'], c['headroom_sigma']))
     print('shadows', r['shadows']); print('tension (sigma)', {k: round(v, 2) for k, v in r['tension'].items()}); print('ladder', r['ladder'])
-    print('negative space', r['negative_space']); print('hygiene', r['hygiene_ok'], '| injection', r['injection']); print('T1 demo', r['T1_demo']); print('theory nuisance', r['theory_nuisance']); print('goodness of fit', r['gof'])
+    print('negative space', r['negative_space']); print('hygiene', r['hygiene_ok'], '| injection', r['injection']); print('description length (bits): %.1f  [MDL: -lnL/ln2 + k/2 log2 N, the same unit as the Forge]' % (-t['bic_target'] / math.log(2))); print('T1 demo', r['T1_demo']); print('theory nuisance', r['theory_nuisance']); print('goodness of fit', r['gof'])
