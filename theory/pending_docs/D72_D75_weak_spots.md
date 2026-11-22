@@ -21543,3 +21543,7 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 3. **Untestable here:** r, α_s, A_s, τ, lensing, birefringence.
 
 **Next:** the SN extension (Pantheon+/DES-Y5) needs Danny's download OK. A full-Planck rerun with the Weave-fixed n_s needs the Planck likelihood data (PC, or a cloud download with OK).
+
+## D2130a (referee sweep: RL-1, RL-2). D2130 is now NULL — BALANCED.
+- **RL-1, M3 is not a priori.** u_i = 0.113 came from the earlier full Planck+DESI+Pantheon+ *fit*, so M3 is "u_i fixed to the earlier full-data fit", not a priori. Even there the thread gives (w0, wa) ≈ (−0.97, −0.04). So the card's (−0.79, −0.36) comes from neither fit and is **withdrawn**. In the SN extension u_i must stay free, or the test is circular.
+- **RL-2, where the ΔAIC ≈ −1.9 comes from.** It is the bookkeeping gain of fixing n_s and Σm_ν (M5 also gives −1.97). The dark-energy sector contributes Δχ² ≈ 0. **The headline is M2: CONSISTENT (ΔAIC +0.03).**
