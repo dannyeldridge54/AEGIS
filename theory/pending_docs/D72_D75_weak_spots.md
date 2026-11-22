@@ -20745,3 +20745,15 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Read:** v0's 1,652 α_s hits (D2078) were all non-SUSY configurations. Since v4 is SUSY, the IMR branch is the wrong fork, and the seed correctly refused to expand it.
   - **Next fork to grow:** SUSY intersecting-brane Standard Models, e.g. the Cvetič–Shiu–Uranga Z₂×Z₂ models (hep-th/0107143, 0107166), which satisfy SUSY, the tadpole and K-theory together. Then v4's own Z₆-II fractional branes (the Gmeiner–Honecker SUSY models).
   - The engine (rings, filters, joint goalposts, expansion only where it pays) is ready; only the fork tables change.
+- **D2080 (CENTRE; PREREG_D2080 + DEVIATIONS; tools/seed/seed_v2.py): Seed v2, seeded on the published SUSY 3-family model (CSU hep-th/0107143 Table I). The calibration PASSES exactly, and the seed is an ISOLATED point under ±1 wrapping moves at fixed N.**
+  - **Calibration (positive control):**
+    - tadpoles (16, −8, −8, −16) exact;
+    - SUSY solved with residual 4e-16 at χ = (0.1821, 0.5462, 0.3642), which satisfies the paper's χ₁ = χ₃/2 and χ₂ = 3χ₃/2;
+    - left quarks |I(C₁, B₁)| + |I(C₁, B₁′)| = 1 + 2 = **3** ✓.
+    - The engine now reproduces a published SUSY model, the first positive control the Seed has passed.
+  - **Rings (finite-χ filter, per DEVIATIONS):**
+    - k = 1: 60 neighbours, **0 survivors**.
+    - k = 2: 1,767 neighbours, **0 survivors**.
+    - Run 1 (before the fix) had 5 and 12 "survivors", all with χ → 0 or ~1e8 (limit points). DEVIATIONS was written first; the fix tightens the filter.
+  - **Read:** with N fixed, the tadpole + SUSY + 3-family constraints pin the model. A one-integer change always breaks a tadpole or SUSY at finite radii. Moving locally on the wrapping integers is therefore the wrong spin axis. The search has to move N and hidden/filler stacks together, which is how the literature scans (Gmeiner et al. hep-th/0510170).
+  - **α_s deferred**, as locked (the hypercharge normalisation for USp(8) Higgsing is not yet fixed). No physics verdict is drawn.

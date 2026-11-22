@@ -1,0 +1,35 @@
+{
+ "calibration": {
+  "tadpoles": [
+   "16",
+   "-8",
+   "-8",
+   "-16"
+  ],
+  "tadpole_ok": true,
+  "susy_res": 4.440892098500626e-16,
+  "chi": [
+   0.182078,
+   0.546234,
+   0.364156
+  ],
+  "susy_ok": true,
+  "quarks": "3",
+  "quark_ok": true,
+  "passes": true
+ },
+ "ring1": {
+  "k": 1,
+  "configs": 60,
+  "survivors": 0,
+  "new": 0,
+  "list": []
+ },
+ "ring2": {
+  "k": 2,
+  "configs": 1767,
+  "survivors": 0,
+  "new": 0,
+  "list": []
+ }
+}
