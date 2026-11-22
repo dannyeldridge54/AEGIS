@@ -27,12 +27,18 @@
    "dobs_dq": 0.0864,
    "dobs_dq_why": "d alpha_s / d Delta3 linearised from v4: (0.1180-0.1142)/0.044",
    "triangulated": [
-    "PDG 2025 world average 0.1180 +- 0.0009, unchanged (Indico 1536930 slides, Dec 2025)"
+    "PDG 2025 world average 0.1180 +- 0.0009, unchanged (Indico 1536930 slides, Dec 2025)",
+    "lattice 0.11876 +- 0.00058 (Nature 2026): consistent with PDG within 1 sigma"
    ],
    "status": "der",
    "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
    "released": "2025-12",
-   "release_ref": "PDG 2025 world average (Indico 1536930 slides) [date from notes/knowledge; confirmed in B3]"
+   "release_ref": "PDG 2025 world average (Indico 1536930 slides) [date from notes/knowledge; confirmed in B3]",
+   "alt": {
+    "data": "lattice QCD, Dalla Brida et al., Nature 2026 (step scaling + decoupling)",
+    "mu": 0.11876,
+    "sigma": 0.00058
+   }
   },
   {
    "id": "n_s",
@@ -93,16 +99,17 @@
   {
    "id": "wino",
    "agent": "T",
-   "data": "ATLAS+CMS disappearing tracks / relic bar (TeV)",
+   "data": "ATLAS disappearing track, Run 2 137/fb: pure wino excluded < 670 GeV observed (arXiv 2603.08315, Mar 2026); upper end 0.70 kept from the earlier bar",
    "kind": "band",
-   "lo": 0.66,
+   "lo": 0.67,
    "hi": 0.7,
    "width": 0.01,
    "ours": 0.687,
    "status": "der",
    "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
-   "released": "2025-07",
-   "release_ref": "ATLAS+CMS disappearing tracks, arXiv 2507.15934 [date from notes/knowledge; confirmed in B3]"
+   "released": "2026-03",
+   "release_ref": "arXiv 2603.08315 (fetched 2026-11-22)",
+   "lo_previous": 0.66
   },
   {
    "id": "gluino",
@@ -151,6 +158,22 @@
    "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
    "released": "2025-03",
    "release_ref": "DESI DR2 + CMB, arXiv 2503.14738 [date from notes/knowledge; confirmed in B3]"
+  },
+  {
+   "id": "theta12",
+   "agent": "U",
+   "data": "JUNO first data, 59 days (arXiv 2511.14593)",
+   "kind": "gauss",
+   "mu": 0.3092,
+   "sigma": 0.0087,
+   "ours": 0.3184,
+   "status": "der (TM1 at knot i)",
+   "locked": "2026-11-19 (PREREG_TM1_JUNO, commit 9881980f)",
+   "released": "2025-11",
+   "release_ref": "arXiv 2511.14593 (fetched 2026-11-22)",
+   "triangulated": [
+    "JUNO first data 0.3092 +- 0.0087"
+   ]
   }
  ],
  "fitted_knobs": [

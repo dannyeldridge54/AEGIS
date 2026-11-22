@@ -20220,3 +20220,15 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - Fractional intersections on Z₆-II (a 1/12 step gives ≈ 0.046 vs the 0.044 needed) are a lead to derive, not a result.
   - **(2) Rfit flat theory window** (CKMfitter) added to lens 6. α_s has z_rfit = 0 inside the 0.0048 window. Sensitivity lens only: B4 must converge the ladder.
   - **(3)–(5)** add steps B13 (evidence with written priors) and B14 (published bounded-parameter likelihoods). The lens-5 rule becomes: random controls come from the full admissible set, drawn uniformly.
+- **D2030 (DEEP): Bloom research rounds 2–7** (RESEARCH_ROUND_2026-11-22.md). 13 finds in total.
+  - **Red flag** (2404.18995): Z₆-II orientifolds with only O3 planes cannot meet the flux tadpole without negative D3 charge. g_s < 1 needs flux the tadpole forbids. Check the χ = 48 / D7 budget in B7 and B11.
+  - **Data folded into the Bloom:**
+    - **JUNO** sin²θ₁₂ = 0.3092 ± 0.0087 vs TM1 0.3184: +1.06σ. Not post-lock: released 2025-11, locked 2026-11-19.
+    - **ATLAS wino bound** now 670 GeV (2603.08315). Ours (0.687) passes. The B1 rebalance point (0.668) now sits inside the exclusion: rebalanced m₃/₂ × 0.973, α_s 0.11428.
+    - **Lattice α_s** 0.11876 ± 0.00058 (Nature 2026). It agrees with PDG at 0.71σ; our value sits at −7.9σ on it.
+  - **New Bloom total:** lnL −9.99, N = 19, lnL − BIC = −21.8, so 31.4 bits.
+  - **Leads:**
+    - U1: |u| is the near-ω hierarchy parameter, with radiative δτ ~ 0.01 (2102.07488, 2310.15604, 2212.13336).
+    - S1: non-thermal leptogenesis is viable at our T_R.
+    - R1: axion–dilaton kinetic mixing.
+  - **Tools:** orientifold toolbox; TPBench; the BK18 public likelihood.

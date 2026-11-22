@@ -9,3 +9,15 @@
 | 6 | **GAMBIT practice** (2512.14109): float the nuisances, check coverage with toys, profile vs marginal, publish the likelihoods | partly in (lenses 6–7, injection) | B13 reports profile and marginal side by side |
 
 **Verdict:** the round was not null (six usable finds), so another round is due after B3. The strongest new lead for the UFE itself is #1, the fractional-intersection step for T1.
+
+## Rounds 2–7 (01:22–01:40): searched until the finds thin out
+| round | searches | finds | what they mean for us |
+|---|---|---|---|
+| 2 | 5 | **3** | **(a) RED FLAG for B7/B11** (arXiv 2404.18995): on Z₆-II orientifolds with O3 planes only, the flux tadpole cannot be met without negative D3 charge (12·N_flux ≤ N_O3/4 = 4 or 6). g_s,min ≈ √12/N_flux, so g_s < 1 needs large flux, which the tadpole forbids. Our χ = 48 budget must be checked: does the D7/O7 sector supply the charge? This also bears on g_s = 2/√3 > 1 (S2). **(b) U1 lead** (2102.07488): near τ = ω the hierarchy parameter is u = (τ−ω)/(τ−ω²), our own |u| notation. Masses go as (1, ε, ε²). **(c) S1 support** (JHEP05(2024)147): strongly non-thermal leptogenesis works down to T_RH ≳ 10³ GeV with M_N ≳ 2e7 GeV. Our T_R = 3.7e8 and M_N = 1.84e11 sit inside it |
+| 3 | 3 | **2** | **(d) U1 route** (2310.15604): loop corrections with many species shift τ off the fixed point by δτ ~ O(0.01). That is the size of our |u| (0.0266), but the paper's number is a target scale, not computed here. **(e) R1 lead** (2511.23463): axion–dilaton kinetic mixing fits DESI at 2.1–3.4σ with λ = O(1). It does not analyse fifth forces |
+| 4 | 3 | **2** | **(f) tools:** orientifold classification and toolbox (hep-th/0503044, hep-th/0503061) for an independent tadpole check in B7. **(g) referee benchmark:** TPBench (2502.15815) for derivation checking |
+| 5 | 3 | **3** | **(h) B14:** the BK18 likelihood is public (Cobaya `bicep_keck_2018`; "BK-lite", 2403.00085). **(i)** symmetric fluxes and small tadpoles (2304.04789), and "The Tadpole Problem" (2010.10519), as the context for flag (a). **(j) U1 calibration** (2212.13336): an A₄ quark fit near ω has |u| ≈ 0.017 (down sector), the same order as our 0.0266 |
+| 6 | 3 | **1** | **(k) DATA, JUNO first results** (2511.14593, Nov 2025): sin²θ₁₂ = 0.3092 ± 0.0087. Our TM1 value is 0.3184: **+1.06σ**. Added as Bloom term `theta12` |
+| 7 | 3 | **2** | **(l) DATA, ATLAS disappearing track** (2603.08315, Mar 2026): pure wino excluded < **670 GeV** (it was 660). Our 0.687 keeps 17 GeV of room, and the B1 balance (0.668) now sits inside the excluded zone. **(m) DATA, lattice α_s** (Nature 2026): 0.11876 ± 0.00058. It agrees with PDG (0.71σ apart) and puts our 0.1142 at −7.9σ. Triangulation: 2 of 3 sources |
+
+**Trend:** finds per round go 6, 3, 2, 2, 3, 1, 2. They have shifted from method ideas to data updates and leads. Not null yet.
