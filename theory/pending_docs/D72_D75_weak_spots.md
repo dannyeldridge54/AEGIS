@@ -20093,3 +20093,13 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - Total vs v13: **−1.14%**.
 - Reading: the 4M-slot tables were overcrowded (collisions). Memory scales the field; enwik9 will want even more (Hutter allows < 10 GB).
 - The TB24 round-trip is checked in D2017.
+
+## D2017 — Hash confirmation at TB24. PREREG_D2017. CENTRE
+- Slice K:
+  - CONFIRM 0: 641,217;
+  - CONFIRM 1 (check byte): 638,300 (−0.46%);
+  - **CONFIRM 2 (check byte + backup slot): 637,269 (−0.62%)**.
+- Round-trips OK (TB24 CONFIRM 0, which closes D2016, and CONFIRM 2).
+- **New best build: loomz15, TB24, CONFIRM 2.**
+  - **637,269 on K vs v13's 648,620: −1.75% in two steps** (memory + hygiene).
+  - The default in the code is now CONFIRM = 2.

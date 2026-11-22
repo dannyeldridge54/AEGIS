@@ -1,3 +1,4 @@
 loomz
 loomz[0-9]*
+loomz*_tb*
 !loomz[0-9]*.c

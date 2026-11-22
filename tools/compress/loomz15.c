@@ -66,7 +66,7 @@ static Mixer MV[NV]; static int act = 0, bact = 2, pv[NV], pbl[4]; static double
 static const int VLR[NV] = {1, 2, 4, 1, 1, 1, 1, 1}; static const U8 VMASK[NV] = {0x7f, 0x7f, 0x7f, 0x7d, 0x77, 0x7b, 0x47, 0x79};   // inputs: M1 M1fast M2 R0 R1 R2 bias
 static const char *VNAME[NV] = {"all lr1", "all lr2", "all lr4", "-fastmix", "-ring0", "-ctxmix", "globals only", "rings+M1"}; static APM A1, A2; static U8 c1 = 0, c2 = 0;
 static double CL[6];   // code length after: best single node(o2), L2 mixer, L3 lens1, L3 lens2 (final)
-static int p_o2, p_mix, p_a1, p_fin; static int PMIN = 16, CONFIRM = 1;
+static int p_o2, p_mix, p_a1, p_fin; static int PMIN = 16, CONFIRM = 2;
 
 static inline U32 H(U32 a, U32 b) { U32 h = a * 0x9E3779B1u ^ (b + 0x7F4A7C15u) * 0x85EBCA77u; return h ^ (h >> 15); }
 static void byte_update(int c) {
