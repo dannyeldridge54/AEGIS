@@ -20721,3 +20721,8 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - v4's 5 visible and 12 dark branes give −17 (or −34 with orientifold images), so the total is **29 (or 12)**, against a budget of 4–6. **FAIL by ×2–7.**
   - The tadpole cannot close with v4's |M| = 9 three-family flux on this orbifold, short of negative D3 charge from anti-branes (which breaks SUSY, KKLT-style) or a different family mechanism.
   - **Loop: no progress. No-progress count 6** (STALL at 7).
+- **D2077 (CENTRE; PREREG_D2077): branch B's bino relic. FAIL with no new knob; FIT with RPV.**
+  - T_R = 3.7e8 GeV sits ~1e6× above the bino freeze-out temperature, so a thermal 3.5–8 TeV bino is produced and overcloses.
+  - The KKLT modulus (~1.1e7 GeV) decays into LSPs: the moduli-induced LSP problem (D~5818).
+  - Only R-parity violation removes it, and that is a new coupling (FIT).
+  - **Loop: no progress. No-progress count 7. STALL: the loop stops here** and the frontier summary is written (FRONTIER_2026-11-22.md).
