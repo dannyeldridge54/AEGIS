@@ -76,7 +76,7 @@ for nm, MP in (('reduced', 2.435e18), ('nonreduced', 1.221e19)):
 def alphas(db, MT):
     if db is None: L = 2*math.pi*(a1 - a2)/(b[0] - b[1]); return 1/(a2 - b[1]*L/(2*math.pi) + b[2]*L/(2*math.pi))
     L1 = math.log(MT/MZ); bp = [b[i] + db[i] for i in range(3)]
-    i1, i2, i3 = [x - b[i]*L1/(2*math.pi) for i, x in enumerate((a1, a2, None))[:2]] + [None]
+    i1, i2 = a1 - b[0]*L1/(2*math.pi), a2 - b[1]*L1/(2*math.pi)
     L2 = 2*math.pi*(i1 - i2)/(bp[0] - bp[1]); aXi = i2 - bp[1]*L2/(2*math.pi)
     a3MT = aXi + bp[2]*L2/(2*math.pi); a3 = a3MT + b[2]*L1/(2*math.pi)
     return (1/a3 if a3 > 0 else 'nonperturbative (alpha3^-1=%.2f)' % a3), MT*math.exp(L2), aXi
