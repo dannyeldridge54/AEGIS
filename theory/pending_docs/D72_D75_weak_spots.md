@@ -20346,3 +20346,35 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     3. **Flux-scaling stabilisation** of the Kähler moduli at a high scale (1503.07634).
     4. **Accept mirage:** recompute every threshold. α_s then needs Δ₃ ≈ +0.09 to +0.12 from T1, a larger seam.
   - Each route gets its own lock before any number is used.
+- **D2025 result (FORGE; PREREG_D2025): PASS for BOTH (bypass traces + clocked bus).**
+  - Deviation: the job ran on its own after the frozen D2024 job was stopped, during the Forge pause. The arms, slices and pass rule are exactly as locked.
+  - **1 MB slice** [31, 32) MB, BASE 228,193:
+    - SKIP 228,039 (−0.07%, fails the 0.10% bar);
+    - RCTX 227,740 (−0.20%);
+    - **BOTH 227,699 (−0.22%)**.
+  - **3 MB rung** [40, 43) MB, BASE 652,708:
+    - **BOTH 651,741 (−0.15% ≥ 0.05%: PASS)**;
+    - RCTX 651,342 (−0.21%);
+    - SKIP 652,799 (+0.01%).
+  - Round-trip OK.
+  - **Read:** the clocked bus (match-state ring contexts) carries the gain. The bypass traces add nothing at scale.
+  - Next Forge build: RCTX on, SKIP off, recorded as a new version when the Forge resumes.
+- **D2038 (CENTRE): the mutation cube** (tools/bloom/mutation_cube.py), plus mutation testing of the Bloom (Danny 01:50–01:51: "make the centerpoint in the mutations cube the observation point", "6d space").
+  - **(a) Mutation testing of the Bloom code** (20 deliberate bugs in bloom.py; PREREG_D1982 bar ≥ 80%):
+    - The first kill rate was **25% (5/20)**. The 12-check battery missed band edges, the quadratic lnL, the BIC penalty and N, the 90% z, the lever sign, the NULL verdict, the χ² p-value, hygiene, injection, prequential, ladder, Rfit, the MHOU ratio and held-out.
+    - **Fixed:** 14 unit tests added, one per surviving mutant. The battery is now **26/26 READY**, and the kill rate is **100% (20/20)**.
+  - **(b) The 6-D mutation cube.** Six binary structural choices make 64 corners, each a mutated UFE:
+    - M: pure-AMSB vs mirage;
+    - V: D7 on the KKLT cycle vs sequestered D3;
+    - I: inflation coupled vs decoupled;
+    - K: KKLT vs flux-scaling stabilisation;
+    - T: seam term none vs derived;
+    - U: U₃ = i vs 2i.
+  - **The centre is the observation point** (the data). A corner's distance is (filters failed, open items, Bloom bits).
+  - **v4 as written = corner 000000:** 31.9 bits but **2 filters failed**.
+  - **Nearest consistent corners:**
+    - **000100** (pure-AMSB, D7, coupled, **flux-scaling**, no seam, i): 34.1 bits, k = 9, 0 filters, 1 open item (the N = 6 / W₀ condensate derivation is lost).
+    - **011000** (sequestered D3 + decoupled inflation): 38.5 bits, 1 open item (f_vis = S only).
+    - Mirage corners sit at about 102 bits (α_s −10σ) and leave a bino-relic problem.
+  - **Read:** the observation point favours keeping pure-AMSB gauginos and moving the Kähler stabilisation (flux-scaling) or the visible sector (sequestered). Accepting mirage is not favoured.
+  - The knob costs per mutation (V 1, I 2, K 1) are estimates. No corner's open item is filled in.

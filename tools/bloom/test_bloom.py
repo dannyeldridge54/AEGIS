@@ -29,5 +29,23 @@ check('every term agent is in derivation_agents.json', not bad, bad)
 q = bloom_loop.tick(); check('mining loop runs and returns a queue', isinstance(q['mining_queue'], list))
 s = time.time(); subprocess.run([sys.executable, os.path.join(HERE, 'bloom.py'), '--json'], capture_output=True); dt = time.time() - s
 check('engine wall time < 0.5 s', dt < 0.5, round(dt, 3))
+# 7 unit tests added after mutation testing (D2038): each kills a surviving mutant
+L = bloom.lnL_term
+check('band: outside the top edge is penalised', L({'kind': 'band', 'lo': 0.6, 'hi': 0.7, 'width': 0.01, 'ours': 0.72})[1] > 1.9)
+check('gauss lnL is -z^2/2', abs(L({'kind': 'gauss', 'mu': 0, 'sigma': 1, 'ours': 2})[0] + 2.0) < 1e-12)
+dm = [{'kind': 'gauss', 'mu': 0, 'sigma': 1, 'ours': 1, 'id': 'a', 'agent': 'X'}]
+lnL0, tg, N0, k0 = bloom.target(dm, 2); check('BIC penalty uses N = terms + fit data', N0 == 1 + D['fit_data_consumed'] and abs(tg - (lnL0 - math.log(N0))) < 1e-12)
+check('90% limit uses z = 1.2816', abs(L({'kind': 'upper', 'bound': 1.0, 'ours': 2.0, 'cl': 0.90})[1] - 1.2816) < 1e-4)
+w = [t for t in bloom.apply_levers(D['terms'], {'lnm32': 2.0}) if t['id'] == 'wino'][0]['ours']; check('lever: wino scales with m3/2', abs(w / T['wino']['ours'] - 2.0) < 1e-9)
+check('verdict NULL when gain < penalty', bloom.verdict(0.1, 1, 18, False).startswith('NULL'))
+g = bloom.gof_bootstrap([{'kind': 'gauss', 'mu': 0, 'sigma': 1, 'ours': math.sqrt(18.87 / 4)} for _ in range(4)]); check('chi2 p (dof 4) = closed form', abs(g['p_exact'] - math.exp(-18.87 / 2) * (1 + 18.87 / 2)) < 1e-9, g)
+check('hygiene catches a duplicate id', not bloom.hygiene([{'id': 'a', 'agent': 'X'}, {'id': 'a', 'agent': 'Y'}]))
+check('injection estimate is computed (not the planted value)', inj['recovered'] != inj['planted'])
+pq = bloom.prequential([{'id': 'p', 'kind': 'gauss', 'mu': 0, 'sigma': 1, 'ours': 0, 'locked': '2026-01-01', 'released': '2026-06'}, {'id': 'q', 'kind': 'gauss', 'mu': 0, 'sigma': 1, 'ours': 0, 'locked': '2026-11-21', 'released': '2025-06'}])
+check('prequential counts only post-lock releases', pq['post_lock_terms'] == ['p'], pq)
+ld = bloom.ladder(T['alpha_s']); check('ladder: alpha_s unconverged (1.27)', ld['stable'] is False and abs(ld['shift_over_scale'] - 1.27) < 0.01, ld)
+rf = bloom.theory_nuisance(dict(T['alpha_s'], ours=0.105)); check('Rfit penalises only the excess beyond the window', abs(rf['z_rfit'] - (-(0.013 - 0.00484) / 0.0009)) < 0.05, rf)
+mh = bloom.mhou_geometric(T['alpha_s']); check('MHOU step ratio 0.075', abs(mh['step_ratio'] - 0.075) < 0.001, mh)
+rb = bloom.balance({'lnm32': 1.0}); check('held-out = shadows (balance point 0.970, regression)', abs(rb['knobs']['lnm32'] - 0.970) < 0.0015, rb['knobs'])
 for n, ok, info in R: print(('PASS ' if ok else 'FAIL ') + n + ('' if ok else '  ' + str(info)))
 print('READY' if all(ok for _, ok, _ in R) else 'NOT READY', '%d/%d' % (sum(ok for _, ok, _ in R), len(R)))
