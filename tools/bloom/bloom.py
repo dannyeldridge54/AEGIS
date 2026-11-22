@@ -72,7 +72,8 @@ def theory_nuisance(t):
     L = t.get('ladder')
     if not L or t['kind'] != 'gauss' or 'dobs_dq' not in t: return None
     s_th = abs(L['values'][-1] - L['values'][-2]) * t['dobs_dq']; s = math.hypot(t['sigma'], s_th)
-    return {'sigma_exp': t['sigma'], 'sigma_theory': round(s_th, 5), 'z_exp_only': round((t['ours'] - t['mu']) / t['sigma'], 2), 'z_with_theory': round((t['ours'] - t['mu']) / s, 2),
+    z_rfit = max(0.0, abs(t['ours'] - t['mu']) - s_th) / t['sigma'] * (1 if t['ours'] > t['mu'] else -1)   # Rfit (CKMfitter, hep-ph/0104062): flat theory window, only the excess counts
+    return {'z_rfit': round(z_rfit, 2), 'sigma_exp': t['sigma'], 'sigma_theory': round(s_th, 5), 'z_exp_only': round((t['ours'] - t['mu']) / t['sigma'], 2), 'z_with_theory': round((t['ours'] - t['mu']) / s, 2),
             'read': 'sensitivity lens only: a large theory error is a gap to close (the next rung), never a pass'}
 
 # ---- lens 7: goodness of fit by parametric bootstrap (toys), dof = N - k ----

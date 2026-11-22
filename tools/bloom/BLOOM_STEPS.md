@@ -20,6 +20,9 @@
 | B11 | **S2: g_s control** | an S-dual description at ρ | a controlled regime is exhibited (literature-backed) |
 | B12 | **E1: strict evidence** | the first post-lock data release scored | ≥ 1 post-lock term scored prequentially |
 
+| B13 | **evidence** (added 01:21, research round) | Laplace evidence with written prior ranges per fitted knob, beside BIC; profile and marginal both reported | evidence and BIC agree in sign on every knob decision; any disagreement is flagged, not hidden |
+| B14 | **bounded-parameter likelihoods** (added 01:21) | published likelihood profiles for r, Σm_ν, ΔN_eff | each upper-limit term reproduces its published 95% bound within 10% |
+
 **Whole-field goalpost (NAILED):**
 - description length lower than today's 30.3 bits;
 - every term within 2σ;

@@ -20214,3 +20214,9 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **B2, dates:** **PASS.** Every term carries its lock date (UFE v4, 2026-11-21, commit 9b77c9ae) and its release.
     - All 10 releases come before the lock, so there are **0 post-lock terms** and no prequential bits yet (E1 open).
     - The release dates come from our notes; B3 confirms them.
+- **D2029 (DEEP): Bloom research round 1** (tools/bloom/RESEARCH_ROUND_2026-11-22.md). Six usable finds; the round was not null.
+  - **(1) T1 lead.** In IIB magnetised D7s (0907.1362), f₂ − f₃ = −½S∫(F_Y² + 2F_D·F_Y). D2022 used only F_Y².
+    - With integer roots, the bracket moves in whole units: shifts of ±0.55 in Δ₃. So the cross term does **not** rescue integer fluxes.
+    - Fractional intersections on Z₆-II (a 1/12 step gives ≈ 0.046 vs the 0.044 needed) are a lead to derive, not a result.
+  - **(2) Rfit flat theory window** (CKMfitter) added to lens 6. α_s has z_rfit = 0 inside the 0.0048 window. Sensitivity lens only: B4 must converge the ladder.
+  - **(3)–(5)** add steps B13 (evidence with written priors) and B14 (published bounded-parameter likelihoods). The lens-5 rule becomes: random controls come from the full admissible set, drawn uniformly.
