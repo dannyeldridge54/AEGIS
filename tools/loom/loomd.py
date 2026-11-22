@@ -84,12 +84,15 @@ def auto(n, field_s):
     for _ in range(n):
         rec = pulse(False); rid = rec['round']; fn = f'{RD}/round_{rid:03d}.json'
         if rec.get('void'): print('round %d VOID' % rid); break
-        import loom_rt4; importlib.reload(loom_rt4)
-        field = loom_rt4.scored(field_s, seed=2026 + rid, out_name=f'auto/round_{rid:03d}_field.json', archive=False); field['round'] = rid
+        import loom_rt5, parallel; importlib.reload(loom_rt5)   # D1993: exact fast engine; a second seed in parallel triangulates the field
+        tri = parallel.triangulate(field_s, [2026 + 2 * rid, 2027 + 2 * rid], prefix=f'round_{rid:03d}')
+        field = json.load(open(f'field_tests/results/auto/round_{rid:03d}_{2026 + 2 * rid}.json')); field['round'] = rid
+        import shutil; shutil.copyfile(f'field_tests/results/auto/round_{rid:03d}_{2026 + 2 * rid}.json', f'field_tests/results/auto/round_{rid:03d}_field.json')
         c, o, e = run('python3 tools/loom/test_loom_battery.py'); bat = json.load(open('field_tests/results/d1982_battery.json'))['ok']
         c2, o2, e2 = run(f'python3 tools/loom/pass_label_check.py field_tests/results/auto/round_{rid:03d}_field.json'); c8 = (c2 == 0)
         fdr = fdr_update(field); p = planner.main(os.path.abspath(fn))
-        rec['auto'] = dict(field=dict(verdict=field['verdict'], accuracy=field['accuracy'], pulses_per_s=field['pulses_per_s'], tally=field['goalpost_tally'],
+        rec['auto'] = dict(triangulation=dict(all_pass=tri['all_pass'], tally_agree=tri['tally_agree'], seeds=tri['seeds'], total_pulses_per_s=tri['total_pulses_per_s'], verdicts=[r['verdict'] for r in tri['runs']]),
+                           field=dict(verdict=field['verdict'], accuracy=field['accuracy'], pulses_per_s=field['pulses_per_s'], tally=field['goalpost_tally'],
                                       done=field['done_seconds'], stuck=field['stuck_events'], fits=field['fits_spent'], no_free=field['no_free_knob_share']),
                            battery=bat, pass_label_ok=c8, fdr=fdr, decision=auto_decide(rec, p))
         json.dump(rec, open(fn, 'w'), indent=1, default=str)
@@ -99,7 +102,7 @@ def auto(n, field_s):
              '**Battery:** %s. **PASS-label check:** %s. **Online FDR:** %d tests, significant tensions %s.' % (bat, 'ok' if c8 else 'VIOLATIONS', fdr['tests'], fdr['significant_tensions']),
              '', '**Lock map:** %s' % rec['state']['lock_map'], '', '**Next actions:**'] + ['- %s L%s: %s' % (a['kind'], a.get('layer'), a['why']) for a in p['actions']]
         open(f'field_tests/loom/reports/round_{rid:03d}.md', 'w').write('\n'.join(L) + '\n')
-        print('round %d: %s | field %s %s/s | tally %s | DONE %s | FDR tensions %s' % (rid, rec['auto']['decision'], field['verdict'], field['pulses_per_s'], field['goalpost_tally'], {k: v for k, v in field['done_seconds'].items() if v}, fdr['significant_tensions']))
+        print('round %d: %s | 2-seed triangulation pass=%s agree=%s %s pulses/s total | field %s %s/s | tally %s | DONE %s | FDR tensions %s' % (rid, rec['auto']['decision'], tri['all_pass'], tri['tally_agree'], tri['total_pulses_per_s'], field['verdict'], field['pulses_per_s'], field['goalpost_tally'], {k: v for k, v in field['done_seconds'].items() if v}, fdr['significant_tensions']))
         if rec['auto']['decision'] != 'CONTINUE': break
 def selftest():
     """P1.7 determinism (two real pulses) + P4 decision logic."""

@@ -1,0 +1,48 @@
+{
+ "prereg": "PREREG_D1993_speed.md",
+ "results": {
+  "501": {
+   "same": {
+    "alarms": true,
+    "transitions": true,
+    "gp_counts": true,
+    "knobs": true,
+    "fits": true,
+    "pulses": true
+   },
+   "all_same": true,
+   "v4_pulses_per_s": 2684.2,
+   "v5_pulses_per_s": 4595.6,
+   "speedup": 1.71
+  },
+  "502": {
+   "same": {
+    "alarms": true,
+    "transitions": true,
+    "gp_counts": true,
+    "knobs": true,
+    "fits": true,
+    "pulses": true
+   },
+   "all_same": true,
+   "v4_pulses_per_s": 2608.6,
+   "v5_pulses_per_s": 4283.1,
+   "speedup": 1.64
+  },
+  "503": {
+   "same": {
+    "alarms": true,
+    "transitions": true,
+    "gp_counts": true,
+    "knobs": true,
+    "fits": true,
+    "pulses": true
+   },
+   "all_same": true,
+   "v4_pulses_per_s": 2925.8,
+   "v5_pulses_per_s": 4305.5,
+   "speedup": 1.47
+  }
+ },
+ "exact": true
+}

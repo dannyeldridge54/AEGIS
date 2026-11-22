@@ -105,6 +105,11 @@ try: C_CFG = tuple(json.load(open('field_tests/results/d1991_calibC.json'))['sta
 except Exception: pass
 def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True, verbose=False, replay=None, datadet=True, calibC_grid=False, vclock=False, max_pulses=None, dt=1 / 2800):
     rng = np.random.default_rng(seed); srng = np.random.default_rng(seed + 7919)
+    _pool = [np.empty(0), 0]
+    def RN(n):   # pooled draws from rng (only standard_normal is drawn from rng outside calibration)
+        if calib: return rng.standard_normal(n)
+        if _pool[1] + n > len(_pool[0]): _pool[0] = np.concatenate([_pool[0][_pool[1]:], rng.standard_normal(65536)]); _pool[1] = 0
+        v = _pool[0][_pool[1]:_pool[1] + n]; _pool[1] += n; return v
     x = np.zeros(NK); est = dict(NOM); J = jac(x, NOM); lensK = {L: lens_knobs(J, L) for L in range(1, 10)}
     M0 = flat(margins_rt(state(x), est)); base = M0.copy(); var = np.full(NM, 1e-4); zprev = np.zeros(NM); med = np.full(NM, 0.6745); Mlast = M0.copy(); armA = np.ones(NM, bool); calA = 0
     live = Bank([live_cfg[0]], [live_cfg[1]]); live_cfg = list(live_cfg)
@@ -140,7 +145,7 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
             if kicked is True and t >= E2T[2]: x[K.index('m32')] -= EVENTS[1]['dx']; kicked = 'done'
         for L, keys in STREAM_OF.items():
             nr = 5 if esc[L] else 3
-            for k in keys: est[k] = 0.95 * est[k] + 0.05 * float(sorted((truth[k] + sig[k] * rng.standard_normal(nr)).tolist())[nr // 2])
+            for k in keys: est[k] = 0.95 * est[k] + 0.05 * float(sorted((truth[k] + sig[k] * RN(nr)).tolist())[nr // 2])
         if datadet:   # D1990 detector C on the data streams themselves; freeze the layer's balancing while its stream steps
             ev = np.array([est[k] for k in STREAMS]); sd = np.sqrt(np.maximum(svar, 1e-30)); zc = (ev - sbase) / sd; wc = (zc - PHI * szp) / math.sqrt(1 - PHI ** 2); szp = zc
             smed += 0.001 * np.sign(np.abs(wc) - smed); smed = np.maximum(smed, 1e-3); wcn = wc / (1.4826 * smed)
