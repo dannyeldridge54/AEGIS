@@ -55,24 +55,6 @@
    ]
   },
   {
-   "kind": "referee",
-   "layer": null,
-   "why": "referee due this round (every 2nd round): fresh-context review of the board and of the last overclaims",
-   "guard": "E5 independent referee",
-   "tools": [
-    "tools/loom/centre_brief.py",
-    "tools/loom/check.py"
-   ],
-   "needs_lock": false,
-   "effort": "low",
-   "known_failure_modes": [
-    "D1931a: 'strongest pointing' overclaim; lint claims (C5)",
-    "D1979a: a lock bought with a fit must read LOCKED-BY-FIT, never LOCKED",
-    "D1983a: per-layer counts must be computed from the per-pulse arrays, not read off the final status (chatter was L7, not L8)",
-    "D1987-scorer: a live PRED computed at fitted knobs is PASS (FIT), not a surviving prediction (alpha_s via split, wino via m3/2)"
-   ]
-  },
-  {
    "kind": "explore",
    "layer": null,
    "why": "7 null rounds without balance is a STALL, not the endpoint: change the approach (broad then narrow; mine the loose still-point directions; a tournament of competing explanations for the strained layer)",
@@ -185,24 +167,6 @@
     "D1986-O2: statistical detectors on deterministic margins fire on rounding; CUSUM k must be below the shift; calibrate on null streams before any scored run",
     "D1987-scorer: a live PRED computed at fitted knobs is PASS (FIT), not a surviving prediction (alpha_s via split, wino via m3/2)",
     "D1989-mask: an active balancer absorbs incoming data shifts (T_R chased every n_s release, 3.7e8 -> 9.8e6 GeV), so they read as explained self-moves; detect on the data residual too, and freeze balancing on a layer while its data stream steps"
-   ]
-  },
-  {
-   "kind": "referee",
-   "layer": null,
-   "why": "referee due this round (every 2nd round): fresh-context review of the board and of the last overclaims",
-   "guard": "E5 independent referee",
-   "tools": [
-    "tools/loom/centre_brief.py",
-    "tools/loom/check.py"
-   ],
-   "needs_lock": false,
-   "effort": "low",
-   "known_failure_modes": [
-    "D1931a: 'strongest pointing' overclaim; lint claims (C5)",
-    "D1979a: a lock bought with a fit must read LOCKED-BY-FIT, never LOCKED",
-    "D1983a: per-layer counts must be computed from the per-pulse arrays, not read off the final status (chatter was L7, not L8)",
-    "D1987-scorer: a live PRED computed at fitted knobs is PASS (FIT), not a surviving prediction (alpha_s via split, wino via m3/2)"
    ]
   },
   {
@@ -399,7 +363,7 @@
    "edge_out": "outside layer 9: what the late-universe and collider data push back toward the centre",
    "edge_in": "inside layer 1: what the rung step / knot geometry pushes outward"
   },
-  "referee": true
+  "referee": false
  },
  "mission": {
   "goal": "Derive and test the Weave unified field equation: one central equation whose three fields (S, T, U) balance every node with real predictions, not fits.",
@@ -434,7 +398,7 @@
   ],
   "alarms": 0
  },
- "round": 8,
+ "round": 9,
  "toolkits": {
   "missing": [],
   "unverified": []
