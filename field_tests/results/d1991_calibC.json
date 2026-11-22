@@ -1,0 +1,149 @@
+{
+ "stream_pulses": 295885,
+ "grid": [
+  {
+   "k": 0.08,
+   "h": 12,
+   "far": 0.004924210419588692,
+   "mean_delay": 33.9,
+   "misses": 0,
+   "probes": 59,
+   "admissible": false
+  },
+  {
+   "k": 0.08,
+   "h": 20,
+   "far": 0.0007604305726887135,
+   "mean_delay": 61.0,
+   "misses": 0,
+   "probes": 59,
+   "admissible": false
+  },
+  {
+   "k": 0.08,
+   "h": 30,
+   "far": 4.393598864423678e-05,
+   "mean_delay": 97.4,
+   "misses": 0,
+   "probes": 59,
+   "admissible": false
+  },
+  {
+   "k": 0.08,
+   "h": 40,
+   "far": 0.0,
+   "mean_delay": 140.7,
+   "misses": 0,
+   "probes": 58,
+   "admissible": true
+  },
+  {
+   "k": 0.08,
+   "h": 60,
+   "far": 0.0,
+   "mean_delay": 218.1,
+   "misses": 0,
+   "probes": 58,
+   "admissible": true
+  },
+  {
+   "k": 0.16,
+   "h": 12,
+   "far": 0.0013822937965763725,
+   "mean_delay": 51.1,
+   "misses": 0,
+   "probes": 59,
+   "admissible": false
+  },
+  {
+   "k": 0.16,
+   "h": 20,
+   "far": 6.083444581509708e-05,
+   "mean_delay": 90.4,
+   "misses": 0,
+   "probes": 58,
+   "admissible": false
+  },
+  {
+   "k": 0.16,
+   "h": 30,
+   "far": 0.0,
+   "mean_delay": 157.0,
+   "misses": 0,
+   "probes": 58,
+   "admissible": true
+  },
+  {
+   "k": 0.16,
+   "h": 40,
+   "far": 0.0,
+   "mean_delay": 212.3,
+   "misses": 0,
+   "probes": 58,
+   "admissible": true
+  },
+  {
+   "k": 0.16,
+   "h": 60,
+   "far": 0.0,
+   "mean_delay": 417.7,
+   "misses": 14,
+   "probes": 58,
+   "admissible": false
+  },
+  {
+   "k": 0.25,
+   "h": 12,
+   "far": 0.0002974128462071413,
+   "mean_delay": 87.8,
+   "misses": 0,
+   "probes": 58,
+   "admissible": false
+  },
+  {
+   "k": 0.25,
+   "h": 20,
+   "far": 0.0,
+   "mean_delay": 184.3,
+   "misses": 1,
+   "probes": 58,
+   "admissible": true
+  },
+  {
+   "k": 0.25,
+   "h": 30,
+   "far": 0.0,
+   "mean_delay": 382.4,
+   "misses": 15,
+   "probes": 58,
+   "admissible": false
+  },
+  {
+   "k": 0.25,
+   "h": 40,
+   "far": 0.0,
+   "mean_delay": 543.8,
+   "misses": 29,
+   "probes": 58,
+   "admissible": false
+  },
+  {
+   "k": 0.25,
+   "h": 60,
+   "far": 0.0,
+   "mean_delay": 764.9,
+   "misses": 53,
+   "probes": 57,
+   "admissible": false
+  }
+ ],
+ "start": {
+  "k": 0.08,
+  "h": 40,
+  "far": 0.0,
+  "mean_delay": 140.7,
+  "misses": 0,
+  "probes": 58,
+  "admissible": true
+ }
+}
