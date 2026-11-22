@@ -1,0 +1,1 @@
+n=35 K=9 maximal_tri_free_S=90 witnesses=4 nodes=4815

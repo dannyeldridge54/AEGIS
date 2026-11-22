@@ -66,3 +66,5 @@ apps/sarah_sky/out/
 tools/_build_version.txt
 field_tests/targets/*.sqlite-journal
 tools/ramsey/r310
+tools/ramsey/r310g
+tools/ramsey/circ

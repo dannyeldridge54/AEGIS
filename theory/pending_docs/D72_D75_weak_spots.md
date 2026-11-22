@@ -19845,3 +19845,23 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
 ## D1998 — R(3,10) pulse search, calibration ladder (running)
 - Known-answer rungs found so far: (8,4), (13,5), (17,6), (22,7) in under 1 s; (27,8) in 1.6–4.2 s on 3 of 3 seeds.
 - (35,9) and (39,10) are running on core 1. The target (40,10) is running on core 2: best score 78 independent 10-sets at 60 s.
+
+## D2000 — R(3,10) generator, the symmetry dimension: exhaustive circulant search. PREREG_D2000
+- **Calibration:** circulant witnesses at n = 8 (K = 4) and 13 (K = 5); none at 17, 22 or 27, which only means the extremal graphs at those sizes are not circulant. **None on any impossible rung** (9, 14, 18, 23, 28, 36).
+- **n = 35, K = 9: 4 circulant witnesses**, for example S = {1, 7, 11, 16}. All pass the 2-method verifier (α = 8). The Angeltveit paper states that R(3,9,35) contains a **single graph**, so this is the unique 35-vertex (3,9)-graph, found in milliseconds. The annealing engine had stalled on it (best score 37 after 7 min).
+- **n = 39 and 40, K = 10: no circulant witness**, by complete search (117 and 264 maximal triangle-free distance sets). **A 40-vertex graph, if one exists, is non-circulant.** This does not settle R(3,10).
+
+## D2001 — tile counting for a (3,10,40)-graph. PREREG_D2001
+- **Identity** (Goedgebeur–Radziszowski): γ = 40e − Σ n_d (d² + e(3,9,39 − d)) ≥ 0, with the exact published e(3,9,30..35) = 86, 95, 104, 118, 129, 140.
+- **Result:** 5,002 degree compositions survive.
+  - e lies in [159, 180];
+  - the 9-regular case has the most slack (γ = 520);
+  - up to 5 vertices may have degree 4.
+- **Counting alone does not settle R(3,10).** It narrows the target. For any degree-4 vertex, the dual neighbourhood must be the unique 35-vertex graph (D2000). That reduces the "min degree 4" case to an exhaustive gluing of 5 vertices onto one known graph.
+
+**Prior method (literature):**
+- Exoo: symmetric constructions plus local search.
+- Goedgebeur & Radziszowski: a gluing extender, and exact e(3,k,n) tables.
+- Angeltveit: neighbourhood gluing for ≤ 41, about 3 CPU-years.
+
+**Next:** the degree-4 gluing search (lock first). Each new vertex attaches to a disjoint independent set of H, since H is 8-regular and degrees are ≤ 9. The union of any 2 attachment sets must hit every independent 8-set of H, any 3 must hit every independent 7-set, and all 4 every independent 6-set. Before running it, check the literature for whether this case was already excluded.
