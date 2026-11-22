@@ -19750,3 +19750,18 @@ Online tuning moved the live detector to (0.2, 24) over 11 updates. The controll
 2. The field **does not balance**. Holding L5, L7 and L8 costs three fits plus a pinned T_R, and baryogenesis still fails. That is where the derivation must go: the M_N(S) or Br channel and the cube's new axis.
 3. One node, the neutrinos, meets every goalpost it has. That is the first DONE node, with its caveats.
 4. 15 goalposts stay OPEN because the Weave has no value for them: dark energy, H₀, S₈, Λ, the hierarchy, Li-7, the neutron lifetime, the Higgs mass, and others. These are derivation targets, not test failures.
+
+## D1988 — METHOD: the literature-based optimisations, closed out (PREREG_D1984 + D1988; Danny 18:57 "do the full list")
+| item | source | what it gave | verdict |
+|---|---|---|---|
+| O1 | CUSUM (Page 1954); BOCPD as the alternative | two detectors, plus LOST hysteresis | **PASS**: precision 1.0/1.0, chatter gone (D1987) |
+| O2 | simulation-based calibration (Talts 2018) | calibration on null streams | D1986 **FAIL**; it caught a detector design flaw before any scored run. D1987 **PASS** |
+| O3 | Population Based Training (Jaderberg 2017); Hyperband (Li 2016) | online shadow tuning on self-injected probes | ran; 11 updates; live detector moved (0.16, 20) → (0.2, 24) |
+| O4 | blind analysis (Klein & Roodman 2005); held-out evaluation (DGM, AlphaEvolve) | blind run on held-out seed 2026 | FAIL on A5 only (the runaway bar caught T_R pinned; D1987) |
+| O5 | archive of variants (DGM; ADAS, Hu 2024) | field_tests/loom/method_archive.jsonl | recorded (engine v3, parent v2) |
+| O6 | online FDR, LORD++ (Javanmard & Montanari 2015; Ramdas 2017) | tools/loom/online_fdr.py | **PASS**: all-null FDR (= FWER) 0.0265 ≤ 0.05; power 1.00 on 20 strong signals |
+| O7 | mutation analysis (Jia & Harman 2011) | runner fixed, with a control | 1st valid run: kill 13/18 = 0.72, **FAIL (stands)**. Gaps closed under D1988. 2nd valid run: **15/17 non-equivalent = 0.88, PASS**. Two planner mutants did not apply to the rewritten lines and are counted as survivors (conservative); one is declared equivalent |
+| O8 | Reflexion (Shinn 2023) | field_tests/loom/mistakes.jsonl (12 dated mistakes); the planner attaches the relevant ones to each action | **PASS** (B8) |
+| O9 | debate heterogeneity (Du 2023); effort scaling (Anthropic multi-agent research system) | referees on a different model; at most one high-effort action per pulse | **PASS** (B8) |
+
+**Planner fix D1980a:** the endpoint now needs E1–E5 (E3 four corners from field_tests/loom/four_corners.json, E5 from referee_signoff.json) and no alarms. **Test B8a PASS.**
