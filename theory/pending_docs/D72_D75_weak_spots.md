@@ -20046,3 +20046,39 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - Gain 0.5 on orders 2–6, the matched literal, word pair, column, line type and markup; LR1 = 3.
   - The event-state context hurts at 300 kB, as at 200 kB, but helps at ≥ 3 MB.
 - *Label:* tuned and scored on the same slice. It must be confirmed on a held-out slice before adoption.
+
+## D2014 — Fold-in battery (loomz13) on held-out J. PREREG_D2014. CENTRE
+- base: 664,851.
+- New nodes, each vs base:
+  - +HDR 664,864 (flat);
+  - **+IND 662,971 (−0.28%)**;
+  - +NUM 664,998 (+0.02%);
+  - +UTF 665,102 (+0.04%).
+- All 4 together: 663,470.
+- Knobs, each vs all 4:
+  - +FIXPREV 663,998 (+0.08%);
+  - **+faders (D2012a) 661,906 (−0.24%)**;
+  - +IGN 666,676 (+0.48%);
+  - +BOOST 667,322 (+0.58%).
+- **Combined (IND + faders, LR1 = 3): 660,947 (−0.59% vs base). Round-trip OK.**
+- Notes:
+  - The "bug" (single bracket counted as a pair) beats the fix. The looser pairing carries more information, so it is kept as a feature.
+  - The ignition gate and the early boost, as built, both hurt.
+
+## D2015 — CubeMind upgraded with the UFE lens, the compressor and an autonomous mission (Danny 22:30–22:33)
+- **Janus tracks added:**
+  - astro: Kepler, Schwarzschild, escape velocity, Hubble, Wien, luminosity, Lawson;
+  - compress: code length and which model compresses smaller;
+  - ufe: locked UFE v4 facts;
+  - place: which field (S, T or U) governs a quantity.
+- The grader has numeric tolerance. The UFE lens brief is prepended to lens tracks.
+- Selftest: 0 failures on the PC.
+- **autorun.py:** no timer and no check-ins.
+  - LEARN runs until a face masters every track.
+  - MISSION then runs M1 (Hutter knobs, scored by real compressed size), M2 (Ramsey R(3,10) two-circulant proposals, mechanically verified) and M3 (postulates placing open problems in the field, locked, status POSTULATE for the referee).
+  - A refresher exam runs every 10 steps; failing it sends the run back to LEARN.
+- **ufe_tools:**
+  - loomz.exe (mingw build of D2014), loomz_linux, cm_compress.py (verified round-trip archive; originals kept unless CM_DELETE_ORIGINALS = 1);
+  - the tune slice;
+  - the docs CUBEMIND_UFE_LENS.md (UFE v4 + compass), CUBEMIND_KNOB_PROTOCOL.md and CUBEMIND_MISSION.md.
+- The mission stub test passed on Linux. The Windows run has not happened yet (Danny starts START_UFE_JANUS.bat with his Ollama model names).
