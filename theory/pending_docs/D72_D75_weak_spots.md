@@ -20400,3 +20400,9 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - corner 000100 (flux-scaling) remains the nearest consistent corner;
     - the warped-throat D3 option is added as the realisation of axis V = 1.
   - Next lock: does flux-scaling (1503.07634) give F^T_vis/m₃/₂ ≤ 1.2e-3/at while keeping W₀ small? Read the paper under a lock.
+- **D2041 (CENTRE; PREREG_D2041): flux-scaling does NOT realise cube corner 000100. FAIL by the locked rule.**
+  - Blumenhagen et al. (1503.07634): "the gravitino shares the same flux dependence as the moduli". m₃/₂ is of the same order as the moduli masses, "generically only a few orders below the Planck scale".
+  - Holding the volume above H_inf would therefore put m₃/₂ ≳ 1e12 GeV, and the AMSB wino far above a TeV.
+  - Their sequestered variant can bring soft terms down with AMSB dominant, but m₃/₂ itself stays high-scale.
+  - **The cube now carries a K = 1 filter.** The nearest consistent corners move to axis I (an inflation sector decoupled from m₃/₂, He–Kachru–Westphal 1003.4265) combined with the visible-sector mutation V (warped-throat D3, open).
+  - Next lock: read 1003.4265 for whether high-scale inflation with a TeV-scale m₃/₂ survives in KKLT-type models, and at what cost in knobs.

@@ -20,6 +20,8 @@ def corner(c):
     if s['M'] == 1 and sequestered: flags.append('mirage needs F^T_vis; this corner suppresses it')
     if not (s['I'] == 1 or s['K'] == 1): flags.append('Kallosh-Linde: H_inf >> barrier (D2036 K, D2037 B0b)')
     if s['U'] == 1: flags.append('U3 = 2i breaks neutrinos at i (D2022)')
+    if s['K'] == 1: flags.append('flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)')
+    if s['V'] == 1 and s['M'] == 0: open_.append('pure AMSB on sequestered D3 needs a warped-throat tip (LVS no-scale may kill AMSB at our m32, D2040)')
     if s['V'] == 1: open_.append('f_vis = S only: the whole gauge chain must be re-derived')
     if s['T'] == 1: open_.append('seam value not yet derived (B4)')
     if s['K'] == 1: open_.append('no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived')
