@@ -1,0 +1,39 @@
+{
+ "prereg": "PREREG_D1989_complete_field.md P3",
+ "C1": {
+  "in_sample": {
+   "lepton_slip": 0.0253,
+   "H_Imtau_rho": 0.02527,
+   "frac_diff": -0.00118
+  },
+  "numerology": "chance of a match by luck = 2 % (n = 10, band \u00b10 %); hits [0.025270115890194657]",
+  "numerology_note": "target is a best-fit point inside a broad natural range (0.0066-0.0435, D1877); the chance figure does not give evidential weight",
+  "out_of_sample": {
+   "rho": {
+    "pred": 0.02527,
+    "in_window": false,
+    "miss_frac": 0.0236
+   },
+   "i": {
+    "pred": 0.02918,
+    "in_window": false,
+    "miss_frac": 0.0649
+   }
+  },
+  "verdict": "FAIL"
+ },
+ "C2": {
+  "TR_derived": 370000000.0,
+  "feasible": true,
+  "TR_min": 1537795208.3722622,
+  "TR_max": 2093868831.398643,
+  "fit_factor_min": 4.16,
+  "at_TR_min": {
+   "Y": 8.813633547314996e-11,
+   "Om": 0.0866647234390679,
+   "ns": 0.9708749608250957
+  },
+  "verdict": "FEASIBLE-BY-FIT",
+  "why_upper": "Omega_wino h^2 reaches 0.12"
+ }
+}
