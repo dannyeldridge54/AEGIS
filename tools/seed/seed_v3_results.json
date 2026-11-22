@@ -1,0 +1,5155 @@
+{
+ "control": {
+  "chi": [
+   "1",
+   "3",
+   "2"
+  ],
+  "susy_branes": 45,
+  "visible_pairs": 40,
+  "pairs_completed": 16,
+  "models": 282,
+  "timeout": false,
+  "secs": 3.5,
+  "pairs": [
+   {
+    "A": [
+     -2,
+     -1,
+     -1,
+     1,
+     1,
+     1
+    ],
+    "NA": 6,
+    "B": [
+     -1,
+     -1,
+     0,
+     -1,
+     -1,
+     -1
+    ],
+    "completions": 9
+   },
+   {
+    "A": [
+     -1,
+     -2,
+     -1,
+     -1,
+     -1,
+     -1
+    ],
+    "NA": 6,
+    "B": [
+     -1,
+     -1,
+     0,
+     -1,
+     -1,
+     -1
+    ],
+    "completions": 7
+   },
+   {
+    "A": [
+     -1,
+     -1,
+     -1,
+     0,
+     1,
+     0
+    ],
+    "NA": 6,
+    "B": [
+     -1,
+     0,
+     -1,
+     -1,
+     1,
+     -1
+    ],
+    "completions": 24
+   },
+   {
+    "A": [
+     -1,
+     -1,
+     -1,
+     0,
+     1,
+     0
+    ],
+    "NA": 8,
+    "B": [
+     -1,
+     0,
+     -1,
+     -1,
+     1,
+     -1
+    ],
+    "completions": 19
+   },
+   {
+    "A": [
+     -1,
+     -1,
+     -1,
+     0,
+     1,
+     0
+    ],
+    "NA": 6,
+    "B": [
+     0,
+     -1,
+     -1,
+     -1,
+     -3,
+     -2
+    ],
+    "completions": 26
+   }
+  ]
+ },
+ "grid": [
+  {
+   "chi": [
+    "1/2",
+    "1/2",
+    "1/2"
+   ],
+   "susy_branes": 27,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1/2",
+    "1/2",
+    "1"
+   ],
+   "susy_branes": 32,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1/2",
+    "1/2",
+    "3/2"
+   ],
+   "susy_branes": 23,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1/2",
+    "1/2",
+    "2"
+   ],
+   "susy_branes": 42,
+   "visible_pairs": 6,
+   "pairs_completed": 4,
+   "models": 12,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -3,
+      -2,
+      1,
+      0
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -1,
+      -3,
+      -2,
+      1,
+      0
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -3,
+      -2,
+      -1,
+      -1,
+      1,
+      0
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -3,
+      -2,
+      -1,
+      -1,
+      1,
+      0
+     ],
+     "completions": 3
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1/2",
+    "1/2",
+    "3"
+   ],
+   "susy_branes": 24,
+   "visible_pairs": 2,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1/2",
+    "1",
+    "1/2"
+   ],
+   "susy_branes": 34,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1/2",
+    "1",
+    "1"
+   ],
+   "susy_branes": 39,
+   "visible_pairs": 13,
+   "pairs_completed": 4,
+   "models": 42,
+   "timeout": false,
+   "secs": 0.6,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 9
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 9
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "completions": 12
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "completions": 12
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1/2",
+    "1",
+    "3/2"
+   ],
+   "susy_branes": 28,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1/2",
+    "1",
+    "2"
+   ],
+   "susy_branes": 49,
+   "visible_pairs": 28,
+   "pairs_completed": 4,
+   "models": 24,
+   "timeout": false,
+   "secs": 0.4,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      -2,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -1,
+      3,
+      1,
+      1
+     ],
+     "completions": 7
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -1,
+      -1,
+      3,
+      1,
+      1
+     ],
+     "completions": 5
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -3,
+      -1,
+      1,
+      0
+     ],
+     "completions": 7
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -1,
+      -3,
+      -1,
+      1,
+      0
+     ],
+     "completions": 5
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1/2",
+    "1",
+    "3"
+   ],
+   "susy_branes": 31,
+   "visible_pairs": 3,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1/2",
+    "3/2",
+    "1/2"
+   ],
+   "susy_branes": 23,
+   "visible_pairs": 4,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1/2",
+    "3/2",
+    "1"
+   ],
+   "susy_branes": 30,
+   "visible_pairs": 4,
+   "pairs_completed": 2,
+   "models": 6,
+   "timeout": false,
+   "secs": 0.2,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      -1
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      -1
+     ],
+     "completions": 3
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1/2",
+    "3/2",
+    "3/2"
+   ],
+   "susy_branes": 21,
+   "visible_pairs": 7,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1/2",
+    "3/2",
+    "2"
+   ],
+   "susy_branes": 42,
+   "visible_pairs": 12,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.3,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1/2",
+    "3/2",
+    "3"
+   ],
+   "susy_branes": 23,
+   "visible_pairs": 10,
+   "pairs_completed": 2,
+   "models": 6,
+   "timeout": false,
+   "secs": 0.3,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -3,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -3,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "completions": 3
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1/2",
+    "2",
+    "1/2"
+   ],
+   "susy_branes": 32,
+   "visible_pairs": 8,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.2,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1/2",
+    "2",
+    "1"
+   ],
+   "susy_branes": 34,
+   "visible_pairs": 16,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 1.0,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1/2",
+    "2",
+    "3/2"
+   ],
+   "susy_branes": 27,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1/2",
+    "2",
+    "2"
+   ],
+   "susy_branes": 42,
+   "visible_pairs": 6,
+   "pairs_completed": 4,
+   "models": 12,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      -2,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -2,
+      3,
+      1,
+      1
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -1,
+      -2,
+      3,
+      1,
+      1
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -2,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -3,
+      -2,
+      -1,
+      1,
+      1,
+      1
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -2,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -3,
+      -2,
+      -1,
+      1,
+      1,
+      1
+     ],
+     "completions": 3
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1/2",
+    "2",
+    "3"
+   ],
+   "susy_branes": 30,
+   "visible_pairs": 12,
+   "pairs_completed": 2,
+   "models": 2,
+   "timeout": false,
+   "secs": 1.1,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      0,
+      3,
+      1
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -1,
+      -1,
+      -3,
+      -2
+     ],
+     "completions": 1
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -1,
+      -3,
+      -2
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -1,
+      0,
+      3,
+      1
+     ],
+     "completions": 1
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1/2",
+    "3",
+    "1/2"
+   ],
+   "susy_branes": 26,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1/2",
+    "3",
+    "1"
+   ],
+   "susy_branes": 31,
+   "visible_pairs": 4,
+   "pairs_completed": 2,
+   "models": 4,
+   "timeout": false,
+   "secs": 0.4,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      -1
+     ],
+     "completions": 2
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      -1
+     ],
+     "completions": 2
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1/2",
+    "3",
+    "3/2"
+   ],
+   "susy_branes": 22,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1/2",
+    "3",
+    "2"
+   ],
+   "susy_branes": 39,
+   "visible_pairs": 16,
+   "pairs_completed": 7,
+   "models": 32,
+   "timeout": false,
+   "secs": 2.1,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      -2,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -1,
+      -1,
+      -3,
+      -2
+     ],
+     "completions": 5
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      0,
+      -1,
+      -1,
+      -1,
+      -3,
+      -2
+     ],
+     "completions": 2
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      1
+     ],
+     "completions": 5
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -3,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 10
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1/2",
+    "3",
+    "3"
+   ],
+   "susy_branes": 26,
+   "visible_pairs": 11,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.8,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1",
+    "1/2",
+    "1/2"
+   ],
+   "susy_branes": 34,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1",
+    "1/2",
+    "1"
+   ],
+   "susy_branes": 39,
+   "visible_pairs": 13,
+   "pairs_completed": 4,
+   "models": 42,
+   "timeout": false,
+   "secs": 0.4,
+   "pairs": [
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 9
+    },
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 9
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "completions": 12
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "completions": 12
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1",
+    "1/2",
+    "3/2"
+   ],
+   "susy_branes": 28,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1",
+    "1/2",
+    "2"
+   ],
+   "susy_branes": 49,
+   "visible_pairs": 28,
+   "pairs_completed": 4,
+   "models": 24,
+   "timeout": false,
+   "secs": 0.5,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      0,
+      -1,
+      -2,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -3,
+      -1,
+      1,
+      1,
+      0
+     ],
+     "completions": 7
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -1,
+      -2,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -3,
+      -1,
+      1,
+      1,
+      0
+     ],
+     "completions": 5
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -3,
+      -1,
+      -1,
+      -1,
+      1,
+      0
+     ],
+     "completions": 7
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -3,
+      -1,
+      -1,
+      -1,
+      1,
+      0
+     ],
+     "completions": 5
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1",
+    "1/2",
+    "3"
+   ],
+   "susy_branes": 31,
+   "visible_pairs": 3,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1",
+    "1",
+    "1/2"
+   ],
+   "susy_branes": 48,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1",
+    "1",
+    "1"
+   ],
+   "susy_branes": 50,
+   "visible_pairs": 32,
+   "pairs_completed": 12,
+   "models": 172,
+   "timeout": false,
+   "secs": 0.8,
+   "pairs": [
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 29
+    },
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 12
+    },
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -1,
+      3,
+      1,
+      1
+     ],
+     "completions": 2
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "completions": 29
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "completions": 12
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1",
+    "1",
+    "3/2"
+   ],
+   "susy_branes": 38,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1",
+    "1",
+    "2"
+   ],
+   "susy_branes": 62,
+   "visible_pairs": 48,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.4,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1",
+    "1",
+    "3"
+   ],
+   "susy_branes": 38,
+   "visible_pairs": 4,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1",
+    "3/2",
+    "1/2"
+   ],
+   "susy_branes": 34,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1",
+    "3/2",
+    "1"
+   ],
+   "susy_branes": 37,
+   "visible_pairs": 14,
+   "pairs_completed": 4,
+   "models": 22,
+   "timeout": false,
+   "secs": 0.6,
+   "pairs": [
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 5
+    },
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 4
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "completions": 8
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "completions": 5
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1",
+    "3/2",
+    "3/2"
+   ],
+   "susy_branes": 29,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1",
+    "3/2",
+    "2"
+   ],
+   "susy_branes": 49,
+   "visible_pairs": 20,
+   "pairs_completed": 4,
+   "models": 18,
+   "timeout": false,
+   "secs": 0.5,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      0,
+      -3,
+      -2,
+      1,
+      0
+     ],
+     "completions": 5
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      0,
+      -3,
+      -2,
+      1,
+      0
+     ],
+     "completions": 5
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -3,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 4
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      0,
+      -1,
+      -3,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 4
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1",
+    "3/2",
+    "3"
+   ],
+   "susy_branes": 30,
+   "visible_pairs": 10,
+   "pairs_completed": 2,
+   "models": 4,
+   "timeout": false,
+   "secs": 0.2,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -2,
+      -3,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "completions": 2
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -2,
+      -3,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "completions": 2
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1",
+    "2",
+    "1/2"
+   ],
+   "susy_branes": 34,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1",
+    "2",
+    "1"
+   ],
+   "susy_branes": 39,
+   "visible_pairs": 13,
+   "pairs_completed": 4,
+   "models": 42,
+   "timeout": false,
+   "secs": 0.5,
+   "pairs": [
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 12
+    },
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 12
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "completions": 9
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "completions": 9
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1",
+    "2",
+    "3/2"
+   ],
+   "susy_branes": 28,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1",
+    "2",
+    "2"
+   ],
+   "susy_branes": 49,
+   "visible_pairs": 28,
+   "pairs_completed": 4,
+   "models": 24,
+   "timeout": false,
+   "secs": 0.5,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -3,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 7
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -3,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 5
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -2,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -3,
+      -1,
+      -1,
+      1,
+      1,
+      1
+     ],
+     "completions": 7
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -2,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -3,
+      -1,
+      -1,
+      1,
+      1,
+      1
+     ],
+     "completions": 5
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1",
+    "2",
+    "3"
+   ],
+   "susy_branes": 31,
+   "visible_pairs": 3,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1",
+    "3",
+    "1/2"
+   ],
+   "susy_branes": 33,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1",
+    "3",
+    "1"
+   ],
+   "susy_branes": 36,
+   "visible_pairs": 16,
+   "pairs_completed": 7,
+   "models": 47,
+   "timeout": false,
+   "secs": 1.6,
+   "pairs": [
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 9
+    },
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 4
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "completions": 9
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "completions": 4
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      1
+     ],
+     "completions": 5
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1",
+    "3",
+    "3/2"
+   ],
+   "susy_branes": 27,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "1",
+    "3",
+    "2"
+   ],
+   "susy_branes": 45,
+   "visible_pairs": 40,
+   "pairs_completed": 16,
+   "models": 282,
+   "timeout": false,
+   "secs": 3.7,
+   "pairs": [
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      1,
+      1,
+      1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 9
+    },
+    {
+     "A": [
+      -1,
+      -2,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 7
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      -1
+     ],
+     "completions": 24
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      -1
+     ],
+     "completions": 19
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -1,
+      -1,
+      -3,
+      -2
+     ],
+     "completions": 26
+    }
+   ]
+  },
+  {
+   "chi": [
+    "1",
+    "3",
+    "3"
+   ],
+   "susy_branes": 29,
+   "visible_pairs": 12,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.9,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3/2",
+    "1/2",
+    "1/2"
+   ],
+   "susy_branes": 23,
+   "visible_pairs": 4,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3/2",
+    "1/2",
+    "1"
+   ],
+   "susy_branes": 30,
+   "visible_pairs": 4,
+   "pairs_completed": 2,
+   "models": 6,
+   "timeout": false,
+   "secs": 0.2,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      -1
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      -1
+     ],
+     "completions": 3
+    }
+   ]
+  },
+  {
+   "chi": [
+    "3/2",
+    "1/2",
+    "3/2"
+   ],
+   "susy_branes": 21,
+   "visible_pairs": 7,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3/2",
+    "1/2",
+    "2"
+   ],
+   "susy_branes": 42,
+   "visible_pairs": 12,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.5,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3/2",
+    "1/2",
+    "3"
+   ],
+   "susy_branes": 23,
+   "visible_pairs": 10,
+   "pairs_completed": 2,
+   "models": 6,
+   "timeout": false,
+   "secs": 0.3,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      0,
+      -1,
+      -3,
+      1,
+      0
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      0,
+      -1,
+      -3,
+      1,
+      0
+     ],
+     "completions": 3
+    }
+   ]
+  },
+  {
+   "chi": [
+    "3/2",
+    "1",
+    "1/2"
+   ],
+   "susy_branes": 34,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3/2",
+    "1",
+    "1"
+   ],
+   "susy_branes": 37,
+   "visible_pairs": 14,
+   "pairs_completed": 4,
+   "models": 22,
+   "timeout": false,
+   "secs": 0.6,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 5
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 4
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "completions": 8
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "completions": 5
+    }
+   ]
+  },
+  {
+   "chi": [
+    "3/2",
+    "1",
+    "3/2"
+   ],
+   "susy_branes": 29,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3/2",
+    "1",
+    "2"
+   ],
+   "susy_branes": 49,
+   "visible_pairs": 20,
+   "pairs_completed": 4,
+   "models": 18,
+   "timeout": false,
+   "secs": 0.5,
+   "pairs": [
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "completions": 5
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "completions": 5
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -3,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 4
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -3,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 4
+    }
+   ]
+  },
+  {
+   "chi": [
+    "3/2",
+    "1",
+    "3"
+   ],
+   "susy_branes": 30,
+   "visible_pairs": 10,
+   "pairs_completed": 2,
+   "models": 4,
+   "timeout": false,
+   "secs": 0.3,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      0,
+      -2,
+      -3,
+      1,
+      0
+     ],
+     "completions": 2
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      0,
+      -2,
+      -3,
+      1,
+      0
+     ],
+     "completions": 2
+    }
+   ]
+  },
+  {
+   "chi": [
+    "3/2",
+    "3/2",
+    "1/2"
+   ],
+   "susy_branes": 25,
+   "visible_pairs": 4,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.2,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3/2",
+    "3/2",
+    "1"
+   ],
+   "susy_branes": 30,
+   "visible_pairs": 12,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.6,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3/2",
+    "3/2",
+    "3/2"
+   ],
+   "susy_branes": 25,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3/2",
+    "3/2",
+    "2"
+   ],
+   "susy_branes": 42,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3/2",
+    "3/2",
+    "3"
+   ],
+   "susy_branes": 26,
+   "visible_pairs": 10,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.2,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3/2",
+    "2",
+    "1/2"
+   ],
+   "susy_branes": 32,
+   "visible_pairs": 3,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3/2",
+    "2",
+    "1"
+   ],
+   "susy_branes": 32,
+   "visible_pairs": 18,
+   "pairs_completed": 5,
+   "models": 26,
+   "timeout": false,
+   "secs": 1.5,
+   "pairs": [
+    {
+     "A": [
+      -3,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 1
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -3,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "completions": 10
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -3,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "completions": 8
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      -1
+     ],
+     "completions": 5
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      -1
+     ],
+     "completions": 2
+    }
+   ]
+  },
+  {
+   "chi": [
+    "3/2",
+    "2",
+    "3/2"
+   ],
+   "susy_branes": 26,
+   "visible_pairs": 2,
+   "pairs_completed": 1,
+   "models": 1,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": [
+    {
+     "A": [
+      0,
+      -1,
+      -3,
+      -2,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -3,
+      -1,
+      -1,
+      1,
+      1,
+      1
+     ],
+     "completions": 1
+    }
+   ]
+  },
+  {
+   "chi": [
+    "3/2",
+    "2",
+    "2"
+   ],
+   "susy_branes": 37,
+   "visible_pairs": 12,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.4,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3/2",
+    "2",
+    "3"
+   ],
+   "susy_branes": 27,
+   "visible_pairs": 6,
+   "pairs_completed": 2,
+   "models": 6,
+   "timeout": false,
+   "secs": 0.2,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -1,
+      -1,
+      -3,
+      -2
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      0,
+      -1,
+      -1,
+      -1,
+      -3,
+      -2
+     ],
+     "completions": 3
+    }
+   ]
+  },
+  {
+   "chi": [
+    "3/2",
+    "3",
+    "1/2"
+   ],
+   "susy_branes": 27,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3/2",
+    "3",
+    "1"
+   ],
+   "susy_branes": 28,
+   "visible_pairs": 11,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 1.6,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3/2",
+    "3",
+    "3/2"
+   ],
+   "susy_branes": 24,
+   "visible_pairs": 4,
+   "pairs_completed": 2,
+   "models": 4,
+   "timeout": false,
+   "secs": 0.2,
+   "pairs": [
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -2,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 2
+    },
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -2,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 2
+    }
+   ]
+  },
+  {
+   "chi": [
+    "3/2",
+    "3",
+    "2"
+   ],
+   "susy_branes": 34,
+   "visible_pairs": 12,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.8,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3/2",
+    "3",
+    "3"
+   ],
+   "susy_branes": 25,
+   "visible_pairs": 4,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.5,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "2",
+    "1/2",
+    "1/2"
+   ],
+   "susy_branes": 32,
+   "visible_pairs": 8,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.2,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "2",
+    "1/2",
+    "1"
+   ],
+   "susy_branes": 34,
+   "visible_pairs": 16,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 1.0,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "2",
+    "1/2",
+    "3/2"
+   ],
+   "susy_branes": 27,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "2",
+    "1/2",
+    "2"
+   ],
+   "susy_branes": 42,
+   "visible_pairs": 6,
+   "pairs_completed": 4,
+   "models": 12,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": [
+    {
+     "A": [
+      -2,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -3,
+      2,
+      1,
+      0
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -2,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -1,
+      -3,
+      2,
+      1,
+      0
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -1,
+      -2,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -2,
+      -3,
+      -1,
+      1,
+      1,
+      0
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -1,
+      -2,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -2,
+      -3,
+      -1,
+      1,
+      1,
+      0
+     ],
+     "completions": 3
+    }
+   ]
+  },
+  {
+   "chi": [
+    "2",
+    "1/2",
+    "3"
+   ],
+   "susy_branes": 30,
+   "visible_pairs": 12,
+   "pairs_completed": 2,
+   "models": 2,
+   "timeout": false,
+   "secs": 1.1,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      -1,
+      0,
+      -1,
+      -3,
+      -2
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      0,
+      -1,
+      -1,
+      3,
+      1
+     ],
+     "completions": 1
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -1,
+      -1,
+      3,
+      1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      0,
+      -1,
+      -3,
+      -2
+     ],
+     "completions": 1
+    }
+   ]
+  },
+  {
+   "chi": [
+    "2",
+    "1",
+    "1/2"
+   ],
+   "susy_branes": 34,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "2",
+    "1",
+    "1"
+   ],
+   "susy_branes": 39,
+   "visible_pairs": 13,
+   "pairs_completed": 4,
+   "models": 42,
+   "timeout": false,
+   "secs": 0.5,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 12
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 12
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "completions": 9
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "completions": 9
+    }
+   ]
+  },
+  {
+   "chi": [
+    "2",
+    "1",
+    "3/2"
+   ],
+   "susy_branes": 28,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "2",
+    "1",
+    "2"
+   ],
+   "susy_branes": 49,
+   "visible_pairs": 28,
+   "pairs_completed": 4,
+   "models": 24,
+   "timeout": false,
+   "secs": 0.5,
+   "pairs": [
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -1,
+      -3,
+      -1,
+      -1
+     ],
+     "completions": 7
+    },
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -1,
+      -1,
+      -3,
+      -1,
+      -1
+     ],
+     "completions": 5
+    },
+    {
+     "A": [
+      -2,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -3,
+      1,
+      1,
+      0
+     ],
+     "completions": 7
+    },
+    {
+     "A": [
+      -2,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -1,
+      -3,
+      1,
+      1,
+      0
+     ],
+     "completions": 5
+    }
+   ]
+  },
+  {
+   "chi": [
+    "2",
+    "1",
+    "3"
+   ],
+   "susy_branes": 31,
+   "visible_pairs": 3,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "2",
+    "3/2",
+    "1/2"
+   ],
+   "susy_branes": 32,
+   "visible_pairs": 3,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "2",
+    "3/2",
+    "1"
+   ],
+   "susy_branes": 32,
+   "visible_pairs": 18,
+   "pairs_completed": 5,
+   "models": 26,
+   "timeout": false,
+   "secs": 1.2,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      0,
+      -3,
+      -1,
+      1,
+      0
+     ],
+     "completions": 10
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      0,
+      -3,
+      -1,
+      1,
+      0
+     ],
+     "completions": 8
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      -1
+     ],
+     "completions": 5
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      -1
+     ],
+     "completions": 2
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -3,
+      -1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 1
+    }
+   ]
+  },
+  {
+   "chi": [
+    "2",
+    "3/2",
+    "3/2"
+   ],
+   "susy_branes": 26,
+   "visible_pairs": 2,
+   "pairs_completed": 1,
+   "models": 1,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": [
+    {
+     "A": [
+      -3,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -3,
+      1,
+      1,
+      0
+     ],
+     "completions": 1
+    }
+   ]
+  },
+  {
+   "chi": [
+    "2",
+    "3/2",
+    "2"
+   ],
+   "susy_branes": 37,
+   "visible_pairs": 12,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.5,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "2",
+    "3/2",
+    "3"
+   ],
+   "susy_branes": 27,
+   "visible_pairs": 6,
+   "pairs_completed": 2,
+   "models": 6,
+   "timeout": false,
+   "secs": 0.2,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      0,
+      -1,
+      -3,
+      -2
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -1,
+      0,
+      -1,
+      -3,
+      -2
+     ],
+     "completions": 3
+    }
+   ]
+  },
+  {
+   "chi": [
+    "2",
+    "2",
+    "1/2"
+   ],
+   "susy_branes": 27,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "2",
+    "2",
+    "1"
+   ],
+   "susy_branes": 32,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "2",
+    "2",
+    "3/2"
+   ],
+   "susy_branes": 23,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "2",
+    "2",
+    "2"
+   ],
+   "susy_branes": 42,
+   "visible_pairs": 6,
+   "pairs_completed": 4,
+   "models": 12,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": [
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -2,
+      -3,
+      -1,
+      -1
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -1,
+      -2,
+      -3,
+      -1,
+      -1
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -2,
+      -3,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -2,
+      -3,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 3
+    }
+   ]
+  },
+  {
+   "chi": [
+    "2",
+    "2",
+    "3"
+   ],
+   "susy_branes": 24,
+   "visible_pairs": 2,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "2",
+    "3",
+    "1/2"
+   ],
+   "susy_branes": 28,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "2",
+    "3",
+    "1"
+   ],
+   "susy_branes": 31,
+   "visible_pairs": 8,
+   "pairs_completed": 4,
+   "models": 10,
+   "timeout": false,
+   "secs": 0.4,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -2,
+      -1,
+      -1,
+      1,
+      1,
+      1
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -2,
+      -1,
+      -1,
+      1,
+      1,
+      1
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -3,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 2
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      0,
+      -1,
+      -3,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 2
+    }
+   ]
+  },
+  {
+   "chi": [
+    "2",
+    "3",
+    "3/2"
+   ],
+   "susy_branes": 22,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "2",
+    "3",
+    "2"
+   ],
+   "susy_branes": 35,
+   "visible_pairs": 16,
+   "pairs_completed": 7,
+   "models": 36,
+   "timeout": false,
+   "secs": 2.8,
+   "pairs": [
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      -1
+     ],
+     "completions": 5
+    },
+    {
+     "A": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      -1
+     ],
+     "completions": 2
+    },
+    {
+     "A": [
+      -2,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 6
+    },
+    {
+     "A": [
+      -2,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      0,
+      -3,
+      -1,
+      1,
+      0
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -2,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 12
+    }
+   ]
+  },
+  {
+   "chi": [
+    "2",
+    "3",
+    "3"
+   ],
+   "susy_branes": 24,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3",
+    "1/2",
+    "1/2"
+   ],
+   "susy_branes": 26,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3",
+    "1/2",
+    "1"
+   ],
+   "susy_branes": 31,
+   "visible_pairs": 4,
+   "pairs_completed": 2,
+   "models": 4,
+   "timeout": false,
+   "secs": 0.4,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      -1
+     ],
+     "completions": 2
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -2,
+      -1,
+      -1,
+      0,
+      1,
+      -1
+     ],
+     "completions": 2
+    }
+   ]
+  },
+  {
+   "chi": [
+    "3",
+    "1/2",
+    "3/2"
+   ],
+   "susy_branes": 22,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3",
+    "1/2",
+    "2"
+   ],
+   "susy_branes": 39,
+   "visible_pairs": 16,
+   "pairs_completed": 7,
+   "models": 32,
+   "timeout": false,
+   "secs": 3.2,
+   "pairs": [
+    {
+     "A": [
+      -3,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 10
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 4
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -1,
+      -2,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      0,
+      -1,
+      -3,
+      -2
+     ],
+     "completions": 5
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -1,
+      -2,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -1,
+      0,
+      -1,
+      -3,
+      -2
+     ],
+     "completions": 2
+    }
+   ]
+  },
+  {
+   "chi": [
+    "3",
+    "1/2",
+    "3"
+   ],
+   "susy_branes": 26,
+   "visible_pairs": 11,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 1.0,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3",
+    "1",
+    "1/2"
+   ],
+   "susy_branes": 33,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3",
+    "1",
+    "1"
+   ],
+   "susy_branes": 36,
+   "visible_pairs": 16,
+   "pairs_completed": 7,
+   "models": 47,
+   "timeout": false,
+   "secs": 1.7,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 8
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 8
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 9
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 4
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      0
+     ],
+     "completions": 5
+    }
+   ]
+  },
+  {
+   "chi": [
+    "3",
+    "1",
+    "3/2"
+   ],
+   "susy_branes": 27,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3",
+    "1",
+    "2"
+   ],
+   "susy_branes": 45,
+   "visible_pairs": 40,
+   "pairs_completed": 16,
+   "models": 282,
+   "timeout": false,
+   "secs": 4.7,
+   "pairs": [
+    {
+     "A": [
+      -3,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 9
+    },
+    {
+     "A": [
+      -3,
+      -1,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 9
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      -2,
+      1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 9
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 7
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      -1
+     ],
+     "completions": 24
+    }
+   ]
+  },
+  {
+   "chi": [
+    "3",
+    "1",
+    "3"
+   ],
+   "susy_branes": 29,
+   "visible_pairs": 12,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.9,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3",
+    "3/2",
+    "1/2"
+   ],
+   "susy_branes": 27,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3",
+    "3/2",
+    "1"
+   ],
+   "susy_branes": 28,
+   "visible_pairs": 11,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 1.6,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3",
+    "3/2",
+    "3/2"
+   ],
+   "susy_branes": 24,
+   "visible_pairs": 4,
+   "pairs_completed": 2,
+   "models": 4,
+   "timeout": false,
+   "secs": 0.3,
+   "pairs": [
+    {
+     "A": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 2
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 2
+    }
+   ]
+  },
+  {
+   "chi": [
+    "3",
+    "3/2",
+    "2"
+   ],
+   "susy_branes": 34,
+   "visible_pairs": 12,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.8,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3",
+    "3/2",
+    "3"
+   ],
+   "susy_branes": 25,
+   "visible_pairs": 4,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.4,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3",
+    "2",
+    "1/2"
+   ],
+   "susy_branes": 28,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3",
+    "2",
+    "1"
+   ],
+   "susy_branes": 31,
+   "visible_pairs": 8,
+   "pairs_completed": 4,
+   "models": 10,
+   "timeout": false,
+   "secs": 0.4,
+   "pairs": [
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -3,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 2
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -3,
+      -2,
+      0,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 2
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -2,
+      1,
+      1,
+      0
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -1,
+      -2,
+      1,
+      1,
+      0
+     ],
+     "completions": 3
+    }
+   ]
+  },
+  {
+   "chi": [
+    "3",
+    "2",
+    "3/2"
+   ],
+   "susy_branes": 22,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3",
+    "2",
+    "2"
+   ],
+   "susy_branes": 35,
+   "visible_pairs": 16,
+   "pairs_completed": 7,
+   "models": 36,
+   "timeout": false,
+   "secs": 2.8,
+   "pairs": [
+    {
+     "A": [
+      -3,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -2,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 3
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 6,
+     "B": [
+      0,
+      -1,
+      -2,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 12
+    },
+    {
+     "A": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "NA": 8,
+     "B": [
+      0,
+      -1,
+      -2,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 5
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      -1
+     ],
+     "completions": 5
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      -1
+     ],
+     "completions": 2
+    }
+   ]
+  },
+  {
+   "chi": [
+    "3",
+    "2",
+    "3"
+   ],
+   "susy_branes": 24,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3",
+    "3",
+    "1/2"
+   ],
+   "susy_branes": 29,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3",
+    "3",
+    "1"
+   ],
+   "susy_branes": 30,
+   "visible_pairs": 8,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 4.8,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3",
+    "3",
+    "3/2"
+   ],
+   "susy_branes": 25,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  },
+  {
+   "chi": [
+    "3",
+    "3",
+    "2"
+   ],
+   "susy_branes": 32,
+   "visible_pairs": 34,
+   "pairs_completed": 6,
+   "models": 12,
+   "timeout": false,
+   "secs": 8.4,
+   "pairs": [
+    {
+     "A": [
+      -3,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -3,
+      -2,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 2
+    },
+    {
+     "A": [
+      -3,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -3,
+      -2,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "completions": 2
+    },
+    {
+     "A": [
+      -3,
+      -1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      -1
+     ],
+     "completions": 2
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -3,
+      -1,
+      1,
+      0
+     ],
+     "NA": 6,
+     "B": [
+      -1,
+      -1,
+      -3,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 2
+    },
+    {
+     "A": [
+      -1,
+      0,
+      -3,
+      -1,
+      1,
+      0
+     ],
+     "NA": 8,
+     "B": [
+      -1,
+      -1,
+      -3,
+      -2,
+      -1,
+      -1
+     ],
+     "completions": 2
+    }
+   ]
+  },
+  {
+   "chi": [
+    "3",
+    "3",
+    "3"
+   ],
+   "susy_branes": 26,
+   "visible_pairs": 0,
+   "pairs_completed": 0,
+   "models": 0,
+   "timeout": false,
+   "secs": 0.1,
+   "pairs": []
+  }
+ ]
+}

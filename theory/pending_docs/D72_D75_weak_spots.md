@@ -20768,3 +20768,21 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Tier B, heuristics:** a genetic algorithm (~3.5× RL); RL (×200 vs random); simulated annealing / QUBO; two-method saturation as a completeness test; rigid stacks first on Z₂×Z₆ (1509.00048), which is the v4-relevant fork.
   - **Tier C, flux side:** JAXVacua, a conditional VAE (×10³), BFN, homotopy continuation. **None reaches W₀ ~ 1e-9.** The best ML result is ~7e-3, and PFV does not apply (D2045). The W₀ gap stays open.
   - **Not read:** 2611.19950 (rate-limited).
+- **D2082 (CENTRE; PREREG_D2082; tools/seed/seed_v3.py + seed_v3_dedupe.py): Seed v3, an exact consistency landscape on T⁶/(Z₂×Z₂) with a tilted T³ (the D2081 shortcuts). Both checks PASS, and the search now grows: 144 inequivalent 3-family visible pairs complete to tadpole- and K-theory-consistent SUSY models.**
+  - **Space:**
+    - 5,124 canonical branes (|n|, |m| ≤ 3, coprime);
+    - a 125-point integer-χ grid;
+    - exact SUSY (Im Π(n + iχm̃) = 0, Re > 0), with no solver, so the D2080 limit-point bug cannot occur.
+  - **K-theory convention check:** the CSU seed gives probe parity (0, 0, 0, 0). PASS.
+  - **Positive control at χ = (1, 3, 2):** the CSU visible pair (C₁ with N = 8, B₁ with N = 4) is found, with 19 hidden completions, and the CSU fillers are SUSY there. PASS. This is the first time the engine has re-derived a published model from scratch.
+  - **Totals (per χ; the same model recurs across χ points):** 980 visible 3-family pairs, 204 completed, and 1,508 (pair, completion) models. No timeouts; the full grid ran in about 1 minute.
+  - **Deduplicated:** 144 inequivalent completed (A, B, N_A); 36 of them occur at more than one χ point.
+  - **Reporting fix:** the scored run printed only 5 pairs per χ. The locked "inequivalent pairs" item came from re-running the same deterministic code with all completed keys stored, so the totals are unchanged.
+  - **Not filtered (as locked):** hidden–visible chiral exotics, a massless U(1)_Y, and α_s.
+  - **Read:**
+    - In D2080 the wrapping numbers were moved one at a time; here stack sizes and hidden stacks were free and the radii were fixed as exact rationals. That change turned an isolated point into a 144-member family. This is the self-building search working as Danny described it: a tiny seed, then outward growth, with locked goalposts at every level.
+    - **No physics claim yet.** The next level adds the goalposts that make it a prediction test:
+      1. a massless U(1)_Y;
+      2. no chiral exotics;
+      3. the BLS relation 1/α_Y = (2/3)/α_s + 1/α_w where the class allows it, or the full radius-dependent gauge kinetic function otherwise;
+      4. α_s scored against its look-elsewhere rate over these 144.

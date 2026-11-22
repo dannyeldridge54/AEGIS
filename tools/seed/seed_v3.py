@@ -76,7 +76,7 @@ def run_chi(chi, budget=60.0):
             if timeout: break
         if timeout: break
     return dict(chi=[str(c) for c in chi], susy_branes=n, visible_pairs=len(pairs), pairs_completed=sum(1 for p in pairs if p['completions']),
-                models=models, timeout=timeout, secs=round(time.time() - t0, 1), pairs=[p for p in pairs if p['completions']][:5])
+                models=models, timeout=timeout, secs=round(time.time() - t0, 1), pairs=[p for p in pairs if p['completions']][:5], completed_keys=[(canon(p['A']), canon(p['B']), p['NA']) for p in pairs if p['completions']])
 if __name__ == '__main__':
     print('branes (canonical, |n|,|m|<=%d): %d' % (L, len(ALL)))
     kc = kcheck(CSU); print('K-theory convention check on CSU seed: parity', kc, 'PASS' if kc == (0, 0, 0, 0) else 'FAIL -> STOP')
