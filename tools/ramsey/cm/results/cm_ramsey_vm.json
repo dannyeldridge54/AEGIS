@@ -1,0 +1,33 @@
+{
+ "hw": {
+  "host": "vm",
+  "os": "Linux-6.18.44-fc-v726-x86_64-with-glibc2.39",
+  "python": "3.13.18",
+  "logical_cores": 2,
+  "ram_total_gb": 7.8,
+  "ram_avail_gb": 6.9,
+  "numba": "0.68.1",
+  "gpu": {
+   "backend": null,
+   "name": null,
+   "mem_gb": null
+  }
+ },
+ "started": "2026-11-21 20:59:17",
+ "main_K10": {
+  "K": 10,
+  "A1_sets": 11766,
+  "partner_pairs_A1b": 2313910,
+  "triples_A1bc": 0,
+  "solutions": 0,
+  "plan": {
+   "threads": 2,
+   "gpu": null,
+   "table_gb": 0.34,
+   "gpu_rows": 0
+  },
+  "secs_tables": 3.7,
+  "secs_search": 7.9,
+  "verified_examples": []
+ }
+}
