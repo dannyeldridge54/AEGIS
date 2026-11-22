@@ -20246,3 +20246,7 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Owed:** the 12.8 GeV DM vs LZ needs ε fixed; MICROSCOPE/Cassini wait for R1; birefringence stays held.
   - **Bloom:** N = 21, lnL −9.95, 31.9 bits, goodness of fit p = 0.0029 (α_s).
   - Note: terms that pass add to N, so the knob penalty grows. That is the MDL property: more data makes each fitted knob cost more.
+- **D2017b (FORGE, note): the full-enwik8 round-trip of the best build is unverified.**
+  - Compression is done: 19,270,420 bytes, 1.5416 bpc, 3,142 s.
+  - The decompress was frozen by the Forge pause (00:55) and then stopped when its background time limit ran out.
+  - The size stands, but the round-trip check is owed and is rerun when the Forge resumes. This is a verification, not a scored rerun.
