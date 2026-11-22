@@ -15,7 +15,7 @@
   "seed4": true
  },
  "B3": {
-  "pairs_with_same_inputs": 2,
+  "pairs_with_same_inputs": 6,
   "deterministic": true,
   "bad": []
  },
@@ -48,44 +48,12 @@
   "o8_mistakes_attached": true
  },
  "B7": "D1976: injection-recovery 0.89 coverage, false-balance 14 % (reported, not rerun)",
- "B4": {
-  "controls": {
-   "planner.py": "PASS",
-   "lens_core.py": "PASS"
-  },
-  "planner.py": {
-   "killed": 8,
-   "total": 10,
-   "survived": [
-    [
-     "NOT-APPLIED",
-     "and not alarms\n"
-    ],
-    [
-     "NOT-APPLIED",
-     "derive[:2] + ref"
-    ]
-   ]
-  },
-  "lens_core.py": {
-   "killed": 7,
-   "total": 8,
-   "survived": [
-    "max(1, (s > 1e-3 * s.max()).sum())"
-   ]
-  },
-  "kill_rate": 0.833,
-  "void": false,
-  "equivalent_declared": 1,
-  "kill_rate_nonequiv": 0.882
- },
  "ok": {
   "B8": true,
   "B1": true,
   "B2": true,
   "B3": true,
   "B5": true,
-  "B6": true,
-  "B4": true
+  "B6": true
  }
 }

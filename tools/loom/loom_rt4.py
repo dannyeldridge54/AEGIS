@@ -92,6 +92,7 @@ EVENTS = [dict(name='E1 n_s +3 sigma', t0=10, t1=20, kind='data', key='ns', f=la
           dict(name='E2 m3/2 x1.05 kick', t0=25, t1=35, kind='knob', key='m32', dx=math.log(1.05), pred=None),
           dict(name='E3 Y_B -30 %', t0=45, t1=55, kind='data', key='Y', f=lambda v: v * 0.7, pred={8})]
 QUIET = [(2, 10), (20.5, 25), (35.5, 45), (55.5, 60)]
+E2T = [24.0, 25.0, 35.0]   # prediction time, kick, revert
 SC = {'WINDOW': 0, 'OPAQUE': 1, 'NO LOCK': 2, 'RESONANT': 3, 'LOST': 4, 'STUCK': 5}
 def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True, verbose=False, replay=None):
     rng = np.random.default_rng(seed); srng = np.random.default_rng(seed + 7919)
@@ -120,11 +121,11 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
         if events:
             for E in EVENTS:
                 if E['kind'] == 'data' and E['t0'] <= t < E['t1']: truth[E['key']] = E['f'](NOM[E['key']])
-            if pred_E2 is None and t >= 24:
+            if pred_E2 is None and t >= E2T[0]:
                 dx = np.zeros(NK); dx[K.index('m32')] = EVENTS[1]['dx']; dm = np.abs(J @ dx); sd = np.maximum(np.sqrt(var), 1e-6)
                 pred_E2 = {L for L in IDX if any(dm[i] > 4 * sd[i] for i in IDX[L])}; EVENTS[1]['pred'] = pred_E2
-            if not kicked and t >= 25: x[K.index('m32')] += EVENTS[1]['dx']; kicked = True
-            if kicked is True and t >= 35: x[K.index('m32')] -= EVENTS[1]['dx']; kicked = 'done'
+            if not kicked and t >= E2T[1]: x[K.index('m32')] += EVENTS[1]['dx']; kicked = True
+            if kicked is True and t >= E2T[2]: x[K.index('m32')] -= EVENTS[1]['dx']; kicked = 'done'
         for L, keys in STREAM_OF.items():
             nr = 5 if esc[L] else 3
             for k in keys: est[k] = 0.95 * est[k] + 0.05 * float(np.median(truth[k] + sig[k] * rng.standard_normal(nr)))
@@ -257,6 +258,10 @@ def calibrate():
     out = dict(pulses=pulses, data_margin_pulses=pulses * len(STO), detector_A=dict(false_alarms=fa_A, far=far_A, admissible=bool(A_ok)), grid=rows, start=start)
     json.dump(out, open('field_tests/results/d1987_calibration.json', 'w'), indent=1); return out
 def scored(T=60.0, seed=2026, out_name='d1989_woven_run.json', archive=True):
+    f = T / 60.0   # D1989 DEVIATIONS 1: schedule scales with run length
+    for E, base in zip(EVENTS, ((10, 20), (25, 35), (45, 55))): E['t0'], E['t1'] = base[0] * f, base[1] * f
+    E2T[0], E2T[1], E2T[2] = 24 * f, 25 * f, 35 * f
+    QUIET[:] = [(max(2, 2 * f), 10 * f), (20.5 * f, 25 * f), (35.5 * f, 45 * f), (55.5 * f, 60 * f)]
     cal = json.load(open('field_tests/results/d1987_calibration.json')); s0 = cal['start']
     if s0 is None: raise SystemExit('D1987: no admissible detector config; scored run NOT performed (as locked)')
     o = engine(T, seed, events=True, live_cfg=(s0['k'], s0['h']), pbt=True)
@@ -265,7 +270,7 @@ def scored(T=60.0, seed=2026, out_name='d1989_woven_run.json', archive=True):
         E['pred'] = E['pred'] or set()
         fast = {L for _, t, L in al if E['t0'] <= t < E['t0'] + 0.5}; full = {L for _, t, L in al if E['t0'] <= t < E['t1']}
         lat = {L: round(1000 * min(t - E['t0'] for _, t, l in al if l == L and t >= E['t0']), 2) for L in E['pred'] if any(l == L and t >= E['t0'] for _, t, l in al)}
-        i0 = max(np.searchsorted(tt, E['t0']) - 1, 0); i1 = min(np.searchsorted(tt, E['t1'] + 3.0) - 1, len(tt) - 1)
+        i0 = max(np.searchsorted(tt, E['t0']) - 1, 0); i1 = min(np.searchsorted(tt, E['t1'] + 3.0 * T / 60.0) - 1, len(tt) - 1)
         before = {L for L in range(1, 10) if ST[i0, L - 1] == 3}
         rec = {L: bool(ST[i1, L - 1] == 3) for L in before}
         sc[E['name']] = dict(pred=sorted(E['pred']), fast=sorted(fast), full=sorted(full), recall_fast=(len(E['pred'] & fast) / len(E['pred'])) if E['pred'] else None,
