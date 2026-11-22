@@ -15,7 +15,7 @@
   "seed4": true
  },
  "B3": {
-  "pairs_with_same_inputs": 9,
+  "pairs_with_same_inputs": 11,
   "deterministic": true,
   "bad": []
  },

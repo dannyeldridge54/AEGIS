@@ -149,3 +149,13 @@ Status:
 - **Mistake memory** (field_tests/loom/mistakes.jsonl) is attached to each planned action.
 - **Effort tags:** at most one high-effort action per pulse.
 - **Sources:** LOOM_LITERATURE.md (24 systems).
+
+## Speed, exactness and confirmation (D1990–D1996)
+- **Engine v5** (tools/loom/loom_rt5.py) is bitwise identical to v4 and 1.5–1.7× faster. tools/loom/parallel.py runs a second seed on the other core, for about 8,000 pulses per s in total, with the results triangulated.
+- **Virtual clock** for scored runs: every run replays exactly from its seed, so any failure can be diagnosed.
+- **Three detectors:**
+  - A: exact explained-change test (deterministic margins);
+  - B: self-normalised CUSUM (data margins);
+  - C: data-stream CUSUM, which restarts after a change and freezes that layer's balancing while its stream steps.
+- **Every alarm is confirmed by persistence 200 pulses later.** Noise is retracted. Each detected data change carries its size (MATERIAL ≥ 0.5σ).
+- **`loomd auto`** is self-driving. Each pulse runs the core, two parallel 60 s woven-field scored runs, the battery, the PASS-label check, online FDR, the planner and a report. It stops at the ENDPOINT or a STALL.

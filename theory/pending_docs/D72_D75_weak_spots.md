@@ -19803,3 +19803,25 @@ Online tuning moved the live detector to (0.2, 24) over 11 updates. The controll
   - **A derivation target:** T_R ≈ 1.5–2.1e9 from the inflaton couplings would turn this into a prediction.
 
 **P4 self-driving:** `loomd auto`. Each pulse runs the core, a 20 s woven-field scored run, the battery, the PASS-label check, online FDR, the planner and a report. It stops at the ENDPOINT or a STALL. The decision logic passes its self-test. CubeMind gets loom_auto and loom_report (243fb11).
+
+## D1990–D1996 — making the real-time Loom accurate, fast and self-driving (Danny 19:19, 19:51). Each step locked before its code and runs
+| step | change | verdict |
+|---|---|---|
+| D1990 | detector C on the data streams, plus a balancing freeze while a stream steps (fixes D1989's replay masking) | **FAIL**: calibration false-alarm rate 7.0e-5 > 1e-5. Informative: replay 6/6 and 7/7; scored seed 2030 PASS |
+| D1991 | detector C calibrated on its own (k = 0.08, h = 40) | **PASS**: replay seed 2031 6/6 and 6/7; scored seed 2032 A1–A5 |
+| D1992 | detector C restarts after a change (auto round 10 had shown re-firing) | **FAIL**: replay specificity 5/7. 60 s (2033, 2036) and 20 s (2034) PASS. The two flags were real sub-0.2σ α_s shifts |
+| D1993 | **speed with exactness**: engine v5 plus a virtual clock | **EXACT**: bitwise identical to v4 on seeds 501–503 at **1.5–1.7×**. A parallel 2-seed runner brings it to **about 8,000–8,900 pulses per s in total, 3.3× the original** |
+| D1994 | referees report the size of each change (MATERIAL ≥ 0.5σ) | **FAIL**: 20 s seed 2039 recall (E2 on L8 after 3.3 s; wall-clock run, not reproducible). Replay (2037) MATERIAL 6/6 and 7/7, and 60 s (2038), PASS |
+| D1995 | scored runs on the virtual clock, so every run replays exactly | **FAIL**: 3 of 4 20 s runs failed full-window precision. 60 s (2044, 2045) and replay (2046) PASS. **Diagnosed by exact replay:** genuine noise excursions (Y_B estimate 0.78σ in 41 pulses) firing at the calibrated false-alarm rate (≤ 1e-5, about 4 strays per run). Not a bug |
+| D1996 | **every alarm confirmed by persistence 200 pulses later** (triangulation in time; noise reverts, real shifts persist) | test 1 **FAIL**: confirmed false-alarm rate 1.33e-6 (1 in 752,500) > 1e-6. The bar was underpowered (0.75 expected); next time 10× the calibration pulses. **Tests 2–4 all PASS**: 20 s × 4 (2050–2053), 60 s × 2 (2054, 2055), replay (2056) 6/6 and 7/7. **Auto round 12 (60 s, seeds 2050/2051 pair): PASS on both seeds, tallies agree, 7,883 pulses/s, STALL** |
+
+**Where it stands:** the self-driving Loom runs in parallel with exact reproducibility. It catches every injected event and every real data release that matters. Noise excursions are retracted (53 in calibration).
+
+**The physics state is unchanged across 8 independent seeds** (identical goalpost tallies):
+- PASS 18, all static predictions;
+- PASS (FIT) 8;
+- FAIL 1, the cube;
+- OPEN 15;
+- one node DONE (the neutrinos).
+
+The Loom **STALLs** there by design. Further movement needs derivations: the cube's new axis, T_R ≈ 1.5–2.1e9 GeV from the inflaton couplings, and values for the 15 OPEN goalposts.

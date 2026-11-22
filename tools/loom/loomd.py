@@ -84,7 +84,7 @@ def auto(n, field_s):
     for _ in range(n):
         rec = pulse(False); rid = rec['round']; fn = f'{RD}/round_{rid:03d}.json'
         if rec.get('void'): print('round %d VOID' % rid); break
-        import loom_rt5, parallel; importlib.reload(loom_rt5)   # D1993: exact fast engine; a second seed in parallel triangulates the field
+        import loom_rt5, parallel; importlib.reload(loom_rt5)   # D1993/D1996: exact fast engine; a second seed in parallel triangulates the field
         tri = parallel.triangulate(field_s, [2026 + 2 * rid, 2027 + 2 * rid], prefix=f'round_{rid:03d}')
         field = json.load(open(f'field_tests/results/auto/round_{rid:03d}_{2026 + 2 * rid}.json')); field['round'] = rid
         import shutil; shutil.copyfile(f'field_tests/results/auto/round_{rid:03d}_{2026 + 2 * rid}.json', f'field_tests/results/auto/round_{rid:03d}_field.json')
