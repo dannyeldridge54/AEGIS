@@ -21441,3 +21441,18 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 - **Channel.** The light F2²F3² structure is Q₁,₂-type, so the dominant channel is **p → K⁺ν̄** (Super-K τ > 5.9e33 yr).
 - **Only light-only operators matter.** With the Z4 block structure, F1 does not mix with F2 and F3, so only F2²F3² and R2²R3² are relevant while the Z4 is exact.
 - **Item 14: NULL — BALANCED.**
+
+## D2125 (DEEP, ping-pong item 13): neutrino masses. **OBSTRUCTED; minimal seesaw FAIL.** Locked; one json-cast DEVIATION.
+- **T1 (logic):** ν_Rν_R has Δ(B−L) = 2 with B−L ⊂ SU(4), so **M_R = 0 to all orders in unbroken PS**. Instantons respect non-Abelian symmetry, unlike the massive-U(1)_{B−L} case of hep-th/0609191. M_R needs the missing (4̄,1,2̄) breaking sector (K10).
+- **T2 (computed):** with PS y_ν(M_s) = y_t(M_s) = 0.57–0.82 (2-loop, tan β-matched), m_D = 99–127 GeV. The **minimum m_ν = m_D²/M_s** (M_R ≤ M_s):
+
+| M_s (GeV) | Minimum m_ν (eV) |
+|---|---|
+| 7.6e12 | 1.4–2.1 |
+| 3.5e13 | 0.28–0.46 |
+| 4.6e13 | 0.21–0.35 |
+
+  **All 9 grid points exceed Σm_ν < 0.12 eV** (Planck + BAO). The 7.6e12 points also exceed KATRIN. So the **minimal type-I seesaw fails** for the perturbative generation.
+- **T3:** a future Majorana texture depends on the unknown Z4 charge q_H of the breaking Higgs. For even q_H, M_R = 0 at all orders.
+- **Escape routes** (each needs new structure): additional bidoublets or (15,2,2) Higgs fields to split m_D ≠ m_u, or an inverse/linear seesaw with singlets (possibly hidden states via the breaking sector).
+- **Item 13 verdict:** OBSTRUCTED, plus FAIL of the minimal seesaw.

@@ -1,0 +1,66 @@
+{
+ "Ms=7.6e+12,tb=2": {
+  "yt_Ms": 0.8194729012360479,
+  "mD_GeV": 127.49692175565242,
+  "mnu_min_eV": 2.1388769812061783,
+  "exceeds_0p12": true,
+  "exceeds_KATRIN": true
+ },
+ "Ms=7.6e+12,tb=10": {
+  "yt_Ms": 0.5926252269740687,
+  "mD_GeV": 102.57453504246992,
+  "mnu_min_eV": 1.3844125314709066,
+  "exceeds_0p12": true,
+  "exceeds_KATRIN": true
+ },
+ "Ms=7.6e+12,tb=50": {
+  "yt_Ms": 0.5856832781004001,
+  "mD_GeV": 101.85822231509454,
+  "mnu_min_eV": 1.3651444017356873,
+  "exceeds_0p12": true,
+  "exceeds_KATRIN": true
+ },
+ "Ms=3.5e+13,tb=2": {
+  "yt_Ms": 0.8131100401785499,
+  "mD_GeV": 126.50696199350989,
+  "mnu_min_eV": 0.45725746950935303,
+  "exceeds_0p12": true,
+  "exceeds_KATRIN": true
+ },
+ "Ms=3.5e+13,tb=10": {
+  "yt_Ms": 0.577030354853102,
+  "mD_GeV": 99.87529666373493,
+  "mnu_min_eV": 0.28500213953340175,
+  "exceeds_0p12": true,
+  "exceeds_KATRIN": false
+ },
+ "Ms=3.5e+13,tb=50": {
+  "yt_Ms": 0.5700013541235099,
+  "mD_GeV": 99.13092420279864,
+  "mnu_min_eV": 0.2807697180943145,
+  "exceeds_0p12": true,
+  "exceeds_KATRIN": false
+ },
+ "Ms=4.6e+13,tb=2": {
+  "yt_Ms": 0.8119784996946492,
+  "mD_GeV": 126.33091232997417,
+  "mnu_min_eV": 0.3469456393505134,
+  "exceeds_0p12": true,
+  "exceeds_KATRIN": false
+ },
+ "Ms=4.6e+13,tb=10": {
+  "yt_Ms": 0.574257151545024,
+  "mD_GeV": 99.39529678023894,
+  "mnu_min_eV": 0.21477010917460385,
+  "exceeds_0p12": true,
+  "exceeds_KATRIN": false
+ },
+ "Ms=4.6e+13,tb=50": {
+  "yt_Ms": 0.5672143297752053,
+  "mD_GeV": 98.6462230745917,
+  "mnu_min_eV": 0.21154515928004583,
+  "exceeds_0p12": true,
+  "exceeds_KATRIN": false
+ },
+ "SEESAW": "FAIL"
+}
