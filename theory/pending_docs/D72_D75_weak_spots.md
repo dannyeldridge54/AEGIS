@@ -20621,3 +20621,10 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - P3–P5 (explicit stacks, families, tadpole, massless U(1)_Y), P8 (W₀ origin) and P9 (F-theory at ρ) are research-level steps.
   - The loop keeps running every 3 min on them, and stops at STALL if no step can advance.
   - **Closed tonight:** the structural review (D2036–D2048); corrections D2051a and D2061-P1; candidates Q4/P2; Q2 conditional; the Q6 fact.
+- **D2064 (CENTRE, loop tick 7; analysis, no lock, published formula only): v4's single visible stack cannot supply T1. The visible sector must be split stacks.**
+  - In the local-GUT form (0907.1362), α₂ − α₃ = −½∫(F_Y² + 2F_D·F_Y). F_Y here is the flux of the SU(2) block relative to the SU(3) block, an integral class (Freed–Witten, with F_Y² = −2 for a root), and F_D·F_Y ∈ Z.
+  - The bracket therefore moves in **steps of 2 units**, ≥ 2 × 0.55 = 1.1 in Δ₃. That is far above +0.044 (D2022's single unit was 0.55).
+  - **So with one GUT-like visible stack (v4 as written), T1 cannot come from hypercharge flux.**
+  - The fractional 1/12 or 1/6 steps of D2061 need **split stacks** (Madrid-type, quark stack ≠ lepton stack). In that layout SU(3) and SU(2) come from different stacks with different f_a, and the 9S family flux must be re-assigned per stack.
+  - **This narrows P3:** build a split-stack (Madrid-type) visible sector on Z₆-II/ΩR and re-derive f₃ and f₂ separately.
+  - Loop: progress (a narrowing). No-progress count 0.
