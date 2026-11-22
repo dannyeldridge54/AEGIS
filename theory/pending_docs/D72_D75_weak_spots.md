@@ -19973,3 +19973,23 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - In total that is **−0.86% vs NONE** (675,175).
 - The event state that hurt at 200 kB helps at 3 MB (−0.30%), as predicted: it needs data to fill its weight sets.
 - *Label:* H has now been used for several comparisons, so it is becoming a tuning set. The next scored check uses a fresh slice, or full enwik8.
+
+## D2009 — Loom round 10: extra inflaton decay channels for T_R. PREREG_D2009. LEFT
+- **C1, gauginos:** Γ ratio (m_{1/2}/m_φ)² = 1.8e-20 to 1.4e-19. **Negligible**, as expected.
+- **C2, hidden gauge sector with f = S:** T_vis = (Γ_vis/Γ_tot)^{1/4} T(Γ_tot).
+
+  | N_h | T_vis (GeV) | hidden energy share | in target? |
+  |---|---|---|---|
+  | 0 | 3.74e8 | 0 | no |
+  | 12 | 7.21e8 | 92.8% | no |
+  | 248 (one E8) | 1.51e9 | 99.6% | just below 1.54e9 |
+  | 496 (E8×E8) | **1.80e9** | 99.8% | **yes** |
+
+  - **But it fails the locked filters:**
+    - The hidden sector would hold 99.8% of the energy. If it stays radiation, ΔN_eff ≫ 0.3.
+    - The total equivalent T is 8.6e9, above the gravitino box (3e9).
+    - It contradicts the model statement "only our side is heated".
+  - A confining hidden E8 (glueballs) is a possible escape, but it was **not in the lock**. It would need its own test: glueball decay and the overclosure bound.
+  - **Verdict: C2 FAIL as locked.**
+- **C3, moduli mixing:** an extra visible amplitude θ·∂f/Re f = 0.87–1.28 is needed, i.e. **O(1) mixing**. Not derived, and implausibly large. **Not viable without a derivation.**
+- **Net: T_R ≈ 1.5–2.1e9 is still not derived from the inflaton couplings.** The pointing stays a FIT. The only route that reaches the number brings a hidden-sector problem with it.

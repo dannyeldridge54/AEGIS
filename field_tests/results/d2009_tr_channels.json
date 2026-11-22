@@ -1,0 +1,40 @@
+{
+ "C2_Nh0": {
+  "T_vis": 373860000.00000006,
+  "T_total_equiv": 373860000.00000006,
+  "in_target": false,
+  "hidden_energy_share": 0.0
+ },
+ "C2_Nh12": {
+  "T_vis": 721183156.2800801,
+  "T_total_equiv": 1391176228.8078387,
+  "in_target": false,
+  "hidden_energy_share": 0.9277806281260408
+ },
+ "C2_Nh248": {
+  "T_vis": 1510541575.2071939,
+  "T_total_equiv": 6103182609.611699,
+  "in_target": false,
+  "hidden_energy_share": 0.9962476332892162
+ },
+ "C2_Nh496": {
+  "T_vis": 1795503626.3025808,
+  "T_total_equiv": 8623102958.502428,
+  "in_target": true,
+  "hidden_energy_share": 0.9981202899639254
+ },
+ "C1_m660": {
+  "Gamma_ratio": 1.814244064972928e-20
+ },
+ "C1_m1850": {
+  "Gamma_ratio": 1.4254477301124531e-19
+ },
+ "C3_amplitude_needed": [
+  1.1492537313432836,
+  1.5597014925373134
+ ],
+ "C3_extra_amplitude_needed": [
+  0.8702537313432835,
+  1.2807014925373132
+ ]
+}
