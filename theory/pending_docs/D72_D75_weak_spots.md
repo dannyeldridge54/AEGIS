@@ -21456,3 +21456,5 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 - **T3:** a future Majorana texture depends on the unknown Z4 charge q_H of the breaking Higgs. For even q_H, M_R = 0 at all orders.
 - **Escape routes** (each needs new structure): additional bidoublets or (15,2,2) Higgs fields to split m_D ≠ m_u, or an inverse/linear seesaw with singlets (possibly hidden states via the breaking sector).
 - **Item 13 verdict:** OBSTRUCTED, plus FAIL of the minimal seesaw.
+
+## D2125a (item 13 sweep): the FAIL is robust to running. Weinberg-operator running from M_R to M_Z changes κ by about 0.8–1.5, while a rescue would need about 0.3, since Σm_ν < 0.12 means m₃ ≲ 0.06 eV. Item 13: NULL — BALANCED.
