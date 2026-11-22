@@ -3,3 +3,4 @@
    - The detector runs on whitened residuals w = (z − φ z_prev)/√(1 − φ²). A persistent step of s sd in z appears as about 0.16·s per pulse in w, which CUSUM accumulates.
    - **The shadows** (O3) run on iid N(0, 1) w plus probes of 2 sd in z (0.32 per pulse in w). They are fully independent of the scored stream.
 2. **DONE (strict reading).** A FIT-kind goalpost, including one that passes, **blocks** DONE, in keeping with the endpoint rule that no fit poses as a prediction. The same goes for TRUST and NULL-kind goalposts: they do not block DONE, but they never count as predictions.
+3. (calibration) Run 1 crashed while **writing** its JSON (a numpy bool). Nothing was saved and nothing was seen beyond the traceback. Cast to Python types; one rerun.

@@ -229,7 +229,7 @@ def calibrate():
     rows = []
     for i, (k, h) in enumerate(GRID):
         far = tot[i, 0] / (pulses * NM); dl = tot[i, 1] / max(tot[i, 2], 1)
-        rows.append(dict(k=k, h=h, far=far, mean_delay=round(dl, 1), misses=int(tot[i, 3]), probes=int(tot[i, 2]), admissible=far <= 1e-5))
+        rows.append(dict(k=k, h=h, far=float(far), mean_delay=round(float(dl), 1), misses=int(tot[i, 3]), probes=int(tot[i, 2]), admissible=bool(far <= 1e-5)))
     adm = [r for r in rows if r['admissible']]; start = min(adm, key=lambda r: r['mean_delay']) if adm else None
     out = dict(pulses=pulses, layer_margin_pulses=pulses * NM, grid=rows, start=start)
     json.dump(out, open('field_tests/results/d1986_calibration.json', 'w'), indent=1); return out
