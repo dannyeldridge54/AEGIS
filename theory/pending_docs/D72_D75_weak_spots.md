@@ -20176,3 +20176,4 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - The ledger holds **11** gaps, not 12.
   - Datasets were added per agent (Danny 00:42): 21 tracked datasets with the observable, our value and its role. Among them: Planck PR3/PR4, ACT DR6, SPT-3G, BK18/LiteBIRD/CMB-S4, BBN, PDG α_s, ATLAS/CMS wino/gluino, Super-K/Hyper-K, NuFIT/JUNO, DESI DR2/DR3, Pantheon+/Union3/DES-Y5, clocks/Oklo, MICROSCOPE/Cassini, LZ/XENONnT.
   - Each dataset is triangulated from 3 sources before scoring; only post-lock releases count as strict evidence.
+- **D2023b (correction):** the count in D2023a is **20** datasets, not 21.
