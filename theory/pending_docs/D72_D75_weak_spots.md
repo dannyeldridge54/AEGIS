@@ -20705,3 +20705,9 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - These are **IIA D6 on Z₆/Z₆′**. v4 is IIB D7 on Z₆-II, so the comparison is only up to mirror/T-duality.
   - **Read:** whether Z₆-II/ΩR can hold both a three-family visible sector and an SU(12) dark stack inside its tadpole is **unshown, and doubtful** given the published budgets (and 2404.18995's flux-tadpole bound).
   - **Loop: no closed item. No-progress count 4.**
+- **D2075 (CENTRE; PREREG_D2075): v4's D3 tadpole in the toroidal estimate. FAIL as written.**
+  - v4's three-family flux |M| = 9 on the visible stack induces D3 charge N_vis·9. With N_flux = 1 for W₀, the total is **46 for N_vis = 5** (19–28 for the 2- or 3-brane pieces alone).
+  - The Z₆-II O3 budget is 4–6. **v4 overshoots by ×3.2 to ×11.5.**
+  - **Way out, unshown:** negative D3 charge from D7 curvature on the orbifold fixed-point divisors (−χ(D)/24, not computed here), or anti-self-dual flux (which breaks SUSY).
+  - This agrees with 2404.18995's statement that Z₆-II needs negative D3 charge.
+  - **Loop: no progress (a clean FAIL). No-progress count 5.**

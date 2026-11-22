@@ -522,8 +522,8 @@
   {
    "id": "F-tadpole",
    "check": "2404.18995 (literature)",
-   "status": "FLAG",
-   "what": "Z6-II orientifolds with only O3 planes cannot meet the flux tadpole without negative D3 charge; the D7/O7 budget of v4 is not written down",
+   "status": "FAIL (estimate)",
+   "what": "Z6-II orientifolds with only O3 planes cannot meet the flux tadpole without negative D3 charge; the D7/O7 budget of v4 is not written down | D2075: toroidal estimate gives D3 charge 46 (N_vis=5, |M|=9, N_flux=1) vs O3 budget 4-6: overshoot x3-12 unless orbifold-divisor curvature supplies negative charge",
    "affects": [
     "all"
    ]
