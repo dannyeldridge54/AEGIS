@@ -20660,3 +20660,9 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Consequence:** changing the lepton stack's n_d² by Δ, with n_c¹ following through the massless condition (integer when (β²/2β¹)·3ρ·Δ ∈ Z), **keeps three families and a massless U(1)_Y**. The tadpole changes by Δ/β¹ and is absorbed by hidden branes N_h (eq. 4.2). This changes only the lengths of the c and d stacks, i.e. only α_Y, which is the D2065 mechanism.
   - **Not yet computed:** the size of the α_Y shift per step. In IIA it depends on the torus radii (1/g² ∝ Π_i √(n_i²R_{1i}² + m_i²R_{2i}²)). Mapping it onto v4's IIB D7 numbers (D2065's 0.433 per unit) is the next step.
   - Loop: progress. **No-progress count reset to 0.**
+- **D2068 (CENTRE; PREREG_D2068; theory/tests/d2068_alphaY.py): the α_Y step size in the IMR model. POSSIBLE by the locked rule (fraction 0.088).**
+  - One lepton-stack wrapping step (n_d² ± 1, with n_c¹ following; β¹ = ½, β² = 1, ρ = ⅓) over natural radii χᵢ ∈ [0.2, 5], with K set by α_a⁻¹ = 27.94.
+  - The median |δ(1/α_Y)| is **2.39**, about ×3.5 larger than the −0.68 needed. Only **8.8%** of natural radii put α_s within 2σ.
+  - **Read:** the mechanism exists and keeps three families and a massless U(1)_Y (D2067), but the step is generically **too coarse**. It works only where the c and d stacks' volume change is small, which needs specific radii (the torus-2 or torus-1 length ratio near the small-χ corner). That is a mild tuning, not a derivation.
+  - **The radii are moduli.** A full derivation needs their stabilised values. In v4 the complex-structure moduli are frozen at ρ/i, which would **fix** χ. **Next:** read off χ from v4's U values (U = iχ on each torus: ρ gives a tilted torus; i gives χ = 1) and recompute with no free radius.
+  - Loop: progress (sized). Count 0.
