@@ -22,3 +22,10 @@
 - Score the **joint** hit rate against its chance level.
 - Grow the space outward fractally: more forks (Z₆-II, Z₆′, F-theory GUT), more lens ranges.
 - Expand only the branches whose joint hit rate rises above chance.
+
+## v2 (D2080) and shortcuts (D2081)
+- **v2:** calibrates exactly on CSU Table I (tadpoles, SUSY χ = (0.182, 0.546, 0.364), 3 left quarks). It is **isolated** under ±1 wrapping rings at fixed N: k = 1 and k = 2 have 0 survivors out of 1,827 neighbours.
+- **Shortcut review:** see SEED_SHORTCUTS.md (17 shortcuts plus diagnostics; round 9 was null).
+  - Top exact picks: integer-moduli SUSY, tadpole-sum partitions, and Loges–Shiu dynamic programming.
+  - One gap fix: K-theory parity.
+  - One moduli-free α_s relation for its model class: 1/α_Y = (2/3)/α_s + 1/α_w.

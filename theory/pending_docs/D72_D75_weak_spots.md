@@ -20757,3 +20757,14 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - Run 1 (before the fix) had 5 and 12 "survivors", all with χ → 0 or ~1e8 (limit points). DEVIATIONS was written first; the fix tightens the filter.
   - **Read:** with N fixed, the tadpole + SUSY + 3-family constraints pin the model. A one-integer change always breaks a tadpole or SUSY at finite radii. Moving locally on the wrapping integers is therefore the wrong spin axis. The search has to move N and hidden/filler stacks together, which is how the literature scans (Gmeiner et al. hep-th/0510170).
   - **α_s deferred**, as locked (the hypercharge normalisation for USp(8) Higgsing is not yet fixed). No physics verdict is drawn.
+- **D2081 (CENTRE; literature; tools/seed/SEED_SHORTCUTS.md): an online review of shortcuts for the self-building Seed search. Nine rounds; round 9 was null. 17 shortcuts plus 3 diagnostics, ranked.**
+  - **Tier A, exact:**
+    - integer-moduli SUSY (Loges–Shiu 2112.08391 Lemma 1). It removes the numerical solver, the source of the D2080 limit-point bug.
+    - tadpole-sum partitions that vary N and hidden stacks (Gmeiner et al. hep-th/0510170). This is the spin axis D2080 showed is needed.
+    - constraint-matrix dynamic programming (Loges–Shiu 2206.03506, 1.34e11 models).
+    - duplicate reduction (He–Li–Sun 2112.09632: 202,752 → 33).
+    - **K-theory parity**, which v2 lacked.
+    - the BLS moduli-free relation 1/α_Y = (2/3)/α_s + 1/α_w (hep-th/0305146 Eq. 2.9; for its model class only).
+  - **Tier B, heuristics:** a genetic algorithm (~3.5× RL); RL (×200 vs random); simulated annealing / QUBO; two-method saturation as a completeness test; rigid stacks first on Z₂×Z₆ (1509.00048), which is the v4-relevant fork.
+  - **Tier C, flux side:** JAXVacua, a conditional VAE (×10³), BFN, homotopy continuation. **None reaches W₀ ~ 1e-9.** The best ML result is ~7e-3, and PFV does not apply (D2045). The W₀ gap stays open.
+  - **Not read:** 2611.19950 (rate-limited).
