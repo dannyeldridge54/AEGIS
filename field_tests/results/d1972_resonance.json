@@ -70,7 +70,7 @@
     {
      "layer": 5,
      "name": "fold (volumes, m3/2)",
-     "status": "LOCKED",
+     "status": "LOCKED-BY-FIT",
      "margins": {
       "wino": 0.1805
      },
@@ -106,7 +106,7 @@
     {
      "layer": 7,
      "name": "forces (S-T seam)",
-     "status": "LOCKED",
+     "status": "LOCKED-BY-FIT",
      "margins": {
       "alpha_s": 2.0,
       "split_natural": 0.7986
@@ -126,7 +126,7 @@
     {
      "layer": 8,
      "name": "cosmology (reheating, genesis)",
-     "status": "LOCKED",
+     "status": "LOCKED-BY-FIT",
      "margins": {
       "gravitino_box": 1.05,
       "leptogenesis": 0.1884
@@ -214,7 +214,7 @@
     {
      "layer": 2,
      "name": "pyramid (i, neutrinos)",
-     "status": "LOCKED",
+     "status": "LOCKED-BY-FIT",
      "margins": {
       "nu_ratio": 0.2852,
       "MN_top": 2.2069,
@@ -277,7 +277,7 @@
     {
      "layer": 5,
      "name": "fold (volumes, m3/2)",
-     "status": "LOCKED",
+     "status": "LOCKED-BY-FIT",
      "margins": {
       "wino": 0.1805
      },
@@ -298,7 +298,7 @@
     {
      "layer": 6,
      "name": "dilaton (inflation)",
-     "status": "LOCKED",
+     "status": "LOCKED-BY-FIT",
      "margins": {
       "n_s": 1.214
      },
@@ -319,7 +319,7 @@
     {
      "layer": 7,
      "name": "forces (S-T seam)",
-     "status": "LOCKED",
+     "status": "LOCKED-BY-FIT",
      "margins": {
       "alpha_s": 2.0,
       "split_natural": 0.7986
@@ -341,7 +341,7 @@
     {
      "layer": 8,
      "name": "cosmology (reheating, genesis)",
-     "status": "LOCKED",
+     "status": "LOCKED-BY-FIT",
      "margins": {
       "gravitino_box": 1.05,
       "leptogenesis": 0.1884
@@ -429,7 +429,7 @@
     {
      "layer": 2,
      "name": "pyramid (i, neutrinos)",
-     "status": "LOCKED",
+     "status": "LOCKED-BY-FIT",
      "margins": {
       "nu_ratio": 0.2852,
       "MN_top": 2.2069,
@@ -492,7 +492,7 @@
     {
      "layer": 5,
      "name": "fold (volumes, m3/2)",
-     "status": "LOCKED",
+     "status": "LOCKED-BY-FIT",
      "margins": {
       "wino": 0.1805
      },
@@ -513,7 +513,7 @@
     {
      "layer": 6,
      "name": "dilaton (inflation)",
-     "status": "LOCKED",
+     "status": "LOCKED-BY-FIT",
      "margins": {
       "n_s": 1.214
      },
@@ -534,7 +534,7 @@
     {
      "layer": 7,
      "name": "forces (S-T seam)",
-     "status": "LOCKED",
+     "status": "LOCKED-BY-FIT",
      "margins": {
       "alpha_s": 2.0,
       "split_natural": 0.7986
@@ -556,7 +556,7 @@
     {
      "layer": 8,
      "name": "cosmology (reheating, genesis)",
-     "status": "LOCKED",
+     "status": "LOCKED-BY-FIT",
      "margins": {
       "gravitino_box": 1.05,
       "leptogenesis": 0.1884

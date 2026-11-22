@@ -8,13 +8,13 @@ T_R 1.52e+09, m3/2 2.46e+05, u 0.02663, chi2 12.8
 
 ## Resonance lock map (centre outwards)
 - L1 torus (centre, rung step): LOCKED {'quark_window': 0.0285}
-- L2 pyramid (i, neutrinos): LOCKED {'nu_ratio': 0.2852, 'MN_top': 2.2069, 'MN_bottom': 1.8104}
+- L2 pyramid (i, neutrinos): LOCKED-BY-FIT {'nu_ratio': 0.2852, 'MN_top': 2.2069, 'MN_bottom': 1.8104}
 - L3 turnover (rho, leptons): TRUST (no margin; cannot {}
 - L4 cube (three tori together): NO LOCK {'rung_agreement': -0.0029}
-- L5 fold (volumes, m3/2): LOCKED {'wino': 0.1805}
-- L6 dilaton (inflation): LOCKED {'n_s': 1.214}
-- L7 forces (S-T seam): LOCKED {'alpha_s': 2.0, 'split_natural': 0.7986}
-- L8 cosmology (reheating, genesis): LOCKED {'gravitino_box': 1.05, 'leptogenesis': 0.1884}
+- L5 fold (volumes, m3/2): LOCKED-BY-FIT {'wino': 0.1805}
+- L6 dilaton (inflation): LOCKED-BY-FIT {'n_s': 1.214}
+- L7 forces (S-T seam): LOCKED-BY-FIT {'alpha_s': 2.0, 'split_natural': 0.7986}
+- L8 cosmology (reheating, genesis): LOCKED-BY-FIT {'gravitino_box': 1.05, 'leptogenesis': 0.1884}
 - L9 late universe (thread): TRUST (no margin; cannot {}
 - fits spent: ['MN', 'm32', 'TR', 'split']
 

@@ -124,3 +124,6 @@ Status:
 6. **Node round:** re-spawn only the nodes whose inputs changed (F3, G4). Merge them into the board (F4) and apply guards G-T1 to G-T6 (F5).
 7. **Referee** every second round, plus any time a verdict changes (F1).
 8. **Write** the D-note, with TRIANGULATE:, COMPASS: and REVIEW: lines. Correct earlier claims with dated notes (A3) and propagate the change (A5). Commit and push. Send one short message.
+
+## Toolkit (Danny 18:19)
+`tools/loom/loomd.py pulse --rounds N [--method]`: consecutive pulses of the deterministic core, with null-round detection and an agent work order each round. Comparison with other swarms and the improvement list: LOOM_VS_SWARMS.md.
