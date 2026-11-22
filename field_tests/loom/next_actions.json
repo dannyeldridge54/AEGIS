@@ -1,0 +1,275 @@
+{
+ "actions": [
+  {
+   "kind": "derive",
+   "layer": "4",
+   "why": "derive the 15.3 % lepton vs neutrino rung mismatch from the geometry (U3, fluxes (4,4,8)) with no new fit; L5-L9 may not move until L4 is locked or explicitly held",
+   "guard": "N0 inside-out; G-T3; LOCK",
+   "tools": [
+    "weave_rung",
+    "weave_rung_of",
+    "theory/tests/d1932_ring0_rungstep.py",
+    "theory/tests/d1925_onespurion.py"
+   ],
+   "needs_lock": true,
+   "axes": "U"
+  },
+  {
+   "kind": "test",
+   "layer": "5",
+   "why": "wino verdict at the edge, no nudging of m3/2",
+   "guard": "N0 inside-out; G-T3; LOCK",
+   "tools": [
+    "weave_W0",
+    "weave_wino",
+    "lhc_dt_limit",
+    "lhc_lifetime"
+   ],
+   "needs_lock": true,
+   "axes": "T"
+  },
+  {
+   "kind": "derive_fit",
+   "layer": "8",
+   "why": "fit MN is spent to lock layer 8; derive it: M_N from the S modulus (no x1.49 rescale)",
+   "guard": "G-T3 turn fits into predictions",
+   "tools": [
+    "weave_genesis",
+    "weave_wino",
+    "theory/tests/d1946_three_at_once.py"
+   ],
+   "needs_lock": true,
+   "fit": "MN",
+   "node": "N7"
+  },
+  {
+   "kind": "owed",
+   "layer": null,
+   "why": "automated check: every PASS in a verdict file carries FIT / NO-POWER / CONDITIONAL where one applies",
+   "guard": "HONEST",
+   "tools": [
+    "tools/loom/check.py",
+    "tools/loom/method_tests_3axis.py"
+   ],
+   "needs_lock": false,
+   "owed": "pass_label_check"
+  },
+  {
+   "kind": "explore",
+   "layer": null,
+   "why": "null round: spend the exploration share on the loosest direction",
+   "guard": "G-T6 null rounds count only with every node balanced",
+   "tools": [
+    "tools/loom/still_point.py",
+    "tools/loom/compass.py"
+   ],
+   "needs_lock": false
+  }
+ ],
+ "all": [
+  {
+   "kind": "derive",
+   "layer": "4",
+   "why": "derive the 15.3 % lepton vs neutrino rung mismatch from the geometry (U3, fluxes (4,4,8)) with no new fit; L5-L9 may not move until L4 is locked or explicitly held",
+   "guard": "N0 inside-out; G-T3; LOCK",
+   "tools": [
+    "weave_rung",
+    "weave_rung_of",
+    "theory/tests/d1932_ring0_rungstep.py",
+    "theory/tests/d1925_onespurion.py"
+   ],
+   "needs_lock": true,
+   "axes": "U"
+  },
+  {
+   "kind": "test",
+   "layer": "5",
+   "why": "wino verdict at the edge, no nudging of m3/2",
+   "guard": "N0 inside-out; G-T3; LOCK",
+   "tools": [
+    "weave_W0",
+    "weave_wino",
+    "lhc_dt_limit",
+    "lhc_lifetime"
+   ],
+   "needs_lock": true,
+   "axes": "T"
+  },
+  {
+   "kind": "test",
+   "layer": "8",
+   "why": "leptogenesis FAILS unless M_N(S) is re-derived without a fit; resolve the LOCKED vs FAIL label",
+   "guard": "N0 inside-out; G-T3; LOCK",
+   "tools": [
+    "weave_genesis",
+    "weave_wino",
+    "theory/tests/d1946_three_at_once.py"
+   ],
+   "needs_lock": true,
+   "axes": "ST"
+  },
+  {
+   "kind": "derive_fit",
+   "layer": "8",
+   "why": "fit MN is spent to lock layer 8; derive it: M_N from the S modulus (no x1.49 rescale)",
+   "guard": "G-T3 turn fits into predictions",
+   "tools": [
+    "weave_genesis",
+    "weave_wino",
+    "theory/tests/d1946_three_at_once.py"
+   ],
+   "needs_lock": true,
+   "fit": "MN",
+   "node": "N7"
+  },
+  {
+   "kind": "derive_fit",
+   "layer": "5",
+   "why": "fit m32 is spent to lock layer 5; derive it: W0 / m3/2 without using the wino window",
+   "guard": "G-T3 turn fits into predictions",
+   "tools": [
+    "weave_W0",
+    "weave_wino",
+    "lhc_dt_limit",
+    "lhc_lifetime"
+   ],
+   "needs_lock": true,
+   "fit": "m32",
+   "node": "N3"
+  },
+  {
+   "kind": "derive_fit",
+   "layer": "8",
+   "why": "fit TR is spent to lock layer 8; derive it: T_R from the inflaton couplings (no x1.49 rescale)",
+   "guard": "G-T3 turn fits into predictions",
+   "tools": [
+    "weave_genesis",
+    "weave_wino",
+    "theory/tests/d1946_three_at_once.py"
+   ],
+   "needs_lock": true,
+   "fit": "TR",
+   "node": "N7"
+  },
+  {
+   "kind": "owed",
+   "layer": null,
+   "why": "automated check: every PASS in a verdict file carries FIT / NO-POWER / CONDITIONAL where one applies",
+   "guard": "HONEST",
+   "tools": [
+    "tools/loom/check.py",
+    "tools/loom/method_tests_3axis.py"
+   ],
+   "needs_lock": false,
+   "owed": "pass_label_check"
+  },
+  {
+   "kind": "owed",
+   "layer": null,
+   "why": "the prediction / FIT / TRUST ledger file (field_tests/loom/pft_ledger.json) with honest relabels",
+   "guard": "HONEST",
+   "tools": [
+    "tools/loom/check.py",
+    "tools/loom/review.py"
+   ],
+   "needs_lock": false,
+   "owed": "pft_ledger"
+  },
+  {
+   "kind": "owed",
+   "layer": null,
+   "why": "paper Docs artifact: add the D1948 corrections (Br <= 2.3 %, alpha_s conditional)",
+   "guard": "HONEST",
+   "tools": [
+    "tools/loom/check.py",
+    "tools/loom/review.py"
+   ],
+   "needs_lock": false,
+   "owed": "paper_D1948"
+  },
+  {
+   "kind": "owed",
+   "layer": null,
+   "why": "Danny 18:24 lensing test: transfer map between each pair of neighbouring layers (which directions pass, are blocked, are bent); lock first; if the maps are ~identity the lensing picture is wrong for this model",
+   "guard": "HONEST",
+   "tools": [
+    "tools/loom/check.py",
+    "tools/loom/method_tests_3axis.py"
+   ],
+   "needs_lock": false,
+   "owed": "layer_transfer_map"
+  },
+  {
+   "kind": "owed",
+   "layer": null,
+   "why": "verify the Conlon-Palti internal quote against the source",
+   "guard": "HONEST",
+   "tools": [],
+   "needs_lock": false,
+   "owed": "conlon_palti_quote"
+  },
+  {
+   "kind": "explore",
+   "layer": null,
+   "why": "null round: spend the exploration share on the loosest direction",
+   "guard": "G-T6 null rounds count only with every node balanced",
+   "tools": [
+    "tools/loom/still_point.py",
+    "tools/loom/compass.py"
+   ],
+   "needs_lock": false
+  }
+ ],
+ "agents": {
+  "N0": true,
+  "node_agents": [],
+  "axis_agents": {
+   "S": "dilaton S (ln T_R, n_s, reheating)",
+   "T": "volumes T (ln m3/2, KKLT, spectrum)",
+   "U": "complex structure U (ln u, flavour rungs)"
+  },
+  "edge_agents": {
+   "edge_out": "outside layer 9: what the late-universe and collider data push back toward the centre",
+   "edge_in": "inside layer 1: what the rung step / knot geometry pushes outward"
+  },
+  "referee": false
+ },
+ "mission": {
+  "goal": "Derive and test the Weave unified field equation: one central equation whose three fields (S, T, U) balance every node with real predictions, not fits.",
+  "endpoint": {
+   "E1": false,
+   "E2": false,
+   "E3": null,
+   "E4": false,
+   "E5": false
+  },
+  "endpoint_reached": false,
+  "satisfied": "0/5",
+  "progress_this_round": false,
+  "improved_layers": [],
+  "blocking": [
+   "layer 2 LOCKED-BY-FIT",
+   "layer 3 TRUST (no margin; cannot lock, G-T5)",
+   "layer 4 NO LOCK",
+   "layer 5 LOCKED-BY-FIT",
+   "layer 6 LOCKED-BY-FIT",
+   "layer 7 LOCKED-BY-FIT",
+   "layer 8 LOCKED-BY-FIT",
+   "layer 9 TRUST (no margin; cannot lock, G-T5)",
+   "4 fits spent: MN, m32, TR, split",
+   "no prediction/FIT/TRUST ledger yet"
+  ],
+  "fits_spent": [
+   "MN",
+   "m32",
+   "TR",
+   "split"
+  ],
+  "alarms": 0
+ },
+ "round": 3,
+ "toolkits": {
+  "missing": [],
+  "unverified": []
+ }
+}

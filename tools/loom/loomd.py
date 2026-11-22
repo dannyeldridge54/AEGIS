@@ -9,7 +9,9 @@ Each pulse, in order (datasheet layers A→G):
   3  [optional] method tests on three axes (T1–T3)             4  compass + review (D1, D6)
   5  centre brief for N0 (F6)                                   6  ledger snapshot; NULL-round test (G-T6: state unchanged)
   7  agent work order: N0 always; node agents only for nodes whose inputs changed; referee every 2nd round
-Stops early after 7 consecutive NULL pulses. Agents are spawned by the session (the daemon cannot); it writes their briefs."""
+  8  mission awareness: planner.py (mission.json + round + N0 lead) -> next_actions.{json,md}, axis and edge agents to wake
+  python3 tools/loom/loomd.py mission                         # print the mission status and next actions
+Stops early after 7 consecutive NULL pulses (a STALL unless the endpoint is reached). Agents are spawned by the session (the daemon cannot); it writes their briefs."""
 import json, os, subprocess, sys, time, hashlib, argparse
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')); os.chdir(ROOT)
 RD = 'field_tests/loom/rounds'; os.makedirs(RD, exist_ok=True)
@@ -51,10 +53,18 @@ def pulse(method):
     changed = [k for k, v in state['inputs'].items() if not prev or prev.get('state', {}).get('inputs', {}).get(k) != v]
     rec['work_order'] = dict(N0=dict(brief='field_tests/loom/centre_brief.md', charter='tools/project_docs/WEAVE_NODE_CHARTER.md'),
                              node_agents=changed, referee=(rid % 2 == 0))
-    json.dump(rec, open(f'{RD}/round_{rid:03d}.json', 'w'), indent=1, default=str); return rec
+    fn = f'{RD}/round_{rid:03d}.json'; json.dump(rec, open(fn, 'w'), indent=1, default=str)
+    # 8  mission awareness (Danny 18:20): the planner reads mission.json + this round + N0's lead and writes next_actions.{json,md}
+    sys.path.insert(0, os.path.join(ROOT, 'tools/loom')); import planner
+    p = planner.main(os.path.abspath(fn)); rec['plan'] = dict(endpoint_reached=p['mission']['endpoint_reached'], satisfied=p['mission']['satisfied'],
+        next=[(a['kind'], a['layer']) for a in p['actions']], agents=p['agents'], toolkits_missing=p['toolkits']['missing'])
+    rec['work_order'].update(axis_agents=list(p['agents']['axis_agents']), edge_agents=list(p['agents']['edge_agents']))
+    json.dump(rec, open(fn, 'w'), indent=1, default=str); return rec
 if __name__ == '__main__':
-    ap = argparse.ArgumentParser(); ap.add_argument('cmd', choices=['pulse', 'status']); ap.add_argument('--rounds', type=int, default=1); ap.add_argument('--method', action='store_true')
+    ap = argparse.ArgumentParser(); ap.add_argument('cmd', choices=['pulse', 'status', 'mission']); ap.add_argument('--rounds', type=int, default=1); ap.add_argument('--method', action='store_true')
     a = ap.parse_args()
+    if a.cmd == 'mission':
+        sys.path.insert(0, os.path.join(ROOT, 'tools/loom')); import planner; planner.main(); print(open('field_tests/loom/next_actions.md').read()); sys.exit()
     if a.cmd == 'status':
         r, n = last_round(); print(json.dumps(r, indent=1, default=str) if r else 'no rounds yet'); sys.exit()
     for _ in range(a.rounds):
@@ -63,4 +73,6 @@ if __name__ == '__main__':
             r['round'], 'VOID (self-test mismatch %s)' % r['steps']['0_selftest']['mismatches'] if r.get('void') else 'ok', r.get('null'), r.get('null_streak'),
             r.get('state', {}).get('lock_map'), r.get('state', {}).get('fits_spent'), r.get('work_order', {}).get('node_agents'),
             ' + REFEREE' if r.get('work_order', {}).get('referee') else ''))
-        if r.get('void') or r.get('null_streak', 0) >= 7: break
+        if r.get('plan'): print('  mission: endpoint %s (%s); next %s' % ('REACHED' if r['plan']['endpoint_reached'] else 'not reached', r['plan']['satisfied'], r['plan']['next']))
+        if r.get('void') or (r.get('plan') or {}).get('endpoint_reached'): break
+        if r.get('null_streak', 0) >= 7: print('  STALL: 7 null pulses without balance -> the planner switches to exploration'); break

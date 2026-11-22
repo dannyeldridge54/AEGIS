@@ -33,6 +33,7 @@
   {"id": "pass_label_check", "what": "automated check: every PASS in a verdict file carries FIT / NO-POWER / CONDITIONAL where one applies", "kind": "method"},
   {"id": "pft_ledger", "what": "the prediction / FIT / TRUST ledger file (field_tests/loom/pft_ledger.json) with honest relabels", "kind": "honesty", "file": "field_tests/loom/pft_ledger.json"},
   {"id": "paper_D1948", "what": "paper Docs artifact: add the D1948 corrections (Br <= 2.3 %, alpha_s conditional)", "kind": "honesty"},
+  {"id": "layer_transfer_map", "what": "Danny 18:24 lensing test: transfer map between each pair of neighbouring layers (which directions pass, are blocked, are bent); lock first; if the maps are ~identity the lensing picture is wrong for this model", "kind": "method"},
   {"id": "conlon_palti_quote", "what": "verify the Conlon-Palti internal quote against the source", "kind": "citation"}
  ],
  "exploration_share": 0.2,
