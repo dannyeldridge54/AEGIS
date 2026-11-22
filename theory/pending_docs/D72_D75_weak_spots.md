@@ -21520,3 +21520,26 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
   - CONDITIONAL: 14, 17.
   - OPEN / not addressed: 15, 16, 19.
 - **Status:** the paper is in the repo only. Publishing waits for Danny's "Publish".
+
+## D2130 (CENTRE, ping-pong): the Weave UFE v4 built in ΛCDM parts, scored on compressed Planck 2018 (CHW, 4-parameter) + DESI DR2 BAO. **CONSISTENT.** Locked, run once.
+
+**Card:** flat; N_eff = 3.044; Σm_ν = 0.0587 eV (3ν, normal ordering); n_s = 0.9706, α_s = −9.7e-4, r = 5.4e-4 fixed; DE = the exact reverse-thread w(a) (A = 7.30, β = 2√2) via PPF; ω_b and ω_c free (inputs); u_i free.
+
+| Model | χ² (CMB + BAO) | Δχ² | ΔAIC vs ΛCDM |
+|---|---|---|---|
+| M1 ΛCDM (4 free) | 13.91 (2.61 + 11.30) | — | — |
+| **M2 Weave (4 free)** | **13.93** (2.84 + 11.09) | +0.03 | **+0.03 → CONSISTENT** |
+| M3 Weave a priori (u_i = 0.113 from full Planck+DESI+Pantheon+) | 13.96 | +0.06 | **−1.94** |
+| M4 CPL proxy (−0.79, −0.36) | 17.66 | +3.75 | +1.75 |
+| M5 ΛCDM with Weave n_s and Σm_ν | 13.94 | +0.03 | −1.97 |
+| M6 w0waCDM (6 free) | 6.81 | −7.09 | −3.09 |
+
+- **Derived (M2):** H0 = 68.49, Ω_m = 0.303, r_d = 147.20 Mpc.
+- **n_s:** the fixed n_s = 0.9706 costs nothing (+1.3σ raw against the CHW n_s, absorbed through the correlations).
+
+**Readings:**
+1. With CMB + BAO alone, the thread's best fit sits near Λ (fitted w0 ≈ −0.99, wa ≈ −0.01; w ≥ −1 everywhere). It cannot reach the DESI w0wa region (M6, Δχ² −7.1). As expected for thawing quintessence, the Weave matches ΛCDM here but **does not capture the DESI dynamical-DE preference** without SN.
+2. **The card's (w0, wa) ≈ (−0.79, −0.36) is NOT what the thread gives on these data.** That CPL proxy also fits worse (M4, +3.75) and is phantom at high z (RW-1). The card value should be withdrawn as a summary of the thread.
+3. **Untestable here:** r, α_s, A_s, τ, lensing, birefringence.
+
+**Next:** the SN extension (Pantheon+/DES-Y5) needs Danny's download OK. A full-Planck rerun with the Weave-fixed n_s needs the Planck likelihood data (PC, or a cloud download with OK).
