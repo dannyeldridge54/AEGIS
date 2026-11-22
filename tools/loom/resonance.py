@@ -71,7 +71,7 @@ for sweep in (1, 2, 3):
             m = margins(state)[k]
             passes.append(bool(m) and all(v >= 0 for v in m.values()))
         lock = all(passes) and bool(margins(state)[k])
-        status = 'LOCKED' if lock else ('TRUST (no margin; cannot lock, G-T5)' if not margins(state)[k] else 'NO LOCK')
+        status = ('LOCKED-BY-FIT' if (lock and any(abs(state[x] / D[x] - 1) > 0.01 if x in D and D[x] else abs(state[x]) > 1e-9 for x in KNOBS_OF[k])) else 'LOCKED') if lock else ('TRUST (no margin; cannot lock, G-T5)' if not margins(state)[k] else 'NO LOCK')
         if lock: locked.append(k)
         rows.append(dict(layer=k, name=NAMES[k], status=status, margins={a: round(b, 4) for a, b in margins(state)[k].items()},
                          knobs={x: state[x] for x in ('u', 'MN', 'm32', 'TR', 'split')}, fits_spent=fits_spent(state)))

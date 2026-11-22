@@ -19471,3 +19471,25 @@ Every check catches the mistake it was built for:
   - The loosest way through is the T axis. But α_s barely moves along it (d ln α_s/d ln m₃/₂ = −0.025), so **no motion inside the three axes relieves α_s**.
   - The "outward" direction that would relieve α_s must therefore be a **new axis**: the strong-force cycle (A₃/A₂) or a non-universal threshold. This agrees with D1937–D1940 and D1976.
 - **COMPASS:** at the still point, S and U are stiff, T is loose, and α_s needs a fourth axis (S–T seam, non-universal).
+
+## D1979 — CENTRE REFEREE N0, round 3 (the null that leads; Danny 18:15). Built from field_tests/loom/centre_brief.md
+**Null review: the round is NULL** under G-T6.
+- No new killable prediction and no new derivation.
+- D1972's four fits (M_N, m₃/₂, T_R, split) bought the locks on L2, L5, L7 and L8. **That strains G-T3** (the FIT count rose) and G-T1.
+- L4 has no lock. Coverage is 0.892, under its bar. α_s is at −3.5σ.
+- **Overclaim:** the brief shows L8 as LOCKED while D1946a says leptogenesis FAILS. It is LOCKED-BY-FIT through M_N × 1.49 and T_R × 1.49. The resonance printout must say "LOCKED-BY-FIT", not "LOCKED".
+
+**The lead, inside-out** (the round follows this order):
+| layer | action | what to do |
+|---|---|---|
+| L1 torus | HOLD | Freeze the rung step. Do not re-tune it to fix L4 |
+| L2 pyramid | HOLD | Check whether its lock depends on the spent M_N fit; if it does, relabel it FIT-dependent. Best data: JUNO |
+| L3 turnover | HOLD | Write the G-T2 reason that Koide δ is TRUST, and get it countersigned |
+| **L4 cube** | **DERIVE (first move)** | Find why the lepton and neutrino rungs differ by 15.3 %, from the geometry (U₃, fluxes (4, 4, 8)), with no new fit. **L5–L9 may not move until L4 is locked or explicitly held** |
+| L5 fold | TEST only | Wino verdict at the edge, with no nudging of m₃/₂ |
+| L6 dilaton | HOLD | Label the tilt as FIT. Keep r as a killable prediction |
+| L7 forces | HOLD | Record A₃/A₂ as a spent FIT. α_s stays unscored until the D7 threshold spectrum is computed |
+| L8 cosmology | TEST | Leptogenesis FAILS unless M_N(S) is re-derived without a fit. Resolve the LOCKED vs FAIL label |
+| L9 late universe | HOLD | TRUST; write the G-T2 reason |
+
+**Fix applied now:** resonance.py's status label, through D1979a. Any lock whose layer knobs moved more than 1 % off their derived values now reads LOCKED-BY-FIT.
