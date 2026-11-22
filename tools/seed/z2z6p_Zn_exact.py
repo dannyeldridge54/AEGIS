@@ -8,20 +8,19 @@ VAR = [(t, tau, sig) for t in [(a, b, (a + b) % 2) for a in (0, 1) for b in (0, 
 def vec(c): X, Y, ex = c; return [X, Y] + [ex[k][a][0] for k in (1, 2, 3) for a in range(1, 6)] + [ex[k][a][1] for k in (1, 2, 3) for a in range(1, 6)]
 def unvec(u): ex = {k: {a: (u[2 + 5*(k-1) + a - 1], u[17 + 5*(k-1) + a - 1]) for a in range(1, 6)} for k in (1, 2, 3)}; return (u[0], u[1], ex)
 def omega(u, v): return Z.chi(unvec(u), unvec(v))
-def hnf_add(B, v):   # maintain row-echelon integer basis (dict pivot->row)
+def egcd(a, b):
+    if b == 0: return (abs(a), (1 if a >= 0 else -1), 0)
+    g, x, y = egcd(b, a % b); return (g, y, x - (a // b)*y)
+def hnf_add(B, v):
     v = list(v)
-    for p in sorted(B):
+    for p in range(32):
         if v[p] == 0: continue
-        r = B[p]
-        while v[p] != 0:
-            q = r[p] // v[p] if v[p] else 0
-            r = [a - q*b for a, b in zip(r, v)]; r, v = v, r
-            if v[p] == 0: break
-        B[p] = r if r[p] > 0 else [-a for a in r]
-    if any(v):
-        p = next(i for i, x in enumerate(v) if x); 
-        if p in B: return hnf_add(B, v)
-        B[p] = v if v[p] > 0 else [-a for a in v]
+        if p not in B:
+            B[p] = v if v[p] > 0 else [-a for a in v]; return
+        r = B[p]; g, x, y = egcd(r[p], v[p])
+        new = [x*a + y*b for a, b in zip(r, v)]
+        v = [(r[p]//g)*b - (v[p]//g)*a for a, b in zip(r, v)]
+        B[p] = new if new[p] > 0 else [-a for a in new]
 def lattice(R, sample=None):
     B = {}; n = 0
     ws = [w for w in itertools.product(range(-R, R + 1), repeat=6) if all(math.gcd(w[2*i], w[2*i+1]) == 1 for i in range(3))]
