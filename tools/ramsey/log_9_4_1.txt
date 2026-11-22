@@ -1,0 +1,2 @@
+seed 1 start score 3
+seed 1 done steps 52458073 pulses 21 final 1 best 1

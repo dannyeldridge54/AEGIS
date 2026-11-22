@@ -1,0 +1,2 @@
+seed 3 start score 6
+seed 3 done steps 14 pulses 0 final 0 best 0

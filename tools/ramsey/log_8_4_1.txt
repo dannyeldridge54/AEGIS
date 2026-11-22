@@ -1,0 +1,2 @@
+seed 1 start score 5
+seed 1 done steps 3 pulses 0 final 0 best 0

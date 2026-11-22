@@ -1,0 +1,2 @@
+seed 3 start score 53
+seed 3 done steps 2854 pulses 0 final 0 best 0

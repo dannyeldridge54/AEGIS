@@ -1,0 +1,2 @@
+seed 1 start score 68
+seed 1 done steps 5797440 pulses 2 final 6 best 6

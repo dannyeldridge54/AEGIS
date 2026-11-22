@@ -103,6 +103,7 @@ def auto(n, field_s):
              '', '**Lock map:** %s' % rec['state']['lock_map'], '', '**Next actions:**'] + ['- %s L%s: %s' % (a['kind'], a.get('layer'), a['why']) for a in p['actions']]
         open(f'field_tests/loom/reports/round_{rid:03d}.md', 'w').write('\n'.join(L) + '\n')
         print('round %d: %s | 2-seed triangulation pass=%s agree=%s %s pulses/s total | field %s %s/s | tally %s | DONE %s | FDR tensions %s' % (rid, rec['auto']['decision'], tri['all_pass'], tri['tally_agree'], tri['total_pulses_per_s'], field['verdict'], field['pulses_per_s'], field['goalpost_tally'], {k: v for k, v in field['done_seconds'].items() if v}, fdr['significant_tensions']))
+        run('python3 tools/targets/track.py backfill')   # target-acquisition table refreshed every pulse
         if rec['auto']['decision'] != 'CONTINUE': break
 def selftest():
     """P1.7 determinism (two real pulses) + P4 decision logic."""

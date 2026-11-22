@@ -1,0 +1,9 @@
+seed 1 start score 7096
+seed 1 t=30s steps 1160472 pulses 0 score 85 best 84 T 0.342
+seed 1 t=60s steps 2290525 pulses 0 score 85 best 84 T 0.062
+seed 1 t=90s steps 3383621 pulses 1 score 84 best 84 T 0.478
+seed 1 t=120s steps 4465038 pulses 1 score 85 best 84 T 0.092
+seed 1 t=150s steps 5565524 pulses 2 score 85 best 84 T 0.710
+seed 1 t=180s steps 6689133 pulses 2 score 85 best 84 T 0.129
+seed 1 t=210s steps 7809820 pulses 3 score 82 best 82 T 0.963
+seed 1 t=240s steps 8918311 pulses 3 score 82 best 82 T 0.180
