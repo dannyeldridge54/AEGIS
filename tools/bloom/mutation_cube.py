@@ -24,6 +24,7 @@ def corner(c):
     if s['V'] == 1 and s['M'] == 0: open_.append('pure AMSB on sequestered D3 needs a warped-throat tip (LVS no-scale may kill AMSB at our m32, D2040)')
     if s['V'] == 1: open_.append('f_vis = S only: the whole gauge chain must be re-derived')
     if s['T'] == 1: open_.append('seam value not yet derived (B4)')
+    if s['I'] == 1: open_.append('no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)')
     if s['K'] == 1: open_.append('no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived')
     if s['M'] == 1: open_.append('bino LSP 3.5-8 TeV overcloses unless RPV/dilution')
     terms = [dict(t, ours=ALPHA[AXES[0][2][s['M']]]) if t['id'] == 'alpha_s' else t for t in bloom.D['terms']]

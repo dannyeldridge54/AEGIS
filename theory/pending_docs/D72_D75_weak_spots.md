@@ -20406,3 +20406,16 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - Their sequestered variant can bring soft terms down with AMSB dominant, but m₃/₂ itself stays high-scale.
   - **The cube now carries a K = 1 filter.** The nearest consistent corners move to axis I (an inflation sector decoupled from m₃/₂, He–Kachru–Westphal 1003.4265) combined with the visible-sector mutation V (warped-throat D3, open).
   - Next lock: read 1003.4265 for whether high-scale inflation with a TeV-scale m₃/₂ survives in KKLT-type models, and at what cost in knobs.
+- **D2042 (CENTRE; PREREG_D2042): He–Kachru–Westphal does not supply cube axis I. FAIL by the locked rule.**
+  - Their toy, in which ⟨W⟩ relaxes during inflation with a second field X, reaches large H/m₃/₂ only at large n. That large n contradicts n_s and r: "this precise class of models is ruled out". And "m₃/₂ cannot be on the order of the TeV scale in our toy model".
+  - "The embedding of large-field inflation in string models with low-energy supersymmetry remains an unmet challenge."
+  - The KL racetrack "requires significant fine-tuning" (and D2037 already showed it cannot reach H at our σ).
+  - **State of the B0 frontier after D2036–D2042:**
+    - mirage: makes α_s worse (D2037);
+    - flux-scaling: m₃/₂ ~ moduli masses (D2041);
+    - KL racetrack: m_T/H ~ 3e-5 (D2037);
+    - decoupled inflation: no working construction (D2042);
+    - LVS sequestering: may kill AMSB at our m₃/₂ (D2040);
+    - warped-throat sequestering: disputed, open.
+  - **Read:** v4's combination of high-scale dilaton inflation (H = 5.7e12 GeV), low m₃/₂ (2.6e5 GeV, AMSB wino) and a KKLT-stabilised visible D7 cycle sits on the known open problem of the field, the Kallosh–Linde / high-scale-inflation-with-low-SUSY problem.
+  - **New cube axis to add (7th): high-scale SUSY**, m₃/₂ ≥ H/10 ≈ 6e11 GeV. That gives up the TeV wino and moves every gaugino threshold; α_s must then be recomputed. It is the one route the literature treats as consistent.
