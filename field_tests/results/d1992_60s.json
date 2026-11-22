@@ -1,0 +1,118 @@
+{
+ "seconds": 60.0,
+ "seeds": [
+  2033,
+  2036
+ ],
+ "runs": [
+  {
+   "seed": 2033,
+   "verdict": "PASS",
+   "accuracy": {
+    "A1": true,
+    "A2_recall": true,
+    "A2_prec_fast": true,
+    "A2_prec_full": true,
+    "A3": true,
+    "A4": true,
+    "A5": true
+   },
+   "pulses_per_s": 4615.9,
+   "tally": {
+    "PASS (FIT)": 8,
+    "UNSCORED": 9,
+    "PASS": 18,
+    "PASS (bound)": 2,
+    "TRUST": 1,
+    "PASS (null)": 7,
+    "FAIL": 1,
+    "OPEN": 15
+   },
+   "done": {
+    "1": 0.0,
+    "2": 57.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0,
+    "9": 0.0
+   },
+   "fits": [
+    "TR",
+    "m32",
+    "split"
+   ],
+   "precision": [
+    1.0,
+    1.0
+   ],
+   "far": {
+    "1": 0.0,
+    "2": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 1.5826040166489943e-05,
+    "7": 1.5826040166489943e-05,
+    "8": 0.0
+   }
+  },
+  {
+   "seed": 2036,
+   "verdict": "PASS",
+   "accuracy": {
+    "A1": true,
+    "A2_recall": true,
+    "A2_prec_fast": true,
+    "A2_prec_full": true,
+    "A3": true,
+    "A4": true,
+    "A5": true
+   },
+   "pulses_per_s": 4325.3,
+   "tally": {
+    "PASS (FIT)": 8,
+    "UNSCORED": 9,
+    "PASS": 18,
+    "PASS (bound)": 2,
+    "TRUST": 1,
+    "PASS (null)": 7,
+    "FAIL": 1,
+    "OPEN": 15
+   },
+   "done": {
+    "1": 0.0,
+    "2": 57.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0,
+    "9": 0.0
+   },
+   "fits": [
+    "TR",
+    "m32",
+    "split"
+   ],
+   "precision": [
+    1.0,
+    1.0
+   ],
+   "far": {
+    "1": 0.0,
+    "2": 0.0,
+    "4": 1.7025333696540452e-05,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 5.958866793789158e-05
+   }
+  }
+ ],
+ "all_pass": true,
+ "tally_agree": true,
+ "total_pulses_per_s": 8941.2
+}

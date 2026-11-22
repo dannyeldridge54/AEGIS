@@ -123,7 +123,7 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
     bound_hits = 0; fits_seen = set(); kicked = False; pred_E2 = None; base_period = None; last_pbt = 0.0
     gp_counts = {g['id']: {} for g in GP}; gp_last = {}; done_since = {L: None for L in range(1, 10)}; done_time = {L: 0.0 for L in range(1, 10)}
     sbase = np.array([NOM[k] for k in STREAMS]); svar = np.array([(0.107 * SIG[k]) ** 2 for k in STREAMS]); szp = np.zeros(5); smed = np.full(5, 0.6745)
-    bankC = Bank([live_cfg[0]], [live_cfg[1]]); bankC.Sp = np.zeros((1, 5)); bankC.Sn = np.zeros((1, 5)); freeze_until = {L: -1.0 for L in range(1, 10)}; calC = 0; fscale = T_total / 60.0
+    bankC = Bank([live_cfg[0]], [live_cfg[1]]); bankC.Sp = np.zeros((1, 5)); bankC.Sn = np.zeros((1, 5)); freeze_until = {L: -1.0 for L in range(1, 10)}; c_alarms = []; calC = 0; fscale = T_total / 60.0
     gC = Bank(*zip(*GRID)); gC.Sp = np.zeros((len(GRID), 5)); gC.Sn = np.zeros((len(GRID), 5)); gCp = Bank(*zip(*GRID)); gCp.Sp = np.zeros((len(GRID), 5)); gCp.Sn = np.zeros((len(GRID), 5)); calCg = np.zeros((len(GRID), 4)); cpC = None
     nofree = {L: 0 for L in range(1, 10)}; rows_t, rows_s = [], []; stuck_since = {L: None for L in range(1, 10)}; gp_samples = []; last_sample = -1.0; rel_log = []
     t0 = time.perf_counter(); p = 0
@@ -163,6 +163,7 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
             svar = np.where(np.abs(zc) < 3, 0.998 * svar + 0.002 * (ev - sbase) ** 2, svar); sbase = 0.998 * sbase + 0.002 * ev
             for j in np.nonzero(alC)[0]:
                 Ls = SLAYER[STREAMS[j]]; freeze_until[Ls] = t + 2.0 * fscale
+                c_alarms.append((p, round(t, 4), Ls, STREAMS[j], float(abs(ev[j] - sbase[j]) / sig[STREAMS[j]])))   # D1994 magnitude
                 sbase[j] = ev[j]; szp[j] = 0.0; bankC.Sp[0, j] = 0.0; bankC.Sn[0, j] = 0.0   # D1992: restart after a detected change
                 if not calib: alarms.append((p, round(t, 4), Ls)); win_al[Ls] += 1
                 elif t >= 2.0: calC += 1
@@ -280,7 +281,7 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
     for L in range(1, 10):
         if done_since[L] is not None: done_time[L] += T_total - done_since[L]
     return dict(p=p, T=T_total, tt=np.array(rows_t), ST=np.array(rows_s, np.int8), alarms=alarms, transitions=transitions, ctl=ctl, pbt=pbt_log,
-                a1_max=a1_max, a1_n=a1_n, calA=calA, calC=calC, calCg=calCg, bound_frac=bound_hits / max(p, 1), fits=sorted(fits_seen), x=x, live_cfg=live_cfg, cal=cal,
+                a1_max=a1_max, a1_n=a1_n, calA=calA, calC=calC, calCg=calCg, c_alarms=c_alarms, bound_frac=bound_hits / max(p, 1), fits=sorted(fits_seen), x=x, live_cfg=live_cfg, cal=cal,
                 gp_counts=gp_counts, gp_last=gp_last, gp_samples=gp_samples, nofree=nofree, done_time=done_time, status=status, pred_E2=pred_E2)
 def calib_C_grid():
     tot = np.zeros((len(GRID), 4)); n = 0
@@ -376,12 +377,15 @@ def replay_run(T=70.0, seed=2028, out_name='d1989_replay.json'):
         for (t0, v, sg), prev in zip(rels[1:], rels[:-1]):
             d = abs(v - prev[1]) / sg; L = STREAM_LAYER[key]
             det = any(l == L and t0 <= t < t0 + 1.0 for _, t, l in al)
-            rel.append(dict(stream=key, t=t0, value=v, delta_over_sigma=round(d, 2), detectable=d >= 1, quiet_expected=d < 0.25, detected=det))
+            mat = [round(m, 2) for _, t, l, sk, m in o['c_alarms'] if sk == key and t0 <= t < t0 + 2.0 and m >= 0.5]
+            mnr = [round(m, 2) for _, t, l, sk, m in o['c_alarms'] if sk == key and t0 <= t < t0 + 2.0 and m < 0.5]
+            rel.append(dict(stream=key, t=t0, value=v, delta_over_sigma=round(d, 2), detectable=d >= 1, quiet_expected=d < 0.25, detected=det, material=mat, minor=mnr))
     rc = [r for r in rel if r['detectable']]; sp = [r for r in rel if r['quiet_expected']]
     timeline = [dict(t=t, labels=lab, est=est) for t, lab, est in o['gp_samples'] if any(abs(t - (r[0] + 9.5)) < 0.26 for rels in REPLAY.values() for r in rels)]
     out = dict(prereg='PREREG_D1989_complete_field.md P2', seed=seed, seconds=T, pulses=o['p'], releases=rel,
                recall=round(sum(r['detected'] for r in rc) / len(rc), 3) if rc else None, n_detectable=len(rc),
                specificity=round(sum(not r['detected'] for r in sp) / len(sp), 3) if sp else None, n_quiet_expected=len(sp),
+               recall_material=round(sum(bool(r['material']) for r in rc) / len(rc), 3) if rc else None, specificity_material=round(sum(not r['material'] for r in sp) / len(sp), 3) if sp else None,
                fits_spent=o['fits'], final_knobs={k: state(o['x'])[k] for k in K}, final_status=o['status'], no_free_knob_share={L: round(v / o['p'], 3) for L, v in o['nofree'].items()},
                final_live_goalposts={g['id']: o['gp_last'][g['id']][0] for g in GP if g['live']}, timeline=timeline, bound_frac=round(o['bound_frac'], 4))
     json.dump(out, open('field_tests/results/' + out_name, 'w'), indent=1, default=str); return out
