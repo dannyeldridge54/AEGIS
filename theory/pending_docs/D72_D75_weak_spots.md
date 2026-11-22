@@ -21298,3 +21298,29 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
 - **Consequence:** because the c-matrix has rank 5 (K4), exactly 5 combinations of twisted moduli are lifted by the D-term potential. The vacuum at the origin, with ξ = 0 and charged scalars at zero vev, is supersymmetric.
 - **Verdict:** **PASS** (consistent, SUSY vacuum at the orbifold point). 5 twisted moduli are frozen (literature mechanism).
 - **Caveat:** away from the orbifold point, D-flatness would need charged-scalar vevs. Not studied here.
+
+## D2119 (CENTRE): referee round 1 → fixes. Locked; all computed once.
+The referee (negative pole) report R1-1 … R1-11 was NOT BALANCED, with 4 majors. Fixes:
+- **R1-2 (normalisation, CONFIRMED by quote p.tex ~1816):** 4π/g² = 2π Re f. So δ(α⁻¹) = 2π Re δf, now primary.
+- **R1-3:** the two-typo reading, where the expression equals the stated asymptote, is the consistent one. Variant A is primary and B is demoted.
+- **R1-1:** SLSQP minimum of ctrl over the matching curve, every point re-verified with fsolve:
+  - **primary (A, reduced, 2π):** min ctrl = **0.82** at v = (46, 1.0, 696), g_s = 0.002, M_s = 7.6e12. The minimum sits on the v₂ = 1 boundary. **NOT controlled.**
+  - A, non-reduced: 0.77, not controlled.
+  - B (demoted): 0.28 (reduced) and 0.22 (non-reduced), controlled.
+  - With norm 1, the same ctrl values, but v is about 6× larger.
+  - **K7 verdict: FAIL under the consistent reading.** This replaces "MARGINAL" in D2116; the earlier "≥32%" bound was also wrong (the coarse grid missed the minimum).
+- **R1-4 / R1-5 (uniqueness):** uncapped P2 rescan, with the signature extended to ab, ab′, ac, ac′, bc, bc′, self-χ, hidden N, Σ|χ_vh| and per-stack |χ_vh|.
+  - All 5,184 models per shard were checked (≤ 864 distinct visible triples).
+  - There are **2 signatures, an L↔R pair**: bc = ±1, bc′ = 0, hidden 2 × U(2), per-stack vis–hid |χ| = (a 0, b 5, c 5).
+  - Uniqueness holds under the precise wording: unique **chiral** spectrum in its class. "Up to lattice relabelling" is dropped.
+- **R1-9:** the K4 P2 output is committed in z2z6p_round1_extra.txt: 0 mismatched rows.
+- **R1-10:** ΔN_eff:
+  - vectors only: 0.11, PASS;
+  - plus hidden chiral fermions: 0.56, FAIL;
+  - everything massless: 0.82, FAIL.
+  - **K11 is now CONDITIONAL:** it needs hidden-sector masses (superpotential or soft) or a non-thermal hidden sector.
+- **R1-6, R1-7, R1-8, R1-11:** fixed in the paper text.
+  - K-theory: 256 invariant cycles up to orientation, a superset of the USp probes; only the totals match HRS.
+  - The z₀ reading of the type-II formulas is disclosed (the literal reading fails the control: 7/24 residuals).
+  - Tadpoles: 15 non-trivial + 9 identical.
+  - The FI ledger is aligned with D2118.
