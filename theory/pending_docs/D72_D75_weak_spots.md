@@ -21508,3 +21508,15 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 - **D2128 note (referee sweep):** the literal N=2 rule fails **4 sectors on φ ≥ |χ| and 6 on parity** (φ − |χ| odd), not "6 on φ < |χ|". The adopted rule passes both tests in all 82 sectors.
 - It mirrors the three-angle formula (|I| + sgn(I)ΣI^{Z₂}). HRS's no-symmetric/antisymmetric condition (p.tex:1592, |I| − I^{Z₂} = 0 ⇔ 1 + 1/(q_j q_k) = 0) ties the sign of I^{Z₂} to the orientation, so this is a **notational resolution**, not a fudge.
 - **Item 6: NULL — BALANCED.**
+
+## D2129 (CENTRE): all 20 expert-checklist items settled. **Paper v7.1: NULL — BALANCED.**
+- **How it was run:** the ping-pong protocol (papers/z2z6p_ps/review/PINGPONG_PROTOCOL.md), item by item: 4 → 9 → 14 → 13 → 18 → 20 → 6. Then a whole-paper sweep (R7-1…R7-7) and a confirmation sweep, which came back NULL.
+- **Final tally:**
+  - PASS (7): 1, 2, 3, 4, 5, 6, 20; plus 7 (U(1)s).
+  - FAIL robust: 9.
+  - TENSION: 10.
+  - PARTIAL: 11.
+  - OBSTRUCTED: 8, 12, 13, 18.
+  - CONDITIONAL: 14, 17.
+  - OPEN / not addressed: 15, 16, 19.
+- **Status:** the paper is in the repo only. Publishing waits for Danny's "Publish".
