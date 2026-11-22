@@ -20612,3 +20612,12 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - **Next (P2b):** fix that factor from the formula. **That decides the branch with no knob.**
     - The SU(5)-like set gives only 1/6 (cross terms), which also points to branch B.
   - Look-elsewhere: the cross-term list holds 9 values in [1/12, 9/4], so a hit carries no evidence weight yet. The derivation lies in the normalisation, not in the hit.
+- **D2062 (CENTRE, plan step P2b): UNDETERMINED. Two normalisations disagree, so the branch cannot be fixed tonight without the explicit stack.**
+  - **(i) Local-GUT form** (0907.1362), used for v4's single visible stack (f_vis = T_vis + 9S is GUT-like). The SU(3) and SU(2) blocks carry fluxes F_D − F_Y/3 and F_D + F_Y/2, so f₂ − f₃ = −½S[(5/3)F_D·F_Y + (5/36)F_Y²].
+    - With integer block quanta the differences are integers. Fractional steps arise only from half-integer Freed–Witten shifts, in **quarter** units, not twelfths.
+  - **(ii) Madrid D-brane form** (separate quark and lepton stacks): the cross term (1/6)(1/2) gives 1/12 or 1/6 (D2061).
+  - **Conclusion:** which form applies depends on whether the visible sector is one GUT stack (v4 as written) or split stacks. That is exactly the explicit brane configuration (P3–P5) still owed.
+- **Honest status of "fully done" (03:02): not reachable tonight.**
+  - P3–P5 (explicit stacks, families, tadpole, massless U(1)_Y), P8 (W₀ origin) and P9 (F-theory at ρ) are research-level steps.
+  - The loop keeps running every 3 min on them, and stops at STALL if no step can advance.
+  - **Closed tonight:** the structural review (D2036–D2048); corrections D2051a and D2061-P1; candidates Q4/P2; Q2 conditional; the Q6 fact.
