@@ -95,12 +95,17 @@ def report():
                      FROM tasks t LEFT JOIN runs r ON r.task_id=t.task_id WHERE t.family='ramsey' GROUP BY t.task_id ORDER BY t.difficulty""").fetchall()
     out['ramsey_calibration'] = [dict(task=a, N=b, known=k, runs=n, found=f or 0, mean_tts_s=round(m, 2) if m else None, best_score=s) for a, b, k, n, f, m, s in q if n]
     q = c.execute("SELECT outcome, COUNT(*) FROM runs WHERE task_id='loom_woven_field' GROUP BY outcome").fetchall(); out['loom_runs'] = dict(q)
+    neg = c.execute("SELECT t.task_id, COUNT(r.run_id), SUM(r.outcome='found') FROM tasks t JOIN runs r ON r.task_id=t.task_id WHERE t.known_answer='impossible' GROUP BY t.task_id").fetchall()
+    out['negative_controls'] = [dict(task=a, runs=b, false_finds=f or 0) for a, b, f in neg]
+    out['verified_finds'] = c.execute("SELECT COUNT(*) FROM runs WHERE outcome='found' AND verified=1").fetchone()[0]
+    out['unverified_finds'] = c.execute("SELECT COUNT(*) FROM runs WHERE outcome='found' AND (verified IS NULL OR verified=0) AND task_id LIKE 'ramsey%'").fetchone()[0]
     fl = [(r['N'], r['mean_tts_s']) for r in out['ramsey_calibration'] if r['mean_tts_s']]
     if len(fl) >= 3:
         import math
         xs = [a for a, b in fl]; ys = [math.log(b) for a, b in fl]; mx, my = sum(xs) / len(xs), sum(ys) / len(ys)
         slope = sum((x - mx) * (y - my) for x, y in zip(xs, ys)) / sum((x - mx) ** 2 for x in xs); out['tts_scaling'] = dict(log_tts_per_vertex=round(slope, 3), doubling_every_vertices=round(math.log(2) / slope, 2) if slope > 0 else None,
-            extrapolated_tts_s={str(n): round(math.exp(my + slope * (n - mx)), 1) for n in (35, 39, 40)})
+            extrapolated_tts_s={str(n): round(math.exp(my + slope * (n - mx)), 1) for n in (35, 39, 40)},
+            warning='fit on solved rungs only; a rung still unsolved past its extrapolated time means hardness grows faster than exponential and the extrapolation is invalid')
     return out
 if __name__ == '__main__':
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'report'
