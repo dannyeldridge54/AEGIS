@@ -1,0 +1,11 @@
+{
+ "prereg": "PREREG_D1997_calib10x.md",
+ "layer_pulses": 7525000,
+ "confirmed": 7,
+ "retracted": 465,
+ "rate": 9.302325581395349e-07,
+ "upper95": 1.747375415282392e-06,
+ "expected_at_bar": 7.5249999999999995,
+ "p_ge": 0.6252546933219849,
+ "verdict": "PASS"
+}
