@@ -1,0 +1,171 @@
+{
+ "pulses": 72069,
+ "data_margin_pulses": 360345,
+ "detector_A": {
+  "false_alarms": 0,
+  "far": 0.0,
+  "admissible": true
+ },
+ "grid": [
+  {
+   "k": 0.08,
+   "h": 12,
+   "far": 0.002891673257572604,
+   "mean_delay": 33.0,
+   "misses": 0,
+   "probes": 70,
+   "miss_frac": 0.0,
+   "admissible": false
+  },
+  {
+   "k": 0.08,
+   "h": 20,
+   "far": 2.4976064604753777e-05,
+   "mean_delay": 60.3,
+   "misses": 0,
+   "probes": 70,
+   "miss_frac": 0.0,
+   "admissible": false
+  },
+  {
+   "k": 0.08,
+   "h": 30,
+   "far": 0.0,
+   "mean_delay": 103.3,
+   "misses": 0,
+   "probes": 70,
+   "miss_frac": 0.0,
+   "admissible": true
+  },
+  {
+   "k": 0.08,
+   "h": 40,
+   "far": 0.0,
+   "mean_delay": 140.0,
+   "misses": 0,
+   "probes": 70,
+   "miss_frac": 0.0,
+   "admissible": true
+  },
+  {
+   "k": 0.08,
+   "h": 60,
+   "far": 0.0,
+   "mean_delay": 221.8,
+   "misses": 0,
+   "probes": 70,
+   "miss_frac": 0.0,
+   "admissible": true
+  },
+  {
+   "k": 0.16,
+   "h": 12,
+   "far": 0.0004689949909114876,
+   "mean_delay": 46.5,
+   "misses": 0,
+   "probes": 70,
+   "miss_frac": 0.0,
+   "admissible": false
+  },
+  {
+   "k": 0.16,
+   "h": 20,
+   "far": 5.550236578834173e-06,
+   "mean_delay": 96.6,
+   "misses": 0,
+   "probes": 70,
+   "miss_frac": 0.0,
+   "admissible": true
+  },
+  {
+   "k": 0.16,
+   "h": 30,
+   "far": 0.0,
+   "mean_delay": 153.7,
+   "misses": 0,
+   "probes": 70,
+   "miss_frac": 0.0,
+   "admissible": true
+  },
+  {
+   "k": 0.16,
+   "h": 40,
+   "far": 0.0,
+   "mean_delay": 208.0,
+   "misses": 0,
+   "probes": 70,
+   "miss_frac": 0.0,
+   "admissible": true
+  },
+  {
+   "k": 0.16,
+   "h": 60,
+   "far": 0.0,
+   "mean_delay": 358.6,
+   "misses": 5,
+   "probes": 69,
+   "miss_frac": 0.072,
+   "admissible": true
+  },
+  {
+   "k": 0.25,
+   "h": 12,
+   "far": 0.00011377984986610055,
+   "mean_delay": 87.7,
+   "misses": 0,
+   "probes": 70,
+   "miss_frac": 0.0,
+   "admissible": false
+  },
+  {
+   "k": 0.25,
+   "h": 20,
+   "far": 2.7751182894170863e-06,
+   "mean_delay": 178.9,
+   "misses": 0,
+   "probes": 70,
+   "miss_frac": 0.0,
+   "admissible": true
+  },
+  {
+   "k": 0.25,
+   "h": 30,
+   "far": 0.0,
+   "mean_delay": 339.2,
+   "misses": 9,
+   "probes": 69,
+   "miss_frac": 0.13,
+   "admissible": true
+  },
+  {
+   "k": 0.25,
+   "h": 40,
+   "far": 0.0,
+   "mean_delay": 640.4,
+   "misses": 46,
+   "probes": 69,
+   "miss_frac": 0.667,
+   "admissible": false
+  },
+  {
+   "k": 0.25,
+   "h": 60,
+   "far": 0.0,
+   "mean_delay": 800.0,
+   "misses": 69,
+   "probes": 69,
+   "miss_frac": 1.0,
+   "admissible": false
+  }
+ ],
+ "start": {
+  "k": 0.16,
+  "h": 20,
+  "far": 5.550236578834173e-06,
+  "mean_delay": 96.6,
+  "misses": 0,
+  "probes": 70,
+  "miss_frac": 0.0,
+  "admissible": true
+ }
+}
