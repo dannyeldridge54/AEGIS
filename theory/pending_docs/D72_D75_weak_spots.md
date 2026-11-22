@@ -20480,3 +20480,14 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - Every one of the 7 open issues runs through the S–T seam: the dilaton both inflates and fixes g_s, and the visible cycle is both the gauge coupling and the KKLT cycle.
   - **The next derivation target is the seam itself:** a v4.1 where the visible gauge cycle is **not** the cycle stabilised by the condensate (split roles), and inflation does not require H ≫ m₃/₂.
   - **That is a new design question, not a patch,** and it goes to Danny before anything is built.
+- **D2050 (CENTRE; PREREG_D2050; theory/tests/d2050_tethers.py): Danny's "two boundaries tethered in opposition", as a toy. Verdict: PROMISING by the locked rule, with one big cross-check owed.**
+  - With f_vis = Σ s_i T_i + 9S, balanced orientations (Σ s_i = 0) and natural KKLT prefactors (A_i log-uniform in [0.1, 10]), each cycle's F-term ≈ m₃/₂/x_i. The x_i differ only by ln A_i, so **opposed tethers cancel the modulus-mediated gaugino mass to Δln A / x**.
+  - **Fraction of natural draws meeting the D2039 bound** (leak_rel ≤ 0.0214, i.e. sq ≤ 1.2e-3):
+    - **n = 2: 18.5%** (median leak 0.064);
+    - n = 4: 12.9%;
+    - n = 6: 10.2%;
+    - n = 8: 9.3%;
+    - **n = 9 (odd, unbalanced): 0%**. Opposition must balance, so "up to 9" works only for even counts.
+  - **Cross-check owed** (lens: centre balance), **likely serious:** Re f_vis then contains t₁ − t₂ ≈ ln(A₁/A₂)/a = O(1) instead of σ_vis = 20.15. The visible gauge coupling would come mostly from 9S. That is the "f_vis ≈ S" mutation (cube axis V), so α_G = 1/28 and the whole gauge chain must be recomputed.
+  - Geometry: a D7 on a divisor *difference* is not automatically holomorphic. Not claimed.
+  - **Kallosh–Linde is untouched** by this mechanism.
