@@ -20648,3 +20648,15 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Concern:** the S-coefficient k_c of stack c (its "flux charge") is built from the **same** wrapping and flux numbers that set I_ac, I_cd and the c^c_α in the massless condition. Each intersection number is a product over the three tori, so a unit change in k_c generically changes I_ac or I_cd (breaking three families) and shifts c^c_α (giving U(1)_Y a mass). It can be harmless only on a torus where the other stacks' factor vanishes.
   - **Next:** obtain the IMR table (its parameters β₁, β₂, ρ, ε, n_a², n_b¹, n_c¹, n_d²; the PDF needs to be read past the truncation, or attached by Danny). Then scan whether a k_c or k_d unit can move with families and masslessness intact.
   - Loop: no progress (blocked on the table). **No-progress count 1.**
+- **D2067 (CENTRE, loop tick 10; read the published IMR Table 2 plus a short check in code): P4/P5 for the D2065 candidate. Structurally ALLOWED.**
+  - **The table, from the paper** (hep-th/0105155):
+    - a: (1/β¹, 0)(n_a², εβ²)(1/ρ, ½)
+    - b: (n_b¹, −εβ¹)(1/β², 0)(1, 3ρ/2)
+    - c: (n_c¹, 3ρεβ¹)(1/β², 0)(0, 1)
+    - d: (1/β¹, 0)(n_d², −β²ε/ρ)(1, 3ρ/2)
+    - Massless U(1)_Y: n_c¹ = (β²/2β¹)(n_a² + 3ρn_d²).
+    - Tadpole: 3n_a²/(ρβ¹) + 2n_b¹/β² + n_d²/β¹ (+ N_h hidden) = 16.
+  - **Computed:** the intersection numbers do **not** depend on the free integers. Over n_a², n_b¹, n_d² ∈ [−2, 2] with n_c¹ set by the massless condition, (I_ab, I_ac, I_cd) = (1, −3, −3) for every choice, in both parameter sets tested.
+  - **Consequence:** changing the lepton stack's n_d² by Δ, with n_c¹ following through the massless condition (integer when (β²/2β¹)·3ρ·Δ ∈ Z), **keeps three families and a massless U(1)_Y**. The tadpole changes by Δ/β¹ and is absorbed by hidden branes N_h (eq. 4.2). This changes only the lengths of the c and d stacks, i.e. only α_Y, which is the D2065 mechanism.
+  - **Not yet computed:** the size of the α_Y shift per step. In IIA it depends on the torus radii (1/g² ∝ Π_i √(n_i²R_{1i}² + m_i²R_{2i}²)). Mapping it onto v4's IIB D7 numbers (D2065's 0.433 per unit) is the next step.
+  - Loop: progress. **No-progress count reset to 0.**
