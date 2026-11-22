@@ -8,9 +8,8 @@
 ## Next actions (in order)
 1. **derive** L4: derive the 15.3 % lepton vs neutrino rung mismatch from the geometry (U3, fluxes (4,4,8)) with no new fit; L5-L9 may not move until L4 is locked or explicitly held. Guard: N0 inside-out; G-T3; LOCK. Tools: weave_rung, weave_rung_of, theory/tests/d1932_ring0_rungstep.py, theory/tests/d1925_onespurion.py. **Lock first.**
 2. **test** L5: wino verdict at the edge, no nudging of m3/2. Guard: N0 inside-out; G-T3; LOCK. Tools: weave_W0, weave_wino, lhc_dt_limit, lhc_lifetime. **Lock first.**
-3. **derive_fit** L8: fit MN is spent to lock layer 8; derive it: M_N from the S modulus (no x1.49 rescale). Guard: G-T3 turn fits into predictions. Tools: weave_genesis, weave_wino, theory/tests/d1946_three_at_once.py. **Lock first.**
-4. **owed**: automated check: every PASS in a verdict file carries FIT / NO-POWER / CONDITIONAL where one applies. Guard: HONEST. Tools: tools/loom/lensing.py, tools/loom/check.py, tools/loom/method_tests_3axis.py.
-5. **explore**: null round: spend the exploration share on the loosest direction. Guard: G-T6 null rounds count only with every node balanced. Tools: tools/loom/still_point.py, tools/loom/compass.py.
+3. **owed**: automated check: every PASS in a verdict file carries FIT / NO-POWER / CONDITIONAL where one applies. Guard: HONEST. Tools: tools/loom/lensing.py, tools/loom/check.py, tools/loom/method_tests_3axis.py.
+4. **explore**: null round: spend the exploration share on the loosest direction. Guard: G-T6 null rounds count only with every node balanced. Tools: tools/loom/still_point.py, tools/loom/compass.py.
 
 ## Agents to wake
 - N0 centre referee: always
