@@ -20603,3 +20603,12 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Q5 (tadpole):** blocked until the brane configuration is written. Q4's winding (3, 4) or (2, 3) brane is now the concrete input.
   - **Q6 (g_s):** F-theory required (fact).
   - **The single next task that serves Q4, Q5 and branch B:** write the explicit brane stacks (windings, fluxes) on Z₆-II/ΩR with the 1/12 or 1/6 hypercharge step. Then check α_G, the families and the tadpole in one script.
+- **D2061 (CENTRE; PREREG_D2061; theory/tests/d2061_p1p2.py): plan steps P1 and P2.**
+  - **P1: FAIL for windings on the visible stack.** With σ = 20.15 fixed by KKLT, α_G⁻¹ = W·σ + 9 Re S is 27.94 only at W = 1 (W = 2 gives 48.1, W = 12 gives 250). **The D2059 winding route for the 1/12 step is closed on the visible stack** (dated correction to the D2060 Q4 mechanism).
+  - **P2: CANDIDATE, a better origin.**
+    - In the standard D-brane hypercharge Q_Y = (1/6)Q_a − ½Q_c + ½Q_d (Madrid / Ibáñez–Marchesano–Rabadán, and the 4-stack variant), no single-stack step is 1/12 or 1/6 (the steps are 1/36, 1/9, 1/4, …).
+    - But the **minimal cross term** c_a c_b m_a m_b = (1/6)(1/2)(1)(1) = **1/12** is there, and with the factor 2 of F_Y² ⊃ 2c_a c_b F_a F_b it becomes **1/6**.
+    - So **the two branch values (A: +0.046 at 1/12; B: +0.092 at 1/6) are exactly the minimal quark × lepton-stack cross terms of the standard hypercharge.** Which one applies is fixed by the exact normalisation in f₂ − f₃ = −½S∫(F_Y² + 2F_D·F_Y) with F_Y = Σ c_a F_a.
+    - **Next (P2b):** fix that factor from the formula. **That decides the branch with no knob.**
+    - The SU(5)-like set gives only 1/6 (cross terms), which also points to branch B.
+  - Look-elsewhere: the cross-term list holds 9 values in [1/12, 9/4], so a hit carries no evidence weight yet. The derivation lies in the normalisation, not in the hit.

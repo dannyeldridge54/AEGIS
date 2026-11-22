@@ -3,8 +3,8 @@
 
 | # | step | formula (referee pre-check) | goalpost | status |
 |---|---|---|---|---|
-| P1 | **winding vs gauge coupling** (do windings on the visible stack keep α_G?) | magnetised D7 on T²×T² with windings (n₁, n₂): Re f = n₁n₂·σ + (flux)·Re S (Cremades–Ibáñez–Marchesano conventions) | α_G⁻¹ = 27.94 with σ = 20.15 fixed by KKLT (x = 2πσ/N) | **run now** |
-| P2 | **origin of the fractional hypercharge step**: windings, or the hypercharge combination Q_Y = Σ c_a Q_a | F_Y = Σ c_a F_a, so ∫F_Y² ⊃ Σ c_a c_b ∫F_a F_b. The coefficients c ∈ {1/6, 1/2, …} give fractional steps | one step of ΔΔ₃ = +0.046 (branch A) or +0.092 (branch B) with integer worldvolume fluxes | run now (enumerate) |
+| P1 | **winding vs gauge coupling** (do windings on the visible stack keep α_G?) | magnetised D7 on T²×T² with windings (n₁, n₂): Re f = n₁n₂·σ + (flux)·Re S (Cremades–Ibáñez–Marchesano conventions) | α_G⁻¹ = 27.94 with σ = 20.15 fixed by KKLT (x = 2πσ/N) | **FAIL** (D2061): only W = 1 keeps α_G |
+| P2 | **origin of the fractional hypercharge step**: windings, or the hypercharge combination Q_Y = Σ c_a Q_a | F_Y = Σ c_a F_a, so ∫F_Y² ⊃ Σ c_a c_b ∫F_a F_b. The coefficients c ∈ {1/6, 1/2, …} give fractional steps | one step of ΔΔ₃ = +0.046 (branch A) or +0.092 (branch B) with integer worldvolume fluxes | **CANDIDATE** (D2061): the minimal quark × lepton cross term of the standard hypercharge gives 1/12 (A) or, with the factor 2, 1/6 (B). Next P2b: fix the factor from the exact f₂ − f₃ formula, which picks the branch |
 | P3 | **three families** | chirality I_ab = Π_i (m_a^i n_b^i − m_b^i n_a^i) | net 3 left-handed quark doublets etc. | needs P1–P2 stacks |
 | P4 | **tadpole** | D3 charge Σ_a N_a Π m_a^i + N_flux/2 = χ_O-plane budget | satisfied with N_D3 ≥ 0 | needs P3 |
 | P5 | **massless U(1)_Y** | Green–Schwarz: Σ c_a N_a m_a^i n_a^j... = 0 | hypercharge stays massless | needs P2 |
