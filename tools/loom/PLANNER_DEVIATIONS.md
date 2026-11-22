@@ -1,3 +1,4 @@
 # Planner deviations (dated)
 - 2026-11-22 00:38Z: mission.json changed after PLANNER_SPEC.sha256 (d1803df7): one owed item added (layer_transfer_map, Danny 18:24). No test logic changed; all 16 + 7 cases rerun after the change and pass. The planner fix for N0 'test' actions came after the addendum lock (3f11af42), as the addendum requires.
 - 2026-11-22 00:50Z: toolkits.json gained tools/loom/lensing.py (kind 'method') after the spec lock. The toolkit-existence test still passes, 16/16.
+- 2026-11-22 01:25Z (D1988 / referee D1985 F8): test_planner.py's endpoint_only_when_all case now passes four_corners=True. The locked case had encoded the bug (an endpoint without E3). The planner now requires E1–E5 and no alarms. O8 mistake memory and O9 effort tags were added (at most one high-effort action per pulse: one derive, or one derive_fit if no derive). All 16 + 7 + B8 cases pass.

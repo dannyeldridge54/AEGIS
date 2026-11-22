@@ -1,0 +1,12 @@
+{"id": "D1926", "date": "2026-11-21", "layers": [6], "kinds": ["derive", "test"], "lesson": "Fourier coefficient 8pi vs 16pi; validate against a known reference value (C3) before using a formula", "caught_by": "validation gate"}
+{"id": "D1946a", "date": "2026-11-21", "layers": [8], "kinds": ["derive", "test"], "lesson": "gauge width 128pi vs 64pi; benchmark every formula (C7)", "caught_by": "referee"}
+{"id": "D1931a", "date": "2026-11-21", "layers": [8], "kinds": ["referee", "test"], "lesson": "'strongest pointing' overclaim; lint claims (C5)", "caught_by": "claim lint"}
+{"id": "D1938a", "date": "2026-11-21", "layers": [7], "kinds": ["test"], "lesson": "a seam test with no power; perturb inputs and check the verdict can flip (C2)", "caught_by": "power check"}
+{"id": "D1941", "date": "2026-11-21", "layers": [6], "kinds": ["test"], "lesson": "duplicate readings counted as independent (C1)", "caught_by": "independence check"}
+{"id": "D1979a", "date": "2026-11-21", "layers": [8, 5, 7, 2], "kinds": ["derive", "test", "referee"], "lesson": "a lock bought with a fit must read LOCKED-BY-FIT, never LOCKED", "caught_by": "N0"}
+{"id": "D1983a", "date": "2026-11-22", "layers": [7, 8], "kinds": ["test", "referee"], "lesson": "per-layer counts must be computed from the per-pulse arrays, not read off the final status (chatter was L7, not L8)", "caught_by": "self-check, then referee D1985"}
+{"id": "D1983c", "date": "2026-11-22", "layers": [6, 8, 5, 7], "kinds": ["derive", "test"], "lesson": "unbounded greedy balancing ran T_R to 1.6e16 GeV; bound knobs and bar the runaway (A5)", "caught_by": "referee D1985"}
+{"id": "D1983d", "date": "2026-11-22", "layers": [7], "kinds": ["derive", "test"], "lesson": "a FIT switch (split) invisible to the gradient; use a finite step for discontinuous knobs", "caught_by": "referee D1985"}
+{"id": "D1982-B4", "date": "2026-11-22", "layers": [], "kinds": ["owed", "explore"], "lesson": "a test runner that always crashes scores 100 %; run an unmutated control first", "caught_by": "control"}
+{"id": "D1986-O2", "date": "2026-11-22", "layers": [4, 5, 6, 7, 8], "kinds": ["test"], "lesson": "statistical detectors on deterministic margins fire on rounding; CUSUM k must be below the shift; calibrate on null streams before any scored run", "caught_by": "null calibration"}
+{"id": "D1987-scorer", "date": "2026-11-22", "layers": [5, 7], "kinds": ["test", "referee"], "lesson": "a live PRED computed at fitted knobs is PASS (FIT), not a surviving prediction (alpha_s via split, wino via m3/2)", "caught_by": "self-check"}

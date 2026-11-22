@@ -35,7 +35,17 @@ def check_toolkits():
     return dict(missing=sorted(set(missing)), unverified=sorted(set(unverified)))
 def act(kind, why, guard, layer=None, tools=None, needs_lock=False, **kw):
     return dict(kind=kind, layer=layer, why=why, guard=guard, tools=tools or [], needs_lock=needs_lock, **kw)
-def plan(cur, prev, M, pft=None, n0=None, owed_done=frozenset(), referee_signed=False):
+EFFORT = dict(derive='high', derive_fit='high', test='med', explore='med', referee='low', owed='low', alarm='low', fix_selftest='low')
+def mistakes_for(layer, kind):
+    """O8 (Reflexion): known failure modes relevant to an action, from field_tests/loom/mistakes.jsonl."""
+    out = []
+    try:
+        for l in open(os.path.join(ROOT, 'field_tests/loom/mistakes.jsonl')):
+            m = json.loads(l)
+            if (layer and str(layer) in [str(x) for x in m.get('layers', [])]) or kind in m.get('kinds', []): out.append('%s: %s' % (m['id'], m['lesson']))
+    except FileNotFoundError: pass
+    return out
+def plan(cur, prev, M, pft=None, n0=None, owed_done=frozenset(), referee_signed=False, four_corners=False):
     lm = {str(k): v for k, v in (cur.get('state') or {}).get('lock_map', {}).items()}
     plm = {str(k): v for k, v in ((prev or {}).get('state') or {}).get('lock_map', {}).items()}
     fits = list((cur.get('state') or {}).get('fits_spent', [])); pfits = list(((prev or {}).get('state') or {}).get('fits_spent', []))
@@ -72,13 +82,15 @@ def plan(cur, prev, M, pft=None, n0=None, owed_done=frozenset(), referee_signed=
                     else 'null round: spend the exploration share on the loosest direction'), 'G-T6 null rounds count only with every node balanced', tools=tools_for('explore', 'kinds'))] if (stalled or cur.get('null')) else []
     # endpoint
     trust_ok = (pft or {}).get('trust_signed', False)
-    E = dict(E1=all(RANK(v) == 3 or (RANK(v) == 1 and trust_ok) for v in lm.values()) and bool(lm), E2=stalled, E3=None,
+    E = dict(E1=all(RANK(v) == 3 or (RANK(v) == 1 and trust_ok) for v in lm.values()) and bool(lm), E2=stalled, E3=bool(four_corners),
              E4=not fits and bool(pft) and pft.get('killable', 0) >= M['killable_min'], E5=bool(referee_signed))
-    reached = E['E1'] and E['E2'] and E['E4'] and E['E5'] and not alarms
+    reached = all(bool(v) for v in E.values()) and not alarms          # D1980a: E3 now required
     blocking = ['layer %s %s' % (L, lm[L]) for L in sorted(lm, key=int) if RANK(lm[L]) != 3] + (['%d fits spent: %s' % (len(fits), ', '.join(fits))] if fits else []) + \
                ([] if pft else ['no prediction/FIT/TRUST ledger yet'])
     allv = alarms + derive + ref + dfit + owed + explore
-    actions = (alarms + derive[:2] + ref + (explore if stalled else []) + dfit[:1] + owed[:1] + ([] if stalled else explore))[:M['max_actions']]
+    actions = (alarms + derive[:1] + [d for d in derive[1:] if d['kind'] == 'test'][:1] + ref + (explore if stalled else []) + (dfit[:1] if not derive else [])
+               + owed[:1] + ([] if stalled else explore))[:M['max_actions']]   # O9: at most one high-effort action per pulse
+    for a in allv: a['effort'] = EFFORT.get(a['kind'], 'low'); a['known_failure_modes'] = mistakes_for(a.get('layer'), a['kind'])
     # agents to wake (Danny 18:24): axis agents trace their direction through all 9 layers; edge agents look in from outside L9 / inside L1
     hot_axes = sorted({a for f in fits for a in AXIS_OF_FIT.get(f, '')} | {a for x in derive[:2] for a in x.get('axes', '')})
     agents = dict(N0=True, node_agents=(cur.get('work_order') or {}).get('node_agents', []),
@@ -107,7 +119,9 @@ def main(round_file=None):
     if not cur_f: print('no rounds'); return
     i = fs.index(cur_f) if cur_f in fs else len(fs); cur = _j(cur_f); prev = _j(fs[i - 1]) if i > 0 else None
     M = load_mission(); pft = _j(os.path.join(ROOT, 'field_tests/loom/pft_ledger.json')); n0 = _j(os.path.join(ROOT, 'field_tests/loom/n0_lead.json'))
-    p = plan(cur, prev, M, pft=pft, n0=(n0 or {}).get('lead') if isinstance(n0, dict) else n0, owed_done=set(_j(os.path.join(ROOT, 'field_tests/loom/owed_done.json'), [])))
+    p = plan(cur, prev, M, pft=pft, n0=(n0 or {}).get('lead') if isinstance(n0, dict) else n0, owed_done=set(_j(os.path.join(ROOT, 'field_tests/loom/owed_done.json'), [])),
+             referee_signed=bool((_j(os.path.join(ROOT, 'field_tests/loom/referee_signoff.json'), {}) or {}).get('signed')),
+             four_corners=bool((_j(os.path.join(ROOT, 'field_tests/loom/four_corners.json'), {}) or {}).get('all_agree')))
     p['round'] = cur.get('round'); p['toolkits'] = check_toolkits()
     json.dump(p, open(os.path.join(ROOT, 'field_tests/loom/next_actions.json'), 'w'), indent=1)
     open(os.path.join(ROOT, 'field_tests/loom/next_actions.md'), 'w').write(to_md(p, cur.get('round'))); return p

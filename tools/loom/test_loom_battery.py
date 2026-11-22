@@ -65,6 +65,23 @@ def B6():
     a4 = P.plan(st(null=True, null_streak=7), None, M, pft=None, n0=None)
     g = lambda a, t: any(x['kind'] == 'alarm' and t in x['guard'] for x in a['actions'])
     return dict(relabel_GT1=g(a1, 'G-T1'), new_fit_GT3=g(a2, 'G-T3'), killable_GT4=g(a3, 'G-T4'), stall_not_endpoint=(a4['mission']['endpoint_reached'] is False and any(x['kind'] == 'explore' for x in a4['actions'])))
+def B8():
+    """D1988 gap tests (locked PREREG_D1988_test_gaps.md)."""
+    import planner as P
+    from test_planner import st, M
+    lm = {str(i): 'LOCKED' for i in range(1, 10)}
+    a = P.plan(st(null=True, null_streak=7, state=dict(lock_map=lm, fits_spent=['new'])), st(null=True, null_streak=6, state=dict(lock_map=lm, fits_spent=[])), M,
+               pft=dict(predictions=6, fits=0, trust=0, killable=4), n0=None, owed_done=set(o['id'] for o in M['owed']), referee_signed=True, four_corners=True)
+    b8a = a['mission']['endpoint_reached'] is False and any(x['kind'] == 'alarm' for x in a['actions'])
+    n0 = [dict(layer='2', action='hold'), dict(layer='4', action='derive')]
+    b = P.plan(st(state=dict(fits_spent=['MN'])), None, dict(M, fit_targets=dict(M['fit_targets'], MN=dict(layer='2', node='N2', derive='x'))), pft=None, n0=n0)
+    b8b = not any(x['kind'] == 'derive_fit' and x['layer'] == '2' for x in b['all'])
+    def two(deg):
+        th = np.radians(deg); A = np.array([[1.0], [0.0]]); B = np.array([[np.cos(th)], [np.sin(th)]]); return LC.klass(LC.angles(A, B).min())
+    c = P.plan(st(), None, M, pft=None, n0=None); hi = sum(1 for x in c['actions'] if x.get('effort') == 'high')
+    l78 = [x for x in c['all'] if x.get('layer') in ('7', '8')]
+    return dict(b8a_endpoint_blocked_by_alarm=b8a, b8b_held_fit_excluded=b8b, b8c_10deg_PASS=two(10) == 'PASS', b8d_80deg_BLOCKED=two(80) == 'BLOCKED',
+                o9_at_most_one_high=hi <= 1, o8_mistakes_attached=bool(l78) and all(any('D1983a' in m for m in x['known_failure_modes']) for x in l78))
 MUTANTS = {
  'planner.py': [("key=int) + sorted", "key=lambda x:-int(x)) + sorted"), ("if prev and len(fits) > len(pfits)", "if False"), ("and not alarms\n", "\n"),
                 ("derive[:2] + ref", "derive[:2]"), ("needs_lock=True, axes", "needs_lock=False, axes"), ("lm[L].startswith('TRUST')]", "False]"),
@@ -85,7 +102,7 @@ def B4():
                 open(p, 'w').write(s.replace(old, new, 1))
             code = ("import sys,os,io,contextlib; sys.path.insert(0, %r); os.chdir(%r)\n"
                     "import planner; planner.ROOT=%r\n"
-                    "import test_loom_battery as T; T.ROOT=%r; ok=all(T.B1().values()) and all(T.B2().values()) and all(T.B6().values())\n"
+                    "import test_loom_battery as T; T.ROOT=%r; ok=all(T.B1().values()) and all(T.B2().values()) and all(T.B6().values()) and all(T.B8().values())\n"
                     "import subprocess; r=[subprocess.run([sys.executable, os.path.join(%r, t)], capture_output=True, cwd=%r).returncode for t in ('test_planner.py','test_planner_2.py')]\n"
                     "print('PASS' if ok and not any(r) else 'KILLED')") % (os.path.join(d, 'loom'), ROOT, ROOT, ROOT, os.path.join(d, 'loom'), ROOT)
             r = subprocess.run([sys.executable, '-c', code], capture_output=True, text=True, timeout=600, env=dict(os.environ, AEGIS_ROOT=ROOT))
@@ -96,11 +113,14 @@ def B4():
             shutil.rmtree(d, ignore_errors=True)
         out[fn] = dict(killed=killed, total=len(muts), survived=survived)
     tot = sum(v['killed'] for k, v in out.items() if k in MUTANTS); n = sum(v['total'] for k, v in out.items() if k in MUTANTS); out['kill_rate'] = round(tot / n, 3)
-    out['void'] = any(v != 'PASS' for v in out.get('controls', {}).values()); return out
+    out['void'] = any(v != 'PASS' for v in out.get('controls', {}).values())
+    EQUIV = {'max(1, (s > 1e-3 * s.max()).sum())'}   # D1988: declared equivalent
+    eq = sum(1 for v in out.values() if isinstance(v, dict) and 'survived' in v for m in v['survived'] if m in EQUIV)
+    out['equivalent_declared'] = eq; out['kill_rate_nonequiv'] = round(tot / (n - eq), 3) if n > eq else None; return out
 if __name__ == '__main__':
-    R = dict(B1=B1(), B2=B2(), B3=B3(), B5=B5(), B6=B6(), B7='D1976: injection-recovery 0.89 coverage, false-balance 14 % (reported, not rerun)')
+    R = dict(B1=B1(), B2=B2(), B3=B3(), B5=B5(), B6=B6(), B8=B8(), B7='D1976: injection-recovery 0.89 coverage, false-balance 14 % (reported, not rerun)')
     if '--mutate' in sys.argv: R['B4'] = B4()
-    ok = dict(B1=all(R['B1'].values()), B2=all(R['B2'].values()), B3=R['B3']['deterministic'], B5=all(not v['fails'] for v in R['B5'].values()), B6=all(R['B6'].values()))
-    if 'B4' in R: ok['B4'] = R['B4']['kill_rate'] >= 0.8 and not R['B4']['void']
+    ok = dict(B8=all(R['B8'].values()), B1=all(R['B1'].values()), B2=all(R['B2'].values()), B3=R['B3']['deterministic'], B5=all(not v['fails'] for v in R['B5'].values()), B6=all(R['B6'].values()))
+    if 'B4' in R: ok['B4'] = (R['B4']['kill_rate_nonequiv'] or 0) >= 0.8 and not R['B4']['void']
     R['ok'] = ok; json.dump(R, open(os.path.join(ROOT, 'field_tests/results/d1982_battery.json'), 'w'), indent=1, default=str)
     print(json.dumps(R, indent=1, default=str)); sys.exit(0 if all(ok.values()) else 1)

@@ -49,7 +49,7 @@ def stalled_null_explores():  # 7 nulls without balance is a stall, not the endp
 @case
 def endpoint_only_when_all():  # every layer LOCKED, no fits, 7 nulls, killable ok, referee signed -> endpoint
     lm = {str(i): 'LOCKED' for i in range(1, 10)}
-    a = P.plan(st(null=True, null_streak=7, state=dict(lock_map=lm, fits_spent=[])), None, M, pft=dict(predictions=6, fits=0, trust=0, killable=4), n0=None, owed_done=set(o['id'] for o in M['owed']), referee_signed=True)
+    a = P.plan(st(null=True, null_streak=7, state=dict(lock_map=lm, fits_spent=[])), None, M, pft=dict(predictions=6, fits=0, trust=0, killable=4), n0=None, owed_done=set(o['id'] for o in M['owed']), referee_signed=True, four_corners=True)   # D1980a/D1988: E3 required
     return a['mission']['endpoint_reached'] is True
 @case
 def every_action_has_why_tool_guard():  # awareness: each action says why, which toolkit, which guard
