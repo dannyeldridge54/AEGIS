@@ -20023,3 +20023,26 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
 - **Verdict: PASS.** It is the largest gain from any new node tonight, about twice the direction node.
 - N1 and N2 overlap: each alone gets most of the gain. N1 (what is owed) is slightly stronger than N2 (how long it has waited).
 - This confirms the lens-review postulate: an independent kind of information (what must come back) pays.
+
+## D2013 — Record/2D ring on mixed data types. PREREG_D2013. CENTRE
+| file | base | +record ring | change | xz -9e |
+|---|---|---|---|---|
+| txt | 241,301 | 241,632 | **+0.14%** | 311,004 |
+| exe | 353,195 | 350,985 | −0.63% | 390,540 |
+| img | 14,808 | 13,776 | **−6.97%** | 16,012 |
+| csv | 1,910 | 1,909 | −0.05% | 2,364 |
+| db | 4,564 | 4,525 | −0.85% | 5,044 |
+
+- img round-trip OK.
+- **Verdict (as locked): FAIL.** Only one of the three image/table files gained ≥ 1% (img), and text lost 0.14% (the limit was 0.05%).
+- **What it shows:**
+  - The ring is strong on images (−7%) and helps binaries (−0.6 to −0.9%).
+  - It slightly hurts text and does nothing for short CSV, because a 15.8 kB file is too small to lock onto a period.
+  - **So it belongs in the universal build behind type detection (on for binary and image data, off for text), not in the prize build.**
+- The engine beats xz -9e on every file type tested, by 10–24%.
+
+## D2012a — Fader burst (300 kB tuning slice T300k, dev)
+- Combined keepers: 63,935 → 63,494 (**−0.69%**).
+  - Gain 0.5 on orders 2–6, the matched literal, word pair, column, line type and markup; LR1 = 3.
+  - The event-state context hurts at 300 kB, as at 200 kB, but helps at ≥ 3 MB.
+- *Label:* tuned and scored on the same slice. It must be confirmed on a held-out slice before adoption.
