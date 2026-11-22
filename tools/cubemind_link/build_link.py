@@ -5,7 +5,8 @@ CubeMind's learn loop ingests the folder with honest tiers (mindmem/ingest.py ae
 import pathlib, shutil, sys
 R = pathlib.Path(__file__).resolve().parents[2]
 FILES = {'DERIVATION_LOG.md': 'theory/derivations/DERIVATION_LOG.md', 'map.yaml': 'theory/map/map.yaml',
-         'sync.yaml': 'theory/map/sync.yaml', 'POSTULATES.md': 'theory/derivations/POSTULATES.md'}
+         'sync.yaml': 'theory/map/sync.yaml', 'POSTULATES.md': 'theory/derivations/POSTULATES.md',
+         'loom_next.json': 'field_tests/loom/next_actions.json'}   # the Loom's mission, state and next actions (planner.py)
 def build(out):
     out = pathlib.Path(out); out.mkdir(parents=True, exist_ok=True)
     for dst, src in FILES.items(): shutil.copyfile(R / src, out / dst)
