@@ -1,0 +1,22 @@
+{
+ "_about": "Capability map: which validated toolkit serves each layer / kind of action. Kinds: weave = tools/weave_cm/weave_tools.py TOOLS; cm = CubeMind aegis_tools/registry.py TOOLS; script = a file in this repo. test_planner.py checks that every entry exists.",
+ "layers": {
+  "1": [{"kind": "weave", "name": "weave_rung"}, {"kind": "weave", "name": "weave_point"}, {"kind": "cm", "name": "modular_j"}],
+  "2": [{"kind": "weave", "name": "weave_rung_of"}, {"kind": "script", "name": "tools/loom/resonance.py"}],
+  "3": [{"kind": "weave", "name": "weave_koide"}, {"kind": "weave", "name": "weave_koide_slip"}],
+  "4": [{"kind": "weave", "name": "weave_rung"}, {"kind": "weave", "name": "weave_rung_of"}, {"kind": "script", "name": "theory/tests/d1932_ring0_rungstep.py"}, {"kind": "script", "name": "theory/tests/d1925_onespurion.py"}],
+  "5": [{"kind": "weave", "name": "weave_W0"}, {"kind": "weave", "name": "weave_wino"}, {"kind": "cm", "name": "lhc_dt_limit"}, {"kind": "cm", "name": "lhc_lifetime"}],
+  "6": [{"kind": "cm", "name": "serapis_point"}, {"kind": "cm", "name": "janus_single"}, {"kind": "cm", "name": "nstar_match"}, {"kind": "script", "name": "theory/tests/d1926_inflation_S_at_i.py"}],
+  "7": [{"kind": "weave", "name": "weave_rg"}, {"kind": "weave", "name": "weave_rg2"}, {"kind": "weave", "name": "weave_proton"}, {"kind": "script", "name": "theory/tests/d1944_as_yukawa.py"}, {"kind": "script", "name": "theory/tests/d1940_split_stacks.py"}],
+  "8": [{"kind": "weave", "name": "weave_genesis"}, {"kind": "weave", "name": "weave_wino"}, {"kind": "script", "name": "theory/tests/d1946_three_at_once.py"}],
+  "9": [{"kind": "cm", "name": "janus_lt"}, {"kind": "weave", "name": "weave_axion_relic"}]
+ },
+ "kinds": {
+  "referee": [{"kind": "script", "name": "tools/loom/centre_brief.py"}, {"kind": "script", "name": "tools/loom/check.py"}],
+  "method": [{"kind": "script", "name": "tools/loom/check.py"}, {"kind": "script", "name": "tools/loom/method_tests_3axis.py"}],
+  "honesty": [{"kind": "script", "name": "tools/loom/check.py"}, {"kind": "script", "name": "tools/loom/review.py"}],
+  "lock": [{"kind": "cm", "name": "lock_lint"}, {"kind": "cm", "name": "lock_verdict"}],
+  "citation": [],
+  "explore": [{"kind": "script", "name": "tools/loom/still_point.py"}, {"kind": "script", "name": "tools/loom/compass.py"}]
+ }
+}

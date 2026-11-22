@@ -1,0 +1,40 @@
+{
+ "_about": "The Loom's mission, machine-readable (Danny 18:20). The planner reads this every pulse so the loop knows what it is for, how far it is, and what it may not do. Source of truth for the endpoint and guards: tools/project_docs/WEAVE_NODE_CHARTER.md; for the method: LOOM_METHODS_DATASHEET.md.",
+ "goal": "Derive and test the Weave unified field equation: one central equation whose three fields (S, T, U) balance every node with real predictions, not fits.",
+ "endpoint": {
+  "E1": "every node BALANCED, or TRUST with a written reason and a countersign (G-T2)",
+  "E2": "knock-on ledger quiet for 7 rounds",
+  "E3": "four corners agree for every shared quantity",
+  "E4": "no fit posing as a prediction; prediction/FIT/TRUST counts published",
+  "E5": "independent referee signs off"
+ },
+ "layers": {"1": "rung step (torus)", "2": "pyramid", "3": "turnover", "4": "cube", "5": "fold", "6": "dilaton", "7": "forces", "8": "cosmology", "9": "late universe"},
+ "fit_targets": {
+  "MN":    {"layer": "8", "node": "N7", "derive": "M_N from the S modulus (no x1.49 rescale)"},
+  "m32":   {"layer": "5", "node": "N3", "derive": "W0 / m3/2 without using the wino window"},
+  "TR":    {"layer": "8", "node": "N7", "derive": "T_R from the inflaton couplings (no x1.49 rescale)"},
+  "split": {"layer": "7", "node": "N5", "derive": "A3/A2 from a hidden-stack argument"}
+ },
+ "killable_min": 4,
+ "killable": ["JUNO sin2theta12 (TM1)", "r", "wino 686.5 GeV", "m_X 12.8 GeV"],
+ "max_fit_trust": null,
+ "guards": {
+  "G-T1": "relabelling STRAINED->TRUST/FIT is a null round, not progress",
+  "G-T2": "every TRUST needs a written reason plus a referee countersign",
+  "G-T3": "the FIT+TRUST count must not rise between rounds",
+  "G-T4": "killable predictions >= killable_min and must not fall",
+  "G-T5": "a node with nothing derived scores zero predictions",
+  "G-T6": "a round is null when the prediction/FIT/TRUST ledger is unchanged",
+  "LOCK": "lock (PREREG + .sha256, pushed) before any computation; DEVIATIONS before any rerun; no reruns to chase results; never loosen a tolerance",
+  "HONEST": "estimate vs computed vs literature; corrections as dated notes, never silent edits",
+  "HUMAN": "no Zenodo/arXiv without Danny's 'Publish'; no passwords; emails stay drafts; downloads need Danny's OK; never edit serapis_v3*.tex; don't touch the PC repo git"
+ },
+ "owed": [
+  {"id": "pass_label_check", "what": "automated check: every PASS in a verdict file carries FIT / NO-POWER / CONDITIONAL where one applies", "kind": "method"},
+  {"id": "pft_ledger", "what": "the prediction / FIT / TRUST ledger file (field_tests/loom/pft_ledger.json) with honest relabels", "kind": "honesty", "file": "field_tests/loom/pft_ledger.json"},
+  {"id": "paper_D1948", "what": "paper Docs artifact: add the D1948 corrections (Br <= 2.3 %, alpha_s conditional)", "kind": "honesty"},
+  {"id": "conlon_palti_quote", "what": "verify the Conlon-Palti internal quote against the source", "kind": "citation"}
+ ],
+ "exploration_share": 0.2,
+ "max_actions": 6
+}
