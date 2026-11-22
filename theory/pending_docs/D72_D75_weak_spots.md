@@ -21175,3 +21175,12 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
 - **Ordering:** P1 (cyclic) and P2 (increasing) both pass, so this model does not resolve the (j, k) ordering. Rule going forward: outward scans compute both and keep a model only if P1 and P2 agree. Any disagreement is flagged, not used.
 - **Transcription:** the typo-corrected block-3 α₁ was declared in the PREREG before the run, and the control is consistent with it.
 - **Verdict:** v6 exceptional layer VALIDATED (PHYSICS: reproduces a published global model). Next: D2111, an outward Z₂×Z₆′ scan with tadpole-solving plus the v4 α_s chain, under a new lock.
+
+## D2105 L4 closeout (CENTRE): the Z₂×Z₂ outward run finished. **VERDICT B: FAIL**, as locked.
+- **L4 (L = 5, 1728 χ points, 80,004 branes):**
+  - 44 PS models, 8 of which fit;
+  - 4 are exotic-safe;
+  - **0 hits**.
+- **Best |Δα_s|** among the exotic-safe models stays at **0.0557 at every level, L1–L4**. The search has converged, and widening does not help.
+- **Backward pulse:** all 4 safe models are born at L1 (α_s = 0.0623, M_s = 1.6e11 GeV).
+- **Conclusion:** the Z₂×Z₂ geometry is closed for this question. The work moves to Z₂×Z₆′, where v6 is now validated (D2110).
