@@ -21,3 +21,7 @@
 | 7 | 3 | **2** | **(l) DATA, ATLAS disappearing track** (2603.08315, Mar 2026): pure wino excluded < **670 GeV** (it was 660). Our 0.687 keeps 17 GeV of room, and the B1 balance (0.668) now sits inside the excluded zone. **(m) DATA, lattice α_s** (Nature 2026): 0.11876 ± 0.00058. It agrees with PDG (0.71σ apart) and puts our 0.1142 at −7.9σ. Triangulation: 2 of 3 sources |
 
 **Trend:** finds per round go 6, 3, 2, 2, 3, 1, 2. They have shifted from method ideas to data updates and leads. Not null yet.
+| 8 | 3 | **1** (refinement) | **n_s** SPA + BK + DESI = 0.9728 ± 0.0029 and SPA + BK = 0.9682 ± 0.0032 (2512.10613): triangulation source 2. **r < 0.034** (SPA + BK, 95%) replaces BK18's 0.036. Proton: no new e⁺π⁰ limit (2604.10975 is the π⁰π⁰ mode). Gluino: nothing that touches 4.93 TeV |
+| 9 | 3 | **1** (refinement) | **N_eff** = 2.86 ± 0.13 (ACT DR6, 2503.14454), added as the ΔN_eff shadow (ours sits +1.4σ on it). Σm_ν and α-drift: nothing tighter than our terms |
+
+**STOP (method search NULL).** Rounds 8 and 9 found no new method or lead, only data refinements, and those are folded in. The search for ways to improve the Bloom itself is null for now. It restarts after each step closes.

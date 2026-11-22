@@ -20232,3 +20232,9 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - S1: non-thermal leptogenesis is viable at our T_R.
     - R1: axion–dilaton kinetic mixing.
   - **Tools:** orientifold toolbox; TPBench; the BK18 public likelihood.
+- **D2030a (DEEP): rounds 8–9 found data refinements only, so the method search is NULL** (stop rule met).
+  - Folded in:
+    - n_s SPA + BK + DESI = 0.9728 ± 0.0029, with SPA + BK 0.9682 ± 0.0032 as the shadow;
+    - r < 0.034 (2512.10613);
+    - ACT DR6 N_eff = 2.86 ± 0.13 as the ΔN_eff shadow (ours sits +1.4σ on it).
+  - Total: 9 rounds, 36 searches, 20 finds.

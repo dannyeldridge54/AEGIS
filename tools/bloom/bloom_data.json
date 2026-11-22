@@ -43,32 +43,40 @@
   {
    "id": "n_s",
    "agent": "S",
-   "data": "CMB-SPA + DESI",
+   "data": "SPA (Planck+SPT-3G D1+ACT DR6) + BK + DESI DR2 (arXiv 2512.10613)",
    "kind": "gauss",
    "mu": 0.9728,
-   "sigma": 0.0027,
+   "sigma": 0.0029,
    "ours": 0.9706,
    "alt": {
-    "data": "CMB-SPA alone",
-    "mu": 0.9684,
-    "sigma": 0.003
+    "data": "SPA + BK, no DESI (2512.10613)",
+    "mu": 0.9682,
+    "sigma": 0.0032
    },
    "status": "der",
    "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
    "released": "2025-06",
-   "release_ref": "SPT-3G D1 / CMB-SPA + DESI DR2 [date from notes/knowledge; confirmed in B3]"
+   "release_ref": "SPT-3G D1 / CMB-SPA + DESI DR2 [date from notes/knowledge; confirmed in B3]",
+   "triangulated": [
+    "0.9728 +- 0.0029 (2512.10613)",
+    "0.9728 +- 0.0027 (earlier notes)"
+   ]
   },
   {
    "id": "r",
    "agent": "S",
-   "data": "BICEP/Keck BK18",
+   "data": "SPA + BK, 95% (arXiv 2512.10613)",
    "kind": "upper",
-   "bound": 0.036,
+   "bound": 0.034,
    "ours": 0.00054,
    "status": "der",
    "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
    "released": "2021-10",
-   "release_ref": "BICEP/Keck BK18, PRL 127 151301 [date from notes/knowledge; confirmed in B3]"
+   "release_ref": "BICEP/Keck BK18, PRL 127 151301 [date from notes/knowledge; confirmed in B3]",
+   "triangulated": [
+    "r < 0.034 (2512.10613)",
+    "r < 0.036 (BK18)"
+   ]
   },
   {
    "id": "running",
@@ -94,7 +102,12 @@
    "status": "der",
    "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
    "released": "2018-07",
-   "release_ref": "Planck 2018 VI, arXiv 1807.06209 [date from notes/knowledge; confirmed in B3]"
+   "release_ref": "Planck 2018 VI, arXiv 1807.06209 [date from notes/knowledge; confirmed in B3]",
+   "alt": {
+    "data": "ACT DR6 extended models, N_eff 2.86 +- 0.13 minus 3.044 (arXiv 2503.14454)",
+    "mu": -0.184,
+    "sigma": 0.13
+   }
   },
   {
    "id": "wino",
