@@ -20981,3 +20981,17 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - Scaling D2044's own result (N_hit = 4e-11 at 5.6e-9) gives **N_hit ≈ 4e-11 × (8e-6/5.6e-9)² ≈ 8e-5 at W₀ = 8e-6**: still ≪ 1.
   - **So the small-W₀ gap does NOT soften enough for ranks 13–16 on the rigid Z₆-II (b₃ = 4). It stays FAIL.** The proposed re-score of lead 2 is dropped; lead 1 (tadpole cost) stands.
   - The rest of D2093 is unchanged.
+- **D2094 (CENTRE, numerology lens; PREREG_D2094; tools/bloom/spiral_axes.py; Danny 07:49 "spiral moving outward and inward off an axis"): golden and silver spiral axes against the UFE centres.**
+  - **Geometry (exact, no evidence credit):**
+    - The golden hyperbolic move [[2, 1], [1, 1]] has axis φ ↔ −1/φ and translation length 2 ln φ² = 1.925. It stretches by φ² outward along one end and contracts by φ⁻² into the other at once, which is Danny's in-and-out spiral. The silver move ([[2, 1], [1, 0]]², axis 1 ± √2) has length 3.526.
+    - **Both axes pass exactly through i** (distance 0). This is structural, not chance: their endpoint pairs have the form (a, −1/a), and i is the fixed point of S: τ → −1/τ, so every such axis crosses i.
+    - **ρ lies on neither** (distances 0.255 and 0.398).
+    - The distance between the two centres is **d(ρ, i) = ln √3 exactly**: a "3" (Z₃) number, not a golden one.
+  - **Data steps:**
+    - d(ρ, i)/ln φ = 1.142 and d*/ln φ = 0.216, with the generation step d* = 2 artanh(0.052) = 0.104;
+    - against the silver unit: 0.623 and 0.118;
+    - **no simple-fraction hit** (1%, |p| ≤ 6, q ≤ 4). Chance rates are 12.7% (T1) and 2.8% (T2).
+  - **Verdict: NO EVIDENCE** that the UFE's numbers are golden or silver.
+  - **Read:**
+    - The still centre i (the neutrino knot, TM1) is the one point where the golden and silver spiral axes meet. The spiral moves come *through* the centre; they do not set the centre's numbers.
+    - That matches the data: golden mixing angles fail at ~4σ, while TM1 at i passes at +1.1σ.
