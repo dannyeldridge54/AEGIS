@@ -20570,3 +20570,17 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - Look-elsewhere: q ∈ {1, 1/2, 1/3, 1/6, 1/12} with n ≤ 2 covers 20% of the shift range, so p = 0.20. That is below 0.3, so it qualifies as a candidate, but **it carries no evidence weight**.
   - **Derivation target (no knob):** is a 1/12 hypercharge-flux quantum admissible for a fractional magnetised D7 on Z₆-II/ΩR? The natural guess is 1/(|Z₆| × orientifold 2) = 1/12, which also matches the D2029 lead. Answering it means checking the fractional-brane charge lattice: the Freed–Witten and K-theory conditions, and the hypercharge staying massless.
   - **Loop count:** tick 4, progress (a candidate). No-progress counter reset to 0.
+- **D2058 (CENTRE, analysis): Q5 and Q6, one pass each.**
+  - **Q6 (g_s = 2/√3): settled as a fact, NO weak-coupling frame.**
+    - ρ is the ST-fixed point (order 3), and every SL(2,Z) image of ρ has Im τ ≤ √3/2. So **no duality frame has g_s < 2/√3**: perturbative string control cannot be restored by S-duality at ρ (exact modular geometry).
+    - The vacuum is only trustworthy in a non-perturbative, SL(2,Z)-covariant (F-theory) description.
+    - Point in favour: v4's potential E(S, 3/2) is already SL(2,Z)-invariant.
+    - **Status: CONDITIONAL → must be treated in F-theory.** Not fixable by a knob.
+  - **Q5 (tadpole budget): OPEN, blocked.** A D3/D7 charge budget needs the explicit brane content: the visible and dark magnetised D7 stacks with their fluxes, and the O7 planes. That is the **same input that Q4's 1/12-flux derivation needs**, so Q4 and Q5 merge into one task: **write v4's explicit brane configuration** (stacks, wrappings, fluxes) on Z₆-II/ΩR.
+  - **First full pass over Q1–Q6 complete:**
+    - Q1 OPEN (warped D3 incompatible with ρ);
+    - Q2 CONDITIONAL (two-stage stabilisation);
+    - Q3 FAIL so far;
+    - Q4 CANDIDATE (1/12 flux);
+    - Q5 OPEN (merged with Q4);
+    - Q6 needs F-theory.
