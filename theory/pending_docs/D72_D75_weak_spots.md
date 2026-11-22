@@ -20466,3 +20466,17 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **v = 5 classes (table 16):** Δ₃/4π spans −5.6 to +3.8 and Δ₂/4π spans −12.7 to −5.2, so the difference spans **−0.4 to +16.6**. Only the extreme corner (−0.4) touches the needed window, at its edge.
   - **Read:** a T1 threshold of the needed size and sign is **not generic** in these explicit models. It needs a corner at small torus volume (v ~ 5), where the SU(3) and SU(2) pieces nearly cancel. Under lens 5 that is a fine-tuning, unless the corner is forced by the moduli stabilisation.
   - **T1 stays possible but unnatural.** Worth building only together with a stabilisation that fixes v ~ 5.
+- **D2048 (CENTRE, ANALYSIS; PREREG_D2048): structural mutation G vs L. Verdict: NEITHER (both scores ≤ 0). The S–T structure itself must be re-derived.**
+
+  | | G: CY with h²¹ ≥ 2 near LCS (PFV) | L: low inflation scale (H ≤ 10·m₃/₂) |
+  |---|---|---|
+  | resolved (cited) | W₀ (1912.10047); tadpole (CY orientifolds, 2204.13115); g_s ≪ 1 (PFV is weakly coupled) = **3** | Kallosh–Linde (hep-th/0411011, by construction); the α_s / inflation opposition (m₃/₂ no longer forced up) = **2** |
+  | unresolved | mirage, KL, α_s / inflation, T1 | mirage, W₀, tadpole, T1, g_s |
+  | [der] results lost | S at ρ ⇒ g_s = 2/√3; S-plateau inflation; n_s; r; neutrinos at i; leptons at ρ (U frozen); the W₀ / N = 6 selection = **7** | plateau; n_s; r = **3** |
+  | new fitted knobs | PFV flux vectors M, K (~2) | new inflaton sector (~2) |
+  | **score** | 3 − 7 − 2 = **−6** | 2 − 3 − 2 = **−3** |
+
+  - **Read:** neither single mutation is a net gain. L loses less, but it keeps mirage, W₀ and the tadpole.
+  - Every one of the 7 open issues runs through the S–T seam: the dilaton both inflates and fixes g_s, and the visible cycle is both the gauge coupling and the KKLT cycle.
+  - **The next derivation target is the seam itself:** a v4.1 where the visible gauge cycle is **not** the cycle stabilised by the condensate (split roles), and inflation does not require H ≫ m₃/₂.
+  - **That is a new design question, not a patch,** and it goes to Danny before anything is built.
