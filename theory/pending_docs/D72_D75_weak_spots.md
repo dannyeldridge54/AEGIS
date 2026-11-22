@@ -20909,3 +20909,22 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - **Cost:** σ_vis would have to move 20.15 → 20.8 (α⁻¹ shifts by ~0.7), which breaks the locked gauge chain unless something compensates.
     - **Lockable next test (a structural hypothesis, not a fit):** "W₀ and the gaugino condensate share the S-instanton exponent 4π√3 at ρ". It predicts m₃/₂ ≈ 0.137 PeV and the gauge-coupling shift together. To be locked against the gauge chain before any credit.
   - **Condition added on review (D2090, same day):** D2086–D2090 use **pure PGM/AMSB gaugino masses**. v4 as written FAILS the mirage filter: the visible cycle is the KKLT cycle, so the gauginos get m₃/₂/x ≈ 12 TeV (D2036, D2054, FRONTIER). The four-goalpost branch therefore holds **only if** the visible sector sits off the KKLT cycle (the FRONTIER research step 1), where the PGM formulas apply. It is CONDITIONAL on that, not a repair of v4 as written.
+- **D2091 (CENTRE, HYBRID; PREREG_D2091; tools/seed/kl_gaugino.py): the KL racetrack on T_vis as the mirage fix. Verdict PARTIAL (5/6): the four-goalpost branch survives the residual tree gaugino mass M_tree = m₃/₂²/m_σ in 5 of the 6 (m_σ, sign) cases.**
+  - **The mechanism** (1111.1465, derived in the lock): strong stabilisation (m_σ ≫ m₃/₂) suppresses F^T, so M_tree = m₃/₂²/m_σ. With m_σ ≈ 1.6e8 GeV (D2037), **M_tree ≈ 50–150 GeV against AMSB winos of ~0.68 TeV**, compared with the mirage case's 12 TeV.
+    - This **removes the mirage FAIL while keeping D7 branes on T_vis**, so α_G⁻¹ ≈ 28 is kept. It is exactly the use D2037 did not test: there KL was scored against H_inf, not against m₃/₂.
+  - **Results** (wino, gluino, α_s within 2σ, m_h = 125, tan β ≈ 1.9 throughout):
+    | m_σ (GeV) | sign | points | m₃/₂ (TeV) | M_tree (GeV) | gluino (TeV) |
+    |---|---|---|---|---|---|
+    | 0.8e8 | + | 104 | 102–109 | +129 to +149 | 2.83–3.05 |
+    | 0.8e8 | − | **0** (fails) | — | — | — |
+    | 1.6e8 | + | 88 | 111–119 | — | 2.93–3.14 |
+    | 1.6e8 | − | 32 | 149–157 | — | 3.30–3.44 |
+    | 3.2e8 | + | 78 | 117–125 | — | 2.99–3.19 |
+    | 3.2e8 | − | 52 | 132–144 | — | 3.11–3.35 |
+    - α_s = 0.1162–0.1166 in every passing case (−1.6σ to −2.0σ).
+  - **Robust prediction across all passing cases: a gluino of 2.8–3.4 TeV** (HL-LHC), with a wino LSP of 0.67–0.70 TeV and m₃/₂ ≈ 0.10–0.16 PeV.
+  - **Costs (stated, unchanged by this test):**
+    - the racetrack needs B/A = 0.057 at N′ = 7 (D2072), just outside the natural window 0.1–10;
+    - W₀ now comes from the racetrack rather than the KKLT relation, so the W₀ gap changes form; the D2090 A-refit and the 4π√3 numerology no longer apply directly;
+    - the inflation-side KL gap remains: H_inf = 5.7e12 ≫ m_σ.
+  - **The map changes:** the "mirage FAIL" moves to **CONDITIONAL** (on a KL racetrack with B/A ≈ 0.06). The α_s seam, the wino, the gluino and m_h are then jointly satisfiable with derived μ and no new continuous knob.
