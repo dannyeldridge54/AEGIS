@@ -17,3 +17,8 @@ The first run hit a RecursionError in the integer row-echelon insertion (`hnf_ad
 2. Apply the six-stack triviality classification (Addendum 1) to **every** survivor in code. The examples printed (e.g. Z3 (0,1,2,0,1,1) = Q_Z mod 3) are not enough on their own.
 
 Verdicts follow the Addendum 1 criteria unchanged.
+
+## Addendum 3 (referee R2-10), written before the addendum-2 output was read
+- **The issue:** U(1)_Z is continuous, so rotations by θ·Q_Z with fractional θ = c/(4n) can combine with centre phases. The integer generating set misses these, which can only produce **false alarms** (never hide a genuine Z_n).
+- **The rule:** if addendum 2 flags six-stack survivors as non-trivial, re-classify them with the generator set extended by (Q_Z·m) mod n for m = c·lcm(N)/… Concretely, accept k as trivial if there exist θ ∈ (1/4)Z/n and integer centre multiples m_x such that k_x ≡ nθ·Q_Z,x + m_x·n/gcd(n, N_x) (mod n), checked as phases on the bifundamental charge vectors (q_x − q_y, q_x + q_y) for all x, y.
+- **Unchanged:** the five-stack verdict (no massless U(1)).
