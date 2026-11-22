@@ -62,3 +62,13 @@
 | unknown | the detailed rules page (hrules.htm) was not readable here | — | Danny can attach it if needed |
 
 **Tick 5 verdict:** not null (4 hints + 1 unknown).
+
+## Tick 6 (08:15Z): counters and secondary estimators (ZPAQ spec v2.02)
+| node | hint (source) | our status | try as |
+|---|---|---|---|
+| **ISSE chain** | **ISSE:** each order's bit history selects a 2-weight mixer (w₀·p_prev + w₁·64) that **refines the previous order's prediction**. A chain of ISSEs with rising order ("PAQ9A = a cascade of ISSE with increasingly higher context orders") | our orders feed the mixers in parallel; no serial refinement | `ISSE` mode: o1 → o2 → … → o6 as a cascade, each stage keyed by its own bit history. It is **independent** of the parallel mix (a different information path), so it passes the admission rule |
+| ICM | bit history → adaptive probability; fixed rate 1/4 of the error; init from the history's n₀/n₁ ((2n₁ + 1)/(n₀ + n₁ + 1)) | lpaq StateMap with 1/n rate | test the **ICM init formula** for fresh states (a cheap gain on sparse contexts) |
+| SSE / APM | train **only the nearer** interpolation cell; rate 1/(count + 1.5), count capped at limit·4 (start and limit are knobs) | our APM trains both cells, fixed rate | `APMNEAR` + `APMLIMIT` knobs on A1/A2 |
+| rates | ISSE weight rates fixed (bias error/25; gain ∝ err·p/2¹³) | — | defaults for the ISSE node |
+
+**Tick 6 verdict:** not null (4 hints). The topic list is now exhausted; tick 7 is the final "anything missed" sweep.
