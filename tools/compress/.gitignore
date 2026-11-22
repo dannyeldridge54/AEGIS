@@ -1,6 +1,3 @@
 loomz
-loomz2
-loomz3
-loomz4
-loomz5
-loomz6
+loomz[0-9]*
+!loomz[0-9]*.c
