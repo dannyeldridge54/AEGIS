@@ -20444,3 +20444,11 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     3. the α_s / inflation-scale opposition;
     4. W₀ unreachable;
     5. the tadpole sign (literature).
+- **D2045 (CENTRE; PREREG_D2045): perturbatively flat vacua do not supply W₀ on v4's orbifold. FAIL by the locked rule.**
+  - DKMM (1912.10047) needs:
+    - large complex structure, with the prepotential's instanton terms generating W₀ ~ e^{2πiτ p·q};
+    - two competing instantons, so in practice ≥ 2 moduli;
+    - τ fixed by those instantons at weak coupling (their example: τ ≈ 6.9i, |W₀| ≈ 2e-8).
+  - v4 instead has a rigid Z₆-II (h²¹ = 1, no instanton corrections in the untwisted sector) and S fixed at ρ by E(S, 3/2) at g_s = 2/√3 (strong coupling).
+  - **Two of three B0c routes are now closed** (generic flux: D2044; PFV: D2045). The one left is a **discrete symmetry** forcing W₀ = 0, plus a non-perturbative source.
+  - Otherwise the geometry itself must mutate. Add an **8th cube axis G:** the rigid Z₆-II orbifold vs a Calabi–Yau with h²¹ ≥ 2 near LCS. That gives up "U frozen at ρ" (D1922) and the χ = 48 counting.
