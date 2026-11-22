@@ -20848,3 +20848,22 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - The earlier v4 gluino of 4.93 TeV assumed L = 0 and is superseded under this branch.
   - **Assumptions (stated):** m_A = |μ|; the PGM coefficients with log = log₁₀ (~1% effect); m_l̃ = m_q̃; the exact-unification boundary (PS hybrid, D2083); no Yukawa two-loop terms.
   - **Owed (sharp):** derive sign(μ) and c = μ/m₃/₂ from v4's Kähler potential (the Giudice–Masiero term Z(T) H_u H_d at the KKLT point). Target: c ∈ [−1.44, −0.47] at tan β = 2–4. Formula first, per the referee rule.
+- **D2087 (CENTRE; PREREG_D2087; tools/seed/gm_mu.py): the Giudice–Masiero μ for v4's untwisted torus Higgs (BIM hep-ph/9707209 Eq. 67–68) gives c = μ/m₃/₂ = +1 ± 1/x. Verdict TENSION: it is consistent with all three goalposts, but only at m₃/₂ ≈ 124–156 TeV, which is a factor ~2 below v4's band.**
+  - **Inside v4's m₃/₂ band (250–700 TeV), c ∈ [0.953, 1.047]:** 0 feasible points at any tan β ∈ {1, 1.5, 2, 3, 4}.
+    - The positive higgsino threshold pushes the **wino to 1.07–4.2 TeV**, off its 0.67–0.70 band.
+    - α_s = 0.110–0.115.
+  - **The D2086 feasible set at GM c:** 6 points, all at:
+    - **m₃/₂ = 124–156 TeV**, μ ≈ m₃/₂;
+    - tan β = 1.5–4, wino 0.674–0.696 TeV;
+    - **gluino 3.05–3.78 TeV**;
+    - α_s = 0.1162–0.1168 (−1.3σ to −2.0σ).
+  - **Read:**
+    - The simplest, derived μ (torus Higgs, GM, KKLT-suppressed moduli F-terms) **closes the α_s seam to within 2σ and keeps the wino**, but **only if v4's m₃/₂ is lowered to ≈ 0.13–0.16 PeV**.
+    - Branch prediction: a **gluino of 3.0–3.8 TeV, inside HL-LHC reach**. This is a sharp, testable consequence.
+    - The μ < 0 branch of D2086 is **not** what the torus GM term gives (its sign is fixed to +).
+  - **What must now be checked:** where v4's m₃/₂ band 0.25–0.7 PeV came from (D1762/D17374: m_h = 125 at low tan β in split SUSY, and the master relation for the wino).
+    - Can m₃/₂ ≈ 0.14 PeV still give m_h = 125 GeV at tan β ≈ 2–4? The higgsino threshold changes the wino–m₃/₂ link that originally set the band.
+    - That re-derivation is the next rung: the m_h(M_S = m₃/₂, tan β) check, with the formula first.
+  - **Caveats:**
+    - Eq. 72 gives tan β = 1 at the boundary. tan β = 1 itself has no feasible point here; it only reaches the GM points through running or corrections. Logged.
+    - The PGM coefficients use log₁₀; m_A = |μ|; the PS hybrid boundary; no Yukawa two-loop terms.
