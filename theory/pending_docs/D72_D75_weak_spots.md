@@ -19932,3 +19932,38 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
 - PHOEN round-trip OK.
 - **Verdict (as locked):** PHOEN beats NONE by 0.08%, but it is **not smaller than all three random partitions**: it ties RAND2 and loses to RAND1 and RAND3. **Letter ancestry carries no extra structure. NULL.**
 - What does help is a *coarse* class node: vowel/consonant is best (−0.21%), then phonetic (−0.15%). Fewer, broader points beat 20 fine ones.
+
+## D2008 — Symbols as directional points. PREREG_D2008. CENTRE
+- Held-out H, same engine and node as D2007.
+
+  | variant | bytes |
+  |---|---|
+  | NONE | 675,175 |
+  | PHOEN | 674,645 |
+  | DIR_PHOEN | 674,404 |
+  | DIR_RAND1 | 674,370 |
+  | **DIR_ONE** | **672,591** |
+
+- DIR_PHOEN round-trip OK.
+- **Verdict (as locked):**
+  - **Directions help: PASS.** DIR_ONE is −0.38% vs NONE and −0.31% vs PHOEN.
+  - **Letter ancestry with directions: NULL.** DIR_PHOEN does not beat DIR_RAND1.
+- The useful structure is *what a symbol does* (open, close, separate, end, toggle, reset), with all letters on **one** point. Splitting the letters only dilutes the node.
+
+## D2008a — xz/LZMA circuit read from source and grafted onto the nodes (dev, 200 kB slice; not scored)
+- **Source read** (tukaani-project/xz, liblzma):
+  - 12-state machine (7 literal states);
+  - REPS = 4 repeat distances;
+  - matched-literal coding;
+  - 11-bit probabilities with shift-5 adaptation (rate 1/32);
+  - MATCH_LEN_MIN = 2, DIST_STATES = 4, ALIGN_BITS = 4.
+  - `xz -9e` parameters: dict 64 MiB, lc = 3, lp = 0, pb = 2, mf = bt4, nice = 273, depth = 512.
+- **Grafted (loomz7):**
+  - 4 rep-distance nodes (predict the byte at each of the last 4 match distances);
+  - a matched-literal node (the expected byte from the match or rep0, plus the last byte);
+  - the event-state history as a final-mixer context.
+- **Ablation on 200 kB:** all on = 46,934 vs 47,051 without (**−0.25%**).
+  - Matched literal is worth −0.22%.
+  - Reps are worth −0.07%.
+  - The event-state context **hurts** at this size (+0.36%); it is too many weight sets for 200 kB. Kept off, to retest at scale.
+- **Bug found and fixed before any scored use:** a comment in v7 swallowed the word, word-pair and axis hashes. The first v7 numbers (+3.4%) are void.
