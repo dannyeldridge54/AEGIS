@@ -21222,3 +21222,24 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
 - D2113: P2-only rescan (the convention is now fixed);
 - D2114: solve K7 with the full thresholds (v₁, v₂, v₃, g_s) against the measured couplings at M_s;
 - D2115: a K10 recombination route.
+
+## D2113 (DEEP): P2-only rescan. **Uniqueness survives.**
+- The counts are identical to D2111: 2 × 2,592 visible triples, 2 × 4,478,976 raw, 5,184 distinct-by-cycle per shard.
+- The Table 27 control is found.
+- There is still exactly 1 spectrum, up to the L ↔ R mirror.
+- So the P1 ∩ P2 requirement in D2111 removed nothing in this class.
+- **Verdict:** the model is unique in its class under the settled convention.
+
+## D2115 (CENTRE): Pati–Salam breaking route, logic check.
+- The paper (p.tex around line 1452) says recombination or deformation needs adjoint multiplets.
+- Tables 28/29 contain adjoints only for stack d (4 of them). There are none for a, b, c or e, and there is no (4,1,2)-type Higgs.
+- **Verdict:** PS → SM breaking is **OBSTRUCTED perturbatively** for the rigid a and c stacks.
+- **Routes still OPEN:**
+  - (i) recombination involving the flexible hidden stack d;
+  - (ii) non-perturbative (instanton-induced) Higgs couplings;
+  - (iii) leaving the rigid-cycle class, i.e. a new geometry search.
+
+## D2114: PRELIMINARY, under independent referee check. Not final.
+- The isotropic case (v₁ = v₂) has no solution. The α₁ residual jumps between a branch with g_s ≫ 1 (M_s > M_Pl) and a branch with g_s < 1, and the jump is a branch switch, not a root.
+- The general case only gives solutions with g_s > 1, or with |one-loop|/tree ≈ 0.85–0.99.
+- The solver grid skipped 300 < v₃ < 1e4; the referee is checking that range.
