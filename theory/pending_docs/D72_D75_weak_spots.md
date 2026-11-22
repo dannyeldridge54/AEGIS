@@ -19825,3 +19825,23 @@ Online tuning moved the live detector to (0.2, 24) over 11 updates. The controll
 - one node DONE (the neutrinos).
 
 The Loom **STALLs** there by design. Further movement needs derivations: the cube's new axis, T_R ≈ 1.5–2.1e9 GeV from the inflaton couplings, and values for the 15 OPEN goalposts.
+
+## D1997 — powered calibration of confirmed false alarms: PASS
+7 confirmed false alarms in 7.525e6 layer-pulses: rate 9.3e-7, 95 % upper limit 1.7e-6, against 7.5 expected at the 1e-6 bar (P(K ≥ 7) = 0.63). 465 noise excursions were retracted. This closes D1996 test 1, which had been underpowered.
+
+## D1999 — is there a Weave pattern in the 52 Mersenne prime exponents? PREREG_D1999, locked before computing. **No.**
+- **Background:** the largest known Mersenne prime, M136279841, was found by Luke Durant with thousands of cloud GPUs in 24 regions over about a year (Fermat PRP test, then 4 independent Lucas–Lehmer confirmations).
+- **The published model (LPW) fits:**
+  - mean log-step 0.354 ± 0.044 against the predicted 0.389 (z = −0.8);
+  - mean ratio ×1.424 against ×1.476;
+  - the steps are exponential as predicted (KS p = 0.91).
+- **B1 (step = π/8, the rung step): NO-POWER.** π/8 = 0.3927 and LPW's 0.3892 differ by 0.9 %, while the data's error is 12 %. Numerology guard: an 18 % chance of a match by luck. **The closeness of e^{π/8} = 1.4810 to LPW's 2^{e^{−γ}} = 1.4758 is a coincidence of constants, not a finding.**
+- **B5 arrows: none.** Lag-1 autocorrelation −0.11 (p = 0.43); runs test p = 0.58. Successive steps carry no memory.
+- **B6 close pairs:** 11 observed against 11.1 expected.
+- **B2–B4 residues:** mod 12 raw p = 0.024, mod 24 p = 0.041, mod 48 p = 0.26. **Not significant** after Bonferroni (the bar is 0.0017).
+  - The mild mod-12 skew is p ≡ 1 (mod 4) favoured, 32 against 18. **It has a known explanation:** if p ≡ 3 (mod 4) and 2p + 1 is prime, then 2p + 1 divides M_p (Euler), which removes some p ≡ 3 (mod 4).
+- **Verdict:** consistent with the LPW random model. **No Weave pattern is supported.** Robust when restricted to the verified 51 and when the first 12 are dropped.
+
+## D1998 — R(3,10) pulse search, calibration ladder (running)
+- Known-answer rungs found so far: (8,4), (13,5), (17,6), (22,7) in under 1 s; (27,8) in 1.6–4.2 s on 3 of 3 seeds.
+- (35,9) and (39,10) are running on core 1. The target (40,10) is running on core 2: best score 78 independent 10-sets at 60 s.
