@@ -38,7 +38,24 @@
     "data": "lattice QCD, Dalla Brida et al., Nature 2026 (step scaling + decoupling)",
     "mu": 0.11876,
     "sigma": 0.00058
-   }
+   },
+   "sources": [
+    {
+     "ref": "PDG 2025 world average",
+     "value": 0.118,
+     "sigma": 0.0009
+    },
+    {
+     "ref": "lattice QCD, Nature 2026",
+     "value": 0.11876,
+     "sigma": 0.00058
+    },
+    {
+     "ref": "CTEQ-TEA global PDF fit, 2512.23792",
+     "value": 0.1183,
+     "sigma": 0.00215
+    }
+   ]
   },
   {
    "id": "n_s",
@@ -60,6 +77,18 @@
    "triangulated": [
     "0.9728 +- 0.0029 (2512.10613)",
     "0.9728 +- 0.0027 (earlier notes)"
+   ],
+   "sources": [
+    {
+     "ref": "SPA+BK+DESI, 2512.10613",
+     "value": 0.9728,
+     "sigma": 0.0029
+    },
+    {
+     "ref": "CMB-SPA+DESI (notes, SPT-3G D1 2025)",
+     "value": 0.9728,
+     "sigma": 0.0027
+    }
    ]
   },
   {
@@ -76,6 +105,18 @@
    "triangulated": [
     "r < 0.034 (2512.10613)",
     "r < 0.036 (BK18)"
+   ],
+   "sources": [
+    {
+     "ref": "BK18 (95% upper)",
+     "value": 0.036,
+     "sigma": null
+    },
+    {
+     "ref": "SPA+BK, 2512.10613 (95% upper)",
+     "value": 0.034,
+     "sigma": null
+    }
    ]
   },
   {
@@ -89,7 +130,19 @@
    "status": "der",
    "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
    "released": "2018-07",
-   "release_ref": "Planck 2018 VI, arXiv 1807.06209 [date from notes/knowledge; confirmed in B3]"
+   "release_ref": "Planck 2018 VI, arXiv 1807.06209 [date from notes/knowledge; confirmed in B3]",
+   "sources": [
+    {
+     "ref": "Planck 2018",
+     "value": -0.0045,
+     "sigma": 0.0067
+    },
+    {
+     "ref": "ACT DR6 P-ACT-LB, 2503.14454",
+     "value": 0.0062,
+     "sigma": 0.0052
+    }
+   ]
   },
   {
    "id": "dNeff",
@@ -107,7 +160,19 @@
     "data": "ACT DR6 extended models, N_eff 2.86 +- 0.13 minus 3.044 (arXiv 2503.14454)",
     "mu": -0.184,
     "sigma": 0.13
-   }
+   },
+   "sources": [
+    {
+     "ref": "Planck 2018",
+     "value": -0.054,
+     "sigma": 0.17
+    },
+    {
+     "ref": "ACT DR6, 2503.14454",
+     "value": -0.184,
+     "sigma": 0.13
+    }
+   ]
   },
   {
    "id": "wino",
@@ -122,7 +187,20 @@
    "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
    "released": "2026-03",
    "release_ref": "arXiv 2603.08315 (fetched 2026-11-22)",
-   "lo_previous": 0.66
+   "lo_previous": 0.66,
+   "sources": [
+    {
+     "ref": "ATLAS disappearing track, 2603.08315 (lower 0.670)",
+     "value": 0.67,
+     "sigma": null
+    },
+    {
+     "ref": "ATLAS 136/fb disappearing track, 2201.02472 (earlier 660 GeV; superseded by 2603.08315, same experiment)",
+     "value": 0.66,
+     "sigma": null
+    }
+   ],
+   "note_sources": "CMS SUS-24-012 is higgsino-only (185 GeV); a CMS pure-wino limit is still to be mined"
   },
   {
    "id": "gluino",
@@ -134,7 +212,19 @@
    "status": "der",
    "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
    "released": "2025",
-   "release_ref": "ATLAS/CMS gluino summaries (verify in B3) [date from notes/knowledge; confirmed in B3]"
+   "release_ref": "ATLAS/CMS gluino summaries (verify in B3) [date from notes/knowledge; confirmed in B3]",
+   "sources": [
+    {
+     "ref": "ATLAS/CMS summaries (notes)",
+     "value": 2.3,
+     "sigma": null
+    },
+    {
+     "ref": "ATLAS strong-SUSY summary, 2601.19695: gluinos excluded up to 2.25 TeV",
+     "value": 2.25,
+     "sigma": null
+    }
+   ]
   },
   {
    "id": "proton",
@@ -146,7 +236,19 @@
    "status": "der",
    "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
    "released": "2020-12",
-   "release_ref": "Super-K p->e+pi0, PRD 102 112011 [date from notes/knowledge; confirmed in B3]"
+   "release_ref": "Super-K p->e+pi0, PRD 102 112011 [date from notes/knowledge; confirmed in B3]",
+   "sources": [
+    {
+     "ref": "Super-K I-IV, 2010.16098 (90% lower, 2.4e34 yr) (confirmed from 2010.16098: 450 kt yr)",
+     "value": 2.4,
+     "sigma": null
+    },
+    {
+     "ref": "Super-K I-IV enlarged FV, PRD 102 112011 = arXiv 2010.16098 (same result, confirmation)",
+     "value": 2.4,
+     "sigma": null
+    }
+   ]
   },
   {
    "id": "alpha_drift",
@@ -158,7 +260,19 @@
    "status": "E",
    "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
    "released": "2023",
-   "release_ref": "optical clocks (Filzinger et al. 2023) + Oklo + quasars (verify in B3) [date from notes/knowledge; confirmed in B3]"
+   "release_ref": "optical clocks (Filzinger et al. 2023) + Oklo + quasars (verify in B3) [date from notes/knowledge; confirmed in B3]",
+   "sources": [
+    {
+     "ref": "clocks+Oklo+quasars (notes)",
+     "value": 1.66e-06,
+     "sigma": null
+    },
+    {
+     "ref": "quasar absorbers |Delta alpha/alpha| < 0.55 ppm (3 sigma), 2512.14441: cosmological, a different observable from the present-day zeta",
+     "value": 5.5e-07,
+     "sigma": null
+    }
+   ]
   },
   {
    "id": "sum_mnu",
@@ -170,7 +284,23 @@
    "status": "input",
    "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
    "released": "2025-03",
-   "release_ref": "DESI DR2 + CMB, arXiv 2503.14738 [date from notes/knowledge; confirmed in B3]"
+   "release_ref": "DESI DR2 + CMB, arXiv 2503.14738 [date from notes/knowledge; confirmed in B3]",
+   "sources": [
+    {
+     "ref": "DESI DR2 + CMB, 2503.14738 (95% upper)",
+     "value": 0.0642,
+     "sigma": null
+    },
+    {
+     "ref": "DESI DR2+CMB profile likelihood with Feldman-Cousins boundary, 2503.14744 (95% upper 0.053)",
+     "value": 0.053,
+     "sigma": null
+    }
+   ],
+   "shadow_bound": {
+    "data": "Feldman-Cousins profile, 0.053 eV",
+    "bound": 0.053
+   }
   },
   {
    "id": "theta12",
@@ -186,6 +316,18 @@
    "release_ref": "arXiv 2511.14593 (fetched 2026-11-22)",
    "triangulated": [
     "JUNO first data 0.3092 +- 0.0087"
+   ],
+   "sources": [
+    {
+     "ref": "JUNO first data, 2511.14593",
+     "value": 0.3092,
+     "sigma": 0.0087
+    },
+    {
+     "ref": "NuFIT 6.0 NO IC19, 2410.05380",
+     "value": 0.307,
+     "sigma": 0.0115
+    }
    ]
   },
   {
@@ -203,6 +345,18 @@
    "release_ref": "Nature s41586-025-09599-3 (fetched 2026-11-22)",
    "triangulated": [
     "T2K+NOvA joint 2025"
+   ],
+   "sources": [
+    {
+     "ref": "T2K+NOvA joint, Nature 2025 (marginal)",
+     "value": -85.0,
+     "sigma": 49.5
+    },
+    {
+     "ref": "NuFIT 6.0 NO IC19 (best 177; 3-sigma 96-422 deg) -> upper-side sigma_eff = (422-177)/3",
+     "value": -183.0,
+     "sigma": 81.7
+    }
    ]
   },
   {
@@ -217,7 +371,14 @@
    "locked": "2026-11-21 (PREREG_B5, bfa20780)",
    "released": "2024-06",
    "release_ref": "arXiv 2406.11438 (fetched 2026-11-22)",
-   "note_cl": "90% CL treated with the 95% formula: conservative-in-headroom approximation (B14 replaces it)"
+   "note_cl": "90% CL treated with the 95% formula: conservative-in-headroom approximation (B14 replaces it)",
+   "sources": [
+    {
+     "ref": "KamLAND-Zen, 2406.11438 (90% upper, 28-122 meV)",
+     "value": 28.0,
+     "sigma": null
+    }
+   ]
   }
  ],
  "fitted_knobs": [

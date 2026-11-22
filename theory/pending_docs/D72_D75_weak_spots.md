@@ -20250,3 +20250,22 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - Compression is done: 19,270,420 bytes, 1.5416 bpc, 3,142 s.
   - The decompress was frozen by the Forge pause (00:55) and then stopped when its background time limit ran out.
   - The size stands, but the round-trip check is owed and is rerun when the Forge resumes. This is a verification, not a scored rerun.
+- **D2032 (CENTRE): the Bloom Loom loop for data mining** (tools/bloom/bloom_loop.py).
+  - **Each tick:**
+    1. Triangulate every term from its `sources` (Rule 6h, never averaging away a conflict).
+    2. Queue the next mining target: fewest sources first, then the largest pull.
+    3. Rebalance the levers with the Centre.
+  - **Mined (tick 1 to tick 3):**
+    - **α_s: DONE.** Three sources agree: PDG 0.1180 ± 0.0009; lattice 0.11876 ± 0.00058; CTEQ-TEA 0.1183 +0.0023/−0.0020. Worst pair 0.71σ. Our 0.1142 sits at −4.2 / −7.9 / −1.9σ against them: **the miss is confirmed.**
+    - **running: CONFLICT → shadow.** Planck −0.0045 ± 0.0067 vs ACT DR6 P-ACT-LB +0.0062 ± 0.0052, 1.26σ apart. Ours (−9.9e-4) is +0.52σ / −1.38σ.
+    - **δ_CP: CONFLICT → shadow.**
+      - NuFIT 6.0 NO gives 177° with a 3σ range of 96°–422°; T2K+NOvA marginal gives −85°.
+      - Our 274° is −0.02σ on T2K+NOvA and +1.19σ on NuFIT (upper-side σ_eff from the 3σ range).
+      - The naive Gaussian (±19°) would have given 5σ, which is wrong for this non-Gaussian profile. The Δχ² table is owed (B14).
+    - **Σm_ν:** DESI's Feldman–Cousins profile limit is 0.053 eV, below our 0.0587. That is a marginal penalty (z 0.18 in the half-Gaussian form) and the known cosmology-vs-oscillation tension. Baseline: < 0.0642.
+    - **Proton:** Super-K > 2.4e34 yr (90%, 450 kt·yr) confirmed.
+    - **Gluino:** > 2.25 TeV (ATLAS 2601.19695).
+    - **Wino:** ATLAS 670 GeV (and 660 earlier). CMS SUS-24-012 is higgsino-only, so a CMS wino limit is still owed.
+    - **α drift:** quasars give < 0.55 ppm (a different observable).
+  - **Balance:** BALANCED, m₃/₂ × 0.973, 31.4 bits.
+  - **Queue next:** wino (CMS), m_ββ, θ₁₂ (third source), n_s, r, ΔN_eff.
