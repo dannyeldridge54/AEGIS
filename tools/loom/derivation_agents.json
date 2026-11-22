@@ -1,29 +1,303 @@
 {
  "standard": "LOOM_CORE_STANDARD.md v1: each agent owns at most 9 knobs and its own goalposts. The centre balances the agents. Lock first, held-out data and independent methods, then the compass, then the registry.",
  "source": "WEAVE_FULL_DERIVATION.md + WEAVE_UNIFIED_EQUATION.md (UFE v4) + D2009/D2022",
- "centre": {"name": "N0 centre referee", "tracks": ["scoreboard (12 PASS incl. 3 PHEN, 2 FAIL)", "the S-T / T-U / S-U interfaces", "the input list (6)", "the strict-evidence count (0 post-lock data tests)"],
-            "rule": "A gap is CLOSED only when its value is derived in code from earlier links, passes its goalpost on held-out or post-lock data, and survives an independent referee. FIT and PHEN never count as closed."},
+ "centre": {
+  "name": "N0 centre referee",
+  "tracks": [
+   "scoreboard (12 PASS incl. 3 PHEN, 2 FAIL)",
+   "the S-T / T-U / S-U interfaces",
+   "the input list (6)",
+   "the strict-evidence count (0 post-lock data tests)"
+  ],
+  "rule": "A gap is CLOSED only when its value is derived in code from earlier links, passes its goalpost on held-out or post-lock data, and survives an independent referee. FIT and PHEN never count as closed."
+ },
  "agents": [
-  {"agent": "S (dilaton: time and cosmology)", "knobs": ["g_s at rho", "V_inf", "N*", "T_R", "inflaton couplings", "kappa"],
+  {
+   "agent": "S (dilaton: time and cosmology)",
+   "knobs": [
+    "g_s at rho",
+    "V_inf",
+    "N*",
+    "T_R",
+    "inflaton couplings",
+    "kappa"
+   ],
    "owed": [
-    {"id": "S1", "gap": "T_R from the inflaton couplings (needs 1.5-2.1e9 GeV, or re-derive the box)", "status": "OPEN: D2009 found no channel (hidden E8xE8 fails dN_eff)", "goalpost": "T_R in band with dN_eff<0.3, gravitino box", "next": "non-thermal leptogenesis inside the box; cross-check N*"},
-    {"id": "S2", "gap": "g_s = 2/sqrt3 > 1 (outside perturbative control)", "status": "CONDITIONAL", "goalpost": "a controlled regime or S-dual description", "next": "S-duality map of the rho vacuum (rho is S-invariant)"}]},
-  {"agent": "T (volumes: forces and scales)", "knobs": ["sigma_vis", "N=6", "W0", "V (volume)", "m3/2", "sigma_d", "threshold states"],
+    {
+     "id": "S1",
+     "gap": "T_R from the inflaton couplings (needs 1.5-2.1e9 GeV, or re-derive the box)",
+     "status": "OPEN: D2009 found no channel (hidden E8xE8 fails dN_eff)",
+     "goalpost": "T_R in band with dN_eff<0.3, gravitino box",
+     "next": "non-thermal leptogenesis inside the box; cross-check N*"
+    },
+    {
+     "id": "S2",
+     "gap": "g_s = 2/sqrt3 > 1 (outside perturbative control)",
+     "status": "CONDITIONAL",
+     "goalpost": "a controlled regime or S-dual description",
+     "next": "S-duality map of the rho vacuum (rho is S-invariant)"
+    }
+   ],
+   "datasets": [
+    {
+     "data": "Planck PR3 2018 + PR4 (TT,TE,EE,lensing)",
+     "observable": "n_s, A_s, tau",
+     "ours": "n_s 0.9706 (FIT)",
+     "role": "fit check"
+    },
+    {
+     "data": "ACT DR6 + SPT-3G (CMB-SPA combination)",
+     "observable": "n_s",
+     "ours": "0.9706 vs 0.9684 +- 0.0030 / +DESI 0.9728 +- 0.0027",
+     "role": "F3 filter"
+    },
+    {
+     "data": "BICEP/Keck BK18 (+ future LiteBIRD, CMB-S4)",
+     "observable": "r",
+     "ours": "r = 5.4e-4 (prediction, locked)",
+     "role": "post-lock test (E1)"
+    },
+    {
+     "data": "Planck/ACT running",
+     "observable": "alpha_s (running of n_s)",
+     "ours": "-9.9e-4",
+     "role": "bridge B2"
+    },
+    {
+     "data": "BBN (PDG: Yp, D/H) + Planck N_eff",
+     "observable": "Delta N_eff",
+     "ours": "0",
+     "role": "F7 / S1 filter"
+    }
+   ]
+  },
+  {
+   "agent": "T (volumes: forces and scales)",
+   "knobs": [
+    "sigma_vis",
+    "N=6",
+    "W0",
+    "V (volume)",
+    "m3/2",
+    "sigma_d",
+    "threshold states"
+   ],
    "owed": [
-    {"id": "T1", "gap": "Delta3 needs +0.044 (alpha_s -4.2 sigma)", "status": "OPEN: D1938 universal = 0; D2022 hypercharge flux x12-25 too big, U3 scan NO-POWER",
-     "goalpost": "Delta3 within [-0.06, -0.04] from a DERIVED non-universal term", "next": "write an explicit D7/D6 brane spectrum (Gmeiner-Honecker Z6' machinery, 0910.0843 eq. 26/71/82) and compute b_a and the thresholds; literature warns explicit Z6' thresholds are O(10-30) in 1/alpha (they strengthen SU(3))"},
-    {"id": "T2", "gap": "the wino at 0.687 TeV vs a 0.66-0.70 TeV bar (thinnest headroom)", "status": "TENSION with alpha_s through m3/2", "goalpost": "both inside their bars", "next": "only moves with T1 (rank-1 Jacobian, D1937a)"}]},
-  {"agent": "U (matter and flavour)", "knobs": ["|u| spurion", "q charges", "Koide delta", "c_e", "fluxes (4,4,8)", "theta step n", "U3"],
+    {
+     "id": "T1",
+     "gap": "Delta3 needs +0.044 (alpha_s -4.2 sigma)",
+     "status": "OPEN: D1938 universal = 0; D2022 hypercharge flux x12-25 too big, U3 scan NO-POWER",
+     "goalpost": "Delta3 within [-0.06, -0.04] from a DERIVED non-universal term",
+     "next": "write an explicit D7/D6 brane spectrum (Gmeiner-Honecker Z6' machinery, 0910.0843 eq. 26/71/82) and compute b_a and the thresholds; literature warns explicit Z6' thresholds are O(10-30) in 1/alpha (they strengthen SU(3))"
+    },
+    {
+     "id": "T2",
+     "gap": "the wino at 0.687 TeV vs a 0.66-0.70 TeV bar (thinnest headroom)",
+     "status": "TENSION with alpha_s through m3/2",
+     "goalpost": "both inside their bars",
+     "next": "only moves with T1 (rank-1 Jacobian, D1937a)"
+    }
+   ],
+   "datasets": [
+    {
+     "data": "PDG 2024/2025 alpha_s(M_Z) world average",
+     "observable": "alpha_s(M_Z)",
+     "ours": "0.1142 (-4.2 sigma)",
+     "role": "T1 goalpost"
+    },
+    {
+     "data": "ATLAS + CMS wino searches (disappearing tracks; 2507.15934)",
+     "observable": "wino mass bound",
+     "ours": "0.687 TeV (bar 0.66-0.70)",
+     "role": "T2"
+    },
+    {
+     "data": "ATLAS/CMS gluino searches",
+     "observable": "gluino bound",
+     "ours": "4.93 TeV",
+     "role": "check"
+    },
+    {
+     "data": "Super-Kamiokande p -> e+ pi0 (+ Hyper-K future)",
+     "observable": "proton lifetime",
+     "ours": "1.6e35 yr",
+     "role": "post-lock test"
+    }
+   ]
+  },
+  {
+   "agent": "U (matter and flavour)",
+   "knobs": [
+    "|u| spurion",
+    "q charges",
+    "Koide delta",
+    "c_e",
+    "fluxes (4,4,8)",
+    "theta step n",
+    "U3"
+   ],
    "owed": [
-    {"id": "U1", "gap": "geometric home of the quark spurion |u| ~ 0.0266", "status": "PHEN", "goalpost": "derive |u| from a twisted modulus / brane position", "next": "twisted-sector vevs of Z6-II; compare the IIB clustering"},
-    {"id": "U2", "gap": "Koide delta = 2/9 and c_e are inputs", "status": "INPUT", "goalpost": "derive delta from rho", "next": "residual Z3 at rho"},
-    {"id": "U3", "gap": "fluxes (4,4,8) and n = 3 chosen to fit", "status": "FIT", "goalpost": "tadpole/flux quantisation fixes them", "next": "tadpole budget chi = 48"},
-    {"id": "U4", "gap": "U3 = i is a choice", "status": "C", "goalpost": "fixed by flux/potential", "next": "joint with T1 (N=2 thresholds depend on U3)"}]},
-  {"agent": "Thread (dark energy, reverse weave)", "knobs": ["thread slope lambda", "crossing count", "A'"],
+    {
+     "id": "U1",
+     "gap": "geometric home of the quark spurion |u| ~ 0.0266",
+     "status": "PHEN",
+     "goalpost": "derive |u| from a twisted modulus / brane position",
+     "next": "twisted-sector vevs of Z6-II; compare the IIB clustering"
+    },
+    {
+     "id": "U2",
+     "gap": "Koide delta = 2/9 and c_e are inputs",
+     "status": "INPUT",
+     "goalpost": "derive delta from rho",
+     "next": "residual Z3 at rho"
+    },
+    {
+     "id": "U3",
+     "gap": "fluxes (4,4,8) and n = 3 chosen to fit",
+     "status": "FIT",
+     "goalpost": "tadpole/flux quantisation fixes them",
+     "next": "tadpole budget chi = 48"
+    },
+    {
+     "id": "U4",
+     "gap": "U3 = i is a choice",
+     "status": "C",
+     "goalpost": "fixed by flux/potential",
+     "next": "joint with T1 (N=2 thresholds depend on U3)"
+    }
+   ],
+   "datasets": [
+    {
+     "data": "PDG quark masses + CKM (UTfit/CKMfitter)",
+     "observable": "f7 / fJ naturalness inputs",
+     "ours": "PHEN fit",
+     "role": "U1"
+    },
+    {
+     "data": "PDG charged-lepton masses",
+     "observable": "Koide Q = 2/3",
+     "ours": "INPUT delta = 2/9",
+     "role": "U2"
+    },
+    {
+     "data": "NuFIT 6 + JUNO (first results)",
+     "observable": "theta12, Delta m^2, sum m_nu",
+     "ours": "TM1 sum rule; m2/m3 natural",
+     "role": "U neutrinos"
+    },
+    {
+     "data": "Planck+DESI sum m_nu bound",
+     "observable": "sum m_nu",
+     "ours": "0.0587 eV (input)",
+     "role": "consistency"
+    }
+   ]
+  },
+  {
+   "agent": "Thread (dark energy, reverse weave)",
+   "knobs": [
+    "thread slope lambda",
+    "crossing count",
+    "A'"
+   ],
    "owed": [
-    {"id": "R1", "gap": "the thread slope source (must be orthogonal to the volume; Cassini excludes a volume thread)", "status": "OPEN", "goalpost": "lambda ~ 0.95 from a named source, passing alpha drift / BBN / MICROSCOPE", "next": "non-Kahler class sources"}]},
-  {"agent": "S-T interface", "knobs": ["f_vis = T + 9S", "m3/2 formula", "inflaton -> gravitino"], "owed": [{"id": "I1", "gap": "every open failure sits here (T1, T2, S1)", "status": "OPEN", "goalpost": "one derived non-universal seam term", "next": "T1 first"}]},
-  {"agent": "Evidence", "knobs": [], "owed": [{"id": "E1", "gap": "no test yet used data released after its prediction", "status": "OPEN", "goalpost": "a post-lock data release scored (r from LiteBIRD/CMB-S4, the wino at LHC Run 3, DESI DR3)", "next": "keep the locks current; score at each release"}]}
+    {
+     "id": "R1",
+     "gap": "the thread slope source (must be orthogonal to the volume; Cassini excludes a volume thread)",
+     "status": "OPEN",
+     "goalpost": "lambda ~ 0.95 from a named source, passing alpha drift / BBN / MICROSCOPE",
+     "next": "non-Kahler class sources"
+    }
+   ],
+   "datasets": [
+    {
+     "data": "DESI DR2 BAO (+ DR3 future)",
+     "observable": "w0, wa",
+     "ours": "thawing, w0 ~ -0.79",
+     "role": "R1"
+    },
+    {
+     "data": "Pantheon+ / Union3 / DES-Y5 SNe",
+     "observable": "w0, wa",
+     "ours": "beats LCDM only on DES-Y5",
+     "role": "R1"
+    },
+    {
+     "data": "atomic clocks + Oklo + quasar alpha",
+     "observable": "alpha drift",
+     "ours": "zeta 3.8e-10 (bound 1.66e-6)",
+     "role": "F1"
+    },
+    {
+     "data": "MICROSCOPE + Cassini",
+     "observable": "EP violation, gamma - 1",
+     "ours": "must pass (volume thread excluded)",
+     "role": "R1 filter"
+    }
+   ]
+  },
+  {
+   "agent": "S-T interface",
+   "knobs": [
+    "f_vis = T + 9S",
+    "m3/2 formula",
+    "inflaton -> gravitino"
+   ],
+   "owed": [
+    {
+     "id": "I1",
+     "gap": "every open failure sits here (T1, T2, S1)",
+     "status": "OPEN",
+     "goalpost": "one derived non-universal seam term",
+     "next": "T1 first"
+    }
+   ],
+   "datasets": [
+    {
+     "data": "all of T's + S's",
+     "observable": "joint fit",
+     "ours": "rank-1 Jacobian via m3/2",
+     "role": "I1"
+    }
+   ]
+  },
+  {
+   "agent": "Evidence",
+   "knobs": [],
+   "owed": [
+    {
+     "id": "E1",
+     "gap": "no test yet used data released after its prediction",
+     "status": "OPEN",
+     "goalpost": "a post-lock data release scored (r from LiteBIRD/CMB-S4, the wino at LHC Run 3, DESI DR3)",
+     "next": "keep the locks current; score at each release"
+    }
+   ],
+   "datasets": [
+    {
+     "data": "LZ / XENONnT / PandaX",
+     "observable": "12.8 GeV dark matter, dark photon mixing",
+     "ours": "collisionless DM; A' 0.3-12.8 GeV",
+     "role": "post-lock"
+    },
+    {
+     "data": "every release dated after its lock",
+     "observable": "any locked prediction",
+     "ours": "—",
+     "role": "E1 strict evidence"
+    }
+   ]
+  }
  ],
- "order": ["T1 (with U4)", "S1", "U1", "R1", "U3", "U2", "S2", "E1"]
+ "order": [
+  "T1 (with U4)",
+  "S1",
+  "U1",
+  "R1",
+  "U3",
+  "U2",
+  "S2",
+  "E1"
+ ],
+ "dataset_rule": "Before scoring: fetch the current value from 3 sources and triangulate (Rule 6h: consensus within 1 sigma or 0.3 dex). Lock (PREREG + sha256), then score, then fingerprint into the compass. Only data released after the lock counts as strict evidence (G6)."
 }

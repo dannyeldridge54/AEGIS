@@ -20172,3 +20172,7 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - they **strengthen SU(3)**, the direction α_s needs;
   - so the +0.044 cannot be "tuned in". It is fixed only once an explicit brane spectrum is written down. **T1 therefore needs the explicit brane spectrum: that is the missing derivation.**
 - The order is T1 (with U4), then S1, U1, R1, U3, U2, S2 and E1.
+- **D2023a (correction):**
+  - The ledger holds **11** gaps, not 12.
+  - Datasets were added per agent (Danny 00:42): 21 tracked datasets with the observable, our value and its role. Among them: Planck PR3/PR4, ACT DR6, SPT-3G, BK18/LiteBIRD/CMB-S4, BBN, PDG α_s, ATLAS/CMS wino/gluino, Super-K/Hyper-K, NuFIT/JUNO, DESI DR2/DR3, Pantheon+/Union3/DES-Y5, clocks/Oklo, MICROSCOPE/Cassini, LZ/XENONnT.
+  - Each dataset is triangulated from 3 sources before scoring; only post-lock releases count as strict evidence.
