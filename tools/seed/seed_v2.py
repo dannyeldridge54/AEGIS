@@ -52,7 +52,7 @@ def canon(S):
 def check(S):
     tp = tadpoles(S); ok_t = tp == TARGET
     q = quarks(S); r = susy(S) if ok_t else (None, None)
-    ok_s = ok_t and r[0] < 1e-8
+    ok_s = ok_t and r[0] < 1e-8 and all(1e-3 <= x <= 1e3 for x in r[1])   # finite radii (D2080 DEVIATIONS)
     return dict(tadpoles=[str(x) for x in tp], tadpole_ok=ok_t, susy_res=r[0], chi=None if r[1] is None else [round(float(x), 6) for x in r[1]],
                 susy_ok=ok_s, quarks=str(q), quark_ok=(q == 3), passes=ok_t and ok_s and q == 3)
 def ring(k):
