@@ -1,0 +1,10 @@
+{"round": 3, "source": "D1979 (N0, centre referee)", "lead": [
+ {"layer": "1", "action": "hold", "next_step": "freeze the rung step; do not re-tune it to fix L4"},
+ {"layer": "2", "action": "hold", "next_step": "check whether its lock depends on the spent M_N fit; if so relabel FIT-dependent (best data: JUNO)"},
+ {"layer": "3", "action": "hold", "next_step": "write the G-T2 reason for Koide delta TRUST and get it countersigned"},
+ {"layer": "4", "action": "derive", "next_step": "derive the 15.3 % lepton vs neutrino rung mismatch from the geometry (U3, fluxes (4,4,8)) with no new fit; L5-L9 may not move until L4 is locked or explicitly held"},
+ {"layer": "5", "action": "test", "next_step": "wino verdict at the edge, no nudging of m3/2"},
+ {"layer": "6", "action": "hold", "next_step": "label the tilt FIT; keep r killable"},
+ {"layer": "7", "action": "hold", "next_step": "A3/A2 is a spent FIT; alpha_s unscored until the D7 threshold spectrum"},
+ {"layer": "8", "action": "test", "next_step": "leptogenesis FAILS unless M_N(S) is re-derived without a fit; resolve the LOCKED vs FAIL label"},
+ {"layer": "9", "action": "hold", "next_step": "TRUST; write the G-T2 reason"}]}
