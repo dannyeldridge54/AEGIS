@@ -95,7 +95,10 @@ EVENTS = [dict(name='E1 n_s +3 sigma', t0=10, t1=20, kind='data', key='ns', f=la
 QUIET = [(2, 10), (20.5, 25), (35.5, 45), (55.5, 60)]
 E2T = [24.0, 25.0, 35.0]   # prediction time, kick, revert
 SC = {'WINDOW': 0, 'OPAQUE': 1, 'NO LOCK': 2, 'RESONANT': 3, 'LOST': 4, 'STUCK': 5}
-def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True, verbose=False, replay=None, datadet=True):
+C_CFG = None   # D1991: detector C's own calibrated (k, h); None -> follow B (D1990 behaviour)
+try: C_CFG = tuple(json.load(open('field_tests/results/d1991_calibC.json'))['start'][x] for x in ('k', 'h'))
+except Exception: pass
+def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True, verbose=False, replay=None, datadet=True, calibC_grid=False):
     rng = np.random.default_rng(seed); srng = np.random.default_rng(seed + 7919)
     x = np.zeros(NK); est = dict(NOM); J = jac(x, NOM); lensK = {L: lens_knobs(J, L) for L in range(1, 10)}
     M0 = flat(margins_rt(state(x), est)); base = M0.copy(); var = np.full(NM, 1e-4); zprev = np.zeros(NM); med = np.full(NM, 0.6745); Mlast = M0.copy(); armA = np.ones(NM, bool); calA = 0
@@ -111,6 +114,7 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
     gp_counts = {g['id']: {} for g in GP}; gp_last = {}; done_since = {L: None for L in range(1, 10)}; done_time = {L: 0.0 for L in range(1, 10)}
     sbase = np.array([NOM[k] for k in STREAMS]); svar = np.array([(0.107 * SIG[k]) ** 2 for k in STREAMS]); szp = np.zeros(5); smed = np.full(5, 0.6745)
     bankC = Bank([live_cfg[0]], [live_cfg[1]]); bankC.Sp = np.zeros((1, 5)); bankC.Sn = np.zeros((1, 5)); freeze_until = {L: -1.0 for L in range(1, 10)}; calC = 0; fscale = T_total / 60.0
+    gC = Bank(*zip(*GRID)); gC.Sp = np.zeros((len(GRID), 5)); gC.Sn = np.zeros((len(GRID), 5)); gCp = Bank(*zip(*GRID)); gCp.Sp = np.zeros((len(GRID), 5)); gCp.Sn = np.zeros((len(GRID), 5)); calCg = np.zeros((len(GRID), 4)); cpC = None
     nofree = {L: 0 for L in range(1, 10)}; rows_t, rows_s = [], []; stuck_since = {L: None for L in range(1, 10)}; gp_samples = []; last_sample = -1.0; rel_log = []
     t0 = time.perf_counter(); p = 0
     while True:
@@ -135,7 +139,17 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
         if datadet:   # D1990 detector C on the data streams themselves; freeze the layer's balancing while its stream steps
             ev = np.array([est[k] for k in STREAMS]); sd = np.sqrt(np.maximum(svar, 1e-30)); zc = (ev - sbase) / sd; wc = (zc - PHI * szp) / math.sqrt(1 - PHI ** 2); szp = zc
             smed += 0.001 * np.sign(np.abs(wc) - smed); smed = np.maximum(smed, 1e-3); wcn = wc / (1.4826 * smed)
-            bankC.k[:] = live.k[0, 0]; bankC.h[:] = live.h[0, 0]; alC = bankC.step(wcn)[0]
+            if C_CFG: bankC.k[:] = C_CFG[0]; bankC.h[:] = C_CFG[1]
+            else: bankC.k[:] = live.k[0, 0]; bankC.h[:] = live.h[0, 0]
+            alC = bankC.step(wcn)[0]
+            if calibC_grid and t >= 2.0:
+                calCg[:, 0] += gC.step(wcn).sum(axis=1); wq = wcn.copy()
+                if cpC is None and p % 1000 == 0: cpC = [int(rng.integers(5)), p, np.zeros(len(GRID), bool)]
+                if cpC: wq[cpC[0]] += 0.32
+                hq = gCp.step(wq)
+                if cpC:
+                    nw = hq[:, cpC[0]] & ~cpC[2]; calCg[nw, 1] += p - cpC[1]; calCg[nw, 2] += 1; cpC[2] |= hq[:, cpC[0]]
+                    if p - cpC[1] >= 400: calCg[~cpC[2], 3] += 1; calCg[~cpC[2], 1] += 800; calCg[~cpC[2], 2] += 1; cpC = None
             svar = np.where(np.abs(zc) < 3, 0.998 * svar + 0.002 * (ev - sbase) ** 2, svar); sbase = 0.998 * sbase + 0.002 * ev
             for j in np.nonzero(alC)[0]:
                 Ls = SLAYER[STREAMS[j]]; freeze_until[Ls] = t + 2.0 * fscale
@@ -255,8 +269,18 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
     for L in range(1, 10):
         if done_since[L] is not None: done_time[L] += T_total - done_since[L]
     return dict(p=p, T=T_total, tt=np.array(rows_t), ST=np.array(rows_s, np.int8), alarms=alarms, transitions=transitions, ctl=ctl, pbt=pbt_log,
-                a1_max=a1_max, a1_n=a1_n, calA=calA, calC=calC, bound_frac=bound_hits / max(p, 1), fits=sorted(fits_seen), x=x, live_cfg=live_cfg, cal=cal,
+                a1_max=a1_max, a1_n=a1_n, calA=calA, calC=calC, calCg=calCg, bound_frac=bound_hits / max(p, 1), fits=sorted(fits_seen), x=x, live_cfg=live_cfg, cal=cal,
                 gp_counts=gp_counts, gp_last=gp_last, gp_samples=gp_samples, nofree=nofree, done_time=done_time, status=status, pred_E2=pred_E2)
+def calib_C_grid():
+    tot = np.zeros((len(GRID), 4)); n = 0
+    for sd in range(1, 6):
+        o = engine(7.0, sd, events=False, calib=True, pbt=False, live_cfg=(0.16, 20), calibC_grid=True); tot += o['calCg']; n += int((o['tt'] >= 2.0).sum())
+    rows = []
+    for i, (k, h) in enumerate(GRID):
+        far = tot[i, 0] / (n * 5); miss = tot[i, 3] / max(tot[i, 2], 1)
+        rows.append(dict(k=k, h=h, far=float(far), mean_delay=round(float(tot[i, 1] / max(tot[i, 2], 1)), 1), misses=int(tot[i, 3]), probes=int(tot[i, 2]), admissible=bool(far <= 1e-5 and miss <= 0.2)))
+    adm = [r for r in rows if r['admissible']]; start = min(adm, key=lambda r: r['mean_delay']) if adm else None
+    out = dict(stream_pulses=n * 5, grid=rows, start=start); json.dump(out, open('field_tests/results/d1991_calibC.json', 'w'), indent=1); return out
 def calib_C():
     cal = json.load(open('field_tests/results/d1987_calibration.json')); s0 = cal['start']; n = 0; fa = 0
     for sd in range(1, 6):
@@ -354,6 +378,8 @@ if __name__ == '__main__':
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'run'
     if cmd == 'calibrate':
         c = calibrate(); print(json.dumps(c, indent=1))
+    elif cmd == 'calibCgrid':
+        c = calib_C_grid(); [print(r) for r in c['grid']]; print('START', c['start']); sys.exit()
     elif cmd == 'calibC':
         print(calib_C()); sys.exit()
     elif cmd == 'replay':
