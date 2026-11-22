@@ -20640,3 +20640,11 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - It **corrects the D2061 reading**: the (1/6)(1/2) cross terms enter through α_Y. They do not enter f₂ − f₃ directly.
   - **Owed:** P4 (three families for those fluxes), P5 (tadpole), P5b (U(1)_Y must stay massless with the shifted c/d fluxes). The non-GUT hypercharge normalisation also changes the "α_G = 1/28" bookkeeping for U(1).
   - Loop: progress. No-progress count 0.
+- **D2066 (CENTRE, loop tick 9; analysis, no lock): P4/P5 for the D2065 candidate. UNDETERMINED, with a structural concern.**
+  - **IMR facts read** (hep-th/0105155):
+    - three families need I_ab = 1, I_ab* = 2, I_ac = I_ac* = −3, I_bd* = −3, I_cd = −3, I_cd* = 3;
+    - U(1)_Y stays massless only if Σ_α[(1/6)c^a_α − ½c^c_α + ½c^d_α] = 0.
+    - The wrapping-number table itself was truncated in the fetch.
+  - **Concern:** the S-coefficient k_c of stack c (its "flux charge") is built from the **same** wrapping and flux numbers that set I_ac, I_cd and the c^c_α in the massless condition. Each intersection number is a product over the three tori, so a unit change in k_c generically changes I_ac or I_cd (breaking three families) and shifts c^c_α (giving U(1)_Y a mass). It can be harmless only on a torus where the other stacks' factor vanishes.
+  - **Next:** obtain the IMR table (its parameters β₁, β₂, ρ, ε, n_a², n_b¹, n_c¹, n_d²; the PDF needs to be read past the truncation, or attached by Danny). Then scan whether a k_c or k_d unit can move with families and masslessness intact.
+  - Loop: no progress (blocked on the table). **No-progress count 1.**
