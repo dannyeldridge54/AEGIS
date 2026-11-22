@@ -20867,3 +20867,34 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Caveats:**
     - Eq. 72 gives tan β = 1 at the boundary. tan β = 1 itself has no feasible point here; it only reaches the GM points through running or corrections. Logged.
     - The PGM coefficients use log₁₀; m_A = |μ|; the PS hybrid boundary; no Yukawa two-loop terms.
+- **D2088 (CENTRE; PREREG_D2088 + DEVIATIONS; tools/seed/mh.py): m_h = 125.1 GeV in the GM branch (high-scale SUSY boundary with the stop threshold, x_t = −c cot β) needs tan β ≈ 1.8–2.0 at M_S = 124–156 TeV.**
+  - **Run 1:** the one-loop control FAILED (λ = 0 at 9.2e7 GeV), so it is void.
+  - **Fix (DEVIATIONS, written first):** added the leading two-loop QCD/top/λ terms plus the full gauge two-loop matrix. The control then PASSES at 5.5e9 GeV (literature ~1e10).
+  - **Result:**
+    - tan β(125.1) = 1.93 at 124 TeV, 1.91 at 145 TeV, 1.90 at 156 TeV, each with a ±1.5 GeV band of ±0.09 in tan β.
+    - The dependence on c (0.95–1.05) is negligible.
+  - **Verdict as locked: TENSION.** The comparison points were 124 → 1.5, 145 → 3, 156 → 4.
+  - **Lock slip (recorded, not rescored):** the comparison list left out D2087's point at 129 TeV with tan β = 2.0, which sits at the band edge. Addressed by a new lock, D2089.
+  - **Read:** with M_S ≈ m₃/₂ ≈ 0.13–0.16 PeV, the Higgs mass fixes tan β ≈ 1.9 ± 0.1. That is close to BIM Eq. 72's boundary value tan β = 1, but needs some departure from it.
+- **D2089 (CENTRE, HYBRID; PREREG_D2089; tools/seed/joint4.py): the four-goalpost joint test of the GM branch (α_s, wino, gluino, m_h), with tan β continuous. CONSISTENT.**
+  - **63 points pass all four:**
+    - **m₃/₂ = 125–132 TeV**, μ = (1 ± 1/x)·m₃/₂;
+    - **tan β = 1.85–2.01**;
+    - wino 0.671–0.700 TeV;
+    - **gluino 3.08–3.23 TeV**;
+    - α_s = 0.1162–0.1164 (**−2.0σ to −1.7σ, at the edge of the window**).
+  - **Read:**
+    - **One derived μ (torus Higgs, GM, KKLT) and one scale m₃/₂ ≈ 0.13 PeV satisfy α_s, wino, gluino and m_h together.** The α_s seam closes to within 2σ (marginally), with **no new knob**.
+    - **Sharp predictions of this branch:**
+      - gluino 3.1–3.2 TeV (HL-LHC reach);
+      - tan β ≈ 1.9;
+      - higgsinos and scalars at ~0.13 PeV;
+      - wino LSP 0.67–0.70 TeV.
+  - **Owed (status changes):**
+    1. v4's m₃/₂ band must move from 0.25–0.7 PeV down to ≈ 0.13 PeV. Re-derive the volume x / W₀ / m₃/₂ chain at this value (it touches W₀ = 5.6e-9 and KL).
+    2. tan β = 1.9 vs BIM's boundary value of 1. Check whether the corrections (Θ, V₀, running) give it.
+    3. α_s sits at −1.8σ. The open T1 thresholds (D2047/D2067) could move it either way.
+  - **Caveats (stated):**
+    - The HYBRID PS unified boundary (D2083), not v4's own branes.
+    - PGM coefficients with log₁₀; m_A = μ.
+    - Leading two-loop terms only in the λ and y_t running.
