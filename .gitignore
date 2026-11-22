@@ -68,3 +68,5 @@ field_tests/targets/*.sqlite-journal
 tools/ramsey/r310
 tools/ramsey/r310g
 tools/ramsey/circ
+tools/ramsey/glue4
+tools/ramsey/hcount
