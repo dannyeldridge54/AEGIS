@@ -20738,3 +20738,10 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Look-elsewhere:** the predicted α_s spreads very widely (median 0.026; 5–95% from 0.007 to 0.31). Near 0.118 the hit rate is **7.4%, against a flat-spread chance of 9.0%**. So the engine finds the goalpost exactly as often as luck would. **No signal.**
   - **Read (the key lesson for the new formulation):** a self-building search *will* find any single goalpost when its space is large. That shows the space contains the answer, not that the theory predicts it.
   - **Rule for the next version:** fit at most two numbers, then require **several held-out observables at once**. Candidates: α_s, the proton-decay bound on M_s, the top Yukawa (from brane intersection angles), and sin²θ_W at a second scale. Only a joint hit rate far above chance counts as evidence.
+- **D2079 (CENTRE; PREREG_D2079; tools/seed/seed_v1.py): Seed v1, the tiniest seed spinning out through rings R0–R4 with joint held-out goalposts. NULL at every ring, for a structural reason: no SUSY configuration exists in the IMR branch.**
+  - **Rings:** R0 246 → R1 27,000 → R2 312,500 → R3 1.70M → R4 **9.86M** configurations, in 3.7 s with the radii spin vectorised.
+  - **0 survivors of the SUSY filter** in every ring, so no fit and no joint hits.
+  - **Diagnostic (not scored):** each stack can be made SUSY on its own (a: 24.6k, b: 26.0k, c: 110k, d: 20.2k configurations in R3), but **never all four at once**. That is four angle conditions on three radii. It matches the literature: the IMR Standard Model is non-supersymmetric (hep-th/0105155).
+  - **Read:** v0's 1,652 α_s hits (D2078) were all non-SUSY configurations. Since v4 is SUSY, the IMR branch is the wrong fork, and the seed correctly refused to expand it.
+  - **Next fork to grow:** SUSY intersecting-brane Standard Models, e.g. the Cvetič–Shiu–Uranga Z₂×Z₂ models (hep-th/0107143, 0107166), which satisfy SUSY, the tadpole and K-theory together. Then v4's own Z₆-II fractional branes (the Gmeiner–Honecker SUSY models).
+  - The engine (rings, filters, joint goalposts, expansion only where it pays) is ready; only the fork tables change.
