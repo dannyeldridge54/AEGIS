@@ -1,0 +1,41 @@
+{
+ "still_point": {
+  "T_R": 1518736220.691701,
+  "m32": 245920.84890269823,
+  "u": 0.02663,
+  "chi2": 12.845914464656419
+ },
+ "directions": [
+  {
+   "eigenvalue": 100.0050165783017,
+   "one_sigma_step": 0.09999749180521791,
+   "kind": "INWARD (restoring, stiff)",
+   "composition": {
+    "S (ln T_R)": 0.0,
+    "T (ln m3/2)": 1.0,
+    "U (ln u)": 0.0
+   }
+  },
+  {
+   "eigenvalue": 1077.4122292366867,
+   "one_sigma_step": 0.03046555187372555,
+   "kind": "INWARD (restoring, stiff)",
+   "composition": {
+    "S (ln T_R)": 1.0,
+    "T (ln m3/2)": 0.0,
+    "U (ln u)": 0.0
+   }
+  },
+  {
+   "eigenvalue": 1108.0576599441872,
+   "one_sigma_step": 0.03004130674676785,
+   "kind": "INWARD (restoring, stiff)",
+   "composition": {
+    "S (ln T_R)": 0.0,
+    "T (ln m3/2)": 0.0,
+    "U (ln u)": 1.0
+   }
+  }
+ ]
+}
+{'S-T': (180, 90, 9.7), 'T-U': (90, 0, 12.3), 'S-U': (90, 0, 6.7)}

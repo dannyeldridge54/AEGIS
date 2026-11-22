@@ -19457,3 +19457,17 @@ Every check catches the mistake it was built for:
   - Cross-branch effects would show up as Born-rule violations, which three-slit tests bound at about 1e-3 (Sinha et al. 2010; literature value, to be source-checked).
 - **The adjustable part, done honestly:** the ensemble over the discrete knobs, scored by **typicality**. This adds no free continuous knobs (it respects D1974/D1976: more knobs means less evidence), and every discrete choice counts as a trial.
 - **Next (to lock):** enumerate the Weave's allowed discrete choices (N ∈ {5..8}, χ by lattice, fluxes, n ∈ {2,3,4}, the ρ/i assignments, single vs split stacks). Run the scoreboard for each and report the fraction matching our data.
+
+## D1978 — the still point, its inward and outward directions, and the 360° view (Danny 18:12; locked PREREG_D1978)
+- **The still point** (the best fit on the three tandem axes): T_R = 1.52e9, m₃/₂ = 2.46e5, u = 0.02663, χ² = 12.8.
+- **Directions** (Fisher eigenvectors): **all three are INWARD (restoring).**
+  - **U (the quark step):** stiffest. A 1σ step is 3.0 % in u.
+  - **S (T_R, pinned by Y_B and n_s):** a 1σ step is 3.0 %.
+  - **T (m₃/₂, pinned by α_s and the wino bound):** loosest. A 1σ step is 10 %.
+  - The eigenvectors are axis-aligned because the model separates: each axis is pinned by different data. **This is a property of how the model is built**, not a finding.
+- **The 360° view** (Δχ² at radius 0.1 around the still point): stiff-to-loose ratio of 9.7 in the S–T plane, 12.3 in T–U and 6.7 in S–U. The loosest direction in every plane is **along T**, the gravitino-mass axis.
+- **JUDGE:**
+  - The still point has **no free (outward) direction** inside the three axes. The leftover strain (χ² 12.8, mostly α_s) is tension, not freedom.
+  - The loosest way through is the T axis. But α_s barely moves along it (d ln α_s/d ln m₃/₂ = −0.025), so **no motion inside the three axes relieves α_s**.
+  - The "outward" direction that would relieve α_s must therefore be a **new axis**: the strong-force cycle (A₃/A₂) or a non-universal threshold. This agrees with D1937–D1940 and D1976.
+- **COMPASS:** at the still point, S and U are stiff, T is loose, and α_s needs a fourth axis (S–T seam, non-universal).
