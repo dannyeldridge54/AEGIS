@@ -98,7 +98,7 @@ SC = {'WINDOW': 0, 'OPAQUE': 1, 'NO LOCK': 2, 'RESONANT': 3, 'LOST': 4, 'STUCK':
 C_CFG = None   # D1991: detector C's own calibrated (k, h); None -> follow B (D1990 behaviour)
 try: C_CFG = tuple(json.load(open('field_tests/results/d1991_calibC.json'))['start'][x] for x in ('k', 'h'))
 except Exception: pass
-def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True, verbose=False, replay=None, datadet=True, calibC_grid=False):
+def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True, verbose=False, replay=None, datadet=True, calibC_grid=False, vclock=False, max_pulses=None, dt=1 / 2800):
     rng = np.random.default_rng(seed); srng = np.random.default_rng(seed + 7919)
     x = np.zeros(NK); est = dict(NOM); J = jac(x, NOM); lensK = {L: lens_knobs(J, L) for L in range(1, 10)}
     M0 = flat(margins_rt(state(x), est)); base = M0.copy(); var = np.full(NM, 1e-4); zprev = np.zeros(NM); med = np.full(NM, 0.6745); Mlast = M0.copy(); armA = np.ones(NM, bool); calA = 0
@@ -118,8 +118,8 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
     nofree = {L: 0 for L in range(1, 10)}; rows_t, rows_s = [], []; stuck_since = {L: None for L in range(1, 10)}; gp_samples = []; last_sample = -1.0; rel_log = []
     t0 = time.perf_counter(); p = 0
     while True:
-        tp = time.perf_counter(); t = tp - t0
-        if t >= T_total: break
+        tp = time.perf_counter(); t = (p * dt) if vclock else (tp - t0)
+        if t >= T_total or (max_pulses and p >= max_pulses): break
         p += 1; truth = dict(NOM); sig = dict(SIG)
         if replay:   # P2 real-data replay: the latest release at time t sets the truth and its sigma
             for key, rels in replay.items():
@@ -264,7 +264,7 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
                     if esc[L] and clean[L] >= 5: esc[L] = 0; throttle = max(1, throttle // 2); ctl.append(dict(t=round(t, 2), layer=L, action='DE-ESCALATE'))
             win_al = {L: 0 for L in range(1, 10)}; win_p = 0; win_t0 = t; win_a1 = False
         if base_period is None and p > 200: base_period = (time.perf_counter() - t0) / p
-        if throttle > 1 and base_period:
+        if throttle > 1 and base_period and not vclock:
             slack = min(base_period * throttle, 1 / 60) - (time.perf_counter() - tp)
             if slack > 0: time.sleep(slack)
     for L in range(1, 10):
