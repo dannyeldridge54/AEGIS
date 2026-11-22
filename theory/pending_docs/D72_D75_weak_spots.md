@@ -20533,3 +20533,12 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - **All five goalposts PASS:** α_s 0.1187 (+0.77σ), wino 0.686 TeV, gluino 5.42 TeV, m_T/H 0.112.
   - **Moved (fitted) knobs: just two**, d3 (T1: +0.047) and boost (a stabiliser ≥ 4.1e3 × KKLT). That is down from three in D2039, and these are **exactly the two S-side gaps** of the whole map (D2052).
   - Verdict: **FIT with 2 knobs.** NAILED needs both derived.
+- **D2050a / D2051a / D2052a / D2053a (CORRECTION, 02:52): the opposed-tether mirage cancellation is WRONG. D2050, D2051 (leak part), D2052 §2–3 and D2053 are void on this point.**
+  - **The error:** the gaugino mass is M_{1/2} = F^i ∂_i f / (2 Re f). I compared F^i/(2t_i) cycle by cycle. The correct numerator uses **F^i itself**, and each KKLT cycle has F^{T_i} ≈ 2t_i m₃/₂/x_i.
+  - **The correct result** for f = T_d − T_v: M = m₃/₂ (t_d/x_d − t_v/x_v)/(t_d − t_v). With x_d = x_v = x this is **exactly m₃/₂/x**, the same as one cycle (ratio 1.000, computed).
+  - More generally, any orientation-weighted sum of KKLT cycles gives M ≈ m₃/₂/x, because x_i ≈ ln(A_i/W₀) is nearly the same for all of them. That is the standard universal mirage M₀ (Choi et al.). **Opposition cannot cancel it inside KKLT.**
+  - **What survives:**
+    - α_G⁻¹ = σ_d − σ_v + 9 Re S = 27.944 (the gauge coupling arithmetic);
+    - the geometric fact that T_{D₁−D₂} = T₁ − T₂ when the class D₁ − D₂ is effective (4-cycle volumes are linear in the class).
+  - **The F-mirage filter goes back to FAIL.** The Bloom mutation "tether" is VOID for sequestering. The D2053 "2 knobs" result is withdrawn; it is **3 knobs again (D2039)**.
+  - **Lesson for the referee checklist:** check soft-term formulas against a textbook formula (here, M_{1/2} = F^i∂_i f/2Re f) **before** a toy is built on them. The D2050 lock carried the wrong formula into the test, so the lock itself was faulty.

@@ -483,7 +483,7 @@
   {
    "id": "F-mirage",
    "check": "D2036 M",
-   "status": "CONDITIONALLY CLEARED by the tether (D2051/D2053)",
+   "status": "FAIL",
    "what": "visible D7 cycle T_vis is the KKLT-stabilised cycle (W > A e^{-2 pi T_vis/6}, f_vis = T_vis + 9S): modulus-mediated gaugino piece m32/(at) = 12.2 TeV = x17.8 the pure-AMSB wino (0.686 TeV). The wino/gluino/alpha_s chain assumes pure AMSB -> must be recomputed with mirage masses, or a sector with F^T_vis = 0 derived",
    "affects": [
     "wino",
@@ -492,7 +492,7 @@
     "proton"
    ],
    "B0a": "D2037: mirage spectrum (one-loop estimate) wino 10.8-12.1 TeV, gluino 24.7-35.6 TeV, bino 3.5-8.0 TeV; alpha_s falls to 0.1077-0.1095 (-11.5 / -9.4 sigma). FAIL: the self-consistent spectrum makes the alpha_s seam worse",
-   "tether": "f_vis = T_dark - T_vis + 9S: x_d = x_v = 21.101 cancels F^T at leading order; alpha_G^-1 unchanged 27.944; natural A_d/A_v in [0.64,1.57]. Owed: a magnetised D7 with this gauge kinetic function (holomorphy, chirality, tadpole) and the computed A_d"
+   "tether": "VOID (D2051a): M_1/2 = F^i d_i f/(2 Re f) with F^{T_i} ~ 2 t_i m32/x_i gives m32/x for any orientation-weighted KKLT sum; no cancellation"
   },
   {
    "id": "F-KL",
@@ -532,9 +532,9 @@
  "mutations": [
   {
    "id": "tether",
-   "what": "f_vis = T_dark - T_vis + 9S (Danny 02:17, opposed tethers)",
-   "D": "D2050-D2053",
-   "status": "numbers PASS, geometry owed"
+   "what": "f_vis = T_dark - T_vis + 9S",
+   "D": "D2050-D2053, corrected D2051a",
+   "status": "VOID for sequestering (wrong soft-term formula); gauge-coupling arithmetic stands"
   }
  ]
 }
