@@ -19,6 +19,7 @@ NOM = dict(ns=0.9728, as_=0.1180, lep=0.0253, wino=700.0, Y=0.87e-10)
 SIG = dict(ns=0.0027, as_=0.00107, lep=0.0003, wino=20.0, Y=0.0087e-10)
 STREAM_OF = {4: ['lep'], 5: ['wino'], 6: ['ns'], 7: ['as_'], 8: ['Y']}
 HELD = {'u'}; PHI = 0.95
+STREAMS = ['lep', 'wino', 'ns', 'as_', 'Y']; SLAYER = {'lep': 4, 'wino': 5, 'ns': 6, 'as_': 7, 'Y': 8}   # D1990 detector C
 def margins_rt(st, T):
     o = obs(st); rung = [o['u'], T['lep'], math.exp(-9 * math.pi / 8)]
     return {1: dict(quark_window=min(math.log(o['u'] / 0.02588), math.log(0.02740 / o['u']))),
@@ -94,7 +95,7 @@ EVENTS = [dict(name='E1 n_s +3 sigma', t0=10, t1=20, kind='data', key='ns', f=la
 QUIET = [(2, 10), (20.5, 25), (35.5, 45), (55.5, 60)]
 E2T = [24.0, 25.0, 35.0]   # prediction time, kick, revert
 SC = {'WINDOW': 0, 'OPAQUE': 1, 'NO LOCK': 2, 'RESONANT': 3, 'LOST': 4, 'STUCK': 5}
-def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True, verbose=False, replay=None):
+def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True, verbose=False, replay=None, datadet=True):
     rng = np.random.default_rng(seed); srng = np.random.default_rng(seed + 7919)
     x = np.zeros(NK); est = dict(NOM); J = jac(x, NOM); lensK = {L: lens_knobs(J, L) for L in range(1, 10)}
     M0 = flat(margins_rt(state(x), est)); base = M0.copy(); var = np.full(NM, 1e-4); zprev = np.zeros(NM); med = np.full(NM, 0.6745); Mlast = M0.copy(); armA = np.ones(NM, bool); calA = 0
@@ -108,6 +109,8 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
     alarms, transitions, ctl, pbt_log = [], [], [], []; a1_max = 0.0; a1_n = 0; win_al = {L: 0 for L in range(1, 10)}; win_p = 0; win_t0 = 0.0; win_a1 = False
     bound_hits = 0; fits_seen = set(); kicked = False; pred_E2 = None; base_period = None; last_pbt = 0.0
     gp_counts = {g['id']: {} for g in GP}; gp_last = {}; done_since = {L: None for L in range(1, 10)}; done_time = {L: 0.0 for L in range(1, 10)}
+    sbase = np.array([NOM[k] for k in STREAMS]); svar = np.array([(0.107 * SIG[k]) ** 2 for k in STREAMS]); szp = np.zeros(5); smed = np.full(5, 0.6745)
+    bankC = Bank([live_cfg[0]], [live_cfg[1]]); bankC.Sp = np.zeros((1, 5)); bankC.Sn = np.zeros((1, 5)); freeze_until = {L: -1.0 for L in range(1, 10)}; calC = 0; fscale = T_total / 60.0
     nofree = {L: 0 for L in range(1, 10)}; rows_t, rows_s = [], []; stuck_since = {L: None for L in range(1, 10)}; gp_samples = []; last_sample = -1.0; rel_log = []
     t0 = time.perf_counter(); p = 0
     while True:
@@ -129,6 +132,15 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
         for L, keys in STREAM_OF.items():
             nr = 5 if esc[L] else 3
             for k in keys: est[k] = 0.95 * est[k] + 0.05 * float(np.median(truth[k] + sig[k] * rng.standard_normal(nr)))
+        if datadet:   # D1990 detector C on the data streams themselves; freeze the layer's balancing while its stream steps
+            ev = np.array([est[k] for k in STREAMS]); sd = np.sqrt(np.maximum(svar, 1e-30)); zc = (ev - sbase) / sd; wc = (zc - PHI * szp) / math.sqrt(1 - PHI ** 2); szp = zc
+            smed += 0.001 * np.sign(np.abs(wc) - smed); smed = np.maximum(smed, 1e-3); wcn = wc / (1.4826 * smed)
+            bankC.k[:] = live.k[0, 0]; bankC.h[:] = live.h[0, 0]; alC = bankC.step(wcn)[0]
+            svar = np.where(np.abs(zc) < 3, 0.998 * svar + 0.002 * (ev - sbase) ** 2, svar); sbase = 0.998 * sbase + 0.002 * ev
+            for j in np.nonzero(alC)[0]:
+                Ls = SLAYER[STREAMS[j]]; freeze_until[Ls] = t + 2.0 * fscale
+                if not calib: alarms.append((p, round(t, 4), Ls)); win_al[Ls] += 1
+                elif t >= 2.0: calC += 1
         if p % (1 if any(esc.values()) else 10) == 0: J = jac(x, est); lensK = {L: lens_knobs(J, L) for L in range(1, 10)}
         Mcur = flat(margins_rt(state(x), est)); Mfresh = Mcur.copy()
         # referee pass, layers 1 -> 9
@@ -144,7 +156,7 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
             elif old != 'RESONANT' and ok_run[L] >= 3: status[L] = 'RESONANT'
             elif old not in ('RESONANT', 'LOST', 'STUCK') and not good: status[L] = 'NO LOCK'
             if status[L] != old: transitions.append((p, round(t, 4), L, old, status[L])); res_since[L] = t if status[L] == 'RESONANT' else None
-            if m.min() < 0.05 and status[L] != 'STUCK':   # balance on free bounded knobs
+            if m.min() < 0.05 and status[L] != 'STUCK' and t >= freeze_until[L]:   # balance on free bounded knobs (frozen while its stream steps, D1990)
                 inner = set().union(*[lensK[l][0] for l in range(1, L) if status[l] == 'RESONANT' and lensK[l][0]]) if L > 1 else set()
                 free = [K.index(k) for k in K if k not in HELD and k not in inner]
                 g = J[IDX[L][int(np.argmin(m))]].copy(); mask = np.zeros(NK); mask[free] = 1; g *= mask
@@ -243,8 +255,14 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
     for L in range(1, 10):
         if done_since[L] is not None: done_time[L] += T_total - done_since[L]
     return dict(p=p, T=T_total, tt=np.array(rows_t), ST=np.array(rows_s, np.int8), alarms=alarms, transitions=transitions, ctl=ctl, pbt=pbt_log,
-                a1_max=a1_max, a1_n=a1_n, calA=calA, bound_frac=bound_hits / max(p, 1), fits=sorted(fits_seen), x=x, live_cfg=live_cfg, cal=cal,
+                a1_max=a1_max, a1_n=a1_n, calA=calA, calC=calC, bound_frac=bound_hits / max(p, 1), fits=sorted(fits_seen), x=x, live_cfg=live_cfg, cal=cal,
                 gp_counts=gp_counts, gp_last=gp_last, gp_samples=gp_samples, nofree=nofree, done_time=done_time, status=status, pred_E2=pred_E2)
+def calib_C():
+    cal = json.load(open('field_tests/results/d1987_calibration.json')); s0 = cal['start']; n = 0; fa = 0
+    for sd in range(1, 6):
+        o = engine(7.0, sd, events=False, calib=True, pbt=False, live_cfg=(s0['k'], s0['h'])); fa += o['calC']; n += int((o['tt'] >= 2.0).sum())
+    out = dict(stream_pulses=n * 5, false_alarms=fa, far=fa / (n * 5), bar=1e-5, ok=fa / (n * 5) <= 1e-5)
+    json.dump(out, open('field_tests/results/d1990_calibC.json', 'w'), indent=1); return out
 def calibrate():
     tot = np.zeros((len(GRID), 4)); pulses = 0; fa_A = 0
     for s in range(1, 6):
@@ -315,7 +333,7 @@ REPLAY = {  # P2: published history (recalled from PDG / collaboration papers; o
  'wino': [(0, 460.0, 20.0), (25, 660.0, 20.0), (50, 700.0, 20.0)],
  'Y': [(0, 0.88e-10, 0.0088e-10), (30, 0.87e-10, 0.0087e-10)]}
 STREAM_LAYER = {'ns': 6, 'as_': 7, 'wino': 5, 'Y': 8}
-def replay_run(T=70.0, seed=2028):
+def replay_run(T=70.0, seed=2028, out_name='d1989_replay.json'):
     cal = json.load(open('field_tests/results/d1987_calibration.json')); s0 = cal['start']
     o = engine(T, seed, events=False, live_cfg=(s0['k'], s0['h']), pbt=True, replay=REPLAY)
     al = o['alarms']; rel = []
@@ -331,13 +349,15 @@ def replay_run(T=70.0, seed=2028):
                specificity=round(sum(not r['detected'] for r in sp) / len(sp), 3) if sp else None, n_quiet_expected=len(sp),
                fits_spent=o['fits'], final_knobs={k: state(o['x'])[k] for k in K}, final_status=o['status'], no_free_knob_share={L: round(v / o['p'], 3) for L, v in o['nofree'].items()},
                final_live_goalposts={g['id']: o['gp_last'][g['id']][0] for g in GP if g['live']}, timeline=timeline, bound_frac=round(o['bound_frac'], 4))
-    json.dump(out, open('field_tests/results/d1989_replay.json', 'w'), indent=1, default=str); return out
+    json.dump(out, open('field_tests/results/' + out_name, 'w'), indent=1, default=str); return out
 if __name__ == '__main__':
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'run'
     if cmd == 'calibrate':
         c = calibrate(); print(json.dumps(c, indent=1))
+    elif cmd == 'calibC':
+        print(calib_C()); sys.exit()
     elif cmd == 'replay':
-        o = replay_run(); print(json.dumps({k: o[k] for k in ('pulses', 'recall', 'n_detectable', 'specificity', 'n_quiet_expected', 'fits_spent', 'final_status', 'final_live_goalposts', 'bound_frac')}, indent=1, default=str))
+        o = replay_run(seed=int(sys.argv[2]) if len(sys.argv) > 2 else 2028, out_name=sys.argv[3] if len(sys.argv) > 3 else 'd1989_replay.json'); print(json.dumps({k: o[k] for k in ('pulses', 'recall', 'n_detectable', 'specificity', 'n_quiet_expected', 'fits_spent', 'final_status', 'final_live_goalposts', 'bound_frac')}, indent=1, default=str))
         for r in o['releases']: print(r)
         sys.exit()
     else:
