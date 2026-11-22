@@ -42,21 +42,28 @@
  "B7": "D1976: injection-recovery 0.89 coverage, false-balance 14 % (reported, not rerun)",
  "B4": {
   "controls": {
-   "planner.py": "KILLED",
-   "lens_core.py": "KILLED"
+   "planner.py": "PASS",
+   "lens_core.py": "PASS"
   },
   "planner.py": {
-   "killed": 10,
+   "killed": 8,
    "total": 10,
-   "survived": []
+   "survived": [
+    "\n",
+    "False}"
+   ]
   },
   "lens_core.py": {
-   "killed": 8,
+   "killed": 5,
    "total": 8,
-   "survived": []
+   "survived": [
+    "a < 5 else",
+    "a <= 89.9 else",
+    "max(1, (s > 1e-3 * s.max()).sum())"
+   ]
   },
-  "kill_rate": 1.0,
-  "void": true
+  "kill_rate": 0.722,
+  "void": false
  },
  "ok": {
   "B1": true,
