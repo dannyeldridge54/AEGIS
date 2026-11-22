@@ -20565,3 +20565,8 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - Two single-exponential condensates on separate cycles, with no constant term, cannot make a SUSY AdS vacuum. A racetrack needs two terms on the **same** modulus with opposite signs.
   - **W₀ stays unexplained.** Tried so far: generic flux D2044, PFV D2045, S-instanton D2046, dark condensate D2056.
   - **Loop count:** tick 3, no progress (a clean FAIL). Consecutive no-progress ticks: 1.
+- **D2057 (CENTRE; PREREG_D2057): Q4, fractional hypercharge flux for T1. CANDIDATE by the locked rule.**
+  - Shifts are n·q·0.55. The **only** hit inside the T1 goalpost [+0.034, +0.054] is **q = 1/12, n = 1: shift +0.0458**, giving Δ₃ = −0.048.
+  - Look-elsewhere: q ∈ {1, 1/2, 1/3, 1/6, 1/12} with n ≤ 2 covers 20% of the shift range, so p = 0.20. That is below 0.3, so it qualifies as a candidate, but **it carries no evidence weight**.
+  - **Derivation target (no knob):** is a 1/12 hypercharge-flux quantum admissible for a fractional magnetised D7 on Z₆-II/ΩR? The natural guess is 1/(|Z₆| × orientifold 2) = 1/12, which also matches the D2029 lead. Answering it means checking the fractional-brane charge lattice: the Freed–Witten and K-theory conditions, and the hypercharge staying massless.
+  - **Loop count:** tick 4, progress (a candidate). No-progress counter reset to 0.
