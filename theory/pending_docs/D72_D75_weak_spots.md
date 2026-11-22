@@ -21034,3 +21034,17 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     3. every exotic on a ring with β < 0 and Λ ≥ 10 TeV;
     4. exact unification or the α_s goalpost.
   - **Code note:** importing exotics.py re-ran its scan and printed its D2096 verdict line again. Harmless (no main guard); the D2096 result is unchanged.
+- **D2098 (RIGHT/CENTRE; PREREG_D2098; HIDDEN_SECTOR_2026-11-22.md): v4's dark SU(12) and the dark-glueball window.**
+  - **T1:** pure SU(12) SYM with α⁻¹(M_s) = σ_d = 40.3 (or + 7.79) confines at **Λ_d = 2.3e12 – 1.8e13 GeV**.
+  - **T3:** that is **SAFE** from the dark-glueball problem (1609.02151 window 3 eV – 2.4e8 GeV). So are the KL racetrack condensates SU(7), SU(8), SU(14), SU(15) (Λ = 2.4e13 – 6e14).
+  - **T2:**
+    - reading (i) needs b = +1.3 for α_D(12.8 GeV) = 0.021, so **CONFLICT**;
+    - reading (ii) needs b = −0.09, so "consistent" by the locked sign-only rule.
+    - **Lock slip, recorded and not rescored:** the rule tested only the sign of the needed b. Physically, both readings conflict: the group condenses at ≳ 1e12 GeV (b = −36), so it is confined at 12.8 GeV and cannot carry a perturbative α_D there.
+  - **Status change:** v4's dark force for the 12.8 GeV asymmetric DM (D1812, D1676) **cannot be the condensing SU(12)**. It needs a separate light dark gauge factor (e.g. the dark U(1) of D1685). The "α_D = 0.021" line is withdrawn as derived; it becomes an owed item.
+  - **Research pass, same note:**
+    - birefringence 4.8σ, accommodated by v4 but not predicted;
+    - mirror neutrons excluded at 99.98% (PSI 2602.23487), consistent with v4's non-twin hidden sector;
+    - X17 is unconfirmed, and v4's dark photon is not protophobic;
+    - GCE partially viable, no v4 claim;
+    - directional DM detection has no data yet, so the "six directions" cannot be tested.
