@@ -72,3 +72,12 @@
 | rates | ISSE weight rates fixed (bias error/25; gain ∝ err·p/2¹³) | — | defaults for the ISSE node |
 
 **Tick 6 verdict:** not null (4 hints). The topic list is now exhausted; tick 7 is the final "anything missed" sweep.
+
+## Tick 7 (08:21Z): final sweep for anything missed. Not null.
+| node | hint (source) | our status | try as |
+|---|---|---|---|
+| **ordering (upgraded)** | **STARLIT** (github amargaritov/starlit): Doc2Vec vectors, then a TSP path, puts similar articles side by side; **+1.8% on the record**. **The original order is recovered by sorting titles** (enwik9 titles are alphabetical), so the order costs ~0 bytes in the archive. The search runs offline and is excluded from the size | none | the cheapest big lever found: an article reorder with zero side information. Needs a local embedding (Doc2Vec trains on enwik itself: no outside data) and a TSP heuristic. CPU only |
+| numbers (new transform) | **STC** (2606.03570): digit runs move to side streams grouped by length and the surrounding bytes, with placeholders in the main stream; reversible, no stored permutation; **−1.6% on enwik9 with a BWT coder** (untested with CM) | NUM node off | `STC` prep transform; measure with our CM (a gain is not assumed) |
+| neural ensembles | Nacrith (2602.19626), Micro-Diffusion (tick 1) | — | already covered (Tweedie); LLM-based methods are outside the Hutter limits |
+
+**Tick 7 verdict:** not null (2 new hints, both large). Tick 8 sweeps again.
