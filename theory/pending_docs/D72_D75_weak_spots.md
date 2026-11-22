@@ -19993,3 +19993,9 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Verdict: C2 FAIL as locked.**
 - **C3, moduli mixing:** an extra visible amplitude θ·∂f/Re f = 0.87–1.28 is needed, i.e. **O(1) mixing**. Not derived, and implausibly large. **Not viable without a derivation.**
 - **Net: T_R ≈ 1.5–2.1e9 is still not derived from the inflaton couplings.** The pointing stays a FIT. The only route that reaches the number brings a hidden-sector problem with it.
+
+## D2010 — Outer rings at multiples (orders 12/16/24/32 + word trigram, loomz8) vs v7 on fresh slices (dev test, not locked). CENTRE
+- F (3 MB, enwik8 [80, 83) MB): v7 682,516; v8 683,694 (**+0.17%**, worse). v8 round-trip OK. xz 877,812.
+- G (10 MB, enwik8 [60, 70) MB): v7 **2,129,689** (188 s); v8 2,136,727 (**+0.33%**, 251 s). xz 2,731,076.
+- **Verdict:** outer byte rings at multiples **hurt**. They overlap the match model, which already covers long repeats, and they dilute the mixer, while costing 33% more time. A trigram-only ablation is pending.
+- **v7 stays the best build:** 22% smaller than xz on G.
