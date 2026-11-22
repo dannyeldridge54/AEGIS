@@ -19881,3 +19881,19 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - Angeltveit (2401.00392) glues R(3,9,35) only for the 41-vertex bound.
   - Neither states the 40-vertex degree-4 exclusion. Novelty is **not yet claimed**: the Goedgebeur–Radziszowski 2013 computations may cover it implicitly. Referee pending.
 - **Does not settle R(3,10).** Next: degree 5, where the dual neighbourhood is a 34-vertex (3,9)-graph. That needs the R(3,9,34) list, which we don't have; its size is in GR 2013 Table 1.
+
+## D2004 — Mersenne exponents as decimal layers; Rodin digit rules tested as filters. PREREG_D2004. CENTRE
+- **Setup:**
+  - each of the 52 exponents is split into its decimal layers;
+  - the baseline is 20,800 random primes matched in magnitude (400 per exponent, in [p/2, 2p]).
+- **Record exponent:** 136,279,841. From the ones layer up its digits are 1,4,8,9,7,2,6,3,1. Digital root of p is 5; p mod 6 = 5, so the digital root of M_p is 4.
+- **R1 (circuit membership):** 98% of Mersenne exponents pass vs 99.9% of baseline primes. Only p = 3 fails. **No power**: every prime > 3 passes.
+- **R2 (position on the circuit 1-2-4-8-7-5):** p = 0.40.
+- **R3 (digital root of M_p):** only 1 or 4 occur, fixed by p mod 6. Observed 24/26 vs expected 24.0/26.0, p = 0.996. **No power.**
+- **R4 (fraction of layers on the 3-6-9 axis):** 0.313 vs 0.330, p = 0.65.
+- **R5 (fraction of layers on the circuit):** 0.622 vs 0.615, p = 0.98.
+- **L1 (leading layer vs Benford):** p = 0.99 against Benford, and p = 0.99 against the baseline primes. This is the scale-invariant ("fractal") law. It is expected from geometric growth (D1999), so it is not new.
+- **L2:**
+  - Lower layers: smallest p = 0.039 (6th layer) and 0.049 (2nd layer). Neither survives Bonferroni (m = 11, α = 0.0045).
+  - Ones digit vs baseline: p = 0.71.
+- **Verdict:** NULL. No Rodin filter keeps Mersenne exponents more often than ordinary primes. The digit layers carry no targeting signal beyond "p is prime". So the Rodin rules are not used for targeting.
