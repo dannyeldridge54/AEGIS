@@ -21,6 +21,12 @@
 | tools/bloom/BLOOM_STEPS.md | steps B1–B14 with goalposts plus the lead board | **current** | D2028, D2031 |
 | tools/loom/loom_engine.py | one engine for both directions (Forge bits, Bloom bits) | **current** | D2027 |
 
+## 0b. The Forge (compressor): current reference
+| tool | what it is | status | D-note |
+|---|---|---|---|
+| tools/compress/reorder.py | STARLIT-lite article reorder (TF-IDF + greedy NN chain; permutation stored, xz) | **current**: −2.705% on enwik8 including the permutation, full-chain round-trip OK | D2063 |
+| tools/compress/loomz20.c (build loomz20_o3: -O3 -march=native -ffp-contract=off) | v18 + APMLIM / ESKIP knobs (off by default); RCTX = 1 is the winner | **current**: bit-identical to -O2, 11–20% faster | D2025, D2049 |
+
 ## 0. Core field engines (the Loom: the UFE as a self-balancing field)
 | tool | what it is | status | notes |
 |---|---|---|---|

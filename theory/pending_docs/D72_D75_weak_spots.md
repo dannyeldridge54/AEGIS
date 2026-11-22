@@ -20726,3 +20726,8 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - The KKLT modulus (~1.1e7 GeV) decays into LSPs: the moduli-induced LSP problem (D~5818).
   - Only R-parity violation removes it, and that is a new coupling (FIT).
   - **Loop: no progress. No-progress count 7. STALL: the loop stops here** and the frontier summary is written (FRONTIER_2026-11-22.md).
+- **D2063 FINAL (FORGE; PREREG_D2063): STARLIT-lite reorder PASS. The full chain round-trips.**
+  - The archive decompresses exactly (RT_OK), and un-permuting the decompressed file gives back enwik8 byte for byte (FULL_CHAIN_RT_OK).
+  - **Total 19,191,082 bytes (19,169,206 archive + 21,876 permutation) vs 19,724,674: −2.705%.**
+  - **New Forge reference:** reorder.py + loomz20_o3 (RCTX = 1).
+  - Next Forge rungs: the same reorder on the TB24 build; a better ordering (TSP 2-opt, or Doc2Vec as in STARLIT); and an order derivable from the titles to cut the 21.9 kB permutation.
