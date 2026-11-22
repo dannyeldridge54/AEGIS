@@ -81,3 +81,12 @@
 | neural ensembles | Nacrith (2602.19626), Micro-Diffusion (tick 1) | — | already covered (Tweedie); LLM-based methods are outside the Hutter limits |
 
 **Tick 7 verdict:** not null (2 new hints, both large). Tick 8 sweeps again.
+
+## Tick 8 (08:25Z): sweep, NULL. The loop ends.
+One search turned up only items already covered (cmix-lex, record listings, judging threads). **No new usable hint.** Per the NULL rule the loop stops here.
+
+**Totals over 8 ticks:** 35 hints filed by node. **Top levers:** STARLIT zero-cost reorder (+1.8
+## Tick 8 (08:25Z): sweep, NULL. The loop ends.
+One search turned up only items already covered (cmix-lex, record listings, judging threads). **No new usable hint.** Per the NULL rule the loop stops here.
+
+**Totals over 8 ticks:** 35 hints filed by node. **Top levers:** STARLIT zero-cost reorder (+1.8%), byte-LSTM node, ISSE cascade, STC digits, the header/table/link structure nodes, PGO/O3 speed.
