@@ -20672,3 +20672,10 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Look-elsewhere:** 1 hit in 16, so p ≈ 0.06 per random target. With 16 tries a single hit is expected about 1.0 time. **No evidence weight. It is a possible corner, not a derivation.**
   - **Read:** the T1 route through the hypercharge normalisation is real (families and masslessness hold, D2067), but at v4's fixed geometry it only works in one discrete corner. A sharper test needs the true (non-isotropic) areas and the orbifold Z₆-II projection (IMR lives on T⁶/(Z₂×Z₂)-like orientifolds, not Z₆-II).
   - Loop: progress, though weak. Count 0.
+- **D2070 (CENTRE; PREREG_D2070): P7, two-stage volume stabilisation for v4 (toy). FIT by the locked rule.**
+  - With K ⊃ |X|² − β(T+T̄)|X|² and a no-scale volume, V_inf ∝ (2t)⁻³/(1 − 2βt) has an inflationary minimum at **t* = 3/(8β)**.
+  - Matching v4's late volume (t = 20.15, no overshoot) needs **β = 0.0186**. There, K_XX̄ = 0.25 > 0 and **m_T²/H² = 24 ≥ 10**: the volume is held during inflation, with m_T²/H² fixed by the structure.
+  - **But β = 0.019 is below the natural window** (0.1–10). Natural β puts t* at 0.04–3.8, the wrong place, and then the volume overshoots after inflation.
+  - **Read:** the mechanism works physically (m_T²/H² = 24, positive metric), at the price of **one small coupling β ≈ 3/(8σ_vis)**. Note that β·σ_vis = 3/8 is a pure number. If β came from a loop or flux factor ~1/σ (e.g. an α′ correction scaling as 1/𝒱^{2/3}), it would stop being a free knob. That is the derivation target.
+  - **Q2 is now CONDITIONAL with one FIT knob** (β), down from the D2039 boost knob.
+  - Loop: progress. Count 0.
