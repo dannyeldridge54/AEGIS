@@ -20238,3 +20238,11 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - r < 0.034 (2512.10613);
     - ACT DR6 N_eff = 2.86 ± 0.13 as the ΔN_eff shadow (ours sits +1.4σ on it).
   - Total: 9 rounds, 36 searches, 20 finds.
+- **D2031 (CENTRE): missed leads folded in** (lead board in BLOOM_STEPS.md). Every open lead is now filed under its step.
+  - **New terms:**
+    - **δ_CP:** ours −86° (TM1 branch) vs T2K+NOvA joint (Nature 2025) −85°, 1σ [−146°, −47°]: z = −0.02.
+    - **m_ββ:** ours ≤ 3.8 meV vs KamLAND-Zen < 28–122 meV: passes.
+    - Neither is post-lock: both were released before their locks.
+  - **Owed:** the 12.8 GeV DM vs LZ needs ε fixed; MICROSCOPE/Cassini wait for R1; birefringence stays held.
+  - **Bloom:** N = 21, lnL −9.95, 31.9 bits, goodness of fit p = 0.0029 (α_s).
+  - Note: terms that pass add to N, so the knob penalty grows. That is the MDL property: more data makes each fitted knob cost more.

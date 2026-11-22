@@ -28,3 +28,17 @@
 - every term within 2σ;
 - k_fit ≤ 4;
 - every step above passed on held-out or post-lock data, with all referees signed.
+
+## Lead board: every open lead, filed under the step it serves (01:28; nothing left loose)
+| step | leads (source) |
+|---|---|
+| B4 T1 | (1) fractional intersections on Z₆-II: a 1/12 step gives ≈ 0.046 (D2029); (2) the N = 2 content of torus 3 fixes Δb, so U₃ becomes a prediction (D2022 route 1); (3) hypercharge flux on a suppressed cycle (D2022 route 2); (4) threshold states fixed by the +0.044 residual (D2022 route 3); (5) the Gmeiner–Honecker Z₆′ machinery (0910.0843; D2023). **Gate before any of these:** the tadpole red flag (2404.18995) must be cleared first |
+| B5 T2 | the wino bar is now 0.670 TeV (ATLAS 2603.08315); headroom 17 GeV |
+| B6 S1 | strongly non-thermal leptogenesis, T_RH ≳ 10³ GeV (JHEP05(2024)147) |
+| B7 U3/U4 | tadpole red flag (2404.18995); orientifold toolbox (hep-th/0503061); symmetric fluxes and small tadpoles (2304.04789) |
+| B8 U1 | |u| is the near-ω hierarchy parameter (2102.07488); A₄ fits give |u| ≈ 0.017 (2212.13336); radiative δτ ~ 0.01 with many species (2310.15604) |
+| B10 R1 | axion–dilaton kinetic mixing (2511.23463); MICROSCOPE and Cassini become terms once a source exists |
+| B11 S2 | g_s,min ≈ √12/N_flux on Z₆-II-type orbifolds (2404.18995) |
+| B12 E1 | upcoming post-lock tests: JUNO 6-yr θ₁₂ (±0.0015), T2K+NOvA → DUNE/Hyper-K δ_CP, LEGEND/nEXO m_ββ, LiteBIRD/SO r, XLZD for the 12.8 GeV DM, LHC Run 3 wino |
+| B14 | BK18/BK-lite public likelihood (2403.00085); KamLAND-Zen is a 90% CL limit and needs its own form |
+| owed (not yet scorable) | C1 12.8 GeV DM vs LZ needs ε fixed; D5 birefringence is held |

@@ -187,6 +187,37 @@
    "triangulated": [
     "JUNO first data 0.3092 +- 0.0087"
    ]
+  },
+  {
+   "id": "delta_CP",
+   "agent": "U",
+   "data": "T2K + NOvA joint (Nature 2025): best fit -85 deg, 1 sigma [-146, -47] deg marginalised over orderings",
+   "kind": "gauss",
+   "mu": -85.0,
+   "sigma": 49.5,
+   "ours": -86.0,
+   "ours_note": "TM1 branch 262-286 deg = -98 to -74 deg, centre used",
+   "status": "der (TM1)",
+   "locked": "2026-11-19 (PREREG_TM1_DCP, 9881980f)",
+   "released": "2025-10",
+   "release_ref": "Nature s41586-025-09599-3 (fetched 2026-11-22)",
+   "triangulated": [
+    "T2K+NOvA joint 2025"
+   ]
+  },
+  {
+   "id": "m_bb",
+   "agent": "U",
+   "data": "KamLAND-Zen full data, m_bb < 28-122 meV (90% CL; 28 used, the strictest)",
+   "kind": "upper",
+   "bound": 28.0,
+   "ours": 3.8,
+   "ours_note": "upper end of 1.6-3.8 meV",
+   "status": "der",
+   "locked": "2026-11-21 (PREREG_B5, bfa20780)",
+   "released": "2024-06",
+   "release_ref": "arXiv 2406.11438 (fetched 2026-11-22)",
+   "note_cl": "90% CL treated with the 95% formula: conservative-in-headroom approximation (B14 replaces it)"
   }
  ],
  "fitted_knobs": [
@@ -232,7 +263,10 @@
   "U3 fluxes from tadpole",
   "U4 U3 = i",
   "R1 thread source",
-  "E1 post-lock evidence"
+  "E1 post-lock evidence",
+  "C1 12.8 GeV asymmetric DM vs LZ (Dec 2025 limits): not scorable until the dark-photon mixing eps is fixed",
+  "R1 filter MICROSCOPE/Cassini: scored once a thread source exists",
+  "D5 birefringence: carrier cycle unsettled (held since D1793)"
  ],
  "levers": {
   "lnm32": {
