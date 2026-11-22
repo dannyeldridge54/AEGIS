@@ -20898,3 +20898,13 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - The HYBRID PS unified boundary (D2083), not v4's own branes.
     - PGM coefficients with log₁₀; m_A = μ.
     - Leading two-loop terms only in the λ and y_t running.
+- **D2090 (CENTRE; PREREG_D2090): v4's KKLT chain re-derived at the D2089 scale m₃/₂ = 125–132 TeV. Keeping x = 2πσ_vis/N = 21.10 (fixed by the gauge coupling), the prefactor must fall from A = 0.54 to A = 0.26–0.28, 8–13% below the natural window [0.3, 3]. Recorded costs:**
+  - |W₀| = **2.7–2.9e-9**, half the previous value. That makes D2044's unreachability worse.
+  - Kallosh–Linde: H_inf/m₃/₂ = **4.3–4.6e7**, double the previous value. KL is still unsolved.
+  - **Read:** the four-goalpost branch costs an O(1) prefactor slightly below natural and deepens the two open S-side gaps (W₀, KL). It is a trade, not a free win.
+  - **Alternative (numerology lens, NO evidence credit):** keep A = 0.54 and move x instead.
+    - The window needs **x = 21.80–21.86**, which is within **0.16–0.42% of 4π√3 = 21.766**, the k = 4 S-instanton exponent at ρ. That exponent was flagged in WHOLE_MAP at 02:45, **before** this derivation.
+    - Exactly x = 4π√3 gives m₃/₂ = 136.5 TeV, 3% above the D2089 window edge (which came from a discrete grid).
+    - Rough chance: the x window is 0.057 wide out of an arbitrary 4-unit bracket, so p ≈ 1.4%. That is suggestive, not evidence.
+    - **Cost:** σ_vis would have to move 20.15 → 20.8 (α⁻¹ shifts by ~0.7), which breaks the locked gauge chain unless something compensates.
+    - **Lockable next test (a structural hypothesis, not a fit):** "W₀ and the gaugino condensate share the S-instanton exponent 4π√3 at ρ". It predicts m₃/₂ ≈ 0.137 PeV and the gauge-coupling shift together. To be locked against the gauge chain before any credit.
