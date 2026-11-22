@@ -1,0 +1,11 @@
+rank F 32 | det Gram(omega) on F = 1 (unimodular => F = H3(Z))
+rank E 16
+massless U(1)_Z check (Q_Z rows zero over E): True
+n=2 survivors 63, non-trivial 0 []
+n=3 survivors 2, non-trivial 0 []
+n=4 survivors 448, non-trivial 0 []
+n=5 survivors 4, non-trivial 0 []
+n=6 survivors 126, non-trivial 0 []
+n=7 survivors 6, non-trivial 0 []
+n=8 survivors 512, non-trivial 0 []
+SIX-STACK CRITERION: PASS

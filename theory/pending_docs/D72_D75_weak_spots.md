@@ -21355,3 +21355,12 @@ The D2116 "K7 MARGINAL, ctrl ≥ 0.32" verdict and the D2116 settled-state table
 - **New K9 verdict:** the masses of generations 2 and 3 can come from instantons (the S ≈ 5.6 / 11.8 ESTIMATE is reinstated). But the **Yukawa matrix is block-diagonal, 1 ⊕ 2, to all instanton orders**, so generation 1 cannot mix with 2 and 3. Combined with the PS relation Y_u = Y_d from a single bidoublet, there is no Cabibbo mixing (V_us = 0) without extra Higgs fields or higher-dimensional operators with Z₄-charged vevs.
 - **Status:** STRUCTURAL OBSTRUCTION (mixing), not a mass obstruction.
 - **Caveat:** the lattice is truncated at |n|, |m| ≤ 2 for Π + Π′. A larger lattice can only remove survivors, not add them.
+
+## D2120b (DEEP): Z_n on the exact integral even lattice. **SETTLED; both poles agree.**
+- **Lattice:** F has rank 32 and **det Gram(ω) = 1**. It is unimodular, so F = H₃(Z) exactly, and the lattice is complete. E = F ∩ ker(R−1) has rank **16**, matching the 16 ΩR-even cycles of 1303.6845.
+- **Calibration (six-stack model of 1303.6845):**
+  - The code independently recovers the massless U(1)_Z = Q_b − Q_c + Q_e + Q_f (its rows vanish on E).
+  - Every Z_n survivor for n = 2…8 (63/2/448/4/126/6/512 of them) is trivial (centre-type or Q_Z). The locked criterion PASSES and matches §5.1 of the paper.
+- **Five-stack model:** Z₂ and **Z₄, k = (0,1,1,1,1), genuine**. It is not in the centre lattice span{e_a, 2e_b, 2e_c, 2e_d, 2e_e}, and there is no massless U(1).
+- **Physical proof (referee R2-11):** the SU(N)-invariant operator ac·bc·ab′ carries Z₄ charge 2.
+- **K9 final:** STRUCTURAL OBSTRUCTION. The Yukawa matrices are block-diagonal 1 ⊕ 2 to all instanton orders. Generations 2 and 3 can come from instantons (S ≈ 5.6 / 11.8, estimate). Generation-1 mixing (and so V_us) needs extra Higgs fields or higher-dimensional operators with Z₄-charged vevs.
