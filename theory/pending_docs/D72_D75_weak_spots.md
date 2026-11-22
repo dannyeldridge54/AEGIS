@@ -20697,3 +20697,11 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Consequence for v4:** the "+9S" piece of f_vis (7.79 of α_G⁻¹ = 27.94) is a perturbative IIB statement. At ρ it carries uncontrolled corrections of relative size ~4e-3 per instanton, times unknown multiplicities.
   - v4's τ is fixed by a potential, not by a monodromy, so the visible group need not be E₆/E₈.
   - **Loop: no closed item. No-progress count 3.**
+- **D2074 (CENTRE; PREREG_D2074): Q5, published Z₆/Z₆′ three-family brane models. PARTIAL.**
+  - Gmeiner–Honecker (0910.0843) give **globally consistent** fractional-D6 Standard Models (RR tadpoles cancelled, threshold tadpoles cancelled):
+    - **Z₆:** five stacks, U(3)_a × U(2)_b × U(1)_c × U(1)_d × Sp(2)_e;
+    - **Z₆′:** hidden sectors of at most **Sp(6)** or Sp(2) (D2047 read), or none.
+  - **No published example carries a hidden stack anywhere near v4's dark SU(12)** (rank 11). Their tadpole budgets fill up with the SM plus Sp(6) at most.
+  - These are **IIA D6 on Z₆/Z₆′**. v4 is IIB D7 on Z₆-II, so the comparison is only up to mirror/T-duality.
+  - **Read:** whether Z₆-II/ΩR can hold both a three-family visible sector and an SU(12) dark stack inside its tadpole is **unshown, and doubtful** given the published budgets (and 2404.18995's flux-tadpole bound).
+  - **Loop: no closed item. No-progress count 4.**
