@@ -1,0 +1,3249 @@
+{
+ "prereg": "PREREG_D1989_complete_field.md (+ D1986/D1987)",
+ "seed": 2032,
+ "stuck_events": {
+  "1": 0,
+  "2": 0,
+  "3": 0,
+  "4": 0,
+  "5": 0,
+  "6": 0,
+  "7": 0,
+  "8": 0,
+  "9": 0
+ },
+ "no_free_knob_share": {
+  "1": 1.0,
+  "2": 0.0,
+  "3": 0.0,
+  "4": 0.0,
+  "5": 0.0,
+  "6": 0.0,
+  "7": 0.0,
+  "8": 0.626,
+  "9": 0.0
+ },
+ "seconds": 60.0,
+ "pulses": 159330,
+ "pulses_per_s": 2655.5,
+ "start_cfg": {
+  "k": 0.16,
+  "h": 20,
+  "far": 5.550236578834173e-06,
+  "mean_delay": 96.6,
+  "misses": 0,
+  "probes": 70,
+  "miss_frac": 0.0,
+  "admissible": true
+ },
+ "final_live_cfg": [
+  0.16,
+  46.875
+ ],
+ "accuracy": {
+  "A1": true,
+  "A2_recall": true,
+  "A2_prec_fast": true,
+  "A2_prec_full": true,
+  "A3": true,
+  "A4": true,
+  "A5": true
+ },
+ "verdict": "PASS",
+ "events": {
+  "E1 n_s +3 sigma": {
+   "pred": [
+    6
+   ],
+   "fast": [
+    6
+   ],
+   "full": [
+    6
+   ],
+   "recall_fast": 1.0,
+   "prec_fast": 1.0,
+   "prec_full": 1.0,
+   "latency_ms": {
+    "6": 1.9
+   },
+   "recovery_checked": [
+    1,
+    2,
+    5,
+    6,
+    7
+   ],
+   "recovered": {
+    "1": true,
+    "2": true,
+    "5": true,
+    "6": true,
+    "7": true
+   }
+  },
+  "E2 m3/2 x1.05 kick": {
+   "pred": [
+    5,
+    8
+   ],
+   "fast": [
+    5,
+    8
+   ],
+   "full": [
+    5,
+    8
+   ],
+   "recall_fast": 1.0,
+   "prec_fast": 1.0,
+   "prec_full": 1.0,
+   "latency_ms": {
+    "8": 0.9,
+    "5": 0.9
+   },
+   "recovery_checked": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    8
+   ],
+   "recovered": {
+    "1": true,
+    "2": true,
+    "5": true,
+    "6": true,
+    "7": true,
+    "8": true
+   }
+  },
+  "E3 Y_B -30 %": {
+   "pred": [
+    8
+   ],
+   "fast": [
+    8
+   ],
+   "full": [
+    8
+   ],
+   "recall_fast": 1.0,
+   "prec_fast": 1.0,
+   "prec_full": 1.0,
+   "latency_ms": {
+    "8": 0.1
+   },
+   "recovery_checked": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    8
+   ],
+   "recovered": {
+    "1": true,
+    "2": true,
+    "5": true,
+    "6": true,
+    "7": true,
+    "8": true
+   }
+  }
+ },
+ "false_alarm_rate": {
+  "1": 0.0,
+  "2": 0.0,
+  "4": 0.0,
+  "5": 1.4427724315043788e-05,
+  "6": 1.4427724315043788e-05,
+  "7": 0.0,
+  "8": 8.656634589026273e-05
+ },
+ "quiet_pulses": 69311,
+ "precision_fast": 1.0,
+ "precision_full": 1.0,
+ "bound_frac": 0.0,
+ "fits_spent": [
+  "TR",
+  "m32",
+  "split"
+ ],
+ "final_knobs": {
+  "u": 0.02663,
+  "MN": 185101078161.6326,
+  "m32": 280587.9028090615,
+  "TR": 1787847956.6772864,
+  "split": 0.0019986844151485975
+ },
+ "final_status": {
+  "1": "RESONANT",
+  "2": "RESONANT",
+  "3": "WINDOW",
+  "4": "OPAQUE",
+  "5": "RESONANT",
+  "6": "RESONANT",
+  "7": "RESONANT",
+  "8": "RESONANT",
+  "9": "WINDOW"
+ },
+ "resonant_share": {
+  "1": 1.0,
+  "2": 1.0,
+  "3": 0.0,
+  "4": 0.0,
+  "5": 1.0,
+  "6": 0.844,
+  "7": 1.0,
+  "8": 0.654,
+  "9": 0.0
+ },
+ "lost_flips": {
+  "1": 0,
+  "2": 0,
+  "3": 0,
+  "4": 0,
+  "5": 0,
+  "6": 1,
+  "7": 0,
+  "8": 1,
+  "9": 0
+ },
+ "done_seconds": {
+  "1": 0.0,
+  "2": 56.99,
+  "3": 0.0,
+  "4": 0.0,
+  "5": 0.0,
+  "6": 0.0,
+  "7": 0.0,
+  "8": 0.0,
+  "9": 0.0
+ },
+ "goalpost_tally": {
+  "PASS (FIT)": 8,
+  "UNSCORED": 9,
+  "PASS": 18,
+  "PASS (bound)": 2,
+  "TRUST": 1,
+  "PASS (null)": 7,
+  "FAIL": 1,
+  "OPEN": 15
+ },
+ "surviving_predictions": [
+  "D1",
+  "D4",
+  "D5",
+  "A17",
+  "OP-numass",
+  "C7",
+  "C8",
+  "OP-strongCP",
+  "B6",
+  "F10",
+  "A2",
+  "A3",
+  "A4",
+  "OP-horizon",
+  "B10",
+  "A8",
+  "A6",
+  "E5"
+ ],
+ "scoreboard": {
+  "1": [
+   {
+    "id": "C1",
+    "name": "quark one-spurion window |u|",
+    "kind": "FIT",
+    "open_problem": false,
+    "final": "PASS (FIT)",
+    "value": 0.02663,
+    "live": true,
+    "share": {
+     "PASS (FIT)": 1.0
+    }
+   },
+   {
+    "id": "OP-flavour",
+    "name": "flavour puzzle: Yukawa hierarchy from one rung",
+    "kind": "FIT",
+    "open_problem": true,
+    "final": "PASS (FIT)",
+    "value": 0.02663,
+    "live": true,
+    "share": {
+     "PASS (FIT)": 1.0
+    }
+   },
+   {
+    "id": "C2",
+    "name": "CKM first-row unitarity",
+    "kind": "NULL",
+    "open_problem": false,
+    "final": "UNSCORED",
+    "value": null,
+    "live": false,
+    "share": {
+     "UNSCORED": 0.0
+    }
+   },
+   {
+    "id": "C3",
+    "name": "B_s->mumu, b->sll",
+    "kind": "NULL",
+    "open_problem": false,
+    "final": "UNSCORED",
+    "value": null,
+    "live": false,
+    "share": {
+     "UNSCORED": 0.0
+    }
+   },
+   {
+    "id": "C5",
+    "name": "K->pi nu nu",
+    "kind": "NULL",
+    "open_problem": false,
+    "final": "UNSCORED",
+    "value": null,
+    "live": false,
+    "share": {
+     "UNSCORED": 0.0
+    }
+   },
+   {
+    "id": "C6",
+    "name": "eps_K, Delta M (SUSY FCNC)",
+    "kind": "NULL",
+    "open_problem": false,
+    "final": "UNSCORED",
+    "value": null,
+    "live": false,
+    "share": {
+     "UNSCORED": 0.0
+    }
+   }
+  ],
+  "2": [
+   {
+    "id": "D1",
+    "name": "sin^2 theta_12 (TM1)",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "PASS",
+    "value": 1.057471264367821,
+    "live": false,
+    "share": {
+     "PASS": 0.0
+    }
+   },
+   {
+    "id": "D3",
+    "name": "neutrino mass ordering",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "UNSCORED",
+    "value": null,
+    "live": false,
+    "share": {
+     "UNSCORED": 0.0
+    }
+   },
+   {
+    "id": "D4",
+    "name": "0vbb m_bb [meV]",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "PASS",
+    "value": 0.1357142857142857,
+    "live": false,
+    "share": {
+     "PASS": 0.0
+    }
+   },
+   {
+    "id": "D5",
+    "name": "beta-decay m_beta [meV]",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "PASS",
+    "value": 0.01955555555555556,
+    "live": false,
+    "share": {
+     "PASS": 0.0
+    }
+   },
+   {
+    "id": "A17",
+    "name": "sum m_nu [meV]",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "PASS",
+    "value": 0.9143302180685359,
+    "live": false,
+    "share": {
+     "PASS": 0.0
+    }
+   },
+   {
+    "id": "OP-numass",
+    "name": "neutrino mass scale and origin",
+    "kind": "PRED",
+    "open_problem": true,
+    "final": "PASS",
+    "value": 0.9143302180685359,
+    "live": false,
+    "share": {
+     "PASS": 0.0
+    }
+   },
+   {
+    "id": "L2-MN",
+    "name": "M_N naturalness bounds [GeV]",
+    "kind": "BOUND",
+    "open_problem": false,
+    "final": "PASS (bound)",
+    "value": 185101078161.6326,
+    "live": true,
+    "share": {
+     "PASS (bound)": 1.0
+    }
+   }
+  ],
+  "3": [
+   {
+    "id": "C10",
+    "name": "Koide Q",
+    "kind": "TRUST",
+    "open_problem": false,
+    "final": "TRUST",
+    "value": 0.4248366013012651,
+    "live": false,
+    "share": {
+     "TRUST": 0.0
+    }
+   },
+   {
+    "id": "C4",
+    "name": "mu->e gamma BR",
+    "kind": "NULL",
+    "open_problem": false,
+    "final": "PASS (null)",
+    "value": 0.0,
+    "live": false,
+    "share": {
+     "PASS (null)": 0.0
+    }
+   },
+   {
+    "id": "B9",
+    "name": "electron g-2 and alpha",
+    "kind": "NULL",
+    "open_problem": false,
+    "final": "UNSCORED",
+    "value": null,
+    "live": false,
+    "share": {
+     "UNSCORED": 0.0
+    }
+   }
+  ],
+  "4": [
+   {
+    "id": "L4-rung",
+    "name": "cube: lepton slip vs theta-step agreement (<= 15 %)",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "FAIL",
+    "value": -0.0008981631563926284,
+    "live": true,
+    "share": {
+     "FAIL": 0.988,
+     "PASS": 0.012
+    }
+   },
+   {
+    "id": "C7",
+    "name": "neutron EDM [e cm]",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "PASS",
+    "value": 5.555555555555555e-07,
+    "live": false,
+    "share": {
+     "PASS": 0.0
+    }
+   },
+   {
+    "id": "C8",
+    "name": "electron EDM [e cm]",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "PASS",
+    "value": 0.000975609756097561,
+    "live": false,
+    "share": {
+     "PASS": 0.0
+    }
+   },
+   {
+    "id": "OP-strongCP",
+    "name": "strong CP problem: theta-bar",
+    "kind": "PRED",
+    "open_problem": true,
+    "final": "PASS",
+    "value": 0.0,
+    "live": false,
+    "share": {
+     "PASS": 0.0
+    }
+   },
+   {
+    "id": "C11",
+    "name": "QCD axion searches",
+    "kind": "NULL",
+    "open_problem": false,
+    "final": "UNSCORED",
+    "value": null,
+    "live": false,
+    "share": {
+     "UNSCORED": 0.0
+    }
+   }
+  ],
+  "5": [
+   {
+    "id": "B5",
+    "name": "wino mass [GeV] vs disappearing tracks",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "PASS (FIT)",
+    "value": 1.0615673733015971,
+    "live": true,
+    "share": {
+     "FAIL": 0.0001,
+     "PASS (FIT)": 0.9999
+    }
+   },
+   {
+    "id": "B6",
+    "name": "gluino mass [GeV]",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "PASS",
+    "value": 2.143478260869565,
+    "live": false,
+    "share": {
+     "PASS": 0.0
+    }
+   },
+   {
+    "id": "B3",
+    "name": "Higgs mass [GeV]",
+    "kind": "OPEN",
+    "open_problem": false,
+    "final": "OPEN",
+    "value": null,
+    "live": false,
+    "share": {
+     "OPEN": 0.0
+    }
+   },
+   {
+    "id": "F10",
+    "name": "moduli problem: lightest modulus [GeV]",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "PASS",
+    "value": 8.666666666666666,
+    "live": false,
+    "share": {
+     "PASS": 0.0
+    }
+   },
+   {
+    "id": "B8",
+    "name": "muon g-2: Delta a_mu [1e-11]",
+    "kind": "NULL",
+    "open_problem": false,
+    "final": "PASS (null)",
+    "value": -0.6031746031746031,
+    "live": false,
+    "share": {
+     "PASS (null)": 0.0
+    }
+   },
+   {
+    "id": "OP-hierarchy",
+    "name": "hierarchy problem: m_h / M_P",
+    "kind": "OPEN",
+    "open_problem": true,
+    "final": "OPEN",
+    "value": null,
+    "live": false,
+    "share": {
+     "OPEN": 0.0
+    }
+   },
+   {
+    "id": "E2",
+    "name": "wino gamma-lines",
+    "kind": "OPEN",
+    "open_problem": false,
+    "final": "OPEN",
+    "value": null,
+    "live": false,
+    "share": {
+     "OPEN": 0.0
+    }
+   },
+   {
+    "id": "OP-muong2",
+    "name": "muon g-2 anomaly",
+    "kind": "NULL",
+    "open_problem": true,
+    "final": "PASS (null)",
+    "value": -0.6031746031746031,
+    "live": false,
+    "share": {
+     "PASS (null)": 0.0
+    }
+   }
+  ],
+  "6": [
+   {
+    "id": "A1",
+    "name": "n_s",
+    "kind": "FIT",
+    "open_problem": false,
+    "final": "PASS (FIT)",
+    "value": -0.7376500442966992,
+    "live": true,
+    "share": {
+     "PASS (FIT)": 0.8438,
+     "TENSION (FIT)": 0.0002,
+     "FAIL (FIT)": 0.1561
+    }
+   },
+   {
+    "id": "A2",
+    "name": "r",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "PASS",
+    "value": 0.015000000000000001,
+    "live": false,
+    "share": {
+     "PASS": 0.0
+    }
+   },
+   {
+    "id": "A3",
+    "name": "running dn_s/dlnk",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "PASS",
+    "value": 0.526865671641791,
+    "live": false,
+    "share": {
+     "PASS": 0.0
+    }
+   },
+   {
+    "id": "A4",
+    "name": "f_NL local",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "PASS",
+    "value": 0.17647058823529413,
+    "live": false,
+    "share": {
+     "PASS": 0.0
+    }
+   },
+   {
+    "id": "OP-horizon",
+    "name": "horizon/flatness: e-folds N*",
+    "kind": "PRED",
+    "open_problem": true,
+    "final": "PASS",
+    "value": 1.1177777777777778,
+    "live": false,
+    "share": {
+     "PASS": 0.0
+    }
+   },
+   {
+    "id": "OP-monopole",
+    "name": "monopole problem",
+    "kind": "NULL",
+    "open_problem": true,
+    "final": "UNSCORED",
+    "value": null,
+    "live": false,
+    "share": {
+     "UNSCORED": 0.0
+    }
+   },
+   {
+    "id": "F11",
+    "name": "swampland / TCC flags",
+    "kind": "TRUST",
+    "open_problem": false,
+    "final": "UNSCORED",
+    "value": null,
+    "live": false,
+    "share": {
+     "UNSCORED": 0.0
+    }
+   }
+  ],
+  "7": [
+   {
+    "id": "B1",
+    "name": "alpha_s(M_Z)",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "PASS (FIT)",
+    "value": 0.10128921777954572,
+    "live": true,
+    "share": {
+     "PASS (FIT)": 1.0
+    }
+   },
+   {
+    "id": "OP-unification",
+    "name": "gauge coupling unification",
+    "kind": "PRED",
+    "open_problem": true,
+    "final": "PASS (FIT)",
+    "value": 0.10128921777954572,
+    "live": true,
+    "share": {
+     "PASS (FIT)": 1.0
+    }
+   },
+   {
+    "id": "B10",
+    "name": "proton lifetime e+pi0 [yr]",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "PASS",
+    "value": 6.666666666666667,
+    "live": false,
+    "share": {
+     "PASS": 0.0
+    }
+   },
+   {
+    "id": "B7",
+    "name": "W mass [MeV] (SM-like)",
+    "kind": "NULL",
+    "open_problem": false,
+    "final": "PASS (null)",
+    "value": -0.2758620689652663,
+    "live": false,
+    "share": {
+     "PASS (null)": 0.0
+    }
+   },
+   {
+    "id": "OP-neutron",
+    "name": "neutron lifetime beam-bottle anomaly [s]",
+    "kind": "OPEN",
+    "open_problem": true,
+    "final": "OPEN",
+    "value": null,
+    "live": false,
+    "share": {
+     "OPEN": 0.0
+    }
+   }
+  ],
+  "8": [
+   {
+    "id": "A18",
+    "name": "baryon asymmetry Y_B",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "PASS (FIT)",
+    "value": 1.1915851945481302,
+    "live": true,
+    "share": {
+     "FAIL": 0.1742,
+     "PASS (FIT)": 0.8258
+    }
+   },
+   {
+    "id": "OP-baryogenesis",
+    "name": "baryogenesis eta_B",
+    "kind": "PRED",
+    "open_problem": true,
+    "final": "PASS (FIT)",
+    "value": 1.1915851945481302,
+    "live": true,
+    "share": {
+     "FAIL": 0.1742,
+     "PASS (FIT)": 0.8258
+    }
+   },
+   {
+    "id": "L8-box",
+    "name": "gravitino->wino abundance Omega_w h^2 <= 0.12",
+    "kind": "BOUND",
+    "open_problem": false,
+    "final": "PASS (bound)",
+    "value": 0.9522852205769261,
+    "live": true,
+    "share": {
+     "PASS (bound)": 0.8284,
+     "FAIL (bound)": 0.1716
+    }
+   },
+   {
+    "id": "A19",
+    "name": "dark matter Omega_c h^2",
+    "kind": "FIT",
+    "open_problem": false,
+    "final": "OPEN",
+    "value": null,
+    "live": false,
+    "share": {
+     "OPEN": 0.0
+    }
+   },
+   {
+    "id": "OP-DM",
+    "name": "dark matter identity",
+    "kind": "FIT",
+    "open_problem": true,
+    "final": "OPEN",
+    "value": null,
+    "live": false,
+    "share": {
+     "OPEN": 0.0
+    }
+   },
+   {
+    "id": "A8",
+    "name": "BBN late decays: gravitino lifetime [s]",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "PASS",
+    "value": 0.013999999999999999,
+    "live": false,
+    "share": {
+     "PASS": 0.0
+    }
+   },
+   {
+    "id": "A6",
+    "name": "N_eff",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "PASS",
+    "value": -1.0628571428571425,
+    "live": false,
+    "share": {
+     "PASS": 0.0
+    }
+   },
+   {
+    "id": "A9",
+    "name": "lithium-7 problem (Li/H x1e10)",
+    "kind": "OPEN",
+    "open_problem": true,
+    "final": "OPEN",
+    "value": null,
+    "live": false,
+    "share": {
+     "OPEN": 0.0
+    }
+   },
+   {
+    "id": "E5",
+    "name": "DM self-interaction sigma/m [cm^2/g]",
+    "kind": "PRED",
+    "open_problem": false,
+    "final": "PASS",
+    "value": 0.02,
+    "live": false,
+    "share": {
+     "PASS": 0.0
+    }
+   },
+   {
+    "id": "A21",
+    "name": "cosmic strings G mu",
+    "kind": "OPEN",
+    "open_problem": false,
+    "final": "OPEN",
+    "value": null,
+    "live": false,
+    "share": {
+     "OPEN": 0.0
+    }
+   },
+   {
+    "id": "A22",
+    "name": "cosmic birefringence beta",
+    "kind": "OPEN",
+    "open_problem": false,
+    "final": "OPEN",
+    "value": null,
+    "live": false,
+    "share": {
+     "OPEN": 0.0
+    }
+   }
+  ],
+  "9": [
+   {
+    "id": "A14-w0",
+    "name": "dark energy w0",
+    "kind": "OPEN",
+    "open_problem": false,
+    "final": "OPEN",
+    "value": null,
+    "live": false,
+    "share": {
+     "OPEN": 0.0
+    }
+   },
+   {
+    "id": "A14-wa",
+    "name": "dark energy wa",
+    "kind": "OPEN",
+    "open_problem": false,
+    "final": "OPEN",
+    "value": null,
+    "live": false,
+    "share": {
+     "OPEN": 0.0
+    }
+   },
+   {
+    "id": "OP-DE",
+    "name": "evolving dark energy (2.8-4.2 sigma)",
+    "kind": "OPEN",
+    "open_problem": true,
+    "final": "OPEN",
+    "value": null,
+    "live": false,
+    "share": {
+     "OPEN": 0.0
+    }
+   },
+   {
+    "id": "A15",
+    "name": "Hubble tension H0",
+    "kind": "OPEN",
+    "open_problem": true,
+    "final": "OPEN",
+    "value": null,
+    "live": false,
+    "share": {
+     "OPEN": 0.0
+    }
+   },
+   {
+    "id": "A16",
+    "name": "S8 tension",
+    "kind": "OPEN",
+    "open_problem": true,
+    "final": "OPEN",
+    "value": null,
+    "live": false,
+    "share": {
+     "OPEN": 0.0
+    }
+   },
+   {
+    "id": "OP-Lambda",
+    "name": "cosmological constant rho_L^(1/4) [meV]",
+    "kind": "OPEN",
+    "open_problem": true,
+    "final": "OPEN",
+    "value": null,
+    "live": false,
+    "share": {
+     "OPEN": 0.0
+    }
+   },
+   {
+    "id": "F1",
+    "name": "equivalence principle eta",
+    "kind": "NULL",
+    "open_problem": false,
+    "final": "PASS (null)",
+    "value": 0.0,
+    "live": false,
+    "share": {
+     "PASS (null)": 0.0
+    }
+   },
+   {
+    "id": "F2",
+    "name": "PPN |gamma-1|",
+    "kind": "NULL",
+    "open_problem": false,
+    "final": "PASS (null)",
+    "value": 0.0,
+    "live": false,
+    "share": {
+     "PASS (null)": 0.0
+    }
+   },
+   {
+    "id": "F6",
+    "name": "GW speed |c_g/c-1|",
+    "kind": "NULL",
+    "open_problem": false,
+    "final": "PASS (null)",
+    "value": 0.0,
+    "live": false,
+    "share": {
+     "PASS (null)": 0.0
+    }
+   }
+  ]
+ },
+ "controller": [],
+ "pbt": [
+  {
+   "t": 30.0,
+   "live": [
+    0.16,
+    46.875
+   ],
+   "shadows": [
+    [
+     0.128,
+     37.5
+    ],
+    [
+     0.128,
+     58.594
+    ],
+    [
+     0.16,
+     46.875
+    ],
+    [
+     0.25,
+     30
+    ]
+   ],
+   "mean_delay": [
+    210.6,
+    0.0,
+    315.7,
+    406.6
+   ],
+   "fa": [
+    2,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "t": 35.0,
+   "live": [
+    0.128,
+    58.594
+   ],
+   "shadows": [
+    [
+     0.128,
+     37.5
+    ],
+    [
+     0.128,
+     58.594
+    ],
+    [
+     0.16,
+     46.875
+    ],
+    [
+     0.25,
+     30
+    ]
+   ],
+   "mean_delay": [
+    205.7,
+    344.6,
+    0.0,
+    421.1
+   ],
+   "fa": [
+    2,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "t": 40.0,
+   "live": [
+    0.16,
+    46.875
+   ],
+   "shadows": [
+    [
+     0.128,
+     58.594
+    ],
+    [
+     0.128,
+     58.594
+    ],
+    [
+     0.16,
+     46.875
+    ],
+    [
+     0.25,
+     30
+    ]
+   ],
+   "mean_delay": [
+    0.0,
+    356.4,
+    267.8,
+    432.7
+   ],
+   "fa": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "t": 45.0,
+   "live": [
+    0.128,
+    58.594
+   ],
+   "shadows": [
+    [
+     0.128,
+     58.594
+    ],
+    [
+     0.128,
+     58.594
+    ],
+    [
+     0.16,
+     46.875
+    ],
+    [
+     0.16,
+     46.875
+    ]
+   ],
+   "mean_delay": [
+    295.1,
+    317.6,
+    319.8,
+    0.0
+   ],
+   "fa": [
+    0,
+    0,
+    1,
+    0
+   ]
+  },
+  {
+   "t": 50.0,
+   "live": [
+    0.16,
+    46.875
+   ],
+   "shadows": [
+    [
+     0.128,
+     58.594
+    ],
+    [
+     0.128,
+     58.594
+    ],
+    [
+     0.2,
+     37.5
+    ],
+    [
+     0.16,
+     46.875
+    ]
+   ],
+   "mean_delay": [
+    316.9,
+    316.0,
+    0.0,
+    242.3
+   ],
+   "fa": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "t": 55.0,
+   "live": [
+    0.16,
+    46.875
+   ],
+   "shadows": [
+    [
+     0.128,
+     58.594
+    ],
+    [
+     0.2,
+     58.594
+    ],
+    [
+     0.2,
+     37.5
+    ],
+    [
+     0.16,
+     46.875
+    ]
+   ],
+   "mean_delay": [
+    301.1,
+    0.0,
+    300.0,
+    238.6
+   ],
+   "fa": [
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "pbt_n": 11,
+ "alarms": [
+  {
+   "p": 2,
+   "t": 0.0062,
+   "layer": 7
+  },
+  {
+   "p": 3,
+   "t": 0.0066,
+   "layer": 7
+  },
+  {
+   "p": 4,
+   "t": 0.007,
+   "layer": 7
+  },
+  {
+   "p": 5,
+   "t": 0.0074,
+   "layer": 6
+  },
+  {
+   "p": 5,
+   "t": 0.0074,
+   "layer": 7
+  },
+  {
+   "p": 6,
+   "t": 0.0077,
+   "layer": 7
+  },
+  {
+   "p": 7,
+   "t": 0.0081,
+   "layer": 7
+  },
+  {
+   "p": 8,
+   "t": 0.0084,
+   "layer": 7
+  },
+  {
+   "p": 9,
+   "t": 0.0088,
+   "layer": 7
+  },
+  {
+   "p": 10,
+   "t": 0.0091,
+   "layer": 7
+  },
+  {
+   "p": 11,
+   "t": 0.0098,
+   "layer": 6
+  },
+  {
+   "p": 11,
+   "t": 0.0098,
+   "layer": 7
+  },
+  {
+   "p": 12,
+   "t": 0.0102,
+   "layer": 7
+  },
+  {
+   "p": 13,
+   "t": 0.0106,
+   "layer": 7
+  },
+  {
+   "p": 14,
+   "t": 0.011,
+   "layer": 6
+  },
+  {
+   "p": 14,
+   "t": 0.011,
+   "layer": 7
+  },
+  {
+   "p": 15,
+   "t": 0.0113,
+   "layer": 7
+  },
+  {
+   "p": 16,
+   "t": 0.0117,
+   "layer": 7
+  },
+  {
+   "p": 17,
+   "t": 0.012,
+   "layer": 7
+  },
+  {
+   "p": 18,
+   "t": 0.0123,
+   "layer": 7
+  },
+  {
+   "p": 19,
+   "t": 0.0127,
+   "layer": 6
+  },
+  {
+   "p": 19,
+   "t": 0.0127,
+   "layer": 7
+  },
+  {
+   "p": 20,
+   "t": 0.0131,
+   "layer": 7
+  },
+  {
+   "p": 21,
+   "t": 0.0138,
+   "layer": 7
+  },
+  {
+   "p": 22,
+   "t": 0.0142,
+   "layer": 7
+  },
+  {
+   "p": 23,
+   "t": 0.0145,
+   "layer": 7
+  },
+  {
+   "p": 24,
+   "t": 0.0149,
+   "layer": 7
+  },
+  {
+   "p": 25,
+   "t": 0.0152,
+   "layer": 7
+  },
+  {
+   "p": 26,
+   "t": 0.0155,
+   "layer": 6
+  },
+  {
+   "p": 26,
+   "t": 0.0155,
+   "layer": 7
+  },
+  {
+   "p": 28,
+   "t": 0.0163,
+   "layer": 7
+  },
+  {
+   "p": 29,
+   "t": 0.0166,
+   "layer": 7
+  },
+  {
+   "p": 30,
+   "t": 0.0169,
+   "layer": 6
+  },
+  {
+   "p": 31,
+   "t": 0.0176,
+   "layer": 7
+  },
+  {
+   "p": 32,
+   "t": 0.018,
+   "layer": 7
+  },
+  {
+   "p": 33,
+   "t": 0.0184,
+   "layer": 7
+  },
+  {
+   "p": 34,
+   "t": 0.0187,
+   "layer": 7
+  },
+  {
+   "p": 35,
+   "t": 0.0191,
+   "layer": 7
+  },
+  {
+   "p": 36,
+   "t": 0.0194,
+   "layer": 7
+  },
+  {
+   "p": 37,
+   "t": 0.0197,
+   "layer": 7
+  },
+  {
+   "p": 38,
+   "t": 0.02,
+   "layer": 7
+  },
+  {
+   "p": 39,
+   "t": 0.0203,
+   "layer": 7
+  },
+  {
+   "p": 40,
+   "t": 0.0207,
+   "layer": 6
+  },
+  {
+   "p": 40,
+   "t": 0.0207,
+   "layer": 7
+  },
+  {
+   "p": 41,
+   "t": 0.0213,
+   "layer": 7
+  },
+  {
+   "p": 42,
+   "t": 0.0217,
+   "layer": 7
+  },
+  {
+   "p": 43,
+   "t": 0.022,
+   "layer": 7
+  },
+  {
+   "p": 45,
+   "t": 0.0227,
+   "layer": 7
+  },
+  {
+   "p": 47,
+   "t": 0.0233,
+   "layer": 7
+  },
+  {
+   "p": 48,
+   "t": 0.0236,
+   "layer": 7
+  },
+  {
+   "p": 49,
+   "t": 0.024,
+   "layer": 7
+  },
+  {
+   "p": 50,
+   "t": 0.0243,
+   "layer": 7
+  },
+  {
+   "p": 51,
+   "t": 0.025,
+   "layer": 7
+  },
+  {
+   "p": 52,
+   "t": 0.0253,
+   "layer": 7
+  },
+  {
+   "p": 53,
+   "t": 0.0256,
+   "layer": 7
+  },
+  {
+   "p": 54,
+   "t": 0.0259,
+   "layer": 7
+  },
+  {
+   "p": 56,
+   "t": 0.0266,
+   "layer": 6
+  },
+  {
+   "p": 57,
+   "t": 0.0269,
+   "layer": 7
+  },
+  {
+   "p": 58,
+   "t": 0.0272,
+   "layer": 7
+  },
+  {
+   "p": 60,
+   "t": 0.0278,
+   "layer": 6
+  },
+  {
+   "p": 60,
+   "t": 0.0278,
+   "layer": 7
+  },
+  {
+   "p": 61,
+   "t": 0.0284,
+   "layer": 7
+  },
+  {
+   "p": 62,
+   "t": 0.0288,
+   "layer": 7
+  },
+  {
+   "p": 63,
+   "t": 0.0291,
+   "layer": 7
+  },
+  {
+   "p": 65,
+   "t": 0.0297,
+   "layer": 7
+  },
+  {
+   "p": 66,
+   "t": 0.0301,
+   "layer": 6
+  },
+  {
+   "p": 66,
+   "t": 0.0301,
+   "layer": 7
+  },
+  {
+   "p": 68,
+   "t": 0.0307,
+   "layer": 7
+  },
+  {
+   "p": 70,
+   "t": 0.0314,
+   "layer": 6
+  },
+  {
+   "p": 70,
+   "t": 0.0314,
+   "layer": 7
+  },
+  {
+   "p": 71,
+   "t": 0.032,
+   "layer": 7
+  },
+  {
+   "p": 73,
+   "t": 0.0327,
+   "layer": 7
+  },
+  {
+   "p": 74,
+   "t": 0.033,
+   "layer": 6
+  },
+  {
+   "p": 75,
+   "t": 0.0333,
+   "layer": 7
+  },
+  {
+   "p": 76,
+   "t": 0.0336,
+   "layer": 6
+  },
+  {
+   "p": 76,
+   "t": 0.0336,
+   "layer": 7
+  },
+  {
+   "p": 79,
+   "t": 0.035,
+   "layer": 7
+  },
+  {
+   "p": 80,
+   "t": 0.0353,
+   "layer": 7
+  },
+  {
+   "p": 82,
+   "t": 0.0363,
+   "layer": 7
+  },
+  {
+   "p": 83,
+   "t": 0.0366,
+   "layer": 7
+  },
+  {
+   "p": 85,
+   "t": 0.0373,
+   "layer": 6
+  },
+  {
+   "p": 85,
+   "t": 0.0373,
+   "layer": 7
+  },
+  {
+   "p": 87,
+   "t": 0.0379,
+   "layer": 7
+  },
+  {
+   "p": 89,
+   "t": 0.0386,
+   "layer": 7
+  },
+  {
+   "p": 90,
+   "t": 0.0389,
+   "layer": 7
+  },
+  {
+   "p": 92,
+   "t": 0.0399,
+   "layer": 7
+  },
+  {
+   "p": 93,
+   "t": 0.0402,
+   "layer": 6
+  },
+  {
+   "p": 94,
+   "t": 0.0405,
+   "layer": 7
+  },
+  {
+   "p": 96,
+   "t": 0.0411,
+   "layer": 7
+  },
+  {
+   "p": 97,
+   "t": 0.0414,
+   "layer": 7
+  },
+  {
+   "p": 99,
+   "t": 0.0421,
+   "layer": 6
+  },
+  {
+   "p": 100,
+   "t": 0.0424,
+   "layer": 7
+  },
+  {
+   "p": 101,
+   "t": 0.0431,
+   "layer": 7
+  },
+  {
+   "p": 103,
+   "t": 0.0437,
+   "layer": 7
+  },
+  {
+   "p": 105,
+   "t": 0.0444,
+   "layer": 7
+  },
+  {
+   "p": 107,
+   "t": 0.045,
+   "layer": 7
+  },
+  {
+   "p": 108,
+   "t": 0.0453,
+   "layer": 6
+  },
+  {
+   "p": 109,
+   "t": 0.0456,
+   "layer": 7
+  },
+  {
+   "p": 110,
+   "t": 0.046,
+   "layer": 7
+  },
+  {
+   "p": 112,
+   "t": 0.047,
+   "layer": 7
+  },
+  {
+   "p": 113,
+   "t": 0.0473,
+   "layer": 6
+  },
+  {
+   "p": 115,
+   "t": 0.048,
+   "layer": 7
+  },
+  {
+   "p": 116,
+   "t": 0.0483,
+   "layer": 6
+  },
+  {
+   "p": 117,
+   "t": 0.0486,
+   "layer": 7
+  },
+  {
+   "p": 120,
+   "t": 0.0495,
+   "layer": 6
+  },
+  {
+   "p": 120,
+   "t": 0.0495,
+   "layer": 7
+  },
+  {
+   "p": 123,
+   "t": 0.0508,
+   "layer": 7
+  },
+  {
+   "p": 126,
+   "t": 0.0517,
+   "layer": 7
+  },
+  {
+   "p": 128,
+   "t": 0.0524,
+   "layer": 6
+  },
+  {
+   "p": 128,
+   "t": 0.0524,
+   "layer": 7
+  },
+  {
+   "p": 130,
+   "t": 0.053,
+   "layer": 7
+  },
+  {
+   "p": 134,
+   "t": 0.0547,
+   "layer": 6
+  },
+  {
+   "p": 135,
+   "t": 0.055,
+   "layer": 7
+  },
+  {
+   "p": 137,
+   "t": 0.0556,
+   "layer": 7
+  },
+  {
+   "p": 138,
+   "t": 0.0559,
+   "layer": 6
+  },
+  {
+   "p": 139,
+   "t": 0.0562,
+   "layer": 7
+  },
+  {
+   "p": 142,
+   "t": 0.0575,
+   "layer": 7
+  },
+  {
+   "p": 146,
+   "t": 0.0589,
+   "layer": 7
+  },
+  {
+   "p": 149,
+   "t": 0.0598,
+   "layer": 6
+  },
+  {
+   "p": 150,
+   "t": 0.0601,
+   "layer": 7
+  },
+  {
+   "p": 152,
+   "t": 0.0611,
+   "layer": 7
+  },
+  {
+   "p": 153,
+   "t": 0.0614,
+   "layer": 7
+  },
+  {
+   "p": 156,
+   "t": 0.0624,
+   "layer": 7
+  },
+  {
+   "p": 159,
+   "t": 0.0633,
+   "layer": 7
+  },
+  {
+   "p": 162,
+   "t": 0.0646,
+   "layer": 6
+  },
+  {
+   "p": 162,
+   "t": 0.0646,
+   "layer": 7
+  },
+  {
+   "p": 166,
+   "t": 0.0659,
+   "layer": 7
+  },
+  {
+   "p": 168,
+   "t": 0.0666,
+   "layer": 6
+  },
+  {
+   "p": 171,
+   "t": 0.0679,
+   "layer": 7
+  },
+  {
+   "p": 173,
+   "t": 0.0685,
+   "layer": 7
+  },
+  {
+   "p": 176,
+   "t": 0.0694,
+   "layer": 6
+  },
+  {
+   "p": 177,
+   "t": 0.0698,
+   "layer": 7
+  },
+  {
+   "p": 181,
+   "t": 0.0713,
+   "layer": 7
+  },
+  {
+   "p": 186,
+   "t": 0.0729,
+   "layer": 7
+  },
+  {
+   "p": 189,
+   "t": 0.0738,
+   "layer": 7
+  },
+  {
+   "p": 192,
+   "t": 0.0752,
+   "layer": 6
+  },
+  {
+   "p": 193,
+   "t": 0.0755,
+   "layer": 7
+  },
+  {
+   "p": 196,
+   "t": 0.0764,
+   "layer": 6
+  },
+  {
+   "p": 201,
+   "t": 0.0783,
+   "layer": 7
+  },
+  {
+   "p": 203,
+   "t": 0.079,
+   "layer": 6
+  },
+  {
+   "p": 209,
+   "t": 0.0809,
+   "layer": 7
+  },
+  {
+   "p": 212,
+   "t": 0.0821,
+   "layer": 7
+  },
+  {
+   "p": 214,
+   "t": 0.0828,
+   "layer": 6
+  },
+  {
+   "p": 221,
+   "t": 0.0853,
+   "layer": 7
+  },
+  {
+   "p": 225,
+   "t": 0.0866,
+   "layer": 7
+  },
+  {
+   "p": 230,
+   "t": 0.0881,
+   "layer": 7
+  },
+  {
+   "p": 240,
+   "t": 0.0916,
+   "layer": 7
+  },
+  {
+   "p": 247,
+   "t": 0.0941,
+   "layer": 7
+  },
+  {
+   "p": 248,
+   "t": 0.0944,
+   "layer": 6
+  },
+  {
+   "p": 255,
+   "t": 0.097,
+   "layer": 7
+  },
+  {
+   "p": 265,
+   "t": 0.1007,
+   "layer": 7
+  },
+  {
+   "p": 273,
+   "t": 0.1038,
+   "layer": 7
+  },
+  {
+   "p": 279,
+   "t": 0.1059,
+   "layer": 7
+  },
+  {
+   "p": 286,
+   "t": 0.1085,
+   "layer": 7
+  },
+  {
+   "p": 299,
+   "t": 0.1132,
+   "layer": 7
+  },
+  {
+   "p": 307,
+   "t": 0.1163,
+   "layer": 7
+  },
+  {
+   "p": 322,
+   "t": 0.122,
+   "layer": 7
+  },
+  {
+   "p": 332,
+   "t": 0.126,
+   "layer": 7
+  },
+  {
+   "p": 344,
+   "t": 0.1304,
+   "layer": 6
+  },
+  {
+   "p": 353,
+   "t": 0.1338,
+   "layer": 7
+  },
+  {
+   "p": 360,
+   "t": 0.1362,
+   "layer": 6
+  },
+  {
+   "p": 368,
+   "t": 0.1392,
+   "layer": 7
+  },
+  {
+   "p": 388,
+   "t": 0.1471,
+   "layer": 7
+  },
+  {
+   "p": 398,
+   "t": 0.1509,
+   "layer": 7
+  },
+  {
+   "p": 403,
+   "t": 0.153,
+   "layer": 7
+  },
+  {
+   "p": 408,
+   "t": 0.1549,
+   "layer": 7
+  },
+  {
+   "p": 419,
+   "t": 0.1591,
+   "layer": 7
+  },
+  {
+   "p": 474,
+   "t": 0.1803,
+   "layer": 7
+  },
+  {
+   "p": 487,
+   "t": 0.185,
+   "layer": 7
+  },
+  {
+   "p": 566,
+   "t": 0.2145,
+   "layer": 4
+  },
+  {
+   "p": 27047,
+   "t": 10.0019,
+   "layer": 6
+  },
+  {
+   "p": 27049,
+   "t": 10.0026,
+   "layer": 6
+  },
+  {
+   "p": 27056,
+   "t": 10.0055,
+   "layer": 6
+  },
+  {
+   "p": 27057,
+   "t": 10.0058,
+   "layer": 6
+  },
+  {
+   "p": 27067,
+   "t": 10.0112,
+   "layer": 6
+  },
+  {
+   "p": 27069,
+   "t": 10.0122,
+   "layer": 6
+  },
+  {
+   "p": 27078,
+   "t": 10.0158,
+   "layer": 6
+  },
+  {
+   "p": 27081,
+   "t": 10.0172,
+   "layer": 6
+  },
+  {
+   "p": 27090,
+   "t": 10.0203,
+   "layer": 6
+  },
+  {
+   "p": 27095,
+   "t": 10.0224,
+   "layer": 6
+  },
+  {
+   "p": 27101,
+   "t": 10.0247,
+   "layer": 6
+  },
+  {
+   "p": 27112,
+   "t": 10.0306,
+   "layer": 6
+  },
+  {
+   "p": 27113,
+   "t": 10.031,
+   "layer": 6
+  },
+  {
+   "p": 27125,
+   "t": 10.0354,
+   "layer": 6
+  },
+  {
+   "p": 27135,
+   "t": 10.0392,
+   "layer": 6
+  },
+  {
+   "p": 27139,
+   "t": 10.0405,
+   "layer": 6
+  },
+  {
+   "p": 27150,
+   "t": 10.0462,
+   "layer": 6
+  },
+  {
+   "p": 27164,
+   "t": 10.052,
+   "layer": 6
+  },
+  {
+   "p": 27166,
+   "t": 10.0527,
+   "layer": 6
+  },
+  {
+   "p": 27184,
+   "t": 10.0604,
+   "layer": 6
+  },
+  {
+   "p": 27200,
+   "t": 10.0671,
+   "layer": 6
+  },
+  {
+   "p": 27217,
+   "t": 10.0735,
+   "layer": 6
+  },
+  {
+   "p": 27234,
+   "t": 10.0817,
+   "layer": 6
+  },
+  {
+   "p": 27235,
+   "t": 10.0821,
+   "layer": 6
+  },
+  {
+   "p": 27253,
+   "t": 10.0888,
+   "layer": 6
+  },
+  {
+   "p": 27274,
+   "t": 10.0987,
+   "layer": 6
+  },
+  {
+   "p": 27293,
+   "t": 10.106,
+   "layer": 6
+  },
+  {
+   "p": 27314,
+   "t": 10.1156,
+   "layer": 6
+  },
+  {
+   "p": 27337,
+   "t": 10.1244,
+   "layer": 6
+  },
+  {
+   "p": 27361,
+   "t": 10.1354,
+   "layer": 6
+  },
+  {
+   "p": 27389,
+   "t": 10.1475,
+   "layer": 6
+  },
+  {
+   "p": 27420,
+   "t": 10.1595,
+   "layer": 6
+  },
+  {
+   "p": 27456,
+   "t": 10.1743,
+   "layer": 6
+  },
+  {
+   "p": 27493,
+   "t": 10.1904,
+   "layer": 6
+  },
+  {
+   "p": 27532,
+   "t": 10.2073,
+   "layer": 6
+  },
+  {
+   "p": 27578,
+   "t": 10.2273,
+   "layer": 6
+  },
+  {
+   "p": 27633,
+   "t": 10.2489,
+   "layer": 6
+  },
+  {
+   "p": 27698,
+   "t": 10.275,
+   "layer": 6
+  },
+  {
+   "p": 27768,
+   "t": 10.3035,
+   "layer": 6
+  },
+  {
+   "p": 27874,
+   "t": 10.3432,
+   "layer": 6
+  },
+  {
+   "p": 27956,
+   "t": 10.3746,
+   "layer": 6
+  },
+  {
+   "p": 28152,
+   "t": 10.444,
+   "layer": 6
+  },
+  {
+   "p": 28855,
+   "t": 10.7184,
+   "layer": 6
+  },
+  {
+   "p": 51937,
+   "t": 20.0034,
+   "layer": 6
+  },
+  {
+   "p": 51938,
+   "t": 20.0037,
+   "layer": 6
+  },
+  {
+   "p": 51948,
+   "t": 20.0069,
+   "layer": 6
+  },
+  {
+   "p": 51952,
+   "t": 20.0083,
+   "layer": 6
+  },
+  {
+   "p": 51959,
+   "t": 20.0104,
+   "layer": 6
+  },
+  {
+   "p": 51967,
+   "t": 20.013,
+   "layer": 6
+  },
+  {
+   "p": 51970,
+   "t": 20.0139,
+   "layer": 6
+  },
+  {
+   "p": 51980,
+   "t": 20.017,
+   "layer": 6
+  },
+  {
+   "p": 51984,
+   "t": 20.0184,
+   "layer": 6
+  },
+  {
+   "p": 51992,
+   "t": 20.021,
+   "layer": 6
+  },
+  {
+   "p": 52004,
+   "t": 20.0247,
+   "layer": 6
+  },
+  {
+   "p": 52008,
+   "t": 20.0259,
+   "layer": 6
+  },
+  {
+   "p": 52018,
+   "t": 20.029,
+   "layer": 6
+  },
+  {
+   "p": 52032,
+   "t": 20.0337,
+   "layer": 6
+  },
+  {
+   "p": 52047,
+   "t": 20.0385,
+   "layer": 6
+  },
+  {
+   "p": 52051,
+   "t": 20.0399,
+   "layer": 6
+  },
+  {
+   "p": 52064,
+   "t": 20.0443,
+   "layer": 6
+  },
+  {
+   "p": 52081,
+   "t": 20.0498,
+   "layer": 6
+  },
+  {
+   "p": 52097,
+   "t": 20.0548,
+   "layer": 6
+  },
+  {
+   "p": 52116,
+   "t": 20.0607,
+   "layer": 6
+  },
+  {
+   "p": 52121,
+   "t": 20.0625,
+   "layer": 6
+  },
+  {
+   "p": 52135,
+   "t": 20.067,
+   "layer": 6
+  },
+  {
+   "p": 52155,
+   "t": 20.0735,
+   "layer": 6
+  },
+  {
+   "p": 52176,
+   "t": 20.0804,
+   "layer": 6
+  },
+  {
+   "p": 52199,
+   "t": 20.0878,
+   "layer": 6
+  },
+  {
+   "p": 52222,
+   "t": 20.0952,
+   "layer": 6
+  },
+  {
+   "p": 52246,
+   "t": 20.1028,
+   "layer": 6
+  },
+  {
+   "p": 52284,
+   "t": 20.1147,
+   "layer": 6
+  },
+  {
+   "p": 52314,
+   "t": 20.124,
+   "layer": 6
+  },
+  {
+   "p": 52352,
+   "t": 20.1366,
+   "layer": 6
+  },
+  {
+   "p": 52387,
+   "t": 20.1475,
+   "layer": 6
+  },
+  {
+   "p": 52426,
+   "t": 20.1601,
+   "layer": 6
+  },
+  {
+   "p": 52473,
+   "t": 20.1753,
+   "layer": 6
+  },
+  {
+   "p": 52518,
+   "t": 20.1894,
+   "layer": 6
+  },
+  {
+   "p": 52573,
+   "t": 20.2072,
+   "layer": 6
+  },
+  {
+   "p": 52659,
+   "t": 20.2341,
+   "layer": 6
+  },
+  {
+   "p": 52747,
+   "t": 20.2619,
+   "layer": 6
+  },
+  {
+   "p": 52839,
+   "t": 20.2908,
+   "layer": 6
+  },
+  {
+   "p": 52977,
+   "t": 20.3336,
+   "layer": 6
+  },
+  {
+   "p": 53815,
+   "t": 20.6418,
+   "layer": 6
+  },
+  {
+   "p": 65691,
+   "t": 25.0009,
+   "layer": 5
+  },
+  {
+   "p": 65691,
+   "t": 25.0009,
+   "layer": 8
+  },
+  {
+   "p": 65706,
+   "t": 25.0114,
+   "layer": 5
+  },
+  {
+   "p": 65729,
+   "t": 25.0274,
+   "layer": 5
+  },
+  {
+   "p": 65755,
+   "t": 25.0451,
+   "layer": 5
+  },
+  {
+   "p": 65798,
+   "t": 25.0623,
+   "layer": 5
+  },
+  {
+   "p": 93028,
+   "t": 35.0,
+   "layer": 8
+  },
+  {
+   "p": 93044,
+   "t": 35.0054,
+   "layer": 5
+  },
+  {
+   "p": 93112,
+   "t": 35.0273,
+   "layer": 5
+  },
+  {
+   "p": 115802,
+   "t": 43.9851,
+   "layer": 5
+  },
+  {
+   "p": 118574,
+   "t": 45.0001,
+   "layer": 8
+  },
+  {
+   "p": 118574,
+   "t": 45.0001,
+   "layer": 8
+  },
+  {
+   "p": 118575,
+   "t": 45.0003,
+   "layer": 8
+  },
+  {
+   "p": 118575,
+   "t": 45.0003,
+   "layer": 8
+  },
+  {
+   "p": 118576,
+   "t": 45.0006,
+   "layer": 8
+  },
+  {
+   "p": 118576,
+   "t": 45.0006,
+   "layer": 8
+  },
+  {
+   "p": 118577,
+   "t": 45.0009,
+   "layer": 8
+  },
+  {
+   "p": 118578,
+   "t": 45.0012,
+   "layer": 8
+  },
+  {
+   "p": 118578,
+   "t": 45.0012,
+   "layer": 8
+  },
+  {
+   "p": 118579,
+   "t": 45.0015,
+   "layer": 8
+  },
+  {
+   "p": 118579,
+   "t": 45.0015,
+   "layer": 8
+  },
+  {
+   "p": 118580,
+   "t": 45.0018,
+   "layer": 8
+  },
+  {
+   "p": 118580,
+   "t": 45.0018,
+   "layer": 8
+  },
+  {
+   "p": 118581,
+   "t": 45.0025,
+   "layer": 8
+  },
+  {
+   "p": 118582,
+   "t": 45.0028,
+   "layer": 8
+  },
+  {
+   "p": 118582,
+   "t": 45.0028,
+   "layer": 8
+  },
+  {
+   "p": 118583,
+   "t": 45.0031,
+   "layer": 8
+  },
+  {
+   "p": 118584,
+   "t": 45.0034,
+   "layer": 8
+  },
+  {
+   "p": 118584,
+   "t": 45.0034,
+   "layer": 8
+  },
+  {
+   "p": 118585,
+   "t": 45.0036,
+   "layer": 8
+  },
+  {
+   "p": 118586,
+   "t": 45.0039,
+   "layer": 8
+  },
+  {
+   "p": 118586,
+   "t": 45.0039,
+   "layer": 8
+  },
+  {
+   "p": 118587,
+   "t": 45.0042,
+   "layer": 8
+  },
+  {
+   "p": 118588,
+   "t": 45.0045,
+   "layer": 8
+  },
+  {
+   "p": 118588,
+   "t": 45.0045,
+   "layer": 8
+  },
+  {
+   "p": 118589,
+   "t": 45.0048,
+   "layer": 8
+  },
+  {
+   "p": 118590,
+   "t": 45.0051,
+   "layer": 8
+  },
+  {
+   "p": 118590,
+   "t": 45.0051,
+   "layer": 8
+  },
+  {
+   "p": 118591,
+   "t": 45.0056,
+   "layer": 8
+  },
+  {
+   "p": 118592,
+   "t": 45.0059,
+   "layer": 8
+  },
+  {
+   "p": 118592,
+   "t": 45.0059,
+   "layer": 8
+  },
+  {
+   "p": 118593,
+   "t": 45.0062,
+   "layer": 8
+  },
+  {
+   "p": 118594,
+   "t": 45.0065,
+   "layer": 8
+  },
+  {
+   "p": 118594,
+   "t": 45.0065,
+   "layer": 8
+  },
+  {
+   "p": 118595,
+   "t": 45.0068,
+   "layer": 8
+  },
+  {
+   "p": 118596,
+   "t": 45.0071,
+   "layer": 8
+  },
+  {
+   "p": 118596,
+   "t": 45.0071,
+   "layer": 8
+  },
+  {
+   "p": 118597,
+   "t": 45.0074,
+   "layer": 8
+  },
+  {
+   "p": 118598,
+   "t": 45.0076,
+   "layer": 8
+  },
+  {
+   "p": 118598,
+   "t": 45.0076,
+   "layer": 8
+  },
+  {
+   "p": 118599,
+   "t": 45.0079,
+   "layer": 8
+  },
+  {
+   "p": 118600,
+   "t": 45.0082,
+   "layer": 8
+  },
+  {
+   "p": 118601,
+   "t": 45.0088,
+   "layer": 8
+  },
+  {
+   "p": 118602,
+   "t": 45.0091,
+   "layer": 8
+  },
+  {
+   "p": 118602,
+   "t": 45.0091,
+   "layer": 8
+  },
+  {
+   "p": 118604,
+   "t": 45.0097,
+   "layer": 8
+  },
+  {
+   "p": 118604,
+   "t": 45.0097,
+   "layer": 8
+  },
+  {
+   "p": 118606,
+   "t": 45.0103,
+   "layer": 8
+  },
+  {
+   "p": 118606,
+   "t": 45.0103,
+   "layer": 8
+  },
+  {
+   "p": 118607,
+   "t": 45.0106,
+   "layer": 8
+  },
+  {
+   "p": 118608,
+   "t": 45.0108,
+   "layer": 8
+  },
+  {
+   "p": 118609,
+   "t": 45.0111,
+   "layer": 8
+  },
+  {
+   "p": 118610,
+   "t": 45.0114,
+   "layer": 8
+  },
+  {
+   "p": 118611,
+   "t": 45.012,
+   "layer": 8
+  },
+  {
+   "p": 118612,
+   "t": 45.0123,
+   "layer": 8
+  },
+  {
+   "p": 118613,
+   "t": 45.0125,
+   "layer": 8
+  },
+  {
+   "p": 118614,
+   "t": 45.0128,
+   "layer": 8
+  },
+  {
+   "p": 118615,
+   "t": 45.0131,
+   "layer": 8
+  },
+  {
+   "p": 118616,
+   "t": 45.0134,
+   "layer": 8
+  },
+  {
+   "p": 118617,
+   "t": 45.0136,
+   "layer": 8
+  },
+  {
+   "p": 118618,
+   "t": 45.0139,
+   "layer": 8
+  },
+  {
+   "p": 118619,
+   "t": 45.0143,
+   "layer": 8
+  },
+  {
+   "p": 118620,
+   "t": 45.0145,
+   "layer": 8
+  },
+  {
+   "p": 118621,
+   "t": 45.0152,
+   "layer": 8
+  },
+  {
+   "p": 118622,
+   "t": 45.0156,
+   "layer": 8
+  },
+  {
+   "p": 118623,
+   "t": 45.0159,
+   "layer": 8
+  },
+  {
+   "p": 118624,
+   "t": 45.0162,
+   "layer": 8
+  },
+  {
+   "p": 118625,
+   "t": 45.0165,
+   "layer": 8
+  },
+  {
+   "p": 118626,
+   "t": 45.0168,
+   "layer": 8
+  },
+  {
+   "p": 118627,
+   "t": 45.017,
+   "layer": 8
+  },
+  {
+   "p": 118628,
+   "t": 45.0173,
+   "layer": 8
+  },
+  {
+   "p": 118629,
+   "t": 45.0176,
+   "layer": 8
+  },
+  {
+   "p": 118630,
+   "t": 45.0179,
+   "layer": 8
+  },
+  {
+   "p": 118631,
+   "t": 45.0185,
+   "layer": 8
+  },
+  {
+   "p": 118633,
+   "t": 45.0191,
+   "layer": 8
+  },
+  {
+   "p": 118633,
+   "t": 45.0191,
+   "layer": 8
+  },
+  {
+   "p": 118635,
+   "t": 45.0196,
+   "layer": 8
+  },
+  {
+   "p": 118636,
+   "t": 45.0199,
+   "layer": 8
+  },
+  {
+   "p": 118637,
+   "t": 45.0202,
+   "layer": 8
+  },
+  {
+   "p": 118638,
+   "t": 45.0205,
+   "layer": 8
+  },
+  {
+   "p": 118639,
+   "t": 45.0207,
+   "layer": 8
+  },
+  {
+   "p": 118641,
+   "t": 45.0216,
+   "layer": 8
+  },
+  {
+   "p": 118641,
+   "t": 45.0216,
+   "layer": 8
+  },
+  {
+   "p": 118643,
+   "t": 45.0222,
+   "layer": 8
+  },
+  {
+   "p": 118644,
+   "t": 45.0224,
+   "layer": 8
+  },
+  {
+   "p": 118645,
+   "t": 45.0227,
+   "layer": 8
+  },
+  {
+   "p": 118647,
+   "t": 45.0233,
+   "layer": 8
+  },
+  {
+   "p": 118647,
+   "t": 45.0233,
+   "layer": 8
+  },
+  {
+   "p": 118649,
+   "t": 45.0238,
+   "layer": 8
+  },
+  {
+   "p": 118650,
+   "t": 45.0241,
+   "layer": 8
+  },
+  {
+   "p": 118651,
+   "t": 45.0247,
+   "layer": 8
+  },
+  {
+   "p": 118653,
+   "t": 45.0253,
+   "layer": 8
+  },
+  {
+   "p": 118653,
+   "t": 45.0253,
+   "layer": 8
+  },
+  {
+   "p": 118655,
+   "t": 45.0258,
+   "layer": 8
+  },
+  {
+   "p": 118656,
+   "t": 45.0261,
+   "layer": 8
+  },
+  {
+   "p": 118657,
+   "t": 45.0264,
+   "layer": 8
+  },
+  {
+   "p": 118659,
+   "t": 45.0269,
+   "layer": 8
+  },
+  {
+   "p": 118659,
+   "t": 45.0269,
+   "layer": 8
+  },
+  {
+   "p": 118661,
+   "t": 45.0278,
+   "layer": 8
+  },
+  {
+   "p": 118662,
+   "t": 45.0281,
+   "layer": 8
+  },
+  {
+   "p": 118663,
+   "t": 45.0284,
+   "layer": 8
+  },
+  {
+   "p": 118665,
+   "t": 45.0289,
+   "layer": 8
+  },
+  {
+   "p": 118665,
+   "t": 45.0289,
+   "layer": 8
+  },
+  {
+   "p": 118667,
+   "t": 45.0295,
+   "layer": 8
+  },
+  {
+   "p": 118669,
+   "t": 45.0301,
+   "layer": 8
+  },
+  {
+   "p": 118669,
+   "t": 45.0301,
+   "layer": 8
+  },
+  {
+   "p": 118671,
+   "t": 45.0309,
+   "layer": 8
+  },
+  {
+   "p": 118672,
+   "t": 45.0312,
+   "layer": 8
+  },
+  {
+   "p": 118673,
+   "t": 45.0315,
+   "layer": 8
+  },
+  {
+   "p": 118675,
+   "t": 45.032,
+   "layer": 8
+  },
+  {
+   "p": 118676,
+   "t": 45.0323,
+   "layer": 8
+  },
+  {
+   "p": 118677,
+   "t": 45.0326,
+   "layer": 8
+  },
+  {
+   "p": 118679,
+   "t": 45.0331,
+   "layer": 8
+  },
+  {
+   "p": 118680,
+   "t": 45.0334,
+   "layer": 8
+  },
+  {
+   "p": 118681,
+   "t": 45.0339,
+   "layer": 8
+  },
+  {
+   "p": 118683,
+   "t": 45.0345,
+   "layer": 8
+  },
+  {
+   "p": 118684,
+   "t": 45.0348,
+   "layer": 8
+  },
+  {
+   "p": 118685,
+   "t": 45.0351,
+   "layer": 8
+  },
+  {
+   "p": 118687,
+   "t": 45.0356,
+   "layer": 8
+  },
+  {
+   "p": 118688,
+   "t": 45.0359,
+   "layer": 8
+  },
+  {
+   "p": 118689,
+   "t": 45.0362,
+   "layer": 8
+  },
+  {
+   "p": 118691,
+   "t": 45.037,
+   "layer": 8
+  },
+  {
+   "p": 118692,
+   "t": 45.0373,
+   "layer": 8
+  },
+  {
+   "p": 118693,
+   "t": 45.0376,
+   "layer": 8
+  },
+  {
+   "p": 118695,
+   "t": 45.0382,
+   "layer": 8
+  },
+  {
+   "p": 118697,
+   "t": 45.0388,
+   "layer": 8
+  },
+  {
+   "p": 118697,
+   "t": 45.0388,
+   "layer": 8
+  },
+  {
+   "p": 118699,
+   "t": 45.0393,
+   "layer": 8
+  },
+  {
+   "p": 118701,
+   "t": 45.0402,
+   "layer": 8
+  },
+  {
+   "p": 118702,
+   "t": 45.0405,
+   "layer": 8
+  },
+  {
+   "p": 118703,
+   "t": 45.0407,
+   "layer": 8
+  },
+  {
+   "p": 118705,
+   "t": 45.0413,
+   "layer": 8
+  },
+  {
+   "p": 118707,
+   "t": 45.0419,
+   "layer": 8
+  },
+  {
+   "p": 118707,
+   "t": 45.0419,
+   "layer": 8
+  },
+  {
+   "p": 118709,
+   "t": 45.0424,
+   "layer": 8
+  },
+  {
+   "p": 118711,
+   "t": 45.0433,
+   "layer": 8
+  },
+  {
+   "p": 118712,
+   "t": 45.0435,
+   "layer": 8
+  }
+ ],
+ "n_alarms": 973,
+ "a1_max": 0.0,
+ "a1_checks": 796,
+ "pred_E2": [
+  5,
+  8
+ ]
+}
