@@ -19426,3 +19426,23 @@ Every check catches the mistake it was built for:
   - Example: the CPT-symmetric universe predicts r ≈ 0 (no primordial gravitational waves) and a specific right-handed-neutrino dark-matter mass. Both conflict with or replace current Weave sectors (our r is 5.4e-4).
 - **Physics caveat:** "time as thrust" cannot produce net momentum, because energy–momentum conservation follows from time-translation symmetry (Noether). A time-asymmetric boundary condition can set the arrow of time. That is the usable form of the idea.
 - **Status:** CANDIDATE, unlocked, untested. The next step is to write down which observables P-mirror changes and lock a test.
+
+## D1976 — the method tests re-pulsed on THREE AXES in tandem (Danny 18:08; locked PREREG_D1976): the method gains power, and the real data do not balance
+- **Setup:** three knobs (S: T_R; T: m₃/₂; U: u), with M_N tied to its derived value. The bounds enter as data: wino ≥ 660 GeV and the gravitino box. That gives **6 data, 3 knobs, dof = 3** (it was 0).
+- **TRIANGULATE / pulse:** three seeds per pulse, repeated until the mean moved less than 0.01 for 7 pulses in a row.
+  - T1 converged in 12 pulses (27 readings).
+  - T2 converged in 11 pulses (24 readings).
+- **Movement:**
+  - **T1, injection–recovery: 0.815 → 0.892 ± 0.023.** That sits 0.008 below the 0.90 bar, so it is **FAIL by the lock**, but only within one spread of the bar (rule 6e would read it as borderline).
+  - **T2, false-balance: 52 % → 13.6 % ± 3.1 %. PASS** (bar ≤ 20 %). On three axes, **a balance now means something.**
+- **T3, the real data: NOT balanced.** χ²/dof = 12.8/3 = 4.3, and **α_s at −3.5σ** is the outlier.
+  - Best fit: m₃/₂ = 2.46e5, giving a wino of 654 GeV. That is just under 660, with a soft-bound pull of 0.28.
+  - **T_R = 1.5e9:** the asymmetry is reproduced (pull 0.005), with Ω_w = 0.080, inside the box.
+  - Hold-outs: n_s −0.7σ (predicted well); α_s −3.6σ; ln Y_B +4.1σ (not predicted by the others).
+- **JUDGE:**
+  - With three tandem axes plus bounds as data, the balancer **can now fail, and it does**.
+  - The single-stack α_s is the one observable no setting of the three axes accommodates, which matches every other test today.
+  - The asymmetry wants T_R ≈ 1.5e9, ×4 the derived value, still inside the gravitino box.
+  - n_s is the one hold-out the other data predict correctly.
+- **COMPASS:** method row: false-balance PASS, coverage borderline. T_R arrow ↑, to about 1.5e9 (a cosmology node move; it needs a derived x-chain). α_s stays the outlier on the S–T seam.
+- **REVIEW:** this is the first test today that is both **powered** and run on real data. It points at the same place as every referee: the α_s seam.
