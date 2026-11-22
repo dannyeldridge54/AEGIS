@@ -20628,3 +20628,15 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - The fractional 1/12 or 1/6 steps of D2061 need **split stacks** (Madrid-type, quark stack ≠ lepton stack). In that layout SU(3) and SU(2) come from different stacks with different f_a, and the 9S family flux must be re-assigned per stack.
   - **This narrows P3:** build a split-stack (Madrid-type) visible sector on Z₆-II/ΩR and re-derive f₃ and f₂ separately.
   - Loop: progress (a narrowing). No-progress count 0.
+- **D2065 (CENTRE; PREREG_D2065; theory/tests/d2065_split.py): P3, split visible stacks. CANDIDATE: a single unit of flux on a lepton or right U(1) stack fixes α_s, with whole-number flux.**
+  - In a Madrid-type visible sector (Q_Y = (1/6)Q_a − ½Q_c + ½Q_d), changing the flux on the U(1) stacks c or d moves **only α_Y**: δ(1/α_Y) = 0.433 per unit.
+  - Through unification that gives δα_s⁻¹ = 0.714 × 0.6 × 0.433 = **−0.1855 per unit** (for δk < 0).
+  - **Minimal hits:**
+    - **one unit** (δk_c = −1 or δk_d = −1): **α_s = 0.11667 (−1.48σ)**;
+    - two units (−2, 0), (0, −2) or (−1, −1): **α_s = 0.11925 (+1.39σ)**.
+    - Both pass the |z| ≤ 2 goalpost.
+  - Hit fraction 7/25 = 0.28, below the 0.3 bar, so it is a CANDIDATE with weak evidence weight.
+  - **Why it matters:** this is a T1 mechanism with **integer** fluxes and no fractional quanta or windings. The seam comes from the **hypercharge normalisation** (non-universal α_Y at the string scale), not from an SU(3)–SU(2) split. It is a known type of effect in D-brane models.
+  - It **corrects the D2061 reading**: the (1/6)(1/2) cross terms enter through α_Y. They do not enter f₂ − f₃ directly.
+  - **Owed:** P4 (three families for those fluxes), P5 (tadpole), P5b (U(1)_Y must stay massless with the shifted c/d fluxes). The non-GUT hypercharge normalisation also changes the "α_G = 1/28" bookkeeping for U(1).
+  - Loop: progress. No-progress count 0.
