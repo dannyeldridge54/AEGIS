@@ -19999,3 +19999,16 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
 - G (10 MB, enwik8 [60, 70) MB): v7 **2,129,689** (188 s); v8 2,136,727 (**+0.33%**, 251 s). xz 2,731,076.
 - **Verdict:** outer byte rings at multiples **hurt**. They overlap the match model, which already covers long repeats, and they dilute the mixer, while costing 33% more time. A trigram-only ablation is pending.
 - **v7 stays the best build:** 22% smaller than xz on G.
+
+## D2011 — Live balancer (loomz9): 8 shadow final-mixer settings + 4 lens blends, switched every 256 kB from past cost (decodable). Dev test on G (10 MB). CENTRE
+- v9: **2,128,359** vs v7 2,129,689, i.e. **−0.06%**. Round-trip checked on 200 kB.
+- Only one knob change happened all run: at 0.25 MB, "all lr1" → "−fastmix". So the board was already near its balance point.
+- The live compass, every 1 MB, kept the same order throughout:
+  - order 2 alone ~2.9;
+  - ring 0 ~2.3;
+  - rings 1 and 2 ~1.9–2.0, trading the lead with the stretch of text;
+  - the M1 mixer ~1.75;
+  - the context mixer ~1.70;
+  - the final mixer ~1.65 (~0.013 bpc before the lens);
+  - after the lens, 1.61–1.87.
+- **Tuning by poking each node's gain (tune.py, 1 MB slice T):** in progress. o0 and o1 are both flat (±0.02%).
