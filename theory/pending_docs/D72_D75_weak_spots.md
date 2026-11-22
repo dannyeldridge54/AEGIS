@@ -21411,3 +21411,27 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 - In every primary case, M_s ≈ 8e12 GeV.
 - Relaxing the bound on v does not help: the minimum moves off the v₂ boundary and stays at 0.80.
 - **The FAIL is robust** against running order, SUSY scale, intermediate exotics and the geometric bound. Only the disfavoured threshold reading (B) would pass. **The FAIL rests on the source paper's SU(2) threshold formula**, with the two-typo reading that makes it match the paper's own asymptote.
+
+## D2124 (DEEP, ping-pong item 14): proton decay. **CONDITIONAL.** Locked, run once.
+
+**T1: dim-5 superpotential operators.**
+- Bose/Schur–Weyl symmetry leaves 6 flavour contents each for F_L⁴ (⊃ QQQL) and F̄_R⁴ (⊃ UDDE).
+- **Z4 forbids 2 of the 6 in each** (F1F2²F3 and F1F2F3²). It **allows** F1²F2², F1²F3², F1²F2F3, and **F2²F3² (light generations only)**; likewise for R.
+- The light-only structure carries ΔQ = (4,4,0,0,0) for F_L⁴, so it needs instantons with ΔQ_a = 4 (I = 1 on a) and ΔQ_b = 4 (I = 2 on b).
+
+**T2: dim-6 Kähler operators F_L F_L F̄_R† F̄_R†.** 20 of the 36 flavour structures are Z4-allowed.
+
+**T3: dim-4 RPV.**
+- The PS trilinears 4·4·4̄ and 4·4̄·4̄ have no SU(4) singlet, so LLE, LQD and UDD are absent.
+- **The Z2 = 2k acts as gauge matter parity:** charge 2 on all F and F̄, 0 on the Higgs. This is conditional on R-even vevs in the unknown breaking sector.
+
+**T4 (ESTIMATE, M_s = 8e12 GeV):**
+
+| Operator | Lifetime with O(1) coefficient | Required e^{−S} for τ ≥ 1e34 yr | Minimum S |
+|---|---|---|---|
+| dim-6 | 7e22 yr | ≲ 2.6e-6 | **≥ 12.9** |
+| dim-5, gaugino-dressed, m_SUSY = 1 TeV | 2e5 yr | ≲ 4e-15 | **≥ 33** |
+
+**Verdict:** CONDITIONAL. The Z4 does not protect the proton. The light-generation F2²F3² dim-5 operators are allowed and must be instanton-suppressed with S ≳ 33.
+- That is much more suppression than the S ≈ 5.6–11.8 the Yukawas need. It is possible only because the two come from different instantons: Yukawa ΔQ = (0,2,∓2,0,0) vs proton ΔQ = (4,4,0,0,0).
+- **The intermediate string scale makes proton decay a sharp test of the model.**
