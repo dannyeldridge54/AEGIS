@@ -59,5 +59,5 @@ for key, v in R['pairs'].items():
     if v['phi'] != str(want): p1.append((key, v['phi'], want))
 R['P1_mismatch'] = p1; R['P2'] = R['adjoints']
 R['P3_phi_ad'] = (R['pairs']['ad']['phi'], R['pairs']['da']['phi']); R['P4_phi_de_prime'] = R['pairs']["de'"]['phi']
-R['VERDICT'] = dict(P0=not R['P0_mismatch'], P1=not p1, P2=R['adjoints'] == {'a': '0', 'b': '0', 'c': '0', 'd': '1', 'e': '0'}  # D2128 DEVIATION 1, P4=R['P4_phi_de_prime'] == '2')
+R['VERDICT'] = dict(P0=not R['P0_mismatch'], P1=not p1, P2=R['adjoints'] == {'a': '0', 'b': '0', 'c': '0', 'd': '1', 'e': '0'}, P4=R['P4_phi_de_prime'] == '2')
 print(json.dumps(R, indent=1, default=str))

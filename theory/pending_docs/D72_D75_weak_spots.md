@@ -21480,3 +21480,27 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 - **The builder-side diff:** **0 differences** in all 8 cycle vectors (Table 27 + 3 random branes) and in all random-brane χ entries. The blind code also reproduces bulk = 32, 24 twisted residuals = 0, and HRS Table 28 exactly.
 - **Caveat:** it is independent in transcription and in code structure, but shares the documented readings (z₀, block-3, P2, cyclic X/Y).
 - **R20-1:** the X/Y sum in p.tex (Σ_{i≠j≠k}) must be read over cyclic (i,j,k). The literal reading double-counts and fails bulk = 32. This goes in the paper.
+
+## D2128 (DEEP, ping-pong item 6): independent derivation of the non-chiral spectrum. **PASS.** Locked; DEVIATIONS (1: target misread, 2: N=2 sign fixed by internal consistency).
+- **Engine extended to per-sector level** with HRS formulas: the ω action (Eq. 1-cycle-orbits), the A-lattice orientifold image, the per-torus ℤ₂-invariant intersections from tab:Wilson_signs, and the β-coefficient multiplicity formulas.
+- **P0 calibration:** the per-sector chiralities sum to the engine's orbit-level χ for **all 50 pairs** (x,y) and (x,y′).
+- **Results:**
+  - Every visible bifundamental has φ = |χ|.
+  - **φ_bc = 1**: exactly one Higgs bidoublet. This confirms the single-bidoublet assumption behind the Yukawa, CKM and seesaw items.
+  - **Adjoints:** d = 1 (Table 29's "4_Adj" is the U(2) adjoint, dimension 4); a, b, c, e = 0, i.e. rigid.
+  - **φ_ad = 4**, i.e. 2×[(4,2̄_d) + h.c.]. This **settles R6-2**: Table 29 is right, and the HRS text's "one pair" undercounts (or means one pair of SU(2)_d doublets).
+  - **φ_de′ = 2**.
+  - **Bonus:** the xx′ sector totals computed with the same annulus formula give dd′ = 8 and ee′ = 4, matching Table 29's 4 sym + 4 anti and 2 + 2. That check does not need the conjectured Möbius sign.
+- **N=2 rule adopted:** φ = ½δδ(|I^{(jk)}| + sgn(I^{(jk)}) f_j f_k), the only one of 7 conventions consistent in all 82 N=2 sectors.
+
+## D2128a (correction to D2112 K5 and D2119 R1-10, from the 4_Adj misread)
+- **b_{SU(2)_d} = 22, not 28** (one adjoint, not four). The other b's are unchanged: SU(4) −2, SU(2)_L,R +6, SU(2)_e +2. SU(2)_d is still IR-free, so no verdict changes.
+- **ΔN_eff with 36 hidden chiral multiplets** (not 44):
+
+| Case | ΔN_eff |
+|---|---|
+| vectors only | 0.11 (unchanged) |
+| + fermions | **0.48** (was 0.56) |
+| all massless | **0.77** (was 0.82) |
+
+  The verdict stays **CONDITIONAL**.
