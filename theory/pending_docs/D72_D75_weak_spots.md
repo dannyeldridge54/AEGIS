@@ -20163,3 +20163,12 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     2. a hypercharge flux on a cycle with a suppressed intersection (derive the suppression);
     3. threshold states with charges fixed by the +0.044 residual (the UFE v4 prediction route).
   - **Adding extra knobs to each node would fit the number, not fix the theory.** Under the Loom core standard that counts as FIT, never PASS.
+
+## D2023 — The derivation framework handed to agents (tools/loom/derivation_agents.json). CENTRE
+- **12 owed gaps across 6 agents** (S, T, U, Thread, the S–T interface, Evidence), each with knobs (≤ 9), a goalpost, a status and the next action.
+- **Close rule:** derived in code, passes its goalpost on held-out or post-lock data, refereed. FIT and PHEN never count as closed.
+- **Literature folded into T1** (Gmeiner–Honecker 0910.0843, the explicit Z6′ standard models):
+  - one-loop thresholds are **large**: Δ/4π ≈ −26 to −34 for SU(3) against −9 to +7 for SU(2);
+  - they **strengthen SU(3)**, the direction α_s needs;
+  - so the +0.044 cannot be "tuned in". It is fixed only once an explicit brane spectrum is written down. **T1 therefore needs the explicit brane spectrum: that is the missing derivation.**
+- The order is T1 (with U4), then S1, U1, R1, U3, U2, S2 and E1.

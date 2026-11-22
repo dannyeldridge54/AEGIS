@@ -1,0 +1,29 @@
+{
+ "standard": "LOOM_CORE_STANDARD.md v1: each agent owns at most 9 knobs and its own goalposts. The centre balances the agents. Lock first, held-out data and independent methods, then the compass, then the registry.",
+ "source": "WEAVE_FULL_DERIVATION.md + WEAVE_UNIFIED_EQUATION.md (UFE v4) + D2009/D2022",
+ "centre": {"name": "N0 centre referee", "tracks": ["scoreboard (12 PASS incl. 3 PHEN, 2 FAIL)", "the S-T / T-U / S-U interfaces", "the input list (6)", "the strict-evidence count (0 post-lock data tests)"],
+            "rule": "A gap is CLOSED only when its value is derived in code from earlier links, passes its goalpost on held-out or post-lock data, and survives an independent referee. FIT and PHEN never count as closed."},
+ "agents": [
+  {"agent": "S (dilaton: time and cosmology)", "knobs": ["g_s at rho", "V_inf", "N*", "T_R", "inflaton couplings", "kappa"],
+   "owed": [
+    {"id": "S1", "gap": "T_R from the inflaton couplings (needs 1.5-2.1e9 GeV, or re-derive the box)", "status": "OPEN: D2009 found no channel (hidden E8xE8 fails dN_eff)", "goalpost": "T_R in band with dN_eff<0.3, gravitino box", "next": "non-thermal leptogenesis inside the box; cross-check N*"},
+    {"id": "S2", "gap": "g_s = 2/sqrt3 > 1 (outside perturbative control)", "status": "CONDITIONAL", "goalpost": "a controlled regime or S-dual description", "next": "S-duality map of the rho vacuum (rho is S-invariant)"}]},
+  {"agent": "T (volumes: forces and scales)", "knobs": ["sigma_vis", "N=6", "W0", "V (volume)", "m3/2", "sigma_d", "threshold states"],
+   "owed": [
+    {"id": "T1", "gap": "Delta3 needs +0.044 (alpha_s -4.2 sigma)", "status": "OPEN: D1938 universal = 0; D2022 hypercharge flux x12-25 too big, U3 scan NO-POWER",
+     "goalpost": "Delta3 within [-0.06, -0.04] from a DERIVED non-universal term", "next": "write an explicit D7/D6 brane spectrum (Gmeiner-Honecker Z6' machinery, 0910.0843 eq. 26/71/82) and compute b_a and the thresholds; literature warns explicit Z6' thresholds are O(10-30) in 1/alpha (they strengthen SU(3))"},
+    {"id": "T2", "gap": "the wino at 0.687 TeV vs a 0.66-0.70 TeV bar (thinnest headroom)", "status": "TENSION with alpha_s through m3/2", "goalpost": "both inside their bars", "next": "only moves with T1 (rank-1 Jacobian, D1937a)"}]},
+  {"agent": "U (matter and flavour)", "knobs": ["|u| spurion", "q charges", "Koide delta", "c_e", "fluxes (4,4,8)", "theta step n", "U3"],
+   "owed": [
+    {"id": "U1", "gap": "geometric home of the quark spurion |u| ~ 0.0266", "status": "PHEN", "goalpost": "derive |u| from a twisted modulus / brane position", "next": "twisted-sector vevs of Z6-II; compare the IIB clustering"},
+    {"id": "U2", "gap": "Koide delta = 2/9 and c_e are inputs", "status": "INPUT", "goalpost": "derive delta from rho", "next": "residual Z3 at rho"},
+    {"id": "U3", "gap": "fluxes (4,4,8) and n = 3 chosen to fit", "status": "FIT", "goalpost": "tadpole/flux quantisation fixes them", "next": "tadpole budget chi = 48"},
+    {"id": "U4", "gap": "U3 = i is a choice", "status": "C", "goalpost": "fixed by flux/potential", "next": "joint with T1 (N=2 thresholds depend on U3)"}]},
+  {"agent": "Thread (dark energy, reverse weave)", "knobs": ["thread slope lambda", "crossing count", "A'"],
+   "owed": [
+    {"id": "R1", "gap": "the thread slope source (must be orthogonal to the volume; Cassini excludes a volume thread)", "status": "OPEN", "goalpost": "lambda ~ 0.95 from a named source, passing alpha drift / BBN / MICROSCOPE", "next": "non-Kahler class sources"}]},
+  {"agent": "S-T interface", "knobs": ["f_vis = T + 9S", "m3/2 formula", "inflaton -> gravitino"], "owed": [{"id": "I1", "gap": "every open failure sits here (T1, T2, S1)", "status": "OPEN", "goalpost": "one derived non-universal seam term", "next": "T1 first"}]},
+  {"agent": "Evidence", "knobs": [], "owed": [{"id": "E1", "gap": "no test yet used data released after its prediction", "status": "OPEN", "goalpost": "a post-lock data release scored (r from LiteBIRD/CMB-S4, the wino at LHC Run 3, DESI DR3)", "next": "keep the locks current; score at each release"}]}
+ ],
+ "order": ["T1 (with U4)", "S1", "U1", "R1", "U3", "U2", "S2", "E1"]
+}
