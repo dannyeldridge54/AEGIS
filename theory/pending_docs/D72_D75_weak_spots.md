@@ -21184,3 +21184,20 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
 - **Best |Δα_s|** among the exotic-safe models stays at **0.0557 at every level, L1–L4**. The search has converged, and widening does not help.
 - **Backward pulse:** all 4 safe models are born at L1 (α_s = 0.0623, M_s = 1.6e11 GeV).
 - **Conclusion:** the Z₂×Z₂ geometry is closed for this question. The work moves to Z₂×Z₆′, where v6 is now validated (D2110).
+
+## D2111 (DEEP, Seed v6): outward Pati–Salam scan on Z₂×Z₆′ AAA. **Control PASS. The landscape collapses to ONE spectrum.** Locked, with DEVIATIONS (a memory fix only, written before the rerun).
+- **Space:** visible a(4), b(2), c(2) on the same bulk wrapping (t = 2; 36 wrappings × 256 fractional labels), plus at most 2 hidden stacks (t ≤ 14). Filters:
+  - all 24 twisted tadpoles and the bulk tadpole of 32 cancel;
+  - the P1 and P2 orderings agree;
+  - visible stacks are not their own images.
+- **Results (2 cloud shards, about 5 min each):**
+  - **Raw:** 5,184 visible triples give 3 + 3 families. Every one of them completes globally, for 8.96M raw models.
+  - **Distinct by cycle data:** 5,184 per shard, with 432 distinct visible configurations per shard. The shards may overlap through (n,m) → (−n,−m) sign flips on two tori, so this is an upper bound.
+  - **Control:** the Table 27 visible a, b, c is rediscovered (shard 1), with 1,728 raw hidden completions.
+- **Spectrum:** every model has the Table 27/28 spectrum.
+  - ab + ab′ = 1 + 2 and ac + ac′ = −1 − 2. The only other variant is the same with b ↔ c, i.e. the L ↔ R mirror.
+  - χ(x, x′) = 0 for a, b, c, so there are no chiral sym/antisym exotics from the image term. The O6 term is still owed.
+  - The visible–hidden |χ| total is 10, the same as Table 28.
+  - The hidden sector is always 2 × U(2).
+- **Reading (PHYSICS):** in this class (equal-volume visible stacks, at most 2 hidden stacks), the global 3-family PS model of 1209.3010 is **unique up to lattice relabelling and L ↔ R**. The many raw solutions are labels and symmetry images of one model. So the outward search on this geometry does not open a landscape. It points at one rigid model, which is the opposite of the Z₂×Z₂ exotics wall.
+- **Next:** D2112. Write the Z₂×Z₆′ gauge-kinetic formula from the paper first, then run this one model through the v4 α_s chain (equal tree-level couplings, so sin²θ_W = 3/8 at M_s), plus the bd′/cd′ vector-like question.
