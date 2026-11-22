@@ -20666,3 +20666,9 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Read:** the mechanism exists and keeps three families and a massless U(1)_Y (D2067), but the step is generically **too coarse**. It works only where the c and d stacks' volume change is small, which needs specific radii (the torus-2 or torus-1 length ratio near the small-χ corner). That is a mild tuning, not a derivation.
   - **The radii are moduli.** A full derivation needs their stabilised values. In v4 the complex-structure moduli are frozen at ρ/i, which would **fix** χ. **Next:** read off χ from v4's U values (U = iχ on each torus: ρ gives a tilted torus; i gives χ = 1) and recompute with no free radius.
   - Loop: progress (sized). Count 0.
+- **D2069 (CENTRE; PREREG_D2069; theory/tests/d2069_fixed.py): the IMR α_Y step with the radii fixed by v4. PASS(fixed radii) on 1 of 16 combinations. Treated as a weak result.**
+  - **Correction in the lock:** under T-duality χ = 1/A_IIB, so the radii come from v4's **Kähler** areas (√20.15 = 4.49 per torus, isotropic), not from its frozen complex structure. That gives χ = 0.223.
+  - **Result:** with no free radius, the steps are coarse (|δ(1/α_Y)| = 0.9–37). The **single hit** is (β¹, β², ρ) = (½, ½, ⅓), n_a² = n_d² = 1, step Δn_d² = −2: δ(1/α_Y) = −0.92, **α_s = 0.1196 (+1.8σ)**.
+  - **Look-elsewhere:** 1 hit in 16, so p ≈ 0.06 per random target. With 16 tries a single hit is expected about 1.0 time. **No evidence weight. It is a possible corner, not a derivation.**
+  - **Read:** the T1 route through the hypercharge normalisation is real (families and masslessness hold, D2067), but at v4's fixed geometry it only works in one discrete corner. A sharper test needs the true (non-isotropic) areas and the orbifold Z₆-II projection (IMR lives on T⁶/(Z₂×Z₂)-like orientifolds, not Z₆-II).
+  - Loop: progress, though weak. Count 0.
