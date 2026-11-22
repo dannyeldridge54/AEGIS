@@ -20928,3 +20928,27 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - W₀ now comes from the racetrack rather than the KKLT relation, so the W₀ gap changes form; the D2090 A-refit and the 4π√3 numerology no longer apply directly;
     - the inflation-side KL gap remains: H_inf = 5.7e12 ≫ m_σ.
   - **The map changes:** the "mirage FAIL" moves to **CONDITIONAL** (on a KL racetrack with B/A ≈ 0.06). The α_s seam, the wino, the gluino and m_h are then jointly satisfiable with derived μ and no new continuous knob.
+- **D2092 (CENTRE, design map; PREREG_D2092): KL racetrack ranks at σ₀ = 20.15. B/A = (N′/N)e^{−2πσ₀(1/N − 1/N′)} is fixed by the ranks. (6, 7) gives 0.057 (unnatural); every N ≥ 7 with N′ = N + 1 is natural. (7, 8) is the minimal natural pair and lands m₃/₂ ≈ 0.13 PeV at the racetrack's own scale.**
+  - **B/A table:**
+    - (5, 6) 0.018;
+    - **(6, 7) 0.057**;
+    - **(7, 8) 0.119** (natural);
+    - (8, 9) 0.194;
+    - (9, 10) 0.272;
+    - (10, 11) 0.348;
+    - (12, 13) 0.481;
+    - N′ ≥ N + 2 is natural only for N ≥ 10.
+  - **Scales:**
+    - (6, 7): W₀_KL = 1.1e-10·A. m₃/₂ = 128.5 TeV needs ΔW = 2.8e-9, **24× the racetrack scale**. m_σ ≈ 1.6e8 GeV, so M_tree ≈ 106 GeV (consistent with D2091).
+    - (7, 8): W₀_KL = 2.0e-9·A, so **ΔW/|W₀_KL| = 1.4. m₃/₂ ≈ 0.13 PeV is the racetrack's natural scale with no hierarchy.** m_σ ≈ 4.3e9·A GeV, so M_tree ≈ 4 GeV, pure AMSB to 0.6%.
+  - **What changes if N = 7 (stated):**
+    - x = aσ₀ = 18.09; the KKLT relation W₀ = A e^{−x}(1 + 2x/3) and its χ = 48 / A = 0.54 selection of N = 6 (D1871) **no longer apply**, being replaced by the racetrack.
+    - The dark-rank rule N_d = 2N gives 14, **outside** D1812's window {10, 11, 12}. That rule was itself flagged as numerology; DM α_D must be recomputed.
+    - The D2090 4π√3 numerology is moot in this branch.
+  - **What does NOT change:** the flux superpotential must still equal W₀_KL ≈ 2e-9 (tuned to the racetrack). **The small-W₀ gap (D2044) persists in every branch**; it now reads "flux W₀ ≈ 2e-9 matching the racetrack".
+  - **Read:** the (7, 8) racetrack on T_vis is the cleanest version of the D2091 repair:
+    - natural B/A;
+    - pure-AMSB gauginos;
+    - m₃/₂ ≈ 0.13 PeV with no extra hierarchy;
+    - the D2089 four goalposts (α_s, wino, gluino, m_h) via the derived GM μ.
+  - **Open:** small flux W₀, the tadpole, inflation vs m_σ (H_inf = 5.7e12 ≫ 4.3e9), and the dark-sector rank.
