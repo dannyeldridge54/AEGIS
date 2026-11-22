@@ -1,0 +1,1175 @@
+{
+ "_about": "Goalposts woven to the nine nodes (Danny 19:01). kind: PRED (a real prediction that can fail), FIT (passes by construction), TRUST (input, no derivation), BOUND (internal consistency), NULL (SM-like, cannot discriminate), OPEN (no Weave value yet). live = an engine observable scored every pulse.",
+ "goalposts": [
+  {
+   "id": "C1",
+   "name": "quark one-spurion window |u|",
+   "layer": 1,
+   "kind": "FIT",
+   "open_problem": false,
+   "battery": "C1",
+   "live": "u",
+   "data": {
+    "type": "window",
+    "lo": 0.02588,
+    "hi": 0.0274,
+    "source": "D1925 naturalness window"
+   },
+   "weave": {
+    "value": null,
+    "source": "live knob u"
+   },
+   "note": ""
+  },
+  {
+   "id": "OP-flavour",
+   "name": "flavour puzzle: Yukawa hierarchy from one rung",
+   "layer": 1,
+   "kind": "FIT",
+   "open_problem": true,
+   "battery": null,
+   "live": "u",
+   "data": {
+    "type": "window",
+    "lo": 0.02588,
+    "hi": 0.0274,
+    "source": "D1925"
+   },
+   "weave": {
+    "value": null,
+    "source": "one spurion (FIT, D1942)"
+   },
+   "note": ""
+  },
+  {
+   "id": "C2",
+   "name": "CKM first-row unitarity",
+   "layer": 1,
+   "kind": "NULL",
+   "open_problem": false,
+   "battery": "C2",
+   "live": null,
+   "data": {
+    "type": "none",
+    "source": "battery"
+   },
+   "weave": {
+    "value": "SM-like",
+    "source": "PeV scalars"
+   },
+   "note": ""
+  },
+  {
+   "id": "C3",
+   "name": "B_s->mumu, b->sll",
+   "layer": 1,
+   "kind": "NULL",
+   "open_problem": false,
+   "battery": "C3",
+   "live": null,
+   "data": {
+    "type": "none",
+    "source": "battery"
+   },
+   "weave": {
+    "value": "SM-like",
+    "source": "PeV scalars"
+   },
+   "note": ""
+  },
+  {
+   "id": "C5",
+   "name": "K->pi nu nu",
+   "layer": 1,
+   "kind": "NULL",
+   "open_problem": false,
+   "battery": "C5",
+   "live": null,
+   "data": {
+    "type": "none",
+    "source": "battery"
+   },
+   "weave": {
+    "value": "SM-like",
+    "source": "PeV scalars"
+   },
+   "note": ""
+  },
+  {
+   "id": "C6",
+   "name": "eps_K, Delta M (SUSY FCNC)",
+   "layer": 1,
+   "kind": "NULL",
+   "open_problem": false,
+   "battery": "C6",
+   "live": null,
+   "data": {
+    "type": "none",
+    "source": "battery"
+   },
+   "weave": {
+    "value": "SM-like",
+    "source": "PeV scalars"
+   },
+   "note": ""
+  },
+  {
+   "id": "D1",
+   "name": "sin^2 theta_12 (TM1)",
+   "layer": 2,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "D1",
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": 0.3092,
+    "sigma": 0.0087,
+    "source": "JUNO first release 2025"
+   },
+   "weave": {
+    "value": 0.3184,
+    "source": "TM1 at i"
+   },
+   "note": ""
+  },
+  {
+   "id": "D3",
+   "name": "neutrino mass ordering",
+   "layer": 2,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "D3",
+   "live": null,
+   "data": {
+    "type": "none",
+    "source": "JUNO/DUNE/ORCA (future)"
+   },
+   "weave": {
+    "value": "normal",
+    "source": "TM1"
+   },
+   "note": ""
+  },
+  {
+   "id": "D4",
+   "name": "0vbb m_bb [meV]",
+   "layer": 2,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "D4",
+   "live": null,
+   "data": {
+    "type": "upper",
+    "limit": 28.0,
+    "source": "KamLAND-Zen (28-122 meV)"
+   },
+   "weave": {
+    "value": 3.8,
+    "source": "D-notes 1.6-3.8 meV (upper end scored)"
+   },
+   "note": ""
+  },
+  {
+   "id": "D5",
+   "name": "beta-decay m_beta [meV]",
+   "layer": 2,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "D5",
+   "live": null,
+   "data": {
+    "type": "upper",
+    "limit": 450.0,
+    "source": "KATRIN < 0.45 eV"
+   },
+   "weave": {
+    "value": 8.8,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "A17",
+   "name": "sum m_nu [meV]",
+   "layer": 2,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "A17",
+   "live": null,
+   "data": {
+    "type": "upper",
+    "limit": 64.2,
+    "source": "DESI DR2 + CMB, LCDM 95 % (2503.14744)"
+   },
+   "weave": {
+    "value": 58.7,
+    "source": "normal ordering minimal"
+   },
+   "note": ""
+  },
+  {
+   "id": "OP-numass",
+   "name": "neutrino mass scale and origin",
+   "layer": 2,
+   "kind": "PRED",
+   "open_problem": true,
+   "battery": null,
+   "live": null,
+   "data": {
+    "type": "upper",
+    "limit": 64.2,
+    "source": "DESI DR2 + CMB (2503.14744)"
+   },
+   "weave": {
+    "value": 58.7,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "L2-MN",
+   "name": "M_N naturalness bounds [GeV]",
+   "layer": 2,
+   "kind": "BOUND",
+   "open_problem": false,
+   "battery": null,
+   "live": "MN",
+   "data": {
+    "type": "window",
+    "lo": 45000000000.0,
+    "hi": 2500000000000.0,
+    "source": "D1946"
+   },
+   "weave": {
+    "value": null,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "C10",
+   "name": "Koide Q",
+   "layer": 3,
+   "kind": "TRUST",
+   "open_problem": false,
+   "battery": "C10",
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": 0.6666645,
+    "sigma": 5.1e-06,
+    "source": "PDG 2024 lepton masses (m_tau 1776.93 +- 0.09 MeV), Q computed"
+   },
+   "weave": {
+    "value": 0.6666666666666666,
+    "source": "Koide delta TRUST"
+   },
+   "note": ""
+  },
+  {
+   "id": "C4",
+   "name": "mu->e gamma BR",
+   "layer": 3,
+   "kind": "NULL",
+   "open_problem": false,
+   "battery": "C4",
+   "live": null,
+   "data": {
+    "type": "upper",
+    "limit": 1.5e-13,
+    "source": "MEG II 2025"
+   },
+   "weave": {
+    "value": 0.0,
+    "source": "PeV sleptons"
+   },
+   "note": ""
+  },
+  {
+   "id": "B9",
+   "name": "electron g-2 and alpha",
+   "layer": 3,
+   "kind": "NULL",
+   "open_problem": false,
+   "battery": "B9",
+   "live": null,
+   "data": {
+    "type": "none",
+    "source": "battery"
+   },
+   "weave": {
+    "value": "SM",
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "L4-rung",
+   "name": "cube: lepton slip vs theta-step agreement (<= 15 %)",
+   "layer": 4,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": null,
+   "live": "rung",
+   "data": {
+    "type": "internal",
+    "source": "D1972"
+   },
+   "weave": {
+    "value": null,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "C7",
+   "name": "neutron EDM [e cm]",
+   "layer": 4,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "C7",
+   "live": null,
+   "data": {
+    "type": "upper",
+    "limit": 1.8e-26,
+    "source": "PSI 2020"
+   },
+   "weave": {
+    "value": 1e-32,
+    "source": "theta-bar = 0 geometric"
+   },
+   "note": ""
+  },
+  {
+   "id": "C8",
+   "name": "electron EDM [e cm]",
+   "layer": 4,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "C8",
+   "live": null,
+   "data": {
+    "type": "upper",
+    "limit": 4.1e-30,
+    "source": "JILA HfF+ 2023"
+   },
+   "weave": {
+    "value": 4e-33,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "OP-strongCP",
+   "name": "strong CP problem: theta-bar",
+   "layer": 4,
+   "kind": "PRED",
+   "open_problem": true,
+   "battery": null,
+   "live": null,
+   "data": {
+    "type": "upper",
+    "limit": 1e-10,
+    "source": "nEDM bound"
+   },
+   "weave": {
+    "value": 0.0,
+    "source": "CP geometric postulate"
+   },
+   "note": ""
+  },
+  {
+   "id": "C11",
+   "name": "QCD axion searches",
+   "layer": 4,
+   "kind": "NULL",
+   "open_problem": false,
+   "battery": "C11",
+   "live": null,
+   "data": {
+    "type": "none",
+    "source": "ADMX etc"
+   },
+   "weave": {
+    "value": "no axion needed",
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "B5",
+   "name": "wino mass [GeV] vs disappearing tracks",
+   "layer": 5,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "B5",
+   "live": "M2",
+   "data": {
+    "type": "lower",
+    "limit": 700.0,
+    "source": "ATLAS+CMS ~700 GeV (2507.15934)"
+   },
+   "weave": {
+    "value": null,
+    "source": "live M2"
+   },
+   "note": ""
+  },
+  {
+   "id": "B6",
+   "name": "gluino mass [GeV]",
+   "layer": 5,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "B6",
+   "live": null,
+   "data": {
+    "type": "lower",
+    "limit": 2300.0,
+    "source": "LHC Run 2 gluino limits ~2.3 TeV"
+   },
+   "weave": {
+    "value": 4930.0,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "B3",
+   "name": "Higgs mass [GeV]",
+   "layer": 5,
+   "kind": "OPEN",
+   "open_problem": false,
+   "battery": "B3",
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": 125.2,
+    "sigma": 0.11,
+    "source": "PDG 2024"
+   },
+   "weave": {
+    "value": null,
+    "source": "split SUSY tan beta 1-4, not computed"
+   },
+   "note": ""
+  },
+  {
+   "id": "F10",
+   "name": "moduli problem: lightest modulus [GeV]",
+   "layer": 5,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "F10",
+   "live": null,
+   "data": {
+    "type": "lower",
+    "limit": 30000.0,
+    "source": "BBN moduli bound ~30 TeV"
+   },
+   "weave": {
+    "value": 260000.0,
+    "source": "D1946"
+   },
+   "note": ""
+  },
+  {
+   "id": "B8",
+   "name": "muon g-2: Delta a_mu [1e-11]",
+   "layer": 5,
+   "kind": "NULL",
+   "open_problem": false,
+   "battery": "B8",
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": 38.0,
+    "sigma": 63.0,
+    "source": "FNAL final 2025 vs Theory Initiative 2025 (a_exp 116592070.5, a_SM 116592033)"
+   },
+   "weave": {
+    "value": 0.0,
+    "source": "PeV scalars"
+   },
+   "note": ""
+  },
+  {
+   "id": "OP-hierarchy",
+   "name": "hierarchy problem: m_h / M_P",
+   "layer": 5,
+   "kind": "OPEN",
+   "open_problem": true,
+   "battery": null,
+   "live": null,
+   "data": {
+    "type": "none",
+    "source": "m_h/M_P = 5.1e-17; no Weave derivation"
+   },
+   "weave": {
+    "value": null,
+    "source": "no derivation"
+   },
+   "note": ""
+  },
+  {
+   "id": "E2",
+   "name": "wino gamma-lines",
+   "layer": 5,
+   "kind": "OPEN",
+   "open_problem": false,
+   "battery": "E2",
+   "live": null,
+   "data": {
+    "type": "none",
+    "source": "H.E.S.S./Fermi (D1947)"
+   },
+   "weave": {
+    "value": "10-40 % of DM",
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "OP-muong2",
+   "name": "muon g-2 anomaly",
+   "layer": 5,
+   "kind": "NULL",
+   "open_problem": true,
+   "battery": null,
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": 38.0,
+    "sigma": 63.0,
+    "source": "FNAL 2025 + TI 2025"
+   },
+   "weave": {
+    "value": 0.0,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "A1",
+   "name": "n_s",
+   "layer": 6,
+   "kind": "FIT",
+   "open_problem": false,
+   "battery": "A1",
+   "live": "ns",
+   "data": {
+    "type": "band",
+    "value": 0.9728,
+    "sigma": 0.0027,
+    "source": "CMB-SPA + DESI"
+   },
+   "weave": {
+    "value": null,
+    "source": "tilt C is FIT (D1942)"
+   },
+   "note": ""
+  },
+  {
+   "id": "A2",
+   "name": "r",
+   "layer": 6,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "A2",
+   "live": null,
+   "data": {
+    "type": "upper",
+    "limit": 0.036,
+    "source": "BICEP/Keck BK18"
+   },
+   "weave": {
+    "value": 0.00054,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "A3",
+   "name": "running dn_s/dlnk",
+   "layer": 6,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "A3",
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": -0.0045,
+    "sigma": 0.0067,
+    "source": "Planck 2018"
+   },
+   "weave": {
+    "value": -0.00097,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "A4",
+   "name": "f_NL local",
+   "layer": 6,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "A4",
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": -0.9,
+    "sigma": 5.1,
+    "source": "Planck 2018"
+   },
+   "weave": {
+    "value": 0.0,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "OP-horizon",
+   "name": "horizon/flatness: e-folds N*",
+   "layer": 6,
+   "kind": "PRED",
+   "open_problem": true,
+   "battery": null,
+   "live": null,
+   "data": {
+    "type": "lower",
+    "limit": 45.0,
+    "source": "standard requirement"
+   },
+   "weave": {
+    "value": 50.3,
+    "source": "D1929"
+   },
+   "note": ""
+  },
+  {
+   "id": "OP-monopole",
+   "name": "monopole problem",
+   "layer": 6,
+   "kind": "NULL",
+   "open_problem": true,
+   "battery": null,
+   "live": null,
+   "data": {
+    "type": "none",
+    "source": "MACRO/IceCube"
+   },
+   "weave": {
+    "value": "diluted",
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "F11",
+   "name": "swampland / TCC flags",
+   "layer": 6,
+   "kind": "TRUST",
+   "open_problem": false,
+   "battery": "F11",
+   "live": null,
+   "data": {
+    "type": "none",
+    "source": "theory"
+   },
+   "weave": {
+    "value": "flags",
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "B1",
+   "name": "alpha_s(M_Z)",
+   "layer": 7,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "B1",
+   "live": "as",
+   "data": {
+    "type": "band",
+    "value": 0.118,
+    "sigma": 0.0009,
+    "source": "PDG world average"
+   },
+   "weave": {
+    "value": null,
+    "source": "live a_s (single stack); split stacks FIT"
+   },
+   "note": ""
+  },
+  {
+   "id": "OP-unification",
+   "name": "gauge coupling unification",
+   "layer": 7,
+   "kind": "PRED",
+   "open_problem": true,
+   "battery": null,
+   "live": "as",
+   "data": {
+    "type": "band",
+    "value": 0.118,
+    "sigma": 0.0009,
+    "source": "PDG"
+   },
+   "weave": {
+    "value": null,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "B10",
+   "name": "proton lifetime e+pi0 [yr]",
+   "layer": 7,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "B10",
+   "live": null,
+   "data": {
+    "type": "lower",
+    "limit": 2.4e+34,
+    "source": "Super-K"
+   },
+   "weave": {
+    "value": 1.6e+35,
+    "source": "G-branch"
+   },
+   "note": ""
+  },
+  {
+   "id": "B7",
+   "name": "W mass [MeV] (SM-like)",
+   "layer": 7,
+   "kind": "NULL",
+   "open_problem": false,
+   "battery": "B7",
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": 80360.2,
+    "sigma": 11.6,
+    "source": "CMS 2024 (80360.2 +- 9.9) with SM +-6 in quadrature"
+   },
+   "weave": {
+    "value": 80357.0,
+    "source": "SM"
+   },
+   "note": ""
+  },
+  {
+   "id": "OP-neutron",
+   "name": "neutron lifetime beam-bottle anomaly [s]",
+   "layer": 7,
+   "kind": "OPEN",
+   "open_problem": true,
+   "battery": "E9",
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": 877.75,
+    "sigma": 0.34,
+    "source": "UCNtau 2021 (bottle) vs beam 887.7 +- 2.2"
+   },
+   "weave": {
+    "value": null,
+    "source": "no Weave mechanism"
+   },
+   "note": ""
+  },
+  {
+   "id": "A18",
+   "name": "baryon asymmetry Y_B",
+   "layer": 8,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "A18",
+   "live": "Y",
+   "data": {
+    "type": "lower",
+    "limit": 8.7e-11,
+    "source": "Planck omega_b"
+   },
+   "weave": {
+    "value": null,
+    "source": "live Y (non-thermal leptogenesis)"
+   },
+   "note": ""
+  },
+  {
+   "id": "OP-baryogenesis",
+   "name": "baryogenesis eta_B",
+   "layer": 8,
+   "kind": "PRED",
+   "open_problem": true,
+   "battery": null,
+   "live": "Y",
+   "data": {
+    "type": "lower",
+    "limit": 8.7e-11,
+    "source": "Planck"
+   },
+   "weave": {
+    "value": null,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "L8-box",
+   "name": "gravitino->wino abundance Omega_w h^2 <= 0.12",
+   "layer": 8,
+   "kind": "BOUND",
+   "open_problem": false,
+   "battery": null,
+   "live": "Om",
+   "data": {
+    "type": "upper",
+    "limit": 0.12,
+    "source": "Planck Omega_c h^2"
+   },
+   "weave": {
+    "value": null,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "A19",
+   "name": "dark matter Omega_c h^2",
+   "layer": 8,
+   "kind": "FIT",
+   "open_problem": false,
+   "battery": "A19",
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": 0.12,
+    "sigma": 0.001,
+    "source": "Planck 2018"
+   },
+   "weave": {
+    "value": null,
+    "source": "asymmetric 12.8 GeV via 11/28 (FIT) + winos"
+   },
+   "note": ""
+  },
+  {
+   "id": "OP-DM",
+   "name": "dark matter identity",
+   "layer": 8,
+   "kind": "FIT",
+   "open_problem": true,
+   "battery": null,
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": 0.12,
+    "sigma": 0.001,
+    "source": "Planck"
+   },
+   "weave": {
+    "value": null,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "A8",
+   "name": "BBN late decays: gravitino lifetime [s]",
+   "layer": 8,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "A8",
+   "live": null,
+   "data": {
+    "type": "upper",
+    "limit": 0.1,
+    "source": "Kawasaki-Kohri-Moroi"
+   },
+   "weave": {
+    "value": 0.0014,
+    "source": "D1946"
+   },
+   "note": ""
+  },
+  {
+   "id": "A6",
+   "name": "N_eff",
+   "layer": 8,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "A6",
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": 3.23,
+    "sigma": 0.175,
+    "source": "DESI DR2 + CMB (2503.14744), 95 % +-0.35"
+   },
+   "weave": {
+    "value": 3.044,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "A9",
+   "name": "lithium-7 problem (Li/H x1e10)",
+   "layer": 8,
+   "kind": "OPEN",
+   "open_problem": true,
+   "battery": "A9",
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": 1.6,
+    "sigma": 0.3,
+    "source": "Spite plateau vs BBN 4.7"
+   },
+   "weave": {
+    "value": null,
+    "source": "no Weave fix"
+   },
+   "note": ""
+  },
+  {
+   "id": "E5",
+   "name": "DM self-interaction sigma/m [cm^2/g]",
+   "layer": 8,
+   "kind": "PRED",
+   "open_problem": false,
+   "battery": "E5",
+   "live": null,
+   "data": {
+    "type": "upper",
+    "limit": 0.1,
+    "source": "clusters"
+   },
+   "weave": {
+    "value": 0.002,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "A21",
+   "name": "cosmic strings G mu",
+   "layer": 8,
+   "kind": "OPEN",
+   "open_problem": false,
+   "battery": "A21",
+   "live": null,
+   "data": {
+    "type": "none",
+    "source": "Planck, PTA"
+   },
+   "weave": {
+    "value": null,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "A22",
+   "name": "cosmic birefringence beta",
+   "layer": 8,
+   "kind": "OPEN",
+   "open_problem": false,
+   "battery": "A22",
+   "live": null,
+   "data": {
+    "type": "none",
+    "source": "ACT + Planck"
+   },
+   "weave": {
+    "value": null,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "A14-w0",
+   "name": "dark energy w0",
+   "layer": 9,
+   "kind": "OPEN",
+   "open_problem": false,
+   "battery": "A14",
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": -0.752,
+    "sigma": 0.057,
+    "source": "DESI DR2 + CMB + DESY5 (2503.14738)"
+   },
+   "weave": {
+    "value": null,
+    "source": "thread TRUST, no slope source"
+   },
+   "note": ""
+  },
+  {
+   "id": "A14-wa",
+   "name": "dark energy wa",
+   "layer": 9,
+   "kind": "OPEN",
+   "open_problem": false,
+   "battery": "A14",
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": -0.86,
+    "sigma": 0.22,
+    "source": "DESI DR2 + CMB + DESY5 (2503.14738)"
+   },
+   "weave": {
+    "value": null,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "OP-DE",
+   "name": "evolving dark energy (2.8-4.2 sigma)",
+   "layer": 9,
+   "kind": "OPEN",
+   "open_problem": true,
+   "battery": null,
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": -0.752,
+    "sigma": 0.057,
+    "source": "DESI DR2"
+   },
+   "weave": {
+    "value": null,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "A15",
+   "name": "Hubble tension H0",
+   "layer": 9,
+   "kind": "OPEN",
+   "open_problem": true,
+   "battery": "A15",
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": 73.49,
+    "sigma": 0.93,
+    "source": "SH0ES 2025 vs Planck 67.4 +- 0.5 (>5 sigma)"
+   },
+   "weave": {
+    "value": null,
+    "source": "no Weave fix"
+   },
+   "note": ""
+  },
+  {
+   "id": "A16",
+   "name": "S8 tension",
+   "layer": 9,
+   "kind": "OPEN",
+   "open_problem": true,
+   "battery": "A16",
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": 0.836,
+    "sigma": 0.013,
+    "source": "combined CMB 2026; DES Y6 2.4-2.7 sigma low; KiDS-Legacy consistent"
+   },
+   "weave": {
+    "value": null,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "OP-Lambda",
+   "name": "cosmological constant rho_L^(1/4) [meV]",
+   "layer": 9,
+   "kind": "OPEN",
+   "open_problem": true,
+   "battery": null,
+   "live": null,
+   "data": {
+    "type": "band",
+    "value": 2.24,
+    "sigma": 0.02,
+    "source": "Planck"
+   },
+   "weave": {
+    "value": null,
+    "source": "no derivation"
+   },
+   "note": ""
+  },
+  {
+   "id": "F1",
+   "name": "equivalence principle eta",
+   "layer": 9,
+   "kind": "NULL",
+   "open_problem": false,
+   "battery": "F1",
+   "live": null,
+   "data": {
+    "type": "upper",
+    "limit": 1e-15,
+    "source": "MICROSCOPE"
+   },
+   "weave": {
+    "value": 0.0,
+    "source": "thread sequestered"
+   },
+   "note": ""
+  },
+  {
+   "id": "F2",
+   "name": "PPN |gamma-1|",
+   "layer": 9,
+   "kind": "NULL",
+   "open_problem": false,
+   "battery": "F2",
+   "live": null,
+   "data": {
+    "type": "upper",
+    "limit": 2.3e-05,
+    "source": "Cassini"
+   },
+   "weave": {
+    "value": 0.0,
+    "source": ""
+   },
+   "note": ""
+  },
+  {
+   "id": "F6",
+   "name": "GW speed |c_g/c-1|",
+   "layer": 9,
+   "kind": "NULL",
+   "open_problem": false,
+   "battery": "F6",
+   "live": null,
+   "data": {
+    "type": "upper",
+    "limit": 1e-15,
+    "source": "GW170817"
+   },
+   "weave": {
+    "value": 0.0,
+    "source": ""
+   },
+   "note": ""
+  }
+ ]
+}
