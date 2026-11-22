@@ -1,0 +1,54 @@
+{
+ "T1": {
+  "coverage_2sigma": 0.815,
+  "mean_knob_bias": [
+   0.0202,
+   -0.1533,
+   0.0538,
+   0.0018
+  ],
+  "knob_scatter": [
+   0.4036,
+   2.7662,
+   0.9236,
+   0.0363
+  ],
+  "note": "coverage of the OBSERVABLES; knob scatter shows which knobs are actually pinned by the data"
+ },
+ "T2": {
+  "false_balance_rate": 0.52,
+  "note": "fraction of random data sets (\u00b15\u03c3 around the real centres) the balancer still \"balances\""
+ },
+ "T3": {
+  "dof": 0,
+  "chi2_all": 0.3630734604201763,
+  "knobs_fitted": {
+   "m32": 66598.99462892303,
+   "T_R": 7431648495.064228,
+   "M_N": 108597572840.36507,
+   "u": 0.02663
+  },
+  "hold_out": {
+   "n_s": {
+    "predicted": 0.9706648668371295,
+    "real": 0.9728,
+    "pull": -0.7907900603224096
+   },
+   "alpha_s": {
+    "predicted": 0.11401,
+    "real": 0.118,
+    "pull": -3.627272727272721
+   },
+   "ln Y_B": {
+    "predicted": -21.576738214642837,
+    "real": -23.165112997273965,
+    "pull": 15.883747826311279
+   },
+   "quark u": {
+    "predicted": 0.02663,
+    "real": 0.02663,
+    "pull": 0.0
+   }
+  }
+ }
+}

@@ -19391,3 +19391,38 @@ Every check catches the mistake it was built for:
   - Its Fig. 6 holds the sub-2 TeV exclusion, but the plotted values are not in the text. **E2 stays OPEN.**
 - **TEST (rule 6e):** 686.5 GeV lies inside the spread of the bound at the right lifetime. **INDETERMINATE**: it passes the centre (660) and fails the upper reading (700). The decisive number is 2603.08315's limit at τ ≈ 0.2 ns.
 - **COMPASS:** the wino stays ◔/!, now with an explicit open item (the pure-wino-lifetime limit in 2603.08315's figures). In the resonance map (D1972), L5 locks only with m₃/₂ × 1.22 (wino 838 GeV). The 880 GeV limit, if it applies near 0.2 ns, would even push past that.
+
+## D1974 — tests OF the balancing method (Danny 18:04; locked PREREG_D1974): the method FAILS as evidence today
+- **T1, injection–recovery** (200 planted truths): coverage at 2σ = **0.815**, below the 0.90 bar. **FAIL.**
+  - Knob scatter (ln): m₃/₂ 0.40, **T_R 2.77**, M_N 0.92, u 0.04.
+  - The data **do not pin T_R** (n_s depends on it only logarithmically) and barely pin M_N. Only the quark u is well determined.
+- **T2, false-balance rate:** **52 %** of random data sets (within ±5σ of the real centres) still "balance". That is far above the 20 % bar. **The knobs can balance about half of anything**, so balance on its own is **not evidence**.
+- **T3, the real data:** **dof = 0** (4 data points, 4 knobs), so a balanced fit is automatic. The best fit runs to unphysical knobs, because the fit sees only these four data and ignores the bounds:
+  - m₃/₂ = 6.7e4 GeV gives a wino of about 180 GeV, which is excluded;
+  - T_R = 7.4e9 lies outside the gravitino box.
+- **Hold-outs:**
+  - n_s predicted 0.9707, pull −0.8;
+  - **α_s −3.6σ**;
+  - **ln Y_B +15.9σ** (the asymmetry cannot be predicted from the other three);
+  - u, trivially 0.
+- **JUDGE:** this confirms the referees' and node agents' finding in a quantitative way. **With as many knobs as data, balance is guaranteed and proves nothing.** The way forward is **more independent data than knobs**, which means:
+  - add the bounds as data (wino, gravitino box, M_N window, proton);
+  - add more observables per knob (r, running, the neutrino sector);
+  - reduce the knobs by deriving them (A₃/A₂, T_R from the x-chain, M_N from the θ-step).
+  - Then rerun T1–T3. Target: coverage ≥ 0.9, false-balance ≤ 0.2, dof ≥ 3.
+- **COMPASS:** a new method-level row, "balance as evidence: FAIL (dof 0, false-balance 52 %)".
+
+## D1975 — Danny 18:06: a mirror layer pointing to the future (recorded as candidate postulate P-mirror, untested)
+- **Statement (Danny's words, summarised):**
+  - The field passes through time across many layers.
+  - The negative space we are mapping is the way the physical world is carried back through time.
+  - There is a mirror layer of the spatial field, similar but not identical, pointing toward the future, with its own knobs.
+  - Everything is fractal, moving on 5 axes, with time as the thrust.
+- **The closest literature:**
+  - The CPT-symmetric universe (Boyle, Finn & Turok 2018, and later papers): the universe before the big bang is the CPT mirror of the one after.
+  - The two-state-vector formalism, which uses both past and future boundary conditions.
+  - The Weave already has a mirror: the reverse weave and the dark-cycle mirror.
+- **Test condition, given D1974:** a new layer with its own knobs makes false balance **worse**, unless it brings **new observables**. P-mirror is worth adopting only if it predicts something the forward layers do not.
+  - Example: the CPT-symmetric universe predicts r ≈ 0 (no primordial gravitational waves) and a specific right-handed-neutrino dark-matter mass. Both conflict with or replace current Weave sectors (our r is 5.4e-4).
+- **Physics caveat:** "time as thrust" cannot produce net momentum, because energy–momentum conservation follows from time-translation symmetry (Noether). A time-asymmetric boundary condition can set the arrow of time. That is the usable form of the idea.
+- **Status:** CANDIDATE, unlocked, untested. The next step is to write down which observables P-mirror changes and lock a test.
