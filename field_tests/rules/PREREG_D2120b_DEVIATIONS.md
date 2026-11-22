@@ -10,3 +10,10 @@ The first run hit a RecursionError in the integer row-echelon insertion (`hnf_ad
 - **FAIL:** any non-trivial six-stack survivor. In that case the method is suspect, and the five-stack Z4 is not used.
 
 **Five-stack:** there is no massless U(1) (rank 5), so "trivial" means the single-stack type only. If k = (0,1,1,1,1) mod 4 survives on E, it is non-trivial, and its selection rule (D2120a) stands.
+
+## Addendum 2 (after output, before any interpretation is recorded)
+1. The run's "saturation" diagnostic ("basis changed by 31") compares HNF row dicts. Those change under mere re-reduction, so the diagnostic is **inconclusive**, not a failure.
+   **Decisive replacement test:** H₃(Z) is unimodular under ω, so F is all of H₃(Z) iff det(Gram ω on the F basis) = ±1. Compute this for F(|n|,|m| ≤ 2).
+2. Apply the six-stack triviality classification (Addendum 1) to **every** survivor in code. The examples printed (e.g. Z3 (0,1,2,0,1,1) = Q_Z mod 3) are not enough on their own.
+
+Verdicts follow the Addendum 1 criteria unchanged.
