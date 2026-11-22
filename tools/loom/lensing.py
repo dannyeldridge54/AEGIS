@@ -14,10 +14,14 @@ x0 = np.zeros(n)
 def J_fd(L, h=1e-4):
     if not margins(at(x0))[L]: return None
     return np.column_stack([(mvec(x0 + h * e, L) - mvec(x0 - h * e, L)) / (2 * h) for e in np.eye(n)])
-def J_probe(L, N=400, w=0.03, seed=1981):
+def J_probe(L, N=400, w=1e-3, seed=1981):   # D1989 P1.6: kink-aware, narrow probes; R^2 < 0.99 -> KINK (R1 decides)
     if not margins(at(x0))[L]: return None
     rng = np.random.default_rng(seed + L); X = rng.uniform(-w, w, (N, n)); f0 = mvec(x0, L)
-    Y = np.array([mvec(x, L) - f0 for x in X]); return np.linalg.lstsq(X, Y, rcond=None)[0].T
+    Y = np.array([mvec(x, L) - f0 for x in X]); B = np.linalg.lstsq(X, Y, rcond=None)[0]
+    res = Y - X @ B; ss = ((Y - Y.mean(0)) ** 2).sum(); r2 = 1 - (res ** 2).sum() / ss if ss > 0 else 1.0
+    KINK[L] = bool(r2 < 0.99)
+    return J_fd(L) if KINK[L] else B.T
+KINK = {}
 def J_decl(L):
     if not margins(at(x0))[L]: return None
     return np.array([[1.0 if k in KNOBS_OF[L] else 0.0 for k in K]])
@@ -32,7 +36,7 @@ for p in R['R1_fd']['transfers']:
     cs = [R[r]['transfers'].get(p, {}).get('cls') for r in R]; agree[f'T{p}'] = dict(values=cs, agree=len(set(cs)) == 1, verdict=cs[0] if len(set(cs)) == 1 else 'INDETERMINATE')
 cls = [agree[f'T{p}']['verdict'] for p in R['R1_fd']['transfers']]
 verdict = _verdict(cls, R['R1_fd']['chain_dim'])
-out = dict(prereg='PREREG_D1981_layer_lensing.md', knob_space=K, readings=R, triangulation=agree, transfer_classes=dict(zip(R['R1_fd']['transfers'], cls)), verdict=verdict)
+out = dict(kink_layers=sorted(L for L, v in KINK.items() if v), prereg='PREREG_D1981_layer_lensing.md', knob_space=K, readings=R, triangulation=agree, transfer_classes=dict(zip(R['R1_fd']['transfers'], cls)), verdict=verdict)
 json.dump(out, open('field_tests/results/d1981_lensing.json', 'w'), indent=1)
 r1 = R['R1_fd']
 for L in range(1, 10): print('L%d %-28s' % (L, NAMES[L]), 'WINDOW' if r1['lenses'][L] is None else ('OPAQUE (rank 0)' if r1['lenses'][L]['opaque'] else '') + 'lenses=%d %s' % (r1['lenses'][L]['r'], r1['lenses'][L]['dirs']), ' r(R1,R2,R3)=', agree[f'L{L}_r']['values'])

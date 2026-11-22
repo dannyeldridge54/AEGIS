@@ -33,7 +33,7 @@ def margins(k):
      7: dict(alpha_s=2 - abs((o['a_s'] - 0.1180) / math.hypot(0.0009, 0.00057)), split_natural=math.log(3) - abs(o['split'])),
      8: dict(gravitino_box=math.log(0.12 / o['Om']), leptogenesis=math.log(o['Y'] / 0.87e-10)),
      9: {}}                                                               # dark thread: TRUST
-KNOBS_OF = {1: ['u'], 2: ['MN'], 3: [], 4: ['u'], 5: ['m32'], 6: ['TR'], 7: ['m32', 'split'], 8: ['TR', 'MN'], 9: []}
+KNOBS_OF = {1: ['u'], 2: ['MN'], 3: [], 4: [], 5: ['m32'], 6: ['TR'], 7: ['m32', 'split'], 8: ['TR', 'MN', 'm32'], 9: []}   # D1989 P1.5 (was L4 ['u'], L8 ['TR','MN'])
 NAMES = {1: 'torus (centre, rung step)', 2: 'pyramid (i, neutrinos)', 3: 'turnover (rho, leptons)', 4: 'cube (three tori together)',
          5: 'fold (volumes, m3/2)', 6: 'dilaton (inflation)', 7: 'forces (S-T seam)', 8: 'cosmology (reheating, genesis)', 9: 'late universe (thread)'}
 LOG = {'u', 'MN', 'm32', 'TR'}

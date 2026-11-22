@@ -36,7 +36,7 @@ def pulse(method):
     bad = [k for k, v in EXPECT.items() if got.get(k) != v]
     rec['steps']['0_selftest'] = dict(ok=not bad, mismatches=bad)
     if bad: rec['void'] = True; json.dump(rec, open(f'{RD}/round_{rid:03d}.json', 'w'), indent=1); return rec
-    for key, cmd in (('1_still_point', 'python3 tools/loom/still_point.py'), ('2_resonance', 'python3 tools/loom/resonance.py'), ('2b_lensing', 'python3 tools/loom/lensing.py'),
+    for key, cmd in (('1_still_point', 'python3 tools/loom/still_point.py'), ('2_resonance', 'python3 tools/loom/resonance.py'), ('2b_lensing', 'python3 tools/loom/lensing.py'), ('2c_pass_labels', 'python3 tools/loom/pass_label_check.py field_tests/results/d1989_woven_run.json'),
                      ('3_method_tests', 'python3 tools/loom/method_tests_3axis.py' if method else None),
                      ('4_compass', 'python3 tools/loom/compass.py'), ('4b_review', 'python3 tools/loom/review.py'),
                      ('5_centre_brief', 'python3 tools/loom/centre_brief.py')):
@@ -60,9 +60,60 @@ def pulse(method):
         next=[(a['kind'], a['layer']) for a in p['actions']], agents=p['agents'], toolkits_missing=p['toolkits']['missing'])
     rec['work_order'].update(axis_agents=list(p['agents']['axis_agents']), edge_agents=list(p['agents']['edge_agents']))
     json.dump(rec, open(fn, 'w'), indent=1, default=str); return rec
+# ---------------- D1989 P4: self-driving
+def auto_decide(rec, plan):
+    if rec.get('void'): return 'VOID'
+    if (plan or {}).get('mission', {}).get('endpoint_reached'): return 'ENDPOINT'
+    if rec.get('null_streak', 0) >= 7: return 'STALL'
+    return 'CONTINUE'
+def fdr_update(field):
+    """Online FDR (LORD++) over band-goalpost tension p-values, accumulated across rounds."""
+    import math; sys.path.insert(0, os.path.join(ROOT, 'tools/loom')); import online_fdr
+    G = {g['id']: g for g in json.load(open('tools/loom/goalposts.json'))['goalposts']}; led_p = 'field_tests/loom/fdr_ledger.json'
+    led = json.load(open(led_p)) if os.path.exists(led_p) else []
+    for L, rows in field.get('scoreboard', {}).items():
+        for r in rows:
+            g = G[r['id']]
+            if g['data']['type'] == 'band' and r['value'] is not None and g['kind'] in ('PRED', 'FIT', 'NULL'):
+                led.append(dict(round=field.get('round'), id=r['id'], pull=r['value'], p=math.erfc(abs(r['value']) / math.sqrt(2))))
+    rej, al = online_fdr.lord_pp([x['p'] for x in led]); json.dump(led, open(led_p, 'w'), indent=1)
+    return dict(tests=len(led), significant_tensions=sorted({led[i]['id'] for i, r in enumerate(rej) if r}))
+def auto(n, field_s):
+    sys.path.insert(0, os.path.join(ROOT, 'tools/loom')); import planner, importlib
+    os.makedirs('field_tests/loom/reports', exist_ok=True); os.makedirs('field_tests/results/auto', exist_ok=True)
+    for _ in range(n):
+        rec = pulse(False); rid = rec['round']; fn = f'{RD}/round_{rid:03d}.json'
+        if rec.get('void'): print('round %d VOID' % rid); break
+        import loom_rt4; importlib.reload(loom_rt4)
+        field = loom_rt4.scored(field_s, seed=2026 + rid, out_name=f'auto/round_{rid:03d}_field.json', archive=False); field['round'] = rid
+        c, o, e = run('python3 tools/loom/test_loom_battery.py'); bat = json.load(open('field_tests/results/d1982_battery.json'))['ok']
+        c2, o2, e2 = run(f'python3 tools/loom/pass_label_check.py field_tests/results/auto/round_{rid:03d}_field.json'); c8 = (c2 == 0)
+        fdr = fdr_update(field); p = planner.main(os.path.abspath(fn))
+        rec['auto'] = dict(field=dict(verdict=field['verdict'], accuracy=field['accuracy'], pulses_per_s=field['pulses_per_s'], tally=field['goalpost_tally'],
+                                      done=field['done_seconds'], stuck=field['stuck_events'], fits=field['fits_spent'], no_free=field['no_free_knob_share']),
+                           battery=bat, pass_label_ok=c8, fdr=fdr, decision=auto_decide(rec, p))
+        json.dump(rec, open(fn, 'w'), indent=1, default=str)
+        m = p['mission']; L = ['# Loom auto round %d' % rid, '', '**Decision:** %s. Null %s (streak %s). Endpoint %s (%s).' % (rec['auto']['decision'], rec['null'], rec['null_streak'], m['endpoint_reached'], m['satisfied']),
+             '', '**Field run** (%.0f s, seed %d): %s; %s pulses/s; accuracy %s' % (field_s, 2026 + rid, field['verdict'], field['pulses_per_s'], field['accuracy']),
+             '**Goalposts:** %s. **Nodes DONE (s):** %s. **STUCK:** %s. **Fits spent:** %s.' % (field['goalpost_tally'], field['done_seconds'], field['stuck_events'], field['fits_spent']),
+             '**Battery:** %s. **PASS-label check:** %s. **Online FDR:** %d tests, significant tensions %s.' % (bat, 'ok' if c8 else 'VIOLATIONS', fdr['tests'], fdr['significant_tensions']),
+             '', '**Lock map:** %s' % rec['state']['lock_map'], '', '**Next actions:**'] + ['- %s L%s: %s' % (a['kind'], a.get('layer'), a['why']) for a in p['actions']]
+        open(f'field_tests/loom/reports/round_{rid:03d}.md', 'w').write('\n'.join(L) + '\n')
+        print('round %d: %s | field %s %s/s | tally %s | DONE %s | FDR tensions %s' % (rid, rec['auto']['decision'], field['verdict'], field['pulses_per_s'], field['goalpost_tally'], {k: v for k, v in field['done_seconds'].items() if v}, fdr['significant_tensions']))
+        if rec['auto']['decision'] != 'CONTINUE': break
+def selftest():
+    """P1.7 determinism (two real pulses) + P4 decision logic."""
+    a = pulse(False); b = pulse(False)
+    same = all(str(a['state'].get(k)) == str(b['state'].get(k)) for k in ('lock_map', 'fits_spent', 'ledger_len'))
+    dec = dict(stall=auto_decide(dict(null_streak=7), {}) == 'STALL', endpoint=auto_decide(dict(null_streak=7), dict(mission=dict(endpoint_reached=True))) == 'ENDPOINT',
+               void=auto_decide(dict(void=True), {}) == 'VOID', cont=auto_decide(dict(null_streak=2), {}) == 'CONTINUE')
+    out = dict(determinism=dict(same_state=same, second_null=bool(b.get('null')), rounds=[a['round'], b['round']]), decision_logic=dec, ok=same and bool(b.get('null')) and all(dec.values()))
+    json.dump(out, open('field_tests/results/d1989_selftest.json', 'w'), indent=1); print(out); return out
 if __name__ == '__main__':
-    ap = argparse.ArgumentParser(); ap.add_argument('cmd', choices=['pulse', 'status', 'mission']); ap.add_argument('--rounds', type=int, default=1); ap.add_argument('--method', action='store_true')
+    ap = argparse.ArgumentParser(); ap.add_argument('cmd', choices=['pulse', 'status', 'mission', 'auto', 'selftest']); ap.add_argument('--rounds', type=int, default=1); ap.add_argument('--method', action='store_true'); ap.add_argument('--pulses', type=int, default=12); ap.add_argument('--field-seconds', type=float, default=20.0)
     a = ap.parse_args()
+    if a.cmd == 'auto': auto(a.pulses, a.field_seconds); sys.exit()
+    if a.cmd == 'selftest': selftest(); sys.exit()
     if a.cmd == 'mission':
         sys.path.insert(0, os.path.join(ROOT, 'tools/loom')); import planner; planner.main(); print(open('field_tests/loom/next_actions.md').read()); sys.exit()
     if a.cmd == 'status':

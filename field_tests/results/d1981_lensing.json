@@ -1,4 +1,8 @@
 {
+ "kink_layers": [
+  1,
+  7
+ ],
  "prereg": "PREREG_D1981_layer_lensing.md",
  "knob_space": [
   "u",
@@ -244,10 +248,7 @@
      "opaque": false,
      "dirs": [
       {
-       "u": -0.429,
-       "MN": -0.691,
-       "m32": -0.575,
-       "TR": 0.086
+       "u": 1.0
       }
      ]
     },
@@ -285,22 +286,11 @@
      ]
     },
     "7": {
-     "r": 2,
+     "r": 1,
      "opaque": false,
      "dirs": [
       {
-       "u": 0.592,
-       "MN": -0.17,
-       "m32": 0.44,
-       "TR": -0.119,
-       "split": 0.642
-      },
-      {
-       "u": 0.079,
-       "MN": -0.067,
-       "m32": -0.815,
-       "TR": 0.248,
-       "split": 0.514
+       "m32": -1.0
       }
      ]
     },
@@ -324,14 +314,12 @@
    },
    "transfers": {
     "1-2": {
-     "min_angle": 46.26,
+     "min_angle": 90.0,
      "angles": [
-      46.26
+      90.0
      ],
-     "cls": "BENT",
-     "shared": [
-      "MN"
-     ]
+     "cls": "BLOCKED",
+     "shared": []
     },
     "2-4": {
      "min_angle": 90.0,
@@ -358,26 +346,21 @@
      "shared": []
     },
     "6-7": {
-     "min_angle": 74.05,
+     "min_angle": 90.0,
      "angles": [
-      74.05
+      90.0
      ],
-     "cls": "BENT",
-     "shared": [
-      "TR"
-     ]
+     "cls": "BLOCKED",
+     "shared": []
     },
     "7-8": {
-     "min_angle": 48.75,
+     "min_angle": 32.31,
      "angles": [
-      48.75,
-      80.84
+      32.31
      ],
      "cls": "BENT",
      "shared": [
-      "MN",
-      "m32",
-      "TR"
+      "m32"
      ]
     }
    },
@@ -386,23 +369,23 @@
    "C": [
     [
      1.0,
-     0.478,
+     0.0,
      null,
      0.0,
-     0.331,
-     0.007,
-     0.412,
-     0.501,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
      null
     ],
     [
-     0.478,
+     0.0,
      1.0,
      null,
      0.0,
      0.0,
      0.0,
-     0.034,
+     0.0,
      0.929,
      null
     ],
@@ -429,46 +412,46 @@
      null
     ],
     [
-     0.331,
+     0.0,
      0.0,
      null,
      0.0,
      1.0,
      0.0,
-     0.858,
+     1.0,
      0.714,
      null
     ],
     [
-     0.007,
+     0.0,
      0.0,
      null,
      0.0,
      0.0,
      1.0,
-     0.076,
+     0.0,
      0.357,
      null
     ],
     [
-     0.412,
-     0.034,
+     0.0,
+     0.0,
      null,
      0.0,
-     0.858,
-     0.076,
      1.0,
-     0.435,
+     0.0,
+     1.0,
+     0.714,
      null
     ],
     [
-     0.501,
+     0.0,
      0.929,
      null,
      0.0,
      0.714,
      0.357,
-     0.435,
+     0.714,
      1.0,
      null
     ],
@@ -485,7 +468,7 @@
     ]
    ],
    "hub": 8,
-   "hub_rowsum": 2.936
+   "hub_rowsum": 2.714
   },
   "R3_declared": {
    "lenses": {
@@ -509,13 +492,9 @@
     },
     "3": null,
     "4": {
-     "r": 1,
-     "opaque": false,
-     "dirs": [
-      {
-       "u": 1.0
-      }
-     ]
+     "r": 0,
+     "opaque": true,
+     "dirs": []
     },
     "5": {
      "r": 1,
@@ -550,8 +529,9 @@
      "opaque": false,
      "dirs": [
       {
-       "MN": -0.707,
-       "TR": -0.707
+       "MN": -0.577,
+       "m32": -0.577,
+       "TR": -0.577
       }
      ]
     },
@@ -599,12 +579,14 @@
      "shared": []
     },
     "7-8": {
-     "min_angle": 90.0,
+     "min_angle": 65.91,
      "angles": [
-      90.0
+      65.91
      ],
-     "cls": "BLOCKED",
-     "shared": []
+     "cls": "BENT",
+     "shared": [
+      "m32"
+     ]
     }
    },
    "chain_dim": 0,
@@ -614,40 +596,7 @@
      1.0,
      0.0,
      null,
-     1.0,
      0.0,
-     0.0,
-     0.0,
-     0.0,
-     null
-    ],
-    [
-     0.0,
-     1.0,
-     null,
-     0.0,
-     0.0,
-     0.0,
-     0.0,
-     0.5,
-     null
-    ],
-    [
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null
-    ],
-    [
-     1.0,
-     0.0,
-     null,
-     1.0,
      0.0,
      0.0,
      0.0,
@@ -656,13 +605,24 @@
     ],
     [
      0.0,
-     0.0,
+     1.0,
      null,
      0.0,
-     1.0,
      0.0,
-     0.5,
      0.0,
+     0.0,
+     0.333,
+     null
+    ],
+    [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
      null
     ],
     [
@@ -670,10 +630,32 @@
      0.0,
      null,
      0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     null
+    ],
+    [
+     0.0,
+     0.0,
+     null,
      0.0,
      1.0,
      0.0,
      0.5,
+     0.333,
+     null
+    ],
+    [
+     0.0,
+     0.0,
+     null,
+     0.0,
+     0.0,
+     1.0,
+     0.0,
+     0.333,
      null
     ],
     [
@@ -684,17 +666,17 @@
      0.5,
      0.0,
      1.0,
-     0.0,
+     0.167,
      null
     ],
     [
      0.0,
-     0.5,
+     0.333,
      null,
      0.0,
-     0.0,
-     0.5,
-     0.0,
+     0.333,
+     0.333,
+     0.167,
      1.0,
      null
     ],
@@ -710,8 +692,8 @@
      null
     ]
    ],
-   "hub": 1,
-   "hub_rowsum": 1.0
+   "hub": 8,
+   "hub_rowsum": 1.167
   }
  },
  "triangulation": {
@@ -743,9 +725,9 @@
    "values": [
     0,
     0,
-    1
+    0
    ],
-   "agree": false
+   "agree": true
   },
   "L5_r": {
    "values": [
@@ -766,10 +748,10 @@
   "L7_r": {
    "values": [
     1,
-    2,
+    1,
     1
    ],
-   "agree": false
+   "agree": true
   },
   "L8_r": {
    "values": [
@@ -790,11 +772,11 @@
   "T1-2": {
    "values": [
     "BLOCKED",
-    "BENT",
+    "BLOCKED",
     "BLOCKED"
    ],
-   "agree": false,
-   "verdict": "INDETERMINATE"
+   "agree": true,
+   "verdict": "BLOCKED"
   },
   "T2-4": {
    "values": [
@@ -826,29 +808,29 @@
   "T6-7": {
    "values": [
     "BLOCKED",
-    "BENT",
+    "BLOCKED",
     "BLOCKED"
    ],
-   "agree": false,
-   "verdict": "INDETERMINATE"
+   "agree": true,
+   "verdict": "BLOCKED"
   },
   "T7-8": {
    "values": [
     "BENT",
     "BENT",
-    "BLOCKED"
+    "BENT"
    ],
-   "agree": false,
-   "verdict": "INDETERMINATE"
+   "agree": true,
+   "verdict": "BENT"
   }
  },
  "transfer_classes": {
-  "1-2": "INDETERMINATE",
+  "1-2": "BLOCKED",
   "2-4": "BLOCKED",
   "4-5": "BLOCKED",
   "5-6": "BLOCKED",
-  "6-7": "INDETERMINATE",
-  "7-8": "INDETERMINATE"
+  "6-7": "BLOCKED",
+  "7-8": "BENT"
  },
- "verdict": "MIXED"
+ "verdict": "DECOUPLED"
 }
