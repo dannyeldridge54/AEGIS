@@ -20300,3 +20300,4 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - IIB modular flavour (2305.19155) for U1/U2;
     - a Higgs-mass term for split SUSY (owed).
   - Readiness battery: 12/12.
+- **D2034a (correction):** H_inf computed in code is **5.69e12 GeV**, not 5.8e12 (V^{1/4} = 4.9e15 GeV, M_P = 2.435e18 GeV). Flag 2 is unchanged.
