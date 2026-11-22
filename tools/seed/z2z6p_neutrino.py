@@ -19,7 +19,7 @@ out = {}
 for Ms in (7.6e12, 3.5e13, 4.6e13):
     for tb in (2, 10, 50):
         yt, sb = yt_at(Ms, tb); mD = yt*246*sb/math.sqrt(2); mnu = mD**2/Ms*1e9
-        out['Ms=%.2g,tb=%d' % (Ms, tb)] = dict(yt_Ms=yt, mD_GeV=mD, mnu_min_eV=mnu, exceeds_0p12=mnu > 0.12, exceeds_KATRIN=mnu > 0.45)
+        out['Ms=%.2g,tb=%d' % (Ms, tb)] = dict(yt_Ms=float(yt), mD_GeV=float(mD), mnu_min_eV=float(mnu), exceeds_0p12=bool(mnu > 0.12), exceeds_KATRIN=bool(mnu > 0.45))
 allx = all(v['exceeds_0p12'] for v in out.values()); anyx = any(v['exceeds_0p12'] for v in out.values())
 out['SEESAW'] = 'FAIL' if allx else ('TENSION' if anyx else 'OK')
 print(json.dumps(out, indent=1))
