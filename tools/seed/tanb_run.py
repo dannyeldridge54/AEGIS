@@ -21,15 +21,18 @@ def down(yt_top):
     return solve_ivp(rhs, (L, 0.0), y0, rtol=1e-10, atol=1e-6).y[:, -1]
 def tanb_from(tb_in):
     yt_low = ytSM/(tb_in/math.sqrt(1 + tb_in*tb_in))
-    ytop = brentq(lambda yh: down(yh)[0] - yt_low, 0.05, 3.0)
+    f = lambda yh: down(yh)[0] - yt_low
+    if f(6.0) < 0: return None, dict(note='y_t(M_S)=%.3f above the MSSM quasi-fixed point' % yt_low)
+    ytop = brentq(f, 0.05, 6.0)
     yt, mHu, mHd, mQ, mU, mu = down(ytop); Bmu = 2*m32**2*(mu/m32)          # B = Bmu/mu constant = 2 m32
     s2b = 2*Bmu/(mHu + mHd + 2*mu*mu)
     if s2b >= 1: return 1.0, dict(mHu=mHu, mHd=mHd, mu=mu, s2b=s2b)
     tb = (1 + math.sqrt(1 - s2b*s2b))/s2b; return tb, dict(mHu=mHu, mHd=mHd, mu=mu, s2b=s2b, yt_top=ytop)
 if __name__ == '__main__':
     tb = 1.9
-    for it in range(30):
+    for it in range(60):
         new, info = tanb_from(tb)
+        if new is None: print('  tanb_in %.3f: %s' % (tb, info['note'])); tb *= 1.05; continue
         if abs(new - tb) < 1e-6: break
         tb = 0.5*(tb + new)
     print('fixed point after %d iterations: tan beta = %.3f' % (it, new))
