@@ -28,7 +28,7 @@ def sector(A, B):
     if not zero: phi = Fr(abs(I + sum(IZ)), 4)
     elif len(zero) == 1:
         i = zero[0]; j, k = (i+1) % 3, (i+2) % 3; dd = int(A['sig'][i] == B['sig'][i] and A['tau'][i] == B['tau'][i])
-        phi = Fr(dd, 2)*(abs(Ii[j]*Ii[k]) - fs[j]*fs[k])
+        phi = Fr(dd, 2)*(abs(Ii[j]*Ii[k]) + (1 if Ii[j]*Ii[k] > 0 else -1)*fs[j]*fs[k])   # D2128 DEVIATION 2
     elif len(zero) == 3:
         phi = Fr(-1, 2)*sum(int(A['sig'][i] == B['sig'][i] and A['tau'][i] == B['tau'][i])*fs[(i+1) % 3]*fs[(i+2) % 3] for i in range(3))
     else: phi = None
@@ -59,5 +59,5 @@ for key, v in R['pairs'].items():
     if v['phi'] != str(want): p1.append((key, v['phi'], want))
 R['P1_mismatch'] = p1; R['P2'] = R['adjoints']
 R['P3_phi_ad'] = (R['pairs']['ad']['phi'], R['pairs']['da']['phi']); R['P4_phi_de_prime'] = R['pairs']["de'"]['phi']
-R['VERDICT'] = dict(P0=not R['P0_mismatch'], P1=not p1, P2=R['adjoints'] == {'a': '0', 'b': '0', 'c': '0', 'd': '4', 'e': '0'}, P4=R['P4_phi_de_prime'] == '2')
+R['VERDICT'] = dict(P0=not R['P0_mismatch'], P1=not p1, P2=R['adjoints'] == {'a': '0', 'b': '0', 'c': '0', 'd': '1', 'e': '0'}  # D2128 DEVIATION 1, P4=R['P4_phi_de_prime'] == '2')
 print(json.dumps(R, indent=1, default=str))
