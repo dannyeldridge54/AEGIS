@@ -19655,3 +19655,25 @@ D1983 said that "L8 [is] chattering at its edge: 9,859 LOST flips". **That attri
 - L1 and L2: resonant 100 % of the time.
 
 The final-balance line should read: RESONANT L1, L2, L6; **L7 chattering** (resonant about half the time); L5 and L8 mostly NO LOCK. The hysteresis owed item applies to L7. Everything else in D1983 stands.
+
+## D1985 — REFEREE on D1980–D1983 (fresh context, sonnet, 22 Nov 2026 ~01:05Z). Locks intact; no bar loosened, except B2's angle tolerance (no verdict changed).
+Verdicts that stand:
+- D1981 MIXED, and its reading: not nested, a star around L8.
+- D1982 B1, B2, B5, B6 PASS; B4 VOID.
+- D1983 FAIL on A2 precision; A1 and A3 PASS.
+
+Corrections, each adopted:
+- **D1983b (F1, MAJOR).** The reading "the extra detections are background" is **withdrawn as untested**. The quiet windows start at the event ends (t = 20, 35, 55), where the return transients are not compensated. The quiet-window alarms are probably those edge transients. E2's extra layer L6 has zero Jacobian on m₃/₂, so its alarm is not background either. Next lock: quiet windows exclude ±0.5 s around every edge, and every alarm time is logged.
+- **D1983c (F2, MAJOR).** The balancer ran away: final **T_R = 1.59e16 GeV** (derived 3.7e8; above m_φ = 4.9e12) and m₃/₂ = 1.26e5. The knobs were unbounded and never restored. The "physics seen live" section of D1983 (the tug of war, the final balance, "cannot all hold") is **withdrawn as balancer artefacts**. Next engine: bounded knobs, and T_R < m_φ.
+- **D1983d (F3, MAJOR).** L7's own free knob, split, is invisible to the gradient, because a_s_eff jumps at split ≠ 0 (a FIT switch). So L7's lens was {m₃/₂} only. Next engine: a finite step for split, so the split FIT is visible and counted.
+- **D1983e (F4).** D1983a's "L8 mostly NO LOCK" is wrong. L8 was **LOST 83 %** of the time (LOST was sticky in the code), NO LOCK 16 % and RESONANT 0.4 %.
+- **D1983f (F5).** A4 PASS was **1 non-trivial check out of 5**. Next lock: recovery is scored only for layers RESONANT before the event.
+- **D1983g (F6).** Relabel: recall and latency are *self-consistency and compute latency on synthetic Gaussian streams*. A1 checks a copied formula against its original.
+- **D1983h (F7).** The lock times are the commit times. loom_rt.py first appears in the same commit as its results. Rule from now on: the code is committed before a scored run.
+- **D1980a (F8, MAJOR).** The planner's endpoint ignores **E3 (four corners)**, and E5 can never be true from main(). Fix: E3 blocks the endpoint unless it is evaluated True, and E5 is read from field_tests/loom/referee_signoff.json. Plus a test.
+- **D1980b (F9).** Counts: 40 toolkit entries (35 unique). round 3's referee flag was False; next_actions was stale after D1981.
+- **D1981a (F12).** The hub claim is softened. L8 is the hub largely because it is the only rank-2 layer. Its strongest link (L2–L8, 0.93) runs through M_N (leptogenesis), not the gravitino. The R1/R2/R3 counts disagree at L4, L7 and L8.
+- **D1982a (F13–F15).**
+  - "Calibrated" is replaced by "lens_core passes known-answer tests (B1 6/6)".
+  - B2's comparison used atol 1e-2 against the locked 1e-6 (the stored angles are rounded). It is logged as a DEVIATION; it gets re-checked on unrounded angles.
+  - B3 is "retrospective consistency, n = 2, null by definition". A real two-pulse determinism test is owed.
