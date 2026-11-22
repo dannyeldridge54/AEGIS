@@ -20459,3 +20459,10 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **The window is not widened after the fact** (no loosening). Read: this mechanism is **marginal, not natural** at v4's ρ vacuum. It needs a one-loop prefactor of ~0.07 (k = 3) or ~16 (k = 4), which only a computed instanton determinant could justify.
   - **All three B0c routes are now FAIL or marginal:** generic flux (D2044), PFV (D2045), symmetric vacuum plus instanton (D2046).
   - W₀ = 5.6e-9 joins the structural list as **unexplained**, unless a derived prefactor B ≈ 0.07 at k = 3 is shown.
+- **D2047 (CENTRE; PREREG_D2047, locked before reading): explicit Z₆ / Z₆′ thresholds (Gmeiner–Honecker 0910.0843, IIA fractional D6, so transfer to our IIB D7 is by analogy only). Verdict: OVERSHOOT for Z₆′; mostly WRONG SIGN for Z₆. A narrow corner exists.**
+  - **v4's need:** δ(1/α₃) − δ(1/α₂) ≈ −0.29 (as written) to −1.8 (mirage / high-scale variants). This strengthens SU(3).
+  - **Z₆, v ≈ 30:** the SU(3)–SU(2) difference is **+1** in 1/α. Right size, **wrong sign** (it weakens SU(3)).
+  - **Z₆′, v ≈ 30:** **−25 to −40** in 1/α. Right sign, **×15–140 too large** (the D2023 warning confirmed).
+  - **v = 5 classes (table 16):** Δ₃/4π spans −5.6 to +3.8 and Δ₂/4π spans −12.7 to −5.2, so the difference spans **−0.4 to +16.6**. Only the extreme corner (−0.4) touches the needed window, at its edge.
+  - **Read:** a T1 threshold of the needed size and sign is **not generic** in these explicit models. It needs a corner at small torus volume (v ~ 5), where the SU(3) and SU(2) pieces nearly cancel. Under lens 5 that is a fine-tuning, unless the corner is forced by the moduli stabilisation.
+  - **T1 stays possible but unnatural.** Worth building only together with a stabilisation that fixes v ~ 5.
