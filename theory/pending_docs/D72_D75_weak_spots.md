@@ -20716,3 +20716,8 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - Reordered (TF-IDF + greedy nearest-neighbour chain): **19,169,206 bytes**, plus the xz permutation of **21,876 bytes** = **19,191,082 bytes**.
   - **−2.71% against the pass bar of −0.30%.** The permutation round-trip was verified earlier (PERM_RT_OK); the archive round-trip is in progress.
   - This is the largest single Forge gain to date, larger than STARLIT's 1.8% (on enwik9 with Doc2Vec + TSP; different file, different baseline).
+- **D2076 (CENTRE; PREREG_D2076): D7 curvature charge. FAIL.**
+  - A D7 on the resolved bulk divisor T²×T²/Z₃ (a K3) carries −1 unit of D3 charge.
+  - v4's 5 visible and 12 dark branes give −17 (or −34 with orientifold images), so the total is **29 (or 12)**, against a budget of 4–6. **FAIL by ×2–7.**
+  - The tadpole cannot close with v4's |M| = 9 three-family flux on this orbifold, short of negative D3 charge from anti-branes (which breaks SUSY, KKLT-style) or a different family mechanism.
+  - **Loop: no progress. No-progress count 6** (STALL at 7).
