@@ -149,7 +149,7 @@ def report():
     out = {'target': {'lnL': round(lnL, 3), 'k_fit': k, 'N': N, 'bic_target': round(tgt, 3)}, 'compass': compass(terms),
            'shadows': {t['id']: shadow(t) for t in terms if 'alt' in t}, 'tension': {t['id']: tension(t) for t in terms if tension(t) is not None},
            'ladder': {t['id']: ladder(t) for t in terms if 'ladder' in t}, 'negative_space': negative_space(), 'hygiene_ok': hygiene(terms),
-           'injection': injection_test(), 'theory_nuisance': {t['id']: theory_nuisance(t) for t in terms if 'ladder' in t}, 'gof': gof_bootstrap(terms), 'prequential': prequential(terms), 'mhou': {t['id']: mhou_geometric(t) for t in terms if 'ladder' in t}}
+           'injection': injection_test(), 'theory_nuisance': {t['id']: theory_nuisance(t) for t in terms if 'ladder' in t}, 'gof': gof_bootstrap(terms), 'prequential': prequential(terms), 'mhou': {t['id']: mhou_geometric(t) for t in terms if 'ladder' in t}, 'filters': D.get('filters', [])}
     # T1 demonstration through the Centre: a FREE Delta3 knob (a fitted knob) vs the derived value. alpha_s(Delta3) linearised from v4:
     a = next(t for t in terms if t['id'] == 'alpha_s'); slope = (0.1180 - 0.1142) / 0.044
     def ev(s, split):  # cost = -lnL of the alpha_s term; the 'held' split uses the alt world average spread (refuses tuning on one number)
@@ -168,3 +168,4 @@ if __name__ == '__main__':
     for c in r['compass']: print('  %-12s %-7s z %+6.2f  lnL %+7.2f  dir %-4s headroom %s' % (c['id'], c['agent'], c['z'], c['lnL'], c['direction'], c['headroom_sigma']))
     print('shadows', r['shadows']); print('tension (sigma)', {k: round(v, 2) for k, v in r['tension'].items()}); print('ladder', r['ladder'])
     print('negative space', r['negative_space']); print('hygiene', r['hygiene_ok'], '| injection', r['injection']); print('description length (bits): %.1f  [MDL: -lnL/ln2 + k/2 log2 N, the same unit as the Forge]' % (-t['bic_target'] / math.log(2))); print('T1 demo', r['T1_demo']); print('theory nuisance', r['theory_nuisance']); print('goodness of fit', r['gof']); print('MHOU geometric', r['mhou'])
+    for f in r['filters']: print('FILTER %-9s %-16s affects %s' % (f['id'], f['status'], ','.join(f['affects'])))

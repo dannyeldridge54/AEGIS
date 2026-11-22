@@ -20316,3 +20316,17 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - **Koide Q = 2/3** at data precision (1e-5): p(chance) ≈ 0. **A real coincidence to explain.**
     - **δ = 2/9** at 1%: p = 0.08, weak.
     - **28/11 (m_X)** at 1%: p = 0.93, **no evidence**: a simple fraction lands there by chance.
+- **D2036 (CENTRE; result of PREREG_D2036): two referee checks on UFE v4. Both FAIL as written.**
+  - **M (mirage mediation): FAIL.**
+    - In v4, W ⊃ A e^{−2πT_vis/6} and f_vis = T_vis + 9S, so the **visible cycle is the KKLT-stabilised cycle**.
+    - With CFNO (hep-th/0503216): modulus gaugino piece m₃/₂/(at) = **12.2 TeV**, vs the pure-AMSB wino 0.686 TeV: **×17.8**. No sequestering or F^T = 0 statement exists in v4.
+    - **Consequence:** the derived wino (0.687 TeV) and gluino (4.93 TeV), and the α_s thresholds that use them, rest on an assumption that v4's own W contradicts.
+    - The chain must be recomputed with mixed modulus–anomaly (mirage) masses, or a sector with F^T_vis = 0 must be derived.
+    - This is now a Bloom **filter** that affects the wino, gluino, α_s and proton terms.
+  - **K (Kallosh–Linde): FAIL as written.**
+    - H_inf = 5.69e12 GeV vs m₃/₂ = 2.58e5 GeV: H/m₃/₂ = 2.2e7.
+    - The KKLT volume is destabilised during dilaton inflation. v4 contains no heavy stabiliser: the D586 heavy-Y mechanism belonged to two-term SERAPIS and is not in v4's W.
+    - This is a Bloom filter affecting n_s, r, the running and ΔN_eff.
+  - **Read:** the Bloom scores were computed with these terms as written; the filters say those numbers are not yet self-consistent.
+    - **The scoreboard stays as recorded. No silent edits.**
+    - Two new owed steps, filed before T1: **B0a**, mirage recompute of the soft spectrum; **B0b**, a volume stabiliser that survives H ~ 6e12 GeV (a KL-type racetrack or a heavy sector).

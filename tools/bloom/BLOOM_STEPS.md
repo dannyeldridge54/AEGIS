@@ -7,6 +7,8 @@
 
 | # | step | what gets plugged in | goalpost (pass = all of it) |
 |---|---|---|---|
+| B0a | **mirage soft spectrum** (added 01:44, D2036 FAIL) | M_a = m₃/₂[n_t/(2at) + anomaly] with the v4 chain; the wino, gluino and Δ₃ thresholds recomputed | the wino and gluino come from the mixed formula with no new knob; the Bloom total and α_s are reported again; the filter clears only if the spectrum is self-consistent |
+| B0b | **volume stabiliser during inflation** (added 01:44, D2036 FAIL) | a KL-type racetrack or heavy stabiliser inside v4's W | the volume barrier exceeds H_inf² at V∞ = (4.9e15)⁴, with no change to m₃/₂ beyond its error, or the change is propagated |
 | B1 | **Δ₃ → m₃/₂ → wino Jacobian** (D1937) | lever `ln m32` moves the wino and gluino ∝ m₃/₂, α_s by d ln α_s/d ln m₃/₂ = −0.0254, τ_p by −1.28 per ln m₃/₂ | **calibration:** with only `ln m32` free and the wino held inside its bar, the Bloom reproduces D1937's best α_s = 0.11433 within ±0.0002 and declares it unbalanced (α_s still < −3σ) |
 | B2 | **dates on every term** (prequential, E1) | `locked` and `released` dates on each term; a prequential bit count over post-lock terms | every term dated from a cited lock file or release; the count of post-lock terms is printed (expected 0 now) |
 | B3 | **triangulate every dataset** (Rule 6h) | 3 sources per term | each of the 10 terms has 3 sources agreeing within 1σ (or 0.3 dex); a disagreement goes to the shadow lens and is never averaged away |

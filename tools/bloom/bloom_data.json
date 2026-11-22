@@ -478,5 +478,31 @@
     "proton": -1.28
    }
   }
- }
+ },
+ "filters": [
+  {
+   "id": "F-mirage",
+   "check": "D2036 M",
+   "status": "FAIL",
+   "what": "visible D7 cycle T_vis is the KKLT-stabilised cycle (W > A e^{-2 pi T_vis/6}, f_vis = T_vis + 9S): modulus-mediated gaugino piece m32/(at) = 12.2 TeV = x17.8 the pure-AMSB wino (0.686 TeV). The wino/gluino/alpha_s chain assumes pure AMSB -> must be recomputed with mirage masses, or a sector with F^T_vis = 0 derived",
+   "affects": [
+    "wino",
+    "gluino",
+    "alpha_s",
+    "proton"
+   ]
+  },
+  {
+   "id": "F-KL",
+   "check": "D2036 K",
+   "status": "FAIL as written",
+   "what": "H_inf = 5.69e12 GeV vs m32 = 2.58e5 GeV (H/m32 = 2.2e7): the KKLT volume is destabilised during dilaton inflation unless v4 adds a heavy stabiliser (the D586 mechanism of two-term SERAPIS is not in v4's W)",
+   "affects": [
+    "n_s",
+    "r",
+    "running",
+    "dNeff"
+   ]
+  }
+ ]
 }
