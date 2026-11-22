@@ -1,0 +1,57 @@
+tables/D4_phi0.txt K=10 classes=22 maximal_leaves=2863 checked=2863 min_alpha=10
+  (0s)
+tables/D4_phi1.txt K=10 classes=30 maximal_leaves=268629 checked=268629 min_alpha=10
+  (0s)
+tables/D4_phi2.txt K=10 classes=26 maximal_leaves=25262 checked=25262 min_alpha=10
+  (0s)
+tables/D4_phi3.txt K=10 classes=26 maximal_leaves=25262 checked=25262 min_alpha=10
+  (1s)
+tables/Q8_phi0.txt K=10 classes=20 maximal_leaves=1261 checked=1261 min_alpha=10
+  (0s)
+tables/Q8_phi1.txt K=10 classes=20 maximal_leaves=1801 checked=1801 min_alpha=10
+  (0s)
+tables/Q8_phi2.txt K=10 classes=20 maximal_leaves=1801 checked=1801 min_alpha=10
+  (0s)
+tables/Q8_phi3.txt K=10 classes=20 maximal_leaves=1801 checked=1801 min_alpha=10
+  (0s)
+tables/Z23_phi0.txt K=10 classes=23 maximal_leaves=7609 checked=7609 min_alpha=10
+  (0s)
+tables/Z23_phi1.txt K=10 classes=31 maximal_leaves=377543 checked=377543 min_alpha=10
+  (1s)
+tables/Z23_phi2.txt K=10 classes=31 maximal_leaves=377543 checked=377543 min_alpha=10
+  (1s)
+tables/Z23_phi3.txt K=10 classes=31 maximal_leaves=377543 checked=377543 min_alpha=10
+  (1s)
+tables/Z23_phi4.txt K=10 classes=31 maximal_leaves=377543 checked=377543 min_alpha=10
+  (1s)
+tables/Z23_phi5.txt K=10 classes=31 maximal_leaves=377543 checked=377543 min_alpha=10
+  (0s)
+tables/Z23_phi6.txt K=10 classes=31 maximal_leaves=377543 checked=377543 min_alpha=10
+  (1s)
+tables/Z23_phi7.txt K=10 classes=31 maximal_leaves=377543 checked=377543 min_alpha=10
+  (1s)
+tables/Z4xZ2_phi0.txt K=10 classes=21 maximal_leaves=2337 checked=2337 min_alpha=10
+  (0s)
+tables/Z4xZ2_phi1.txt K=10 classes=25 maximal_leaves=6576 checked=6576 min_alpha=10
+  (0s)
+tables/Z4xZ2_phi2.txt K=10 classes=25 maximal_leaves=6576 checked=6576 min_alpha=10
+  (0s)
+tables/Z4xZ2_phi3.txt K=10 classes=21 maximal_leaves=2519 checked=2519 min_alpha=10
+  (0s)
+tables/Z4xZ2_phi4.txt K=10 classes=25 maximal_leaves=15646 checked=15646 min_alpha=10
+  (0s)
+tables/Z4xZ2_phi5.txt K=10 classes=25 maximal_leaves=6576 checked=6576 min_alpha=10
+  (0s)
+tables/Z4xZ2_phi6.txt K=10 classes=25 maximal_leaves=6576 checked=6576 min_alpha=10
+  (0s)
+tables/Z4xZ2_phi7.txt K=10 classes=25 maximal_leaves=15646 checked=15646 min_alpha=10
+  (0s)
+tables/Z8_phi0.txt K=10 classes=20 maximal_leaves=1098 checked=1098 min_alpha=10
+  (0s)
+tables/Z8_phi1.txt K=10 classes=20 maximal_leaves=850 checked=850 min_alpha=10
+  (0s)
+tables/Z8_phi2.txt K=10 classes=20 maximal_leaves=850 checked=850 min_alpha=10
+  (0s)
+tables/Z8_phi3.txt K=10 classes=20 maximal_leaves=1069 checked=1069 min_alpha=10
+  (0s)
+DONE

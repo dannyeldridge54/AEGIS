@@ -20103,3 +20103,14 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
 - **New best build: loomz15, TB24, CONFIRM 2.**
   - **637,269 on K vs v13's 648,620: −1.75% in two steps** (memory + hygiene).
   - The default in the code is now CONFIRM = 2.
+
+## D2018 — No Cayley graph on any group of order 40 is a (3,10)-graph. PREREG_D2018. DEEP
+- **Groups:** every group of order 40 is Z5 ⋊ P (Sylow-5 normal; Schur–Zassenhaus). 28 instances (P ∈ {Z8, Z4×Z2, Z2³, D4, Q8} × all homomorphisms to Aut Z5) cover all 14 isomorphism types. Tables are associativity-checked.
+- **Calibration:**
+  - Z35 at K = 9: **4 witnesses** (matches D2000; the unique (3,9,35)-graph).
+  - Z40: none (matches D2000).
+  - Cross-check: Z5 × Z8 (Z8, φ = trivial) reproduces the Z40 count exactly (1,098 maximal sets).
+- **Result:** 3,045,409 maximal triangle-free inverse-closed connection sets with 5 ≤ |S| ≤ 9 checked. **0 witnesses. Every group has minimum α = 10**: one too many, everywhere.
+- **Soundness:** any witness S extends to a maximal set under the size cap that is still a witness (α can only fall, and |S| ≤ 9 is forced). So checking maximal sets is complete.
+- **Not covered:** non-Cayley vertex-transitive graphs of order 40, and graphs that are not vertex-transitive. Novelty is not claimed; a literature check is owed (Exoo and others may have searched Cayley graphs).
+- **Front L next:** L2, 2-block and 4-block circulants (generalising D2000) and the non-Cayley vertex-transitive graphs.
