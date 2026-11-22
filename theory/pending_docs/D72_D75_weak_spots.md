@@ -21080,3 +21080,18 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - that is, a **superpotential μ_W/μ = 0.25** admixed to GM μ_GM = 0.41 m₃/₂.
     - At that point the D2089 goalposts give **8 points: m₃/₂ = 156–162 TeV, gluino 3.77–3.90 TeV, α_s = 0.1181–0.1182 (+0.1σ)**, with the wino in its band and m_h = 125 at tan β 1.9.
     - **Honest count:** the torus-GM c = 1 is replaced by c = 0.55 via one O(1) superpotential fraction μ_W/μ = 0.25. That is a **fitted O(1) knob**, not derived. In exchange, α_s, wino, gluino, m_h and a light Higgs all close, with α_s centred.
+- **D2101 (CENTRE, literature; ENDPOINTS_2026-11-22.md): who reached this step, what they did, and where they stopped.**
+  - **Common wall:** no construction has the chiral SM + all moduli + tadpole + small W₀ + μ at once.
+  - **D3 quivers** (1312.0014, 2106.11964): stop at exotics, hypercharge, and the flux tadpole.
+  - **Explicit small-W₀ dS** (2406.13751): no SM sector.
+  - **Heterotic Z₆-II** (0812.2120): an approximate R-symmetry gives W₀ ~ 10^{−O(10)} and μ ~ m₃/₂, but stops at T-moduli fixing and uplift.
+  - **IIA Z₂×Z₂ global** (2511.05006): exotics, flavour by hand, η_B off by 10⁴.
+  - **F-theory:** exotic-free scans; flavour and moduli together still open.
+  - **Instanton μ** (hep-th/0609191): model-specific zero modes.
+  - **Tadpole conjecture** (2010.10519): mild for rigid orbifolds.
+  - **Breakthrough routes for v4, ranked:**
+    1. **B1:** an R-symmetry at ρ (the residual Z₃) for small W₀ **and** μ ~ m₃/₂ together, on the same Z₆-II as the MiniLandscape. It targets the W₀ FAIL and the D2100 μ_W/μ knob.
+    2. **B2:** intersection-number families instead of |M| = 9 flux, removing the main D3 tadpole cost. The Seed shows 3 + 3 families with exact charge closure (D2095).
+    3. **B4:** an instanton μ_W with S ≈ 27.
+    4. **B3:** an exotic-free scan with the size rule.
+  - D3-at-singularity sequestering is not open to v4 (α_G ≈ g_s at ρ is too strong).
