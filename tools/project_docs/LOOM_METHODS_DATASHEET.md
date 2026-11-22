@@ -135,3 +135,17 @@ Status:
 - **Tests:** test_planner.py (16 cases, locked first) and test_planner_2.py (7 more). The addendum was added after a **mutation test** showed that the first spec missed two broken planners. Mutation-testing the tests is now a datasheet method (C8).
 - **CubeMind:** the aegis_tools tools `loom_mission` and `loom_pulse`, the agent card `loom`, and a MindMem ingest. In MindMem the mission is stored as MEANING, the round state as EVIDENCE and the next actions as HYPOTHESIS.
 - **Owed:** the layer transfer map (Danny 18:24's lensing test). Whether each layer lets a direction through, blocks it or bends it; lock it first.
+
+## Woven field and literature optimisations (D1984–D1988)
+- **Goalposts woven to the nodes:** tools/loom/goalposts.json holds 61 goalposts (25 PRED, 16 open problems, 11 live). Every node's referee scores its own goalposts on every pulse.
+- **Engine v3** (tools/loom/loom_rt3.py) has two detectors:
+  - an exact explained-change test for the deterministic margins;
+  - a self-normalised CUSUM for the data margins.
+
+  It also has bounded knobs, a visible split, LOST hysteresis, online PBT shadows and a strict DONE rule.
+- **The order:** first calibrate on null streams, then a blind run on a held-out seed.
+- **Mutation testing** always runs with an unmutated control.
+- **Online FDR** (LORD++) covers claims across rounds.
+- **Mistake memory** (field_tests/loom/mistakes.jsonl) is attached to each planned action.
+- **Effort tags:** at most one high-effort action per pulse.
+- **Sources:** LOOM_LITERATURE.md (24 systems).
