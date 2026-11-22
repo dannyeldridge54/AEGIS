@@ -20679,3 +20679,8 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Read:** the mechanism works physically (m_T²/H² = 24, positive metric), at the price of **one small coupling β ≈ 3/(8σ_vis)**. Note that β·σ_vis = 3/8 is a pure number. If β came from a loop or flux factor ~1/σ (e.g. an α′ correction scaling as 1/𝒱^{2/3}), it would stop being a free knob. That is the derivation target.
   - **Q2 is now CONDITIONAL with one FIT knob** (β), down from the D2039 boost knob.
   - Loop: progress. Count 0.
+- **D2071 (CENTRE; PREREG_D2071): a natural string origin for β. FAIL. Q2 stays FIT (β ≈ 3/(8σ)).**
+  - **(a) Modular-weight metric K_XX̄ = (2t)^{−n}:** V_inf ∝ (2t)^{n−3} is monotone for every n (n = 3 is exactly flat), so there is **no minimum**.
+  - **(b) Loop-type correction (1 + c/2t):** a minimum at t = 20.15 needs c = −60 (n = 0) or −81 (n = 1). Both are far outside |c| ≤ 10, and both make **K_XX̄ < 0**. n = 2 has no solution; n = 3 gives m_T = 0.
+  - **Only the 1112.4488 form (1 − 2βt)** works, and only with β ≈ 0.019. That form grows with T, unlike the inverse powers string corrections normally produce. Its origin is not a standard correction.
+  - **Loop: no progress. No-progress count 1.**
