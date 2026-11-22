@@ -20952,3 +20952,27 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - m₃/₂ ≈ 0.13 PeV with no extra hierarchy;
     - the D2089 four goalposts (α_s, wino, gluino, m_h) via the derived GM μ.
   - **Open:** small flux W₀, the tadpole, inflation vs m_σ (H_inf = 5.7e12 ≫ 4.3e9), and the dark-sector rank.
+- **D2093 (CENTRE, design map; PREREG_D2093): the KL racetrack trade-off at σ₀ = 20.15, A = 1. Inflation safety (m_σ ≥ H_inf = 5.7e12 GeV) first holds at ranks (14, 15), at a tuning cost ε = 3.3e-4 on m₃/₂. Natural m₃/₂ (ε ≈ 1) holds only at (7, 8), where m_σ = 4.3e9 ≪ H_inf. No single rank pair gets both.**
+  - **Map (N′ = N + 1):**
+    | ranks | m_σ (GeV) | ε | M_tree |
+    |---|---|---|---|
+    | (7, 8) | 4.3e9 | 1.4 | — |
+    | (8, 9) | 3.2e10 | 0.17 | — |
+    | (10, 11) | 4.8e11 | 8.8e-3 | — |
+    | (12, 13) | 2.8e12 | 1.3e-3 | — |
+    | (13, 14) | 5.3e12 | 6.1e-4 | — |
+    | **(14, 15)** | **9.1e12 ✓** | **3.3e-4** | 1.8e-3 GeV |
+    | (16, 17) | 2.2e13 | 1.2e-4 | — |
+    - (13, 14) misses H_inf by 7%, inside the O(1) uncertainty of the m_σ estimate.
+    - All B/A values are natural (0.12–0.67).
+  - **Read:**
+    - The KL racetrack **can** close the inflation-volume gap (the FRONTIER "KL (inflation)" FIT item) with **no continuous knob beyond the usual KL tuning**: one flux offset tuned at the 3e-4 level (N = 14) to 6e-4 (N = 13).
+    - This is the known price of KL ("significant fine-tuning", hep-th/0411011), now quantified for v4: ~1 part in 3,000, against the 5e-9 tuning W₀ already needs.
+    - The alternative is to keep (7, 8), so m₃/₂ is natural, and decouple inflation another way (FRONTIER step 4).
+  - **Costs (stated):**
+    - Hidden SU(14) × SU(15) on the visible 4-cycle adds large D7 tadpole charge, and the tadpole is already failing. This must be computed before the branch is viable.
+    - The flux W₀ must match W₀_KL ≈ 8e-6 for (14, 15). That is **far easier than 2e-9**: D2044's statistics give an expected count of vacua with |W₀| ≲ 1e-5 of ~1e-3 × 1.35e6 ≈ O(1e2–1e3).
+    - **Re-score D2044 for this branch (to be locked):** the small-W₀ gap may soften for large ranks.
+  - **New leads:**
+    1. the tadpole cost of large hidden ranks on T_vis;
+    2. a re-scoring of D2044's W₀ reachability at W₀ ≈ 5e-6 to 2e-5 (ranks 13–16).
