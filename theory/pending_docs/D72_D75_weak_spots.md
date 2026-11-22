@@ -21017,3 +21017,20 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Literature context (not yet tested here):** in the known SUSY Pati-Salam intersecting-brane models (the Cvetič–Li–Liu type, and He–Li–Sun 2112.09632), chiral exotics charged under hidden USp groups are standard. They are removed by **hidden-sector confinement**: the hidden USp gauge couplings run strong (β < 0) and bind the exotics into composite states.
   - **Next goalpost (to lock):** for the unified model's completions, check that every exotic is charged under a hidden group with negative β (asymptotically free) and a confinement scale above the TeV scale. Formula first (CLL's β for USp(N) with the intersection-counted matter).
   - **Status:** the D2083 unified model stays a consistency-level find. It is **not** yet a realistic spectrum.
+- **D2097 (CENTRE; PREREG_D2097; tools/seed/confine.py): hidden confinement of the unified PS model's exotics. FAIL (0 of 6 completions).**
+  - **Formula:** He–Li–Sun Eq. 3.12, β = −6 + 2|I_a| + |I_b| + |I_c|, with α_h⁻¹(M_s) = (25/6)·Re z_h.
+  - **What passes:**
+    - rings on short cycles (Re z = 2) carry exotics with β = −3 to −5 and **confine at Λ = 2.6e8 – 2.8e11 GeV**;
+    - one Re z = 6 ring with β = −6 reaches 4.3e4 GeV.
+  - **What fails, in every completion, at least one exotic-carrying ring:**
+    - rings with Re z = 6 (as weakly coupled as the visible sector) at β = −3 only reach Λ ~ 1e-7 GeV;
+    - Re z = 10 rings reach 1e-41 GeV;
+    - one ring has β = 0.
+    - These rings never confine, so their exotics stay light.
+  - **Read:** the unified PS model found by the Seed (D2083) is **not realistic** in this space. Its exotics cannot all be confined away.
+  - **The Seed must grow with the filters built in:** wider wrappings (L = 4), the full rational χ grid, and the hidden-ring choice made under the joint goalposts:
+    1. 3 + 3 families;
+    2. tadpole + K-theory;
+    3. every exotic on a ring with β < 0 and Λ ≥ 10 TeV;
+    4. exact unification or the α_s goalpost.
+  - **Code note:** importing exotics.py re-ran its scan and printed its D2096 verdict line again. Harmless (no main guard); the D2096 result is unchanged.
