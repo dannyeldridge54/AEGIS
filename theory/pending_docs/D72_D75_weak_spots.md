@@ -20786,3 +20786,26 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
       2. no chiral exotics;
       3. the BLS relation 1/α_Y = (2/3)/α_s + 1/α_w where the class allows it, or the full radius-dependent gauge kinetic function otherwise;
       4. α_s scored against its look-elsewhere rate over these 144.
+- **D2083 (CENTRE; PREREG_D2083; tools/seed/seed_v4_ps.py): Seed v4, the Pati-Salam fork with an α_s prediction. Verdict NULL by the locked rule (2 joint hits, rule needs ≥ 3), but the engine found, from scratch, an exactly gauge-unified SUSY PS model.**
+  - **Control PASS:** synthetic unified couplings give α_s = 0.1167 and M_s = 2.00e16 GeV, the one-loop MSSM values computed by hand in the lock.
+  - **Landscape (same space as D2082):**
+    - 8 PS (topology, χ) points pass three families (I_ab + I_ab′ = 3, I_ac / I_ac′ = −3 / 0) and the exact tadpole + K-theory completion.
+    - Up to a T₁ ↔ T₂ swap (the χ = (1, 3, 2) and (3, 1, 2) points mirror each other), that is **4 distinct models**.
+  - **Coupling weights Re z = (a, b, c):**
+    - (6, 6, 6): unified;
+    - (6, 6, 10);
+    - (6, 10, 6) and (3, 6, 6): no physical fit (K or L out of range).
+  - **The unified model** at χ = (1, 3, 2), with 6 hidden completions:
+    - a = (−1,−1)(0,−1)(−1,−1);
+    - b = (−1,0)(−3,−1)(1,0);
+    - c = (0,−1)(−3,−1)(−1,−1);
+    - written as integer m (m̃ = m − n/2 on T₃).
+    - g_a = g_b = g_c at M_s, so α_s(M_Z) = **0.1167** and M_s = 2.0e16 GeV. This is a hit at 1.4σ from 0.1180 ± 0.0009.
+    - It agrees with He–Li–Sun 2112.09632, who report exactly one gauge-unified model among their 33 inequivalent PS models.
+  - **(6, 6, 10):** α_s = 0.062 at M_s = 1.6e11. A clean miss.
+  - **Honest read:**
+    - The hit is **standard one-loop MSSM unification**, realised by a consistent brane model. It is not a new prediction, and it is not the UFE's α_s (v4's own seam value is still −4.2σ, D2039).
+    - At two loops, MSSM unification without thresholds is known to run high. Scoring this hit properly would need two-loop running plus thresholds, which comes later.
+    - The look-elsewhere is tiny: 4 models, 2 physical, 1 hit. The rule calls it NULL, because one model cannot beat chance on its own.
+  - **What it shows:** the self-building search now reaches a real phenomenological goalpost, a gauge-unified 3-family SUSY model, from a single seed in about 1 minute.
+  - **Next fork:** v4's own geometry (Z₂×Z₆′, rigid stacks, 1509.00048), where this machinery can ask whether the UFE's ρ / Z₆ structure admits a unified model.
