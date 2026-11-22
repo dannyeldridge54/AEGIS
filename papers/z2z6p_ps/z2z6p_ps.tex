@@ -7,11 +7,13 @@
 \affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
 \date{22 November 2026}
 \begin{abstract}
-We rebuild from scratch, using only the formulas published in Ref.~\cite{HRS}, the five-stack globally consistent supersymmetric Pati--Salam model of intersecting D6-branes on the $\mathbb{Z}_2\times\mathbb{Z}_6'$ orientifold with discrete torsion (AAA lattice, $\eta_{\Omega\mathcal R}=-1$). Our code reproduces the bulk and twisted RR tadpole cancellation, the full chiral spectrum, and the $15\times5$ Green--Schwarz coupling matrix of Ref.~\cite{HRS}. The matrix also fixes an ordering convention that the published tables leave implicit. A pre-registered exhaustive scan shows that, among configurations with equal-volume visible stacks and at most two hidden stacks, this model's chiral spectrum is the \emph{only} three-family Pati--Salam spectrum, up to left--right exchange. The model passes the K-theory constraint on all orientifold-invariant probe cycles. We then settle a phenomenology ledger:
+We rebuild from scratch, using only the formulas published in Ref.~\cite{HRS}, the five-stack globally consistent supersymmetric Pati--Salam model of intersecting D6-branes on the $\mathbb{Z}_2\times\mathbb{Z}_6'$ orientifold with discrete torsion (AAA lattice, $\eta_{\Omega\mathcal R}=-1$). Our code reproduces the bulk and twisted RR tadpole cancellation, the full chiral spectrum, and the $15\times5$ Green--Schwarz coupling matrix of Ref.~\cite{HRS}. The matrix also fixes an ordering convention that the published tables leave implicit. A pre-registered exhaustive scan shows that, among configurations with equal-volume visible stacks and at most two hidden stacks, this model's chiral spectrum is the \emph{only} three-family Pati--Salam spectrum, up to left--right exchange. The model passes the K-theory constraint and all gauge-anomaly conditions. Its non-chiral spectrum, derived sector by sector, confirms a single Higgs bidoublet, and an independent second implementation agrees exactly. We then settle a twenty-item phenomenology ledger:
 \begin{itemize}
 \item The $SU(2)$ one-loop threshold expression of Ref.~\cite{HRS} matches its own stated asymptote only after two coefficient corrections. Its printed isotropic unification condition follows from neither reading.
-\item With that consistent reading, matching the measured couplings forces $M_s\sim10^{13}$\,GeV and thresholds of at least $77\%$ of tree level, so the matching is not under perturbative control.
-\item Breaking Pati--Salam to the Standard Model is obstructed perturbatively.
+\item With that consistent reading, matching the measured couplings forces $M_s\sim10^{13}$\,GeV and thresholds of at least $77\%$ of tree level, robustly under two-loop running and variations of the supersymmetry scale, so the matching is not under perturbative control.
+\item Breaking Pati--Salam to the Standard Model is obstructed perturbatively, and so is a right-handed neutrino Majorana mass. Even after breaking, the minimal seesaw gives $m_\nu\ge0.21$\,eV.
+\item A surviving discrete $\mathbb Z_4$ fixes a $1\oplus2$ Yukawa texture, but it allows light-generation proton-decay operators that need strong instanton suppression.
+\item Stable, perturbatively massless states of electric charge $\pm\tfrac12$ arise from hidden--visible bifundamentals.
 \item The hidden sector is consistent with $\Delta N_{\rm eff}$ bounds only if its chiral multiplets are massive or never thermalised.
 \end{itemize}
 \end{abstract}
@@ -29,7 +31,8 @@ Fractional three-cycles are $\Pi=\tfrac14(\Pi^{\rm bulk}+\sum_{k,\alpha}\Pi^{\ma
 We transcribed the complete exceptional-wrapping table of Ref.~\cite{HRS} (9 parity classes $\times$ 4 displacement columns) and the orientifold images on AAA. Two readings were needed, both fixed before the control run.
 \begin{itemize}
 \item In block 3, the printed $\alpha_1=1+\sigma^k(4-2\sigma^k)$ collides with $\alpha_3$. We read it as $1+\sigma^k(4-2\sigma^j)$, which reproduces the listed labels in all columns.
-\item In the type-II entries, the constant ``1'' is read as the $\mathbb Z_2^{(i)}$ eigenvalue sign $z_0=(-1)^{\tau^{\mathbb Z_2^{(i)}}}$. The literal reading fails the control: 7 twisted conditions are violated.
+\item In the type-II entries of the appendix table, the constant ``1'' stands for the $\mathbb Z_2^{(i)}$ eigenvalue sign $z_0=(-1)^{\tau^{\mathbb Z_2^{(i)}}}$, as printed explicitly in the main-text table of Ref.~\cite{HRS}. Reading it as a literal 1 fails the control: 7 twisted conditions are violated.
+\item The sums in $X$ and $Y$ run over cyclic $(i,j,k)$; summing over all permutations double-counts and fails the bulk tadpole.
 \end{itemize}
 With $\eta_{(k)}=-1$:
 \begin{itemize}
@@ -43,6 +46,12 @@ The symmetric and antisymmetric net chiralities, $\chi^{\rm S}=\chi^{\rm A}=\tfr
 
 \paragraph{K-theory.} We enumerated the fractional cycles with $|n|,|m|\le3$ and $Y=0$ that equal their own orientifold image. Up to orientation there are 256 supersymmetric ones, and the enumeration is saturated: it is unchanged at $|n|,|m|\le5$. They form a superset of the $USp$ probes; their total matches the $144+112$ invariant branes of Ref.~\cite{HRS}, though our split by $X$ differs from the $USp/SO$ split. Image terms cancel for invariant probes. For every probe, $\sum_x N_x\,\Pi_x\circ\Pi_p\in\{0,\pm4,\pm8\}$, which is even, so the K-theory constraint~\cite{Uranga} holds.
 
+\paragraph{Independent reproduction.} A second implementation, written separately from the same source (with the exceptional table parsed directly from its \LaTeX), agrees with ours exactly on all cycle vectors and intersection numbers of the five stacks and of three random fractional branes. It shares the readings listed above.
+
+\paragraph{Anomalies.} The $SU(4)^3$ anomaly vanishes, as do the generalised $U(N_x)^3$ conditions $\Pi_x\circ\sum_aN_a(\Pi_a+\Pi_{a'})=0$ and all $U(1)$--gravity$^2$ anomalies (consistent with $\Pi_x\circ\Pi_{O6}=0$). Each $SU(2)$ has an even number of doublets (24, 24, 16, 4). All 25 mixed $U(1)_x$--$SU(N_y)^2$ anomalies computed from the spectrum equal $\tfrac{N_x}{2}(\Pi_x-\Pi_{x'})\circ\Pi_y$. Expanding $\Pi_x-\Pi_{x'}$ in the odd basis of Ref.~\cite{HRS} reproduces its Green--Schwarz coefficients with unit proportionality, which confirms them independently. Mixed Abelian anomalies require generalised Chern--Simons terms~\cite{ABDK} and are not computed.
+
+\paragraph{Non-chiral spectrum.} Extending the code to individual orbifold sectors (the $\mathbb Z_6'$ action on one-cycles, the $\mathbb Z_2$-invariant intersection table and the beta-function multiplicity formulas of Ref.~\cite{HRS}) reproduces the orbit-summed chiralities for all 50 pairs. It then gives the full matter content independently. Every visible bifundamental is purely chiral, and there is exactly one Higgs bidoublet. The rigid stacks have no adjoints and stack $d$ has one. The hidden sector contains $2\times[(\mathbf4,\bar{\mathbf2}_d)+{\rm h.c.}]$ and $(\mathbf2_d,\mathbf2_e)+{\rm h.c.}$. The $dd'$ and $ee'$ totals (8 and 4) agree with Ref.~\cite{HRS}. The count of $SU(4)$-charged vector-like pairs confirms the spectrum table of Ref.~\cite{HRS}, not the ``one pair'' of its text. In sectors with one vanishing angle, the sign of the exceptional term has to be taken relative to the orientation, $\tfrac12(|I^{(jk)}|+{\rm sgn}(I^{(jk)})I^{\mathbb Z_2,(jk)})$. Of seven sign conventions tested, only this one gives non-negative, pairwise multiplicities in all 82 such sectors.
+
 \paragraph{FI terms.} The twisted-sector FI parameters of the anomalous $U(1)$s are linear in the $\mathbb Z_2$ twisted moduli, with exactly the Green--Schwarz coefficients~\cite{BCMS}. At the orbifold point they vanish, so the configuration is supersymmetric, and the rank-5 coupling matrix freezes five combinations of twisted moduli.
 
 \section{Uniqueness of the chiral spectrum in its class}
@@ -51,40 +60,55 @@ We scanned all visible triples $a(4),b(2),c(2)$ on a common supersymmetric bulk 
 The scan finds 5{,}184 raw (at most 864 distinct) visible triples. Every one is globally completable, and the published model is among them. Comparing every distinct-by-cycle model with no cap, on the signature $(ab,ab',ac,ac',bc,bc',\chi^{\rm S/A},$ hidden ranks, per-stack visible--hidden $|\chi|)$, yields exactly two signatures. They are the left--right mirror pair of the published spectrum: hidden $U(2)^2$, $bc=\pm1$, and visible--hidden $|\chi|=(0,5,5)$ for $(a,b,c)$. This agrees with and extends the statement in Ref.~\cite{HRS} that its 27 rigid three-stack configurations share one chiral spectrum. Non-chiral spectra were not compared. The published six-stack PS model on this background~\cite{HS13} has three hidden stacks and lies outside this class, so uniqueness holds relative to the two-hidden-stack bound.
 
 \section{Phenomenology ledger}
-\paragraph{Beta functions.} The beta-function formula of Ref.~\cite{HRS}, with the multiplet counts of its spectrum tables, gives $b_{SU(4)}=-2$, $b_{SU(2)_{L,R}}=+6$, $b_{SU(2)_d}=+28$ and $b_{SU(2)_e}=+2$.
+\paragraph{Beta functions.} The beta-function formula of Ref.~\cite{HRS}, with our derived multiplet counts, gives $b_{SU(4)}=-2$, $b_{SU(2)_{L,R}}=+6$, $b_{SU(2)_d}=+22$ and $b_{SU(2)_e}=+2$.
 
 \paragraph{Thresholds.} We evaluated the one-loop gauge kinetic functions with exact $\vartheta_1/\eta$. The $SU(4)$ expression matches its stated asymptote to $10^{-7}$. The $SU(2)_{L,R}$ expression matches its stated asymptote ($v_3$ slope $-1/16\pi$, no $v_m$ term) only after two changes: $\tfrac1{2\pi}\to\tfrac1{2\pi^2}$, and the sign of the $\tfrac1{4\pi^2}\ln\eta(iv_3)$ term. We adopt this consistent reading. The condition $f_a=f_b$ at $v_1=v_2$ is then $v=\tfrac14v_3+\tfrac{7\ln2}{\pi}$. The printed $4v_3+\tfrac{168\ln2}{\pi}$ follows from neither this reading nor the one-change reading ($\tfrac54v_3+\ldots$). We flag this for the authors.
 
 \paragraph{String scale.} Ref.~\cite{HRS} gives $4\pi/g^2=2\pi\,{\rm Re}\,f$, $\alpha^{-1}_{\rm tree}=3.53\times10^{-4}\,M_{\rm Pl}/M_s$ (reduced $M_{\rm Pl}$), and one-loop shifts $\delta\alpha^{-1}=2\pi\,{\rm Re}\,\delta f$. The one-loop MSSM unified value $\alpha_X^{-1}=24.3$ would need $M_s\simeq3.5\times10^{13}$\,GeV, $570\times$ below $M_{\rm GUT}$.
 
-This test assumes PS$\to$SM breaking at $M_s$ (see below) with heavy exotics, so it is conditional on an unspecified breaking mechanism. We matched the three measured couplings at $M_s$ against $(v_1,v_2,v_3,g_s)$, which gives a one-parameter family. We minimised the threshold-to-tree ratio over that family, requiring $v_i\ge1$ and $g_s<1$. With the consistent reading, the minimum is $0.82$ (reduced $M_{\rm Pl}$; $0.77$ non-reduced), reached on the boundary $v_2=1$ with $M_s\approx8\times10^{12}$\,GeV. The pre-registered control criterion ($<0.3$) fails. (The one-change reading would give $0.22$--$0.28$.) The full matching has no solution with $v_1=v_2$; this is distinct from the near-isotropy of the condition $f_a=f_b$ alone. If instead $M_s=M_{\rm GUT}$ and only the MSSM is light, $\alpha_s(M_Z)=0.117$ at one loop. With the PS-vector-like states light (1\,TeV), the couplings become non-perturbative.
+This test assumes PS$\to$SM breaking at $M_s$ (see below) with heavy exotics, so it is conditional on an unspecified breaking mechanism. We matched the three measured couplings at $M_s$ against $(v_1,v_2,v_3,g_s)$, which gives a one-parameter family. We minimised the threshold-to-tree ratio over that family, requiring $v_i\ge1$ and $g_s<1$. With the consistent reading, the minimum is $0.82$ (reduced $M_{\rm Pl}$; $0.77$ non-reduced), reached on the boundary $v_2=1$ with $M_s\approx8\times10^{12}$\,GeV. The pre-registered control criterion ($<0.3$) fails. (The one-change reading would give $0.22$--$0.28$.) The full matching has no solution with $v_1=v_2$; this is distinct from the near-isotropy of the condition $f_a=f_b$ alone. If instead $M_s=M_{\rm GUT}$ and only the MSSM is light, $\alpha_s(M_Z)=0.117$ at one loop. With the PS-vector-like states light (1\,TeV), the couplings become non-perturbative. The failure is robust. With two-loop running, a supersymmetry scale of 1 or 10\,TeV (with $\overline{\rm MS}\to\overline{\rm DR}$ conversion~\cite{MV}), exotics at $M_s/100$, or relaxed bounds $v_i\ge\tfrac12,\tfrac14$, the minimum stays between 0.78 and 0.81. It rests only on the threshold reading.
 
 \paragraph{Breaking Pati--Salam.} Recombination requires deformation moduli, i.e.\ adjoint multiplets~\cite{HRS}. Stacks $a$ and $c$ are rigid, and the spectrum contains no $(\mathbf4,\mathbf1,\mathbf2)$ Higgs, so PS$\to$SM breaking is obstructed perturbatively. The open routes are non-perturbative couplings, recombination through the flexible hidden stack $d$, or leaving the rigid-cycle class.
 
 \paragraph{Discrete symmetries and Yukawas.} The five massive $U(1)$s leave discrete remnants $\mathbb Z_n$, which D-brane instantons respect~\cite{HS13,BIZn}. The survival condition~\cite{HS13} is $\Pi^{\rm even}\circ\sum_xk_xN_x\Pi_x\equiv0$ mod $n$ for every $\Omega\mathcal R$-even cycle. We test it exactly. The fractional cycles with $|n|,|m|\le2$ span a rank-32 lattice with unimodular intersection form ($\det=1$), hence all of $H_3(\mathbb Z)$. Its $\Omega\mathcal R$-even part, computed with exact integer linear algebra, has rank 16, as in Ref.~\cite{HS13}. A test on the Green--Schwarz coefficients alone covers only the necessary conditions and wrongly admits a $\mathbb Z_8$. As a calibration, the same code applied to the six-stack model of Ref.~\cite{HS13} recovers its massless $U(1)_Z$, and finds only $\mathbb Z_n$ that are trivial (centre elements or embedded in $U(1)_Z$), in agreement with that reference. $\mathbb Z_2$ and a multi-stack $\mathbb Z_4$ ($k=(0,1,1,1,1)$) survive. Unlike the single-gauge-factor $\mathbb Z_n$ found for the six-stack model in Ref.~\cite{HS13}, this $\mathbb Z_4$ is physical: the non-Abelian-invariant operator $ac\cdot bc\cdot ab'$ carries $\mathbb Z_4$ charge 2, which no centre element can produce. Under it, the perturbative coupling ($ac\cdot bc\cdot ab$) and the generation-2,3 block ($ac'\cdot bc\cdot ab'$) are allowed, so instantons can generate the latter with suppression $S\simeq5.6$ and $11.8$ (estimate). The mixed couplings $ac\cdot bc\cdot ab'$ and $ac'\cdot bc\cdot ab$ are forbidden to all instanton orders. The Yukawa matrices are therefore block-diagonal, $1\oplus2$, so the first generation cannot mix with the other two without additional Higgs fields or higher-dimensional operators with $\mathbb Z_4$-charged vevs. With a single bidoublet, $Y_u=Y_d$ already gives $V_{\rm CKM}=1$; the $\mathbb Z_4$ in addition fixes a $1\oplus2$ texture that any extended Higgs sector must break. This sharpens the statement in Ref.~\cite{HRS} that only one generation has perturbative Yukawas.
 
-\paragraph{Hidden sector.} All $U(1)$s are massive. The hidden $SU(2)_d\times SU(2)_e$ are infrared free. If the whole hidden sector is thermal and decouples at $M_s$, the six vectors alone give $\Delta N_{\rm eff}\approx0.11$. Adding the massless hidden-only chiral fermions gives $0.56$, and all massless hidden states give $0.82$. The bound $\Delta N_{\rm eff}\lesssim0.3$ therefore requires hidden-sector masses or a non-thermal hidden sector.
+\paragraph{Proton decay.} Dimension-4 $R$-parity violation is absent, because $\mathbf4\cdot\mathbf4\cdot\bar{\mathbf4}$ has no $SU(4)$ singlet. The $\mathbb Z_2\subset\mathbb Z_4$ generated by $2k$ acts as a gauge matter parity, provided the breaking sector carries even $3(B-L)$. Of the six flavour structures of $F_L^4\supset QQQL$ allowed by Bose symmetry (and likewise for $\bar F_R^4$), $\mathbb Z_4$ forbids two. It allows the light-generation structure $F_2^2F_3^2$, which must then be instanton-suppressed. At $M_s\approx8\times10^{12}$\,GeV, $\tau(p\to K^+\bar\nu)>5.9\times10^{33}$\,yr requires $S\gtrsim28$ for dimension 5 and $\gtrsim8$ for dimension 6 (conservative estimates, cf.~\cite{NFP}). This is possible only because these operators come from different instantons than the Yukawa couplings.
 
-\begin{table}[t]\centering\small
-\begin{tabular}{@{}ll@{}}\toprule
-Item & Verdict\\\midrule
-Tadpoles (bulk, twisted), SUSY & pass\\
-Chiral spectrum, no chiral S/A exotics & pass\\
-Green--Schwarz matrix (fixes convention) & pass\\
-K-theory & pass\\
-FI terms at orbifold point & pass (literature mechanism)\\
-Chiral-spectrum uniqueness in class & pass\\
-$SU(2)$ threshold formulas in Ref.~\cite{HRS} & two corrections needed\\
-Coupling matching at $M_s$ & fails control (min.\ 0.82)\\
-PS$\to$SM breaking & obstructed perturbatively\\
-Hidden sector, $\Delta N_{\rm eff}$ & conditional (masses needed)\\
-Yukawa structure & $\mathbb Z_4$: block-diagonal $1\oplus2$ (if breaking sector $\mathbb Z_4$-neutral)\\\bottomrule
+\paragraph{Neutrino masses.} $\nu_R\nu_R$ carries $\Delta(B-L)=2$ with $B-L\subset SU(4)$. Neither perturbative operators nor instantons, which respect the non-Abelian gauge group, can generate a Majorana mass while Pati--Salam is unbroken. This is unlike models where $U(1)_{B-L}$ is a massive Abelian factor~\cite{BCW}. Even after breaking, the Pati--Salam relation $y_\nu(M_s)=y_t(M_s)$ (two-loop, $\tan\beta=2$--50) gives $m_D=99$--$127$\,GeV. With $M_R\le M_s$, the light neutrino mass is at least 0.21--2.1\,eV, above $\sum m_\nu<0.12$\,eV~\cite{Planck}. The minimal seesaw fails, and running of the Weinberg operator cannot close the gap.
+
+\paragraph{Stable relics and dark matter.} The states odd under the exact centres of $SU(2)_d$ and $SU(2)_e$ that also carry visible charge ($bd,bd',be',cd,cd',ce'$ and the coloured $ad$) have fractional electric charge, $\pm\tfrac12$ (and $\tfrac16$). The lightest such state is stable by charge conservation, and all of them are massless at the perturbative level. Terrestrial and collider limits~\cite{Perl} therefore require a mass mechanism plus a reheating temperature far below their masses. The neutral candidates are the purely hidden $de'$, the LSP (stable under the gauge matter parity), and a Peccei--Quinn axion from an anomalous $U(1)$ acting as a perturbative global symmetry~\cite{HSax}, which needs a misalignment angle $\theta\approx0.3$--$0.9$ for $f_a=8\times10^{12}$--$10^{12}$\,GeV.
+
+\paragraph{Hidden sector.} All $U(1)$s are massive. The hidden $SU(2)_d\times SU(2)_e$ are infrared free. If the whole hidden sector is thermal and decouples at $M_s$, the six vectors alone give $\Delta N_{\rm eff}\approx0.11$. Adding the massless hidden-only chiral fermions (36 multiplets) gives $0.50$, and all massless hidden states give $0.76$. The bound $\Delta N_{\rm eff}\lesssim0.3$ therefore requires hidden-sector masses or a non-thermal hidden sector.
+
+\begin{table*}[t]\centering\small
+\begin{tabular}{@{}rlll@{}}\toprule
+\# & Item & Verdict & Basis\\\midrule
+1 & RR tadpoles (bulk, 15 twisted + 9 trivial) & pass & reconstruction\\
+2 & Supersymmetry & pass & $Y=0$, $2X+Y>0$\\
+3 & K-theory & pass & all invariant probes\\
+4 & Gauge anomalies (cubic, mixed, gravitational, Witten) & pass & GS coefficients reproduced\\
+5 & Chiral spectrum & pass & matches Ref.~\cite{HRS}\\
+6 & Non-chiral spectrum & pass & derived per sector\\
+7 & $U(1)$ masses / hypercharge embedding & pass & rank 5\\
+8 & PS$\to$SM breaking & obstructed (perturbatively) & rigid $a,c$, no $(\mathbf4,\mathbf1,\mathbf2)$\\
+9 & Gauge-coupling matching at $M_s$ & fail (robust) & thresholds $\ge78\%$ of tree\\
+10 & String vs.\ GUT scale & tension & $M_s\sim10^{13}$\,GeV\\
+11 & Fermion masses & partial & 1 perturbative + instanton block\\
+12 & Quark mixing & obstructed & $\mathbb Z_4$: $1\oplus2$, $Y_u=Y_d$\\
+13 & Neutrino masses & obstructed; minimal seesaw fails & $M_R=0$ in unbroken PS; $m_\nu\ge0.21$\,eV\\
+14 & Proton decay & conditional & $S\gtrsim28$ (dim-5)\\
+15 & Moduli stabilisation & not addressed & --\\
+16 & Supersymmetry breaking & not addressed & --\\
+17 & Hidden sector / $\Delta N_{\rm eff}$ & conditional & 0.11--0.76 if thermal\\
+18 & Stable relics / dark matter & obstructed & stable charge-$\tfrac12$ states\\
+19 & Dark energy & not addressed & --\\
+20 & Independent reproduction, uniqueness & pass & second code agrees; unique chiral spectrum\\\bottomrule
 \end{tabular}
-\caption{Settled ledger for the global PS model.}
-\end{table}
+\caption{The twenty items a referee would check, with settled verdicts.}
+\end{table*}
 
 \section{Conclusion}
-The global Pati--Salam model of Ref.~\cite{HRS} is a fully consistent string vacuum (tadpoles, K-theory, anomalous $U(1)$ masses, FI terms), and its chiral spectrum is the only three-family PS spectrum in its class. It is therefore a sharp, rigid target rather than one point in a landscape. Its obstacles are physical rather than formal. Gauge-coupling matching needs an intermediate string scale and one-loop corrections comparable to tree level; there is no perturbative route from Pati--Salam to the Standard Model; the hidden matter must be massive or non-thermal; and a surviving $\mathbb Z_4$ forbids first-generation mixing unless the PS-breaking or Higgs sector carries $\mathbb Z_4$ charge. These define the next steps: the $SU(2)$ thresholds from first principles, hidden-sector mass terms, and a search beyond rigid cycles for a PS-breaking sector.
+The global Pati--Salam model of Ref.~\cite{HRS} is a fully consistent string vacuum (tadpoles, K-theory, anomalous $U(1)$ masses, FI terms), and its chiral spectrum is the only three-family PS spectrum in its class. It is therefore a sharp, rigid target rather than one point in a landscape. Its obstacles are physical rather than formal. Gauge-coupling matching needs an intermediate string scale and one-loop corrections comparable to tree level; there is no perturbative route from Pati--Salam to the Standard Model; the hidden matter must be massive or non-thermal; and a surviving $\mathbb Z_4$ forbids first-generation mixing unless the PS-breaking or Higgs sector carries $\mathbb Z_4$ charge. Moduli stabilisation, supersymmetry breaking and the cosmological constant are not addressed here. Beyond these, the model needs a mass mechanism for its fractionally charged hidden--visible states, and it fails the minimal seesaw. These define the next steps: the $SU(2)$ thresholds from first principles, hidden-sector mass terms, and a search beyond rigid cycles for a PS-breaking sector.
 
 \begin{acknowledgments}
 The derivations and code were developed with the assistance of Claude (Anthropic). The author directed the work and checked the results. Scripts, pre-registration files and outputs are in the reproducibility archive~\cite{repo}.
@@ -95,6 +119,13 @@ The derivations and code were developed with the assistance of Claude (Anthropic
 \bibitem{BCMS} R.~Blumenhagen, M.~Cveti\v{c}, F.~Marchesano and G.~Shiu, ``Chiral D-brane models with frozen open string moduli,'' JHEP \textbf{03} (2005) 050, hep-th/0502095.
 \bibitem{HS13} G.~Honecker and W.~Staessens, ``D6-brane model building and discrete symmetries on $T^6/(\mathbb Z_2\times\mathbb Z_6'\times\Omega\mathcal R)$ with discrete torsion,'' Proc.\ Corfu Summer Institute 2012, arXiv:1303.6845.
 \bibitem{BIZn} M.~Berasaluce-Gonz\'alez, L.~E.~Ib\'a\~nez, P.~Soler and A.~M.~Uranga, ``Discrete gauge symmetries in D-brane models,'' JHEP \textbf{12} (2011) 113, arXiv:1106.4169.
-\bibitem{repo} AEGIS repository, branch \texttt{unify-bg}: \texttt{tools/seed/z2z6p*.py} (incl.\ \texttt{z2z6p\_scale\_min.py}, \texttt{z2z6p\_scan\_p2\_full.py}, \texttt{z2z6p\_Zn\_exact*.py}, \texttt{z2z6p\_round1\_extra.txt}), \texttt{field\_tests/rules/PREREG\_D2110}--\texttt{D2120b}.
+\bibitem{ABDK} P.~Anastasopoulos, M.~Bianchi, E.~Dudas and E.~Kiritsis, ``Anomalies, anomalous $U(1)$'s and generalized Chern--Simons terms,'' JHEP \textbf{11} (2006) 057, hep-th/0605225.
+\bibitem{MV} S.~P.~Martin and M.~T.~Vaughn, ``Regularization dependence of running couplings in softly broken supersymmetry,'' Phys.\ Lett.\ B \textbf{318} (1993) 331, hep-ph/9308222.
+\bibitem{NFP} P.~Nath and P.~Fileviez P\'erez, ``Proton stability in grand unified theories, in strings and in branes,'' Phys.\ Rept.\ \textbf{441} (2007) 191, hep-ph/0601023.
+\bibitem{BCW} R.~Blumenhagen, M.~Cveti\v{c} and T.~Weigand, ``Spacetime instanton corrections in 4D string vacua: the seesaw mechanism for D-brane models,'' Nucl.\ Phys.\ B \textbf{771} (2007) 113, hep-th/0609191.
+\bibitem{Planck} Planck Collaboration, ``Planck 2018 results. VI. Cosmological parameters,'' Astron.\ Astrophys.\ \textbf{641} (2020) A6, arXiv:1807.06209.
+\bibitem{Perl} M.~L.~Perl, E.~R.~Lee and D.~Loomba, ``Searches for fractionally charged particles,'' Annu.\ Rev.\ Nucl.\ Part.\ Sci.\ \textbf{59} (2009) 47, doi:10.1146/annurev-nucl-121908-122035.
+\bibitem{HSax} G.~Honecker and W.~Staessens, ``On axionic dark matter in Type IIA string theory,'' Fortsch.\ Phys.\ \textbf{62} (2014) 115, arXiv:1312.4517.
+\bibitem{repo} AEGIS repository, branch \texttt{unify-bg}: \texttt{tools/seed/z2z6p*.py} (incl.\ \texttt{z2z6p\_scale\_min.py}, \texttt{z2z6p\_scan\_p2\_full.py}, \texttt{z2z6p\_Zn\_exact*.py}, \texttt{z2z6p\_round1\_extra.txt}), \texttt{field\_tests/rules/PREREG\_D2110}--\texttt{D2128}.
 \end{thebibliography}
 \end{document}
