@@ -19373,3 +19373,21 @@ Every check catches the mistake it was built for:
   2. M_N ≈ 2.8e11, a different θ-step normalisation;
   3. T_R ≈ 5.5e8 (the x-chain);
   4. A₃/A₂ ≈ 0.74.
+
+## D1973 — node round 2, move 1: the wino kill test (the highest-information move per referee D1971)
+- **TRIANGULATE** (the disappearing-track limit on a pure wino; verbatim abstract quotes):
+  - (a) ATLAS 2201.02472: "Chargino masses up to 660 (210) GeV are excluded in scenarios where the chargino is a pure wino (higgsino)."
+  - (b) CMS 2004.05153: "chargino masses in the wino case are excluded below 884 (474) GeV for a lifetime of 3 (0.2) ns."
+  - (c) ATLAS 2603.08315 (v2, Aug 2026, 137 fb⁻¹): "charginos with masses up to 880 GeV (1020 GeV) are excluded for lifetimes of around 1 ns."
+  - (d) 2507.15934 §I: ATLAS and CMS "have ruled out the minimal model up to masses ∼700 GeV".
+- **Framework match:**
+  - A pure wino has a loop splitting of about 160 MeV, so τ ≈ 0.2 ns.
+  - At that lifetime the readings are 474 (CMS) / 660 (ATLAS'22) / ~700 (the review).
+  - The 880 GeV limit is for τ ≈ 1 ns, a different lifetime, so it **only bounds the fix** (rule 6c). The pure-wino-lifetime limit of 2603.08315 sits in its figures, which were not reached; that is OPEN.
+  - Fix at τ = 0.2 ns: centre **660 GeV**, spread 474–700.
+- **The wino's DM share,** computed here from D732: Ω_nt = 0.017 × (3.7/3.2) = 0.0197, which is 16 % of the DM. The thermal share is (0.6865/2.9)² = 5.6 %. **Total ≈ 22 %.** This replaces the "10–40 %" figure.
+- **Indirect detection (E2/E3):**
+  - 2507.15934 §IV: "Below 2 TeV … the search for a gamma-ray line at the wino endpoint is more constraining than the continuum search."
+  - Its Fig. 6 holds the sub-2 TeV exclusion, but the plotted values are not in the text. **E2 stays OPEN.**
+- **TEST (rule 6e):** 686.5 GeV lies inside the spread of the bound at the right lifetime. **INDETERMINATE**: it passes the centre (660) and fails the upper reading (700). The decisive number is 2603.08315's limit at τ ≈ 0.2 ns.
+- **COMPASS:** the wino stays ◔/!, now with an explicit open item (the pure-wino-lifetime limit in 2603.08315's figures). In the resonance map (D1972), L5 locks only with m₃/₂ × 1.22 (wino 838 GeV). The 880 GeV limit, if it applies near 0.2 ns, would even push past that.
