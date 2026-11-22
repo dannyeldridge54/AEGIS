@@ -21435,3 +21435,9 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 **Verdict:** CONDITIONAL. The Z4 does not protect the proton. The light-generation F2²F3² dim-5 operators are allowed and must be instanton-suppressed with S ≳ 33.
 - That is much more suppression than the S ≈ 5.6–11.8 the Yukawas need. It is possible only because the two come from different instantons: Yukawa ΔQ = (0,2,∓2,0,0) vs proton ΔQ = (4,4,0,0,0).
 - **The intermediate string scale makes proton decay a sharp test of the model.**
+
+## D2124a (referee sweep of item 14, minors; recorded, not a verdict change)
+- **Rates are conservative.** The T4 rates use m_p⁵ instead of the lattice matrix elements (α_H ≈ 0.012 GeV³, A_L ≈ 1.25; Nath & Fileviez Pérez, hep-ph/0601023). That overstates Γ by about 10⁴, so the S thresholds are **conservative ESTIMATEs**, too high by roughly ΔS ≈ 4.6. Corrected: S ≳ 28 (dim-5) and ≳ 8 (dim-6).
+- **Channel.** The light F2²F3² structure is Q₁,₂-type, so the dominant channel is **p → K⁺ν̄** (Super-K τ > 5.9e33 yr).
+- **Only light-only operators matter.** With the Z4 block structure, F1 does not mix with F2 and F3, so only F2²F3² and R2²R3² are relevant while the Z4 is exact.
+- **Item 14: NULL — BALANCED.**
