@@ -20504,3 +20504,18 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     3. the D2039 battery must be rerun with sq from this mechanism (no fitted knob).
   - Kallosh–Linde (D2036 K), W₀ (D2044–D2046) and the tadpole flag are **not** touched.
   - **Look-elsewhere note:** σ_d = 2σ_v and N_d = 2N_v predate this test (v4, D1924), so x_d = x_v was not tuned here. But the mechanism was found after looking, so it gets no evidence credit until the holomorphy check.
+- **D2049 result (FORGE; PREREG_D2049): Forge opt rung 1.**
+  - Base (RCTX = 1): 1 MB = 230,595 bytes / 29.2 s; 3 MB = 651,246 bytes / 93.7 s.
+  - **-O3 -march=native -ffp-contract=off: PASS.**
+    - Output is bit-identical.
+    - **11.0% faster (1 MB) and 19.5% faster (3 MB).**
+    - Round-trip OK.
+  - **APM count-rate (ZPAQ SSE): NULL.**
+    - 255/30: +0.07% / +0.17%.
+    - 1023/63: +0.57% / +0.66%.
+    - Our fixed 1/64 rate is better here.
+  - **ESKIP = 48: NULL by the rule.**
+    - Speed: +0.4% slower on 1 MB, 15.4% faster on 3 MB. It fails the speed bar on 1 MB.
+    - Ratio: −0.047% / −0.072%, just under the 0.05% bar on 1 MB.
+    - **Note, not claimed:** it is better on both size and 3 MB speed, so it is a candidate for its own locked test on a larger rung.
+  - **Next Forge build:** loomz20_o3 with RCTX = 1 is the new reference.
