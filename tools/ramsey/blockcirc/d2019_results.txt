@@ -1,0 +1,3 @@
+start 2026-11-22T05:54:13Z
+B=2 m=20 K=10 orbits=40 nodes=33233089 maximal=858245 checked=219735 min_alpha=10
+  (B=2 m=20: 3s)
