@@ -20542,3 +20542,10 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - the geometric fact that T_{D₁−D₂} = T₁ − T₂ when the class D₁ − D₂ is effective (4-cycle volumes are linear in the class).
   - **The F-mirage filter goes back to FAIL.** The Bloom mutation "tether" is VOID for sequestering. The D2053 "2 knobs" result is withdrawn; it is **3 knobs again (D2039)**.
   - **Lesson for the referee checklist:** check soft-term formulas against a textbook formula (here, M_{1/2} = F^i∂_i f/2Re f) **before** a toy is built on them. The D2050 lock carried the wrong formula into the test, so the lock itself was faulty.
+- **D2054 (CENTRE; PREREG_D2054): Q1, warped-throat D3 sequestering.**
+  - **Sequestering itself: UNDETERMINED (favourable).** Kachru–McAllister–Sundrum (hep-th/0703105): "sequestering readily occurs" in strongly warped (KS-like) throats, through conformal sequestering, which "would let anomaly mediation supply" the soft masses. But they give "a step toward", not a complete model, and the tachyonic sleptons of AMSB still need a fix. (KMS hep-th/0601111 could not be read: conversion error.)
+  - **Cost check: FAIL.** On D3s, f_vis = S, so α_G⁻¹ = Re S = 1/g_s = **0.87** at v4's ρ vacuum, against the required 27.9.
+    - At ρ the D3 gauge theory would be strongly coupled. Unless the D3s sit at a singularity whose blow-up moduli add a large twisted piece to f (f = S + c·T_blow), that is not computed.
+  - **Net:** Q1 via warped D3 is **incompatible with S = ρ** as written. Q1 stays OPEN.
+  - Remaining Q1 options: (i) twisted-sector f at a singularity; (ii) accept mirage and fold it into Q4 (T1 then needs +0.09 to +0.12).
+  - **Loop count:** 1 tick, partial progress (a cost found, a lead narrowed).

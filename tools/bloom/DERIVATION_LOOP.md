@@ -13,10 +13,10 @@
 - **STALL:** 7 consecutive ticks with no new lead and no closed item → report, and wait for Danny.
 - **Danny's live messages always come first.**
 
-## Queue (open items, in order)
+## Queue (open items, in order). Tick log: tick 1 = D2054 (Q1, partial)
 | # | item | current state | first move |
 |---|---|---|---|
-| Q1 | **mirage** (F^T_vis feeds gauginos at m₃/₂/x ≈ 12 TeV) | FAIL; the tether is void (D2051a) | warped-throat D3 sequestering: literature check (KMS hep-th/0601111, 1012.1858) |
+| Q1 | **mirage** (F^T_vis feeds gauginos at m₃/₂/x ≈ 12 TeV) | FAIL; the tether is void (D2051a); warped D3 incompatible with S = ρ (α_G⁻¹ = 0.87, D2054) | next: the D3-at-singularity twisted f (f = S + c·T_blow); otherwise fold mirage into Q4 |
 | Q2 | **Kallosh–Linde stabiliser** (needs m_T ≥ 3.7e3 × KKLT) | FAIL on every route tried | survey: "volume stabilisation during high-scale inflation" since 2015 (e.g. stronger stabilisation, Kähler uplift, inflaton-volume decoupling) |
 | Q3 | **W₀ = 5.6e-9 origin** | unexplained (D2044–D2046) | lock a test of the x ≈ 4π√3 near-coincidence with a computed instanton prefactor |
 | Q4 | **T1 seam** (+0.044) | unnatural in explicit Z₆′ (D2047) | thresholds for v4's own brane set (D7, IIB) |
