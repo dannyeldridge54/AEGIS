@@ -21291,3 +21291,10 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
 | FI / D-terms | NOT VERIFIED |
 
 **The derivation is complete at this level.** Every item now has a verdict backed by evidence.
+
+## D2118 (CENTRE, PHYSICS from literature plus D2112 K4): twisted-moduli FI / D-terms. NOT VERIFIED → PASS at the orbifold point.
+- **Mechanism:** each anomalous U(1)_x gets an FI term linear in the Z₂^(k) twisted moduli, with exactly the Green–Schwarz coefficients c_x^{(k),α} of D2112 K4. This is the frozen-moduli mechanism of Blumenhagen–Cvetič–Marchesano–Shiu (hep-th/0502095).
+- **At the orbifold point:** the twisted moduli are zero, so ξ_x = 0, and bulk SUSY (Y = 0) makes the fractional branes supersymmetric there.
+- **Consequence:** because the c-matrix has rank 5 (K4), exactly 5 combinations of twisted moduli are lifted by the D-term potential. The vacuum at the origin, with ξ = 0 and charged scalars at zero vev, is supersymmetric.
+- **Verdict:** **PASS** (consistent, SUSY vacuum at the orbifold point). 5 twisted moduli are frozen (literature mechanism).
+- **Caveat:** away from the orbifold point, D-flatness would need charged-scalar vevs. Not studied here.
