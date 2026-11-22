@@ -20378,3 +20378,15 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - Mirage corners sit at about 102 bits (α_s −10σ) and leave a bino-relic problem.
   - **Read:** the observation point favours keeping pure-AMSB gauginos and moving the Kähler stabilisation (flux-scaling) or the visible sector (sequestered). Accepting mirage is not favoured.
   - The knob costs per mutation (V 1, I 2, K 1) are estimates. No corner's open item is filled in.
+- **D2039 (CENTRE; PREREG_D2039 plus DEVIATIONS): known-issues battery G1–G5, tuned live with hands on knobs. Verdict: FIT, with three derivation targets named.**
+  - **Run 1:** STALL. The single-start greedy Centre fell into a local minimum (m₃/₂ was driven to its floor while the leak term dominated). This is an engine finding: when one goalpost dominates, a multi-start is required.
+  - **Run 2:** multi-start (4 seeds), plus a HAND pass.
+    - **All five goalposts PASS** at m₃/₂ × 1 (unmoved), **Δ₃ = −0.047, sq = 1e-3, boost = 1e4**: α_s = 0.1186 (+0.65σ), leak 0.018, m_T/H = 0.27, wino 0.698 TeV, gluino 5.39 TeV.
+    - Three knobs had to move, so this is **FIT**, not derived.
+  - **HAND pass** at the G2 edge (sq = 0.028), the G3 edge (boost = 3.65e3) and Δ₃ bisected to z = 0: G1, G2, G3 and G5 pass, but the **wino rises to 1.01 TeV (G4 FAIL)**.
+    - So G4 sets the tighter bound: **sq ≤ 1.2e-3** (only about 0.1% of F^T_vis may reach the gauginos).
+  - **The three things the UFE must now derive (each is a moved knob):**
+    1. **Seam:** Δ₃ ≈ −0.047, i.e. +0.047 from a derived non-universal term (T1, unchanged in size).
+    2. **Sequestering:** ≤ 1.2e-3 of the visible-cycle F-term reaches the gauginos. This is the LVS/D3 sequestered regime (mutation cube axis V or K), not a partial fix.
+    3. **Stabiliser:** volume mass ≥ 3.7e3 × the KKLT value (≥ ~5.7e11 GeV) during inflation (cube axis I or K).
+  - **Approximation:** m₃/₂ enters only through the gaugino thresholds (stated in the lock).
