@@ -21125,3 +21125,12 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
 - **D2104 (CENTRE, ancient-number lens; ANCIENT_NUMBERS_2026-11-22.md; tools/bloom/ancient_numbers.py; Danny 08:34): the Vedic and world cycle numbers are 2·3-smooth (×10ⁿ).**
   - STRUCTURE: they match the UFE's PSL(2, Z) = Z₂ * Z₃ and its Z₆ = Z₂ × Z₃ fold; j(i) = 1728 equals the Satya digits. Both come from 12³, so this is not independent.
   - NUMEROLOGY guide: the unique 3-smooth natural racetrack is **(8, 9)** (Størmer). It gives B/A = 0.194, ε = 0.17 and B1 natural at k = 3 (B = 0.205). To be locked before any credit.
+- **D2107 (CENTRE; PREREG_D2107; tools/seed/sonar_magnet.py, sonar/knob_log.txt): sonar-magnet v2 on T⁶/(Z₂×Z₂). NULL, with a structural finding.**
+  - Seeded with 44 PS islands (all catalogues).
+  - Pings were run at three settings: radius 1, radius 2 (two-integer moves), and hop depth 3 (passing through non-PS points, width 400).
+  - **No new PS model is reachable at any setting.**
+  - **The PS-consistent models are isolated islands, more than 3 wrapping steps apart.** χ-ladder moves break the visible stacks' SUSY.
+  - This extends D2080's "isolated point" to the whole catalogue.
+  - **Read:** local, pull-guided search cannot traverse this landscape; only exhaustive enumeration (the torus) maps it.
+  - The best pull is still the unified model: |Δα_s| = 0.0013, but loose exotics (score 5.71).
+  - **Knob changes** (time-stamped in knob_log.txt) were steering only. Cloud core 2 is reassigned to torus bands B4+.
