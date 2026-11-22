@@ -38,3 +38,16 @@
 | obias prior gate | cmix-obias: a PPMd prior on the byte-LSTM (g = 0.15) and a 23 kB offline fp16 correction head. **The details are not public on the model page** (they are in SUBMISSION.md, unreadable from here) | — | NULL for now; revisit if the source is attached |
 
 **Tick 3 verdict:** not null (3 hints; 1 NULL item).
+
+## Tick 4 (08:03Z): Wikipedia structure models (Mahoney's enwik8 test-data notes; cmix enwik9 preprocessing)
+| node | hint (source) | our status | try as |
+|---|---|---|---|
+| **revision-header node** | ~3.2% of enwik8 is outside `<text>`: XML headers and revision metadata. revision / contributor / timestamp fields repeat ~487k times in enwik9 | HDR node (off) | a field-aware header model: predict each field from the same field in the previous header (timestamps are near-monotone, ids increment). Re-test HDR with **field-delta contexts** instead of raw bytes |
+| **table / column node** | tables {…} ~2.5%, with separations of ~20–80 bytes "typical of tables"; US-township census articles form a highly compressible block | column node (on) | add a **row-stride context** (distance to the previous `\|-` / `\|` cell start) |
+| templates | {{…}} ~2.0% | markup + closing stack | a template-name context: the first word after `{{` keys the rest |
+| links | internal [[ ]] ~2.9%, external ~2.2%, language links ~2.4% | direction / class node | a link-target node: the hash of the text since `[[`, reset at `\|` or `]]` |
+| entities | `&…;` ~2.7%. cmix converts named entities and `&#xxx;` to UTF-8 (hent / hent5) before modelling | none | entity → UTF-8 transform in prep (cheap, reversible); same as tick-1 hint, now with a size estimate |
+| ordering | cmix enwik9 reorders articles by a fixed sequence; redirects are kept in a map | none | as tick 1 (needs an embedding) |
+| numbers | digits '1' and '0' each appear > 5M times in enwik9 | NUM node (off) | NUM with **digit-position-in-number** and **previous-number delta** contexts (years, coordinates) |
+
+**Tick 4 verdict:** not null (7 hints, sized by the share of enwik8 they cover).
