@@ -1,0 +1,115 @@
+{
+ "pulses": 74319,
+ "layer_margin_pulses": 817509,
+ "grid": [
+  {
+   "k": 0.5,
+   "h": 8,
+   "far": 0.0038813028358097587,
+   "mean_delay": 311.7,
+   "misses": 105,
+   "probes": 144,
+   "admissible": false
+  },
+  {
+   "k": 0.5,
+   "h": 12,
+   "far": 0.0021895783410335544,
+   "mean_delay": 383.5,
+   "misses": 137,
+   "probes": 144,
+   "admissible": false
+  },
+  {
+   "k": 0.5,
+   "h": 16,
+   "far": 0.0016440185979603894,
+   "mean_delay": 395.6,
+   "misses": 142,
+   "probes": 144,
+   "admissible": false
+  },
+  {
+   "k": 0.5,
+   "h": 24,
+   "far": 0.00109111948614633,
+   "mean_delay": 400.0,
+   "misses": 144,
+   "probes": 144,
+   "admissible": false
+  },
+  {
+   "k": 1.0,
+   "h": 8,
+   "far": 0.0027669420153172627,
+   "mean_delay": 383.1,
+   "misses": 137,
+   "probes": 144,
+   "admissible": false
+  },
+  {
+   "k": 1.0,
+   "h": 12,
+   "far": 0.0019180216976204542,
+   "mean_delay": 395.5,
+   "misses": 142,
+   "probes": 144,
+   "admissible": false
+  },
+  {
+   "k": 1.0,
+   "h": 16,
+   "far": 0.0014776595731667787,
+   "mean_delay": 400.0,
+   "misses": 144,
+   "probes": 144,
+   "admissible": false
+  },
+  {
+   "k": 1.0,
+   "h": 24,
+   "far": 0.0009932612362677353,
+   "mean_delay": 400.0,
+   "misses": 144,
+   "probes": 144,
+   "admissible": false
+  },
+  {
+   "k": 1.5,
+   "h": 8,
+   "far": 0.0024415633344709356,
+   "mean_delay": 394.9,
+   "misses": 142,
+   "probes": 144,
+   "admissible": false
+  },
+  {
+   "k": 1.5,
+   "h": 12,
+   "far": 0.001750439444703361,
+   "mean_delay": 400.0,
+   "misses": 144,
+   "probes": 144,
+   "admissible": false
+  },
+  {
+   "k": 1.5,
+   "h": 16,
+   "far": 0.0013700154983003244,
+   "mean_delay": 400.0,
+   "misses": 144,
+   "probes": 144,
+   "admissible": false
+  },
+  {
+   "k": 1.5,
+   "h": 24,
+   "far": 0.0009320998300936137,
+   "mean_delay": 400.0,
+   "misses": 144,
+   "probes": 144,
+   "admissible": false
+  }
+ ],
+ "start": null
+}

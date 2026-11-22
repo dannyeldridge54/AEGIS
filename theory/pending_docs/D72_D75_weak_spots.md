@@ -19677,3 +19677,26 @@ Corrections, each adopted:
   - "Calibrated" is replaced by "lens_core passes known-answer tests (B1 6/6)".
   - B2's comparison used atol 1e-2 against the locked 1e-6 (the stored angles are rounded). It is logged as a DEVIATION; it gets re-checked on unrounded angles.
   - B3 is "retrospective consistency, n = 2, null by definition". A real two-pulse determinism test is owed.
+
+## D1986 — the woven field: goalposts on all 9 nodes (Danny 19:01). PREREG_D1986 (9916a82c) plus DEVIATIONS 1–3
+**Built:**
+- tools/loom/goalposts.json: **61 goalposts** woven to the nodes (25 PRED, 14 NULL, 13 OPEN, 5 FIT, 2 BOUND, 2 TRUST).
+  - **16 big open problems** with clear goalposts: Λ, hierarchy, strong CP, baryogenesis, dark matter, H₀ (SH0ES 73.49 ± 0.93 vs 67.4 ± 0.5), S₈, evolving dark energy (DESI DR2: w₀ = −0.752 ± 0.057, w_a = −0.86 ± 0.22 with DESY5), Li-7, the neutron lifetime, unification, the flavour puzzle, the neutrino mass scale (Σm_ν < 64.2 meV), muon g − 2, horizon/flatness and monopoles.
+  - **11 live**: scored every pulse from the engine.
+- tools/loom/loom_rt2.py (engine v2) addresses referee D1985:
+  - bounded knobs;
+  - split visible;
+  - CUSUM;
+  - LOST hysteresis;
+  - online population-based tuning on self-injected probes;
+  - every node's referee scores its goalposts live;
+  - a strict DONE rule;
+  - A5 runaway bar.
+
+**O2 null calibration (5 training seeds × 5 s, 74,319 pulses): FAIL. No admissible detector config.**
+- False-alarm rate 0.9–3.9e-3 per margin-pulse against the ≤ 1e-5 bar. 105–144 of 144 probes missed.
+- Diagnosis on a development seed (diagnostic only, no scored run):
+  1. Every grid k (0.5–1.5) exceeds the probe's whitened drift (0.32 per pulse), so CUSUM cannot accumulate it.
+  2. The data margins' whitened residuals are over-dispersed (std 1.11–1.27) with heavy tails (P(\|w\| > 4) = 0.04–0.4 % against 0.006 % for a Gaussian).
+  3. The deterministic margins (quark window, M_N, split, gravitino box) have no data noise. Their sd falls to the 1e-6 floor, so the balancer's own second-order residuals read as huge z.
+- **The scored run was therefore not performed under D1986.** Seed 2026 is still unused. The fix is a new lock (D1987): a different detector design, not a retune of D1986.
