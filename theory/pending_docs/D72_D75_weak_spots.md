@@ -20419,3 +20419,15 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - warped-throat sequestering: disputed, open.
   - **Read:** v4's combination of high-scale dilaton inflation (H = 5.7e12 GeV), low m₃/₂ (2.6e5 GeV, AMSB wino) and a KKLT-stabilised visible D7 cycle sits on the known open problem of the field, the Kallosh–Linde / high-scale-inflation-with-low-SUSY problem.
   - **New cube axis to add (7th): high-scale SUSY**, m₃/₂ ≥ H/10 ≈ 6e11 GeV. That gives up the TeV wino and moves every gaugino threshold; α_s must then be recomputed. It is the one route the literature treats as consistent.
+- **D2043 (CENTRE; PREREG_D2043; theory/tests/d2043_highscale.py): the high-scale-SUSY axis FAILS on α_s.**
+  - At the KL minimum m₃/₂ = H/10 = 5.7e11 GeV:
+    - **mirage:** wino 2.7e10 GeV, gluino 5.5e10 GeV, giving α_s = 0.1005 (−19.5σ). The seam would need +0.268 in Δ₃.
+    - **pure AMSB:** wino 1.5e9 GeV, gluino 1.2e10 GeV, giving α_s = 0.1065 (−12.8σ). The seam would need +0.154.
+    - Higgsinos and scalars are left out, as stated in the lock.
+  - **Read:** the one route that cures Kallosh–Linde pushes the gauginos up, and that drives α_s further down.
+  - **In v4 the α_s seam and the inflation scale pull in opposite directions.** Every resolution found so far, and every one tested, makes α_s worse or needs an unbuilt construction.
+  - **This is the central structural tension of v4,** stronger than the original −4.2σ. It must be stated plainly in any write-up.
+  - **What could still rescue it:**
+    1. a derived non-universal seam term of +0.05 to +0.27 (T1: large, but explicit Z₆′ thresholds are O(10–30) in 1/α, D2023);
+    2. a lower inflation scale (r ≪ 5.4e-4), which means changing the plateau;
+    3. warped-throat sequestering (open).
