@@ -6,7 +6,7 @@ It also says which agents to wake: N0, node agents, the three axis agents (S, T,
 It decides nothing irreversible and runs nothing: it writes field_tests/loom/next_actions.{json,md}.
 Usage: python3 tools/loom/planner.py [round_file]"""
 import json, os, re, sys, glob
-HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
+HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.environ.get('AEGIS_ROOT') or os.path.abspath(os.path.join(HERE, '..', '..'))
 RANK = lambda s: 3 if s.startswith('LOCKED') and 'FIT' not in s else 2 if s.startswith('LOCKED-BY') else 1 if s.startswith('TRUST') else 0
 AXES = {'S': 'dilaton S (ln T_R, n_s, reheating)', 'T': 'volumes T (ln m3/2, KKLT, spectrum)', 'U': 'complex structure U (ln u, flavour rungs)'}
 AXIS_OF_FIT = {'MN': 'S', 'TR': 'S', 'm32': 'T', 'split': 'T', 'u': 'U', 'C': 'S', 'A': 'T'}

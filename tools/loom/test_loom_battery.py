@@ -88,7 +88,7 @@ def B4():
                     "import test_loom_battery as T; T.ROOT=%r; ok=all(T.B1().values()) and all(T.B2().values()) and all(T.B6().values())\n"
                     "import subprocess; r=[subprocess.run([sys.executable, os.path.join(%r, t)], capture_output=True, cwd=%r).returncode for t in ('test_planner.py','test_planner_2.py')]\n"
                     "print('PASS' if ok and not any(r) else 'KILLED')") % (os.path.join(d, 'loom'), ROOT, ROOT, ROOT, os.path.join(d, 'loom'), ROOT)
-            r = subprocess.run([sys.executable, '-c', code], capture_output=True, text=True, timeout=600)
+            r = subprocess.run([sys.executable, '-c', code], capture_output=True, text=True, timeout=600, env=dict(os.environ, AEGIS_ROOT=ROOT))
             res = (r.stdout.strip().splitlines() or ['KILLED'])[-1]
             if old == '__CONTROL__': out.setdefault('controls', {})[fn] = res; shutil.rmtree(d, ignore_errors=True); continue
             if res == 'PASS': survived.append(new)
