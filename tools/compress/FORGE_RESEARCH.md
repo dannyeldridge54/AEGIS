@@ -16,3 +16,15 @@
 | final calibration | **Tweedie / James–Stein calibration as the last layer**: +2.6–2.8% in their PPM setting; it **competes with SSE** (stacking hurt) | two APMs | `TWEEDIE` as an APM *substitute*, not an addition |
 
 **Tick 1 verdict:** not null (10 hints).
+
+## Tick 2 (07:52Z): CPU speed and memory (cmix-hp README; SIMD survey 1502.01916)
+| node | hint (source) | our status | try as |
+|---|---|---|---|
+| ppm/order nodes | **one large order-25 PPM model swapped to disk via mmap** (the "most substantial" cmix-hp change; slower) | hashed orders 0–6, TB24 in RAM | a disk-backed TB26+ rung if RAM caps us (the PC has more disk than RAM) |
+| mixer | **export fewer predictions to the final mixer; drop weak mixers** (speed; v3 restored two for compression) | MV bank of 8 shadows | prune shadows with near-zero selection (ledger) — a speed rung |
+| memory | rebalance memory toward the word model | equal TB per node | per-node TB sizes as knobs (word bigger) |
+| mixer maths | SIMD dot products (AVX2) for the mixers (1502.01916; paq8px uses SSE2/AVX2) | scalar C loops | `-O3 -march=native` first, then intrinsics — a speed ladder to null |
+| build | PGO + LTO single build with a shipped profile (cmix-obias, tick 0) | plain -O2 | `-fprofile-generate/-use`, bit-exact check |
+| **result folded in** | **D2025 PASS: clocked ring bus (RCTX) −0.20% / −0.21% on 1 MB / 3 MB; bypass traces nothing at scale** | — | next build: RCTX on, SKIP off |
+
+**Tick 2 verdict:** not null (5 hints + 1 result).
