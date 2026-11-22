@@ -20453,3 +20453,9 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Two of three B0c routes are now closed** (generic flux: D2044; PFV: D2045). The one left is a **discrete symmetry** forcing W₀ = 0, plus a non-perturbative source.
   - Otherwise the geometry itself must mutate. Add an **8th cube axis G:** the rigid Z₆-II orbifold vs a Calabi–Yau with h²¹ ≥ 2 near LCS. That gives up "U frozen at ρ" (D1922) and the χ = 48 counting.
 - **D2045a (integrity note):** the PREREG_D2045 file was written **after** the paper was read, and committed together with the result. It is a record of the decision rule, not a true lock. The verdict rests only on conditions the paper states explicitly (LCS instantons; two moduli in practice; τ fixed by instantons). The order is disclosed so the verdict carries no lock credit.
+- **D2046 (CENTRE; PREREG_D2046): W₀ from a symmetric W = 0 flux vacuum at ρ plus an S-instanton B·e^{2πikS}. FAIL, narrowly, by the locked natural window 0.1 ≤ |B| ≤ 10.**
+  - At Im S = √3/2: k = 3 needs B = 0.069 (×1.45 below the window); k = 4 needs B = 15.9 (×1.6 above).
+  - No integer k lands inside the window. Look-elsewhere p = 0.85, so even a hit would carry no evidence.
+  - **The window is not widened after the fact** (no loosening). Read: this mechanism is **marginal, not natural** at v4's ρ vacuum. It needs a one-loop prefactor of ~0.07 (k = 3) or ~16 (k = 4), which only a computed instanton determinant could justify.
+  - **All three B0c routes are now FAIL or marginal:** generic flux (D2044), PFV (D2045), symmetric vacuum plus instanton (D2046).
+  - W₀ = 5.6e-9 joins the structural list as **unexplained**, unless a derived prefactor B ≈ 0.07 at k = 3 is shown.
