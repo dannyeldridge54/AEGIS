@@ -200,3 +200,20 @@ To be built: tools/weave_knobs.py, a central-equation engine. It wraps the score
 - The missing piece must be **non-universal** and added by hand: threshold states, twisted sectors, or split stacks with f₃ ≠ f₂.
 - **Correction (D1938a):** this test had no power, because every reading was structurally zero. "Favours the split" is **withdrawn**.
 - **Model caveat (D1942):** α_s is a test only under the single-visible-stack assumption. With split stacks (D1940) unification is not predicted, and α_s becomes a fit (A₃/A₂ ≈ 0.75).
+
+## 9. The branching layer (Danny 18:10): every moment splits; the versions are branches of one wavefunction (CANDIDATE, D1977)
+**The equation.** The whole state is one wavefunction of the field. It splits into branches that stop interfering (decoherence). Each branch is one "version" of the world, and each lives on one vacuum b of the landscape (one choice of discrete data):
+
+    |Ψ(t)⟩ = Σ_b Σ_h  c_{b,h}(t) |vacuum b⟩ ⊗ |history h⟩,      weight of a branch = |c_{b,h}|²  (Born rule)
+    vacuum b = (fold, N, χ, fluxes (4, 4, 8), θ-step n, knot choices ρ/i, stack layout …)   ← the discrete knobs
+    within a vacuum: the continuous knobs (S, T, U axes) evolve by the same UFE (§2–§8)
+
+**The ripples.** An action now (a measurement, a choice) entangles with its surroundings and splits the branch. The branches then **do not interact**: decoherence suppresses interference between them exponentially. So in standard quantum mechanics a ripple stays inside its own branch.
+
+**What adds adjustability without adding fake freedom.** The discrete data (N, χ, fluxes, n, the stack layout) are exactly the choices that distinguish one branch-vacuum from another. The adjustable part of the branching layer is therefore the **ensemble over the discrete knobs**, scored by how many branches look like ours (typicality). It is not a new set of continuous knobs. Each discrete choice counts as a trial (C9, look-elsewhere), so the ensemble also tells us how special our branch is.
+
+**Tests:**
+1. **Typicality:** enumerate the discrete choices the Weave allows. Compute the observables in each. Report the fraction that reproduces our data.
+   - A small fraction with a natural measure means our branch is special, which counts against the model.
+   - A large fraction means it is generic.
+2. **Interference between branches:** standard quantum mechanics says it is unobservable. Any claim that ripples cross between branches would need a measurable departure from the Born rule. Laboratory Born-rule tests (three-slit / Sorkin parameter, |κ| < ~1e-3) bound this.

@@ -19446,3 +19446,14 @@ Every check catches the mistake it was built for:
   - n_s is the one hold-out the other data predict correctly.
 - **COMPASS:** method row: false-balance PASS, coverage borderline. T_R arrow ↑, to about 1.5e9 (a cosmology node move; it needs a derived x-chain). α_s stays the outlier on the S–T seam.
 - **REVIEW:** this is the first test today that is both **powered** and run on real data. It points at the same place as every referee: the α_s seam.
+
+## D1977 — the branching layer (Danny 18:10: every moment splits into many versions; add it with the same adjustabilities). CANDIDATE
+- **Written as UFE §9:** one wavefunction, |Ψ⟩ = Σ_b,h c_{b,h} |vacuum b⟩ ⊗ |history h⟩, with Born weights.
+  - The branches are many-worlds branches (Everett), and each sits on one landscape vacuum b.
+  - b is labelled by the discrete knobs (fold, N, χ, fluxes, n, knots, stack layout). The continuous S/T/U axes evolve by the same UFE inside each branch.
+- **Physics caveats:**
+  - Many-worlds adds **no new dynamical equation**; it is the same Schrödinger evolution, so it predicts nothing new by itself.
+  - Decoherence makes the branches non-interacting, so ripples stay inside their own branch.
+  - Cross-branch effects would show up as Born-rule violations, which three-slit tests bound at about 1e-3 (Sinha et al. 2010; literature value, to be source-checked).
+- **The adjustable part, done honestly:** the ensemble over the discrete knobs, scored by **typicality**. This adds no free continuous knobs (it respects D1974/D1976: more knobs means less evidence), and every discrete choice counts as a trial.
+- **Next (to lock):** enumerate the Weave's allowed discrete choices (N ∈ {5..8}, χ by lattice, fluxes, n ∈ {2,3,4}, the ρ/i assignments, single vs split stacks). Run the scoreboard for each and report the fraction matching our data.
