@@ -7,6 +7,10 @@
 **Naming:** `tools/<problem>/<tool><version>.<ext>`.
 - Knob settings that define a "build" are written in the row (an env line), so any result can be reproduced.
 
+## Names (Danny 00:55, 22 Nov)
+- **The Unified Field Bloom (UFB):** the UFE derivation toolkit. It lives in tools/bloom (bloom.py, bloom_data.json, BLOOM.md) and tools/loom (core standard, loomcore, derivation_agents).
+- **The Forge:** the compressor, tools/compress (loomz v1–v19). It is **paused**.
+
 ## 0. Core field engines (the Loom: the UFE as a self-balancing field)
 | tool | what it is | status | notes |
 |---|---|---|---|

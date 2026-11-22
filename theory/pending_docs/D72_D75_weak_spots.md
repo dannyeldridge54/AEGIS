@@ -20177,3 +20177,25 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - Datasets were added per agent (Danny 00:42): 21 tracked datasets with the observable, our value and its role. Among them: Planck PR3/PR4, ACT DR6, SPT-3G, BK18/LiteBIRD/CMB-S4, BBN, PDG α_s, ATLAS/CMS wino/gluino, Super-K/Hyper-K, NuFIT/JUNO, DESI DR2/DR3, Pantheon+/Union3/DES-Y5, clocks/Oklo, MICROSCOPE/Cassini, LZ/XENONnT.
   - Each dataset is triangulated from 3 sources before scoring; only post-lock releases count as strict evidence.
 - **D2023b (correction):** the count in D2023a is **20** datasets, not 21.
+
+- **D2024 (FORGE; result of PREREG_D2024): esoteric ring systems.** Slice: enwik8 [30, 31) MB.
+  - BASE (original 3 rings) = 220,851 bytes.
+  - **E4 (Platonic elements):** 221,105; random controls 221,066 / 221,180 / 221,166. **NULL.**
+  - **W5 (Wu Xing):** 220,853; random controls 221,140 / 221,029 / 221,149. It beats all 3 random controls by ≥ 0.08% but only ties BASE (+2 bytes). **NULL** by the rule.
+  - **G3 (gunas):** 221,005; random controls 221,220 / 221,015 / 221,193. It beats all 3 random controls by only 10 bytes, and is worse than BASE. **NULL.**
+  - **Y2 (yin/yang):** 222,007; random controls 221,751 / 221,601 / 221,770. **NULL.**
+  - Deviation: the test bed was the TB22 build of loomz17, not TB24. It was the same binary for every arm, so the comparison holds.
+  - The round-trip of the best arm was paused mid-way (Forge pause, Danny 00:55).
+  - Read: the traditions work as labels. Wu Xing's five-phase cycle is the only grouping that structures the field better than chance, and it only matches our design.
+- **D2025 (FORGE): circuit wiring, bypass traces + clocked bus.** Locked; **PAUSED before scoring** (Danny 00:55).
+  - The d200k sanity check (not scored) gave −0.38%.
+  - Resume by sending SIGCONT to the frozen PIDs and running d2025.sh.
+  - loomz19 (HG comparator gates from GLN; CONF confidence-keyed multiplexer from StateSMix) is unlocked and unscored. On d200k it was worse (+0.14% / +0.19%).
+- **D2026 (CENTRE): the Unified Field Bloom v1** (tools/bloom). It is the UFE derivation engine, with one target and 7 lenses per node, and every Forge lesson made an engine rule (BLOOM.md).
+  - **Target:** lnL = −9.43, k = 8, N = 18, lnL − BIC = −21.0. The whole deficit is α_s (−4.22σ).
+  - **Ladder lens: the Δ₃ ladder is not converged.** The last step is 1.27× the gap still needed. With that step as the theory error, z = −0.77. This is a gap, not a pass, and T1 (explicit thresholds) is the deciding rung.
+  - **T1 demo:** a free Δ₃ knob gives α_s = 0.1183 and is labelled **FIT**.
+  - **Shadow and tension:** n_s gives −0.81σ (+DESI) vs +0.73σ (CMB-SPA alone); the two datasets are 1.09σ apart.
+  - Goodness of fit p = 0.0009. Injection recovered. Hygiene OK.
+  - Missing: the Δ₃ → wino Jacobian (D1937a).
+  - α_s triangulation: 1 of 3 sources so far (PDG 2025 unchanged, 0.1180 ± 0.0009).
