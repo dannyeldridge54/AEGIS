@@ -21392,3 +21392,22 @@ The D2116 "K7 MARGINAL, ctrl ≥ 0.32" verdict and the D2116 settled-state table
 | T7 (report only) | U(1)_x³ = 0 for all stacks. The mixed Abelian anomalies need generalised Chern–Simons terms (hep-th/0605225); not computed |
 
 **Verdict:** checklist item 4 PASS.
+
+## D2123 (DEEP, ping-pong item 9): robustness of the coupling-matching FAIL. **FAIL (robust).** Locked, run once.
+Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar conversion, M_SUSY = 1 and 10 TeV, exotics at M_s/100, softer v bounds, and the reading dependence.
+
+**Minimum ctrl by case:**
+
+| Case | Min ctrl | Controlled? |
+|---|---|---|
+| R0 1-loop | 0.819 | no |
+| R1 2-loop, 1 TeV | 0.800 | no |
+| R2 2-loop, 10 TeV | 0.780 | no |
+| R3 + exotics at M_s/100 | 0.811 | no |
+| R4 v ≥ ½ | 0.800 | no |
+| R5 v ≥ ¼ | 0.800 | no |
+| R6 reading B (demoted) | 0.261 | yes |
+
+- In every primary case, M_s ≈ 8e12 GeV.
+- Relaxing the bound on v does not help: the minimum moves off the v₂ boundary and stays at 0.80.
+- **The FAIL is robust** against running order, SUSY scale, intermediate exotics and the geometric bound. Only the disfavoured threshold reading (B) would pass. **The FAIL rests on the source paper's SU(2) threshold formula**, with the two-typo reading that makes it match the paper's own asymptote.
