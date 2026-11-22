@@ -1,0 +1,14 @@
+# PREREG D2016: 16-bit probability resolution and bigger node tables. Locked before scoring.
+- **Engine:** loomz14 = D2014 combined, plus 16-bit lens outputs and a 16-bit arithmetic coder.
+  - PMIN (the probability floor) = 16/65536, versus 1/4096 before.
+  - TB = 22, 23 or 24 (4M, 8M or 16M slots per node).
+- **Slice:** K = enwik8 [20, 23) MB, never used.
+- **Runs:**
+  - v13 combined (the reference);
+  - v14 at TB 22, 23 and 24;
+  - v14 at TB 22 with PMIN = 4.
+- **Keep rule:**
+  - 16-bit is kept if v14 TB22 is ≥ 0.03% smaller than v13.
+  - Each bigger table is kept if it is ≥ 0.03% smaller than the next size down.
+  - Report seconds and peak RAM.
+- The best variant must round-trip.
