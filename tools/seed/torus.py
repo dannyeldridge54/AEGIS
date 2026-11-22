@@ -6,7 +6,7 @@ import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from fractions import Fraction as Fr
 import seed_v3 as s, exotics as e, seed_v4_ps as P
-D = os.path.join(HERE, 'torus'); CAT = os.path.join(D, 'catalog.jsonl'); ST = os.path.join(D, 'state.json'); T_END = time.time() + 110*60
+D = os.environ.get('TORUS_DIR', os.path.join(HERE, 'torus')); CAT = os.path.join(D, 'catalog.jsonl'); ST = os.path.join(D, 'state.json'); T_END = time.time() + 110*60
 def fit(Wa, Wb, Wc):
     VY = 2/3*Wa + Wc; det = Wb*P.bY/(2*math.pi) - VY*P.b2/(2*math.pi)
     return (P.inv2*P.bY/(2*math.pi) - P.invY*P.b2/(2*math.pi))/det, 91.19*math.exp((Wb*P.invY - VY*P.inv2)/det)
@@ -57,7 +57,7 @@ def ps_triples(S, chi, t0, budget):
         for ic in np.nonzero(ACm[ia])[0]:
             if ic not in (ia, ib): yield S[ia], S[ib], S[ic]
 def load():
-    st = json.load(open(ST)) if os.path.exists(ST) else dict(done_scan={}, band_idx=0, phase='OUT1', history=[], null_streak=0, best=None)
+    st = json.load(open(ST)) if os.path.exists(ST) else dict(done_scan={}, band_idx=int(os.environ.get('START_BAND', '1')) - 1, phase='OUT1', history=[], null_streak=0, best=None)
     cat = [json.loads(l) for l in open(CAT)] if os.path.exists(CAT) else []
     return st, cat
 def save(st): json.dump(st, open(ST, 'w'), indent=1)
