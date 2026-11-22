@@ -20330,3 +20330,19 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Read:** the Bloom scores were computed with these terms as written; the filters say those numbers are not yet self-consistent.
     - **The scoreboard stays as recorded. No silent edits.**
     - Two new owed steps, filed before T1: **B0a**, mirage recompute of the soft spectrum; **B0b**, a volume stabiliser that survives H ~ 6e12 GeV (a KL-type racetrack or a heavy sector).
+- **D2037 (CENTRE; result of PREREG_D2037; theory/tests/d2037_b0.py): B0a and B0b both FAIL. The fix has to be structural.**
+  - **B0a (mirage spectrum, one-loop estimate):**
+    - M₀ = m₃/₂/(at) = 12.2 TeV against an anomaly unit of 1.63 TeV.
+    - Wino 10.8–12.1 TeV; gluino 24.7–35.6 TeV; bino 3.5–8.0 TeV (the two relative signs).
+    - Moving the gaugino thresholds there (with α₁, α₂ held) gives α_s = **0.1077–0.1095** (−11.5 / −9.4σ). **The self-consistent soft spectrum makes the α_s seam worse, not better.**
+    - New issue: a 3.5–8 TeV bino LSP would overclose thermally, so it needs R-parity violation or dilution.
+  - **B0b (KL racetrack on T_vis):**
+    - m_T ~ a²A e^{−x} M_P/√(2σ) ≈ **1.6e8 GeV**, against H_inf = 5.7e12 GeV (×2.7e-5). **FAIL.**
+    - The visible gauge coupling pins σ ≈ 20, so the non-perturbative scale on that cycle is far too small to shield it from H.
+  - **Read:** v4's single-condensate-on-the-visible-cycle design cannot hold both pure-AMSB gauginos and high-scale dilaton inflation.
+  - **Fix menu (researched, none tested):**
+    1. **Sequestered visible sector:** visible on D3s at a singularity in LVS, giving gaugino masses ~ m₃/₂²/M_P plus anomaly (0906.3297, 1603.05845). Cost: f_vis loses T_vis; it becomes S only.
+    2. **Decouple H from m₃/₂:** the high-scale-inflation-with-low-energy-SUSY constructions (He–Kachru–Westphal 1003.4265; 1001.0664; 1012.2187).
+    3. **Flux-scaling stabilisation** of the Kähler moduli at a high scale (1503.07634).
+    4. **Accept mirage:** recompute every threshold. α_s then needs Δ₃ ≈ +0.09 to +0.12 from T1, a larger seam.
+  - Each route gets its own lock before any number is used.

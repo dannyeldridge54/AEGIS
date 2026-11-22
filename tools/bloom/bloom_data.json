@@ -490,7 +490,8 @@
     "gluino",
     "alpha_s",
     "proton"
-   ]
+   ],
+   "B0a": "D2037: mirage spectrum (one-loop estimate) wino 10.8-12.1 TeV, gluino 24.7-35.6 TeV, bino 3.5-8.0 TeV; alpha_s falls to 0.1077-0.1095 (-11.5 / -9.4 sigma). FAIL: the self-consistent spectrum makes the alpha_s seam worse"
   },
   {
    "id": "F-KL",
@@ -502,7 +503,8 @@
     "r",
     "running",
     "dNeff"
-   ]
+   ],
+   "B0b": "D2037: KL racetrack on T_vis gives m_T ~ 1.6e8 GeV << H_inf 5.7e12 (x2.7e-5). FAIL: sigma is pinned by the visible gauge coupling, so no racetrack on that cycle can protect it"
   }
  ]
 }
