@@ -19897,3 +19897,38 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - Lower layers: smallest p = 0.039 (6th layer) and 0.049 (2nd layer). Neither survives Bonferroni (m = 11, α = 0.0045).
   - Ones digit vs baseline: p = 0.71.
 - **Verdict:** NULL. No Rodin filter keeps Mersenne exponents more often than ordinary primes. The digit layers carry no targeting signal beyond "p is prime". So the Rodin rules are not used for targeting.
+
+## D2006 — Loom compressor: first scored run on enwik8 (PREREG_D2006). CENTRE
+- **loomz v1** (two-way nodes, gated mixers, two SSE lenses): enwik8 → **20,923,436 bytes (1.674 bpc)**.
+  - 446 s to compress and 470 s to decompress, on 1 core.
+  - **Round-trip exact.**
+- Baselines on the same file: xz -9e 24,831,648 (165 s); bzip2 -9 29,008,758; gzip -9 36,445,248. **16% smaller than xz.**
+- **Hutter scale:** the record is 100,424,672 on enwik9, about 0.80 bpc. We are at about 1.67 bpc, so roughly 2× off.
+  - Time projection to enwik9: about 1.3 h per pass (v1), or about 4.7 h (v4 at 17 s/MB). Both fit the 50 h box.
+- **Dev versions (tuned on the first 1–2 MB; labelled dev, not scored):**
+  - v2: spins + axes, −0.36%.
+  - Sweep findings:
+    - the word node is worth 3.2%;
+    - the match node 0.9%;
+    - the lenses 1.0%;
+    - spins as raw mixer inputs **hurt** by 1.2% (dilution).
+  - v4: fractal per-node and per-ring mixers fixed the dilution. Spins now about neutral; 226,379 on 1 MB (−1.13% vs v2).
+  - On a 20 MB slice v4 gives 4,203,120 vs xz 5,287,148.
+  - The entity transform gains only 0.06%.
+
+## D2007 — Letters on their Phoenician ancestor points as a compression node. PREREG_D2007. CENTRE
+- Held-out slice H = enwik8 [50 MB, 53 MB). The class node replaces the sparse node.
+
+  | map | bytes |
+  |---|---|
+  | NONE | 675,175 |
+  | **PHOEN** | **674,645** |
+  | RAND1 | 674,581 |
+  | RAND2 | 674,645 |
+  | RAND3 | 674,594 |
+  | PHON | 674,152 |
+  | **VC** | **673,778** |
+
+- PHOEN round-trip OK.
+- **Verdict (as locked):** PHOEN beats NONE by 0.08%, but it is **not smaller than all three random partitions**: it ties RAND2 and loses to RAND1 and RAND3. **Letter ancestry carries no extra structure. NULL.**
+- What does help is a *coarse* class node: vowel/consonant is best (−0.21%), then phonetic (−0.15%). Fewer, broader points beat 20 fine ones.
