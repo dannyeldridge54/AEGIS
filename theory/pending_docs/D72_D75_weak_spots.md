@@ -20012,3 +20012,14 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - the final mixer ~1.65 (~0.013 bpc before the lens);
   - after the lens, 1.61–1.87.
 - **Tuning by poking each node's gain (tune.py, 1 MB slice T):** in progress. o0 and o1 are both flat (±0.02%).
+
+## D2012 — Negative-space (inward) nodes: closing stack N1 and gap N2. PREREG_D2012. CENTRE
+- Slice F (3 MB):
+  - base 682,049;
+  - +N1: 677,557 (−0.66%);
+  - +N2: 677,910 (−0.61%);
+  - **+N1+N2: 677,369 (−0.69%)**.
+- Round-trip OK.
+- **Verdict: PASS.** It is the largest gain from any new node tonight, about twice the direction node.
+- N1 and N2 overlap: each alone gets most of the gain. N1 (what is owed) is slightly stronger than N2 (how long it has waited).
+- This confirms the lens-review postulate: an independent kind of information (what must come back) pays.
