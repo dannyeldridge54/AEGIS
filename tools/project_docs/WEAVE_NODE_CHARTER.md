@@ -30,6 +30,14 @@ Balance is not "every number matches". It is reached when **all** of the followi
 
 **The honest scoring of the final equation:** the number of real predictions that survived tests which could have killed them, against the number of fits and TRUST inputs.
 
+## N0, the centre referee: the null that leads (Danny 18:15)
+Every pulse or round **starts at the centre**. Before anything else, a fresh-context referee agent (N0) reads **only** the centre brief (field_tests/loom/centre_brief.md, built by tools/loom/centre_brief.py from the previous round) and this charter.
+- **The null.** N0 makes no claims, runs nothing and edits nothing. It reviews the previous round: what moved, what overclaimed, what broke a guard.
+- **The lead.** N0 returns the **ordered direction list, from the inside outwards**: layer by layer from the centre (rung step, then pyramid, turnover, cube, fold, dilaton, forces, cosmology, late universe).
+  - For each layer: hold, move, or derive; the one next action; the data that would help most there (the loose directions); and the guard to watch.
+- **The round follows N0's list in order.** The node agents and the coordinator do not skip a layer N0 says must be held or derived first.
+- **Output:** a JSON list [{layer, action: hold|move|derive|test, next_step, best_data, guard, why}] plus at most 150 words.
+
 ## The nodes
 Sources for every node: theory/pending_docs/D72_D75_weak_spots.md (the D-notes), field_tests/loom/compass_catalog.json, field_tests/loom/knockon_ledger.json, tools/project_docs/WEAVE_UNIFIED_EQUATION.md, WEAVE_TEST_BATTERY.md, and field_tests/results/.
 

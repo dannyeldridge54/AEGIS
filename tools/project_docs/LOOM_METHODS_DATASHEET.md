@@ -76,6 +76,7 @@ Status:
 | F2 | Adversarial referee | Tries to rescue the model first, then judges | D1923 | Narrowed the quark blocker | T | Red-team link |
 | F3 | **Node agents** | One read-only agent per node of the equation, reporting in a fixed JSON schema | WEAVE_NODE_CHARTER.md | 9 nodes; found shared bottlenecks (U₃, m₃/₂ tuning, fits counted as passes) | T | **The CubeMind pattern: one sub-agent per link** |
 | F4 | Balance board and endpoint | Merge the node reports, check, choose moves that do not strain other nodes | WEAVE_BALANCE_BOARD.md | 0/9 balanced, stated honestly | U | Consensus dashboard |
+| F6 | **Centre referee N0, the null that leads** (Danny 18:15) | Opens every round. It reviews the previous round from a compact brief (centre_brief.py), claims nothing, and sets the ordered inside-out direction list the round follows | WEAVE_NODE_CHARTER.md, tools/loom/centre_brief.py | New | U | A lead link that sequences all the other links |
 | F5 | **Anti-gaming guards G-T1–G-T6** | Relabelling is not progress; the TRUST/FIT count may not rise; killable predictions may not fall | the charter | Closed the "relabel everything TRUST" loophole (D1971) | T | Goal-hacking guard |
 
 ## G. Cadence and cost
@@ -110,6 +111,7 @@ Status:
 
 ## Per-round checklist (the current method in one pass)
 1. **Schedule the next round first** (G1).
+1b. **Centre referee N0** (F6): build the centre brief, then N0 reviews it and returns the inside-out direction list. The round follows that list.
 2. **Read the board, the compass and the ledger.** Pick the moves with the highest information gain (B6, D6).
 3. **For each move:**
    - lock it (A1);
