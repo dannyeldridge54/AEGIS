@@ -19865,3 +19865,19 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
 - Angeltveit: neighbourhood gluing for ≤ 41, about 3 CPU-years.
 
 **Next:** the degree-4 gluing search (lock first). Each new vertex attaches to a disjoint independent set of H, since H is 8-regular and degrees are ≤ 9. The union of any 2 attachment sets must hit every independent 8-set of H, any 3 must hit every independent 7-set, and all 4 every independent 6-set. Before running it, check the literature for whether this case was already excluded.
+
+## D2003 — R(3,10): the degree-4 case is empty (two independent methods). PREREG_D2002 result. DEEP
+- **Method 1, exhaustive gluing (glue4.c, as locked):** part 0 tried 11,766 A₁ sets and 1,169,602 partner pairs; part 1 tried 11,766 and 1,144,308. **0 solutions.**
+  - Positive control at K = 12: 2,903,170 solutions in 60 s. The first 3 were glued and passed verify.py (α = 11).
+  - The planted-solution unit test agreed with verify.py on 150 of 150 instances, two-sided (α 11 → minK 12, α 12 → minK 13).
+- **Method 2, SAT (sat_deg4.py, PySAT/CaDiCaL; added after the lock as an extra check, not a rerun):**
+  - H and its independent sets are rebuilt in pure Python, independent of the C code (I₆ = 22995, I₇ = 13760, I₈ = 3360, matching hcount.c).
+  - Constraints: disjoint, independent A's with 3 ≤ |A| ≤ 8; for each j-set, no (K − j) of the A's may all miss it.
+  - **K = 10: UNSAT** (1,388 variables, 101,421 clauses, 13.2 s).
+  - Controls: K = 11 SAT. The witness was glued to a 40-vertex graph and verify.py gives triangle-free, α = 10, VALID. K = 12 SAT.
+- **Result (computed):** a triangle-free 40-vertex graph with α ≤ 9 has **no vertex of degree 4**. So δ ≥ 5, and the D2001 compositions with n₄ > 0 are removed.
+- **Literature check:**
+  - arXiv 2601.03572 proves δ ≥ 4 unconditionally, and δ ≥ 6 only under diameter 2.
+  - Angeltveit (2401.00392) glues R(3,9,35) only for the 41-vertex bound.
+  - Neither states the 40-vertex degree-4 exclusion. Novelty is **not yet claimed**: the Goedgebeur–Radziszowski 2013 computations may cover it implicitly. Referee pending.
+- **Does not settle R(3,10).** Next: degree 5, where the dual neighbourhood is a 34-vertex (3,9)-graph. That needs the R(3,9,34) list, which we don't have; its size is in GR 2013 Table 1.

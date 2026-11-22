@@ -16,3 +16,4 @@ N=22 K=7 seed=3 found=yes secs=.041492253 seed 3 done steps 2854 pulses 0 final 
 N=9 K=4 seed=1 found=no secs=14.592399658 seed 1 done steps 52458073 pulses 21 final 1 best 1
 N=14 K=5 seed=1 found=no secs=14.984492431 seed 1 done steps 34361730 pulses 14 final 24 best 6
 N=18 K=6 seed=1 found=no secs=14.976440280 seed 1 done steps 5797440 pulses 2 final 6 best 6
+N=35 K=9 seed=1 found=no secs=749.167974960 seed 1 t=720s steps 26535162 pulses 10 score 27 best 27 T 0.079
