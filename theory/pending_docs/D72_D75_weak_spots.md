@@ -20584,3 +20584,22 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - Q4 CANDIDATE (1/12 flux);
     - Q5 OPEN (merged with Q4);
     - Q6 needs F-theory.
+- **D2059 (CENTRE; PREREG_D2059): flux quanta for magnetised branes. ALLOWED in principle, by the locked rule.**
+  - Worldvolume fluxes are integers m ∈ Z (Dirac), but the **target-space fluxes are rational, p = m/n**, through the winding numbers (0709.2799: "p = (W⁻¹)(W⁻¹)m ∈ Q").
+  - A product of torus fluxes such as p₁p₂ = 1/12 follows directly from windings (3, 4) with m = 1.
+  - **Conditions (owed):** multiply-wound branes rescale their gauge kinetic function (f ∝ n₁n₂n₃) and change chirality and the tadpole. The 1/12 step must be checked against α_G⁻¹ = 27.94 and three families.
+- **D2060 (CENTRE): one pass over everything left (Danny 02:57 "do them all one pass").**
+  - **Q4 (T1):** CANDIDATE now has a mechanism: winding-induced 1/12 hypercharge flux gives +0.0458 (D2057 + D2059). **Owed:** the winding (3, 4) brane must still give α_G⁻¹ = 27.94 and three families.
+  - **Q1 (mirage), all D3 routes: FAIL.**
+    - D3-branes (warped or at a singularity) have f_vis = S + c·T_blow. The blow-up mode is collapsed at a singularity, so Re f ≈ Re S = 1/g_s ≈ 0.87 at ρ: strong coupling.
+    - Every sequestered D3 model in the literature uses weak coupling (Re S ≳ 10). **Sequestering D3s and S = ρ are incompatible.**
+    - **New branch, recorded not claimed: accept mirage.** It needs a seam shift of +0.09 to +0.12. The **1/6** fractional step gives **+0.0917** (windings 2 × 3), inside that range.
+    - **Costs:** the wino goes to 10–12 TeV, so the T_R-box bar (0.66–0.70 TeV) and the wino term must be redone, and a 3.5–8 TeV bino LSP must be diluted or decay (RPV).
+    - **Two branches now stand:**
+      - **(A) pure-AMSB + sequestering:** no mechanism at ρ;
+      - **(B) mirage + 1/6 flux:** consistent in α_s, open in relics.
+  - **Q2 (KL):** CONDITIONAL, unchanged. The two-stage −β(T+T̄)|X|² coupling must be written for an S inflaton.
+  - **Q3 (W₀):** still unexplained, after four routes.
+  - **Q5 (tadpole):** blocked until the brane configuration is written. Q4's winding (3, 4) or (2, 3) brane is now the concrete input.
+  - **Q6 (g_s):** F-theory required (fact).
+  - **The single next task that serves Q4, Q5 and branch B:** write the explicit brane stacks (windings, fluxes) on Z₆-II/ΩR with the 1/12 or 1/6 hypercharge step. Then check α_G, the families and the tadpole in one script.

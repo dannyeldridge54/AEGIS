@@ -13,7 +13,9 @@
 - **STALL:** 7 consecutive ticks with no new lead and no closed item → report, and wait for Danny.
 - **Danny's live messages always come first.**
 
-## Queue (open items, in order). Tick log: tick 1 = D2054 (Q1, partial); tick 2 = D2055 (Q2, CONDITIONAL); tick 3 = D2056 (Q3, FAIL; no-progress count 1); tick 4 = D2057 (Q4, CANDIDATE; count 0); tick 5 = D2058 (Q5 merged, Q6 fact; first full pass done)
+## NEXT TASK (serves Q4, Q5 and branch B): write the explicit brane stacks (windings, fluxes) on Z₆-II/ΩR with the 1/12 or 1/6 hypercharge step; check α_G⁻¹ = 27.94, three families and the tadpole in one script.
+
+## Queue (open items, in order). Tick log: tick 1 = D2054 (Q1, partial); tick 2 = D2055 (Q2, CONDITIONAL); tick 3 = D2056 (Q3, FAIL; no-progress count 1); tick 4 = D2057 (Q4, CANDIDATE; count 0); tick 5 = D2058 (Q5 merged, Q6 fact; first full pass done); tick 6 = D2059 + D2060 (all-in-one pass: 1/12 flux ALLOWED via windings; D3 routes FAIL; branch B = mirage + 1/6 flux)
 | # | item | current state | first move |
 |---|---|---|---|
 | Q1 | **mirage** (F^T_vis feeds gauginos at m₃/₂/x ≈ 12 TeV) | FAIL; the tether is void (D2051a); warped D3 incompatible with S = ρ (α_G⁻¹ = 0.87, D2054) | next: the D3-at-singularity twisted f (f = S + c·T_blow); otherwise fold mirage into Q4 |
