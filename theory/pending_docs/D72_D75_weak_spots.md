@@ -20491,3 +20491,16 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Cross-check owed** (lens: centre balance), **likely serious:** Re f_vis then contains t₁ − t₂ ≈ ln(A₁/A₂)/a = O(1) instead of σ_vis = 20.15. The visible gauge coupling would come mostly from 9S. That is the "f_vis ≈ S" mutation (cube axis V), so α_G = 1/28 and the whole gauge chain must be recomputed.
   - Geometry: a D7 on a divisor *difference* is not automatically holomorphic. Not claimed.
   - **Kallosh–Linde is untouched** by this mechanism.
+- **D2051 (CENTRE; PREREG_D2051; theory/tests/d2051_tether.py): Danny's opposed tethers, realised with v4's own dark cycle. PASS(coupling) and PASS(leak). Conditional on geometry.**
+  - **Mutation:** f_vis' = **T_dark − T_vis + 9S**.
+  - v4 already has σ_d = 40.3 = 2σ_vis on SU(12) = 2 × 6. So:
+    - (a) α_G'⁻¹ = σ_d − σ_v + 9 Re S = **27.944, identical to v4** (PASS);
+    - (b) x_d = 2πσ_d/12 = **21.101 = x_v**, so the two cycles' F-terms ≈ m₃/₂/x **cancel exactly at leading order**;
+    - (c) the residual comes only from the prefactors: the sequestering bound holds for **A_d/A_v ∈ [0.64, 1.57]** (a natural ×2.5 window containing 1) (PASS).
+  - **Read:** with this tether the mirage failure (D2036 M) is removed without changing the gauge coupling. Pure-AMSB gauginos come back (wino 0.687, gluino 4.93), and α_s returns to the original seam (−4.2σ, T1 unchanged at +0.044).
+  - **Conditions owed (none checked yet):**
+    1. a magnetised D7 configuration whose gauge kinetic function is T_d − T_v must exist (divisor-class difference, holomorphy, chirality, tadpole);
+    2. the dark condensate prefactor A_d must be computed (needs 0.64–1.57 × A_v = 0.35–0.85);
+    3. the D2039 battery must be rerun with sq from this mechanism (no fitted knob).
+  - Kallosh–Linde (D2036 K), W₀ (D2044–D2046) and the tadpole flag are **not** touched.
+  - **Look-elsewhere note:** σ_d = 2σ_v and N_d = 2N_v predate this test (v4, D1924), so x_d = x_v was not tuned here. But the mechanism was found after looking, so it gets no evidence credit until the holomorphy check.
