@@ -20519,3 +20519,9 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - Ratio: −0.047% / −0.072%, just under the 0.05% bar on 1 MB.
     - **Note, not claimed:** it is better on both size and 3 MB speed, so it is a candidate for its own locked test on a larger rung.
   - **Next Forge build:** loomz20_o3 with RCTX = 1 is the new reference.
+- **D2052 (CENTRE, synthesis): the whole map** (tools/bloom/WHOLE_MAP_2026-11-22.md).
+  - Every open problem runs through the S–T seam.
+  - Danny's opposed tether (T_dark − T_vis, D2051) is the one repair that adds no knob and keeps every derived number. It works because v4 already has σ_d = 2σ_v and N_d = 2N_v.
+  - With it, the D2039 battery needs two moved knobs (Δ₃ and the stabiliser) instead of three.
+  - What remains is on the S side: KL, W₀, plus the T1 recompute for the new brane set, the tadpole, and g_s.
+  - Numerology flag, no evidence credit: x = 21.101 sits 3.1% from 4π√3 = 21.766, the k = 4 S-instanton exponent at ρ.
