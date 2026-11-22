@@ -1,4 +1,4 @@
-# Loom planner, round 3
+# Loom planner, round 5
 
 **Mission:** Derive and test the Weave unified field equation: one central equation whose three fields (S, T, U) balance every node with real predictions, not fits.
 
@@ -8,7 +8,7 @@
 ## Next actions (in order)
 1. **derive** L4: derive the 15.3 % lepton vs neutrino rung mismatch from the geometry (U3, fluxes (4,4,8)) with no new fit; L5-L9 may not move until L4 is locked or explicitly held. Guard: N0 inside-out; G-T3; LOCK. Tools: weave_rung, weave_rung_of, theory/tests/d1932_ring0_rungstep.py, theory/tests/d1925_onespurion.py. **Lock first.**
 2. **test** L5: wino verdict at the edge, no nudging of m3/2. Guard: N0 inside-out; G-T3; LOCK. Tools: weave_W0, weave_wino, lhc_dt_limit, lhc_lifetime. **Lock first.**
-3. **owed**: automated check: every PASS in a verdict file carries FIT / NO-POWER / CONDITIONAL where one applies. Guard: HONEST. Tools: tools/loom/lensing.py, tools/loom/check.py, tools/loom/method_tests_3axis.py.
+3. **owed**: the prediction / FIT / TRUST ledger file (field_tests/loom/pft_ledger.json) with honest relabels. Guard: HONEST. Tools: tools/loom/check.py, tools/loom/review.py.
 4. **explore**: null round: spend the exploration share on the loosest direction. Guard: G-T6 null rounds count only with every node balanced. Tools: tools/loom/still_point.py, tools/loom/compass.py.
 
 ## Agents to wake

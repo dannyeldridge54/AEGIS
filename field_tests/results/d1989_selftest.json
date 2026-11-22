@@ -1,0 +1,17 @@
+{
+ "determinism": {
+  "same_state": true,
+  "second_null": true,
+  "rounds": [
+   4,
+   5
+  ]
+ },
+ "decision_logic": {
+  "stall": true,
+  "endpoint": true,
+  "void": true,
+  "cont": true
+ },
+ "ok": true
+}
