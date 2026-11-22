@@ -28,3 +28,13 @@
 | **result folded in** | **D2025 PASS: clocked ring bus (RCTX) −0.20% / −0.21% on 1 MB / 3 MB; bypass traces nothing at scale** | — | next build: RCTX on, SKIP off |
 
 **Tick 2 verdict:** not null (5 hints + 1 result).
+
+## Tick 3 (07:58Z): the LSTM / byte-mixer node on CPU (NNCP paper; cmix deepwiki; cmix-obias)
+| node | hint (source) | our status | try as |
+|---|---|---|---|
+| **new node: byte-LSTM** | **NNCP small model** (Bellard): 3 LSTM layers × 90 cells, ~542k params, online single pass, truncated BPTT of 20 steps, batch 16, **layer normalisation (a noticeable gain)**, bounded cell output; **1.64 bpb on enwik8 alone at ~42 kB/s on one core** | none (all our nodes are counts) | an `LSTM` node fed into the final bank. It carries **independent** information (a learned state), so it passes the admission rule. Cost: enwik8 ≈ 40 min, enwik9 ≈ 6.6 h (inside the 50 h budget) |
+| LSTM optimiser | cmix: Adam with β₁ = 0.025, β₂ = 0.9999, ε = 1e-6, step-based adaptive learning-rate decay | — | copy as the LSTM node's defaults; ≤ 9 knobs (cells, layers, horizon, learning rate, β's) |
+| speed for the LSTM | small-matrix-multiply kernels plus a batch of 16 drove NNCP's speed-up | scalar C | SIMD kernel first (tick 2) |
+| obias prior gate | cmix-obias: a PPMd prior on the byte-LSTM (g = 0.15) and a 23 kB offline fp16 correction head. **The details are not public on the model page** (they are in SUBMISSION.md, unreadable from here) | — | NULL for now; revisit if the source is attached |
+
+**Tick 3 verdict:** not null (3 hints; 1 NULL item).
