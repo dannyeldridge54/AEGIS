@@ -20082,3 +20082,14 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - the tune slice;
   - the docs CUBEMIND_UFE_LENS.md (UFE v4 + compass), CUBEMIND_KNOB_PROTOCOL.md and CUBEMIND_MISSION.md.
 - The mission stub test passed on Linux. The Windows run has not happened yet (Danny starts START_UFE_JANUS.bat with his Ollama model names).
+
+## D2016 — 16-bit resolution and bigger node tables. PREREG_D2016. CENTRE
+- Slice K = enwik8 [20, 23) MB.
+  - v13: 648,620.
+  - v14 TB22: 648,392 (−0.035%, **keep**, just over the bar).
+  - v14 TB22 with PMIN = 4: 648,399 (no change).
+  - **TB23: 644,099 (−0.66%, keep).**
+  - **TB24: 641,217 (−0.45% vs TB23, keep).**
+  - Total vs v13: **−1.14%**.
+- Reading: the 4M-slot tables were overcrowded (collisions). Memory scales the field; enwik9 will want even more (Hutter allows < 10 GB).
+- The TB24 round-trip is checked in D2017.
