@@ -1,0 +1,13 @@
+== raw c (integer as given)
+ Z_2: 31 primitive generators, e.g. k=(0, 0, 0, 0, 1) | chiral charges {'ab': 0, "ab'": 0, 'ac': 0, "ac'": 0, 'bc': 0, 'bd': 0, "bd'": 0, "be'": 1, 'cd': 0, "cd'": 0, "ce'": 1} | Yukawa(ac,bc,ab) charge 0
+ Z_4: 224 primitive generators, e.g. k=(0, 0, 1, 1, 1) | chiral charges {'ab': 0, "ab'": 0, 'ac': 1, "ac'": 3, 'bc': 3, 'bd': 3, "bd'": 3, "be'": 3, 'cd': 0, "cd'": 2, "ce'": 2} | Yukawa(ac,bc,ab) charge 0
+ Z_8: 256 primitive generators, e.g. k=(1, 0, 0, 2, 2) | chiral charges {'ab': 1, "ab'": 1, 'ac': 7, "ac'": 7, 'bc': 0, 'bd': 6, "bd'": 6, "be'": 6, 'cd': 2, "cd'": 2, "ce'": 2} | Yukawa(ac,bc,ab) charge 0
+== doubling
+ Z_2: 31 primitive generators, e.g. k=(0, 0, 0, 0, 1) | chiral charges {'ab': 0, "ab'": 0, 'ac': 0, "ac'": 0, 'bc': 0, 'bd': 0, "bd'": 0, "be'": 1, 'cd': 0, "cd'": 0, "ce'": 1} | Yukawa(ac,bc,ab) charge 0
+ Z_4: 992 primitive generators, e.g. k=(0, 0, 0, 0, 1) | chiral charges {'ab': 0, "ab'": 0, 'ac': 0, "ac'": 0, 'bc': 0, 'bd': 0, "bd'": 0, "be'": 3, 'cd': 0, "cd'": 0, "ce'": 1} | Yukawa(ac,bc,ab) charge 0
+ Z_8: 7168 primitive generators, e.g. k=(0, 0, 1, 1, 1) | chiral charges {'ab': 0, "ab'": 0, 'ac': 1, "ac'": 7, 'bc': 7, 'bd': 7, "bd'": 7, "be'": 7, 'cd': 0, "cd'": 2, "ce'": 2} | Yukawa(ac,bc,ab) charge 0
+== instanton Yukawa selection (raw c): coupling -> list of n with a Z_n that FORBIDS it
+  ac.bc.ab (pert) forbidden by Z_n for n in []
+  ac'.bc.ab' forbidden by Z_n for n in [4, 8]
+  ac.bc.ab' forbidden by Z_n for n in [4, 8]
+  ac'.bc.ab forbidden by Z_n for n in [4, 8]

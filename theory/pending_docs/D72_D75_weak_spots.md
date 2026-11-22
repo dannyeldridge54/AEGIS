@@ -21324,3 +21324,18 @@ The referee (negative pole) report R1-1 … R1-11 was NOT BALANCED, with 4 major
   - The z₀ reading of the type-II formulas is disclosed (the literal reading fails the control: 7/24 residuals).
   - Tadpoles: 15 non-trivial + 9 identical.
   - The FI ledger is aligned with D2118.
+
+## Housekeeping (R2-4)
+The D2116 "K7 MARGINAL, ctrl ≥ 0.32" verdict and the D2116 settled-state table are **SUPERSEDED by D2119**: K7 FAIL, min ctrl 0.82 under the consistent reading.
+
+## D2120 (DEEP, ping-pong fold-in): discrete Z_n remnants. **NEW OBSTRUCTION to the light-generation Yukawas.** Locked.
+- **Triangulation:** both poles flagged this independently in the same minute. The referee raised R2-2 from Honecker arXiv:1303.6845, which says discrete Z_n from massive U(1)s are unbroken by D-brane instantons. The builder's own search led to the same paper.
+- **Computation** (Berasaluce-González–Ibáñez criterion on the P2 GS matrix, N_x c_x):
+  - **Z₂, Z₄ and Z₈ survive.** This holds with the raw c-values and with the doubled normalisation.
+  - The perturbative Yukawa (ac·bc·ab) has Z_n charge 0 for every generator, so it is allowed.
+  - **The three couplings needed for generations 2 and 3, ac′·bc·ab′, ac·bc·ab′ and ac′·bc·ab, are each FORBIDDEN by a surviving Z₄ (and Z₈).**
+- **Reading (PHYSICS, conditional on the Z_n criterion and normalisation):**
+  - No D-brane instanton, at any order, can generate the missing two generations' Yukawas from the bidoublet alone. So the K9 estimate S ≈ 5.6/11.8 does not apply.
+  - The remaining routes are higher-dimensional operators with Z_n-charged singlet or hidden vevs, or a different Higgs sector.
+- **K9 verdict:** was ESTIMATE, now **OBSTRUCTED (Z₄)**. The referee is asked to verify the criterion and the normalisation.
+- **Six-stack note (R2-1):** the published six-stack PS model (p.tex:3625; 1303.6845) has 3 hidden stacks, so it lies outside our class. Uniqueness is relative to the "at most 2 hidden stacks" bound.
