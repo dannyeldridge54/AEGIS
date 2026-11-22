@@ -21201,3 +21201,24 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - The hidden sector is always 2 × U(2).
 - **Reading (PHYSICS):** in this class (equal-volume visible stacks, at most 2 hidden stacks), the global 3-family PS model of 1209.3010 is **unique up to lattice relabelling and L ↔ R**. The many raw solutions are labels and symmetry images of one model. So the outward search on this geometry does not open a landscape. It points at one rigid model, which is the opposite of the Z₂×Z₂ exotics wall.
 - **Next:** D2112. Write the Z₂×Z₆′ gauge-kinetic formula from the paper first, then run this one model through the v4 α_s chain (equal tree-level couplings, so sin²θ_W = 3/8 at M_s), plus the bd′/cd′ vector-like question.
+
+## D2112 (DEEP, Seed v6): full derivation checklist K1–K11 for the unique Z₂×Z₆′ global Pati–Salam model. One staged run, locked. DEVIATIONS: a crash fix with no output seen, plus a K4 P2 addendum owed under the D2110 rule.
+
+| # | Item | Result | Verdict |
+|---|---|---|---|
+| K1–K2 | Global consistency and chiral spectrum | D2110 | PASS |
+| K3 | Sym/Anti chiral = ½Π∘Π′ | 0 for a, b, c, d, e. Consistent with the paper's "27 three-stack configurations, identical chiral spectrum" and with D2111 uniqueness | PASS |
+| K4 | GS U(1) mass matrix | **P2 (increasing j<k) reproduces all 15 × 5 entries exactly. P1 fails in sector 2.** Rank 5 | PASS. **This settles the ordering ambiguity: P2 is the paper's convention.** D2111 stays valid because it required P1 = P2 agreement. A P2-only rescan could add models and is owed as a new lock |
+| K5 | β coefficients (Tables 28+29) | b₄ = −2, b_L = b_R = +6, b_d = +28, b_e = +2 | Recorded |
+| K6 | One-loop thresholds | The exact ϑ/η for f_a matches the paper's asymptote to 1e-7, which validates the normalisation. The paper's f_{b,c} line is internally inconsistent: with the literal 1/2π the v_m term grows, and with the corrected 1/2π² the v₃ slope is −1/48π against the stated asymptote's −1/16π. The unification condition comes out three ways: our exact-corrected v₁ = v₂ ≈ 5v₃/4 + 7 ln2/π (e.g. v₃ = 10 gives 14.04); the paper's asymptote gives v₃/4 + 7 ln2/π; the paper prints 4v₃ + 168 ln2/π, which **matches neither** | FLAG (possible typos in the source; "near-isotropic" survives qualitatively). Needs Honecker:2011sm to settle |
+| K7 | String scale | α_tree⁻¹ = 3.53e-4 M_Pl/M_s, which reproduces the paper's ≈4e-4. Getting α_X⁻¹ = 24.33 needs M_s = 3.5e13 GeV (reduced M_Pl) or 1.8e14 (non-reduced), against M_GUT = 2.0e16 | **TENSION, a factor 114–569 in scale.** This is the known IIA M_s/M_GUT problem |
+| K8 | α_s at one loop | S1 (MSSM only, PS broken at M_s = M_GUT): **0.1168, PASS** under the locked tolerance, but conditional on K7, which says M_s ≠ M_GUT at tree level. S2 (all PS-vector-like states at 1 TeV): α_X⁻¹ < 0, non-perturbative | S1 conditional PASS; **S2 FAIL**, so those states must be heavy |
+| K9 | Yukawas | 1 perturbative generation. The other two need instanton suppression with S ≈ 5.6 (charm) and 11.8 (up) | ESTIMATE |
+| K10 | PS breaking | No (4,1,2) Higgs in Tables 28/29 (ac and ac′ are the chiral families) | **OPEN.** Needs brane recombination or splitting |
+| K11 | Hidden sector | All 5 U(1)s are massive, so there is no massless dark photon at this level. SU(2)_d (b = +28) and SU(2)_e (b = +2) are IR-free and do not confine | Recorded. **New cosmology flag:** 6 massless hidden gauge bosons (ΔN_eff, F7) unless they are broken. This changes the D2098 "dark SU(12)" picture, which belonged to the Z₂×Z₂ geometry |
+
+**Overall:** the model is fully consistent as a string vacuum (K1–K4 PASS). Its phenomenology has 3 hard open items: K7 the scale tension, K10 PS breaking, K11 the massless hidden SU(2)s; plus the K6 literature inconsistency.
+**Next queue:**
+- D2113: P2-only rescan (the convention is now fixed);
+- D2114: solve K7 with the full thresholds (v₁, v₂, v₃, g_s) against the measured couplings at M_s;
+- D2115: a K10 recombination route.

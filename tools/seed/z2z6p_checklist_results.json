@@ -1,0 +1,198 @@
+{
+ "K3": {
+  "a": "0",
+  "b": "0",
+  "c": "0",
+  "d": "0",
+  "e": "0"
+ },
+ "K4": {
+  "ours": [
+   [
+    0,
+    0,
+    0,
+    0,
+    2
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    -2,
+    0
+   ],
+   [
+    2,
+    0,
+    -2,
+    -3,
+    -1
+   ],
+   [
+    0,
+    0,
+    0,
+    2,
+    -2
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    -2
+   ],
+   [
+    0,
+    0,
+    0,
+    2,
+    0
+   ],
+   [
+    -1,
+    1,
+    0,
+    0,
+    2
+   ],
+   [
+    -2,
+    2,
+    0,
+    4,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    2,
+    -1,
+    -1,
+    0
+   ],
+   [
+    -2,
+    0,
+    -2,
+    2,
+    0
+   ]
+  ],
+  "exact_match": false,
+  "match_up_to_row_perm_per_sector": false,
+  "rank_ours": 5,
+  "rank_paper": 5
+ },
+ "K5": {
+  "a": "-2",
+  "b": "6",
+  "c": "6",
+  "d": "28",
+  "e": "2"
+ },
+ "K6": {
+  "check_a_exact_vs_asym_at_(5,5,5)": [
+   0.0750613446768542,
+   0.07506133322490918
+  ],
+  "check_b_corrected_vs_asym_at_(5,5,5)": [
+   0.11212388212494832,
+   0.04580930723405771
+  ],
+  "check_b_literal_vs_asym_at_(5,5,5)": [
+   -0.029894891586764397,
+   0.04580930723405771
+  ],
+  "unif_v1=v2_at_v3=2_corrected": 4.048039081863839,
+  "unif_v1=v2_at_v3=2_literal": 1.2881064510515678,
+  "paper_printed_at_v3=2": 45.066780825645466,
+  "paper_asymptotic_implies_at_v3=2": 2.044449201068561,
+  "unif_v1=v2_at_v3=5_corrected": 7.794449488887811,
+  "unif_v1=v2_at_v3=5_literal": 2.481050094048558,
+  "paper_printed_at_v3=5": 57.066780825645466,
+  "paper_asymptotic_implies_at_v3=5": 2.794449201068561,
+  "unif_v1=v2_at_v3=10_corrected": 14.044449201068604,
+  "unif_v1=v2_at_v3=10_literal": 4.4704870267053,
+  "paper_printed_at_v3=10": 77.06678082564547,
+  "paper_asymptotic_implies_at_v3=10": 4.044449201068561
+ },
+ "K7": {
+  "C": 0.00035277639999978927,
+  "MGUT_1loop": 2.0085361944149504e+16,
+  "alphaX_inv": 24.32860314,
+  "Ms_needed_reduced": 35308666471982.53,
+  "MGUT/Ms_reduced": 568.8507652954626,
+  "Ms_needed_nonreduced": 177050849126450.4,
+  "MGUT/Ms_nonreduced": 113.44403058922614
+ },
+ "K8": {
+  "S1_MSSM": 0.1168234957844651,
+  "S1_pass": true,
+  "S2_db(1,2,3)": [
+   4.6,
+   5.0,
+   4.0
+  ],
+  "S2_alpha_s,MX,aXinv": [
+   0.552542591540253,
+   2.11923002229322e+17,
+   -2.2968175952798404
+  ],
+  "S2_pass": false
+ },
+ "K9": {
+  "S_charm=ln(mt/mc)": 5.6196993574456595,
+  "S_up=ln(mt/mu)": 11.810401935014298
+ },
+ "K10": {
+  "(4,1,2)-type sectors present (a and c only)": [
+   "ac",
+   "ac'"
+  ],
+  "note": "ac/ac' are the right-handed families (3 chiral, no vector-like pair) -> no PS-breaking Higgs in spectrum"
+ },
+ "K11": {
+  "U1_massless": 0,
+  "hidden_b": {
+   "d": "28",
+   "e": "2"
+  },
+  "confining": []
+ }
+}
