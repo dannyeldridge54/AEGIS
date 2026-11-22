@@ -25,6 +25,19 @@ def branes(L):
 G7 = [Fr(1, 3), Fr(1, 2), Fr(2, 3), Fr(1), Fr(3, 2), Fr(2), Fr(3)]
 G12 = sorted(set(G7) | {Fr(1, 4), Fr(3, 4), Fr(4, 3), Fr(5, 2), Fr(4)})
 LEVELS = [('L1', 3, G7), ('L2', 4, G7), ('L3', 4, G12), ('L4', 5, G12)]
+PSLIST = {}
+def safe_completion(S, chi, A, B, C, Wz):
+    R = tuple(t - 8*xa - 4*xb - 4*xc for t, xa, xb, xc in zip(s.TGT, s.X(A), s.X(B), s.X(C)))
+    cs = e.completions(S, chi, R, s.kcheck([(8, A), (4, B), (4, C)])); K, MS = fit(*Wz)
+    for cm in cs:
+        fine = True
+        for Nh, h in cm:
+            if not any(s.inter(h, v) or s.inter(h, v, True) for v in (A, B, C)): continue
+            beta = -6 + 2*abs(s.inter(h, A)) + abs(s.inter(h, B)) + abs(s.inter(h, C))
+            lam = MS*math.exp(-2*math.pi*K*float(s.zprod(h, chi)[0])/abs(beta)) if beta < 0 else 0
+            if lam < 1e4: fine = False; break
+        if fine: return cm
+    return None
 def run_level(L, G, budget=60):
     ALL = branes(L); res = dict(ps=0, fit=0, safe=0, near=0, hits=0, timeouts=0, branes=len(ALL)); safe = []
     for chi in itertools.product(G, repeat=3):
@@ -47,6 +60,7 @@ def run_level(L, G, budget=60):
                 if not cs: continue
                 res['ps'] += 1; Wz = [float(s.zprod(v, chi)[0]) for v in (A, B, C)]; p = P.predict(*Wz)
                 if p is None: continue
+                PSLIST.setdefault((tuple(chi), s.canon(A), s.canon(B), s.canon(C)), (chi, A, B, C, Wz, p))
                 res['fit'] += 1; K, MS = fit(*Wz); ok = None
                 for cm in cs:
                     fine = True
@@ -64,9 +78,20 @@ def run_level(L, G, budget=60):
                 if p[1] >= 4e15:
                     res['near'] += abs(p[0] - 0.118) <= 0.02
                     res['hits'] += abs(p[0] - 0.118) <= 0.0018
+    # breathing / resonance pass: earlier PS models re-tested with this level's hidden branes
+    res['resonance'] = 0; res['resonance_hits'] = 0; known = {(tuple(r['chi']), s.canon(r['A']), s.canon(r['B']), s.canon(r['C'])) for r in safe}
+    for key, (chi, A, B, C, Wz, p) in list(PSLIST.items()):
+        if key in known or key in RESONATED or not all(c in G for c in chi): continue
+        S = [w for w in ALL if s.zprod(w, chi)[1] == 0 and s.zprod(w, chi)[0] > 0]
+        cm = safe_completion(S, chi, A, B, C, Wz)
+        if cm is None: continue
+        RESONATED.add(key); res['resonance'] += 1
+        rec = dict(chi=chi, A=A, B=B, C=C, W=Wz, alpha_s=p[0], Ms=p[1], wrapmax=max(abs(x) for v in (A, B, C) for x in v),
+                   ring_ratios=sorted(round(float(s.zprod(h, chi)[0])/Wz[0], 3) for _, h in cm), resonance=True); safe.append(rec)
+        if p[1] >= 4e15 and abs(p[0] - 0.118) <= 0.0018: res['resonance_hits'] += 1; res['hits'] += 1
     res['best'] = min((abs(r['alpha_s'] - 0.118) for r in safe), default=None)
     return res, safe
-allsafe = {}; summary = []
+allsafe = {}; summary = []; RESONATED = set()
 for name, L, G in LEVELS:
     t = time.time(); res, safe = run_level(L, G)
     print('== %s (L=%d, grid %d -> %d chi): %s  [%.0f s]' % (name, L, len(G), len(G)**3, {k: (round(v, 4) if isinstance(v, float) else v) for k, v in res.items()}, time.time() - t), flush=True)
