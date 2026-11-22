@@ -23,6 +23,25 @@ def target(terms, k_fit, extra_knobs=0):
     lnL = sum(lnL_term(t)[0] for t in terms); N = len(terms) + D['fit_data_consumed']; k = k_fit + extra_knobs
     return lnL, lnL - 0.5 * k * math.log(N), N, k
 
+# ---- levers (B1): one knob moves several terms through a measured Jacobian (d ln O / d ln lever) ----
+def apply_levers(terms, s):
+    out = []
+    for t in terms:
+        f = 1.0
+        for lv, spec in D.get('levers', {}).items():
+            if lv in s and t['id'] in spec['moves']: f *= math.exp(spec['moves'][t['id']] * math.log(s[lv]))
+        out.append(dict(t, ours=t['ours'] * f))
+    return out
+
+def balance(knobs, steps=((1.1, 0.9), (1.03, 0.97), (1.01, 0.99), (1.003, 0.997), (1.001, 0.999)), rounds=200):
+    """Plug knobs (multipliers on levers) in and let the Centre tune until BALANCED (every agent null)."""
+    kfit = sum(f['n'] for f in D['fitted_knobs'])
+    def ev(s, split): return -target(apply_levers(D['terms'], s), kfit)[0] + 1.0   # held split = same terms (no tuning data here; the gate is the goalpost)
+    a = Agent('balance', dict(knobs), ev, steps=steps); c = Centre([a], explore=0.0); c.run(rounds)
+    T = apply_levers(D['terms'], a.settings()); lnL, tgt, N, k = target(T, kfit)
+    return {'knobs': a.settings(), 'state': c.log[-1].get('event', 'budget'), 'bits': round(-tgt / math.log(2), 3),
+            'terms': {t['id']: (round(t['ours'], 5), round(lnL_term(t)[1], 2)) for t in T}}
+
 # ---- lens 2: shadow datasets (multiplexer, D2011): score each alternate dataset side by side ----
 def shadow(t):
     if 'alt' not in t: return None
@@ -69,7 +88,12 @@ def gof_bootstrap(terms, n=20000, seed=3):
     return out
 
 # ---- negative space (D2012): what is owed, and what has zero strict evidence ----
-def negative_space(): return {'owed': D['owed'], 'post_lock_tests': 0}
+def prequential(terms):
+    """B2: only terms released AFTER their lock count as strict evidence; their bits form the prequential description length."""
+    post = [t for t in terms if t.get('released', '0') > t.get('locked', '9')[:10]]
+    return {'post_lock_terms': [t['id'] for t in post], 'n': len(post), 'bits_prequential': round(sum(-lnL_term(t)[0] for t in post) / math.log(2), 3)}
+
+def negative_space(): return {'owed': D['owed'], 'post_lock_tests': prequential(D['terms'])['n']}
 
 # ---- hygiene (D2016/D2017 confirm): every dataset owned by exactly one agent, no shared slots ----
 def hygiene(terms):
@@ -103,7 +127,7 @@ def report():
     out = {'target': {'lnL': round(lnL, 3), 'k_fit': k, 'N': N, 'bic_target': round(tgt, 3)}, 'compass': compass(terms),
            'shadows': {t['id']: shadow(t) for t in terms if 'alt' in t}, 'tension': {t['id']: tension(t) for t in terms if 'alt' in t},
            'ladder': {t['id']: ladder(t) for t in terms if 'ladder' in t}, 'negative_space': negative_space(), 'hygiene_ok': hygiene(terms),
-           'injection': injection_test(), 'theory_nuisance': {t['id']: theory_nuisance(t) for t in terms if 'ladder' in t}, 'gof': gof_bootstrap(terms)}
+           'injection': injection_test(), 'theory_nuisance': {t['id']: theory_nuisance(t) for t in terms if 'ladder' in t}, 'gof': gof_bootstrap(terms), 'prequential': prequential(terms)}
     # T1 demonstration through the Centre: a FREE Delta3 knob (a fitted knob) vs the derived value. alpha_s(Delta3) linearised from v4:
     a = next(t for t in terms if t['id'] == 'alpha_s'); slope = (0.1180 - 0.1142) / 0.044
     def ev(s, split):  # cost = -lnL of the alpha_s term; the 'held' split uses the alt world average spread (refuses tuning on one number)

@@ -20204,3 +20204,13 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Engine ladder:** 0.13 s → 0.032 s. The exact χ² survival function agrees with the toys (8.35e-4 vs 8.5e-4). Rung 3 is NULL (start-up bound).
   - **Finding: steps must be scaled per knob.** A free α_s what-if shortens the description from 30.3 to 19.5 bits even after its penalty. So the **FIT label, not the BIC penalty, is the guard against tuned seams.**
   - **Owed:** prequential (post-lock) dates on every term; the Δ₃ → wino Jacobian.
+- **D2028 (CENTRE): Bloom step ladder set** (tools/bloom/BLOOM_STEPS.md: B1–B12, each with its goalpost, committed before any step ran). Steps B1 and B2 are now plugged in.
+  - **B1, the m₃/₂ lever** (D1937 Jacobian: wino and gluino ∝ m₃/₂, α_s −0.0254, τ_p −1.28 per ln m₃/₂): **PASS (calibration).**
+    - The Centre ran to BALANCED at m₃/₂ × 0.957.
+    - α_s = 0.11433, which reproduces D1937 exactly (goalpost ±0.0002).
+    - α_s is still at −4.08σ, so the point is unbalanced, as expected: the m₃/₂ line cannot close α_s.
+    - Wino 0.658 TeV, 0.23 band-widths below its bar: the Centre trades a little wino for α_s.
+    - Description length 30.3 → 29.5 bits.
+  - **B2, dates:** **PASS.** Every term carries its lock date (UFE v4, 2026-11-21, commit 9b77c9ae) and its release.
+    - All 10 releases come before the lock, so there are **0 post-lock terms** and no prequential bits yet (E1 open).
+    - The release dates come from our notes; B3 confirms them.

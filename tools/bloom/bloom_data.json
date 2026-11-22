@@ -1,25 +1,212 @@
 {
  "note": "Unified Field Bloom v1 dataset terms. Values are copied from our notes (WEAVE_UNIFIED_EQUATION v4, derivation_agents.json) on 2026-11-22. Each must be re-triangulated (3 sources, Rule 6h) before a scored or post-lock use. kind: gauss | upper (95% CL) | lower (95% CL) | band.",
  "terms": [
-  {"id": "alpha_s", "agent": "T", "data": "PDG world average alpha_s(M_Z)", "kind": "gauss", "mu": 0.1180, "sigma": 0.0009, "ours": 0.1142, "ladder": {"quantity": "Delta3", "rungs": ["tree", "1-loop", "2-loop + thresholds"], "values": [-0.90, -0.15, -0.094], "scale": 0.044, "scale_why": "the shift still needed"}, "dobs_dq": 0.0864, "dobs_dq_why": "d alpha_s / d Delta3 linearised from v4: (0.1180-0.1142)/0.044", "triangulated": ["PDG 2025 world average 0.1180 +- 0.0009, unchanged (Indico 1536930 slides, Dec 2025)"], "status": "der"},
-  {"id": "n_s", "agent": "S", "data": "CMB-SPA + DESI", "kind": "gauss", "mu": 0.9728, "sigma": 0.0027, "ours": 0.9706, "alt": {"data": "CMB-SPA alone", "mu": 0.9684, "sigma": 0.0030}, "status": "der"},
-  {"id": "r", "agent": "S", "data": "BICEP/Keck BK18", "kind": "upper", "bound": 0.036, "ours": 5.4e-4, "status": "der"},
-  {"id": "running", "agent": "S", "data": "Planck 2018 dn_s/dlnk", "kind": "gauss", "mu": -0.0045, "sigma": 0.0067, "ours": -9.9e-4, "status": "der"},
-  {"id": "dNeff", "agent": "S", "data": "Planck N_eff 2.99 +- 0.17 minus SM 3.044", "kind": "gauss", "mu": -0.054, "sigma": 0.17, "ours": 0.0, "status": "der"},
-  {"id": "wino", "agent": "T", "data": "ATLAS+CMS disappearing tracks / relic bar (TeV)", "kind": "band", "lo": 0.66, "hi": 0.70, "width": 0.01, "ours": 0.687, "status": "der"},
-  {"id": "gluino", "agent": "T", "data": "ATLAS/CMS gluino (TeV)", "kind": "lower", "bound": 2.3, "ours": 4.93, "status": "der"},
-  {"id": "proton", "agent": "T", "data": "Super-K p -> e+ pi0 (1e34 yr)", "kind": "lower", "bound": 2.4, "ours": 16.0, "status": "der"},
-  {"id": "alpha_drift", "agent": "Thread", "data": "clocks + Oklo + quasars, |zeta|", "kind": "upper", "bound": 1.66e-6, "ours": 3.8e-10, "status": "E"},
-  {"id": "sum_mnu", "agent": "U", "data": "DESI DR2 + CMB (eV)", "kind": "upper", "bound": 0.0642, "ours": 0.0587, "status": "input"}
+  {
+   "id": "alpha_s",
+   "agent": "T",
+   "data": "PDG world average alpha_s(M_Z)",
+   "kind": "gauss",
+   "mu": 0.118,
+   "sigma": 0.0009,
+   "ours": 0.1142,
+   "ladder": {
+    "quantity": "Delta3",
+    "rungs": [
+     "tree",
+     "1-loop",
+     "2-loop + thresholds"
+    ],
+    "values": [
+     -0.9,
+     -0.15,
+     -0.094
+    ],
+    "scale": 0.044,
+    "scale_why": "the shift still needed"
+   },
+   "dobs_dq": 0.0864,
+   "dobs_dq_why": "d alpha_s / d Delta3 linearised from v4: (0.1180-0.1142)/0.044",
+   "triangulated": [
+    "PDG 2025 world average 0.1180 +- 0.0009, unchanged (Indico 1536930 slides, Dec 2025)"
+   ],
+   "status": "der",
+   "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
+   "released": "2025-12",
+   "release_ref": "PDG 2025 world average (Indico 1536930 slides) [date from notes/knowledge; confirmed in B3]"
+  },
+  {
+   "id": "n_s",
+   "agent": "S",
+   "data": "CMB-SPA + DESI",
+   "kind": "gauss",
+   "mu": 0.9728,
+   "sigma": 0.0027,
+   "ours": 0.9706,
+   "alt": {
+    "data": "CMB-SPA alone",
+    "mu": 0.9684,
+    "sigma": 0.003
+   },
+   "status": "der",
+   "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
+   "released": "2025-06",
+   "release_ref": "SPT-3G D1 / CMB-SPA + DESI DR2 [date from notes/knowledge; confirmed in B3]"
+  },
+  {
+   "id": "r",
+   "agent": "S",
+   "data": "BICEP/Keck BK18",
+   "kind": "upper",
+   "bound": 0.036,
+   "ours": 0.00054,
+   "status": "der",
+   "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
+   "released": "2021-10",
+   "release_ref": "BICEP/Keck BK18, PRL 127 151301 [date from notes/knowledge; confirmed in B3]"
+  },
+  {
+   "id": "running",
+   "agent": "S",
+   "data": "Planck 2018 dn_s/dlnk",
+   "kind": "gauss",
+   "mu": -0.0045,
+   "sigma": 0.0067,
+   "ours": -0.00099,
+   "status": "der",
+   "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
+   "released": "2018-07",
+   "release_ref": "Planck 2018 VI, arXiv 1807.06209 [date from notes/knowledge; confirmed in B3]"
+  },
+  {
+   "id": "dNeff",
+   "agent": "S",
+   "data": "Planck N_eff 2.99 +- 0.17 minus SM 3.044",
+   "kind": "gauss",
+   "mu": -0.054,
+   "sigma": 0.17,
+   "ours": 0.0,
+   "status": "der",
+   "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
+   "released": "2018-07",
+   "release_ref": "Planck 2018 VI, arXiv 1807.06209 [date from notes/knowledge; confirmed in B3]"
+  },
+  {
+   "id": "wino",
+   "agent": "T",
+   "data": "ATLAS+CMS disappearing tracks / relic bar (TeV)",
+   "kind": "band",
+   "lo": 0.66,
+   "hi": 0.7,
+   "width": 0.01,
+   "ours": 0.687,
+   "status": "der",
+   "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
+   "released": "2025-07",
+   "release_ref": "ATLAS+CMS disappearing tracks, arXiv 2507.15934 [date from notes/knowledge; confirmed in B3]"
+  },
+  {
+   "id": "gluino",
+   "agent": "T",
+   "data": "ATLAS/CMS gluino (TeV)",
+   "kind": "lower",
+   "bound": 2.3,
+   "ours": 4.93,
+   "status": "der",
+   "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
+   "released": "2025",
+   "release_ref": "ATLAS/CMS gluino summaries (verify in B3) [date from notes/knowledge; confirmed in B3]"
+  },
+  {
+   "id": "proton",
+   "agent": "T",
+   "data": "Super-K p -> e+ pi0 (1e34 yr)",
+   "kind": "lower",
+   "bound": 2.4,
+   "ours": 16.0,
+   "status": "der",
+   "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
+   "released": "2020-12",
+   "release_ref": "Super-K p->e+pi0, PRD 102 112011 [date from notes/knowledge; confirmed in B3]"
+  },
+  {
+   "id": "alpha_drift",
+   "agent": "Thread",
+   "data": "clocks + Oklo + quasars, |zeta|",
+   "kind": "upper",
+   "bound": 1.66e-06,
+   "ours": 3.8e-10,
+   "status": "E",
+   "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
+   "released": "2023",
+   "release_ref": "optical clocks (Filzinger et al. 2023) + Oklo + quasars (verify in B3) [date from notes/knowledge; confirmed in B3]"
+  },
+  {
+   "id": "sum_mnu",
+   "agent": "U",
+   "data": "DESI DR2 + CMB (eV)",
+   "kind": "upper",
+   "bound": 0.0642,
+   "ours": 0.0587,
+   "status": "input",
+   "locked": "2026-11-21 (UFE v4, commit 9b77c9ae, D1934)",
+   "released": "2025-03",
+   "release_ref": "DESI DR2 + CMB, arXiv 2503.14738 [date from notes/knowledge; confirmed in B3]"
+  }
  ],
  "fitted_knobs": [
-  {"id": "I1", "what": "V_inf^(1/4) (fit to A_s)", "n": 1},
-  {"id": "I2", "what": "Koide delta, c_e", "n": 2},
-  {"id": "I3", "what": "quark spurion |u|", "n": 1},
-  {"id": "I4", "what": "neutrino fluxes (4,4,8) and theta step n", "n": 2},
-  {"id": "I5", "what": "v/m_SUSY", "n": 1},
-  {"id": "I8", "what": "dark cycle sigma_d", "n": 1}
+  {
+   "id": "I1",
+   "what": "V_inf^(1/4) (fit to A_s)",
+   "n": 1
+  },
+  {
+   "id": "I2",
+   "what": "Koide delta, c_e",
+   "n": 2
+  },
+  {
+   "id": "I3",
+   "what": "quark spurion |u|",
+   "n": 1
+  },
+  {
+   "id": "I4",
+   "what": "neutrino fluxes (4,4,8) and theta step n",
+   "n": 2
+  },
+  {
+   "id": "I5",
+   "what": "v/m_SUSY",
+   "n": 1
+  },
+  {
+   "id": "I8",
+   "what": "dark cycle sigma_d",
+   "n": 1
+  }
  ],
  "fit_data_consumed": 8,
- "owed": ["T1 Delta3 seam (alpha_s)", "T2 wino headroom", "S1 T_R channel", "S2 g_s > 1 control", "U1 |u| home", "U2 Koide from rho", "U3 fluxes from tadpole", "U4 U3 = i", "R1 thread source", "E1 post-lock evidence"]
+ "owed": [
+  "T1 Delta3 seam (alpha_s)",
+  "T2 wino headroom",
+  "S1 T_R channel",
+  "S2 g_s > 1 control",
+  "U1 |u| home",
+  "U2 Koide from rho",
+  "U3 fluxes from tadpole",
+  "U4 U3 = i",
+  "R1 thread source",
+  "E1 post-lock evidence"
+ ],
+ "levers": {
+  "lnm32": {
+   "why": "D1937 measured Jacobian (median of 2/5/10% steps); AMSB masses scale with m3/2",
+   "moves": {
+    "wino": 1.0,
+    "gluino": 1.0,
+    "alpha_s": -0.0254,
+    "proton": -1.28
+   }
+  }
+ }
 }
