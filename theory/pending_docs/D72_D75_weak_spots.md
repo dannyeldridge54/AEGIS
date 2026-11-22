@@ -21377,3 +21377,18 @@ The D2116 "K7 MARGINAL, ctrl ≥ 0.32" verdict and the D2116 settled-state table
   - **ΔN_eff CONDITIONAL**.
   - **Z₄ texture 1⊕2** (conditional on a Z₄-neutral breaking sector).
   - The SU(2) threshold formulas in HRS need two corrections.
+
+## D2122 (DEEP, ping-pong item 4): gauge anomalies. **PASS** (locked, run once).
+- **Ping-pong:** the builder opened with what we have. The referee opened from the other end with R4-1 (GCS terms for Abelian anomalies), R4-2 (the dual-basis normalisation of the GS couplings) and R4-3 (Witten, generalised U(N)³, U(1)-grav²). All three were folded into the lock.
+
+| Test | Result |
+|---|---|
+| T1: SU(4)³ | 0 |
+| T2: generalised U(N_x)³, Π_x∘Σ N_a(Π_a + Π_a′) | 0 for all 5 stacks |
+| T3: mixed U(1)_x–SU(N_y)², field theory (Table 28) = (N_x/2)(Π_x − Π_x′)∘Π_y | **all 25 entries match** |
+| T4: GS factorisation | (Π_x − Π_x′) expands **exactly** in the HRS odd basis χ^{(k),α}. The coefficients equal the HRS c-matrix with **κ = 1** for all stacks and all 16 components, so HRS's GS couplings are independently confirmed |
+| T5: U(1)–gravity² | 0 for all stacks, consistent with Π∘Π_O6 = 0 |
+| T6: Witten SU(2) | doublet counts 24/24/16/4, all even |
+| T7 (report only) | U(1)_x³ = 0 for all stacks. The mixed Abelian anomalies need generalised Chern–Simons terms (hep-th/0605225); not computed |
+
+**Verdict:** checklist item 4 PASS.

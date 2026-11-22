@@ -1,22 +1,142 @@
 [
- ["1","RR tadpoles (bulk + twisted)","Consistency","PASS","D2110"],
- ["2","Supersymmetry conditions","Consistency","PASS","D2110"],
- ["3","K-theory (discrete RR charge)","Consistency","PASS","D2117"],
- ["4","Gauge anomaly cancellation (cubic + mixed/GS)","Consistency","TODO","next"],
- ["5","Chiral spectrum reproduced","Spectrum","PASS","D2110"],
- ["6","Non-chiral / vector-like exotics derived independently","Spectrum","TODO","literature input only"],
- ["7","Massless U(1)s and hypercharge embedding","Spectrum","PASS","D2112 K4"],
- ["8","Breaking to the Standard Model","Spectrum","OBSTRUCTED","D2115"],
- ["9","Gauge-coupling matching (2-loop, SUSY-scale robust)","Couplings","FAIL (1-loop)","D2119; robustness TODO"],
- ["10","String scale vs Planck and GUT scales","Couplings","TENSION","D2112 K7"],
- ["11","Fermion masses (Yukawa hierarchy)","Flavour","PARTIAL","D2120b"],
- ["12","Quark mixing (CKM)","Flavour","OBSTRUCTED","D2120b"],
- ["13","Neutrino masses (nu_R, Majorana, seesaw)","Flavour","TODO","Z4 selection"],
- ["14","Proton decay (dim-4/5/6, discrete symmetry)","Flavour","TODO","Z4 selection"],
- ["15","Moduli stabilisation","Vacuum","OPEN","not addressed"],
- ["16","SUSY breaking and soft terms","Vacuum","OPEN","not addressed"],
- ["17","Hidden sector / dark radiation (Delta N_eff)","Cosmology","CONDITIONAL","D2119"],
- ["18","Dark-matter candidate","Cosmology","TODO","hidden sector"],
- ["19","Dark energy / de Sitter uplift","Cosmology","OPEN","not addressed"],
- ["20","Independent reproduction + uniqueness positive control","Robustness","PARTIAL","blind 2nd code TODO"]
+ [
+  "1",
+  "RR tadpoles (bulk + twisted)",
+  "Consistency",
+  "PASS",
+  "D2110"
+ ],
+ [
+  "2",
+  "Supersymmetry conditions",
+  "Consistency",
+  "PASS",
+  "D2110"
+ ],
+ [
+  "3",
+  "K-theory (discrete RR charge)",
+  "Consistency",
+  "PASS",
+  "D2117"
+ ],
+ [
+  "4",
+  "Gauge anomaly cancellation (cubic + mixed/GS)",
+  "Consistency",
+  "PASS",
+  "D2122"
+ ],
+ [
+  "5",
+  "Chiral spectrum reproduced",
+  "Spectrum",
+  "PASS",
+  "D2110"
+ ],
+ [
+  "6",
+  "Non-chiral / vector-like exotics derived independently",
+  "Spectrum",
+  "TODO",
+  "literature input only"
+ ],
+ [
+  "7",
+  "Massless U(1)s and hypercharge embedding",
+  "Spectrum",
+  "PASS",
+  "D2112 K4"
+ ],
+ [
+  "8",
+  "Breaking to the Standard Model",
+  "Spectrum",
+  "OBSTRUCTED",
+  "D2115"
+ ],
+ [
+  "9",
+  "Gauge-coupling matching (2-loop, SUSY-scale robust)",
+  "Couplings",
+  "FAIL (1-loop)",
+  "D2119; robustness TODO"
+ ],
+ [
+  "10",
+  "String scale vs Planck and GUT scales",
+  "Couplings",
+  "TENSION",
+  "D2112 K7"
+ ],
+ [
+  "11",
+  "Fermion masses (Yukawa hierarchy)",
+  "Flavour",
+  "PARTIAL",
+  "D2120b"
+ ],
+ [
+  "12",
+  "Quark mixing (CKM)",
+  "Flavour",
+  "OBSTRUCTED",
+  "D2120b"
+ ],
+ [
+  "13",
+  "Neutrino masses (nu_R, Majorana, seesaw)",
+  "Flavour",
+  "TODO",
+  "Z4 selection"
+ ],
+ [
+  "14",
+  "Proton decay (dim-4/5/6, discrete symmetry)",
+  "Flavour",
+  "TODO",
+  "Z4 selection"
+ ],
+ [
+  "15",
+  "Moduli stabilisation",
+  "Vacuum",
+  "OPEN",
+  "not addressed"
+ ],
+ [
+  "16",
+  "SUSY breaking and soft terms",
+  "Vacuum",
+  "OPEN",
+  "not addressed"
+ ],
+ [
+  "17",
+  "Hidden sector / dark radiation (Delta N_eff)",
+  "Cosmology",
+  "CONDITIONAL",
+  "D2119"
+ ],
+ [
+  "18",
+  "Dark-matter candidate",
+  "Cosmology",
+  "TODO",
+  "hidden sector"
+ ],
+ [
+  "19",
+  "Dark energy / de Sitter uplift",
+  "Cosmology",
+  "OPEN",
+  "not addressed"
+ ],
+ [
+  "20",
+  "Independent reproduction + uniqueness positive control",
+  "Robustness",
+  "PARTIAL",
+  "blind 2nd code TODO"
+ ]
 ]
