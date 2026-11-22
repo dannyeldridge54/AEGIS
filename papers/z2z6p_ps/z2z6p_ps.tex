@@ -1,0 +1,79 @@
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,showkeys]{revtex4-2}
+\usepackage{amsmath,amssymb,hyperref,booktabs}
+\begin{document}
+\title{The global Pati--Salam model on $T^6/(\mathbb{Z}_2\times\mathbb{Z}_6'\times\Omega\mathcal{R})$:\\ independent reconstruction, uniqueness in its class, and a settled consistency and phenomenology ledger}
+\author{Danny Eldridge}
+\email{dannyeldridge54@gmail.com}
+\affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
+\date{22 November 2026}
+\begin{abstract}
+We rebuild from scratch, using only the formulas published in Ref.~\cite{HRS}, the five-stack globally consistent supersymmetric Pati--Salam model of intersecting D6-branes on the $\mathbb{Z}_2\times\mathbb{Z}_6'$ orientifold with discrete torsion (AAA lattice, exotic O6-plane $\eta_{\Omega\mathcal R}=-1$). Our code reproduces the bulk and all 24 twisted RR tadpole conditions, the full chiral spectrum, and the $15\times5$ Green--Schwarz coupling matrix of Ref.~\cite{HRS}. The matrix also fixes an ordering convention that the published tables leave implicit. We further show, by a pre-registered exhaustive scan, that within the class of equal-volume visible stacks plus at most two hidden stacks, this model is the \emph{unique} three-family Pati--Salam spectrum up to lattice relabelling and left--right exchange. We verify the K-theory constraint against all 512 orientifold-invariant probe cycles; the 256 supersymmetric ones match the count of Ref.~\cite{HRS}. We then settle a phenomenology ledger. (i) The one-loop threshold expressions of Ref.~\cite{HRS} for $SU(2)_{L,R}$ are internally inconsistent with their own stated asymptotics, and the printed isotropic unification condition is reproduced by neither. (ii) The tree-level relation between the string and Planck scales forces $M_s\sim10^{13}$--$10^{14}$\,GeV. The measured couplings can then be matched only for strongly anisotropic tori, with one-loop thresholds at $\geq32\%$ of tree level. (iii) Breaking Pati--Salam to the Standard Model is obstructed perturbatively, because the $SU(4)$ and $SU(2)_R$ stacks are rigid and no $(\mathbf4,\mathbf1,\mathbf2)$ Higgs is present. (iv) The two hidden $SU(2)$s are infrared free and contribute $\Delta N_{\rm eff}\approx0.12$ if thermal.
+\end{abstract}
+\keywords{intersecting D-branes, orientifolds, Pati--Salam, K-theory, gauge coupling unification}
+\maketitle
+
+\section{Introduction}
+Ref.~\cite{HRS} found that, on $T^6/(\mathbb{Z}_2\times\mathbb{Z}_6'\times\Omega\mathcal R)$ with discrete torsion, local MSSM-like and left--right symmetric configurations admit no global supersymmetric completion, while a global five-stack Pati--Salam (PS) model exists. Rigid fractional cycles remove the adjoint matter, the visible stacks share one bulk cycle (tree-level unification), and only one generation has perturbative Yukawa couplings. This note does three things. First, it reproduces that model independently from the published formulas. Second, it asks whether the model is isolated or one member of a landscape. Third, it closes every consistency and phenomenology item to an explicit verdict. Every computation was pre-registered (rules and SHA-256 hashes committed before running), and all deviations were logged before reruns~\cite{repo}.
+
+\section{Reconstruction}
+Fractional three-cycles are $\Pi=\tfrac14(\Pi^{\rm bulk}+\sum_{k,\alpha}\Pi^{\mathbb Z_2^{(k)}}_\alpha)$. The bulk wrapping numbers are $X=n^1n^2n^3-m^1m^2m^3-\sum_{\rm cyc}n^im^jm^k$ and $Y=\sum_{\rm cyc}(n^in^jm^k+n^im^jm^k)$. Supersymmetry requires $Y=0$ and $2X+Y>0$, and the bulk tadpole is $\sum_x N_x(2X_x+Y_x)=32$. We transcribed the complete exceptional-wrapping table of Ref.~\cite{HRS} (9 parity classes $\times$ 4 displacement columns) together with the orientifold images on AAA. One entry (block 3, $\alpha_1$) collides with $\alpha_3$ as printed; we read it as $1+\sigma^k(4-2\sigma^j)$, which reproduces the listed labels in all columns. This reading was fixed before any run. With $\eta_{(k)}=-1$:
+\begin{itemize}
+\item the bulk tadpole equals 32;
+\item \textbf{all 24 twisted tadpole residuals vanish};
+\item the intersection numbers reproduce the chiral-spectrum table of Ref.~\cite{HRS} entry by entry: $ab{=}1$, $ab'{=}2$, $ac{=}{-1}$, $ac'{=}{-2}$, $bc{=}1$, $bd{=}1$, $bd'{=}{-3}$, $be'{=}{-1}$, $cd{=}{-1}$, $cd'{=}3$, $ce'{=}1$, with all others zero.
+\end{itemize}
+The symmetric and antisymmetric net chiralities, $\chi^{\rm S}=\chi^{\rm A}=\tfrac12\Pi_x\circ\Pi_{x'}$, vanish for all five stacks.
+
+\paragraph{Green--Schwarz matrix and ordering convention.} The tables leave implicit whether the $(j,k)$ tori of sector $i$ are taken in cyclic or increasing order. The two choices differ only in sector 2, and the tadpoles and spectrum do not distinguish them. The Green--Schwarz couplings $N_xc^{(k),\alpha}_x$ do. Increasing order reproduces all 75 entries of the Green--Schwarz matrix of Ref.~\cite{HRS} exactly, while cyclic order fails in sector 2. In both cases the rank is 5, so all five $U(1)$s are massive.
+
+\paragraph{K-theory.} We enumerated every fractional cycle with $|n|,|m|\le3$ and $Y=0$ that is equal to its own orientifold image, finding 512. The 256 supersymmetric ones coincide with the $144$ $USp$ plus $112$ $SO$ invariant branes counted in Ref.~\cite{HRS}. For every probe $p$, $\sum_x N_x\,\Pi_x\circ\Pi_p\in2\mathbb Z$, so the model satisfies the K-theory constraint~\cite{Uranga}.
+
+\section{Uniqueness in its class}
+We scanned all visible triples $a(4),b(2),c(2)$ on a common supersymmetric bulk cycle; the tadpole budget forces $2X+Y=2$, leaving 36 wrappings $\times$ 256 fractional labels. Each triple was required to give three left- and three right-handed families, with no visible stack equal to its own image. Each was then completed by at most two hidden stacks with $2X+Y\le14$, solving all 25 tadpole conditions exactly. The scan
+\begin{itemize}
+\item finds 5{,}184 visible triples, every one globally completable (about $9\times10^6$ raw completions);
+\item rediscovers the published model;
+\item yields \emph{one} spectrum up to $L\leftrightarrow R$: the published one, with a $2\times U(2)$ hidden sector and $\sum|\chi_{\rm vis\text{-}hid}|=10$.
+\end{itemize}
+This agrees with the statement in Ref.~\cite{HRS} that all 27 rigid three-stack configurations share one chiral spectrum, and it extends that statement to the full global completion in this class. The result is unchanged under either ordering convention.
+
+\section{Phenomenology ledger}
+\paragraph{Beta functions.} The beta-function formula of Ref.~\cite{HRS}, with the multiplet counts of its chiral and non-chiral spectrum tables, gives $b_{SU(4)}=-2$, $b_{SU(2)_{L,R}}=+6$, $b_{SU(2)_d}=+28$ and $b_{SU(2)_e}=+2$.
+
+\paragraph{Thresholds.} We evaluated the one-loop gauge kinetic corrections with exact $\vartheta_1/\eta$. The $SU(4)$ expression matches its stated large-volume asymptote to $10^{-7}$, which validates the normalisation. The $SU(2)_{L,R}$ expression does not. With the printed $\tfrac{1}{2\pi}\ln\eta(iv_m)$, a term linear in $v_m$ survives. With $\tfrac{1}{2\pi^2}$, the $v_3$ slope is $-1/48\pi$ rather than the stated $-1/16\pi$. The resulting conditions for $f_a=f_b$ at $v_1=v_2$ disagree: $v\simeq\tfrac54v_3+\tfrac{7\ln2}{\pi}$ from the expression, $\tfrac14v_3+\tfrac{7\ln2}{\pi}$ from the asymptote, and $4v_3+\tfrac{168\ln2}{\pi}$ as printed. We flag this for the authors; the qualitative claim of near-isotropic unification survives.
+
+\paragraph{String scale.} From the tree-level gauge coupling and the volume--Planck relation of Ref.~\cite{HRS}, $\alpha^{-1}_{\rm tree}=3.53\times10^{-4}\,M_{\rm Pl}/M_s$. Requiring the one-loop MSSM unified value $\alpha_X^{-1}=24.3$ needs $M_s\simeq3.5\times10^{13}$\,GeV (reduced $M_{\rm Pl}$), which is $570\times$ below $M_{\rm GUT}=2.0\times10^{16}$\,GeV. We solved the full matching, with three measured couplings at $M_s$ against $(v_1,v_2,v_3,g_s)$. Geometric solutions ($v_i\ge1$, $g_s<1$) exist only for anisotropic tori, $v_3\sim6\times10^2$--$5\times10^3>v_1>v_2$, with $M_s=7\times10^{12}$--$2\times10^{14}$\,GeV. Their thresholds are at least $32\%$ of tree level, and no solution exists for $v_1=v_2$. Here $\alpha_s$ is an input, not a prediction. If instead $M_s=M_{\rm GUT}$ and only the MSSM is light, the one-loop prediction is $\alpha_s(M_Z)=0.117$. Making the PS-vector-like states light (1\,TeV) drives the couplings non-perturbative, so they must be heavy.
+
+\paragraph{Breaking Pati--Salam.} Recombination requires deformation moduli, i.e.\ adjoint multiplets~\cite{HRS}. Stacks $a$ and $c$ are rigid, and the spectrum tables contain no $(\mathbf4,\mathbf1,\mathbf2)$ or $(\bar{\mathbf4},\mathbf1,\bar{\mathbf2})$ Higgs. PS$\to$SM breaking is therefore obstructed perturbatively. The open routes are non-perturbative couplings, recombination through the flexible hidden stack $d$ (four adjoints), or leaving the rigid-cycle class.
+
+\paragraph{Yukawas and hidden sector.} The two non-perturbative generations need suppressions $e^{-S}$ with $S\simeq\ln(m_t/m_c)\approx5.6$ and $\ln(m_t/m_u)\approx11.8$ (estimate). All $U(1)$s are massive, so there is no massless dark photon. The hidden $SU(2)_d\times SU(2)_e$ are infrared free and leave six massless vectors. If they are thermal and decouple at $M_s$ ($g_{*s}\ge228.75$), they give $\Delta N_{\rm eff}\approx0.12$, below the Planck+BAO bound.
+
+\begin{table}[t]\centering\small
+\begin{tabular}{@{}ll@{}}\toprule
+Item & Verdict\\\midrule
+Tadpoles (bulk + 24 twisted), SUSY & pass\\
+Chiral spectrum, no chiral S/A exotics & pass\\
+Green--Schwarz matrix (fixes convention) & pass\\
+K-theory (512 probes) & pass\\
+Uniqueness in class & pass\\
+One-loop threshold formulas in Ref.~\cite{HRS} & inconsistent (flag)\\
+$M_s$ vs.\ $M_{\rm GUT}$ & marginal (fit, thresholds $\ge32\%$)\\
+PS$\to$SM breaking & obstructed perturbatively\\
+Hidden sector $\Delta N_{\rm eff}$ & $\approx0.12$ (estimate)\\
+Twisted-moduli FI/D-terms & not verified\\\bottomrule
+\end{tabular}
+\caption{Settled ledger for the global PS model.}
+\end{table}
+
+\section{Conclusion}
+The global Pati--Salam model of Ref.~\cite{HRS} is a fully consistent string vacuum (tadpoles, K-theory, anomalous $U(1)$ masses), and it is the only three-family PS spectrum in its class. It is therefore a sharp, rigid target rather than one point in a landscape. Its obstacles are physical rather than formal: an intermediate string scale with large anisotropic thresholds, and the absence of a perturbative route from Pati--Salam to the Standard Model. These define the next steps: an independent recomputation of the $SU(2)$ thresholds, the twisted-sector FI terms, and a search beyond rigid cycles for a PS-breaking sector.
+
+\begin{acknowledgments}
+The derivations and code were developed with the assistance of Claude (Anthropic). The author directed the work and checked the results. Scripts, pre-registration files and outputs are in the reproducibility archive~\cite{repo}.
+\end{acknowledgments}
+\begin{thebibliography}{9}
+\bibitem{HRS} G.~Honecker, M.~Ripka and W.~Staessens, ``The importance of being rigid: D6-brane model building on $T^6/\mathbb{Z}_2\times\mathbb{Z}_6'$ with discrete torsion,'' Nucl.\ Phys.\ B \textbf{868} (2013) 156, arXiv:1209.3010.
+\bibitem{Uranga} A.~M.~Uranga, ``D-brane probes, RR tadpole cancellation and K-theory charge,'' Nucl.\ Phys.\ B \textbf{598} (2001) 225, hep-th/0011048.
+\bibitem{repo} AEGIS repository, branch \texttt{unify-bg}: \texttt{tools/seed/z2z6p*.py}, \texttt{field\_tests/rules/PREREG\_D2110}--\texttt{D2117}.
+\end{thebibliography}
+\end{document}
