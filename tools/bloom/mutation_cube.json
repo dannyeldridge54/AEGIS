@@ -1,36 +1,20 @@
 [
  {
-  "corner": "000100",
+  "corner": "101000",
   "choice": {
-   "M": "pure-AMSB",
-   "V": "D7 on KKLT cycle",
-   "I": "coupled",
-   "K": "flux-scaling",
-   "T": "none",
-   "U": "i"
-  },
-  "bits_known": 34.1,
-  "k_fit": 9,
-  "filters_failed": [],
-  "open": [
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
-  ]
- },
- {
-  "corner": "001100",
-  "choice": {
-   "M": "pure-AMSB",
+   "M": "mirage",
    "V": "D7 on KKLT cycle",
    "I": "decoupled sector",
-   "K": "flux-scaling",
+   "K": "KKLT non-perturbative",
    "T": "none",
    "U": "i"
   },
-  "bits_known": 38.5,
-  "k_fit": 11,
+  "bits_known": 102.1,
+  "k_fit": 10,
   "filters_failed": [],
   "open": [
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
+   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
   ]
  },
  {
@@ -47,114 +31,9 @@
   "k_fit": 11,
   "filters_failed": [],
   "open": [
-   "f_vis = S only: the whole gauge chain must be re-derived"
-  ]
- },
- {
-  "corner": "101000",
-  "choice": {
-   "M": "mirage",
-   "V": "D7 on KKLT cycle",
-   "I": "decoupled sector",
-   "K": "KKLT non-perturbative",
-   "T": "none",
-   "U": "i"
-  },
-  "bits_known": 102.1,
-  "k_fit": 10,
-  "filters_failed": [],
-  "open": [
-   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
-  ]
- },
- {
-  "corner": "000110",
-  "choice": {
-   "M": "pure-AMSB",
-   "V": "D7 on KKLT cycle",
-   "I": "coupled",
-   "K": "flux-scaling",
-   "T": "derived threshold",
-   "U": "i"
-  },
-  "bits_known": 34.1,
-  "k_fit": 9,
-  "filters_failed": [],
-  "open": [
-   "seam value not yet derived (B4)",
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
-  ]
- },
- {
-  "corner": "010100",
-  "choice": {
-   "M": "pure-AMSB",
-   "V": "sequestered D3 (LVS)",
-   "I": "coupled",
-   "K": "flux-scaling",
-   "T": "none",
-   "U": "i"
-  },
-  "bits_known": 36.3,
-  "k_fit": 10,
-  "filters_failed": [],
-  "open": [
+   "pure AMSB on sequestered D3 needs a warped-throat tip (LVS no-scale may kill AMSB at our m32, D2040)",
    "f_vis = S only: the whole gauge chain must be re-derived",
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
-  ]
- },
- {
-  "corner": "001110",
-  "choice": {
-   "M": "pure-AMSB",
-   "V": "D7 on KKLT cycle",
-   "I": "decoupled sector",
-   "K": "flux-scaling",
-   "T": "derived threshold",
-   "U": "i"
-  },
-  "bits_known": 38.5,
-  "k_fit": 11,
-  "filters_failed": [],
-  "open": [
-   "seam value not yet derived (B4)",
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
-  ]
- },
- {
-  "corner": "011010",
-  "choice": {
-   "M": "pure-AMSB",
-   "V": "sequestered D3 (LVS)",
-   "I": "decoupled sector",
-   "K": "KKLT non-perturbative",
-   "T": "derived threshold",
-   "U": "i"
-  },
-  "bits_known": 38.5,
-  "k_fit": 11,
-  "filters_failed": [],
-  "open": [
-   "f_vis = S only: the whole gauge chain must be re-derived",
-   "seam value not yet derived (B4)"
-  ]
- },
- {
-  "corner": "011100",
-  "choice": {
-   "M": "pure-AMSB",
-   "V": "sequestered D3 (LVS)",
-   "I": "decoupled sector",
-   "K": "flux-scaling",
-   "T": "none",
-   "U": "i"
-  },
-  "bits_known": 40.7,
-  "k_fit": 12,
-  "filters_failed": [],
-  "open": [
-   "f_vis = S only: the whole gauge chain must be re-derived",
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)"
   ]
  },
  {
@@ -172,44 +51,46 @@
   "filters_failed": [],
   "open": [
    "seam value not yet derived (B4)",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
    "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
   ]
  },
  {
-  "corner": "010110",
-  "choice": {
-   "M": "pure-AMSB",
-   "V": "sequestered D3 (LVS)",
-   "I": "coupled",
-   "K": "flux-scaling",
-   "T": "derived threshold",
-   "U": "i"
-  },
-  "bits_known": 36.3,
-  "k_fit": 10,
-  "filters_failed": [],
-  "open": [
-   "f_vis = S only: the whole gauge chain must be re-derived",
-   "seam value not yet derived (B4)",
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
-  ]
- },
- {
-  "corner": "011110",
+  "corner": "011010",
   "choice": {
    "M": "pure-AMSB",
    "V": "sequestered D3 (LVS)",
    "I": "decoupled sector",
-   "K": "flux-scaling",
+   "K": "KKLT non-perturbative",
    "T": "derived threshold",
    "U": "i"
   },
-  "bits_known": 40.7,
-  "k_fit": 12,
+  "bits_known": 38.5,
+  "k_fit": 11,
   "filters_failed": [],
   "open": [
+   "pure AMSB on sequestered D3 needs a warped-throat tip (LVS no-scale may kill AMSB at our m32, D2040)",
    "f_vis = S only: the whole gauge chain must be re-derived",
    "seam value not yet derived (B4)",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)"
+  ]
+ },
+ {
+  "corner": "000100",
+  "choice": {
+   "M": "pure-AMSB",
+   "V": "D7 on KKLT cycle",
+   "I": "coupled",
+   "K": "flux-scaling",
+   "T": "none",
+   "U": "i"
+  },
+  "bits_known": 34.1,
+  "k_fit": 9,
+  "filters_failed": [
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
+  ],
+  "open": [
    "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
   ]
  },
@@ -228,101 +109,8 @@
   "filters_failed": [
    "pure-AMSB contradicts F^T_vis (D2036 M)"
   ],
-  "open": []
- },
- {
-  "corner": "000101",
-  "choice": {
-   "M": "pure-AMSB",
-   "V": "D7 on KKLT cycle",
-   "I": "coupled",
-   "K": "flux-scaling",
-   "T": "none",
-   "U": "2i"
-  },
-  "bits_known": 34.1,
-  "k_fit": 9,
-  "filters_failed": [
-   "U3 = 2i breaks neutrinos at i (D2022)"
-  ],
   "open": [
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
-  ]
- },
- {
-  "corner": "010000",
-  "choice": {
-   "M": "pure-AMSB",
-   "V": "sequestered D3 (LVS)",
-   "I": "coupled",
-   "K": "KKLT non-perturbative",
-   "T": "none",
-   "U": "i"
-  },
-  "bits_known": 34.1,
-  "k_fit": 9,
-  "filters_failed": [
-   "Kallosh-Linde: H_inf >> barrier (D2036 K, D2037 B0b)"
-  ],
-  "open": [
-   "f_vis = S only: the whole gauge chain must be re-derived"
-  ]
- },
- {
-  "corner": "001010",
-  "choice": {
-   "M": "pure-AMSB",
-   "V": "D7 on KKLT cycle",
-   "I": "decoupled sector",
-   "K": "KKLT non-perturbative",
-   "T": "derived threshold",
-   "U": "i"
-  },
-  "bits_known": 36.3,
-  "k_fit": 10,
-  "filters_failed": [
-   "pure-AMSB contradicts F^T_vis (D2036 M)"
-  ],
-  "open": [
-   "seam value not yet derived (B4)"
-  ]
- },
- {
-  "corner": "001101",
-  "choice": {
-   "M": "pure-AMSB",
-   "V": "D7 on KKLT cycle",
-   "I": "decoupled sector",
-   "K": "flux-scaling",
-   "T": "none",
-   "U": "2i"
-  },
-  "bits_known": 38.5,
-  "k_fit": 11,
-  "filters_failed": [
-   "U3 = 2i breaks neutrinos at i (D2022)"
-  ],
-  "open": [
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
-  ]
- },
- {
-  "corner": "011001",
-  "choice": {
-   "M": "pure-AMSB",
-   "V": "sequestered D3 (LVS)",
-   "I": "decoupled sector",
-   "K": "KKLT non-perturbative",
-   "T": "none",
-   "U": "2i"
-  },
-  "bits_known": 38.5,
-  "k_fit": 11,
-  "filters_failed": [
-   "U3 = 2i breaks neutrinos at i (D2022)"
-  ],
-  "open": [
-   "f_vis = S only: the whole gauge chain must be re-derived"
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)"
   ]
  },
  {
@@ -345,38 +133,19 @@
   ]
  },
  {
-  "corner": "101001",
-  "choice": {
-   "M": "mirage",
-   "V": "D7 on KKLT cycle",
-   "I": "decoupled sector",
-   "K": "KKLT non-perturbative",
-   "T": "none",
-   "U": "2i"
-  },
-  "bits_known": 102.1,
-  "k_fit": 10,
-  "filters_failed": [
-   "U3 = 2i breaks neutrinos at i (D2022)"
-  ],
-  "open": [
-   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
-  ]
- },
- {
-  "corner": "000111",
+  "corner": "000110",
   "choice": {
    "M": "pure-AMSB",
    "V": "D7 on KKLT cycle",
    "I": "coupled",
    "K": "flux-scaling",
    "T": "derived threshold",
-   "U": "2i"
+   "U": "i"
   },
   "bits_known": 34.1,
   "k_fit": 9,
   "filters_failed": [
-   "U3 = 2i breaks neutrinos at i (D2022)"
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
   ],
   "open": [
    "seam value not yet derived (B4)",
@@ -384,13 +153,13 @@
   ]
  },
  {
-  "corner": "010010",
+  "corner": "010000",
   "choice": {
    "M": "pure-AMSB",
    "V": "sequestered D3 (LVS)",
    "I": "coupled",
    "K": "KKLT non-perturbative",
-   "T": "derived threshold",
+   "T": "none",
    "U": "i"
   },
   "bits_known": 34.1,
@@ -399,87 +168,47 @@
    "Kallosh-Linde: H_inf >> barrier (D2036 K, D2037 B0b)"
   ],
   "open": [
-   "f_vis = S only: the whole gauge chain must be re-derived",
-   "seam value not yet derived (B4)"
+   "pure AMSB on sequestered D3 needs a warped-throat tip (LVS no-scale may kill AMSB at our m32, D2040)",
+   "f_vis = S only: the whole gauge chain must be re-derived"
   ]
  },
  {
-  "corner": "010101",
+  "corner": "001010",
   "choice": {
    "M": "pure-AMSB",
-   "V": "sequestered D3 (LVS)",
-   "I": "coupled",
-   "K": "flux-scaling",
-   "T": "none",
-   "U": "2i"
+   "V": "D7 on KKLT cycle",
+   "I": "decoupled sector",
+   "K": "KKLT non-perturbative",
+   "T": "derived threshold",
+   "U": "i"
   },
   "bits_known": 36.3,
   "k_fit": 10,
   "filters_failed": [
-   "U3 = 2i breaks neutrinos at i (D2022)"
+   "pure-AMSB contradicts F^T_vis (D2036 M)"
   ],
   "open": [
-   "f_vis = S only: the whole gauge chain must be re-derived",
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
+   "seam value not yet derived (B4)",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)"
   ]
  },
  {
-  "corner": "001111",
+  "corner": "001100",
   "choice": {
    "M": "pure-AMSB",
    "V": "D7 on KKLT cycle",
    "I": "decoupled sector",
    "K": "flux-scaling",
-   "T": "derived threshold",
-   "U": "2i"
-  },
-  "bits_known": 38.5,
-  "k_fit": 11,
-  "filters_failed": [
-   "U3 = 2i breaks neutrinos at i (D2022)"
-  ],
-  "open": [
-   "seam value not yet derived (B4)",
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
-  ]
- },
- {
-  "corner": "011011",
-  "choice": {
-   "M": "pure-AMSB",
-   "V": "sequestered D3 (LVS)",
-   "I": "decoupled sector",
-   "K": "KKLT non-perturbative",
-   "T": "derived threshold",
-   "U": "2i"
-  },
-  "bits_known": 38.5,
-  "k_fit": 11,
-  "filters_failed": [
-   "U3 = 2i breaks neutrinos at i (D2022)"
-  ],
-  "open": [
-   "f_vis = S only: the whole gauge chain must be re-derived",
-   "seam value not yet derived (B4)"
-  ]
- },
- {
-  "corner": "011101",
-  "choice": {
-   "M": "pure-AMSB",
-   "V": "sequestered D3 (LVS)",
-   "I": "decoupled sector",
-   "K": "flux-scaling",
    "T": "none",
-   "U": "2i"
+   "U": "i"
   },
-  "bits_known": 40.7,
-  "k_fit": 12,
+  "bits_known": 38.5,
+  "k_fit": 11,
   "filters_failed": [
-   "U3 = 2i breaks neutrinos at i (D2022)"
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
   ],
   "open": [
-   "f_vis = S only: the whole gauge chain must be re-derived",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
    "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
   ]
  },
@@ -504,23 +233,107 @@
   ]
  },
  {
-  "corner": "100100",
+  "corner": "101001",
   "choice": {
    "M": "mirage",
    "V": "D7 on KKLT cycle",
+   "I": "decoupled sector",
+   "K": "KKLT non-perturbative",
+   "T": "none",
+   "U": "2i"
+  },
+  "bits_known": 102.1,
+  "k_fit": 10,
+  "filters_failed": [
+   "U3 = 2i breaks neutrinos at i (D2022)"
+  ],
+  "open": [
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
+   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
+  ]
+ },
+ {
+  "corner": "010010",
+  "choice": {
+   "M": "pure-AMSB",
+   "V": "sequestered D3 (LVS)",
+   "I": "coupled",
+   "K": "KKLT non-perturbative",
+   "T": "derived threshold",
+   "U": "i"
+  },
+  "bits_known": 34.1,
+  "k_fit": 9,
+  "filters_failed": [
+   "Kallosh-Linde: H_inf >> barrier (D2036 K, D2037 B0b)"
+  ],
+  "open": [
+   "pure AMSB on sequestered D3 needs a warped-throat tip (LVS no-scale may kill AMSB at our m32, D2040)",
+   "f_vis = S only: the whole gauge chain must be re-derived",
+   "seam value not yet derived (B4)"
+  ]
+ },
+ {
+  "corner": "010100",
+  "choice": {
+   "M": "pure-AMSB",
+   "V": "sequestered D3 (LVS)",
    "I": "coupled",
    "K": "flux-scaling",
    "T": "none",
    "U": "i"
   },
-  "bits_known": 99.9,
-  "k_fit": 9,
+  "bits_known": 36.3,
+  "k_fit": 10,
   "filters_failed": [
-   "mirage needs F^T_vis; this corner suppresses it"
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
   ],
   "open": [
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
-   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
+   "pure AMSB on sequestered D3 needs a warped-throat tip (LVS no-scale may kill AMSB at our m32, D2040)",
+   "f_vis = S only: the whole gauge chain must be re-derived",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
+  ]
+ },
+ {
+  "corner": "001110",
+  "choice": {
+   "M": "pure-AMSB",
+   "V": "D7 on KKLT cycle",
+   "I": "decoupled sector",
+   "K": "flux-scaling",
+   "T": "derived threshold",
+   "U": "i"
+  },
+  "bits_known": 38.5,
+  "k_fit": 11,
+  "filters_failed": [
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
+  ],
+  "open": [
+   "seam value not yet derived (B4)",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
+  ]
+ },
+ {
+  "corner": "011001",
+  "choice": {
+   "M": "pure-AMSB",
+   "V": "sequestered D3 (LVS)",
+   "I": "decoupled sector",
+   "K": "KKLT non-perturbative",
+   "T": "none",
+   "U": "2i"
+  },
+  "bits_known": 38.5,
+  "k_fit": 11,
+  "filters_failed": [
+   "U3 = 2i breaks neutrinos at i (D2022)"
+  ],
+  "open": [
+   "pure AMSB on sequestered D3 needs a warped-throat tip (LVS no-scale may kill AMSB at our m32, D2040)",
+   "f_vis = S only: the whole gauge chain must be re-derived",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)"
   ]
  },
  {
@@ -540,26 +353,7 @@
   ],
   "open": [
    "seam value not yet derived (B4)",
-   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
-  ]
- },
- {
-  "corner": "101100",
-  "choice": {
-   "M": "mirage",
-   "V": "D7 on KKLT cycle",
-   "I": "decoupled sector",
-   "K": "flux-scaling",
-   "T": "none",
-   "U": "i"
-  },
-  "bits_known": 104.3,
-  "k_fit": 11,
-  "filters_failed": [
-   "mirage needs F^T_vis; this corner suppresses it"
-  ],
-  "open": [
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
    "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
   ]
  },
@@ -580,112 +374,74 @@
   ],
   "open": [
    "f_vis = S only: the whole gauge chain must be re-derived",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
    "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
   ]
  },
  {
-  "corner": "010111",
+  "corner": "010110",
   "choice": {
    "M": "pure-AMSB",
    "V": "sequestered D3 (LVS)",
    "I": "coupled",
    "K": "flux-scaling",
    "T": "derived threshold",
-   "U": "2i"
+   "U": "i"
   },
   "bits_known": 36.3,
   "k_fit": 10,
   "filters_failed": [
-   "U3 = 2i breaks neutrinos at i (D2022)"
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
   ],
   "open": [
+   "pure AMSB on sequestered D3 needs a warped-throat tip (LVS no-scale may kill AMSB at our m32, D2040)",
    "f_vis = S only: the whole gauge chain must be re-derived",
    "seam value not yet derived (B4)",
    "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
   ]
  },
  {
-  "corner": "011111",
+  "corner": "011011",
+  "choice": {
+   "M": "pure-AMSB",
+   "V": "sequestered D3 (LVS)",
+   "I": "decoupled sector",
+   "K": "KKLT non-perturbative",
+   "T": "derived threshold",
+   "U": "2i"
+  },
+  "bits_known": 38.5,
+  "k_fit": 11,
+  "filters_failed": [
+   "U3 = 2i breaks neutrinos at i (D2022)"
+  ],
+  "open": [
+   "pure AMSB on sequestered D3 needs a warped-throat tip (LVS no-scale may kill AMSB at our m32, D2040)",
+   "f_vis = S only: the whole gauge chain must be re-derived",
+   "seam value not yet derived (B4)",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)"
+  ]
+ },
+ {
+  "corner": "011100",
   "choice": {
    "M": "pure-AMSB",
    "V": "sequestered D3 (LVS)",
    "I": "decoupled sector",
    "K": "flux-scaling",
-   "T": "derived threshold",
-   "U": "2i"
+   "T": "none",
+   "U": "i"
   },
   "bits_known": 40.7,
   "k_fit": 12,
   "filters_failed": [
-   "U3 = 2i breaks neutrinos at i (D2022)"
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
   ],
   "open": [
+   "pure AMSB on sequestered D3 needs a warped-throat tip (LVS no-scale may kill AMSB at our m32, D2040)",
    "f_vis = S only: the whole gauge chain must be re-derived",
-   "seam value not yet derived (B4)",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
    "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
-  ]
- },
- {
-  "corner": "100110",
-  "choice": {
-   "M": "mirage",
-   "V": "D7 on KKLT cycle",
-   "I": "coupled",
-   "K": "flux-scaling",
-   "T": "derived threshold",
-   "U": "i"
-  },
-  "bits_known": 99.9,
-  "k_fit": 9,
-  "filters_failed": [
-   "mirage needs F^T_vis; this corner suppresses it"
-  ],
-  "open": [
-   "seam value not yet derived (B4)",
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
-   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
-  ]
- },
- {
-  "corner": "110100",
-  "choice": {
-   "M": "mirage",
-   "V": "sequestered D3 (LVS)",
-   "I": "coupled",
-   "K": "flux-scaling",
-   "T": "none",
-   "U": "i"
-  },
-  "bits_known": 102.1,
-  "k_fit": 10,
-  "filters_failed": [
-   "mirage needs F^T_vis; this corner suppresses it"
-  ],
-  "open": [
-   "f_vis = S only: the whole gauge chain must be re-derived",
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
-   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
-  ]
- },
- {
-  "corner": "101110",
-  "choice": {
-   "M": "mirage",
-   "V": "D7 on KKLT cycle",
-   "I": "decoupled sector",
-   "K": "flux-scaling",
-   "T": "derived threshold",
-   "U": "i"
-  },
-  "bits_known": 104.3,
-  "k_fit": 11,
-  "filters_failed": [
-   "mirage needs F^T_vis; this corner suppresses it"
-  ],
-  "open": [
-   "seam value not yet derived (B4)",
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
-   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
   ]
  },
  {
@@ -706,72 +462,31 @@
   "open": [
    "f_vis = S only: the whole gauge chain must be re-derived",
    "seam value not yet derived (B4)",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
    "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
   ]
  },
  {
-  "corner": "111100",
+  "corner": "011110",
   "choice": {
-   "M": "mirage",
-   "V": "sequestered D3 (LVS)",
-   "I": "decoupled sector",
-   "K": "flux-scaling",
-   "T": "none",
-   "U": "i"
-  },
-  "bits_known": 106.5,
-  "k_fit": 12,
-  "filters_failed": [
-   "mirage needs F^T_vis; this corner suppresses it"
-  ],
-  "open": [
-   "f_vis = S only: the whole gauge chain must be re-derived",
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
-   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
-  ]
- },
- {
-  "corner": "110110",
-  "choice": {
-   "M": "mirage",
-   "V": "sequestered D3 (LVS)",
-   "I": "coupled",
-   "K": "flux-scaling",
-   "T": "derived threshold",
-   "U": "i"
-  },
-  "bits_known": 102.1,
-  "k_fit": 10,
-  "filters_failed": [
-   "mirage needs F^T_vis; this corner suppresses it"
-  ],
-  "open": [
-   "f_vis = S only: the whole gauge chain must be re-derived",
-   "seam value not yet derived (B4)",
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
-   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
-  ]
- },
- {
-  "corner": "111110",
-  "choice": {
-   "M": "mirage",
+   "M": "pure-AMSB",
    "V": "sequestered D3 (LVS)",
    "I": "decoupled sector",
    "K": "flux-scaling",
    "T": "derived threshold",
    "U": "i"
   },
-  "bits_known": 106.5,
+  "bits_known": 40.7,
   "k_fit": 12,
   "filters_failed": [
-   "mirage needs F^T_vis; this corner suppresses it"
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
   ],
   "open": [
+   "pure AMSB on sequestered D3 needs a warped-throat tip (LVS no-scale may kill AMSB at our m32, D2040)",
    "f_vis = S only: the whole gauge chain must be re-derived",
    "seam value not yet derived (B4)",
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
-   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
   ]
  },
  {
@@ -789,24 +504,6 @@
   "filters_failed": [
    "pure-AMSB contradicts F^T_vis (D2036 M)",
    "Kallosh-Linde: H_inf >> barrier (D2036 K, D2037 B0b)"
-  ],
-  "open": []
- },
- {
-  "corner": "001001",
-  "choice": {
-   "M": "pure-AMSB",
-   "V": "D7 on KKLT cycle",
-   "I": "decoupled sector",
-   "K": "KKLT non-perturbative",
-   "T": "none",
-   "U": "2i"
-  },
-  "bits_known": 36.3,
-  "k_fit": 10,
-  "filters_failed": [
-   "pure-AMSB contradicts F^T_vis (D2036 M)",
-   "U3 = 2i breaks neutrinos at i (D2022)"
   ],
   "open": []
  },
@@ -831,33 +528,33 @@
   ]
  },
  {
-  "corner": "010001",
+  "corner": "000101",
   "choice": {
    "M": "pure-AMSB",
-   "V": "sequestered D3 (LVS)",
+   "V": "D7 on KKLT cycle",
    "I": "coupled",
-   "K": "KKLT non-perturbative",
+   "K": "flux-scaling",
    "T": "none",
    "U": "2i"
   },
   "bits_known": 34.1,
   "k_fit": 9,
   "filters_failed": [
-   "Kallosh-Linde: H_inf >> barrier (D2036 K, D2037 B0b)",
-   "U3 = 2i breaks neutrinos at i (D2022)"
+   "U3 = 2i breaks neutrinos at i (D2022)",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
   ],
   "open": [
-   "f_vis = S only: the whole gauge chain must be re-derived"
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
   ]
  },
  {
-  "corner": "001011",
+  "corner": "001001",
   "choice": {
    "M": "pure-AMSB",
    "V": "D7 on KKLT cycle",
    "I": "decoupled sector",
    "K": "KKLT non-perturbative",
-   "T": "derived threshold",
+   "T": "none",
    "U": "2i"
   },
   "bits_known": 36.3,
@@ -867,7 +564,7 @@
    "U3 = 2i breaks neutrinos at i (D2022)"
   ],
   "open": [
-   "seam value not yet derived (B4)"
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)"
   ]
  },
  {
@@ -891,13 +588,34 @@
   ]
  },
  {
-  "corner": "010011",
+  "corner": "000111",
+  "choice": {
+   "M": "pure-AMSB",
+   "V": "D7 on KKLT cycle",
+   "I": "coupled",
+   "K": "flux-scaling",
+   "T": "derived threshold",
+   "U": "2i"
+  },
+  "bits_known": 34.1,
+  "k_fit": 9,
+  "filters_failed": [
+   "U3 = 2i breaks neutrinos at i (D2022)",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
+  ],
+  "open": [
+   "seam value not yet derived (B4)",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
+  ]
+ },
+ {
+  "corner": "010001",
   "choice": {
    "M": "pure-AMSB",
    "V": "sequestered D3 (LVS)",
    "I": "coupled",
    "K": "KKLT non-perturbative",
-   "T": "derived threshold",
+   "T": "none",
    "U": "2i"
   },
   "bits_known": 34.1,
@@ -907,8 +625,50 @@
    "U3 = 2i breaks neutrinos at i (D2022)"
   ],
   "open": [
-   "f_vis = S only: the whole gauge chain must be re-derived",
-   "seam value not yet derived (B4)"
+   "pure AMSB on sequestered D3 needs a warped-throat tip (LVS no-scale may kill AMSB at our m32, D2040)",
+   "f_vis = S only: the whole gauge chain must be re-derived"
+  ]
+ },
+ {
+  "corner": "001011",
+  "choice": {
+   "M": "pure-AMSB",
+   "V": "D7 on KKLT cycle",
+   "I": "decoupled sector",
+   "K": "KKLT non-perturbative",
+   "T": "derived threshold",
+   "U": "2i"
+  },
+  "bits_known": 36.3,
+  "k_fit": 10,
+  "filters_failed": [
+   "pure-AMSB contradicts F^T_vis (D2036 M)",
+   "U3 = 2i breaks neutrinos at i (D2022)"
+  ],
+  "open": [
+   "seam value not yet derived (B4)",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)"
+  ]
+ },
+ {
+  "corner": "001101",
+  "choice": {
+   "M": "pure-AMSB",
+   "V": "D7 on KKLT cycle",
+   "I": "decoupled sector",
+   "K": "flux-scaling",
+   "T": "none",
+   "U": "2i"
+  },
+  "bits_known": 38.5,
+  "k_fit": 11,
+  "filters_failed": [
+   "U3 = 2i breaks neutrinos at i (D2022)",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
+  ],
+  "open": [
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
   ]
  },
  {
@@ -933,20 +693,20 @@
   ]
  },
  {
-  "corner": "100101",
+  "corner": "100100",
   "choice": {
    "M": "mirage",
    "V": "D7 on KKLT cycle",
    "I": "coupled",
    "K": "flux-scaling",
    "T": "none",
-   "U": "2i"
+   "U": "i"
   },
   "bits_known": 99.9,
   "k_fit": 9,
   "filters_failed": [
    "mirage needs F^T_vis; this corner suppresses it",
-   "U3 = 2i breaks neutrinos at i (D2022)"
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
   ],
   "open": [
    "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
@@ -975,62 +735,86 @@
   ]
  },
  {
-  "corner": "101101",
+  "corner": "010011",
   "choice": {
-   "M": "mirage",
-   "V": "D7 on KKLT cycle",
-   "I": "decoupled sector",
+   "M": "pure-AMSB",
+   "V": "sequestered D3 (LVS)",
+   "I": "coupled",
+   "K": "KKLT non-perturbative",
+   "T": "derived threshold",
+   "U": "2i"
+  },
+  "bits_known": 34.1,
+  "k_fit": 9,
+  "filters_failed": [
+   "Kallosh-Linde: H_inf >> barrier (D2036 K, D2037 B0b)",
+   "U3 = 2i breaks neutrinos at i (D2022)"
+  ],
+  "open": [
+   "pure AMSB on sequestered D3 needs a warped-throat tip (LVS no-scale may kill AMSB at our m32, D2040)",
+   "f_vis = S only: the whole gauge chain must be re-derived",
+   "seam value not yet derived (B4)"
+  ]
+ },
+ {
+  "corner": "010101",
+  "choice": {
+   "M": "pure-AMSB",
+   "V": "sequestered D3 (LVS)",
+   "I": "coupled",
    "K": "flux-scaling",
    "T": "none",
    "U": "2i"
   },
-  "bits_known": 104.3,
-  "k_fit": 11,
+  "bits_known": 36.3,
+  "k_fit": 10,
   "filters_failed": [
-   "mirage needs F^T_vis; this corner suppresses it",
-   "U3 = 2i breaks neutrinos at i (D2022)"
+   "U3 = 2i breaks neutrinos at i (D2022)",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
   ],
   "open": [
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
-   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
+   "pure AMSB on sequestered D3 needs a warped-throat tip (LVS no-scale may kill AMSB at our m32, D2040)",
+   "f_vis = S only: the whole gauge chain must be re-derived",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
   ]
  },
  {
-  "corner": "111001",
+  "corner": "001111",
   "choice": {
-   "M": "mirage",
-   "V": "sequestered D3 (LVS)",
+   "M": "pure-AMSB",
+   "V": "D7 on KKLT cycle",
    "I": "decoupled sector",
-   "K": "KKLT non-perturbative",
-   "T": "none",
+   "K": "flux-scaling",
+   "T": "derived threshold",
    "U": "2i"
   },
-  "bits_known": 104.3,
+  "bits_known": 38.5,
   "k_fit": 11,
   "filters_failed": [
-   "mirage needs F^T_vis; this corner suppresses it",
-   "U3 = 2i breaks neutrinos at i (D2022)"
+   "U3 = 2i breaks neutrinos at i (D2022)",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
   ],
   "open": [
-   "f_vis = S only: the whole gauge chain must be re-derived",
-   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
+   "seam value not yet derived (B4)",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
   ]
  },
  {
-  "corner": "100111",
+  "corner": "100110",
   "choice": {
    "M": "mirage",
    "V": "D7 on KKLT cycle",
    "I": "coupled",
    "K": "flux-scaling",
    "T": "derived threshold",
-   "U": "2i"
+   "U": "i"
   },
   "bits_known": 99.9,
   "k_fit": 9,
   "filters_failed": [
    "mirage needs F^T_vis; this corner suppresses it",
-   "U3 = 2i breaks neutrinos at i (D2022)"
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
   ],
   "open": [
    "seam value not yet derived (B4)",
@@ -1061,20 +845,20 @@
   ]
  },
  {
-  "corner": "110101",
+  "corner": "110100",
   "choice": {
    "M": "mirage",
    "V": "sequestered D3 (LVS)",
    "I": "coupled",
    "K": "flux-scaling",
    "T": "none",
-   "U": "2i"
+   "U": "i"
   },
   "bits_known": 102.1,
   "k_fit": 10,
   "filters_failed": [
    "mirage needs F^T_vis; this corner suppresses it",
-   "U3 = 2i breaks neutrinos at i (D2022)"
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
   ],
   "open": [
    "f_vis = S only: the whole gauge chain must be re-derived",
@@ -1083,13 +867,35 @@
   ]
  },
  {
-  "corner": "101111",
+  "corner": "101100",
   "choice": {
    "M": "mirage",
    "V": "D7 on KKLT cycle",
    "I": "decoupled sector",
    "K": "flux-scaling",
-   "T": "derived threshold",
+   "T": "none",
+   "U": "i"
+  },
+  "bits_known": 104.3,
+  "k_fit": 11,
+  "filters_failed": [
+   "mirage needs F^T_vis; this corner suppresses it",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
+  ],
+  "open": [
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
+   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
+  ]
+ },
+ {
+  "corner": "111001",
+  "choice": {
+   "M": "mirage",
+   "V": "sequestered D3 (LVS)",
+   "I": "decoupled sector",
+   "K": "KKLT non-perturbative",
+   "T": "none",
    "U": "2i"
   },
   "bits_known": 104.3,
@@ -1099,7 +905,99 @@
    "U3 = 2i breaks neutrinos at i (D2022)"
   ],
   "open": [
+   "f_vis = S only: the whole gauge chain must be re-derived",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
+   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
+  ]
+ },
+ {
+  "corner": "010111",
+  "choice": {
+   "M": "pure-AMSB",
+   "V": "sequestered D3 (LVS)",
+   "I": "coupled",
+   "K": "flux-scaling",
+   "T": "derived threshold",
+   "U": "2i"
+  },
+  "bits_known": 36.3,
+  "k_fit": 10,
+  "filters_failed": [
+   "U3 = 2i breaks neutrinos at i (D2022)",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
+  ],
+  "open": [
+   "pure AMSB on sequestered D3 needs a warped-throat tip (LVS no-scale may kill AMSB at our m32, D2040)",
+   "f_vis = S only: the whole gauge chain must be re-derived",
    "seam value not yet derived (B4)",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
+  ]
+ },
+ {
+  "corner": "011101",
+  "choice": {
+   "M": "pure-AMSB",
+   "V": "sequestered D3 (LVS)",
+   "I": "decoupled sector",
+   "K": "flux-scaling",
+   "T": "none",
+   "U": "2i"
+  },
+  "bits_known": 40.7,
+  "k_fit": 12,
+  "filters_failed": [
+   "U3 = 2i breaks neutrinos at i (D2022)",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
+  ],
+  "open": [
+   "pure AMSB on sequestered D3 needs a warped-throat tip (LVS no-scale may kill AMSB at our m32, D2040)",
+   "f_vis = S only: the whole gauge chain must be re-derived",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
+  ]
+ },
+ {
+  "corner": "110110",
+  "choice": {
+   "M": "mirage",
+   "V": "sequestered D3 (LVS)",
+   "I": "coupled",
+   "K": "flux-scaling",
+   "T": "derived threshold",
+   "U": "i"
+  },
+  "bits_known": 102.1,
+  "k_fit": 10,
+  "filters_failed": [
+   "mirage needs F^T_vis; this corner suppresses it",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
+  ],
+  "open": [
+   "f_vis = S only: the whole gauge chain must be re-derived",
+   "seam value not yet derived (B4)",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
+   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
+  ]
+ },
+ {
+  "corner": "101110",
+  "choice": {
+   "M": "mirage",
+   "V": "D7 on KKLT cycle",
+   "I": "decoupled sector",
+   "K": "flux-scaling",
+   "T": "derived threshold",
+   "U": "i"
+  },
+  "bits_known": 104.3,
+  "k_fit": 11,
+  "filters_failed": [
+   "mirage needs F^T_vis; this corner suppresses it",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
+  ],
+  "open": [
+   "seam value not yet derived (B4)",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
    "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
    "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
   ]
@@ -1123,73 +1021,77 @@
   "open": [
    "f_vis = S only: the whole gauge chain must be re-derived",
    "seam value not yet derived (B4)",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
    "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
   ]
  },
  {
-  "corner": "111101",
+  "corner": "111100",
   "choice": {
    "M": "mirage",
    "V": "sequestered D3 (LVS)",
    "I": "decoupled sector",
    "K": "flux-scaling",
    "T": "none",
-   "U": "2i"
+   "U": "i"
   },
   "bits_known": 106.5,
   "k_fit": 12,
   "filters_failed": [
    "mirage needs F^T_vis; this corner suppresses it",
-   "U3 = 2i breaks neutrinos at i (D2022)"
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
   ],
   "open": [
    "f_vis = S only: the whole gauge chain must be re-derived",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
    "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
    "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
   ]
  },
  {
-  "corner": "110111",
+  "corner": "011111",
   "choice": {
-   "M": "mirage",
-   "V": "sequestered D3 (LVS)",
-   "I": "coupled",
-   "K": "flux-scaling",
-   "T": "derived threshold",
-   "U": "2i"
-  },
-  "bits_known": 102.1,
-  "k_fit": 10,
-  "filters_failed": [
-   "mirage needs F^T_vis; this corner suppresses it",
-   "U3 = 2i breaks neutrinos at i (D2022)"
-  ],
-  "open": [
-   "f_vis = S only: the whole gauge chain must be re-derived",
-   "seam value not yet derived (B4)",
-   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
-   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
-  ]
- },
- {
-  "corner": "111111",
-  "choice": {
-   "M": "mirage",
+   "M": "pure-AMSB",
    "V": "sequestered D3 (LVS)",
    "I": "decoupled sector",
    "K": "flux-scaling",
    "T": "derived threshold",
    "U": "2i"
   },
+  "bits_known": 40.7,
+  "k_fit": 12,
+  "filters_failed": [
+   "U3 = 2i breaks neutrinos at i (D2022)",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
+  ],
+  "open": [
+   "pure AMSB on sequestered D3 needs a warped-throat tip (LVS no-scale may kill AMSB at our m32, D2040)",
+   "f_vis = S only: the whole gauge chain must be re-derived",
+   "seam value not yet derived (B4)",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived"
+  ]
+ },
+ {
+  "corner": "111110",
+  "choice": {
+   "M": "mirage",
+   "V": "sequestered D3 (LVS)",
+   "I": "decoupled sector",
+   "K": "flux-scaling",
+   "T": "derived threshold",
+   "U": "i"
+  },
   "bits_known": 106.5,
   "k_fit": 12,
   "filters_failed": [
    "mirage needs F^T_vis; this corner suppresses it",
-   "U3 = 2i breaks neutrinos at i (D2022)"
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
   ],
   "open": [
    "f_vis = S only: the whole gauge chain must be re-derived",
    "seam value not yet derived (B4)",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
    "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
    "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
   ]
@@ -1235,6 +1137,28 @@
   ]
  },
  {
+  "corner": "100101",
+  "choice": {
+   "M": "mirage",
+   "V": "D7 on KKLT cycle",
+   "I": "coupled",
+   "K": "flux-scaling",
+   "T": "none",
+   "U": "2i"
+  },
+  "bits_known": 99.9,
+  "k_fit": 9,
+  "filters_failed": [
+   "mirage needs F^T_vis; this corner suppresses it",
+   "U3 = 2i breaks neutrinos at i (D2022)",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
+  ],
+  "open": [
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
+   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
+  ]
+ },
+ {
   "corner": "110001",
   "choice": {
    "M": "mirage",
@@ -1253,6 +1177,29 @@
   ],
   "open": [
    "f_vis = S only: the whole gauge chain must be re-derived",
+   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
+  ]
+ },
+ {
+  "corner": "100111",
+  "choice": {
+   "M": "mirage",
+   "V": "D7 on KKLT cycle",
+   "I": "coupled",
+   "K": "flux-scaling",
+   "T": "derived threshold",
+   "U": "2i"
+  },
+  "bits_known": 99.9,
+  "k_fit": 9,
+  "filters_failed": [
+   "mirage needs F^T_vis; this corner suppresses it",
+   "U3 = 2i breaks neutrinos at i (D2022)",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
+  ],
+  "open": [
+   "seam value not yet derived (B4)",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
    "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
   ]
  },
@@ -1276,6 +1223,149 @@
   "open": [
    "f_vis = S only: the whole gauge chain must be re-derived",
    "seam value not yet derived (B4)",
+   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
+  ]
+ },
+ {
+  "corner": "110101",
+  "choice": {
+   "M": "mirage",
+   "V": "sequestered D3 (LVS)",
+   "I": "coupled",
+   "K": "flux-scaling",
+   "T": "none",
+   "U": "2i"
+  },
+  "bits_known": 102.1,
+  "k_fit": 10,
+  "filters_failed": [
+   "mirage needs F^T_vis; this corner suppresses it",
+   "U3 = 2i breaks neutrinos at i (D2022)",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
+  ],
+  "open": [
+   "f_vis = S only: the whole gauge chain must be re-derived",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
+   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
+  ]
+ },
+ {
+  "corner": "101101",
+  "choice": {
+   "M": "mirage",
+   "V": "D7 on KKLT cycle",
+   "I": "decoupled sector",
+   "K": "flux-scaling",
+   "T": "none",
+   "U": "2i"
+  },
+  "bits_known": 104.3,
+  "k_fit": 11,
+  "filters_failed": [
+   "mirage needs F^T_vis; this corner suppresses it",
+   "U3 = 2i breaks neutrinos at i (D2022)",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
+  ],
+  "open": [
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
+   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
+  ]
+ },
+ {
+  "corner": "110111",
+  "choice": {
+   "M": "mirage",
+   "V": "sequestered D3 (LVS)",
+   "I": "coupled",
+   "K": "flux-scaling",
+   "T": "derived threshold",
+   "U": "2i"
+  },
+  "bits_known": 102.1,
+  "k_fit": 10,
+  "filters_failed": [
+   "mirage needs F^T_vis; this corner suppresses it",
+   "U3 = 2i breaks neutrinos at i (D2022)",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
+  ],
+  "open": [
+   "f_vis = S only: the whole gauge chain must be re-derived",
+   "seam value not yet derived (B4)",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
+   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
+  ]
+ },
+ {
+  "corner": "101111",
+  "choice": {
+   "M": "mirage",
+   "V": "D7 on KKLT cycle",
+   "I": "decoupled sector",
+   "K": "flux-scaling",
+   "T": "derived threshold",
+   "U": "2i"
+  },
+  "bits_known": 104.3,
+  "k_fit": 11,
+  "filters_failed": [
+   "mirage needs F^T_vis; this corner suppresses it",
+   "U3 = 2i breaks neutrinos at i (D2022)",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
+  ],
+  "open": [
+   "seam value not yet derived (B4)",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
+   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
+  ]
+ },
+ {
+  "corner": "111101",
+  "choice": {
+   "M": "mirage",
+   "V": "sequestered D3 (LVS)",
+   "I": "decoupled sector",
+   "K": "flux-scaling",
+   "T": "none",
+   "U": "2i"
+  },
+  "bits_known": 106.5,
+  "k_fit": 12,
+  "filters_failed": [
+   "mirage needs F^T_vis; this corner suppresses it",
+   "U3 = 2i breaks neutrinos at i (D2022)",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
+  ],
+  "open": [
+   "f_vis = S only: the whole gauge chain must be re-derived",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
+   "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
+  ]
+ },
+ {
+  "corner": "111111",
+  "choice": {
+   "M": "mirage",
+   "V": "sequestered D3 (LVS)",
+   "I": "decoupled sector",
+   "K": "flux-scaling",
+   "T": "derived threshold",
+   "U": "2i"
+  },
+  "bits_known": 106.5,
+  "k_fit": 12,
+  "filters_failed": [
+   "mirage needs F^T_vis; this corner suppresses it",
+   "U3 = 2i breaks neutrinos at i (D2022)",
+   "flux-scaling: m32 shares the moduli flux scaling (>= H_inf), so the AMSB wino >> TeV (D2041, 1503.07634)"
+  ],
+  "open": [
+   "f_vis = S only: the whole gauge chain must be re-derived",
+   "seam value not yet derived (B4)",
+   "no realistic decoupled-inflation construction exists: HKW toy is ruled out; embedding is an unmet challenge (D2042, 1003.4265)",
+   "no condensate: the W0 = A e^-x(1+2x/3) selection of N = 6 is lost and must be re-derived",
    "bino LSP 3.5-8 TeV overcloses unless RPV/dilution"
   ]
  }
