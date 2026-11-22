@@ -1,0 +1,3 @@
+distinct lattice test vectors: 7223 | non-integer entries: 0
+Z_2 survives: 31 primitive k, e.g. [(0, 0, 0, 0, 1), (0, 0, 0, 1, 0), (0, 0, 0, 1, 1)] | Yukawa forbidden by some surviving Z_2: {'ac.bc.ab': False, "ac'.bc.ab'": False, "ac.bc.ab'": False, "ac'.bc.ab": False}
+Z_4 survives: 96 primitive k, e.g. [(0, 1, 1, 1, 1), (0, 1, 1, 1, 3), (0, 1, 1, 3, 1)] | Yukawa forbidden by some surviving Z_4: {'ac.bc.ab': False, "ac'.bc.ab'": False, "ac.bc.ab'": True, "ac'.bc.ab": True}

@@ -21339,3 +21339,19 @@ The D2116 "K7 MARGINAL, ctrl ≥ 0.32" verdict and the D2116 settled-state table
   - The remaining routes are higher-dimensional operators with Z_n-charged singlet or hidden vevs, or a different Higgs sector.
 - **K9 verdict:** was ESTIMATE, now **OBSTRUCTED (Z₄)**. The referee is asked to verify the criterion and the normalisation.
 - **Six-stack note (R2-1):** the published six-stack PS model (p.tex:3625; 1303.6845) has 3 hidden stacks, so it lies outside our class. Uniqueness is relative to the "at most 2 hidden stacks" bound.
+
+## D2120a (DEEP, correction to D2120 after referee R2-3): Z_n on the full even lattice.
+- **What D2120 tested:** only the 16 *necessary* conditions of 1303.6845 Eq. (4.5). This version adds the sufficient conditions.
+- **Lattice:** 7,223 distinct integral test vectors, from Π + Π′ over |n|, |m| ≤ 2 × 256 labels, plus the invariant cycles.
+- **Survivors:**
+  - **Z₂:** 31 generators;
+  - **Z₄:** 96 generators (e.g. k = (0,1,1,1,1)), different from the D2120 example k = (0,0,1,1,1), which the referee showed breaks to Z₂;
+  - **Z₈ does NOT survive.**
+- **Yukawa selection under the surviving Z₄:**
+  - ac·bc·ab (perturbative, generation 1): allowed.
+  - **ac′·bc·ab′ (the 2×2 block for generations 2–3): ALLOWED.** Instantons can generate it.
+  - **ac·bc·ab′ and ac′·bc·ab (generation 1 ↔ 2,3 mixing): FORBIDDEN** at all orders by instantons.
+- **Correction to D2120:** "all three gen-2/3 couplings forbidden" was WRONG; it was a necessary-only test.
+- **New K9 verdict:** the masses of generations 2 and 3 can come from instantons (the S ≈ 5.6 / 11.8 ESTIMATE is reinstated). But the **Yukawa matrix is block-diagonal, 1 ⊕ 2, to all instanton orders**, so generation 1 cannot mix with 2 and 3. Combined with the PS relation Y_u = Y_d from a single bidoublet, there is no Cabibbo mixing (V_us = 0) without extra Higgs fields or higher-dimensional operators with Z₄-charged vevs.
+- **Status:** STRUCTURAL OBSTRUCTION (mixing), not a mass obstruction.
+- **Caveat:** the lattice is truncated at |n|, |m| ≤ 2 for Π + Π′. A larger lattice can only remove survivors, not add them.
