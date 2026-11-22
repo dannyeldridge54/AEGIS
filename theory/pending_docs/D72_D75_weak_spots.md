@@ -20114,3 +20114,25 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
 - **Soundness:** any witness S extends to a maximal set under the size cap that is still a witness (α can only fall, and |S| ≤ 9 is forced). So checking maximal sets is complete.
 - **Not covered:** non-Cayley vertex-transitive graphs of order 40, and graphs that are not vertex-transitive. Novelty is not claimed; a literature check is owed (Exoo and others may have searched Cayley graphs).
 - **Front L next:** L2, 2-block and 4-block circulants (generalising D2000) and the non-Cayley vertex-transitive graphs.
+
+## D2020 — U1 engine: build the (3,9,34)-graphs that have a degree-6 vertex, from all 477,142 (3,8,27)-graphs. Optimisation ladder run to null. CENTRE
+- **Input check:** r38_27.g6.gz (Danny's download, sha256 9a2e9723…). 477,142 graphs, all on 27 vertices, triangle-free, α ≤ 7; edges 85–94, degrees 4–7.
+- **Correctness:**
+  - v1 (direct) and v3 (clique) agree at M = 8 (0 solutions on D1–D3).
+  - **Positive control at M = 9** (building (3,10,34)-graphs): solutions found; 4 of 4 glued graphs verified by verify.py (triangle-free, α = 9).
+  - v4b reproduces v3's first 400 solutions exactly.
+- **Optimisation ladder (seconds per D, M = 8, measured on 200 D):**
+
+  | version | change | s/D |
+  |---|---|---|
+  | v1 | direct | ~20 |
+  | v2 | bitsets, no pair structure | slower (timeout) |
+  | **v3** | pair-compatibility graph + bitset clique search | **~0.29** (≈70×) |
+  | v4 | bitsets only for j ≥ 6 | faster, but its control was slow, so rejected |
+  | **v4b** | bitsets for j ≥ M−3, smaller j checked at the leaf | **0.23** (−20%) |
+  | v5 | -funroll-loops | 0.21 (−11%, within contention noise) |
+
+  The next step is parallelism, not code: **null reached on code changes.**
+- **Estimate:** ≈ 0.2 s/D × 477,142 ≈ 27 CPU-hours.
+- **Deployed to Danny's PC:** CubeMind_janus\ramsey_u1 contains u1final.exe, run_u1.py (all cores but one, resumable 2,000-graph chunks), START_U1.bat and the data file.
+- **Note:** 200+ of 200+ D tried so far give 0 solutions at M = 8. If that holds for all 477,142, then **every (3,9,34)-graph has δ ≥ 7**, and U3 reduces to the δ ≥ 7 route (U2, SAT).

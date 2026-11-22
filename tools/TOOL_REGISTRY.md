@@ -78,3 +78,6 @@ Base env for builds from D2008 onward: `CLASSMAP=DIR_ONE.map LR2=1`. EV = event 
 | tools/cubemind_ufe/astro.py, ufe_lens.py | UFE-lens tracks (astro, compress, ufe, place) | installed, selftest 0 failures (D2015) |
 | tools/cubemind_ufe/autorun.py, mission.py | LEARN → MISSION (M1 Hutter knobs, M2 R(3,10), M3 postulates) | installed; awaits Danny's model names |
 | tools/cubemind_ufe/cm_compress.py | verified archiver (picks the build by free RAM; archives tagged by build) | installed (D2017 builds) |
+| tools/ramsey/u1/check38.c | verifies the r38_27 list | PASS (477,142) | D2020 |
+| tools/ramsey/u1/u1glue.c → u1fast.c → u1clq.c → **u1final.c (v4b)** | U1: (3,9,34)-graphs with a degree-6 vertex (ladder v1 to v5) | v4b current; PC launcher run_u1.py | D2020 |
+| tools/ramsey/blockcirc/bc.c | D2019 block circulants (B, m) | 2×20 none; 5×8 running | D2019 |
