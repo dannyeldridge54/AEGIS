@@ -20284,3 +20284,19 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     5. Compass headroom uses each term's confidence level.
   - **Readiness battery** test_bloom.py: **12/12 PASS, READY.** It checks hygiene; dates and sources; the exact χ²; injection; the circle; the 90% form; B1 calibration (±0.0002, the goalpost tolerance, unchanged); BALANCED; the FIT label; agent-ledger coherence; the loop; and speed.
   - Registry and derivation_agents.json now point at the Bloom.
+- **D2034 (DEEP): web map, one search per node, link, layer, lens and scale** (tools/bloom/WEB_MAP_2026-11-22.md). 20 searches.
+  - **Two new referee flags:**
+    1. **Mirage mediation.** KKLT normally gives comparable modulus and anomaly gaugino masses: M₀ ≈ m₃/₂ / ln(M_P/m₃/₂) ≈ 8 TeV at our m₃/₂ (estimate). Our wino is pure AMSB. **We had 0 mentions before.** Sequestering must be shown (gate on B5).
+    2. **H_inf ≈ 5.8e12 GeV ≫ m₃/₂ = 2.5e5 GeV**: the KKLT (Kallosh–Linde) destabilisation problem, unless the volume is stabilised separately. Must be checked against our notes.
+  - **Data:**
+    - δ_CP source 3: Capozzi et al. 2025, 216°, 1σ 193°–247°. Ours is +1.87σ (upper-side σ). The three δ_CP sources still conflict (worst pair 1.03σ), so it stays in the shadow.
+    - CMS pure wino < 474 GeV (2004.05153). The wino term is DONE (3 sources; ATLAS 670 is the strictest).
+  - **Leads:**
+    - the S–T one-loop field-redefinition mixing (1211.5460) for T1;
+    - KK threshold towers as a knob-free T1 route;
+    - a 3-loop rung for the α_s ladder;
+    - Bayesian missing-higher-order errors for lens 6;
+    - numerology look-elsewhere (1603.00299) for 2/9, 28/11, 2/3 and 2i;
+    - IIB modular flavour (2305.19155) for U1/U2;
+    - a Higgs-mass term for split SUSY (owed).
+  - Readiness battery: 12/12.

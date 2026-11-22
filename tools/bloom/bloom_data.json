@@ -209,10 +209,14 @@
      "ref": "ATLAS 136/fb disappearing track, 2201.02472 (earlier 660 GeV; superseded by 2603.08315, same experiment)",
      "value": 0.66,
      "sigma": null
+    },
+    {
+     "ref": "CMS full Run 2 disappearing tracks, 2004.05153: pure wino (0.2 ns) excluded < 474 GeV",
+     "value": 0.474,
+     "sigma": null
     }
    ],
-   "note_sources": "CMS SUS-24-012 is higgsino-only (185 GeV); a CMS pure-wino limit is still to be mined",
-   "owed_source": "CMS pure-wino disappearing-track limit"
+   "note_sources": "CMS SUS-24-012 is higgsino-only (185 GeV); a CMS pure-wino limit is still to be mined"
   },
   {
    "id": "gluino",
@@ -378,6 +382,11 @@
      "ref": "NuFIT 6.0 NO IC19 (best 177; 3-sigma 96-422 deg) -> upper-side sigma_eff = (422-177)/3",
      "value": -183.0,
      "sigma": 81.7
+    },
+    {
+     "ref": "Capozzi-Lisi-Marrone et al. 2025 global fit, 2503.07752: NO 1.20 pi = 216 deg, 1-sigma 193-247 (upper-side sigma 31; non-Gaussian)",
+     "value": -144.0,
+     "sigma": 31.0
     }
    ],
    "angle": true
@@ -456,7 +465,8 @@
   "E1 post-lock evidence",
   "C1 12.8 GeV asymmetric DM vs LZ (Dec 2025 limits): not scorable until the dark-photon mixing eps is fixed",
   "R1 filter MICROSCOPE/Cassini: scored once a thread source exists",
-  "D5 birefringence: carrier cycle unsettled (held since D1793)"
+  "D5 birefringence: carrier cycle unsettled (held since D1793)",
+  "T-node referee check: KKLT normally gives MIRAGE mediation (modulus ~ anomaly, M0 ~ m3/2/ln(MP/m3/2) ~ 8 TeV at m3/2 = 2.48e5 GeV); our wino 0.687 TeV assumes pure AMSB -- the sequestering must be shown (hep-ph/0504037, hep-ph/0507110)"
  ],
  "levers": {
   "lnm32": {
