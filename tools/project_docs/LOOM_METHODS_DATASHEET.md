@@ -57,6 +57,10 @@ Status:
 | D5 | **Knock-on ledger** | Every adjustment: what it fixed and **exactly what it disturbed** | field_tests/loom/knockon_ledger.json | 16 entries: 8 moved strain, 3 spent predictivity, 4 errors | U | Side-effect log per action |
 | D6 | Pattern review | All fingerprints and the ledger reviewed together; 3 weightings, then the median | tools/loom/review.py → WEAVE_REVIEW.md | Found the gravitino as the largest hub (4 of 8) | U | Periodic global synthesis |
 | D7 | Pulse | Every flag triangulated together, coupled, re-read, repeated | tools/loom/pulse.py | **L:** a maximin optimiser output is not evidence (D1948) | L | Joint optimisation, labelled as such |
+| D8 | **Still-point lens** (Danny 18:12–18:13) | Find the best-balance point on the three tandem axes. Classify the directions: **inward** (stiff, restoring) vs **outward** (loose, free). Then view Δχ² at 36 angles in every plane (the 360° view) | tools/loom/still_point.py (D1978) | All three axes restoring: U and S stiff (3 %), T loosest (10 %); α_s needs a 4th axis | T | Every retrieval round starts at the still point |
+| D9 | **Mine the loose directions** (Fisher targeting) | New data are worth most along the **loosest** direction; along stiff ones they add little. Leftover tension at the still point signals a **missing axis**, not a knob to absorb it | uses D8 | Today the loosest axis is T (m₃/₂): wino limit at the pure-wino lifetime, gluino, Higgs mass | U | Rank fetch jobs by the information gain per direction |
+| D10 | **Three tandem axes + bounds as data** | Collapse many knobs into S/T/U and count the limits as data, so dof ≥ 3 | tools/loom/method_tests_3axis.py (D1976) | False balance 52 % → 14 %; the method can now FAIL, and it flags α_s | **T** | Keep knobs ≤ data − 3; every new knob needs ≥ 2 new data |
+| D11 | **Method tests every model change** | Injection–recovery (≥ 0.9), null false-balance (≤ 0.2), hold-out, dof | tools/loom/method_tests*.py (D1974, D1976) | Showed that balance with dof 0 was meaningless | **T** | The regression suite for the balancer itself |
 
 ## E. Coverage layer: test everything a physicist would ask
 | # | method | what it does | where | evidence today | status | CubeMind use |
@@ -94,12 +98,13 @@ Status:
 - **A referee link** with fresh context audits every consensus. The goal guards (F5) stop progress from being faked by relabelling.
 - **Test harness:** replay today's real mistakes (C7) and known-wrong cases (the D1907, D1931 and D1946 errors) as blind cases. CubeMind must catch them.
 
-## What worked best today (ranked by errors caught)
+## What worked best today (ranked by errors caught; updated 18:13)
 1. The independent referee (F1).
 2. The validation gates and DEVIATIONS (A2, C2).
 3. The automatic checks C1–C7 (section C).
 4. The lock before compute (A1).
 5. The node agents (F3).
+6. **Three tandem axes + bounds as data (D10)**: the single change that gave the method power. Plus the still-point lens (D8–D9) to decide where to mine next.
 
 **Weakest:** hand-entered arrows and judgments (D3, D4), and raw speed (G2).
 
