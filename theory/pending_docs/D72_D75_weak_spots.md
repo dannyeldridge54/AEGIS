@@ -20136,3 +20136,30 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
 - **Estimate:** ≈ 0.2 s/D × 477,142 ≈ 27 CPU-hours.
 - **Deployed to Danny's PC:** CubeMind_janus\ramsey_u1 contains u1final.exe, run_u1.py (all cores but one, resumable 2,000-graph chunks), START_U1.bat and the data file.
 - **Note:** 200+ of 200+ D tried so far give 0 solutions at M = 8. If that holds for all 477,142, then **every (3,9,34)-graph has δ ≥ 7**, and U3 reduces to the δ ≥ 7 route (U2, SAT).
+
+## D2022 — A directional force-correction node for the S–T seam (α_s / Δ₃ needs +0.044). PREREG_D2022. CENTRE
+- **Lens folded in:** the compression rule applies here too. The fix must bring *independent, direction-dependent* information fixed by integers or an existing modulus, not a free knob. Free knobs only make α_s a FIT (D1940 split stacks).
+- **C1, hypercharge flux** (0812.0248; f₂ − f₃ = −½ S ∫c₁²(L_Y)):
+  - the integer N_Y = ±1 gives ΔΔ₃ = ±0.55;
+  - N_Y = ±2 gives ±1.10.
+  - That **overshoots by ×12.5 to ×25.** The natural directional node exists in string theory but is far too strong at Re S = √3/2. **FAIL**, unless the flux sits on a suppressed cycle (not derived).
+- **C2, the U₃ cube axis** (N = 2 threshold, DKL):
+  - Only Δb = (b₃ − b₁₂)^{N=2} > 0 has solutions. The solutions for U₃ = i·t are:
+
+    | Δb | t |
+    |---|---|
+    | ½ | 3.16 |
+    | 1 | 2.35 |
+    | **3/2** | **2.04 (≈ 2i, within 2%)** |
+    | 2 | 1.87 |
+    | 3 | 1.75 |
+
+  - **Look-elsewhere:** 10 Δb values were scanned against 5 special points. The chance of a 2% hit is ≈ 14% per positive solution, so about 0.7 hits are expected. **One hit is chance level: NO-POWER.**
+  - **Centre conflict:** moving U₃ off i breaks "neutrinos at i" (UFE v4 §2). 2i is not an SL(2,Z) image of i, so C2 unbalances the U field unless the neutrinos live on another torus.
+- **Verdict:**
+  - The seam still needs a derived non-universal term.
+  - The ranked routes are:
+    1. derive the N = 2 sector content of torus 3, which fixes Δb, so U₃ becomes a prediction, not a scan;
+    2. a hypercharge flux on a cycle with a suppressed intersection (derive the suppression);
+    3. threshold states with charges fixed by the +0.044 residual (the UFE v4 prediction route).
+  - **Adding extra knobs to each node would fit the number, not fix the theory.** Under the Loom core standard that counts as FIT, never PASS.

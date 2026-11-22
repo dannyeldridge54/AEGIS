@@ -1,0 +1,91 @@
+{
+ "C1_hypercharge_flux": {
+  "-2": {
+   "dDelta3": -1.1003616895143455,
+   "ratio_to_need": -25.008220216235127,
+   "pass_": false
+  },
+  "-1": {
+   "dDelta3": -0.5501808447571728,
+   "ratio_to_need": -12.504110108117564,
+   "pass_": false
+  },
+  "1": {
+   "dDelta3": 0.5501808447571728,
+   "ratio_to_need": 12.504110108117564,
+   "pass_": false
+  },
+  "2": {
+   "dDelta3": 1.1003616895143455,
+   "ratio_to_need": 25.008220216235127,
+   "pass_": false
+  }
+ },
+ "C2_U3_axis": {
+  "-3": {
+   "L_target": -0.8703815119850705,
+   "t": null,
+   "nearest": null,
+   "natural": false
+  },
+  "-2": {
+   "L_target": -0.77822812747977,
+   "t": null,
+   "nearest": null,
+   "natural": false
+  },
+  "-1.5": {
+   "L_target": -0.6860747429744694,
+   "t": null,
+   "nearest": null,
+   "natural": false
+  },
+  "-1": {
+   "L_target": -0.5017679739638682,
+   "t": null,
+   "nearest": null,
+   "natural": false
+  },
+  "-0.5": {
+   "L_target": 0.05115233306793532,
+   "t": null,
+   "nearest": null,
+   "natural": false
+  },
+  "0.5": {
+   "L_target": -2.1605288950592785,
+   "t": 3.162675793756927,
+   "nearest": "3",
+   "natural": false
+  },
+  "1": {
+   "L_target": -1.607608588027475,
+   "t": 2.3517799498408554,
+   "nearest": "2",
+   "natural": false
+  },
+  "1.5": {
+   "L_target": -1.423301819016874,
+   "t": 2.039924014707663,
+   "nearest": "2",
+   "natural": true
+  },
+  "2": {
+   "L_target": -1.3311484345115734,
+   "t": 1.8676426574618084,
+   "nearest": "2",
+   "natural": false
+  },
+  "3": {
+   "L_target": -1.238995050006273,
+   "t": 1.676424469588316,
+   "nearest": "sqrt3",
+   "natural": false
+  }
+ },
+ "L_i": -1.0546882809956717,
+ "L_range_t1_10": [
+  -8.169390418971933,
+  -1.0546882809956717
+ ]
+}
