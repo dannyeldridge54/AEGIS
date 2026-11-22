@@ -20711,3 +20711,8 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Way out, unshown:** negative D3 charge from D7 curvature on the orbifold fixed-point divisors (−χ(D)/24, not computed here), or anti-self-dual flux (which breaks SUSY).
   - This agrees with 2404.18995's statement that Z₆-II needs negative D3 charge.
   - **Loop: no progress (a clean FAIL). No-progress count 5.**
+- **D2063 result (FORGE; PREREG_D2063), provisional pending the round-trip, which is running: STARLIT-lite reorder PASS.**
+  - Original enwik8 (loomz20_o3, TB22, RCTX = 1): **19,724,674 bytes**.
+  - Reordered (TF-IDF + greedy nearest-neighbour chain): **19,169,206 bytes**, plus the xz permutation of **21,876 bytes** = **19,191,082 bytes**.
+  - **−2.71% against the pass bar of −0.30%.** The permutation round-trip was verified earlier (PERM_RT_OK); the archive round-trip is in progress.
+  - This is the largest single Forge gain to date, larger than STARLIT's 1.8% (on enwik9 with Doc2Vec + TSP; different file, different baseline).
