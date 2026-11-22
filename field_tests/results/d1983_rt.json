@@ -1,0 +1,494 @@
+{
+ "prereg": "PREREG_D1983_realtime_pulse.md",
+ "seconds": 60.0,
+ "pulses": 259036,
+ "pulses_per_s": 4317.3,
+ "a1_max": 0.0,
+ "a1_checks": 1295,
+ "events": {
+  "E1 n_s +3 sigma": {
+   "pred": [
+    6
+   ],
+   "detected_0p5s": [
+    6
+   ],
+   "detected_window": [
+    5,
+    6,
+    7
+   ],
+   "recall": 1.0,
+   "precision": 0.3333333333333333,
+   "latency_ms": {
+    "6": 0.6
+   },
+   "latency_pulses": {
+    "6": 3
+   },
+   "recovered": {
+    "6": true
+   }
+  },
+  "E2 m3/2 x1.05 kick": {
+   "pred": [
+    5,
+    8
+   ],
+   "detected_0p5s": [
+    5,
+    8
+   ],
+   "detected_window": [
+    5,
+    6,
+    8
+   ],
+   "recall": 1.0,
+   "precision": 0.6666666666666666,
+   "latency_ms": {
+    "8": 0.1,
+    "5": 0.1
+   },
+   "latency_pulses": {
+    "8": 1,
+    "5": 1
+   },
+   "recovered": {
+    "8": true,
+    "5": true
+   }
+  },
+  "E3 Y_B -30 %": {
+   "pred": [
+    8
+   ],
+   "detected_0p5s": [
+    8
+   ],
+   "detected_window": [
+    8
+   ],
+   "recall": 1.0,
+   "precision": 1.0,
+   "latency_ms": {
+    "8": 0.1
+   },
+   "latency_pulses": {
+    "8": 1
+   },
+   "recovered": {
+    "8": true
+   }
+  }
+ },
+ "false_alarm_rate": {
+  "1": 0.0,
+  "2": 0.0,
+  "4": 0.0,
+  "5": 1.6150783716779858e-05,
+  "6": 8.075391858389929e-06,
+  "7": 8.075391858389929e-06,
+  "8": 3.2301567433559715e-05
+ },
+ "quiet_pulses": 123833,
+ "controller": [],
+ "accuracy": {
+  "A1": true,
+  "A2": false,
+  "A3": true,
+  "A4": true
+ },
+ "verdict": "FAIL",
+ "final_status": {
+  "1": "RESONANT",
+  "2": "RESONANT",
+  "3": "WINDOW",
+  "4": "OPAQUE",
+  "5": "NO LOCK",
+  "6": "RESONANT",
+  "7": "RESONANT",
+  "8": "LOST",
+  "9": "WINDOW"
+ },
+ "fits_spent": [
+  "TR",
+  "m32"
+ ],
+ "final_knobs": {
+  "u": 0.02663,
+  "MN": 185101078161.6326,
+  "m32": 125666.86648964496,
+  "TR": 1.5947233239977946e+16,
+  "split": 0.0
+ },
+ "resonance_log": [
+  {
+   "p": 3,
+   "t": 0.007,
+   "layer": 1,
+   "what": "RESONANT"
+  },
+  {
+   "p": 3,
+   "t": 0.007,
+   "layer": 2,
+   "what": "RESONANT"
+  },
+  {
+   "p": 3,
+   "t": 0.007,
+   "layer": 6,
+   "what": "RESONANT"
+  },
+  {
+   "p": 41954,
+   "t": 10.0019,
+   "layer": 6,
+   "what": "LOST"
+  },
+  {
+   "p": 42306,
+   "t": 10.0989,
+   "layer": 8,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43107,
+   "t": 10.3265,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43110,
+   "t": 10.327,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43113,
+   "t": 10.3279,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43116,
+   "t": 10.3286,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43130,
+   "t": 10.3314,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43150,
+   "t": 10.3354,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43162,
+   "t": 10.3381,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43174,
+   "t": 10.3406,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43203,
+   "t": 10.3467,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43205,
+   "t": 10.3471,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43208,
+   "t": 10.3476,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43213,
+   "t": 10.3488,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43217,
+   "t": 10.3496,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43231,
+   "t": 10.3526,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43235,
+   "t": 10.3533,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43236,
+   "t": 10.3535,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43258,
+   "t": 10.358,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43279,
+   "t": 10.3622,
+   "layer": 8,
+   "what": "LOST"
+  },
+  {
+   "p": 43290,
+   "t": 10.3644,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43297,
+   "t": 10.366,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43300,
+   "t": 10.3665,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43303,
+   "t": 10.3674,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43309,
+   "t": 10.3684,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43313,
+   "t": 10.3694,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43314,
+   "t": 10.3696,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43324,
+   "t": 10.3717,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43363,
+   "t": 10.3796,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43375,
+   "t": 10.3822,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43379,
+   "t": 10.3829,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43385,
+   "t": 10.3842,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43391,
+   "t": 10.3856,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43398,
+   "t": 10.3869,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43419,
+   "t": 10.3911,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43427,
+   "t": 10.3929,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43431,
+   "t": 10.3939,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43440,
+   "t": 10.3956,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43443,
+   "t": 10.3963,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43456,
+   "t": 10.399,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43468,
+   "t": 10.4014,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43496,
+   "t": 10.4076,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43502,
+   "t": 10.409,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43524,
+   "t": 10.4137,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43526,
+   "t": 10.414,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43537,
+   "t": 10.4163,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43547,
+   "t": 10.4184,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43553,
+   "t": 10.4198,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43590,
+   "t": 10.4294,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43596,
+   "t": 10.4309,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43597,
+   "t": 10.4311,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43609,
+   "t": 10.4337,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43612,
+   "t": 10.4345,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43616,
+   "t": 10.4353,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43646,
+   "t": 10.4416,
+   "layer": 7,
+   "what": "LOST"
+  },
+  {
+   "p": 43657,
+   "t": 10.4439,
+   "layer": 7,
+   "what": "RESONANT"
+  },
+  {
+   "p": 43659,
+   "t": 10.4443,
+   "layer": 7,
+   "what": "LOST"
+  }
+ ],
+ "n_lost": 9859,
+ "tug_of_war": {
+  "m32: layers [5, 7, 8]": 0.3401,
+  "m32: layers [5, 7]": 0.3105,
+  "TR: layers [6, 8]": 0.1411,
+  "m32: layers [5, 8]": 0.0219
+ }
+}

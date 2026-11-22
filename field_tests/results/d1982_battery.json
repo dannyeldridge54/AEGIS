@@ -1,0 +1,69 @@
+{
+ "B1": {
+  "a_nested": true,
+  "b_diagonal": true,
+  "c_star": true,
+  "d_opaque": true,
+  "e_same": true,
+  "f_windows": true
+ },
+ "B2": {
+  "seed0": true,
+  "seed1": true,
+  "seed2": true,
+  "seed3": true,
+  "seed4": true
+ },
+ "B3": {
+  "pairs_with_same_inputs": 2,
+  "deterministic": true,
+  "bad": []
+ },
+ "B5": {
+  "test_check.py": {
+   "n": 13,
+   "fails": []
+  },
+  "test_planner.py": {
+   "n": 16,
+   "fails": []
+  },
+  "test_planner_2.py": {
+   "n": 7,
+   "fails": []
+  }
+ },
+ "B6": {
+  "relabel_GT1": true,
+  "new_fit_GT3": true,
+  "killable_GT4": true,
+  "stall_not_endpoint": true
+ },
+ "B7": "D1976: injection-recovery 0.89 coverage, false-balance 14 % (reported, not rerun)",
+ "B4": {
+  "controls": {
+   "planner.py": "KILLED",
+   "lens_core.py": "KILLED"
+  },
+  "planner.py": {
+   "killed": 10,
+   "total": 10,
+   "survived": []
+  },
+  "lens_core.py": {
+   "killed": 8,
+   "total": 8,
+   "survived": []
+  },
+  "kill_rate": 1.0,
+  "void": true
+ },
+ "ok": {
+  "B1": true,
+  "B2": true,
+  "B3": true,
+  "B5": true,
+  "B6": true,
+  "B4": false
+ }
+}

@@ -21,34 +21,8 @@ def J_probe(L, N=400, w=0.03, seed=1981):
 def J_decl(L):
     if not margins(at(x0))[L]: return None
     return np.array([[1.0 if k in KNOBS_OF[L] else 0.0 for k in K]])
-def lens(J):
-    if J is None: return None   # window
-    u, s, vt = np.linalg.svd(J); r = int((s > 1e-3 * s.max()).sum()) if s.max() > 0 else 0
-    return vt[:r].T            # n x r orthonormal basis; r = 0 -> OPAQUE (DEVIATIONS: blocks every direction)
-def angles(A, B):
-    if A.shape[1] == 0 or B.shape[1] == 0: return np.array([90.0])     # OPAQUE (DEVIATIONS)
-    s = np.clip(np.linalg.svd(A.T @ B, compute_uv=False), 0, 1); return np.degrees(np.arccos(s))   # ascending angles
-def klass(a): return 'PASS' if a < 15 else 'BENT' if a <= 75 else 'BLOCKED'
-def reading(Jf):
-    Ls = {L: lens(Jf(L)) for L in range(1, 10)}
-    real = [L for L in range(1, 10) if Ls[L] is not None]
-    pairs = [(real[i], real[i + 1]) for i in range(len(real) - 1)]
-    tr = {}
-    for a, b in pairs:
-        ang = angles(Ls[a], Ls[b]); tr[f'{a}-{b}'] = dict(min_angle=round(float(ang.min()), 2), angles=[round(float(v), 2) for v in ang], cls=klass(ang.min()),
-                                                        shared=[K[i] for i in range(n) if Ls[a].size and Ls[b].size and abs(Ls[a][i]).max() > 0.1 and abs(Ls[b][i]).max() > 0.1])
-    P = np.eye(n)
-    for L in range(1, 10):
-        if Ls[L] is not None: P = (Ls[L] @ Ls[L].T) @ P
-    C = np.zeros((9, 9))
-    for j in range(1, 10):
-        for k in range(1, 10):
-            if Ls[j] is None or Ls[k] is None: C[j - 1, k - 1] = np.nan; continue
-            C[j - 1, k - 1] = float(np.cos(np.radians(angles(Ls[j], Ls[k]).min())) ** 2)
-    rows = {L: (None if Ls[L] is None else dict(r=Ls[L].shape[1], opaque=Ls[L].shape[1] == 0, dirs=[{K[i]: round(float(v[i]), 3) for i in range(n) if abs(v[i]) > 0.05} for v in Ls[L].T])) for L in range(1, 10)}
-    off = np.where(np.eye(9) == 1, np.nan, C); rs = np.nansum(off, axis=1); hub = int(np.argmax(rs)) + 1
-    return dict(lenses=rows, transfers=tr, chain_dim=int(np.linalg.matrix_rank(P, tol=1e-6)), chain_frac=round(float(np.linalg.norm(P) ** 2 / n), 4),
-                C=[[None if np.isnan(v) else round(v, 3) for v in r] for r in C], hub=hub, hub_rowsum=round(float(rs[hub - 1]), 3))
+import os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); from lens_core import lens, angles, klass, analyze, verdict as _verdict
+def reading(Jf): return analyze(Jf, K)
 R = {'R1_fd': reading(J_fd), 'R2_probe': reading(J_probe), 'R3_declared': reading(J_decl)}
 # triangulate: agreement on r_k and on transfer classes
 agree = {}
@@ -57,8 +31,7 @@ for L in range(1, 10):
 for p in R['R1_fd']['transfers']:
     cs = [R[r]['transfers'].get(p, {}).get('cls') for r in R]; agree[f'T{p}'] = dict(values=cs, agree=len(set(cs)) == 1, verdict=cs[0] if len(set(cs)) == 1 else 'INDETERMINATE')
 cls = [agree[f'T{p}']['verdict'] for p in R['R1_fd']['transfers']]
-nb, nbl = cls.count('BENT'), cls.count('BLOCKED')
-verdict = 'SUPPORTED' if (nb >= 2 and R['R1_fd']['chain_dim'] >= 1) else 'DECOUPLED' if nbl >= 5 else 'MIXED'
+verdict = _verdict(cls, R['R1_fd']['chain_dim'])
 out = dict(prereg='PREREG_D1981_layer_lensing.md', knob_space=K, readings=R, triangulation=agree, transfer_classes=dict(zip(R['R1_fd']['transfers'], cls)), verdict=verdict)
 json.dump(out, open('field_tests/results/d1981_lensing.json', 'w'), indent=1)
 r1 = R['R1_fd']

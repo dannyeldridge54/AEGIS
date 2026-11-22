@@ -19576,3 +19576,73 @@ This repeats D1943a's finding that the gravitino is the largest hub, now from ge
 lensing.py is now step 2b of every loomd pulse. The owed item layer_transfer_map is done.
 
 TRIANGULATE: R1/R2/R3, 6 of 9 lens counts agree. COMPASS: the hub points at L8 through m₃/₂ and T_R. REVIEW: consistent with the gravitino hub (D1943a); the ledger is unchanged.
+
+## D1982 — METHOD: a test battery for the Loom itself (PREREG_D1982, 076f8c25, plus DEVIATIONS)
+- **B1 known-answer lensing: PASS 6/6.** On synthetic models with a known answer, the lensing core finds:
+  - nested lenses bent at 60°, giving SUPPORTED;
+  - a diagonal model, giving DECOUPLED;
+  - the hub of a star model;
+  - an opaque layer;
+  - identical lenses, giving PASS at 0°;
+  - transfers across windows.
+
+  **D1981 is therefore calibrated**: the tool can see real lensing when it is there.
+- **B2 rotation invariance: PASS 5/5.** Lens counts, angles, the hub and the verdict are unchanged under random rotations of the knob axes. Not covered by this test: the unit convention (ln vs raw).
+- **B3 determinism: PASS.** Two pairs of rounds had the same inputs, and both gave the same state with the second round NULL.
+- **B5 checker and planner self-tests: PASS** (8 + 16 + 7 cases), after fixing a harness bug written up in DEVIATIONS.
+- **B6 anti-gaming replay: PASS.** G-T1, G-T3 and G-T4 alarms are raised, and a STALL is not the endpoint.
+- **B4 mutation testing: VOID.** The unmutated control copies also came out "KILLED". So the first 100 % kill rate was the runner failing every time, not detection; the control caught it. Owed: fix the runner, with a dated DEVIATIONS note, then rerun once.
+- **The rotation, locked for 12 pulses then scored:**
+  - every pulse: the derive slot (L4) and a hub check on L8;
+  - axis cycle T, S, T, U;
+  - reading methods rotated (numeric / probe or data / literature or hand), with probes and data alternating;
+  - every 5th pulse: explore.
+
+## D1983 — METHOD: real-time layered pulsing with a referee per layer (Danny 18:46, 18:47), PREREG_D1983 (835f0877) plus DEVIATIONS 1–5
+**Run:** 60 s at full speed, one process. **259,036 pulses (4,317 per s).** Every pulse runs layers 1 → 9 in order. In each layer the referee:
+- triangulates the data (median of 3 noisy readings);
+- sorts each margin into IN, PULL or OUT;
+- tracks resonance (3-pulse rule) and flags LOST;
+- flags unexplained shifts (more than 4 sd; its own knob moves are subtracted);
+- balances on its free knobs (L1 holds u);
+- feeds the next layer within the same pulse.
+
+**Results against the locked bars:**
+| bar | result |
+|---|---|
+| A1 validation | **PASS**: max \|Δ\| = 0 over 1,295 checks against resonance.margins |
+| A2 recall | **1.0** on all 3 events (E1 n_s +3σ, E2 m₃/₂ × 1.05, E3 Y_B −30 %) |
+| A2 latency | **1–3 pulses (0.1–0.6 ms)** |
+| A3 false alarms | **PASS**: ≤ 3.2e-5 per layer-pulse, 30× under the 1e-3 bar |
+| A4 recovery | **PASS** |
+| A2 precision | **FAIL**: 4 of 7 detections over the full 10 s event windows were on predicted layers. Extra layers: E1 {5, 7}, E2 {6} |
+
+E2's predicted set was computed from the lens just before the kick: {5, 8}. It was detected exactly within 0.5 s; α_s (L7) moves by 0.13σ, which is below its threshold, and L7 was correctly silent.
+
+**Verdict: FAIL** (A2 precision).
+- **Reading (an estimate, not a rescue):** none of the extra layers fired in the first 0.5 s. At the measured quiet rates (1–3e-5 per pulse), the roughly 130,000 event-window pulses should give about 2 background alarms per layer. So the extras look like background over a window that is too wide for the measured false-alarm rate, not a ripple.
+- Scoring precision in a 0.5 s window would be a **new test, locked separately**. This run's FAIL stands.
+- The controller never acted: there were no false-alarm or A1 triggers. **A gap in the locked controller:** it watches false alarms only in quiet windows, not precision during events. The next lock should add that trigger.
+
+**Physics seen live (a consistency map, not evidence):**
+1. **A tug of war on m₃/₂.**
+   - L5 (wino, which wants m₃/₂ up) against L7 (α_s, which wants it down): in **65 % of pulses** (31 % L5 vs L7 alone; 34 % with L8 joining).
+   - **The T_R knot:** L6 (n_s) against L8 (gravitino and leptogenesis) on T_R, in **14 % of pulses**.
+
+   That is the S–T seam, measured as opposing pulls on the knobs.
+2. **Final balance:**
+   - RESONANT: L1, L2, L6 and **L7**;
+   - NO LOCK: **L5** (the wino side lost the tug);
+   - OPAQUE: L4;
+   - **L8 chattering at its edge**: 9,859 LOST flips;
+   - fits spent: m₃/₂ and T_R.
+3. **The layers cannot all hold at once through m₃/₂ and T_R alone.** This is the same conclusion as D1972/D1978 (α_s needs a fourth axis; the cube needs a new derived axis), now seen in real time.
+
+**Owed:**
+- the controller trigger for event-window precision;
+- hysteresis on LOST to stop L8's chatter (a referee rule, to be locked);
+- the B4 runner fix.
+
+The pulse arrays are in the scratchpad; a decimated copy is in field_tests/results/d1983_pulses_decimated.json.
+
+TRIANGULATE: 3 readings per pulse. COMPASS: m₃/₂ and T_R are the contested knobs. REVIEW: consistent with D1943a (the gravitino hub) and D1981 (the star around L8).
