@@ -21,7 +21,6 @@ R['T1_SU4cubed'] = sum(mu*m['a']*dim(m, ('a',)) for mu, m in TAB if 'a' in m)
 R['T2_generalised'] = {x: str(sum(N[a]*(Z.chi(C[x], C[a]) + Z.chi(C[x], I[a])) for a in L)) for x in L}
 # T3 mixed U(1)_x - SU(N_y)^2
 ft = {(x, y): Fr(sum(mu*m[x]*Fr(1, 2)*dim(m, (y,)) for mu, m in TAB if x in m and y in m and x != y)) for x in L for y in L}
-for x in L: ft[(x, x)] = Fr(sum(mu*m[x]*Fr(1, 2)*dim(m, (x,))*N[x] for mu, m in TAB if x in m)) if False else ft[(x, x)]
 geo = {(x, y): Fr(N[x], 2)*(Z.chi(C[x], C[y]) - Z.chi(I[x], C[y])) for x in L for y in L}
 # field-theory diagonal (x=y): U(1)_x SU(N_x)^2 = sum q_x T(fund) dim(others), q_x=+-1
 for x in L: ft[(x, x)] = Fr(sum(mu*m[x]*Fr(1, 2)*dim(m, (x,)) for mu, m in TAB if x in m))
