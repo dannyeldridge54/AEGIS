@@ -19967,3 +19967,9 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - Reps are worth −0.07%.
   - The event-state context **hurts** at this size (+0.36%); it is too many weight sets for 200 kB. Kept off, to retest at scale.
 - **Bug found and fixed before any scored use:** a comment in v7 swallowed the word, word-pair and axis hashes. The first v7 numbers (+3.4%) are void.
+- **D2008b, combination on H (3 MB):**
+  - v7 + DIR_ONE: 671,396 (−0.18% vs DIR_ONE alone).
+  - Adding the xz event-state context: **669,382**.
+  - In total that is **−0.86% vs NONE** (675,175).
+- The event state that hurt at 200 kB helps at 3 MB (−0.30%), as predicted: it needs data to fill its weight sets.
+- *Label:* H has now been used for several comparisons, so it is becoming a tuning set. The next scored check uses a fresh slice, or full enwik8.
