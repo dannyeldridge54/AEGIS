@@ -7,3 +7,4 @@ seed 1 t=150s steps 5565524 pulses 2 score 85 best 84 T 0.710
 seed 1 t=180s steps 6689133 pulses 2 score 85 best 84 T 0.129
 seed 1 t=210s steps 7809820 pulses 3 score 82 best 82 T 0.963
 seed 1 t=240s steps 8918311 pulses 3 score 82 best 82 T 0.180
+seed 1 t=270s steps 10604150 pulses 4 score 76 best 72 T 0.556

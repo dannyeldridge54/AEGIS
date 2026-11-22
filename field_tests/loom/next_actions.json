@@ -22,7 +22,8 @@
     "D1983d: a FIT switch (split) invisible to the gradient; use a finite step for discontinuous knobs",
     "D1986-O2: statistical detectors on deterministic margins fire on rounding; CUSUM k must be below the shift; calibrate on null streams before any scored run",
     "D1989-mask: an active balancer absorbs incoming data shifts (T_R chased every n_s release, 3.7e8 -> 9.8e6 GeV), so they read as explained self-moves; detect on the data residual too, and freeze balancing on a layer while its data stream steps",
-    "D1989-C1: a post-hoc 0.1 % match (lepton slip = theta-step x Im rho) failed its out-of-sample quark test; never adopt an in-sample match without the out-of-sample test"
+    "D1989-C1: a post-hoc 0.1 % match (lepton slip = theta-step x Im rho) failed its out-of-sample quark test; never adopt an in-sample match without the out-of-sample test",
+    "D1995-FAR: a false-alarm bar of 1e-5 per pulse means several strays per run at 4,000+ pulses/s; confirm alarms by persistence (real shifts persist, noise reverts) and size the calibration so the bar has power"
    ]
   },
   {
@@ -51,7 +52,9 @@
     "D1983d: a FIT switch (split) invisible to the gradient; use a finite step for discontinuous knobs",
     "D1986-O2: statistical detectors on deterministic margins fire on rounding; CUSUM k must be below the shift; calibrate on null streams before any scored run",
     "D1987-scorer: a live PRED computed at fitted knobs is PASS (FIT), not a surviving prediction (alpha_s via split, wino via m3/2)",
-    "D1989-mask: an active balancer absorbs incoming data shifts (T_R chased every n_s release, 3.7e8 -> 9.8e6 GeV), so they read as explained self-moves; detect on the data residual too, and freeze balancing on a layer while its data stream steps"
+    "D1989-mask: an active balancer absorbs incoming data shifts (T_R chased every n_s release, 3.7e8 -> 9.8e6 GeV), so they read as explained self-moves; detect on the data residual too, and freeze balancing on a layer while its data stream steps",
+    "D1995-FAR: a false-alarm bar of 1e-5 per pulse means several strays per run at 4,000+ pulses/s; confirm alarms by persistence (real shifts persist, noise reverts) and size the calibration so the bar has power",
+    "D1994-wall: wall-clock real-time runs cannot be replayed; score on a virtual clock and measure speed separately"
    ]
   },
   {
@@ -100,7 +103,8 @@
    "owed": "pft_ledger",
    "effort": "low",
    "known_failure_modes": [
-    "D1982-B4: a test runner that always crashes scores 100 %; run an unmutated control first"
+    "D1982-B4: a test runner that always crashes scores 100 %; run an unmutated control first",
+    "pkill-self: pkill -f with a pattern that appears in your own command line kills your own shell"
    ]
   }
  ],
@@ -127,7 +131,8 @@
     "D1983d: a FIT switch (split) invisible to the gradient; use a finite step for discontinuous knobs",
     "D1986-O2: statistical detectors on deterministic margins fire on rounding; CUSUM k must be below the shift; calibrate on null streams before any scored run",
     "D1989-mask: an active balancer absorbs incoming data shifts (T_R chased every n_s release, 3.7e8 -> 9.8e6 GeV), so they read as explained self-moves; detect on the data residual too, and freeze balancing on a layer while its data stream steps",
-    "D1989-C1: a post-hoc 0.1 % match (lepton slip = theta-step x Im rho) failed its out-of-sample quark test; never adopt an in-sample match without the out-of-sample test"
+    "D1989-C1: a post-hoc 0.1 % match (lepton slip = theta-step x Im rho) failed its out-of-sample quark test; never adopt an in-sample match without the out-of-sample test",
+    "D1995-FAR: a false-alarm bar of 1e-5 per pulse means several strays per run at 4,000+ pulses/s; confirm alarms by persistence (real shifts persist, noise reverts) and size the calibration so the bar has power"
    ]
   },
   {
@@ -156,7 +161,9 @@
     "D1983d: a FIT switch (split) invisible to the gradient; use a finite step for discontinuous knobs",
     "D1986-O2: statistical detectors on deterministic margins fire on rounding; CUSUM k must be below the shift; calibrate on null streams before any scored run",
     "D1987-scorer: a live PRED computed at fitted knobs is PASS (FIT), not a surviving prediction (alpha_s via split, wino via m3/2)",
-    "D1989-mask: an active balancer absorbs incoming data shifts (T_R chased every n_s release, 3.7e8 -> 9.8e6 GeV), so they read as explained self-moves; detect on the data residual too, and freeze balancing on a layer while its data stream steps"
+    "D1989-mask: an active balancer absorbs incoming data shifts (T_R chased every n_s release, 3.7e8 -> 9.8e6 GeV), so they read as explained self-moves; detect on the data residual too, and freeze balancing on a layer while its data stream steps",
+    "D1995-FAR: a false-alarm bar of 1e-5 per pulse means several strays per run at 4,000+ pulses/s; confirm alarms by persistence (real shifts persist, noise reverts) and size the calibration so the bar has power",
+    "D1994-wall: wall-clock real-time runs cannot be replayed; score on a virtual clock and measure speed separately"
    ]
   },
   {
@@ -184,7 +191,9 @@
     "D1983d: a FIT switch (split) invisible to the gradient; use a finite step for discontinuous knobs",
     "D1986-O2: statistical detectors on deterministic margins fire on rounding; CUSUM k must be below the shift; calibrate on null streams before any scored run",
     "D1987-scorer: a live PRED computed at fitted knobs is PASS (FIT), not a surviving prediction (alpha_s via split, wino via m3/2)",
-    "D1989-mask: an active balancer absorbs incoming data shifts (T_R chased every n_s release, 3.7e8 -> 9.8e6 GeV), so they read as explained self-moves; detect on the data residual too, and freeze balancing on a layer while its data stream steps"
+    "D1989-mask: an active balancer absorbs incoming data shifts (T_R chased every n_s release, 3.7e8 -> 9.8e6 GeV), so they read as explained self-moves; detect on the data residual too, and freeze balancing on a layer while its data stream steps",
+    "D1995-FAR: a false-alarm bar of 1e-5 per pulse means several strays per run at 4,000+ pulses/s; confirm alarms by persistence (real shifts persist, noise reverts) and size the calibration so the bar has power",
+    "D1994-wall: wall-clock real-time runs cannot be replayed; score on a virtual clock and measure speed separately"
    ]
   },
   {
@@ -226,7 +235,8 @@
     "D1983a: per-layer counts must be computed from the per-pulse arrays, not read off the final status (chatter was L7, not L8)",
     "D1983c: unbounded greedy balancing ran T_R to 1.6e16 GeV; bound knobs and bar the runaway (A5)",
     "D1986-O2: statistical detectors on deterministic margins fire on rounding; CUSUM k must be below the shift; calibrate on null streams before any scored run",
-    "D1989-mask: an active balancer absorbs incoming data shifts (T_R chased every n_s release, 3.7e8 -> 9.8e6 GeV), so they read as explained self-moves; detect on the data residual too, and freeze balancing on a layer while its data stream steps"
+    "D1989-mask: an active balancer absorbs incoming data shifts (T_R chased every n_s release, 3.7e8 -> 9.8e6 GeV), so they read as explained self-moves; detect on the data residual too, and freeze balancing on a layer while its data stream steps",
+    "D1995-FAR: a false-alarm bar of 1e-5 per pulse means several strays per run at 4,000+ pulses/s; confirm alarms by persistence (real shifts persist, noise reverts) and size the calibration so the bar has power"
    ]
   },
   {
@@ -248,7 +258,8 @@
     "D1979a: a lock bought with a fit must read LOCKED-BY-FIT, never LOCKED",
     "D1983c: unbounded greedy balancing ran T_R to 1.6e16 GeV; bound knobs and bar the runaway (A5)",
     "D1986-O2: statistical detectors on deterministic margins fire on rounding; CUSUM k must be below the shift; calibrate on null streams before any scored run",
-    "D1987-scorer: a live PRED computed at fitted knobs is PASS (FIT), not a surviving prediction (alpha_s via split, wino via m3/2)"
+    "D1987-scorer: a live PRED computed at fitted knobs is PASS (FIT), not a surviving prediction (alpha_s via split, wino via m3/2)",
+    "D1995-FAR: a false-alarm bar of 1e-5 per pulse means several strays per run at 4,000+ pulses/s; confirm alarms by persistence (real shifts persist, noise reverts) and size the calibration so the bar has power"
    ]
   },
   {
@@ -272,7 +283,8 @@
     "D1983a: per-layer counts must be computed from the per-pulse arrays, not read off the final status (chatter was L7, not L8)",
     "D1983c: unbounded greedy balancing ran T_R to 1.6e16 GeV; bound knobs and bar the runaway (A5)",
     "D1986-O2: statistical detectors on deterministic margins fire on rounding; CUSUM k must be below the shift; calibrate on null streams before any scored run",
-    "D1989-mask: an active balancer absorbs incoming data shifts (T_R chased every n_s release, 3.7e8 -> 9.8e6 GeV), so they read as explained self-moves; detect on the data residual too, and freeze balancing on a layer while its data stream steps"
+    "D1989-mask: an active balancer absorbs incoming data shifts (T_R chased every n_s release, 3.7e8 -> 9.8e6 GeV), so they read as explained self-moves; detect on the data residual too, and freeze balancing on a layer while its data stream steps",
+    "D1995-FAR: a false-alarm bar of 1e-5 per pulse means several strays per run at 4,000+ pulses/s; confirm alarms by persistence (real shifts persist, noise reverts) and size the calibration so the bar has power"
    ]
   },
   {
@@ -288,7 +300,8 @@
    "owed": "pft_ledger",
    "effort": "low",
    "known_failure_modes": [
-    "D1982-B4: a test runner that always crashes scores 100 %; run an unmutated control first"
+    "D1982-B4: a test runner that always crashes scores 100 %; run an unmutated control first",
+    "pkill-self: pkill -f with a pattern that appears in your own command line kills your own shell"
    ]
   },
   {
@@ -304,7 +317,8 @@
    "owed": "paper_D1948",
    "effort": "low",
    "known_failure_modes": [
-    "D1982-B4: a test runner that always crashes scores 100 %; run an unmutated control first"
+    "D1982-B4: a test runner that always crashes scores 100 %; run an unmutated control first",
+    "pkill-self: pkill -f with a pattern that appears in your own command line kills your own shell"
    ]
   },
   {
@@ -317,7 +331,8 @@
    "owed": "conlon_palti_quote",
    "effort": "low",
    "known_failure_modes": [
-    "D1982-B4: a test runner that always crashes scores 100 %; run an unmutated control first"
+    "D1982-B4: a test runner that always crashes scores 100 %; run an unmutated control first",
+    "pkill-self: pkill -f with a pattern that appears in your own command line kills your own shell"
    ]
   },
   {
@@ -334,7 +349,8 @@
    "owed": "data_residual_detector",
    "effort": "low",
    "known_failure_modes": [
-    "D1982-B4: a test runner that always crashes scores 100 %; run an unmutated control first"
+    "D1982-B4: a test runner that always crashes scores 100 %; run an unmutated control first",
+    "pkill-self: pkill -f with a pattern that appears in your own command line kills your own shell"
    ]
   },
   {
@@ -351,7 +367,8 @@
    "owed": "derive_TR",
    "effort": "low",
    "known_failure_modes": [
-    "D1982-B4: a test runner that always crashes scores 100 %; run an unmutated control first"
+    "D1982-B4: a test runner that always crashes scores 100 %; run an unmutated control first",
+    "pkill-self: pkill -f with a pattern that appears in your own command line kills your own shell"
    ]
   },
   {
@@ -368,7 +385,8 @@
    "owed": "cube_axis",
    "effort": "low",
    "known_failure_modes": [
-    "D1982-B4: a test runner that always crashes scores 100 %; run an unmutated control first"
+    "D1982-B4: a test runner that always crashes scores 100 %; run an unmutated control first",
+    "pkill-self: pkill -f with a pattern that appears in your own command line kills your own shell"
    ]
   },
   {

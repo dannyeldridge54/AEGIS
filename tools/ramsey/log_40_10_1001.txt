@@ -7,3 +7,5 @@ seed 1001 t=150s steps 929456 pulses 0 score 78 best 78 T 0.493
 seed 1001 t=180s steps 1118531 pulses 0 score 78 best 78 T 0.375
 seed 1001 t=210s steps 1295187 pulses 0 score 78 best 78 T 0.285
 seed 1001 t=240s steps 1424478 pulses 0 score 78 best 78 T 0.230
+seed 1001 t=270s steps 1594386 pulses 0 score 78 best 78 T 0.180
+seed 1001 t=300s steps 1781451 pulses 0 score 78 best 78 T 0.133
