@@ -21118,3 +21118,10 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - tadpole FAIL → CONDITIONAL (B2);
     - μ knob → instanton-natural (B4);
     - exotics: still FAIL in the Seed space. Next: tilted tori and L = 4 on the full χ grid.
+- **D2103 (CENTRE; PREREG_D2103; tools/seed/retry_exotics.py): exotics retry. FAIL.**
+  - Setup: L = 4 (17,284 branes) × 343 χ, with the per-model fitted K; vectorised intersections verified (0/4050 mismatches); no timeouts; 73 s.
+  - Results: 28 PS points, 8 with a physical fit, **4 exotic-safe, 0 hits**. The best exotic-safe models have α_s = 0.062.
+  - **The exotics wall holds on T⁶/(Z₂×Z₂) with a tilted T₃.** Next: other orbifolds (Z₂×Z₆′, rigid; 1509.00048) or vector-like mass mechanisms.
+- **D2104 (CENTRE, ancient-number lens; ANCIENT_NUMBERS_2026-11-22.md; tools/bloom/ancient_numbers.py; Danny 08:34): the Vedic and world cycle numbers are 2·3-smooth (×10ⁿ).**
+  - STRUCTURE: they match the UFE's PSL(2, Z) = Z₂ * Z₃ and its Z₆ = Z₂ × Z₃ fold; j(i) = 1728 equals the Satya digits. Both come from 12³, so this is not independent.
+  - NUMEROLOGY guide: the unique 3-smooth natural racetrack is **(8, 9)** (Størmer). It gives B/A = 0.194, ε = 0.17 and B1 natural at k = 3 (B = 0.205). To be locked before any credit.
