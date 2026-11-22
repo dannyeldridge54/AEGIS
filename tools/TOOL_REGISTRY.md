@@ -82,3 +82,9 @@ Base env for builds from D2008 onward: `CLASSMAP=DIR_ONE.map LR2=1`. EV = event 
 | tools/ramsey/u1/u1glue.c → u1fast.c → u1clq.c → **u1final.c (v4b)** | U1: (3,9,34)-graphs with a degree-6 vertex (ladder v1 to v5) | v4b current; PC launcher run_u1.py | D2020 |
 | tools/ramsey/blockcirc/bc.c | D2019 block circulants (B, m) | 2×20 none; 5×8 running | D2019 |
 | tools/ramsey/evolve/{initial_program.py, evaluator.py, config.yaml} | OpenEvolve swarm for front L (local Ollama, 5 islands, exact α evaluator) | smoke-tested | D2021 |
+
+## Core (applies to every problem)
+| tool | purpose | status |
+|---|---|---|
+| **tools/loom/LOOM_CORE_STANDARD.md** | THE standard: knob tree with ≤ 9 knobs per agent, a balancing centre, admission rule, instrument tuning, integrity, bookkeeping, hardware | v1, 22 Nov 2026 |
+| **tools/loom/loomcore.py** | reference implementation: Agent (≤ 9 knobs, octave → fifth, held-out gate, nesting) + Centre (bandit; stops at BALANCED) | selftest PASS (balanced in 8 rounds, error 0.00) |
