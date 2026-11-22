@@ -34,3 +34,29 @@ All arithmetic was done in code.
 
    It does not mean a faster squaring.
 6. **Honest scope:** one PC cannot expect a find; the expectation is 1e-6 per test. Joining PrimeNet makes each test count toward GIMPS and qualifies for the $3,000 award. That needs Danny's account; we never type passwords.
+
+## Danny's PC (RTX 4070): every part wired in (21 Nov 2026, plan only, nothing installed)
+**Key fact.** The 4070 (Ada, sm_89) is a consumer card. Its FP64 rate is 1/64 of FP32, so a classic FP64 FFT PRP test is slow on it. Two findings from the source:
+- mfaktc's current Makefile builds for sm_89 (Ada). TF is pure integer work, which is the 4070's strength.
+- **PRPLL (Dec 2025) adds transforms that avoid FP64:**
+  - integer NTTs mod M31 = 2³¹−1 and M61 = 2⁶¹−1;
+  - FP32 + NTT hybrids (FFT32, FFT3161, FFT3261, FFT323161; see Task.cpp and FFTConfig.cpp).
+
+  These put the 4070's FP32 and INT32 units to work on the PRP itself. Which transform is fastest on this card is unmeasured; PRPLL `-tune` decides.
+
+| Part | Job | Why |
+|---|---|---|
+| GPU INT32 cores | mfaktc trial factoring (L1) | integer work, no FP64 needed |
+| GPU FP32 + INT units | PRPLL PRP with FP32/M31/M61 transforms (L3) | the transforms built for weak-FP64 cards |
+| GPU 12 GB VRAM | PRPLL FFT buffers (~7.5M words at p ≈ 1.4e8) plus the mfaktc sieve | fits with room |
+| CPU cores (AVX2) | Prime95/mprime: P−1 (L2) and an optional CPU PRP worker | CPU FP64 is full-rate, so it is a real second tester |
+| System RAM | **P−1 stage 2**: Prime95 uses as much RAM as allowed (more RAM gives a bigger B2 and more factors found) | the one GIMPS step that scales directly with RAM |
+| SSD | PRP checkpoints plus the Pietrzak proof temp files (several GB at power 9–10) | a proof makes the result certifiable |
+| Network | PrimeNet: assignments, results, certs | prevents duplicate work; counts for the award |
+| Tensor cores | **cannot do exact big-integer squaring** (low precision). Could run CubeMind's local LLM (Ollama) as orchestrator and log reader | would compete with mfaktc for the GPU, so it should run only between work units |
+| Loom / CubeMind | referee and scheduler: picks TF depth by layer economics, watches Gerbicz/residue logs, logs to the target table | our part of the stack |
+
+**Wiring rule.** No two heavy jobs on the same unit:
+- GPU: mfaktc **or** PRPLL, scheduled;
+- CPU: Prime95 P−1, plus one core left for the Loom;
+- the LLM runs only when the GPU is idle.
