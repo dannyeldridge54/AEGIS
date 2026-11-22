@@ -1,5 +1,5 @@
 # The UFE derivation Loom loop (set 22 Nov 2026, 02:52; Danny: "set up derivation UFE loop loom till done")
-**Each tick** is one derivation step, run self-scheduled about every 5 min:
+**Each tick** is one derivation step, run self-scheduled **every 3 min** (Danny 03:00):
 1. Pick the top open item from the queue below.
 2. **Referee pre-check (new, from D2051a):** write the textbook formula the step relies on, with its source, before any toy model is built.
 3. Lock PREREG + sha256, pushed **before** any reading of numbers or computing.
@@ -13,7 +13,7 @@
 - **STALL:** 7 consecutive ticks with no new lead and no closed item → report, and wait for Danny.
 - **Danny's live messages always come first.**
 
-## NEXT TASK (serves Q4, Q5 and branch B): write the explicit brane stacks (windings, fluxes) on Z₆-II/ΩR with the 1/12 or 1/6 hypercharge step; check α_G⁻¹ = 27.94, three families and the tadpole in one script.
+## NEXT TASK: follow tools/bloom/DERIVATION_PLAN.md in order. The next open step is **P2b**: fix the factor (1 or 2) of the hypercharge cross term c_a c_b F_a F_b in f₂ − f₃ = −½S∫(F_Y² + 2F_D·F_Y) with F_Y = Σ c_a F_a. That picks branch A (1/12, +0.046) or B (1/6, +0.092) with no knob. Then P3 families, P4 tadpole, P5 massless U(1)_Y, P6 branch, P7 KL, P8 W₀, P9 F-theory, P10 battery.
 
 ## Queue (open items, in order). Tick log: tick 1 = D2054 (Q1, partial); tick 2 = D2055 (Q2, CONDITIONAL); tick 3 = D2056 (Q3, FAIL; no-progress count 1); tick 4 = D2057 (Q4, CANDIDATE; count 0); tick 5 = D2058 (Q5 merged, Q6 fact; first full pass done); tick 6 = D2059 + D2060 (all-in-one pass: 1/12 flux ALLOWED via windings; D3 routes FAIL; branch B = mirage + 1/6 flux)
 | # | item | current state | first move |
