@@ -35,6 +35,7 @@ def evaluate(chi, A, B, C):
     S = susy_at(chi)
     if not all(x in S for x in (A, B, C)): S = S + [x for x in (A, B, C) if x not in S]
     return T.evaluate(S, chi, A, B, C)
+def deep(x): return tuple(deep(y) for y in x) if isinstance(x, list) else x
 def nkey(chi, A, B, C): return (tuple(map(str, chi)), tuple(s.canon(A)), tuple(s.canon(B)), tuple(s.canon(C)))
 def neighbours(chi, A, B, C, LAD):
     V = [list(A), list(B), list(C)]
@@ -76,7 +77,7 @@ if __name__ == '__main__':
     seen = {}; heap = []; arch = json.load(open(ARCH)) if os.path.exists(ARCH) else {}
     if os.path.exists(LOG):
         for l in open(LOG):
-            r = json.loads(l); seen[tuple(map(tuple, r['key']))] = r
+            r = json.loads(l); seen[deep(r['key'])] = r
     def push(chi, A, B, C, src):
         k = nkey(chi, A, B, C)
         if k in seen: return
