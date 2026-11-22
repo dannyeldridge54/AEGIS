@@ -299,5 +299,35 @@
   "S2",
   "E1"
  ],
- "dataset_rule": "Before scoring: fetch the current value from 3 sources and triangulate (Rule 6h: consensus within 1 sigma or 0.3 dex). Lock (PREREG + sha256), then score, then fingerprint into the compass. Only data released after the lock counts as strict evidence (G6)."
+ "dataset_rule": "Before scoring: fetch the current value from 3 sources and triangulate (Rule 6h: consensus within 1 sigma or 0.3 dex). Lock (PREREG + sha256), then score, then fingerprint into the compass. Only data released after the lock counts as strict evidence (G6).",
+ "gates": [
+  "lock referee",
+  "calibration + injection-recovery",
+  "compute referee (C1-C7)",
+  "held-out / blinded run",
+  "trials correction",
+  "centre balance + tension metric",
+  "independent referee"
+ ],
+ "target": "ln L_global(agent datasets) - 0.5 * n_fitted_knobs * ln N; NAILED only on held-out/post-lock data with all gates passed",
+ "scale_ladder": {
+  "physics": [
+   "tree",
+   "1-loop",
+   "2-loop",
+   "thresholds"
+  ],
+  "compression": [
+   "200kB",
+   "3MB",
+   "10MB",
+   "100MB",
+   "1GB"
+  ],
+  "ramsey": [
+   "small-n analogues",
+   "n=35",
+   "n=40"
+  ]
+ }
 }

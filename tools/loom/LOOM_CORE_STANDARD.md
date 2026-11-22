@@ -45,3 +45,21 @@ Each rule cites the test that earned it.
 
 ## 7. Reference implementation
 `tools/loom/loomcore.py`: `Agent` (≤ 9 knobs, octave/fifth tuning, held-out gate) and `Centre` (a bandit over agents, nesting, a ledger of every poke). Any engine plugs in by giving each agent an `evaluate(settings, split)` function.
+
+## 8. v1.1 additions (22 Nov 2026, FILTRATION_REVIEW.md)
+- **One target per agent.** A global log-likelihood over its datasets minus a fitted-knob penalty (BIC-style). A knob must buy more likelihood than it costs.
+- **Referees at every gate:**
+  - lock referee;
+  - compute referee (C1–C7);
+  - centre referee (balance + trials + tension);
+  - an independent final referee.
+- **Blinding.** Build with the data value hidden or offset; unblind once.
+- **Automatic trials ledger.** Every scan logs its trials; significances are corrected.
+- **Injection-recovery.** Plant a known signal; the whole chain must recover it.
+- **Tension metrics** before combining datasets.
+- **Scale ladder.** A result must hold on its last two scale rungs (size, loop order, n).
+
+## 9. Stop rules
+- **NAILED:** target met on held-out or post-lock data, all gates passed.
+- **STALL:** 7 nulls; explore.
+- **FIT:** met only by adding fitted knobs; recorded, never claimed.
