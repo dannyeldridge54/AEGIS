@@ -21095,3 +21095,26 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     3. **B4:** an instanton μ_W with S ≈ 27.
     4. **B3:** an exotic-free scan with the size rule.
   - D3-at-singularity sequestering is not open to v4 (α_G ≈ g_s at ρ is too strong).
+- **D2102 (CENTRE; PREREG_D2102 + DEVIATIONS; BREAKTHROUGH_CHART_2026-11-22.md; tools/seed/breakthrough.py, breakthrough_b3fix.py): the breakthrough chart in one pass.**
+  - **B1, PASS (natural, low evidence): W₀ from the R-symmetric ρ plus a k = 4 S-instanton.**
+    - With today's lowered targets the D2046 mechanism lands in its unchanged window:
+      - KKLT branch (2.70–2.86e-9): **B = 7.7–8.1**;
+      - KL (7, 8) (2.0e-9·A): **B = 5.7**.
+      - The old 5.6e-9 target has no natural k (D2046 stands for it).
+    - **Look-elsewhere p = 0.82**: most targets in 1e-10 – 1e-8 would also find a natural k, so this is **consistency, not evidence**.
+    - The exponent 2π·4·Im ρ = 4π√3 is the D2090 numerology number. The two now coincide by construction in the KKLT branch.
+    - **Status: W₀ FAIL becomes MARGINAL-NATURAL** (it needs a computed instanton prefactor B ≈ 6–8).
+  - **B4, PASS (natural, low evidence): μ_W = 21.9 TeV from a D-instanton**, with k = 5 (C = 1.43, M = M_s) or k = 6 (C = 1.36, M = M_P). p = 0.89–0.91, so no evidence weight. The D2100 μ_W/μ knob becomes "O(1) instanton prefactor", not derived.
+  - **B2, ESTIMATE, within budget:** families as 3·1·1 intersections cost D3 = 3N_vis + 1, i.e. 7 / 10 / 16 for N_vis = 2 / 3 / 5, against 19 / 28 / 46 for the |M| = 9 flux. With the 17–34 curvature give-back, the **net is ≤ 0 in every case**, within the 4–6 budget (filled with D3s if negative).
+    - Conditional on the family count not being divided by the Z₃ (fractional-brane rules owed).
+    - **The tadpole FAIL becomes CONDITIONAL.**
+  - **B3, FAIL after the fix:**
+    - Run 1 reported 2 exotic-safe unified hits (Re z = 2, 2, 2 at χ = (1/3, 1, 2), α_s = 0.1167). That was an **artefact**: the code used a fixed K = 25/6 instead of each model's fitted K.
+    - DEVIATIONS written first; rerun with the fitted K and M_s: 20 PS points, 8 with a physical fit, 4 exotic-safe, **0 hits**.
+    - The size rule (D2097) holds again: in the unified model the size-2 hidden rings are as weak as the visible ones.
+    - **Side note:** D2100 P3 also used the fixed K = 25/6. Its "fully passing" counts are only for models with no physical α_s fit, so its conclusion (no unified + exotic-safe model) is unchanged.
+  - **Net status (FRONTIER):**
+    - W₀ FAIL → MARGINAL-NATURAL (B1);
+    - tadpole FAIL → CONDITIONAL (B2);
+    - μ knob → instanton-natural (B4);
+    - exotics: still FAIL in the Seed space. Next: tilted tori and L = 4 on the full χ grid.
