@@ -21458,3 +21458,14 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 - **Item 13 verdict:** OBSTRUCTED, plus FAIL of the minimal seesaw.
 
 ## D2125a (item 13 sweep): the FAIL is robust to running. Weinberg-operator running from M_R to M_Z changes κ by about 0.8–1.5, while a rescue would need about 0.3, since Σm_ν < 0.12 means m₃ ≲ 0.06 eV. Item 13: NULL — BALANCED.
+
+## D2126 (DEEP, ping-pong item 18): dark matter and stable relics. **OBSTRUCTED** (stable fractional charges). Locked, run once.
+- **T1:** we computed centre parities and electric charges (Y = T3R + (B−L)/2) for all states in Tables 28/29.
+  - The states odd under the exact centre Z2(SU(2)_d) or Z2(SU(2)_e) are bd, bd′, be′, cd, cd′, ce′ (Q = ±½) and ad (coloured, Q = +1/6 and −½). **All carry fractional electric charge.**
+  - The only neutral centre-odd state is the purely hidden **de′**, which is odd under both centres.
+  - The lightest state in each odd class is absolutely stable (exact gauge centre plus charge conservation).
+- **Why this is a problem:** the fractionally charged states are chiral under massive U(1)s only, so they are **massless at the perturbative level**, with no mass mechanism in the model. Light stable fractional charges are excluded (collider and terrestrial searches).
+- **T2:** the condition for any fix is masses ≫ T_RH (unitarity, m ≲ 100 TeV for thermal relics, Griest–Kamionkowski), plus a mass mechanism (instanton or breaking-sector vevs).
+- **T3:** the LSP is stable through gauge matter parity, conditional on R-even breaking. Thermal targets: higgsino ≈ 1.1 TeV, wino ≈ 2.7–3 TeV.
+- **T4:** a PQ axion from a massive anomalous U(1) acting as a perturbative global symmetry (Honecker–Staessens 1312.4517) is possible. Misalignment requires θ ≈ 0.94 at f_a = 1e12 GeV and ≈ 0.28 at 8e12 GeV (ESTIMATE).
+- **Verdict:** item 18 **OBSTRUCTED**. Stable, perturbatively massless, fractionally charged states (Q = ±½) are a generic hazard of hidden–visible bifundamentals. The only neutral candidates are de′, the LSP, and the axion.
