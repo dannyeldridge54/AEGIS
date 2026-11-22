@@ -505,6 +505,27 @@
     "dNeff"
    ],
    "B0b": "D2037: KL racetrack on T_vis gives m_T ~ 1.6e8 GeV << H_inf 5.7e12 (x2.7e-5). FAIL: sigma is pinned by the visible gauge coupling, so no racetrack on that cycle can protect it"
+  },
+  {
+   "id": "F-W0",
+   "check": "D2044",
+   "status": "FAIL (statistics)",
+   "what": "|W0| = 5.6e-9 expected count 4e-11 among ~1e6 Z6-II flux vacua (b3 = 4): needs a W0 = 0 flux vacuum + non-perturbative source, or a symmetry (target B0c)",
+   "affects": [
+    "alpha_s",
+    "wino",
+    "gluino",
+    "proton"
+   ]
+  },
+  {
+   "id": "F-tadpole",
+   "check": "2404.18995 (literature)",
+   "status": "FLAG",
+   "what": "Z6-II orientifolds with only O3 planes cannot meet the flux tadpole without negative D3 charge; the D7/O7 budget of v4 is not written down",
+   "affects": [
+    "all"
+   ]
   }
  ]
 }

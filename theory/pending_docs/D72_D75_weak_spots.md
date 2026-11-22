@@ -20431,3 +20431,16 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     1. a derived non-universal seam term of +0.05 to +0.27 (T1: large, but explicit Z₆′ thresholds are O(10–30) in 1/α, D2023);
     2. a lower inflation scale (r ≪ 5.4e-4), which means changing the plateau;
     3. warped-throat sequestering (open).
+- **D2044 (CENTRE; PREREG_D2044): |W₀| = 5.6e-9 is not statistically reachable on the Z₆-II orbifold. FAIL by the locked rule (look-elsewhere lens 5).**
+  - Denef–Douglas statistics with b₃ = 4 (h²¹ = 1): N_vac ≈ (2πL)⁴/4!. At the generous L = 12 that is 1.35e6 vacua, so the expected count with |W₀| ≤ 5.6e-9 is **N_hit ≈ 4e-11**.
+  - Even L = 100 gives 2e-7. This sits on top of 2404.18995, which says the O3-only Z₆-II orientifolds cannot meet the tadpole without negative D3 charge at all.
+  - **Read:** the small W₀ that v4 derives from the KKLT condition at N = 6 cannot come from generic fluxes on this rigid orbifold. It needs a mechanism:
+    - an exactly vanishing tree-level W₀ (a symmetric-flux / "W₀ = 0" vacuum, e.g. 2304.04789; the Demirtas–Kim–McAllister–Moritz perturbatively flat vacua) plus a non-perturbative source that produces 5.6e-9;
+    - or a discrete symmetry.
+  - **New derivation target B0c:** derive W₀ = 5.6e-9 from a W₀ = 0 flux vacuum plus a non-perturbative term on Z₆-II, with the tadpole met (D7/O7 charge), no fitted knob.
+  - **Tally of structural issues in v4 found tonight** (D2036–D2044):
+    1. mirage F^T_vis;
+    2. Kallosh–Linde;
+    3. the α_s / inflation-scale opposition;
+    4. W₀ unreachable;
+    5. the tadpole sign (literature).
