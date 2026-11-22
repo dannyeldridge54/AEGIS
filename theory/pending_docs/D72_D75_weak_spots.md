@@ -21048,3 +21048,16 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - X17 is unconfirmed, and v4's dark photon is not protophobic;
     - GCE partially viable, no v4 claim;
     - directional DM detection has no data yet, so the "six directions" cannot be tested.
+- **D2099 (loop 2 tick 1, L1; PREREG_D2099; tools/seed/tanb_run.py): radiative running from the BIM boundary (universal m₀ = m₃/₂, μ = m₃/₂, Bμ = 2m₃/₂², tan β = 1 at M_s) down to M_S = 128.5 TeV. FAIL by the lock.**
+  - **The lock's FAIL condition was "tan β ≈ 1", but the physical failure is different.** sin2β = 2Bμ/(m²_Hu + m²_Hd + 2μ²) comes out **above 1** (1.32 at a tan β = 1.9 input; 1.93 at the degenerate fixed point). The code returned tan β = 1 by default when s2b ≥ 1; that output is not a physical tan β.
+  - So the boundary **Bμ is too large**: the Higgs mass matrix has det < 0 at M_S, so electroweak symmetry breaks at the 100 TeV scale. There is no viable light Higgs.
+  - **Code fix before any result:** the y_t root bracket was widened and the quasi-fixed-point case handled. It crashed with no output; no result was changed.
+  - **Diagnostic (not scored), at a tan β = 1.9 input:**
+    - running gives m²_Hu = 0.058 m₃/₂², m²_Hd = m₃/₂², **μ = 0.975 m₃/₂** (the D2087 c ≈ 1 survives the running).
+    - A light Higgs needs the tuning det = (m²_Hu + μ²)(m²_Hd + μ²) − (Bμ)² ≈ 0. That requires **B ≈ 1.44 m₃/₂** instead of BIM's 2m₃/₂, a 28% reduction.
+    - Then tan²β ≈ (m²_Hd + μ²)/(m²_Hu + μ²) gives **tan β ≈ 1.4**, which is **below** the m_h band of 1.81–2.02.
+  - **Read:** two derived pieces point slightly apart:
+    - the Higgs mass wants tan β ≈ 1.9;
+    - the GM boundary with universal masses, plus running, gives ≈ 1.4 once B is lowered enough for a light Higgs.
+    - This is a TENSION of second order, and it needs non-universal Higgs masses or the Θ/V₀ corrections in BIM Eq. 69–70 (owed).
+  - **Queue update:** L1′, the Θ/V₀ corrections to B and to m²_H, is added to the end of the queue.

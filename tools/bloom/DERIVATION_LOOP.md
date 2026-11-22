@@ -24,3 +24,21 @@
 | Q4 | **T1 seam** (+0.044) | CANDIDATE (D2057): a 1/12 fractional hypercharge-flux quantum gives +0.0458 (p = 0.20, no evidence weight) | derive: is a 1/12 quantum admissible on Z₆-II/ΩR (charge lattice, Freed–Witten, massless U(1)_Y)? |
 | Q5 | **tadpole budget** | OPEN; merged with Q4 (D2058) | write v4's explicit brane configuration (stacks, wrappings, fluxes, O7s) on Z₆-II/ΩR. Serves Q4 and Q5 together |
 | Q6 | **g_s = 2/√3** | fact (D2058): no SL(2,Z) frame has g_s < 2/√3 | treat in F-theory; E(S, 3/2) is already modular-invariant |
+
+## LOOP 2 (Danny 08:10 "Loom loop 3 min")
+**Rules:**
+- one locked rung per tick (PREREG + .sha256, then compute, then a D-note, then commit and push), then send_later(3 min);
+- **NULL:** a tick with nothing new and nothing computed ends the loop;
+- **STALL:** 3 no-progress ticks in a row end the loop;
+- formula first (referee rule); corrections as dated notes.
+
+**Queue (from FRONTIER + D2083–D2098):**
+- **L1:** tan β ≈ 1.9 against BIM's boundary value of 1. Run the Higgs soft masses and μ, B from M_s to M_S (one loop, top-dominated). Does the radiative splitting m²_Hu < m²_Hd give tan β ≈ 1.9?
+- **L2:** v4's dark force as a separate dark U(1) (D2098 owed). Gauge coupling from its brane cycle, then α_D at 12.8 GeV and DM consistency.
+- **L3:** the D7 tadpole ledger for the KL racetrack ranks (7, 8) and (14, 15) on T_vis (formula first).
+- **L4:** Seed v5 with built-in filters: 3 + 3 families, tadpole + K, the confinement size rule (D2097), unification; L = 4.
+- **L5:** the birefringence coupling c_γ/f, derived or fitted (v4 axion on which cycle?).
+- **L6:** lock the 4π√3 shared-exponent hypothesis (KKLT branch) against the gauge chain.
+
+**Tick log (loop 2):**
+- **Tick 1 (08:15, L1):** D2099 FAIL. The BIM boundary has Bμ too large; there is no light-Higgs vacuum. Lowering B to 1.44 m₃/₂ (tuned) gives tan β ≈ 1.4, below m_h's 1.9. Progress: yes (a new constraint). L1′ added to the queue.
