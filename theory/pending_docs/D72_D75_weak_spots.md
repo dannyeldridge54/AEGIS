@@ -20809,3 +20809,15 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - The look-elsewhere is tiny: 4 models, 2 physical, 1 hit. The rule calls it NULL, because one model cannot beat chance on its own.
   - **What it shows:** the self-building search now reaches a real phenomenological goalpost, a gauge-unified 3-family SUSY model, from a single seed in about 1 minute.
   - **Next fork:** v4's own geometry (Z₂×Z₆′, rigid stacks, 1509.00048), where this machinery can ask whether the UFE's ρ / Z₆ structure admits a unified model.
+- **D2084 (CENTRE; PREREG_D2084; tools/seed/twoloop.py): two-loop scoring of the D2083 unified-model α_s hit. Control PASS (one loop at M_SUSY = M_Z gives 0.1168). At the locked M_SUSY = 3 TeV the hit STANDS: α_s = 0.1175, pull −0.5σ, M_s = 1.04e16 GeV.**
+  - **Two loops, no Yukawas, by M_SUSY:**
+    - 0.5 TeV: α_s = 0.1237 (+6.3σ);
+    - 1 TeV: 0.1212 (+3.6σ);
+    - **3 TeV: 0.1175 (−0.5σ)**;
+    - 10 TeV: 0.1138 (−4.7σ).
+  - **Display slip:** the printed column labelled "alpha_G^-1" is actually α_G ≈ 0.04 (it printed 1/y). The physics value α_G⁻¹ ≈ 25 matches BLS's 0.041. The scored α_s values are unaffected.
+  - **Honest read:**
+    - The prediction is **threshold-dominated**: across 0.5–10 TeV it sweeps 0.124 → 0.114, a ±6σ band. The hit at 3 TeV is real, but it is only as sharp as the knowledge of the SUSY threshold.
+    - The sharp test is **v4's own split spectrum** (wino 0.69 TeV, gluino 4.9 TeV, plus μ, scalars, heavy Higgs) mapped to the effective threshold. The textbook map is Carena–Pokorski–Wagner T_SUSY ≈ |μ|(m_W̃/m_g̃)^{3/2}(…)^{3/19}. With the v4 gaugino ratio, (0.69/4.93)^{3/2} ≈ 0.052, which pulls T_SUSY well below |μ|.
+    - So the next goalpost is to **lock T_SUSY from v4's full spectrum**, then score. Exact formula first, per the referee rule.
+    - Yukawa two-loop terms are neglected; they lower α_s by O(0.001).
