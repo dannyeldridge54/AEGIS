@@ -6,7 +6,7 @@ import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from fractions import Fraction as Fr
 import seed_v3 as s, exotics as e, seed_v4_ps as P
-D = os.environ.get('TORUS_DIR', os.path.join(HERE, 'torus')); CAT = os.path.join(D, 'catalog.jsonl'); ST = os.path.join(D, 'state.json'); T_END = time.time() + 110*60
+D = os.environ.get('TORUS_DIR', os.path.join(HERE, 'torus')); CAT = os.path.join(D, 'catalog.jsonl'); ST = os.path.join(D, 'state.json'); T_END = time.time() + float(os.environ.get('TORUS_MINUTES', '110'))*60
 def fit(Wa, Wb, Wc):
     VY = 2/3*Wa + Wc; det = Wb*P.bY/(2*math.pi) - VY*P.b2/(2*math.pi)
     return (P.inv2*P.bY/(2*math.pi) - P.invY*P.b2/(2*math.pi))/det, 91.19*math.exp((Wb*P.invY - VY*P.inv2)/det)
@@ -71,7 +71,9 @@ if __name__ == '__main__':
         ALL = branes(L); G = grid(Q); new_safe = 0; t_band = time.time()
         print('== %s L=%d Q=%d: %d branes, %d chi' % (bname, L, Q, len(ALL), len(G)**3), flush=True)
         if st['phase'] == 'OUT1':
-            for chi in itertools.product(G, repeat=3):
+            SH_I, SH_N = (int(x) for x in os.environ.get('SHARD', '0/1').split('/'))
+            for ci, chi in enumerate(itertools.product(G, repeat=3)):
+                if ci % SH_N != SH_I: continue
                 if time.time() > T_END: save(st); print('time slice over; resume later', flush=True); sys.exit(0)
                 ck = ','.join(map(str, chi))
                 if st['done_scan'].get(ck, 0) >= L: continue
