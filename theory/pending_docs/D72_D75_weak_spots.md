@@ -20684,3 +20684,9 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **(b) Loop-type correction (1 + c/2t):** a minimum at t = 20.15 needs c = −60 (n = 0) or −81 (n = 1). Both are far outside |c| ≤ 10, and both make **K_XX̄ < 0**. n = 2 has no solution; n = 3 gives m_T = 0.
   - **Only the 1112.4488 form (1 − 2βt)** works, and only with β ≈ 0.019. That form grows with T, unlike the inverse powers string corrections normally produce. Its origin is not a standard correction.
   - **Loop: no progress. No-progress count 1.**
+- **D2072 (CENTRE; PREREG_D2072): P8, W₀ from a second condensate on the same visible cycle (racetrack, flux W₀ = 0). FAIL.**
+  - Putting the SUSY point at t = 20.15 needs B/A = 57 (N′ = 5) or 0.057–5e-5 (N′ = 7–12). **None is natural** (0.1–10).
+  - **|W_min| = 0.6–3.2e-10, 17–96× too small** against v4's 5.6e-9. A pure racetrack gives W ~ e^{−x}·O(1/x), while v4's KKLT relation W₀ = A e^{−x}(1 + 2x/3) carries the extra factor 15.
+  - **W₀ routes tried:** generic flux, PFV, S-instanton, dark condensate, same-cycle racetrack. **All fail.**
+  - **Loop: no progress. No-progress count 2.**
+- **D2063 progress (FORGE):** baseline = full enwik8 with loomz20_o3 (TB22, RCTX = 1): **19,724,674 bytes** in 2,407 s. (The TB24 build reached 19,270,420 earlier; this test compares within the TB22 build.) The reordered run is still going.
