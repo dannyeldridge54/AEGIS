@@ -16,6 +16,9 @@ def model(v1, v2, v3, gs, MP, var):
     T = math.sqrt(v1*v2*v3)/K/(4*gs); Ms = MP*gs/math.sqrt(4*math.pi*v1*v2*v3)
     da, db, dc = thr(v1, v2, v3, var); return T, Ms, (T + da, T + db, T + dc)
 def resid(x, v3, MP, var, iso):
+    try: return _resid(x, v3, MP, var, iso)
+    except (ValueError, OverflowError, ZeroDivisionError): return [1e6]*(2 if iso else 3)
+def _resid(x, v3, MP, var, iso):
     v1, v2, lg = (math.exp(x[0]), math.exp(x[0]), x[1]) if iso else (math.exp(x[0]), math.exp(x[1]), x[2]); gs = math.exp(lg)
     T, Ms, (A4, Ab, Ac) = model(v1, v2, v3, gs, MP, var); m = alpha_inv(Ms)
     r = [m[2] - A4, m[1] - Ab, m[0] - (0.4*A4 + 0.6*Ac)]
