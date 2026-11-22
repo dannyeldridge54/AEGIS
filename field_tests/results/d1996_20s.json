@@ -1,0 +1,642 @@
+{
+ "seconds": 20.0,
+ "seeds": [
+  2050,
+  2051,
+  2052,
+  2053
+ ],
+ "runs": [
+  {
+   "seed": 2050,
+   "verdict": "PASS",
+   "accuracy": {
+    "A1": true,
+    "A2_recall": true,
+    "A2_prec_fast": true,
+    "A2_prec_full": true,
+    "A3": true,
+    "A4": true,
+    "A5": true
+   },
+   "pulses_per_s": 4405.7,
+   "tally": {
+    "PASS (FIT)": 8,
+    "UNSCORED": 9,
+    "PASS": 18,
+    "PASS (bound)": 2,
+    "TRUST": 1,
+    "PASS (null)": 7,
+    "FAIL": 1,
+    "OPEN": 15
+   },
+   "done": {
+    "1": 0.0,
+    "2": 17.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0,
+    "9": 0.0
+   },
+   "fits": [
+    "TR",
+    "m32",
+    "split"
+   ],
+   "precision": [
+    1.0,
+    1.0
+   ],
+   "far": {
+    "1": 0.0,
+    "2": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0
+   },
+   "events": {
+    "E1 n_s +3 sigma": {
+     "pred": [
+      6
+     ],
+     "fast": [
+      6
+     ],
+     "full": [
+      6
+     ],
+     "recall_fast": 1.0,
+     "prec_fast": 1.0,
+     "prec_full": 1.0,
+     "latency_ms": {
+      "6": 1.07
+     },
+     "recovery_checked": [
+      1,
+      2,
+      5,
+      6,
+      7
+     ],
+     "recovered": {
+      "1": true,
+      "2": true,
+      "5": true,
+      "6": true,
+      "7": true
+     }
+    },
+    "E2 m3/2 x1.05 kick": {
+     "pred": [
+      5,
+      8
+     ],
+     "fast": [
+      5,
+      8
+     ],
+     "full": [
+      5,
+      8
+     ],
+     "recall_fast": 1.0,
+     "prec_fast": 1.0,
+     "prec_full": 1.0,
+     "latency_ms": {
+      "8": 0.17,
+      "5": 0.17
+     },
+     "recovery_checked": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8
+     ],
+     "recovered": {
+      "1": true,
+      "2": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "8": true
+     }
+    },
+    "E3 Y_B -30 %": {
+     "pred": [
+      8
+     ],
+     "fast": [
+      8
+     ],
+     "full": [
+      8
+     ],
+     "recall_fast": 1.0,
+     "prec_fast": 1.0,
+     "prec_full": 1.0,
+     "latency_ms": {
+      "8": 0.0
+     },
+     "recovery_checked": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8
+     ],
+     "recovered": {
+      "1": true,
+      "2": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "8": true
+     }
+    }
+   },
+   "exact_replay": null
+  },
+  {
+   "seed": 2051,
+   "verdict": "PASS",
+   "accuracy": {
+    "A1": true,
+    "A2_recall": true,
+    "A2_prec_fast": true,
+    "A2_prec_full": true,
+    "A3": true,
+    "A4": true,
+    "A5": true
+   },
+   "pulses_per_s": 2724.9,
+   "tally": {
+    "PASS (FIT)": 8,
+    "UNSCORED": 9,
+    "PASS": 18,
+    "PASS (bound)": 2,
+    "TRUST": 1,
+    "PASS (null)": 7,
+    "FAIL": 1,
+    "OPEN": 15
+   },
+   "done": {
+    "1": 0.0,
+    "2": 17.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0,
+    "9": 0.0
+   },
+   "fits": [
+    "TR",
+    "m32",
+    "split"
+   ],
+   "precision": [
+    1.0,
+    1.0
+   ],
+   "far": {
+    "1": 0.0,
+    "2": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0
+   },
+   "events": {
+    "E1 n_s +3 sigma": {
+     "pred": [
+      6
+     ],
+     "fast": [
+      6
+     ],
+     "full": [
+      6
+     ],
+     "recall_fast": 1.0,
+     "prec_fast": 1.0,
+     "prec_full": 1.0,
+     "latency_ms": {
+      "6": 1.07
+     },
+     "recovery_checked": [
+      1,
+      2,
+      5,
+      6,
+      7
+     ],
+     "recovered": {
+      "1": true,
+      "2": true,
+      "5": true,
+      "6": true,
+      "7": true
+     }
+    },
+    "E2 m3/2 x1.05 kick": {
+     "pred": [
+      5,
+      8
+     ],
+     "fast": [
+      5,
+      8
+     ],
+     "full": [
+      5,
+      8
+     ],
+     "recall_fast": 1.0,
+     "prec_fast": 1.0,
+     "prec_full": 1.0,
+     "latency_ms": {
+      "8": 0.17,
+      "5": 0.17
+     },
+     "recovery_checked": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8
+     ],
+     "recovered": {
+      "1": true,
+      "2": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "8": true
+     }
+    },
+    "E3 Y_B -30 %": {
+     "pred": [
+      8
+     ],
+     "fast": [
+      8
+     ],
+     "full": [
+      8
+     ],
+     "recall_fast": 1.0,
+     "prec_fast": 1.0,
+     "prec_full": 1.0,
+     "latency_ms": {
+      "8": 0.0
+     },
+     "recovery_checked": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8
+     ],
+     "recovered": {
+      "1": true,
+      "2": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "8": true
+     }
+    }
+   },
+   "exact_replay": null
+  },
+  {
+   "seed": 2052,
+   "verdict": "PASS",
+   "accuracy": {
+    "A1": true,
+    "A2_recall": true,
+    "A2_prec_fast": true,
+    "A2_prec_full": true,
+    "A3": true,
+    "A4": true,
+    "A5": true
+   },
+   "pulses_per_s": 3440.6,
+   "tally": {
+    "PASS (FIT)": 8,
+    "UNSCORED": 9,
+    "PASS": 18,
+    "PASS (bound)": 2,
+    "TRUST": 1,
+    "PASS (null)": 7,
+    "FAIL": 1,
+    "OPEN": 15
+   },
+   "done": {
+    "1": 0.0,
+    "2": 17.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0,
+    "9": 0.0
+   },
+   "fits": [
+    "TR",
+    "m32",
+    "split"
+   ],
+   "precision": [
+    1.0,
+    1.0
+   ],
+   "far": {
+    "1": 0.0,
+    "2": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0
+   },
+   "events": {
+    "E1 n_s +3 sigma": {
+     "pred": [
+      6
+     ],
+     "fast": [
+      6
+     ],
+     "full": [
+      6
+     ],
+     "recall_fast": 1.0,
+     "prec_fast": 1.0,
+     "prec_full": 1.0,
+     "latency_ms": {
+      "6": 1.07
+     },
+     "recovery_checked": [
+      1,
+      2,
+      5,
+      6,
+      7
+     ],
+     "recovered": {
+      "1": true,
+      "2": true,
+      "5": true,
+      "6": true,
+      "7": true
+     }
+    },
+    "E2 m3/2 x1.05 kick": {
+     "pred": [
+      5,
+      8
+     ],
+     "fast": [
+      5,
+      8
+     ],
+     "full": [
+      5,
+      8
+     ],
+     "recall_fast": 1.0,
+     "prec_fast": 1.0,
+     "prec_full": 1.0,
+     "latency_ms": {
+      "8": 0.17,
+      "5": 0.17
+     },
+     "recovery_checked": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8
+     ],
+     "recovered": {
+      "1": true,
+      "2": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "8": true
+     }
+    },
+    "E3 Y_B -30 %": {
+     "pred": [
+      8
+     ],
+     "fast": [
+      8
+     ],
+     "full": [
+      8
+     ],
+     "recall_fast": 1.0,
+     "prec_fast": 1.0,
+     "prec_full": 1.0,
+     "latency_ms": {
+      "8": 0.0
+     },
+     "recovery_checked": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8
+     ],
+     "recovered": {
+      "1": true,
+      "2": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "8": true
+     }
+    }
+   },
+   "exact_replay": null
+  },
+  {
+   "seed": 2053,
+   "verdict": "PASS",
+   "accuracy": {
+    "A1": true,
+    "A2_recall": true,
+    "A2_prec_fast": true,
+    "A2_prec_full": true,
+    "A3": true,
+    "A4": true,
+    "A5": true
+   },
+   "pulses_per_s": 3765.0,
+   "tally": {
+    "PASS (FIT)": 8,
+    "UNSCORED": 9,
+    "PASS": 18,
+    "PASS (bound)": 2,
+    "TRUST": 1,
+    "PASS (null)": 7,
+    "FAIL": 1,
+    "OPEN": 15
+   },
+   "done": {
+    "1": 0.0,
+    "2": 17.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0,
+    "9": 0.0
+   },
+   "fits": [
+    "TR",
+    "m32",
+    "split"
+   ],
+   "precision": [
+    1.0,
+    1.0
+   ],
+   "far": {
+    "1": 0.0,
+    "2": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0
+   },
+   "events": {
+    "E1 n_s +3 sigma": {
+     "pred": [
+      6
+     ],
+     "fast": [
+      6
+     ],
+     "full": [
+      6
+     ],
+     "recall_fast": 1.0,
+     "prec_fast": 1.0,
+     "prec_full": 1.0,
+     "latency_ms": {
+      "6": 1.07
+     },
+     "recovery_checked": [
+      1,
+      2,
+      5,
+      6,
+      7
+     ],
+     "recovered": {
+      "1": true,
+      "2": true,
+      "5": true,
+      "6": true,
+      "7": true
+     }
+    },
+    "E2 m3/2 x1.05 kick": {
+     "pred": [
+      5,
+      8
+     ],
+     "fast": [
+      5,
+      8
+     ],
+     "full": [
+      5,
+      8
+     ],
+     "recall_fast": 1.0,
+     "prec_fast": 1.0,
+     "prec_full": 1.0,
+     "latency_ms": {
+      "8": 0.17,
+      "5": 0.17
+     },
+     "recovery_checked": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8
+     ],
+     "recovered": {
+      "1": true,
+      "2": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "8": true
+     }
+    },
+    "E3 Y_B -30 %": {
+     "pred": [
+      8
+     ],
+     "fast": [
+      8
+     ],
+     "full": [
+      8
+     ],
+     "recall_fast": 1.0,
+     "prec_fast": 1.0,
+     "prec_full": 1.0,
+     "latency_ms": {
+      "8": 0.0
+     },
+     "recovery_checked": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8
+     ],
+     "recovered": {
+      "1": true,
+      "2": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "8": true
+     }
+    }
+   },
+   "exact_replay": null
+  }
+ ],
+ "all_pass": true,
+ "tally_agree": true,
+ "total_pulses_per_s": 14336.2
+}
