@@ -42,3 +42,11 @@
 
 **Tick log (loop 2):**
 - **Tick 1 (08:15, L1):** D2099 FAIL. The BIM boundary has Bμ too large; there is no light-Higgs vacuum. Lowering B to 1.44 m₃/₂ (tuned) gives tan β ≈ 1.4, below m_h's 1.9. Progress: yes (a new constraint). L1′ added to the queue.
+- **One pulsed pass (08:20), D2100:**
+  - P1 PASS: dark U(1) ⊂ U(12), α_D = 1.0e-3.
+  - P2: tadpole likely over by ×1.9 / ×3.6 (estimate).
+  - P3: no unified + exotic-safe PS at L = 4 for these χ.
+  - P4: the birefringence axion must be separate (FIT).
+  - P5: dropped.
+  - P6: CONSISTENT with one O(1) knob μ_W/μ = 0.25; α_s = 0.1181.
+  - Queue exhausted. New owed items: Stückelberg check; Z₆-II divisor data; Seed χ/tilt scan; derive μ_W/μ.

@@ -21061,3 +21061,22 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - the GM boundary with universal masses, plus running, gives ≈ 1.4 once B is lowered enough for a light Higgs.
     - This is a TENSION of second order, and it needs non-universal Higgs masses or the Θ/V₀ corrections in BIM Eq. 69–70 (owed).
   - **Queue update:** L1′, the Θ/V₀ corrections to B and to m²_H, is added to the end of the queue.
+- **D2100 (loop 2, one pulsed pass, Danny 08:13; PREREG_D2100; tools/seed/pulse_all.py): all queued rungs at once.**
+  - **P1 (L2), PASS: v4's dark force is the U(1) of the dark U(12) stack**, with no new knob.
+    - α_D(12.8 GeV) = 1/(24σ_d + running) = **1.02e-3**.
+    - σv(XX̄ → A′A′) = πα_D²/m² = 2.3e-25 cm³/s, ×5.3 above the asymmetric-DM requirement of 4.4e-26 (0711.4866, 1111.0293).
+    - **Owed:** this U(1) must be the non-anomalous (massless) combination (Stückelberg check). It replaces the withdrawn α_D = 0.021 (D2098).
+  - **P2 (L3), ESTIMATE:** the racetrack stacks need 15 D7s (7, 8), i.e. ×1.9 a single O7-class budget of 8, or 29 D7s (14, 15), ×3.6.
+    - It likely fails unless Z₆-II gives T_vis several O7 classes or a larger class. The divisor data are owed.
+  - **P3 (L4), Seed v5 pulse at L = 4** (17,284 canonical branes; χ = (1, 3, 2) and (3, 1, 2)):
+    - 3 PS points per χ with 12 completions, the same set as L = 3.
+    - **Fully passing (3 + 3 families, tadpole + K, every exotic confines above 10 TeV): 6 per χ, all from the (6, 10, 6) and (6, 6, 10) models.** Those have no physical α_s fit, or α_s = 0.062.
+    - The unified model still passes 0/6 (D2097 confirmed).
+    - So at these χ there is no model that is both unified and exotic-safe. The Seed must scan other χ and tilts.
+  - **P4 (L5), FAIL:** the T_vis axion has m ~ m_σ ≥ 4e9 GeV, so it cannot be the ultralight birefringence axion. **β needs a separate ultralight axion; c_γ/f stays FIT.**
+  - **P5 (L6):** dropped (moot in the KL branch).
+  - **P6 (L1′), CONSISTENT:** with the D2099 running (m²_Hu = 0.058, m²_Hd = 1.0 m₃/₂²), tan β = 1.9 needs:
+    - **μ = 0.551 m₃/₂** and **B = 1.246 m₃/₂** (light-Higgs tuning);
+    - that is, a **superpotential μ_W/μ = 0.25** admixed to GM μ_GM = 0.41 m₃/₂.
+    - At that point the D2089 goalposts give **8 points: m₃/₂ = 156–162 TeV, gluino 3.77–3.90 TeV, α_s = 0.1181–0.1182 (+0.1σ)**, with the wino in its band and m_h = 125 at tan β 1.9.
+    - **Honest count:** the torus-GM c = 1 is replaced by c = 0.55 via one O(1) superpotential fraction μ_W/μ = 0.25. That is a **fitted O(1) knob**, not derived. In exchange, α_s, wino, gluino, m_h and a light Higgs all close, with α_s centred.
