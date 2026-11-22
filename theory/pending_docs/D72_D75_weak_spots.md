@@ -20525,3 +20525,11 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - With it, the D2039 battery needs two moved knobs (Δ₃ and the stabiliser) instead of three.
   - What remains is on the S side: KL, W₀, plus the T1 recompute for the new brane set, the tadpole, and g_s.
   - Numerology flag, no evidence credit: x = 21.101 sits 3.1% from 4π√3 = 21.766, the k = 4 S-instanton exponent at ρ.
+- **D2053 (CENTRE; PREREG_D2053): the tether added to the Bloom, plus a 1-minute live pulse.**
+  - **Bloom changes:** filter F-mirage is now *conditionally cleared* by the tether. A mutation record was added.
+  - **Pulse:** 88,279 multi-start pulses in 60 s; the best was found on pulse 1, from the v4 start.
+    - **Start** (tether + v4): α_s 0.1146 (−3.8σ in this one-loop model; the approximate gluino here is 5.42 TeV vs v4's 4.93), leak 0, m_T/H tiny.
+    - **End:** **rA = 1 (natural, unmoved), Δ₃ = −0.047, boost = 4096, m₃/₂ unmoved.**
+    - **All five goalposts PASS:** α_s 0.1187 (+0.77σ), wino 0.686 TeV, gluino 5.42 TeV, m_T/H 0.112.
+  - **Moved (fitted) knobs: just two**, d3 (T1: +0.047) and boost (a stabiliser ≥ 4.1e3 × KKLT). That is down from three in D2039, and these are **exactly the two S-side gaps** of the whole map (D2052).
+  - Verdict: **FIT with 2 knobs.** NAILED needs both derived.
