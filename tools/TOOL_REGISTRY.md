@@ -81,3 +81,4 @@ Base env for builds from D2008 onward: `CLASSMAP=DIR_ONE.map LR2=1`. EV = event 
 | tools/ramsey/u1/check38.c | verifies the r38_27 list | PASS (477,142) | D2020 |
 | tools/ramsey/u1/u1glue.c → u1fast.c → u1clq.c → **u1final.c (v4b)** | U1: (3,9,34)-graphs with a degree-6 vertex (ladder v1 to v5) | v4b current; PC launcher run_u1.py | D2020 |
 | tools/ramsey/blockcirc/bc.c | D2019 block circulants (B, m) | 2×20 none; 5×8 running | D2019 |
+| tools/ramsey/evolve/{initial_program.py, evaluator.py, config.yaml} | OpenEvolve swarm for front L (local Ollama, 5 islands, exact α evaluator) | smoke-tested | D2021 |

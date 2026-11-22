@@ -51,3 +51,13 @@
 - **U3:** the degree-5 case of a (3,10,40)-graph: glue 5 sets onto every 34-vertex dual neighbourhood with e ∈ [129, 155]. Same calibration as D2002.
 - **U4:** degree 6, then 7, 8 and 9 (9-regular has the most slack: dual neighbourhoods in R(3,9,30, e = 99)).
 - **Centre:** every closed case gets an independent SAT check, a referee, and (later) a formal certificate.
+
+## Engine upgrades from GitHub and the literature (D2021, 22 Nov 2026)
+| tool (GitHub) | what it is / how it is built | what we take | status |
+|---|---|---|---|
+| **markirch/sat-modulo-symmetries (SMS)** | CaDiCaL patched to generate graphs **modulo isomorphism** during the search, with a minimality check as a propagator. PySMS has a built-in `--ramsey a w` constraint and `--alpha-upp` | **the U2 engine**: enumerate all (3,9,34)-graphs with δ ≥ 7, isomorph-free, in one solver | cloned; the build needs Boost + CMake (interrupted, pending) |
+| **marijnheule/CnC** (march_cu + iglucose/lingeling) | cube-and-conquer: a lookahead solver splits the problem into cubes; many CDCL workers conquer them | split U2 into cubes across the PC's cores (and cloud) | cloned |
+| **algorithmicsuperintelligence/openevolve** (7.8k★) | open AlphaEvolve: LLM program mutation; **MAP-Elites + islands** (a swarm of populations that migrate their elites); cascade evaluators; works with any OpenAI-compatible endpoint, **including local Ollama** | **front L swarm**: evolve graph-construction programs with Danny's local models (no cloud cost); evaluator = exact α (tools/ramsey/evolve) | built and smoke-tested (seed program α ≥ 12, score −2.0) |
+| google-deepmind/funsearch; SwarmEvolve (Qile-J) | program search; latent agent swarms | island/swarm ideas already in OpenEvolve | reference |
+| Bright et al. SAT+CAS (R(3,8)) | orderly generation as blocking clauses + DRAT | the certificate path for the centre | method (repo not public) |
+| nauty/geng; pynauty (installed) | canonical forms | isomorph rejection for U1 and U3 outputs | installed |
