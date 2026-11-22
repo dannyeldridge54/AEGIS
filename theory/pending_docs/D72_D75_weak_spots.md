@@ -20731,3 +20731,10 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Total 19,191,082 bytes (19,169,206 archive + 21,876 permutation) vs 19,724,674: −2.705%.**
   - **New Forge reference:** reorder.py + loomz20_o3 (RCTX = 1).
   - Next Forge rungs: the same reorder on the TB24 build; a better ordering (TSP 2-opt, or Doc2Vec as in STARLIT); and an order derivable from the titles to cut the 21.9 kB permutation.
+- **D2078 (CENTRE; PREREG_D2078; tools/seed/seed_v0.py): the Seed engine v0 (Danny's self-building search). It works as an engine. Verdict on physics: NULL.**
+  - **Search:** 1,697,850 integer configurations (forks β, ρ, ε × lenses n_a², n_b¹, n_d² × radii grid) in 28 s.
+  - **Filters:** 623,674 pass the hard filters (integer massless U(1)_Y, tadpole ≤ 16 with hidden branes, three families automatic) and give a physical fit of the two measured couplings (K > 0, M_s < M_P).
+  - **Held-out prediction:** 1,652 configurations predict α_s within 2σ of PDG. Examples: n = (−4, −3, −4, −8), χ = (1, 3, 1) gives α_s = 0.1180 with M_s = 1.1e16 GeV.
+  - **Look-elsewhere:** the predicted α_s spreads very widely (median 0.026; 5–95% from 0.007 to 0.31). Near 0.118 the hit rate is **7.4%, against a flat-spread chance of 9.0%**. So the engine finds the goalpost exactly as often as luck would. **No signal.**
+  - **Read (the key lesson for the new formulation):** a self-building search *will* find any single goalpost when its space is large. That shows the space contains the answer, not that the theory predicts it.
+  - **Rule for the next version:** fit at most two numbers, then require **several held-out observables at once**. Candidates: α_s, the proton-decay bound on M_s, the top Yukawa (from brane intersection angles), and sin²θ_W at a second scale. Only a joint hit rate far above chance counts as evidence.
