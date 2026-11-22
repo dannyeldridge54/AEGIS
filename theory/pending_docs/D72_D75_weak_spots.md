@@ -21364,3 +21364,16 @@ The D2116 "K7 MARGINAL, ctrl ≥ 0.32" verdict and the D2116 settled-state table
 - **Five-stack model:** Z₂ and **Z₄, k = (0,1,1,1,1), genuine**. It is not in the centre lattice span{e_a, 2e_b, 2e_c, 2e_d, 2e_e}, and there is no massless U(1).
 - **Physical proof (referee R2-11):** the SU(N)-invariant operator ac·bc·ab′ carries Z₄ charge 2.
 - **K9 final:** STRUCTURAL OBSTRUCTION. The Yukawa matrices are block-diagonal 1 ⊕ 2 to all instanton orders. Generations 2 and 3 can come from instantons (S ≈ 5.6 / 11.8, estimate). Generation-1 mixing (and so V_us) needs extra Higgs fields or higher-dimensional operators with Z₄-charged vevs.
+
+## D2121 (CENTRE): ping-pong loop closed. **NULL — BALANCED.**
+- The negative-pole referee ran rounds R1, R2a–R2g.
+- The positive pole applied the fixes D2119, D2120, D2120a and D2120b, with paper versions v2 → v6.
+- The final referee round found nothing at major or blocker level.
+- **Final paper:** papers/z2z6p_ps/z2z6p_ps.tex / .pdf (v6). Not published anywhere.
+- **Final ledger:**
+  - PASS: tadpoles, chiral spectrum, GS matrix (fixes the convention), K-theory, FI (literature mechanism), and chiral uniqueness in its class.
+  - **K7 FAIL** (coupling matching, min ctrl 0.82).
+  - **PS→SM OBSTRUCTED** perturbatively.
+  - **ΔN_eff CONDITIONAL**.
+  - **Z₄ texture 1⊕2** (conditional on a Z₄-neutral breaking sector).
+  - The SU(2) threshold formulas in HRS need two corrections.
