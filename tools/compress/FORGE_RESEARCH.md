@@ -51,3 +51,14 @@
 | numbers | digits '1' and '0' each appear > 5M times in enwik9 | NUM node (off) | NUM with **digit-position-in-number** and **previous-number delta** contexts (years, coordinates) |
 
 **Tick 4 verdict:** not null (7 hints, sized by the share of enwik8 they cover).
+
+## Tick 5 (08:09Z): priming and dictionaries within the Hutter rules (hutter1.net prize page)
+| node | hint (source) | our status | try as |
+|---|---|---|---|
+| rule | **S = S1 + S2**: the compressor and the archive both count; `archive.exe` must rebuild enwik9 "with no other input"; decompressors "receiving any kind of outside information are forbidden" | — | **every embedded dictionary, weight file or priming text is paid for in bytes.** A primer only helps if it saves more than its own compressed size |
+| limits | ≲ 50 h, **1 core**, < 10 GB RAM, < 100 GB disk; no GPU | TB24 fits | the **100 GB disk** limit makes the mmap/disk-backed model (tick 2) legal and cheap |
+| dictionary | past winners (paq8hp*) used a dictionary built **from enwik8 itself**; cmix/fx2 ship a compressed dictionary inside S1 | prep2 dictionary hurt (+1.9%, D2015) | rebuild the dictionary as fx2 does (word types, frequency-sorted, reverse transform at decode) and **count its bytes**; the +1.9% was our build, not the idea |
+| priming | a small offline-trained head (cmix-obias, 23 kB fp16) is allowed because its bytes are counted | none | any trained weights must beat their own size: a gate for the LSTM node (tick 3) |
+| unknown | the detailed rules page (hrules.htm) was not readable here | — | Danny can attach it if needed |
+
+**Tick 5 verdict:** not null (4 hints + 1 unknown).
