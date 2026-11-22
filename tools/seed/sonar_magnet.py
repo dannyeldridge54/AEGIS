@@ -98,9 +98,18 @@ if __name__ == '__main__':
         sc, _, chis, A, B, C = heapq.heappop(heap); chi = tuple(Fr(c) for c in chis); k = nkey(chi, A, B, C)
         if k in expanded: continue
         expanded.add(k); t0 = time.time()
-        for c2, A2, B2, C2, mv in neighbours(chi, A, B, C, LAD):
-            if time.time() - t0 > K['node_cap_s']: break
-            push(c2, A2, B2, C2, ['ping', mv, list(chis)])
+        frontier = [(chi, A, B, C)]; visited = {nkey(chi, A, B, C)}
+        for hop in range(K.get('hop_depth', 1)):
+            nxt = []
+            for (c0, A0, B0, C0) in frontier:
+                for c2, A2, B2, C2, mv in neighbours(c0, A0, B0, C0, LAD):
+                    if time.time() - t0 > K['node_cap_s']: break
+                    k2 = nkey(c2, A2, B2, C2)
+                    if k2 in visited: continue
+                    visited.add(k2)
+                    if ps_ok(A2, B2, C2): push(c2, A2, B2, C2, ['ping', mv, list(chis), hop + 1])
+                    else: nxt.append((c2, A2, B2, C2))           # pass through empty water, keep travelling
+            frontier = nxt[:K.get('hop_width', 400)]
         n += 1
         if n % K['log_every'] == 0:
             K = json.load(open(KN)); LAD = ladder(K['Q_ladder']); json.dump(arch, open(ARCH, 'w'))

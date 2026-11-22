@@ -1,1 +1,1 @@
-{"w_exo": 5.0, "w_ms": 3.0, "w_fit": 50.0, "Q_ladder": 12, "L_pool": 5, "node_cap_s": 30, "log_every": 25, "ping_radius": 2}
+{"w_exo": 5.0, "w_ms": 3.0, "w_fit": 50.0, "Q_ladder": 12, "L_pool": 5, "node_cap_s": 60, "log_every": 25, "ping_radius": 1, "hop_depth": 3, "hop_width": 400}
