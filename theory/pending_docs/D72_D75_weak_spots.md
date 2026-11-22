@@ -21134,3 +21134,19 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Read:** local, pull-guided search cannot traverse this landscape; only exhaustive enumeration (the torus) maps it.
   - The best pull is still the unified model: |Δα_s| = 0.0013, but loose exotics (score 5.71).
   - **Knob changes** (time-stamped in knob_log.txt) were steering only. Cloud core 2 is reassigned to torus bands B4+.
+- **D2108 (CENTRE, literature; Z2Z6P_RESEARCH_2026-11-22.md; null at round 3): Z₂×Z₆′ with discrete torsion breaks the exotics wall in the literature.**
+  - **The model:** Honecker et al. 1209.3010 found a global SUSY Pati-Salam model:
+    - U(4) × U(2)_L × U(2)_R on one bulk cycle;
+    - **no chiral exotics**;
+    - **tree-level unification automatic** (equal volumes);
+    - all U(1)s massive;
+    - hidden U(2)².
+  - **Where it stops:** only one generation has a perturbative Yukawa; MSSM and L-R models fail on twisted tadpoles.
+  - **Hints:**
+    1. rigidity removes the exotics (the Z₂×Z₂ wall, D2096–2107);
+    2. geometric unification plus v4's spectrum gives α_s 0.1167 (one loop) to 0.1181 (D2100);
+    3. instantons supply the missing Yukawas (the same machinery as B4);
+    4. the geometry selects PS;
+    5. FI D-terms freeze the visible twisted moduli.
+  - **Next:** Seed v6 on Z₂×Z₆′. Positive control = 1209.3010 Table 27. The exceptional-cycle tables (7, 8, 36) are owed before coding.
+  - Danny's "twist / hourglass" picture maps onto discrete torsion and the fixed-point cones (physics); "three hands on one clock" is an analogy.
