@@ -36,7 +36,7 @@ def pulse(method):
     bad = [k for k, v in EXPECT.items() if got.get(k) != v]
     rec['steps']['0_selftest'] = dict(ok=not bad, mismatches=bad)
     if bad: rec['void'] = True; json.dump(rec, open(f'{RD}/round_{rid:03d}.json', 'w'), indent=1); return rec
-    for key, cmd in (('1_still_point', 'python3 tools/loom/still_point.py'), ('2_resonance', 'python3 tools/loom/resonance.py'),
+    for key, cmd in (('1_still_point', 'python3 tools/loom/still_point.py'), ('2_resonance', 'python3 tools/loom/resonance.py'), ('2b_lensing', 'python3 tools/loom/lensing.py'),
                      ('3_method_tests', 'python3 tools/loom/method_tests_3axis.py' if method else None),
                      ('4_compass', 'python3 tools/loom/compass.py'), ('4b_review', 'python3 tools/loom/review.py'),
                      ('5_centre_brief', 'python3 tools/loom/centre_brief.py')):

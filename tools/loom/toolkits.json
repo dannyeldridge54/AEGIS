@@ -13,7 +13,7 @@
  },
  "kinds": {
   "referee": [{"kind": "script", "name": "tools/loom/centre_brief.py"}, {"kind": "script", "name": "tools/loom/check.py"}],
-  "method": [{"kind": "script", "name": "tools/loom/check.py"}, {"kind": "script", "name": "tools/loom/method_tests_3axis.py"}],
+  "method": [{"kind": "script", "name": "tools/loom/lensing.py"}, {"kind": "script", "name": "tools/loom/check.py"}, {"kind": "script", "name": "tools/loom/method_tests_3axis.py"}],
   "honesty": [{"kind": "script", "name": "tools/loom/check.py"}, {"kind": "script", "name": "tools/loom/review.py"}],
   "lock": [{"kind": "cm", "name": "lock_lint"}, {"kind": "cm", "name": "lock_verdict"}],
   "citation": [],

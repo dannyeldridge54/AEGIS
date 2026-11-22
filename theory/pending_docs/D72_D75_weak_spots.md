@@ -19520,3 +19520,59 @@ Every check catches the mistake it was built for:
 - The layer transfer map (pass / block / bend for each pair of neighbouring layers) is owed, to be locked before it is computed. If the maps come out near identity, the lensing picture is wrong for this model.
 
 TRIANGULATE: n/a (tooling). COMPASS: no new fingerprint. REVIEW: the knock-on ledger is unchanged (14).
+
+## D1981 — CENTRE / METHOD: the 9-layer lensing map (Danny 18:24, 18:38), locked PREREG_D1981 (b0b60e08) plus DEVIATIONS (rank 0 = OPAQUE)
+**What a lens is here:** a layer's lenses are the directions in knob space its margins respond to (the right-singular vectors of its Jacobian). A layer's **number of lenses is measured, not assumed**. Each layer passes, bends or blocks a direction on its way to the next layer. Three readings: R1 finite differences, R2 random probes, R3 the hand-labelled knob map.
+
+**Lenses per layer (R1):**
+| layer | lenses | what it responds to |
+|---|---|---|
+| L1 torus | 1 | u |
+| L2 pyramid | 1 | M_N |
+| L3 turnover | window | TRUST, no margins |
+| **L4 cube** | **0: OPAQUE** | **no knob moves it** |
+| L5 fold | 1 | m₃/₂ |
+| L6 dilaton | 1 | T_R |
+| L7 forces | 1 | m₃/₂ |
+| **L8 cosmology** | **2** | the only layer that mixes knobs: (M_N, T_R) and (m₃/₂, T_R) |
+| L9 late universe | window | TRUST, no margins |
+
+That is 7 lens directions on a 5-knob space.
+
+**Validation:** R1 matches hand derivatives:
+- dn_s margin / d ln T_R = 0.0722;
+- leptogenesis margin: d/d ln T_R = 1, d/d ln M_N = 3;
+- gravitino margin: d/d ln T_R = −1, d/d ln m₃/₂ = −1.5.
+
+**Transfers (triangulated):**
+| transfer | class |
+|---|---|
+| 1→2, 2→4, 4→5, 5→6, 6→7 | BLOCKED in R1. Of these, 1→2 and 6→7 are INDETERMINATE, because R2 reads kinks as slopes |
+| 7→8 | BENT, 32°, through m₃/₂. R1 and R2 agree; R3 disagrees because the hand map leaves m₃/₂ out of L8 |
+
+**Verdict by the locked rule: MIXED.** Zero transfers agree on BENT and three on BLOCKED. R1 alone would say DECOUPLED: 5 blocked, 1 bent.
+
+**Chain:** transmitted dimension 0 in all three readings. Nothing passes from the centre to the edge.
+
+**What the 9×9 coupling matrix shows instead:** the layers are not a stack of lenses, each feeding the next. They form a **star around L8 (cosmology)**: L8 is the hub in R1 and R2, with row sum 2.71.
+- L2 to L8: 0.93, through M_N.
+- L5 to L7: 1.00, the same m₃/₂ lens appearing in two layers.
+- L5 to L8: 0.71.
+- L6 to L8: 0.36.
+
+This repeats D1943a's finding that the gravitino is the largest hub, now from geometry rather than from the ledger.
+
+**Honest reading:**
+1. The nested-lens picture, where each layer polarizes the next, is **not supported in this model**. The couplings converge on one layer instead of passing outward.
+2. **This is largely by construction.** obs() gives most observables their own knob; the lock said so beforehand (datasheet D3).
+3. **The cube is opaque.** No knob can fix the 15.3 % rung mismatch, so it needs a new derived axis, not tuning. That strengthens N0's "derive L4 first" from the geometry side.
+4. **The 9-dimensional point.** A real 9-axis lens structure needs at least 4 more *derived* knobs. The natural candidates are the geometric moduli the model does not yet carry: Im S, T₁, T₂, T₃ and U₃. Until they are in, 9 lenses per level cannot exist. Adding them as fits would break G-T3.
+5. The shape-based lens counts (torus, pyramid, cube, ...) are still undefined in our docs. If Danny states them, they become a prediction to test against the measured counts.
+
+**Fixes logged:**
+- R3 is wrong at L8 (m₃/₂ is missing) and at L4 (the label says u, the true response is 0). Correct KNOBS_OF in a later locked change, not silently.
+- R2 needs a kink-aware probe. This is a method item for the next lock.
+
+lensing.py is now step 2b of every loomd pulse. The owed item layer_transfer_map is done.
+
+TRIANGULATE: R1/R2/R3, 6 of 9 lens counts agree. COMPASS: the hub points at L8 through m₃/₂ and T_R. REVIEW: consistent with the gravitino hub (D1943a); the ledger is unchanged.
