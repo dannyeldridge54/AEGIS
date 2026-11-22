@@ -21013,3 +21013,7 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
       - c–h0 (1, 1) and c–h1 (−3, −3).
     - These are **chiral exotics**, unfiltered in D2083 as stated. They now must be filtered (the next Seed goalpost), or removed by choosing another of the 6 completions.
   - **Labels:** the ledger and the synapse counts are PHYSICS (tadpole sum rule, I_ab). The cosmogony and neuron reading is ANALOGY: a design picture, not evidence.
+- **D2096 (CENTRE; PREREG_D2096; tools/seed/exotics.py): the chiral-exotics filter. FAIL. All 8 PS points (28 completions in total, including all 6 of the unified model) have hidden–visible chiral intersections. Within this search space (|n|, |m| ≤ 3, the rational χ grid) the exotics are unavoidable.**
+  - **Literature context (not yet tested here):** in the known SUSY Pati-Salam intersecting-brane models (the Cvetič–Li–Liu type, and He–Li–Sun 2112.09632), chiral exotics charged under hidden USp groups are standard. They are removed by **hidden-sector confinement**: the hidden USp gauge couplings run strong (β < 0) and bind the exotics into composite states.
+  - **Next goalpost (to lock):** for the unified model's completions, check that every exotic is charged under a hidden group with negative β (asymptotically free) and a confinement scale above the TeV scale. Formula first (CLL's β for USp(N) with the intersection-counted matter).
+  - **Status:** the D2083 unified model stays a consistency-level find. It is **not** yet a realistic spectrum.
