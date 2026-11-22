@@ -21504,3 +21504,4 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 | all massless | **0.77** (was 0.82) |
 
   The verdict stays **CONDITIONAL**.
+- **D2128a numeric fix:** recomputed exactly, the ΔN_eff values are **0.50** (vectors + fermions) and **0.76** (all massless). The 0.48/0.77 written just above were rounding slips. The verdict is unchanged.
