@@ -153,6 +153,7 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
             svar = np.where(np.abs(zc) < 3, 0.998 * svar + 0.002 * (ev - sbase) ** 2, svar); sbase = 0.998 * sbase + 0.002 * ev
             for j in np.nonzero(alC)[0]:
                 Ls = SLAYER[STREAMS[j]]; freeze_until[Ls] = t + 2.0 * fscale
+                sbase[j] = ev[j]; szp[j] = 0.0; bankC.Sp[0, j] = 0.0; bankC.Sn[0, j] = 0.0   # D1992: restart after a detected change
                 if not calib: alarms.append((p, round(t, 4), Ls)); win_al[Ls] += 1
                 elif t >= 2.0: calC += 1
         if p % (1 if any(esc.values()) else 10) == 0: J = jac(x, est); lensK = {L: lens_knobs(J, L) for L in range(1, 10)}

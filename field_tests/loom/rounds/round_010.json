@@ -1,0 +1,234 @@
+{
+ "round": 10,
+ "t": "2026-11-22T01:49:53Z",
+ "steps": {
+  "0_selftest": {
+   "ok": true,
+   "mismatches": []
+  },
+  "1_still_point": {
+   "rc": 0,
+   "tail": "osition\": {\n    \"S (ln T_R)\": 0.0,\n    \"T (ln m3/2)\": 1.0,\n    \"U (ln u)\": 0.0\n   }\n  },\n  {\n   \"eigenvalue\": 1077.4122292366867,\n   \"one_sigma_step\": 0.03046555187372555,\n   \"kind\": \"INWARD (restoring, stiff)\",\n   \"composition\": {\n    \"S (ln T_R)\": 1.0,\n    \"T (ln m3/2)\": 0.0,\n    \"U (ln u)\": 0.0\n   }\n  },\n  {\n   \"eigenvalue\": 1108.0576599441872,\n   \"one_sigma_step\": 0.03004130674676785,\n   \"kind\": \"INWARD (restoring, stiff)\",\n   \"composition\": {\n    \"S (ln T_R)\": 0.0,\n    \"T (ln m3/2)\": 0.0,\n    \"U (ln u)\": 1.0\n   }\n  }\n ]\n}\n{'S-T': (180, 90, 9.7), 'T-U': (90, 0, 12.3), 'S-U': (90, 0, 6.7)}\n",
+   "err": ""
+  },
+  "2_resonance": {
+   "rc": 0,
+   "tail": "9,\n\"MN_bottom\": 1.8104\n},\n[\n\"MN\",\n\"m32\",\n\"TR\",\n\"split\"\n]\n],\n[\n3,\n\"TRUST (no\",\n{},\n[\n\"MN\",\n\"m32\",\n\"TR\",\n\"split\"\n]\n],\n[\n4,\n\"NO LOCK\",\n{\n\"rung_agreement\": -0.0029\n},\n[\n\"MN\",\n\"m32\",\n\"TR\",\n\"split\"\n]\n],\n[\n5,\n\"LOCKED-BY\",\n{\n\"wino\": 0.1805\n},\n[\n\"MN\",\n\"m32\",\n\"TR\",\n\"split\"\n]\n],\n[\n6,\n\"LOCKED-BY\",\n{\n\"n_s\": 1.214\n},\n[\n\"MN\",\n\"m32\",\n\"TR\",\n\"split\"\n]\n],\n[\n7,\n\"LOCKED-BY\",\n{\n\"alpha_s\": 2.0,\n\"split_natural\": 0.7986\n},\n[\n\"MN\",\n\"m32\",\n\"TR\",\n\"split\"\n]\n],\n[\n8,\n\"LOCKED-BY\",\n{\n\"gravitino_box\": 1.05,\n\"leptogenesis\": 0.1884\n},\n[\n\"MN\",\n\"m32\",\n\"TR\",\n\"split\"\n]\n],\n[\n9,\n\"TRUST (no\",\n{},\n[\n\"MN\",\n\"m32\",\n\"TR\",\n\"split\"\n]\n]\n]\n}\n]\n",
+   "err": ""
+  },
+  "2b_lensing": {
+   "rc": 0,
+   "tail": "64(0.0), np.float64(0.0), None, np.float64(0.0), np.float64(1.0), np.float64(0.0), np.float64(1.0), np.float64(0.714), None]\n   [np.float64(0.0), np.float64(0.0), None, np.float64(0.0), np.float64(0.0), np.float64(1.0), np.float64(0.0), np.float64(0.357), None]\n   [np.float64(0.0), np.float64(0.0), None, np.float64(0.0), np.float64(1.0), np.float64(0.0), np.float64(1.0), np.float64(0.714), None]\n   [np.float64(0.0), np.float64(0.929), None, np.float64(0.0), np.float64(0.714), np.float64(0.357), np.float64(0.714), np.float64(1.0), None]\n   [None, None, None, None, None, None, None, None, None]\n",
+   "err": ""
+  },
+  "2c_pass_labels": {
+   "rc": 0,
+   "tail": "d1989_woven_run.json violations 0 []\n",
+   "err": ""
+  },
+  "3_method_tests": {
+   "skipped": true
+  },
+  "4_compass": {
+   "rc": 0,
+   "tail": "e 3 dex, and leptogenesis must be non-thermal. The earlier \"two arrows agree, T_R ~ 1e11\u20131e12\" is withdrawn.\n- **u (corrected D1935):** the one-spurion window [0.02588, 0.02740] is narrow (\u00d71.059) and has one fixed charge pattern, natural throughout. That it contains 0.027 is by construction (the search started there), so it is not a convergence. u_d = 0.02587 still fails by 0.05 %. The window is non-monotone in u (isolated point 0.0203; U32 0.063\u20130.148).\n\nKnob convention: \"+\" means this measurement wants the knob raised, \"\u2212\" lowered.\n\nMeasured: d\u03b1_s/d ln m\u2083/\u2082 = -0.00290; dn_s/dN* = 5.84e-04.\n",
+   "err": ""
+  },
+  "4b_review": {
+   "rc": 0,
+   "tail": "rate-class artefact (D1885a); one shared rung step (the arrow) \u21d2 variables: eps confused with u (D1894b)\n\n**Where they all point (corrected D1943a):** of the 8 cases of moved strain, **4 pass through the gravitino**: its mass m\u2083/\u2082 (S at i twice; lowering m\u2083/\u2082 once) and its abundance \u221d T_R (overclosure once). Of the other 4, 2 pass through a light modulus (the K\u00e4hler thread), 1 through flavour (the u_d edge) and 1 through GUT structure (split stacks and the proton). The gravitino is the largest single hub, carrying all the forces, spectrum and dark-matter knock-ons, but it is not the only one.\n",
+   "err": ""
+  },
+  "5_centre_brief": {
+   "rc": 0,
+   "tail": "\u21d2 numerics: degenerate-class artefact\n- D1894b: one shared rung step (the arrow) \u21d2 variables: eps confused with u\n- D1946: derive Br(phi->NN) from M_N(S) \u21d2 leptogenesis: Br(phi->NN) max 5.1 % < 9.5 % after the 64 pi fix (D1946a)\n- D1947: update the wino collider bound with current data (660 -> 660-700 GeV) \u21d2 spectrum: derived wino 686.5 GeV now INDETERMINATE at the edge\n- D1972: layered resonance: rebalance all knobs together centre-out (3 sweeps) \u21d2 predictivity: 4 fits spent (M_N x1.49, m3/2 x1.22, T_R x1.49, A3/A2 0.74); cube layer: lepton/neutrino rung mismatch 15.3 % unresolvable by knobs\n",
+   "err": ""
+  }
+ },
+ "state": {
+  "lock_map": {
+   "1": "LOCKED",
+   "2": "LOCKED-BY-FIT",
+   "3": "TRUST (no margin; cannot lock, G-T5)",
+   "4": "NO LOCK",
+   "5": "LOCKED-BY-FIT",
+   "6": "LOCKED-BY-FIT",
+   "7": "LOCKED-BY-FIT",
+   "8": "LOCKED-BY-FIT",
+   "9": "TRUST (no margin; cannot lock, G-T5)"
+  },
+  "fits_spent": [
+   "MN",
+   "m32",
+   "TR",
+   "split"
+  ],
+  "ledger_len": 14,
+  "inputs": {
+   "N1": [
+    "d999e37839c0"
+   ],
+   "N2": [
+    "b56adf520fe4"
+   ],
+   "N3": [
+    "87c77e06c33b"
+   ],
+   "N4": [
+    "3da0eff70111"
+   ],
+   "N5": [
+    "d012472a893c"
+   ],
+   "N6": [
+    "cba396c0a068"
+   ],
+   "N7": [
+    "ecf64c336b60"
+   ],
+   "N8": [
+    "d999e37839c0"
+   ],
+   "N9": [
+    "cba396c0a068"
+   ]
+  }
+ },
+ "null": true,
+ "null_streak": 9,
+ "work_order": {
+  "N0": {
+   "brief": "field_tests/loom/centre_brief.md",
+   "charter": "tools/project_docs/WEAVE_NODE_CHARTER.md"
+  },
+  "node_agents": [],
+  "referee": true,
+  "axis_agents": [
+   "S",
+   "T",
+   "U"
+  ],
+  "edge_agents": [
+   "edge_out",
+   "edge_in"
+  ]
+ },
+ "plan": {
+  "endpoint_reached": false,
+  "satisfied": "1/5",
+  "next": [
+   [
+    "derive",
+    "4"
+   ],
+   [
+    "test",
+    "5"
+   ],
+   [
+    "referee",
+    null
+   ],
+   [
+    "explore",
+    null
+   ],
+   [
+    "owed",
+    null
+   ]
+  ],
+  "agents": {
+   "N0": true,
+   "node_agents": [],
+   "axis_agents": {
+    "S": "dilaton S (ln T_R, n_s, reheating)",
+    "T": "volumes T (ln m3/2, KKLT, spectrum)",
+    "U": "complex structure U (ln u, flavour rungs)"
+   },
+   "edge_agents": {
+    "edge_out": "outside layer 9: what the late-universe and collider data push back toward the centre",
+    "edge_in": "inside layer 1: what the rung step / knot geometry pushes outward"
+   },
+   "referee": true
+  },
+  "toolkits_missing": []
+ },
+ "auto": {
+  "field": {
+   "verdict": "FAIL",
+   "accuracy": {
+    "A1": true,
+    "A2_recall": true,
+    "A2_prec_fast": true,
+    "A2_prec_full": true,
+    "A3": false,
+    "A4": true,
+    "A5": true
+   },
+   "pulses_per_s": 2281.1,
+   "tally": {
+    "PASS (FIT)": 8,
+    "UNSCORED": 9,
+    "PASS": 18,
+    "PASS (bound)": 2,
+    "TRUST": 1,
+    "PASS (null)": 7,
+    "FAIL": 1,
+    "OPEN": 15
+   },
+   "done": {
+    "1": 0.0,
+    "2": 16.99,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0,
+    "9": 0.0
+   },
+   "stuck": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 0,
+    "9": 0
+   },
+   "fits": [
+    "TR",
+    "m32",
+    "split"
+   ],
+   "no_free": {
+    "1": 1.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.264,
+    "9": 0.0
+   }
+  },
+  "battery": {
+   "B8": true,
+   "B1": true,
+   "B2": true,
+   "B3": true,
+   "B5": true,
+   "B6": true
+  },
+  "pass_label_ok": true,
+  "fdr": {
+   "tests": 20,
+   "significant_tensions": []
+  },
+  "decision": "STALL"
+ }
+}
