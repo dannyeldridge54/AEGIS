@@ -36,9 +36,10 @@ IDX = {}; _i = 0
 for _L in range(1, 10):
     for _a in sorted(margins_rt(state(np.zeros(NK)), NOM)[_L]): IDX.setdefault(_L, []).append(_i); _i += 1
 NM = _i; LAYER_OF = {i: L for L, ii in IDX.items() for i in ii}
+DETSET = None
 NAMES = [a for L in range(1, 10) for a in sorted(margins_rt(state(np.zeros(NK)), NOM)[L])]
 DET_NAMES = {'quark_window', 'MN_bottom', 'MN_top', 'nu_ratio', 'split_natural', 'gravitino_box'}
-DET = np.array([i for i, n in enumerate(NAMES) if n in DET_NAMES]); STO = np.array([i for i, n in enumerate(NAMES) if n not in DET_NAMES])
+DET = np.array([i for i, n in enumerate(NAMES) if n in DET_NAMES]); STO = np.array([i for i, n in enumerate(NAMES) if n not in DET_NAMES]); DETSET = set(int(i) for i in DET)
 def jac(x, T, h=1e-5, hs=0.05):
     J = np.zeros((NM, NK)); f0 = flat(margins_rt(state(x), T))
     for j in range(NK):
@@ -103,7 +104,7 @@ SC = {'WINDOW': 0, 'OPAQUE': 1, 'NO LOCK': 2, 'RESONANT': 3, 'LOST': 4, 'STUCK':
 C_CFG = None   # D1991: detector C's own calibrated (k, h); None -> follow B (D1990 behaviour)
 try: C_CFG = tuple(json.load(open('field_tests/results/d1991_calibC.json'))['start'][x] for x in ('k', 'h'))
 except Exception: pass
-def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True, verbose=False, replay=None, datadet=True, calibC_grid=False, vclock=False, max_pulses=None, dt=1 / 2800):
+def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True, verbose=False, replay=None, datadet=True, calibC_grid=False, vclock=False, max_pulses=None, dt=1 / 2800, confirm=True):
     rng = np.random.default_rng(seed); srng = np.random.default_rng(seed + 7919)
     _pool = [np.empty(0), 0]
     def RN(n):   # pooled draws from rng (only standard_normal is drawn from rng outside calibration)
@@ -123,7 +124,7 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
     bound_hits = 0; fits_seen = set(); kicked = False; pred_E2 = None; base_period = None; last_pbt = 0.0
     gp_counts = {g['id']: {} for g in GP}; gp_last = {}; done_since = {L: None for L in range(1, 10)}; done_time = {L: 0.0 for L in range(1, 10)}
     sbase = np.array([NOM[k] for k in STREAMS]); svar = np.array([(0.107 * SIG[k]) ** 2 for k in STREAMS]); szp = np.zeros(5); smed = np.full(5, 0.6745)
-    bankC = Bank([live_cfg[0]], [live_cfg[1]]); bankC.Sp = np.zeros((1, 5)); bankC.Sn = np.zeros((1, 5)); freeze_until = {L: -1.0 for L in range(1, 10)}; c_alarms = []; calC = 0; fscale = T_total / 60.0
+    bankC = Bank([live_cfg[0]], [live_cfg[1]]); bankC.Sp = np.zeros((1, 5)); bankC.Sn = np.zeros((1, 5)); freeze_until = {L: -1.0 for L in range(1, 10)}; c_alarms = []; pend = []; raw_alarms = []; retracted = 0; confirmed_cal = 0; calC = 0; fscale = T_total / 60.0
     gC = Bank(*zip(*GRID)); gC.Sp = np.zeros((len(GRID), 5)); gC.Sn = np.zeros((len(GRID), 5)); gCp = Bank(*zip(*GRID)); gCp.Sp = np.zeros((len(GRID), 5)); gCp.Sn = np.zeros((len(GRID), 5)); calCg = np.zeros((len(GRID), 4)); cpC = None
     nofree = {L: 0 for L in range(1, 10)}; rows_t, rows_s = [], []; stuck_since = {L: None for L in range(1, 10)}; gp_samples = []; last_sample = -1.0; rel_log = []
     t0 = time.perf_counter(); p = 0
@@ -160,12 +161,14 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
                 if cpC:
                     nw = hq[:, cpC[0]] & ~cpC[2]; calCg[nw, 1] += p - cpC[1]; calCg[nw, 2] += 1; cpC[2] |= hq[:, cpC[0]]
                     if p - cpC[1] >= 400: calCg[~cpC[2], 3] += 1; calCg[~cpC[2], 1] += 800; calCg[~cpC[2], 2] += 1; cpC = None
-            svar = np.where(np.abs(zc) < 3, 0.998 * svar + 0.002 * (ev - sbase) ** 2, svar); sbase = 0.998 * sbase + 0.002 * ev
+            sbase_pre = sbase.copy(); svar = np.where(np.abs(zc) < 3, 0.998 * svar + 0.002 * (ev - sbase) ** 2, svar); sbase = 0.998 * sbase + 0.002 * ev
             for j in np.nonzero(alC)[0]:
                 Ls = SLAYER[STREAMS[j]]; freeze_until[Ls] = t + 2.0 * fscale
                 c_alarms.append((p, round(t, 4), Ls, STREAMS[j], float(abs(ev[j] - sbase[j]) / sig[STREAMS[j]])))   # D1994 magnitude
                 sbase[j] = ev[j]; szp[j] = 0.0; bankC.Sp[0, j] = 0.0; bankC.Sn[0, j] = 0.0   # D1992: restart after a detected change
-                if not calib: alarms.append((p, round(t, 4), Ls)); win_al[Ls] += 1
+                if confirm: pend.append(dict(p=p, t=round(t, 4), L=Ls, kind='C', j=int(j), v0=float(sbase_pre[j]), sg=float(sig[STREAMS[j]])))
+                if not calib: raw_alarms.append((p, round(t, 4), Ls)); win_al[Ls] += 1
+                if not calib and not confirm: alarms.append((p, round(t, 4), Ls))
                 elif t >= 2.0: calC += 1
         if p % (1 if any(esc.values()) else 10) == 0: J = jac(x, est); lensK = {L: lens_knobs(J, L) for L in range(1, 10)}
         Mcur = flat(margins_rt(state(x), est)); Mfresh = Mcur.copy()
@@ -190,6 +193,8 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
                 if np.linalg.norm(g) > 0:
                     step = 0.002 * g / np.linalg.norm(g); xn = np.clip(x + step, LO, HI); step = xn - x; x = xn
                     Mcur = Mcur + J @ step; base = base + J @ step
+                    for q in pend:
+                        if q['kind'] == 'M': q['self'] += float((J @ step)[q['i']])
                     if np.linalg.norm(step) < 1e-12:   # P1.3 STUCK: clipped on every needed knob
                         if stuck_since[L] is None: stuck_since[L] = t
                         elif t - stuck_since[L] >= 1.0 and status[L] != 'STUCK': transitions.append((p, round(t, 4), L, status[L], 'STUCK')); status[L] = 'STUCK'; res_since[L] = None
@@ -200,13 +205,27 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
         # detection: whitened residuals -> CUSUM (live), shadows on iid N(0,1)+probes, calibration banks
         rA = Mfresh - Mlast; Mlast = Mcur.copy()                      # detector A: exact explained-change residual (deterministic margins)
         evA = np.zeros(NM, bool); evA[DET] = armA[DET] & (np.abs(rA[DET]) > 1e-3); armA[DET] = np.where(evA[DET], False, np.where(np.abs(rA[DET]) < 1e-4, True, armA[DET]))
-        sd = np.maximum(np.sqrt(var), 1e-6); z = (Mcur - base) / sd; w = (z - PHI * zprev) / math.sqrt(1 - PHI ** 2); zprev = z
+        base_pre = base.copy(); sd = np.maximum(np.sqrt(var), 1e-6); z = (Mcur - base) / sd; w = (z - PHI * zprev) / math.sqrt(1 - PHI ** 2); zprev = z
         med[STO] += 0.001 * np.sign(np.abs(w[STO]) - med[STO]); med = np.maximum(med, 1e-3)
         wn = w / (1.4826 * med); wn[DET] = 0.0
         var = np.where(np.abs(z) < 3, 0.99 * var + 0.01 * (Mcur - base) ** 2, var); base = 0.99 * base + 0.01 * Mcur
         al = live.step(wn)[0] | evA
         if calib and t >= 2.0: calA += int(evA.sum())
-        for i in np.nonzero(al)[0]: alarms.append((p, round(t, 4), LAYER_OF[int(i)])); win_al[LAYER_OF[int(i)]] += 1
+        for i in np.nonzero(al)[0]:
+            raw_alarms.append((p, round(t, 4), LAYER_OF[int(i)])); win_al[LAYER_OF[int(i)]] += 1
+            if confirm: pend.append(dict(p=p, t=round(t, 4), L=LAYER_OF[int(i)], kind='M', i=int(i), v0=float(base_pre[int(i)]), sd=float(max(math.sqrt(var[int(i)]), 1e-6)), det=bool(int(i) in DETSET), self=0.0))
+            else: alarms.append((p, round(t, 4), LAYER_OF[int(i)]))
+        if confirm and pend:   # D1996: confirm by persistence 200 pulses later
+            keep = []
+            for q in pend:
+                if p - q['p'] < 200: keep.append(q); continue
+                if q['kind'] == 'M': dev = abs(Mcur[q['i']] - (q['v0'] + q['self'])); ok_ = dev > (max(2 * q['sd'], 1e-3) if q['det'] else 2 * q['sd'])
+                else: ok_ = abs(est[STREAMS[q['j']]] - q['v0']) >= 0.5 * q['sg']
+                if ok_:
+                    alarms.append((q['p'], q['t'], q['L']))
+                    if calib and q['t'] >= 2.0: confirmed_cal += 1
+                else: retracted += 1
+            pend = keep
         if pbt:
             ws = srng.standard_normal((4, NM)); ws[:, DET] = 0.0
             if probe is None and p % 2000 == 0: probe = [int(srng.choice(STO)), p]
@@ -281,7 +300,7 @@ def engine(T_total, seed, events=True, live_cfg=(1.0, 16), calib=False, pbt=True
     for L in range(1, 10):
         if done_since[L] is not None: done_time[L] += T_total - done_since[L]
     return dict(p=p, T=T_total, tt=np.array(rows_t), ST=np.array(rows_s, np.int8), alarms=alarms, transitions=transitions, ctl=ctl, pbt=pbt_log,
-                a1_max=a1_max, a1_n=a1_n, calA=calA, calC=calC, calCg=calCg, c_alarms=c_alarms, bound_frac=bound_hits / max(p, 1), fits=sorted(fits_seen), x=x, live_cfg=live_cfg, cal=cal,
+                a1_max=a1_max, a1_n=a1_n, calA=calA, calC=calC, calCg=calCg, c_alarms=c_alarms, raw_alarms=raw_alarms, retracted=retracted, confirmed_cal=confirmed_cal, bound_frac=bound_hits / max(p, 1), fits=sorted(fits_seen), x=x, live_cfg=live_cfg, cal=cal,
                 gp_counts=gp_counts, gp_last=gp_last, gp_samples=gp_samples, nofree=nofree, done_time=done_time, status=status, pred_E2=pred_E2)
 def calib_C_grid():
     tot = np.zeros((len(GRID), 4)); n = 0
@@ -293,6 +312,12 @@ def calib_C_grid():
         rows.append(dict(k=k, h=h, far=float(far), mean_delay=round(float(tot[i, 1] / max(tot[i, 2], 1)), 1), misses=int(tot[i, 3]), probes=int(tot[i, 2]), admissible=bool(far <= 1e-5 and miss <= 0.2)))
     adm = [r for r in rows if r['admissible']]; start = min(adm, key=lambda r: r['mean_delay']) if adm else None
     out = dict(stream_pulses=n * 5, grid=rows, start=start); json.dump(out, open('field_tests/results/d1991_calibC.json', 'w'), indent=1); return out
+def calib_confirmed():
+    cal = json.load(open('field_tests/results/d1987_calibration.json'))['start']; n = 0; c = 0; ret = 0
+    for sd in range(1, 6):
+        o = engine(7.0, sd, events=False, calib=True, pbt=False, live_cfg=(cal['k'], cal['h']), vclock=True, dt=VDT); c += o['confirmed_cal']; ret += o['retracted']; n += int((o['tt'] >= 2.0).sum())
+    out = dict(layer_pulses=n * 7, confirmed_false_alarms=c, retracted=ret, far=c / (n * 7), bar=1e-6, ok=c / (n * 7) <= 1e-6)
+    json.dump(out, open('field_tests/results/d1996_calib.json', 'w'), indent=1); return out
 def calib_C():
     cal = json.load(open('field_tests/results/d1987_calibration.json')); s0 = cal['start']; n = 0; fa = 0
     for sd in range(1, 6):
@@ -352,7 +377,7 @@ def scored(T=60.0, seed=2026, out_name='d1989_woven_run.json', archive=True, vcl
     for g in GP:
         lab = o['gp_last'][g['id']][0]; tally[lab] = tally.get(lab, 0) + 1
     surviving_pred = [g['id'] for g in GP if g['kind'] == 'PRED' and o['gp_last'][g['id']][0] == 'PASS']
-    out = dict(prereg='PREREG_D1989_complete_field.md (+ D1986/D1987)', seed=seed, stuck_events=stuck, no_free_knob_share={L: round(v / o['p'], 3) for L, v in o['nofree'].items()}, seconds=T, vclock=vclock, pulses=o['p'], pulses_per_s=round(o['p'] / _wall, 1), wall_seconds=round(_wall, 2), start_cfg=cal['start'], final_live_cfg=o['live_cfg'],
+    out = dict(prereg='PREREG_D1996_confirm.md (+ D1986-D1995)', retracted=o['retracted'], raw_alarms_n=len(o['raw_alarms']), seed=seed, stuck_events=stuck, no_free_knob_share={L: round(v / o['p'], 3) for L, v in o['nofree'].items()}, seconds=T, vclock=vclock, pulses=o['p'], pulses_per_s=round(o['p'] / _wall, 1), wall_seconds=round(_wall, 2), start_cfg=cal['start'], final_live_cfg=o['live_cfg'],
                accuracy=A, verdict='PASS' if all(A.values()) else 'FAIL', events=sc, false_alarm_rate=far, quiet_pulses=qp, precision_fast=round(tf / nf, 3) if nf else None,
                precision_full=round(tu / nu, 3) if nu else None, bound_frac=round(o['bound_frac'], 4), fits_spent=o['fits'], final_knobs={k: state(o['x'])[k] for k in K},
                final_status=o['status'], resonant_share=res_share, lost_flips=flips, done_seconds={L: round(v, 2) for L, v in o['done_time'].items()},
@@ -395,6 +420,8 @@ if __name__ == '__main__':
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'run'
     if cmd == 'calibrate':
         c = calibrate(); print(json.dumps(c, indent=1))
+    elif cmd == 'calibconfirm':
+        print(calib_confirmed()); sys.exit()
     elif cmd == 'calibCgrid':
         c = calib_C_grid(); [print(r) for r in c['grid']]; print('START', c['start']); sys.exit()
     elif cmd == 'calibC':
