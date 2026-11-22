@@ -20690,3 +20690,10 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **W₀ routes tried:** generic flux, PFV, S-instanton, dark condensate, same-cycle racetrack. **All fail.**
   - **Loop: no progress. No-progress count 2.**
 - **D2063 progress (FORGE):** baseline = full enwik8 with loomz20_o3 (TB22, RCTX = 1): **19,724,674 bytes** in 2,407 s. (The TB24 build reached 19,270,420 earlier; this test compares within the TB22 build.) The reordered run is still going.
+- **D2073 (CENTRE; PREREG_D2073): Q6, F-theory at τ = ρ. UNDETERMINED.**
+  - TASI F-theory lectures (1806.01854): **constant τ = e^{iπ/3} is the fixed value of E₆ (Z₃ monodromy) and E₈ (Z₆) 7-brane stacks**, "the truly non-perturbative regime where |τ| = 1; from a Type IIB perspective all D(−1) instanton effects contribute without any suppression".
+  - No 7-brane gauge-kinetic formula at that point was found in the text read.
+  - Numerically, one D(−1) instanton at ρ weighs e^{−2π Im τ} = **4.3e-3**: small, but not parametrically suppressed.
+  - **Consequence for v4:** the "+9S" piece of f_vis (7.79 of α_G⁻¹ = 27.94) is a perturbative IIB statement. At ρ it carries uncontrolled corrections of relative size ~4e-3 per instanton, times unknown multiplicities.
+  - v4's τ is fixed by a potential, not by a monodromy, so the visible group need not be E₆/E₈.
+  - **Loop: no closed item. No-progress count 3.**
