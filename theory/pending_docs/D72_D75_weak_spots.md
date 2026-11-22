@@ -19646,3 +19646,12 @@ E2's predicted set was computed from the lens just before the kick: {5, 8}. It w
 The pulse arrays are in the scratchpad; a decimated copy is in field_tests/results/d1983_pulses_decimated.json.
 
 TRIANGULATE: 3 readings per pulse. COMPASS: m₃/₂ and T_R are the contested knobs. REVIEW: consistent with D1943a (the gravitino hub) and D1981 (the star around L8).
+
+## D1983a — correction to D1983 (22 Nov 2026 01:08Z)
+D1983 said that "L8 [is] chattering at its edge: 9,859 LOST flips". **That attribution was wrong.** It was read off the final status, not counted. The per-pulse status arrays (no rerun) give:
+- **L7 (α_s): 9,857 RESONANT → LOST flips**, resonant 47 % of the time. L7 is the layer chattering on the m₃/₂ tug of war.
+- L6: 1 flip (the n_s event); resonant 86 % of the time.
+- L8: 1 flip; resonant only 0.4 % of the time, so mostly NO LOCK, not chatter.
+- L1 and L2: resonant 100 % of the time.
+
+The final-balance line should read: RESONANT L1, L2, L6; **L7 chattering** (resonant about half the time); L5 and L8 mostly NO LOCK. The hysteresis owed item applies to L7. Everything else in D1983 stands.
