@@ -21469,3 +21469,14 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 - **T3:** the LSP is stable through gauge matter parity, conditional on R-even breaking. Thermal targets: higgsino ≈ 1.1 TeV, wino ≈ 2.7–3 TeV.
 - **T4:** a PQ axion from a massive anomalous U(1) acting as a perturbative global symmetry (Honecker–Staessens 1312.4517) is possible. Misalignment requires θ ≈ 0.94 at f_a = 1e12 GeV and ≈ 0.28 at 8e12 GeV (ESTIMATE).
 - **Verdict:** item 18 **OBSTRUCTED**. Stable, perturbatively massless, fractionally charged states (Q = ±½) are a generic hazard of hidden–visible bifundamentals. The only neutral candidates are de′, the LSP, and the axion.
+
+## D2126a (item 18 sweep)
+- **Stability is stronger than the centre argument.** The lightest fractionally charged particle is absolutely stable **by electric-charge conservation alone**. The centre classes can still allow decays to de′ plus an e-odd state.
+- **Bound:** Perl, Lee & Loomba, Annu. Rev. Nucl. Part. Sci. 59 (2009) 47, doi:10.1146/annurev-nucl-121908-122035. Terrestrial abundance limits are about 1e-20 to 1e-22 per nucleon.
+- **Item 18: NULL — BALANCED.**
+
+## D2127 (DEEP, ping-pong item 20): independent reproduction. **PASS.** Locked.
+- **The second implementation:** the referee wrote it from p.tex. Its exceptional table is parsed from the LaTeX, not hand-typed. It is archived at tools/seed/referee_blind/.
+- **The builder-side diff:** **0 differences** in all 8 cycle vectors (Table 27 + 3 random branes) and in all random-brane χ entries. The blind code also reproduces bulk = 32, 24 twisted residuals = 0, and HRS Table 28 exactly.
+- **Caveat:** it is independent in transcription and in code structure, but shares the documented readings (z₀, block-3, P2, cyclic X/Y).
+- **R20-1:** the X/Y sum in p.tex (Σ_{i≠j≠k}) must be read over cyclic (i,j,k). The literal reading double-counts and fails bulk = 32. This goes in the paper.
