@@ -20557,3 +20557,11 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
   - **Mapping to v4:** v4's inflaton is S itself, not a separate X. Mechanism (a) needs a coupling −β(T+T̄)·(the S-sector F-term)², which has to be written into K.
   - **Verdict:** Q2 moves from FAIL to **CONDITIONAL (FIT: β, γ + minima coincidence)**. The D2039 "boost" knob now has a named physical origin.
   - **Loop count:** tick 2, progress (a mechanism found).
+- **D2056 (CENTRE; PREREG_D2056; theory/tests/d2056_w0_dark.py): Q3, the dark condensate as W₀ (flux W₀ = 0). FAIL, and the reason is analytic.**
+  - The numerical scan (A_d = ±0.01–100, six seeds) found **no** SUSY vacuum.
+  - **Analytic reason** (toy K = −2 ln(t_v^{3/2} + t_d^{3/2})):
+    - dividing the two F-flatness conditions gives a_v A_v e^{−x_v} / (a_d A_d e^{−x_d}) = K_v/K_d = (t_v/t_d)^{1/2} > 0, so A_d has the sign of A_v;
+    - then each condition reads −a A e^{−x} + ½K_t W = 0 with K_t < 0 and W > 0, so both terms are negative and there is no root.
+  - Two single-exponential condensates on separate cycles, with no constant term, cannot make a SUSY AdS vacuum. A racetrack needs two terms on the **same** modulus with opposite signs.
+  - **W₀ stays unexplained.** Tried so far: generic flux D2044, PFV D2045, S-instanton D2046, dark condensate D2056.
+  - **Loop count:** tick 3, no progress (a clean FAIL). Consecutive no-progress ticks: 1.
