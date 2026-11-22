@@ -20821,3 +20821,17 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - The sharp test is **v4's own split spectrum** (wino 0.69 TeV, gluino 4.9 TeV, plus μ, scalars, heavy Higgs) mapped to the effective threshold. The textbook map is Carena–Pokorski–Wagner T_SUSY ≈ |μ|(m_W̃/m_g̃)^{3/2}(…)^{3/19}. With the v4 gaugino ratio, (0.69/4.93)^{3/2} ≈ 0.052, which pulls T_SUSY well below |μ|.
     - So the next goalpost is to **lock T_SUSY from v4's full spectrum**, then score. Exact formula first, per the referee rule.
     - Yukawa two-loop terms are neglected; they lower α_s by O(0.001).
+- **D2085 (CENTRE, HYBRID; PREREG_D2085; tools/seed/tsusy.py): v4's split spectrum mapped to the Carena–Pokorski–Wagner effective threshold (hep-ph/9303202 Eq. 16, exponent 28/19), then two-loop α_s for exact unification. It locates the α_s miss in the higgsino mass μ.**
+  - **Locked band, μ = m_H ∈ [0.25, 0.7] PeV:**
+    - μ = 0.25 PeV: T_SUSY = 3.96 TeV, α_s = 0.1166 (−1.5σ);
+    - centre 0.42 PeV: 5.94 TeV, 0.1154 (−2.9σ);
+    - μ = 0.7 PeV: 8.92 TeV, **0.1141 (−4.3σ)**.
+    - M_s = 7.3–9.5e15 GeV, which passes G2.
+  - **Cross-check:** the top of the band reproduces v4's own seam number (α_s = 0.1142, −4.2σ, D2036/D2039) almost exactly, even though the brane model here is the D2083 PS model.
+    - **Read:** v4's α_s miss is a **threshold effect of its heavy higgsinos**, not something particular to its brane construction. Any exactly unified model with v4's spectrum gets the same miss.
+  - **The goalpost the data sets (descriptive, not a fit claim):**
+    - α_s = 0.1180 needs μ ≈ **0.146 PeV** (T_SUSY = 2.6 TeV);
+    - the −2σ edge is at μ = **0.297 PeV**.
+    - So the low part of v4's own band (0.25–0.30 PeV) is within 2σ; the centre and top are not.
+  - **Assumptions (stated):** m_H = μ and m_l̃/m_q̃ = 1 (3/19 powers); no Yukawa two-loop terms (−O(0.001)); the "unified" boundary is the PS one (no T1 thresholds).
+  - **Status change:** the "α_s seam" gap becomes a sharp, derivable target. v4 must put μ ≲ 0.3 PeV, i.e. derive μ, the higgsino mass from the Giudice–Masiero / KKLT μ-term, below ~0.3 PeV. That is a new owed item for the Bloom: derive μ, rather than taking it as the scalar scale.
