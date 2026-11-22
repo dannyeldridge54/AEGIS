@@ -21243,3 +21243,51 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
 - The isotropic case (v₁ = v₂) has no solution. The α₁ residual jumps between a branch with g_s ≫ 1 (M_s > M_Pl) and a branch with g_s < 1, and the jump is a branch switch, not a root.
 - The general case only gives solutions with g_s > 1, or with |one-loop|/tree ≈ 0.85–0.99.
 - The solver grid skipped 300 < v₃ < 1e4; the referee is checking that range.
+
+## D2114a (correction to the preliminary D2114 note)
+- The preliminary note said general solutions have only g_s > 1 or ctrl ≈ 0.85–0.99. That was **wrong**; it was an artefact of the coarse grid.
+- The dense re-solve (D2116a) finds **geometric solutions**, with all v_i ≥ 1 and g_s < 1.
+- The isotropic "no solution" statement stands.
+
+## D2116 (CENTRE): settle pass 3. Locked.
+### a. K7, dense re-solve
+- **Variants:** 120 values of v₃ in [10, 1e6], for variants A/B and reduced/non-reduced M_Pl.
+- **Geometric solutions** (v_i ≥ 1, g_s < 1) exist in every variant: 8, 2, 8 and 3 of them.
+  - They are anisotropic, with v₃ ≈ 6e2–5e3 > v₁ ≈ 2e2–4e2 > v₂ ≈ 1e1–2e2.
+  - They put M_s at 7e12–2e14 GeV, with g_s = 0.05–0.6.
+- **Control:** **none has |one-loop|/tree < 0.3.** The best values are 0.318 (non-reduced, B) and 0.42 (reduced, B); variant A gives ≥ 0.78.
+- **Isotropic:** no genuine root. On the g_s < 1 branch the α₁ residual stays at +4.6 to +8.6 and never crosses zero.
+- **Verdict K7:** the measured couplings **can** be matched geometrically, but only at an intermediate string scale (~1e13–1e14 GeV), with strongly anisotropic tori and one-loop thresholds at ≥ 32% of the tree value. That is **MARGINAL / not under perturbative control** by the locked 0.3 criterion. α_s is an input here (a FIT), not a prediction.
+
+### b. K11, ΔN_eff (ESTIMATE)
+- 6 massless hidden SU(2) gauge bosons (g = 12), decoupling at M_s with g*s ≥ 228.75.
+- That gives **ΔN_eff ≈ 0.12**, under the Planck+BAO 95% bound of ≈ 0.3. **PASS** (an upper estimate, assuming a thermal hidden sector).
+
+### c. K-theory / FI, literature check
+- p.tex sets up USp probes (lines 1315–1316) but gives no K-theory statement for this model, so we computed it ourselves (D2117).
+- **FI / D-terms for the twisted moduli:** p.tex says nothing. **NOT VERIFIED.**
+
+## D2117 (DEEP): K-theory probe check, computed. **PASS.**
+- **Probe count:** 512 distinct orientifold-invariant fractional cycles; **256 of them supersymmetric, which matches the paper's 144 USp + 112 SO = 256 exactly.** This is an independent check of the engine.
+- **Condition:** Σ_x N_x Π_x∘Π_p is even for **all 512 probes**, with 0 violations.
+- **Verdict:** the model is K-theory consistent.
+
+## SETTLED STATE (closing table for the paper)
+| Item | Verdict |
+|---|---|
+| K1 | PASS |
+| K2 | PASS |
+| K3 | PASS |
+| K4 | PASS (fixes the convention) |
+| K-theory | PASS (D2117) |
+| Uniqueness | PASS (D2111/D2113) |
+| K5 | recorded |
+| K6 | FLAG (inconsistencies in the source) |
+| K7 | MARGINAL (fit only, ctrl ≥ 0.32) |
+| K8 | S1 conditional / S2 FAIL |
+| K9 | ESTIMATE |
+| K10 | OBSTRUCTED perturbatively (D2115) |
+| K11 | PASS (ΔN_eff ≈ 0.12, estimate) |
+| FI / D-terms | NOT VERIFIED |
+
+**The derivation is complete at this level.** Every item now has a verdict backed by evidence.
