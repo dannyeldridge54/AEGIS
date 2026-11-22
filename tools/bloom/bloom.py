@@ -81,6 +81,22 @@ def theory_nuisance(t):
     return {'z_rfit': round(z_rfit, 2), 'sigma_exp': t['sigma'], 'sigma_theory': round(s_th, 5), 'z_exp_only': round((t['ours'] - t['mu']) / t['sigma'], 2), 'z_with_theory': round((t['ours'] - t['mu']) / s, 2),
             'read': 'sensitivity lens only: a large theory error is a gap to close (the next rung), never a pass'}
 
+# ---- lens 6b: geometric-series missing-higher-order estimate (D2035; cf. Cacciari-Houdeau / Bonvini Bayesian MHOU) ----
+def mhou_geometric(t):
+    L = t.get('ladder')
+    if not L or len(L['values']) < 3 or 'dobs_dq' not in t: return None
+    c = [L['values'][i + 1] - L['values'][i] for i in range(len(L['values']) - 1)]
+    ratio = abs(c[-1] / c[-2]); nxt = abs(c[-1]) * ratio / (1 - ratio) if ratio < 1 else float('inf')   # remaining tail of a geometric series
+    s_th = nxt * t['dobs_dq']; z = (t['ours'] - t['mu']) / math.hypot(t['sigma'], s_th)
+    return {'step_ratio': round(ratio, 3), 'tail_in_q': round(nxt, 5), 'sigma_theory': round(s_th, 6), 'z_with_mhou': round(z, 2),
+            'read': 'two estimators bracket the theory error: last-step (generous) vs geometric tail (series converging); report both'}
+
+# ---- lens 5b: numerology look-elsewhere (D2035; Gilbert/1603.00299-style): how many simple fractions p/q hit a target by chance ----
+def numerology(target, tol, pmax=12, qmax=12):
+    hits = sorted({(p, q) for q in range(1, qmax + 1) for p in range(1, pmax + 1) if abs(p / q - target) <= tol and math.gcd(p, q) == 1})
+    span = sorted({p / q for q in range(1, qmax + 1) for p in range(1, pmax + 1)}); density = len(span) / (max(span) - min(span))
+    return {'target': target, 'tol': tol, 'hits': hits, 'n_fractions': len(span), 'p_chance_one_target': round(min(1.0, 2 * tol * density), 3)}
+
 # ---- lens 7: goodness of fit by parametric bootstrap (toys), dof = N - k ----
 def gof_bootstrap(terms, n=20000, seed=3):
     # engine ladder rung 2 (D2027): exact chi2 survival (regularised upper gamma), no numpy import; toys only with --toys
@@ -133,7 +149,7 @@ def report():
     out = {'target': {'lnL': round(lnL, 3), 'k_fit': k, 'N': N, 'bic_target': round(tgt, 3)}, 'compass': compass(terms),
            'shadows': {t['id']: shadow(t) for t in terms if 'alt' in t}, 'tension': {t['id']: tension(t) for t in terms if tension(t) is not None},
            'ladder': {t['id']: ladder(t) for t in terms if 'ladder' in t}, 'negative_space': negative_space(), 'hygiene_ok': hygiene(terms),
-           'injection': injection_test(), 'theory_nuisance': {t['id']: theory_nuisance(t) for t in terms if 'ladder' in t}, 'gof': gof_bootstrap(terms), 'prequential': prequential(terms)}
+           'injection': injection_test(), 'theory_nuisance': {t['id']: theory_nuisance(t) for t in terms if 'ladder' in t}, 'gof': gof_bootstrap(terms), 'prequential': prequential(terms), 'mhou': {t['id']: mhou_geometric(t) for t in terms if 'ladder' in t}}
     # T1 demonstration through the Centre: a FREE Delta3 knob (a fitted knob) vs the derived value. alpha_s(Delta3) linearised from v4:
     a = next(t for t in terms if t['id'] == 'alpha_s'); slope = (0.1180 - 0.1142) / 0.044
     def ev(s, split):  # cost = -lnL of the alpha_s term; the 'held' split uses the alt world average spread (refuses tuning on one number)
@@ -151,4 +167,4 @@ if __name__ == '__main__':
     t = r['target']; print('UNIFIED FIELD BLOOM v1 | lnL %.2f | fitted knobs %d | N %d | target lnL - BIC = %.2f' % (t['lnL'], t['k_fit'], t['N'], t['bic_target']))
     for c in r['compass']: print('  %-12s %-7s z %+6.2f  lnL %+7.2f  dir %-4s headroom %s' % (c['id'], c['agent'], c['z'], c['lnL'], c['direction'], c['headroom_sigma']))
     print('shadows', r['shadows']); print('tension (sigma)', {k: round(v, 2) for k, v in r['tension'].items()}); print('ladder', r['ladder'])
-    print('negative space', r['negative_space']); print('hygiene', r['hygiene_ok'], '| injection', r['injection']); print('description length (bits): %.1f  [MDL: -lnL/ln2 + k/2 log2 N, the same unit as the Forge]' % (-t['bic_target'] / math.log(2))); print('T1 demo', r['T1_demo']); print('theory nuisance', r['theory_nuisance']); print('goodness of fit', r['gof'])
+    print('negative space', r['negative_space']); print('hygiene', r['hygiene_ok'], '| injection', r['injection']); print('description length (bits): %.1f  [MDL: -lnL/ln2 + k/2 log2 N, the same unit as the Forge]' % (-t['bic_target'] / math.log(2))); print('T1 demo', r['T1_demo']); print('theory nuisance', r['theory_nuisance']); print('goodness of fit', r['gof']); print('MHOU geometric', r['mhou'])

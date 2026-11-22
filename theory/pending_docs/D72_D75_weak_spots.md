@@ -20301,3 +20301,18 @@ The Loom **STALLs** there by design. Further movement needs derivations: the cub
     - a Higgs-mass term for split SUSY (owed).
   - Readiness battery: 12/12.
 - **D2034a (correction):** H_inf computed in code is **5.69e12 GeV**, not 5.8e12 (V^{1/4} = 4.9e15 GeV, M_P = 2.435e18 GeV). Flag 2 is unchanged.
+- **D2035 (CENTRE + DEEP): fold-in plus round 2 of the web map.**
+  - **Flag 2 (H_inf ≫ m₃/₂, Kallosh–Linde)** was handled before for two-term SERAPIS (D586; D~5733–5818: evaded by the heavy-Y / racetrack barrier, "KL problem solved comfortably"). Status: **prior answer exists; re-confirm it carries over to UFE v4** (S at ρ, N = 6).
+  - **Flag 1 (mirage mediation) is SHARPENED, not cleared.**
+    - Choi–Falkowski–Nilles–Olechowski (hep-th/0503216) give, for D7 gauge fields with f = T under KKLT and anti-D3 uplift: M_a = m₃/₂ [ n_t/(2at) + b_a g²/(8π²) ], with n_t = 2.
+    - Our at = 2πσ/N = 21.10, so the modulus piece is ≈ m₃/₂/21.1 ≈ **11.8 TeV**.
+    - Pure-AMSB wino ≈ 0.66 TeV. **Ratio ≈ ×18** (estimate in code; convention factors may differ).
+    - The dilaton F-term is not zero in light-dilaton models: it is ~1/(4π²)-suppressed.
+    - **This is the most serious open referee item.** Unless the visible D7 cycle carries no F-term (it is not the KKLT-stabilised cycle, or the uplift is not anti-D3), the wino/gluino spectrum and the α_s thresholds that depend on it change.
+    - Next: read UFE §2–3 to see which cycle the condensate stabilises and which F-terms are non-zero, under a lock. **Gate on B4 and B5.**
+  - **Lens 6b (geometric tail, MHOU)** added. The Δ₃ ladder steps (−0.75, then +0.056) shrink by a ratio of 0.075, so the remaining tail is ≈ 0.0045 in Δ₃, which gives σ_th(α_s) = 0.00039 and **z = −3.87**.
+    - Read: the two estimators bracket the theory error. Last-step (generous) gives −0.77σ; geometric tail gives −3.87σ. **The geometric reading says the miss is real, and it is the more standard reading for a converging series.**
+  - **Lens 5b (numerology)** added, for fractions p/q with p, q ≤ 30 (555 values):
+    - **Koide Q = 2/3** at data precision (1e-5): p(chance) ≈ 0. **A real coincidence to explain.**
+    - **δ = 2/9** at 1%: p = 0.08, weak.
+    - **28/11 (m_X)** at 1%: p = 0.93, **no evidence**: a simple fraction lands there by chance.
