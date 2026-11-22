@@ -8,8 +8,12 @@ def one(args):
     T, seed, name = args
     import loom_rt5 as R
     o = R.scored(T, seed=seed, out_name=name, archive=False)
+    rep = None
+    if o['verdict'] != 'PASS':   # D1995: exact replay of a failing run, for diagnosis
+        import json as _j; first = _j.load(open('field_tests/results/' + name))['alarms']
+        o2 = R.scored(T, seed=seed, out_name=name.replace('.json', '_replay.json'), archive=False); rep = dict(reproduced=o2['alarms'] == first, verdict=o2['verdict'])
     return dict(seed=seed, verdict=o['verdict'], accuracy=o['accuracy'], pulses_per_s=o['pulses_per_s'], tally=o['goalpost_tally'], done=o['done_seconds'],
-                fits=o['fits_spent'], precision=(o['precision_fast'], o['precision_full']), far=o['false_alarm_rate'])
+                fits=o['fits_spent'], precision=(o['precision_fast'], o['precision_full']), far=o['false_alarm_rate'], events=o['events'], exact_replay=rep)
 def triangulate(T, seeds, prefix='par'):
     os.makedirs('field_tests/results/auto', exist_ok=True)
     with Pool(min(len(seeds), os.cpu_count() or 1)) as pool:

@@ -1,0 +1,11 @@
+# PREREG D1995: reproducible scored runs (virtual clock). Locked before code and runs.
+- **D1994 verdict:** replay PASS (MATERIAL recall 6/6, specificity 7/7; seed 2037); 60 s seed 2038 PASS. But the **20 s run on seed 2039 FAILed recall**: E2 was caught on L8 only after 3.3 s. On a development seed L8 detects within the same pulse. Wall-clock scored runs cannot be replayed, so the cause is **undiagnosed. FAIL stands.**
+- **Change:**
+  - Scored runs, replays and auto field runs use the virtual clock: t = pulse × dt, with dt = 1/4300 s (about v5's measured rate). Events and windows are in virtual seconds. Any run can therefore be replayed bit-for-bit from its seed.
+  - Wall-clock throughput is measured and reported separately.
+  - A scored run that fails a bar is automatically re-run on the same seed, and must reproduce the same alarms (a determinism check), so the failure can be diagnosed.
+- **Tests (new seeds), bars as locked (A1–A5; replay MATERIAL recall = 1, specificity ≥ 6/7):**
+  - 20 s × 4 seeds (2040, 2041, 2042, 2043), where the defect appeared;
+  - 60 s × 2 seeds (2044, 2045);
+  - replay on seed 2046.
+- **PASS needs every run to pass.** Any failure is diagnosed by an exact replay, and reported.

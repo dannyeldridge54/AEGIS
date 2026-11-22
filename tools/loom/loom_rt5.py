@@ -311,14 +311,16 @@ def calibrate():
     adm = [r for r in rows if r['admissible']]; start = min(adm, key=lambda r: r['mean_delay']) if (adm and A_ok) else None
     out = dict(pulses=pulses, data_margin_pulses=pulses * len(STO), detector_A=dict(false_alarms=fa_A, far=far_A, admissible=bool(A_ok)), grid=rows, start=start)
     json.dump(out, open('field_tests/results/d1987_calibration.json', 'w'), indent=1); return out
-def scored(T=60.0, seed=2026, out_name='d1989_woven_run.json', archive=True):
+VDT = 1 / 4300.0   # D1995 virtual clock step
+def scored(T=60.0, seed=2026, out_name='d1989_woven_run.json', archive=True, vclock=True):
     f = T / 60.0   # D1989 DEVIATIONS 1: schedule scales with run length
     for E, base in zip(EVENTS, ((10, 20), (25, 35), (45, 55))): E['t0'], E['t1'] = base[0] * f, base[1] * f
     E2T[0], E2T[1], E2T[2] = 24 * f, 25 * f, 35 * f
     QUIET[:] = [(max(2, 2 * f), 10 * f), (20.5 * f, 25 * f), (35.5 * f, 45 * f), (55.5 * f, 60 * f)]
     cal = json.load(open('field_tests/results/d1987_calibration.json')); s0 = cal['start']
     if s0 is None: raise SystemExit('D1987: no admissible detector config; scored run NOT performed (as locked)')
-    o = engine(T, seed, events=True, live_cfg=(s0['k'], s0['h']), pbt=True)
+    import time as _t; _w0 = _t.perf_counter()
+    o = engine(T, seed, events=True, live_cfg=(s0['k'], s0['h']), pbt=True, vclock=vclock, dt=VDT); _wall = _t.perf_counter() - _w0
     tt, ST = o['tt'], o['ST']; al = o['alarms']; sc = {}
     for E in EVENTS:
         E['pred'] = E['pred'] or set()
@@ -350,7 +352,7 @@ def scored(T=60.0, seed=2026, out_name='d1989_woven_run.json', archive=True):
     for g in GP:
         lab = o['gp_last'][g['id']][0]; tally[lab] = tally.get(lab, 0) + 1
     surviving_pred = [g['id'] for g in GP if g['kind'] == 'PRED' and o['gp_last'][g['id']][0] == 'PASS']
-    out = dict(prereg='PREREG_D1989_complete_field.md (+ D1986/D1987)', seed=seed, stuck_events=stuck, no_free_knob_share={L: round(v / o['p'], 3) for L, v in o['nofree'].items()}, seconds=T, pulses=o['p'], pulses_per_s=round(o['p'] / T, 1), start_cfg=cal['start'], final_live_cfg=o['live_cfg'],
+    out = dict(prereg='PREREG_D1989_complete_field.md (+ D1986/D1987)', seed=seed, stuck_events=stuck, no_free_knob_share={L: round(v / o['p'], 3) for L, v in o['nofree'].items()}, seconds=T, vclock=vclock, pulses=o['p'], pulses_per_s=round(o['p'] / _wall, 1), wall_seconds=round(_wall, 2), start_cfg=cal['start'], final_live_cfg=o['live_cfg'],
                accuracy=A, verdict='PASS' if all(A.values()) else 'FAIL', events=sc, false_alarm_rate=far, quiet_pulses=qp, precision_fast=round(tf / nf, 3) if nf else None,
                precision_full=round(tu / nu, 3) if nu else None, bound_frac=round(o['bound_frac'], 4), fits_spent=o['fits'], final_knobs={k: state(o['x'])[k] for k in K},
                final_status=o['status'], resonant_share=res_share, lost_flips=flips, done_seconds={L: round(v, 2) for L, v in o['done_time'].items()},
@@ -369,9 +371,9 @@ REPLAY = {  # P2: published history (recalled from PDG / collaboration papers; o
  'wino': [(0, 460.0, 20.0), (25, 660.0, 20.0), (50, 700.0, 20.0)],
  'Y': [(0, 0.88e-10, 0.0088e-10), (30, 0.87e-10, 0.0087e-10)]}
 STREAM_LAYER = {'ns': 6, 'as_': 7, 'wino': 5, 'Y': 8}
-def replay_run(T=70.0, seed=2028, out_name='d1989_replay.json'):
+def replay_run(T=70.0, seed=2028, out_name='d1989_replay.json', vclock=True):
     cal = json.load(open('field_tests/results/d1987_calibration.json')); s0 = cal['start']
-    o = engine(T, seed, events=False, live_cfg=(s0['k'], s0['h']), pbt=True, replay=REPLAY)
+    o = engine(T, seed, events=False, live_cfg=(s0['k'], s0['h']), pbt=True, replay=REPLAY, vclock=vclock, dt=VDT)
     al = o['alarms']; rel = []
     for key, rels in REPLAY.items():
         for (t0, v, sg), prev in zip(rels[1:], rels[:-1]):
