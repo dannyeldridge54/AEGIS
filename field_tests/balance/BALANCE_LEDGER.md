@@ -42,3 +42,7 @@ Stop rule: a full turn of all three wheels returns NULL.
 | 5 | W2.limits | JUNO 0.3092 +- 0.0087; TM1 0.3184 is 1.1 sigma above; TM1 vs JUNO already in 2511.15978 | added | - |
 | 5 | W2.credit | shared-asymmetry DM mass idea (Kaplan-Luty-Zurek 2009) | credited | - |
 | 5 | W3 engine | +4 checks (JUNO pull 1.06, n_s pull 1.09, alpha_s pull 4.2, wino 10% below ATLAS expected) | all OK | - |
+| 6 | W1+W2 unison turn | NULL on every section (all R5 fixes verified; no inner-spin inconsistency); 3 NITs applied (HL-LHC "its reach", H0 cross-reference in walls row, byline date 23 Nov) | - | - |
+| 6 | W3 engine | 31/31 OK | - | - |
+
+**State at 22:42 CT: all three wheels NULL together = SET.** Only the "Status of runs" section changes at the 00:15 check (finished fits get scored by the locked rule); that section is re-checked alone, then publish at 00:33.
