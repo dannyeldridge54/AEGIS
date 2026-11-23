@@ -22586,3 +22586,19 @@ thermal 0-D engine cannot be tested on JET without this term.
   vs R102's scratch +12.5% (open discrepancy).
 Verdict: classical slowing down without fast-ion losses over-predicts JET's beam-target fusion by ~1.3-1.7x on published inputs. Not tuned.
 Next on this level: fast-ion loss/ripple estimate and the NBI fraction definition from the primary source; T_e/n_e profiles from JET data papers.
+
+## D2210 (CENTRE, 23 Nov 2026 ~15:15 CT) — Danny: "are you using the UFE model itself? ... do a full roll to see where the resonance is at each layer"
+Honest status: the fusion tree and neutron ladder used standard physics + measured data, NOT the Weave. Full roll of OUR engine (Hexagon,
+adopted knobs C 1.25e-6, T_R 8.94e8, s_m32 1): settles in 2 sweeps, lnL -9.80 vs target -21.97 (k 8, N 21). Per layer:
+- top (unification, weave_rg2 two-loop): alpha^-1(M12) 27.93 at M12 1.07e16 GeV -> alpha_s 0.1142 at M_Z.
+- N2 forces: alpha_s 0.1142 vs measured 0.118 -> pull -4.2 sigma  <== the imbalance.
+- N1 nuclear: that alpha_s shift means d(Lambda_QCD)/Lambda = -0.19 -> Hoyle resonance OUTSIDE its window (radius 7.6; not independent of N2);
+  D/H pull -2.5; Y_p +0.7.
+- N3 neutrinos: theta12 0.318, m_bb 3.8 meV, sum m_nu 0.0588 eV, Koide 2/3 to 2e-6 (balanced).
+- N4 inflation: n_s 0.9745 (+0.57 sigma), r 4.8e-4, running -1.0e-3 (balanced).
+- N5 dark: leptogenesis viable. N6 late: consistent.
+Fusion layers sit BELOW N1: every fusion number (D-T resonance at 64 keV CM, Q-values, nuclear binding) scales with Lambda_QCD, and the Weave
+does not yet predict Lambda_QCD or the nucleon mass on its own (weave_proton note: m_p is an input). A 19% Lambda shift would move nuclear energies
+by ~19% (MeV scale), far larger than the 64 keV D-T resonance: on the Weave's current alpha_s the D-T resonance is not where we observe it.
+=> The out-of-balance ring is FORCES (alpha_s), not the fusion data. Next for this ring: two-loop + thresholds + Yukawa at M12 (weave_rg2 says
++-0.004) to see whether alpha_s can reach 0.118 without breaking the other rings; only then carry the Weave down into the nuclear/fusion layers.
