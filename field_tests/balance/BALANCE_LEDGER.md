@@ -62,3 +62,4 @@ Stop rule: a full turn of all three wheels returns NULL.
 | 13 | W1 verify | should-fix: D2166 counts read as additive (8 + 17) | "17 once dials are spent (including those 8)" | - |
 | 14 | W1 full verify | **NULL** (folded-in section and whole paper in unison) | - | - |
 | 15 | W1+W3 on the final fits | numbers verified (CamSpec -0.17/-0.87; W vs w0wa dchi2 +6.2 to +11.4, dAIC +2.2 to +7.4); should-fix: w0/wa ranges too narrow; D2160 wording; 2 nits | all applied (D2171a) | - |
+| 16 | W1 final verify | round-15 fixes confirmed; one should-fix: "-3.8" read as against w0wa -> "the Weave scores -3.8 against LCDM" | applied | - |
