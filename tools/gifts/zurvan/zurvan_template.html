@@ -1,0 +1,82 @@
+<title>Zurvan</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Source+Serif+4:wght@400;600&display=swap">
+<style>
+:root{--bg:#f7f3ea;--panel:#fffdf7;--fg:#1d1a2b;--muted:#6b6577;--line:#ddd3bf;--accent:#3b2f8f;--gold:#b8860b;--bar:#3b2f8f;--bar2:#b8860b;--bad:#a3322a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14121d;--panel:#1d1a2a;--fg:#ece6d6;--muted:#a39cb0;--line:#363049;--accent:#a99cff;--gold:#e0b24a;--bar:#a99cff;--bar2:#e0b24a;--bad:#ff8a7a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14121d;--panel:#1d1a2a;--fg:#ece6d6;--muted:#a39cb0;--line:#363049;--accent:#a99cff;--gold:#e0b24a;--bar:#a99cff;--bar2:#e0b24a;--bad:#ff8a7a;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 "Source Serif 4",Georgia,serif;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px}
+main{max-width:980px;margin:0 auto}
+h1{font-size:2rem;margin:0;letter-spacing:.02em}h2{font-size:1.15rem;margin:1.6em 0 .4em;text-wrap:balance}
+.sub{color:var(--muted);margin:.2em 0 1em}.lantern{border-left:3px solid var(--gold);padding:.4em .9em;color:var(--muted);font-style:italic;margin:1em 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;margin:12px 0;min-width:0}
+textarea{width:100%;box-sizing:border-box;min-height:180px;font:12px/1.4 "IBM Plex Mono",monospace;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:8px}
+button,select,input{font:13px "IBM Plex Mono",monospace;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:6px 10px}
+button.primary{background:var(--accent);color:var(--panel);border-color:var(--accent);cursor:pointer}button{cursor:pointer}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.big{font:600 2rem "IBM Plex Mono",monospace;color:var(--accent)}.big2{font:600 1.3rem "IBM Plex Mono",monospace;color:var(--gold)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font:12px "IBM Plex Mono",monospace}td,th{padding:4px 6px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+.barc{width:40%;min-width:120px}.bar{height:9px;background:var(--bar);border-radius:2px}.bar.g{background:var(--bar2)}
+.note{color:var(--muted);font-size:13px}.warn{color:var(--bad)}
+label{font-size:13px;color:var(--muted)}
+</style>
+<main>
+<h1>Zurvan</h1>
+<p class="sub">Electroweak naturalness, Δ<sub>EW</sub>, from an SLHA spectrum file, plus a decaying-wino RPV calculator. Runs in your browser; nothing is uploaded.</p>
+<div class="lantern">This work is a lantern, not a throne. It belongs to the one who asks, who measures, who will not kneel: take it, test it, and see for yourself.</div>
+
+<div class="card">
+<h2 style="margin-top:0">1 · Spectrum (SLHA output from Isajet, SoftSUSY, SPheno…)</h2>
+<div class="row" style="margin-bottom:8px">
+<input type="file" id="file" accept=".slha,.txt,.out,.spc">
+<select id="ex"><option value="">Load a test point…</option></select>
+<button class="primary" id="go">Compute Δ_EW</button>
+</div>
+<textarea id="slha" spellcheck="false" placeholder="Paste an SLHA file here"></textarea>
+<p class="note">Reads MSOFT (21, 22 = m²<sub>Hd</sub>, m²<sub>Hu</sub>; 33, 36, 43, 46, 49), HMIX (1 μ, 2 tanβ, 3 v), YU/YD/YE, AU/AD/AE, GAUGE, at the file's scale Q (or √(m<sub>t̃1</sub>m<sub>t̃2</sub>) from MASS if no Q is given).</p>
+</div>
+
+<div class="card" id="out" hidden>
+<div class="kpis">
+<div><div class="note">Δ<sub>EW</sub>, each mass eigenstate its own term (DEW4SLHA style)</div><div class="big" id="d1"></div><div class="note" id="d1l"></div></div>
+<div><div class="note">Δ<sub>EW</sub>, each sfermion pair summed (t̃1+t̃2 etc.)</div><div class="big2" id="d2"></div><div class="note" id="d2l"></div></div>
+</div>
+<div class="row" style="margin:10px 0"><label>View <select id="view"><option value="c">per term</option><option value="s">pairs summed</option></select></label><span class="note">Δ<sub>i</sub> = 2|C<sub>i</sub>|/m<sub>Z</sub>². Natural is usually taken as Δ<sub>EW</sub> ≲ 30.</span></div>
+<div class="tbl"><table><thead><tr><th>term</th><th>C<sub>i</sub> (GeV²)</th><th>Δ<sub>i</sub></th><th class="barc"></th></tr></thead><tbody id="tb"></tbody></table></div>
+<p class="note">Zurvan takes Σ<sup>u</sup><sub>u</sub>, Σ<sup>d</sup><sub>d</sub> by numerically differentiating the one-loop Coleman–Weinberg potential (DR̄, scale Q) of the third-family sfermions and fermions. <b>Not included in v1:</b> first/second-family sfermions, charginos, neutralinos, Higgs bosons, W/Z, the two-loop gluino terms. DEW4SLHA has all of those, so use it for the full answer; Zurvan is a quick, transparent cross-check.</p>
+</div>
+
+<div class="card">
+<h2 style="margin-top:0">2 · Decaying wino through RPV (your 2026 mechanism, heavy-scalar version)</h2>
+<p class="note">Γ ≈ 3αε²λ²m<sub>χ</sub>⁵/(128π² m<sub>soft</sub>⁴), λ = f<sub>a</sub>/M<sub>P</sub> (M<sub>P</sub> = 2.435×10¹⁸ GeV). Baryonic UDD: α = 1/128, ε = m<sub>t</sub>/m<sub>soft</sub> (a wino has no direct coupling to right-handed squarks). Leptonic LQD/LLE: α = α₂ = 1/30, ε = 1. Order-of-magnitude, ±√10 band.</p>
+<div class="row">
+<label>m<sub>wino</sub> (GeV) <input id="mw" type="number" value="693" style="width:90px"></label>
+<label>m<sub>soft</sub> (TeV) <input id="ms" type="number" value="160" style="width:90px"></label>
+<label>lifetime limit τ (s) <input id="tm" type="number" value="0.1" step="0.01" style="width:80px"></label>
+</div>
+<div class="tbl" style="margin-top:8px"><table><thead><tr><th>operator</th><th>minimum f<sub>a</sub> (GeV)</th><th>band</th><th>inside f<sub>a</sub> ≲ 5×10¹² window?</th></tr></thead><tbody id="rpv"></tbody></table></div>
+</div>
+
+<p class="note">Zurvan v1 · Danny Lee Eldridge, Oklahoma City · 23 Nov 2026 · the Weave (doi:10.5281/zenodo.24453858) · source: github.com/dannyeldridge54/AEGIS (tools/gifts/zurvan). Named for Zurvan, the Persian figure of boundless time. Free to use, change and share.</p>
+</main>
+<script>
+/*CORE*/
+const EX=/*EXAMPLES*/;
+const $=id=>document.getElementById(id);
+for(const k of Object.keys(EX)){const o=document.createElement('option');o.value=k;o.textContent=k;$('ex').appendChild(o);}
+$('ex').onchange=()=>{if($('ex').value){$('slha').value=EX[$('ex').value];run();}};
+$('file').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{$('slha').value=r.result;run();};r.readAsText(f);};
+let last=null;
+function fmt(x){return Math.abs(x)>=1e4||Math.abs(x)<1e-2?x.toExponential(3):x.toFixed(2);}
+function draw(){if(!last)return;const rows=$('view').value==='s'?last.summed:last.contributions;const mx=rows[0][2];
+$('tb').innerHTML=rows.slice(0,14).map(([k,v,d])=>`<tr><td>${k}</td><td>${v>=0?'+':''}${fmt(v)}</td><td>${fmt(d)}</td><td class="barc"><div class="bar${$('view').value==='s'?' g':''}" style="width:${Math.max(1,100*d/mx)}%"></div></td></tr>`).join('');}
+function run(){try{const p=Z.paramsFromSLHA($('slha').value);if(!(p.tanb>1))throw new Error('tan(beta) must be > 1');
+p.mZ=Math.sqrt((p.g**2+p.gp**2)/2*(p.vu**2+p.vd**2));last=Z.deltaEW(p);
+$('d1').textContent=fmt(last.Delta_EW);$('d1l').textContent='largest: '+last.largest;$('d2').textContent=fmt(last.Delta_EW_pairs_summed);$('d2l').textContent='largest: '+last.largest_pairs_summed+'  ·  Q = '+p.Q.toFixed(0)+' GeV';
+$('out').hidden=false;draw();}catch(err){$('out').hidden=false;$('tb').innerHTML=`<tr><td class="warn" colspan="4">Could not read this file: ${String(err.message).replace(/</g,'&lt;')}. Needs MSOFT, HMIX and YU blocks.</td></tr>`;$('d1').textContent='–';$('d2').textContent='–';$('d1l').textContent='';$('d2l').textContent='';}}
+$('go').onclick=run;$('view').onchange=draw;
+function rpv(){const m=+$('mw').value,ms=+$('ms').value*1e3,t=+$('tm').value;if(!(m>0&&ms>0&&t>0))return;
+$('rpv').innerHTML=[['Baryonic UDD',false],['Leptonic LQD / LLE',true]].map(([n,l])=>{const f=Z.faMin(m,ms,t,l),lo=f/Math.sqrt(10),hi=f*Math.sqrt(10);
+const ok=hi<=5e12?'yes':(lo<=5e12?'partly':'no');return `<tr><td>${n}</td><td>${f.toExponential(2)}</td><td>${lo.toExponential(1)} – ${hi.toExponential(1)}</td><td>${ok}</td></tr>`;}).join('');}
+['mw','ms','tm'].forEach(i=>$(i).oninput=rpv);rpv();
+</script>

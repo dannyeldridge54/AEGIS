@@ -1,0 +1,23 @@
+{
+ "example_P1_natural.slha": {
+  "py": 47.54149642814607,
+  "js": 47.54149642814607,
+  "py_summed": 21.72961093920572,
+  "maxrel": 0.0,
+  "top3_names_match": true
+ },
+ "example_P2_heavy_mixing.slha": {
+  "py": 98.29771771219744,
+  "js": 98.29771771219744,
+  "py_summed": 29.35403583015509,
+  "maxrel": 0.0,
+  "top3_names_match": true
+ },
+ "example_P3_weave_minisplit.slha": {
+  "py": 14258353.524155717,
+  "js": 14258353.524155717,
+  "py_summed": 2315252.5807259227,
+  "maxrel": 0.0,
+  "top3_names_match": true
+ }
+}
