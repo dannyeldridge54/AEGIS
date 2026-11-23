@@ -72,9 +72,10 @@ Z_IMP = dict(He=2, Be=4, Ar=18)
 def composition(m):
     """Fully stripped impurities as fractions of n_e: fuel fraction n_DT/n_e, ion count per electron, Z_eff."""
     f = dict(He=m['f_He'], Be=m['f_Be'], Ar=m['f_Ar'])
-    f_DT = 1 - sum(f[k] * Z_IMP[k] for k in f)
-    zeff = f_DT + sum(f[k] * Z_IMP[k] ** 2 for k in f)
-    return dict(f_DT=f_DT, ions_per_e=f_DT + sum(f.values()), Zeff=zeff)
+    ex = m.get('extra_imp', {})   # PROM-7 DEV-1: extra fully stripped species {Z: n_Z/n_e} (e.g. SPARC 3He minority, lumped Z=9)
+    f_DT = 1 - sum(f[k] * Z_IMP[k] for k in f) - sum(float(Z) * x for Z, x in ex.items())
+    zeff = f_DT + sum(f[k] * Z_IMP[k] ** 2 for k in f) + sum(float(Z) ** 2 * x for Z, x in ex.items())
+    return dict(f_DT=f_DT, ions_per_e=f_DT + sum(f.values()) + sum(ex.values()), Zeff=zeff)
 def line_avg_factor(alpha_n):
     """n_line / n_avg for n = n0 (1 - rho^2)^alpha_n: n_avg = n0/(1+alpha_n), n_line = n0 sqrt(pi) Gamma(alpha_n+1) / (2 Gamma(alpha_n+1.5))."""
     return (math.sqrt(math.pi) * math.gamma(alpha_n + 1) / (2 * math.gamma(alpha_n + 1.5))) * (1 + alpha_n)

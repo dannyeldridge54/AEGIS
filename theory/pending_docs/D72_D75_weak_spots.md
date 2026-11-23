@@ -22467,3 +22467,17 @@ Verdict: the engine does NOT yet transfer to compact high-field designs. Two sep
 confinement, SPARC below its L-H threshold at the solved point); (2) missing profile data (density peaking). Next: published SPARC/ARC
 profiles (n0/<n>, T0/<T>) as INPUTS before any further claim; JET DTE2 (measured, not a design) as the next held-out.
 D2200a: time-stamp correction: D2200 was written ~12:55 CT (PC clock 18:52 UTC), not 13:15.
+
+## D2201 (FUSION, Prometheus cycle 5, 23 Nov 2026 ~13:20 CT) — PROM-7: published profile peaking as inputs (SPARC, ARC)
+Lock PREREG_PROM7_PROFILES; 20 hints (tools/fusion/hints/cycle5.json). Key hint H11: ARC's 525 MW is a PRESCRIBED-profile result (its 0-D
+scoping did not use confinement; H factors computed afterwards), so the fair ARC test is P_fus at its published profiles.
+- Locked run: all goals PASS (SPARC P1 153, ARC P1 471, SPARC power balance 125 MW / 7.18 keV / Q 10.0, ARC implied H98 1.86 vs 1.8).
+- R90 referee: the SPARC power-balance pass rested on Z_eff 1.32 (Be proxy) vs published 1.5; P1 is near-unfalsifiable once both
+  exponents match the published peaking (relabelled: consistency check). DEV-1: SPARC's own mix (3He 5% + lumped Z=9) meets f_DT 0.85 AND
+  Z_eff 1.50 exactly at zero ash -> composition() now takes extra species. DEV-2: ARC T_ped 4 keV (H13).
+- Rerun (final): P1 SPARC 131 MW (-7%), ARC 480 MW (-9%) [consistency]; P2 SPARC power balance 96 MW (-31%), <T> 6.85 keV: FAIL;
+  P3 ARC implied H98 1.86 (published 1.8) - consistent, and ARC's tau_E 0.64 s confirmed inconsistent with its own H98 (needs 1.08 s).
+  ITER-400 held-out unchanged.
+Verdict: reactivity, composition and profile integration transfer to compact high-field designs (within ~10% at published profiles);
+the self-solved SPARC point is still ~30% low once its published Z_eff is honoured. Open: (1) helium ash - our self-consistent ash
+(tau_He*/tau_E = 5) dilutes on top of the published f_DT 0.85, while SPARC POPCON's ash treatment is not stated; (2) JET DTE2 (measured) next.
