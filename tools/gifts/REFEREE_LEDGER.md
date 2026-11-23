@@ -30,3 +30,8 @@ the claims; the builder fixes only through a DEVIATIONS note written before any 
 ## Next in the rotation (older toolkits, one per loop tick)
 Hyperion (astro / BBN / neutron stars) -> CERN+1 (LHC toolkit) -> Lattice Lab -> Janus (astro, lt) -> SERAPIS calc -> chem -> golden.
 Each gets: lock a short referee charge, one independent referee round, DEVIATIONS for any fix, rerun its CI tests, record here.
+
+## CM-IRIS (animated chart generator), 2026-11-23
+Run 1 as locked: I2/I3 pass, I1 fail (LTTB 47.8 px on noisy data), I4 fail (relative metric near zero) -> FAILED AS LOCKED.
+Rerun after DEVIATIONS (M4 decimation; DEV-2 range-normalised I4, post-hoc label): I1 max 0.03 px, I2 0 px differ,
+I3 prep 25 ms / frame 0.39 ms (5x20k pts), I4 0 -> PASS under deviations. Referee round: pending.
