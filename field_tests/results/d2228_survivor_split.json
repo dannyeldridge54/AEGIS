@@ -1,0 +1,14 @@
+{
+ "control_published": 6.0,
+ "n": 2000,
+ "n_nonpositive_volume": 0,
+ "distinct_R": [
+  [
+   2.0,
+   2000
+  ]
+ ],
+ "n_tree_unified": 0,
+ "n_needs_thresholds": 2000,
+ "reading": "candidates exist for the N=2 Delta b derivation"
+}

@@ -22761,3 +22761,13 @@ D2226 said the Bloom target improves by ~4.7 "even charging two chosen integers"
 (clean), but each pair's own M12 (7.8e15-2.0e16 GeV) is not fed into the ring (proton mark 16.0 for all) - the proton bound acted only as
 the D2225 filter, so D2226 is not a full ring test of the pairs. Verdict unchanged in kind and now stated plainly: CONDITIONAL, no evidential
 gain until (Db32, Db12) and the T/U identification are DERIVED; the official map stays 27/6/4.
+
+## D2228 (UFE DERIVATION front of the forces ring, 23 Nov 2026) — all 2000 stored Z6-II survivors have tree alpha_3/alpha_2 = 2 (published model 6)
+Locked PREREG_D2228_SURVIVOR_SPLIT; theory/tests/d2228_survivor_split.py (D2170 formula, rho 1/2). Control: published model 6.0 (reproduced).
+All 2000 stored survivors: R = V_b/V_a = 2.0 exactly (one value; the sample is relabelling-heavy, D2152). 0 tree-unified (|ln(R/1.02)| <
+ln 1.15); all 2000 in the lock's loose "needs thresholds" band (< ln 3). What that band hides: R = 2 at M_s means 1/alpha_3 ~ 12 vs 1/alpha_2
+~ 24, a gap of ~12 in alpha^-1. The tau = i threshold (D2225) gives ~0.084 per Db unit -> irrelevant at this size; even the 4-cycle-sized
+modulus (1.44 per unit) would need Db ~ 8. So the reading by the lock ("candidates exist") is formally true but physically the stored sample
+CANNOT host the tau = i route; and none has a massless hypercharge (D2167). The UFE derivation therefore needs a NEW scan with two filters
+up front: tree split |ln(R/1.02)| < ln 1.15 and massless U(1)_Y; only on such a survivor does the N=2 Delta b (tori 2 and 3 of Z6') decide
+alpha_s. Status: forces ring OUT (official); tau = i CONDITIONAL; brane derivation BLOCKED on the scan.
