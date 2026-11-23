@@ -13,3 +13,6 @@ The first run crashed inside SLSQP: a trial step took a log dial to exp(-huge) =
 
 ## DEV-3 (R69-3, written before running): JOINT readout added
 For split off and split on: maximise t subject to margin_i(z) >= t for every node a dial can move (nodes whose fingerprint row is nonzero), all smooth dials within |z| <= 3, SLSQP, 5 starts. Report t*, which nodes are >= 0 at the joint optimum, which got WORSE than at the derived dials (including nodes that were already failing), and the fits spent. Per-node results stay as they are; the joint readout is the one to use.
+
+## DEV-4 (written before running): joint readout redesigned (D2168b)
+Hard constraints: every node that holds at the derived dials stays >= 0 (walls included). Excluded: nodes shown NOT CLOSABLE BY DIALS (L4, L9, L10 H0). Objective: maximise the minimum margin over the remaining failing nodes (wino, alpha_s, leptogenesis); report which of them reach >= 0 together, split off and split on (split on handled by fixing alpha_s to its split value, since the step makes it constant).

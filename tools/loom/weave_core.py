@@ -90,7 +90,29 @@ for split_on in (False, True):
         holding=[names[k] for k in range(len(names)) if v[k] >= -1e-6], failing={names[k]: round(float(v[k]), 4) for k in range(len(names)) if v[k] < -1e-6},
         worse_than_start={names[k]: [round(float(m0[k]), 4), round(float(v[k]), 4)] for k in range(len(names)) if v[k] < m0[k] - 0.05},
         fits_spent=[k for k in DIALS if (abs(st[k]/D[k] - 1) > 0.01 if k in LOG else abs(st[k] - D[k]) > 1e-9)])
-res = dict(joint=joint, dials=DIALS, nodes={n: round(float(m0[i]), 4) for i, n in enumerate(names)}, n_nodes=len(names), n_holding=len(hold),
+closable = [names.index(n) for n, v in opt.items() if v['verdict'] != 'NOT CLOSABLE BY DIALS']   # DEV-4
+joint2 = {}
+for split_on in (False, True):
+    targets = [k for k in closable if not (split_on and names[k] == 'L7.alpha_s')]
+    def fz(w, split_on=split_on):
+        z = np.zeros(len(DIALS)); z[SMOOTH] = w[:-1]
+        if split_on: z[DIALS.index('split')] = 1e-3
+        return z
+    cons = [{'type': 'ineq', 'fun': (lambda w, k=k: vec(fz(w))[k])} for k in hold] + [{'type': 'ineq', 'fun': (lambda w, k=k: vec(fz(w))[k] - w[-1])} for k in targets]
+    rng = np.random.default_rng(11); best = None
+    for s_ in range(6):
+        w0 = np.append(rng.normal(0, 0.3, len(SMOOTH)) if s_ else np.zeros(len(SMOOTH)), -3.0)
+        r = minimize(lambda w: -w[-1], w0, method='SLSQP', constraints=cons, bounds=[(-3, 3)]*len(SMOOTH) + [(-50, 50)], options={'maxiter': 500, 'ftol': 1e-10})
+        if not r.success: continue
+        z = fz(r.x); z[np.abs(z) < 1e-6] = 0.0; v = vec(z)
+        if all(v[k] >= -1e-6 for k in hold) and (best is None or -r.fun > best[0] + 1e-9): best = (-r.fun, z, v)
+    key = 'split_on' if split_on else 'split_off'
+    if best is None: joint2[key] = 'no feasible point'; continue
+    t, z, v = best; st = to_state(z)
+    joint2[key] = dict(t_star=round(float(t), 4), move={k: round(float(z[j]), 4) for j, k in enumerate(DIALS) if abs(z[j]) > 1e-4},
+        targets={names[k]: round(float(v[k]), 4) for k in targets}, closed_together=[names[k] for k in targets if v[k] >= -1e-6] + (['L7.alpha_s (split step)'] if split_on else []),
+        fits_spent=[k for k in DIALS if (abs(st[k]/D[k] - 1) > 0.01 if k in LOG else abs(st[k] - D[k]) > 1e-9)])
+res = dict(joint_v2=joint2, joint=joint, dials=DIALS, nodes={n: round(float(m0[i]), 4) for i, n in enumerate(names)}, n_nodes=len(names), n_holding=len(hold),
            fingerprint={n: {DIALS[j]: round(float(J[i, j]), 4) for j in range(len(DIALS)) if abs(J[i, j]) > 1e-6} for i, n in enumerate(names)},
            lenses=dict(rank=int(lz.shape[1]) if lz is not None else 0, rank_column_normalised=int(lens(Jn).shape[1])),
            singular_values=[round(float(x), 4) for x in np.linalg.svd(J, compute_uv=False)], singular_values_normalised=[round(float(x), 4) for x in np.linalg.svd(Jn, compute_uv=False)],
@@ -98,4 +120,4 @@ res = dict(joint=joint, dials=DIALS, nodes={n: round(float(m0[i]), 4) for i, n i
 json.dump(res, open(os.path.join(HERE, '..', '..', 'field_tests', 'results', 'd2168_weave_core.json'), 'w'), indent=1, default=str)
 print('nodes', res['n_nodes'], 'holding', res['n_holding'], '| singular values', res['singular_values'])
 for n, v in opt.items(): print(n, v)
-print(json.dumps(joint, indent=1)); print('fingerprint %.3g ms total %.2fs | lens rank %s' % (t_fp*1000, res['seconds_total'], res['lenses']))
+print(json.dumps(joint2, indent=1)); print('fingerprint %.3g ms total %.2fs | lens rank %s' % (t_fp*1000, res['seconds_total'], res['lenses']))
