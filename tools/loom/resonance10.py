@@ -66,7 +66,7 @@ def fits_spent(s):
     return [x for x in ('u', 'MN', 'm32', 'TR') if abs(s[x] / D[x] - 1) > 0.01] + (['split'] if abs(s['split']) > 1e-9 else [])
 
 D['dNeff'] = 0.0
-H0_BASE = 67.79; S_H0 = statistics.median([5.0, 6.2, 7.0])
+H0_BASE = statistics.median([67.43, 67.63, 67.42])   # addendum R36-4; S_H0 = statistics.median([5.0, 6.2, 7.0])
 _base_margins = margins
 VAR = sys.argv[1] if len(sys.argv) > 1 else 'VC'
 def margins(k):
@@ -81,7 +81,6 @@ def margins(k):
         m[10]['negspace_alpha_null'] = math.log(1e-6/1e-9)
     if VAR == 'VC':
         m[8] = dict(m[8], spine_BBN_dNeff=math.log(0.3/max(dn, 1e-6)))
-        m[10]['spine_PS_floor'] = math.log(max(dn, 1e-9)/0.11)
     m['H0'] = H0
     return m
 KNOBS_OF[10] = ['dNeff'] if VAR != 'V0' else []
@@ -118,4 +117,10 @@ for breath in (1, 2, 3):
         if frozen: prev_locked = [L for L in locked if L <= 9]
         print(VAR, breath, phase, 'locked', locked, 'H0', round(margins(state)['H0'], 2), 'dNeff', round(state['dNeff'], 4),
               'L10', lin(state, 10) if top == 10 else '-', 'unbal', inner_unlocked, flush=True)
+import math as _m
+out['FL_fluid_reading'] = dict(H0=68.75, margin_SH0ES=2 - (73.04 - 68.75)/_m.hypot(1.04, 0.92), source='WZDR, P-ACT-LBS, no SH0ES (2512.19633)')
+out['FS_needed_dNeff_for_margin0'] = (73.04 - 2*1.04 - H0_BASE)/S_H0
+out['PS_window_side_test'] = {k: (v < 0.14) for k, v in dict(vectors=0.11, with_fermions=0.50, all_massless=0.76).items()}
+out['CCHP_second_reading_at_final'] = 2 - abs(margins(state)['H0'] - 69.96)/1.53
+print('FL fluid margin', round(out['FL_fluid_reading']['margin_SH0ES'], 3), 'FS needs dNeff >=', round(out['FS_needed_dNeff_for_margin0'], 3), 'PS window', out['PS_window_side_test'], 'CCHP margin', round(out['CCHP_second_reading_at_final'], 3))
 json.dump(out, open('field_tests/results/d2136_resonance10_%s.json' % VAR, 'w'), indent=1, default=str)

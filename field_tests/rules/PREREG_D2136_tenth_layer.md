@@ -54,3 +54,33 @@ A layer counts only if it locks on the exhales and no previously locked inner la
 - **The PS-floor test** reports whether a window exists: 0.11 ≤ ΔN_eff < 0.14.
 
 This is a **deterministic consistency map, not evidence** (D1948). No reruns to chase results.
+
+## ADDENDUM (referee R36-1…R36-4), written before any run; no output exists yet
+1. **R36-4: baseline H0.** Newest data only: the median of three independent b = 0 Weave fits on DES-Dovekie and Pantheon+:
+   - D2134 Dovekie: 67.43
+   - D2134 Pantheon+: 67.63
+   - D2133 referee Dovekie: 67.42
+
+   That gives **H0_BASE = 67.43** (median). It replaces 67.79, which included the superseded DES-Y5 fit.
+2. **R36-1: two dark-radiation readings.**
+   - **(FS) free-streaming:** the linear map H0 = H0_BASE + s·ΔN_eff with s = median(5.0, 6.2, 7.0) [E]. The negative-space bound is ΔN_eff < 0.14 (95%, ACT DR6 P-ACT free-streaming, as quoted in 2512.19633, which cites the ACT DR6 extended-models paper).
+   - **(FL) fluid/self-interacting:** the PS hidden radiation is self-interacting gauge bosons. Its reading is taken directly from a published fit, not from our linear map: the stepped fluid model WZDR on P-ACT-LBS without SH0ES gives **H0 = 68.75 +0.92/−0.71** (2512.19633).
+     - Margin_FL = 2 − (73.04 − 68.75)/hypot(1.04, 0.92), computed in code and reported alongside the FS run.
+     - For the fluid case the negative-space shell is the data fit itself, which already includes the CMB penalty.
+3. **R36-2: the PS floor is removed from the spine.** It belongs to the type IIA seed model, not to UFE v4, and it is conditional. It is reported only as a side test: does a window 0.11 ≤ ΔN_eff < 0.14 exist?
+   - vectors only: 0.11
+   - with fermions: 0.50
+   - all massless states: 0.76
+
+   **The spine** now carries ΔN_eff against the ACT bound plus the BBN bound. The BBN bound is redundant and is kept for completeness; it is noted as never binding.
+4. **R36-3: citations and the expected outcome.**
+   - **SH0ES:** 73.04 ± 1.04 (Riess+2022, as quoted in 2512.19633).
+   - **CCHP:** 69.96 ± 1.53 (Freedman+2024, stat and sys in quadrature).
+   - **Expected outcome (pre-registered):** reaching margin ≥ 0 needs ΔN_eff ≳ 0.5 (FS). Expected verdict: **"does not solve"**.
+   - **Referee's knob audit:**
+     - u_i lowers H0;
+     - b is not adopted and moves H0 by ≲ +0.4;
+     - α or m_e at recombination is effectively zero (ζ_α ≈ 4e-10);
+     - curvature is 0.
+
+     No Weave-native knob reaches 73 without moving a scored item. The run is the map that shows this.
