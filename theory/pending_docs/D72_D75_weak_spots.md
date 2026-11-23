@@ -21896,3 +21896,18 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
   - the fractional-cycle formula over the Z₂ fixed points on T₁ × T₃;
   - an SM example (U(3) × U(2) × U(1) × U(1) × hidden U(2), ϱ = 1/4).
 - **Blocker:** the builder needs the paper's exact tables. These are Table 2 (fixed-point traversal), Table 5 (exceptional images), Eq. (2.8) (exceptional tadpoles) and Appendix D.1 (the example's wrapping numbers). The summariser cannot reproduce them verbatim. Downloading the PDF needs Danny's OK.
+
+## D2147 (CENTRE, B2 step 2: positive control **PASS** on the first run). The T⁶/Z₆′ builder (the Weave's own Z6-II twist) reproduces Gmeiner–Honecker's published Standard Model (2026-11-22 ~21:30 CT)
+- **Source.** The arXiv TeX source of 0708.2285 (Danny's OK; tar SHA-256 631a85bb…). The transcription rules were locked first (PREREG_D2146 addendum 1).
+- **Code.** tools/seed/z6p.py (builder: lattice ABa, fractional cycles, intersection form, ΩR images, Π_O6, tadpoles, chirality) and tools/seed/z6p_control.py. Result: tools/seed/z6p_control.json.
+- **Result.** The published SM (U(3) × U(2) × U(1)_Y × U(1)², with a hidden U(1); ABa, ϱ = 1/2):
+  - **all 12 tadpole components vanish exactly** (bulk and Z₂-exceptional);
+  - **all 26 published chiral numbers match.** These include 3 quark doublets (a·b′ = 3), the right-handed quarks (a·c = a·c′ = −3), b·c = b·c′ = −9, b·d = 6, b·d′ = 3, and c·d = −3, c·d′ = 3, with every Anti/Sym entry 0.
+
+  No sign fix was needed.
+- **Meaning for N16.** A tadpole-free, three-family, Standard-Model-like brane configuration exists on the Weave's own Z6-II geometry, and our builder reproduces it exactly. The tadpole FAIL (46 against 2) belongs to the |M| = 9 *flux* realisation, not to the geometry.
+- **Not yet done** (the cost clause of PREREG_D2146 still applies):
+  - the scan for models that also pass the hidden-sector ΔN_eff pin (this example has a hidden U(1) and many non-chiral states), the K-theory probes and the GS rank;
+  - re-deriving the scored flavour, proton and r items for the chosen model.
+
+  **N16 status: from FAIL to "B2 viable, cost pending".**
