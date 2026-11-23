@@ -1,0 +1,17 @@
+{"cycle": 2, "target": "tau_E 15% low at 500 MW (P_loss definition); P_LH 97 MW vs ITER 51 MW; synchrotron 4 vs 8 MW; line radiation still an input",
+ "hints_found": 13, "searches": 9, "note": "20 requested; 13 usable hints found this cycle; misses logged",
+ "hints": [
+ {"id": 1, "hint": "P_LH isotope dependence ~ 1/m_eff (m_eff = 1 for D); D-T (A 2.5) -> factor 2/2.5 on Martin 2008", "src": "MPG P5.162 (ICRH H/D threshold study)", "act": true},
+ {"id": 2, "hint": "Polevoi (ITC-12) transport runs, ITER 400 MW: P_rad 43-47 MW, P_loss/P_LH 1.8, tau_E 3.71-3.73 s, W_th 320-327 MJ, f_He 3.1-3.2%, <Te> 8.8-8.9, <Ti> 8.0-8.3", "src": "nifs.ac.jp/itc/itc12/Polevoi.pdf", "act": true},
+ {"id": 3, "hint": "Good H-mode confinement assumed for P_loss > 1.3 P_LH", "src": "Polevoi ITC-12", "act": true},
+ {"id": 4, "hint": "ITER P_loss is the power across the pedestal top (87 MW at 400 MW)", "src": "ITER FDR PDD 4", "act": true},
+ {"id": 5, "hint": "Do not refit C3/rho_core; add an ITER-convention diagnostic (P_heat - radiation inside the separatrix) beside Lux", "src": "referee R84", "act": true},
+ {"id": 6, "hint": "Updated ITPA20 scaling: size dependence slightly stronger than linear (IPB98 ~quadratic); similar ITER predictions", "src": "IAEA event 251 contribution 20700 (Hall); arXiv:2604.22728", "act": false},
+ {"id": 7, "hint": "ITPA20 and IPB98 give the same SPARC tau_E (0.77 s); all-high-Z subset 0.52 s (H98 0.69) — wall material matters", "src": "arXiv:2604.22728 Table II", "act": false},
+ {"id": 8, "hint": "Tolerable impurity: DEMO c_Ar,max 5.2e-3, c_W,max 1.9e-4 (rho* = 5, Q_net 42.5)", "src": "Puetterich et al. 2019 (MPG PuRe)", "act": false},
+ {"id": 9, "hint": "Cooling factors L_z for H..Bi come from ADAS; no closed-form fit in Puetterich 2019", "src": "Puetterich et al. 2019", "act": false},
+ {"id": 10, "hint": "CR cooling data for H, He, Ne, Ar as B-spline surfaces (coefficients on request only)", "src": "arXiv:2602.21571", "act": false},
+ {"id": 11, "hint": "Mixed-isotope L-H thresholds are non-linear in H/(H+D)", "src": "MPG P5.162", "act": false},
+ {"id": 12, "hint": "B2-Eirene boundary variant: f_He up to 4.7%, tau_He*/tau_E 6.7 — ash is boundary sensitive", "src": "Polevoi ITC-12", "act": false},
+ {"id": 13, "hint": "PROCESS: synchrotron always counted as core radiation", "src": "UKAEA PROCESS docs", "act": false}],
+ "misses": ["Mavrin 2018 coronal L_z polynomial fits not reachable", "ITPA20 coefficients not in the pages read", "ITER synchrotron 8 MW reflectivity assumption not found"]}
