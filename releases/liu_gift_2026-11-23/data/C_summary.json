@@ -1,0 +1,22 @@
+{
+ "6": {
+  "rho0_max_after_57ms": 0.5136682955321002,
+  "per_atom_fidelity_max_after_57ms": 0.8682340694227111
+ },
+ "10": {
+  "rho0_max_after_57ms": 0.4958163994325418,
+  "per_atom_fidelity_max_after_57ms": 0.8760802639103951
+ },
+ "20": {
+  "rho0_max_after_57ms": 0.42371897863502833,
+  "per_atom_fidelity_max_after_57ms": 0.9023187155086109
+ },
+ "40": {
+  "rho0_max_after_57ms": 0.4057797789352987,
+  "per_atom_fidelity_max_after_57ms": 0.923802709719729
+ },
+ "80": {
+  "rho0_max_after_57ms": 0.4588669290192744,
+  "per_atom_fidelity_max_after_57ms": 0.9540291405510605
+ }
+}

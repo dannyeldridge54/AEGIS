@@ -1,0 +1,5 @@
+N_atoms_per_site,p_perp_over_c2,rho0_init,M_init,theta_init,eta_init,best_return_F,t_rev_over_c2_inverse,t_rev_ms_at_c2_35Hz,status
+6,0.339,0.4593,0,pi,0.0,0.5273,4.75,135.7,local optimum (prediction)
+10,0.3125,0.5393,0,pi,0.0,0.287,7.26,207.4,local optimum (prediction)
+16,,,,,,,,,no revival inside 300 ms window
+24,,,,,,,,,no revival inside 300 ms window
