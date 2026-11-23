@@ -8,3 +8,8 @@ The first run crashed inside SLSQP: a trial step took a log dial to exp(-huge) =
 3. split is a STEP dial: removed from the smooth optimiser; each failing node is optimised twice, split off and split on (any nonzero split), and reported as CLOSABLE / CLOSABLE ONLY WITH THE SPLIT STEP / NOT CLOSABLE.
 4. The dNeff >= 0 wall (100 min(dn, 0)) is added as a fixed node.
 5. Timing with time.perf_counter, reported in ms.
+
+## DEV-2 addendum (R69-1, recorded): the code also zeroes the dNeff slope of the L10.dNeff_nonneg wall row (kink at dn = 0; slope on the allowed side is 0). With that row's slope kept, the raw lens rank is 4; the headline rank is the column-normalised one (5).
+
+## DEV-3 (R69-3, written before running): JOINT readout added
+For split off and split on: maximise t subject to margin_i(z) >= t for every node a dial can move (nodes whose fingerprint row is nonzero), all smooth dials within |z| <= 3, SLSQP, 5 starts. Report t*, which nodes are >= 0 at the joint optimum, which got WORSE than at the derived dials (including nodes that were already failing), and the fits spent. Per-node results stay as they are; the joint readout is the one to use.
