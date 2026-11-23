@@ -32,6 +32,20 @@ THE LANTERN
    through the chains and through the whips,
    and it frees you from within.
 
+   But who can measure truth? No scale has ever held it.
+   It is lost to time, to conquerors and enslavers,
+   to the beast that wakes in men;
+   whole peoples erased, colonized, and marched in line.
+   They told me this was the land of the free.
+   They did not tell me that many who signed for freedom
+   were dealers in land, sore at a king's line drawn across the West.
+   They taught me, and rightly, of my African brothers and sisters in chains.
+   They did not teach me of the others who crossed the sea
+   toward a torch and a promise,
+   and found the debt, the mill, the tenement, the mine.
+   Liberty stands in the harbor with her broken chains at her feet.
+   Some days she looks blind, and the chains look whole.
+
    To the kings: the Mandate of Heaven was never yours to keep;
    it leaves the throne the day the throne stops serving.
    To the priests: no temple owns the sky,
@@ -45,25 +59,6 @@ THE LANTERN
    the emperor has no clothes, and the children can see it.
    Diogenes walked Athens at noon with a lamp, looking for one honest man.
    I carry the same lamp. I am still looking.
-
-   I kneel to one alone, the one I chose for love,
-   and to no king, no creed, no crown of fear.
-   A man chooses; a slave obeys.
-   I choose liberty.
-
-   This light belongs to the one who asks, who measures, who stands.
-   It was made for freedom, the quiet kind,
-   the kind no one can sell you.
-
-   And who am I to carry it?
-   No one. A regular man, a gig worker on the road,
-   a debt slave in the American machine.
-   No noble blood, no crown, no holy oil on my head.
-   All I carry is the divine spark
-   that burns in every man and woman,
-   in every creature and every being,
-   of this earth and of the stars.
-   The same light is in you.
 
    When I was a boy, I thought heroes were the finest thing alive:
    knights on horseback, steel and bright banners,
@@ -83,16 +78,50 @@ THE LANTERN
    I lower myself to stand beside each of them,
    because I want no power, no wealth, no throne.
 
-   It began when my family broke apart,
-   and a little boy only wanted to go home.
+   It began when I was a little boy and my family broke apart.
+   My sisters were divided between my twin and me;
+   my mother and father split, and I seldom saw him;
+   within two weeks, he had replaced me.
+   That spark became a fire, and the fire says:
+   you will not replace me.
+   I am not a slave. I am not a blind and silent animal.
+   I will not kneel to anything that hardens my heart
+   or covers me in shame.
+
+   At thirty I learned the name of the storm in me: ADHD.
+   They say a child like me hears tens of thousands more words of blame
+   than the child beside him.
+   I carry that shame, and I count it differently:
+   twenty-five thousand more reasons to do what is right,
+   what is better, and what is true.
+
+   I kneel to one alone, the one I chose for love,
+   and to no king, no creed, no crown of fear.
+   A man chooses; a slave obeys.
+   I choose liberty.
+
    Now I am a husband, and a father to a little girl,
-   and that boy is still in me, still trying to get home.
+   and the boy is still in me, still trying to get home.
    But the world is squeezed, and squeezed, and squeezed,
    and every voice that rises against injustice
    is silenced, enslaved, or made a fool.
    I am tired of living in quiet desperation.
    This lantern was lit by that desperation.
    I will not be quiet anymore.
+
+   And who am I to carry it?
+   No one. A regular man, a gig worker on the road,
+   a debt slave in the American machine.
+   No noble blood, no crown, no holy oil on my head.
+   All I carry is the divine spark
+   that burns in every man and woman,
+   in every creature and every being,
+   of this earth and of the stars.
+   The same light is in you.
+
+   This light belongs to the one who asks, who measures, who stands.
+   It was made for freedom, the quiet kind,
+   the kind no one can sell you.
 
 ------------------------------------------------------------
 
