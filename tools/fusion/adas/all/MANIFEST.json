@@ -1,0 +1,434 @@
+{
+ "h": {
+  "scd": {
+   "file": "scd89_h.dat",
+   "sha256": "d1aad00e32d384cf"
+  },
+  "acd": {
+   "file": "acd89_h.dat",
+   "sha256": "794b4d4c84faaeb8"
+  },
+  "plt": {
+   "file": "plt89_h.dat",
+   "sha256": "e0b561100d6b1f95"
+  },
+  "prb": {
+   "file": "prb89_h.dat",
+   "sha256": "181d4cd9b88153b2"
+  }
+ },
+ "he": {
+  "scd": {
+   "file": "scd89_he.dat",
+   "sha256": "9b604a293f769a48"
+  },
+  "acd": {
+   "file": "acd89_he.dat",
+   "sha256": "aa76cc6eb81521fd"
+  },
+  "plt": {
+   "file": "plt89_he.dat",
+   "sha256": "e87e4ed568026f2c"
+  },
+  "prb": {
+   "file": "prb89_he.dat",
+   "sha256": "40a1f22d9d6dc6f2"
+  }
+ },
+ "li": {
+  "scd": {
+   "file": "scd89_li.dat",
+   "sha256": "c11303e6f2a7504f"
+  },
+  "acd": {
+   "file": "acd89_li.dat",
+   "sha256": "a4e14f30a55c8442"
+  },
+  "plt": {
+   "file": "plt89_li.dat",
+   "sha256": "bced2c8d0d5cb15c"
+  },
+  "prb": {
+   "file": "prb89_li.dat",
+   "sha256": "3f9039f120bd9254"
+  }
+ },
+ "be": {
+  "scd": {
+   "file": "scd89_be.dat",
+   "sha256": "8c87ac5d9b2c4859"
+  },
+  "acd": {
+   "file": "acd89_be.dat",
+   "sha256": "b90b34770cfc975e"
+  },
+  "plt": {
+   "file": "plt89_be.dat",
+   "sha256": "f7cebd680bccb08b"
+  },
+  "prb": {
+   "file": "prb89_be.dat",
+   "sha256": "3cb8c1d29610cce5"
+  }
+ },
+ "b": {
+  "scd": {
+   "file": "scd89_b.dat",
+   "sha256": "424b12b47eeca9a2"
+  },
+  "acd": {
+   "file": "acd89_b.dat",
+   "sha256": "9ce30789892415e2"
+  },
+  "plt": {
+   "file": "plt89_b.dat",
+   "sha256": "d1d6576c5e82a6b7"
+  },
+  "prb": {
+   "file": "prb89_b.dat",
+   "sha256": "5d6027183367ca5c"
+  }
+ },
+ "c": {
+  "scd": {
+   "file": "scd89_c.dat",
+   "sha256": "830577fd9383361e"
+  },
+  "acd": {
+   "file": "acd89_c.dat",
+   "sha256": "9dc84cad6c367d8f"
+  },
+  "plt": {
+   "file": "plt89_c.dat",
+   "sha256": "c52c269f9a473c5e"
+  },
+  "prb": {
+   "file": "prb89_c.dat",
+   "sha256": "68743752c3a95d98"
+  }
+ },
+ "n": {
+  "scd": {
+   "file": "scd89_n.dat",
+   "sha256": "a15b68cea55ed0c4"
+  },
+  "acd": {
+   "file": "acd89_n.dat",
+   "sha256": "f4bdd7d4cb3ffe14"
+  },
+  "plt": {
+   "file": "plt89_n.dat",
+   "sha256": "8c7559a1c51a1384"
+  },
+  "prb": {
+   "file": "prb89_n.dat",
+   "sha256": "b95fc6a1ddf60364"
+  }
+ },
+ "o": {
+  "scd": {
+   "file": "scd89_o.dat",
+   "sha256": "e82d034c52bb385b"
+  },
+  "acd": {
+   "file": "acd89_o.dat",
+   "sha256": "9361d3c51561a581"
+  },
+  "plt": {
+   "file": "plt89_o.dat",
+   "sha256": "5a5c6b116658485c"
+  },
+  "prb": {
+   "file": "prb89_o.dat",
+   "sha256": "63fa4f81c75fe232"
+  }
+ },
+ "f": {
+  "scd": {
+   "file": "scd89_f.dat",
+   "sha256": "f4319f3c884e6476"
+  },
+  "acd": {
+   "file": "acd89_f.dat",
+   "sha256": "ba4fa3c2176bbd24"
+  },
+  "plt": {
+   "file": "plt89_f.dat",
+   "sha256": "8798c4fcc8ea9bde"
+  },
+  "prb": {
+   "file": "prb89_f.dat",
+   "sha256": "75f253e33a29d231"
+  }
+ },
+ "ne": {
+  "scd": {
+   "file": "scd89_ne.dat",
+   "sha256": "5d81e0a1277b3c98"
+  },
+  "acd": {
+   "file": "acd89_ne.dat",
+   "sha256": "edf75a189e1fe131"
+  },
+  "plt": {
+   "file": "plt89_ne.dat",
+   "sha256": "ebb7a9ada056c91c"
+  },
+  "prb": {
+   "file": "prb89_ne.dat",
+   "sha256": "5ade467aaa5ab2d2"
+  }
+ },
+ "al": {
+  "scd": {
+   "file": "scd89_al.dat",
+   "sha256": "53a36b6869e0231a"
+  },
+  "acd": {
+   "file": "acd89_al.dat",
+   "sha256": "410eb0b85bc61dfe"
+  },
+  "plt": {
+   "file": "plt89_al.dat",
+   "sha256": "fda5110e8d252c4e"
+  },
+  "prb": {
+   "file": "prb89_al.dat",
+   "sha256": "0c2848d80dac30b5"
+  }
+ },
+ "si": {
+  "scd": {
+   "file": "scd89_si.dat",
+   "sha256": "0777df4fee7791f4"
+  },
+  "acd": {
+   "file": "acd89_si.dat",
+   "sha256": "7b36ff7f1a69502d"
+  },
+  "plt": {
+   "file": "plt89_si.dat",
+   "sha256": "2c055fedee5159f1"
+  },
+  "prb": {
+   "file": "prb89_si.dat",
+   "sha256": "3005ac0d34e6b926"
+  }
+ },
+ "s": {
+  "scd": {
+   "file": "scd89_s.dat",
+   "sha256": "a2e5c65705202b91"
+  },
+  "acd": {
+   "file": "acd89_s.dat",
+   "sha256": "71f7a3bc905425b0"
+  },
+  "plt": {
+   "file": "plt89_s.dat",
+   "sha256": "8559ba46b74d776d"
+  },
+  "prb": {
+   "file": "prb89_s.dat",
+   "sha256": "edc10923065359f0"
+  }
+ },
+ "cl": {
+  "scd": {
+   "file": "scd89_cl.dat",
+   "sha256": "dcac7f146784831c"
+  },
+  "acd": {
+   "file": "acd89_cl.dat",
+   "sha256": "62b0867d974eb141"
+  },
+  "plt": {
+   "file": "plt89_cl.dat",
+   "sha256": "0ecdddc563a7cc7b"
+  },
+  "prb": {
+   "file": "prb89_cl.dat",
+   "sha256": "18c18c3692436890"
+  }
+ },
+ "ar": {
+  "scd": {
+   "file": "scd89_ar.dat",
+   "sha256": "c0e4dc590e515e1c"
+  },
+  "acd": {
+   "file": "acd89_ar.dat",
+   "sha256": "de18843ec936d6d9"
+  },
+  "plt": {
+   "file": "plt89_ar.dat",
+   "sha256": "2ab5c63f32df9f55"
+  },
+  "prb": {
+   "file": "prb89_ar.dat",
+   "sha256": "1f66cc31bc145e14"
+  }
+ },
+ "cr": {
+  "scd": {
+   "file": "scd89_cr.dat",
+   "sha256": "118cf18a95d5f66f"
+  },
+  "acd": {
+   "file": "acd89_cr.dat",
+   "sha256": "859e5d349d94f4dd"
+  },
+  "plt": {
+   "file": "plt89_cr.dat",
+   "sha256": "0b32af300d2b6f91"
+  },
+  "prb": {
+   "file": "prb89_cr.dat",
+   "sha256": "2ee827b78c9f2f3f"
+  }
+ },
+ "fe": {
+  "scd": {
+   "file": "scd89_fe.dat",
+   "sha256": "bd22cc0bf34c21ad"
+  },
+  "acd": {
+   "file": "acd89_fe.dat",
+   "sha256": "20127942abc0cb89"
+  },
+  "plt": {
+   "file": "plt89_fe.dat",
+   "sha256": "4b76d9c0e0c4e9b8"
+  },
+  "prb": {
+   "file": "prb89_fe.dat",
+   "sha256": "eab7f1223c19afbf"
+  }
+ },
+ "ni": {
+  "scd": {
+   "file": "scd89_ni.dat",
+   "sha256": "4d2f1e77e5e4a8d4"
+  },
+  "acd": {
+   "file": "acd89_ni.dat",
+   "sha256": "0014c67a6d2367c5"
+  },
+  "plt": {
+   "file": "plt89_ni.dat",
+   "sha256": "ae9e7613b71d3500"
+  },
+  "prb": {
+   "file": "prb89_ni.dat",
+   "sha256": "fef08ac2d4a8b16f"
+  }
+ },
+ "cu": {
+  "scd": {
+   "file": "scd89_cu.dat",
+   "sha256": "1a8c21e2c330f413"
+  },
+  "acd": {
+   "file": "acd89_cu.dat",
+   "sha256": "6ab1fae05af0a6de"
+  },
+  "plt": {
+   "file": "plt89_cu.dat",
+   "sha256": "57fa4501d765a601"
+  },
+  "prb": {
+   "file": "prb89_cu.dat",
+   "sha256": "4c97394f395a4106"
+  }
+ },
+ "ge": {
+  "scd": {
+   "file": "scd89_ge.dat",
+   "sha256": "297972c3fe7694c4"
+  },
+  "acd": {
+   "file": "acd89_ge.dat",
+   "sha256": "54265fde6ba1e947"
+  },
+  "plt": {
+   "file": "plt89_ge.dat",
+   "sha256": "be41e07ddbfe9ea2"
+  },
+  "prb": {
+   "file": "prb89_ge.dat",
+   "sha256": "3774016a53c92601"
+  }
+ },
+ "kr": {
+  "scd": {
+   "file": "scd89_kr.dat",
+   "sha256": "b4e1c2654ac04675"
+  },
+  "acd": {
+   "file": "acd89_kr.dat",
+   "sha256": "fad0c1904ce1f281"
+  },
+  "plt": {
+   "file": "plt89_kr.dat",
+   "sha256": "f376b33d7888f718"
+  },
+  "prb": {
+   "file": "prb89_kr.dat",
+   "sha256": "fd12ce407771769c"
+  }
+ },
+ "mo": {
+  "scd": {
+   "file": "scd89_mo.dat",
+   "sha256": "f8ad7c4a9c77e6c2"
+  },
+  "acd": {
+   "file": "acd89_mo.dat",
+   "sha256": "5f4863436ce0a166"
+  },
+  "plt": {
+   "file": "plt89_mo.dat",
+   "sha256": "bf9ec1f20d2b5807"
+  },
+  "prb": {
+   "file": "prb89_mo.dat",
+   "sha256": "f8b0dd2ed273a539"
+  }
+ },
+ "xe": {
+  "scd": {
+   "file": "scd89_xe.dat",
+   "sha256": "e1fd007e1c72770d"
+  },
+  "acd": {
+   "file": "acd89_xe.dat",
+   "sha256": "6270a77f6d45e92d"
+  },
+  "plt": {
+   "file": "plt89_xe.dat",
+   "sha256": "df8459ed6b5c07b7"
+  },
+  "prb": {
+   "file": "prb89_xe.dat",
+   "sha256": "a6ca228cb69983a5"
+  }
+ },
+ "w": {
+  "scd": {
+   "file": "scd89_w.dat",
+   "sha256": "de6dd576fc01b2a5"
+  },
+  "acd": {
+   "file": "acd89_w.dat",
+   "sha256": "3e8b91917785803a"
+  },
+  "plt": {
+   "file": "plt89_w.dat",
+   "sha256": "1b88d652a63996f7"
+  },
+  "prb": {
+   "file": "prb89_w.dat",
+   "sha256": "ef88fede4f833640"
+  }
+ }
+}
