@@ -22413,3 +22413,13 @@ Not yet refereed (R86 launched).
   raises P_loss, worsens the ITER match (400 MW held-out now fails). Not accepted; the 27 MW input stays. Reading: most of ITER's line
   radiation must come from the cold edge (non-coronal, transport-enhanced) and/or tungsten, which a coronal core model cannot see.
   Next for this thread: an edge radiation layer (non-coronal enhancement) or a W fraction — both need sources.
+
+## D2197 (DATA PULSES, 23 Nov 2026 14:20 CT) — side pulses beside the fusion goalpost: every element (ADAS) and every nuclide (NUBASE2020)
+Danny 12:04/12:08: pulse out and collect data on all other elements; build a full list; grab as much data as possible.
+- PULSE-ELEMENTS: 24 elements (H ... W), 96 OPEN-ADAS ADF11 files (manifest with sha256; raw files re-fetchable), coronal fractions and
+  line + recombination/bremsstrahlung cooling at 3 densities x 41 temperatures (1 eV-20 keV). 20 OK; 4 FLAGGED by the locked factor-30
+  jump check (He, F, Ne, Cl) — probably stripping cliffs (physical), pending referee R88. 24 CubeMind memory records added.
+- PULSE-NUCLIDES: NUBASE2020 + AME2020 (via pynucastro 3.2.0): 5,823 rows (3,558 ground states, 2,550 with measured masses; 1,841 isomers;
+  253 ground states marked stable). AUDIT: all 38 Chronos half-lives agree with NUBASE2020 within 0.40% (largest: Po-213 +0.40%,
+  Pu-241 -0.27% [Chronos 14.29 y vs 14.329 y], Ga-68 -0.19%, Cs-137 +0.14% [30.08 vs 30.04 y]); fusion-engine masses within 3.3e-10 u.
+  Suggestion (not applied; an engine change needs a D2189 deviation): move Chronos to NUBASE2020 values. 119 CubeMind records (one per element).
