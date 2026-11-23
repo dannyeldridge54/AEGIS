@@ -1,0 +1,79 @@
+{
+ "H1": {
+  "sweeps": 2,
+  "idempotent": true
+ },
+ "H2": {
+  "ns": 0.0,
+  "r": 0.0,
+  "Nstar": 0.0,
+  "DM05": 0.0,
+  "f1": 0.0,
+  "xsec": 0.0,
+  "Yp": 0.0,
+  "DH": 0.0
+ },
+ "H3": {
+  "cold_s": 0.717,
+  "warm_ms": 0.157,
+  "round_s": 2.11
+ },
+ "H4": {
+  "rounds": 1,
+  "log": [
+   {
+    "round": 1,
+    "node": "N2 forces",
+    "why": "zero the alpha_s pull through the m32 lever",
+    "knobs": {
+     "C": 1.25e-06,
+     "T_R": 894000000.0,
+     "s_m32": 0.2756250997120628
+    },
+    "target_before": -21.973636789471033,
+    "target_after": -1169.9096037894965,
+    "lnL_after": -1156.209252819741,
+    "decision": "REJECT"
+   },
+   {
+    "round": 1,
+    "node": "N1 nuclear",
+    "flag": "Hoyle window left: forces node must reduce the alpha_s shift",
+    "decision": "FLAG"
+   },
+   {
+    "round": 1,
+    "node": "N4 inflation",
+    "why": "C that puts n_s on the data",
+    "knobs": {
+     "C": 1.09395e-06,
+     "T_R": 894000000.0,
+     "s_m32": 1.0
+    },
+    "target_before": -21.973636789471033,
+    "target_after": -23.335451549911106,
+    "lnL_after": -9.635100580155704,
+    "decision": "REJECT"
+   }
+  ],
+  "ended_null": true
+ },
+ "H5": {
+  "hoyle_radius": 7.621087225025508,
+  "hoyle_inside": false,
+  "dm_p": "not wired (DEV-1)",
+  "Yp": 0.2471871417270726,
+  "DH": 2.4482576081094778e-05,
+  "pull_Yp": 0.7284368456149976,
+  "pull_DH": -2.500029607061328,
+  "note": "restates the forces alpha_s tension; not independent (DEV-3)"
+ },
+ "verdict": {
+  "H1": true,
+  "H2": true,
+  "H3": true,
+  "H4": true,
+  "H5": true,
+  "PASS": true
+ }
+}

@@ -22318,3 +22318,20 @@ Danny 10:34: one program for the unified field's layers, rings and where they se
 - R4 fit: fitting C gives C = 1.0955e-6, n_s = 0.97282 (pull +0.01), lnL −9.796 → −9.635, but the extra knob costs 1.52 in BIC:
   target −21.97 → −23.34. Verdict (Bloom rule): NULL, does not buy its penalty. The adopted point stays.
 - The one big pull is unchanged: α_s at −4.2σ (ring 2). Not refereed.
+
+## D2192 (CENTRE, TOOL, 23 Nov 2026 11:05 CT) — The Hexagon v1: centre + six node engines on one bus, one loop (PREREG_HEX1, PASS)
+Danny 10:44/10:45: web it out, an engine on every path, nuclear first-class, a hexagon whose six points each derive and feed back for
+postulations, "a supercomputer I can put on my laptop". tools/rings/hex.py (built on the Ring Engine D2191 and AEGIS Core).
+- Nodes: N1 nuclear (Hoyle window, BBN Yp and D/H, Chronos attached), N2 forces (AMSB wino/gluino, α_s lever, HL-LHC wino cross-section),
+  N3 neutrinos/leptons (TM1, m_bb, Σmν, Koide), N4 inflation (exact SERAPIS), N5 dark sector (leptogenesis, wino relic), N6 late universe
+  (Janus-LT distances/growth). Centre: vacuum point, knobs, the Bloom score, the judge.
+- H1 the bus settles in 2 sweeps and is idempotent. H2 every LIVE value equals its standalone tool exactly (8 checks, all 0.0).
+  H3 cold pass 0.72 s, warm 0.16 ms, full postulate round 2.1 s. H4 round 1: the forces postulate (s_m32 = 0.27 to zero the α_s pull)
+  wrecks the wino band (target −21.97 → −1169.9, rejected); the inflation postulate (C → n_s on data) does not pay its knob
+  (−21.97 → −23.34, rejected); NULL after one round. The adopted point is a fixed point of the loop.
+- H5 nuclear: Y_p = 0.24719 (pull +0.73σ vs PDG 0.245 ± 0.003, PRIMAT theory error included); D/H = 2.448e-5 (pull −2.50σ vs PDG
+  2.547 ± 0.025e-5 with theory error; the known BBN deuterium offset at ω_b = 0.02237, not a Weave effect). Hoyle window: the model's
+  α_s shift (−0.0038) taken as real puts the Hoyle state outside the carbon window (radius 7.6); this restates the α_s tension and is
+  not an independent constraint (DEV-3). Proton-mass shift removed (DEV-1: wrong variable). Wino at 0.687 TeV: 17.9 fb at 13.6 TeV,
+  ~5.4e4 produced pairs in 3 ab⁻¹ (production only; no efficiency or disappearing-track acceptance).
+- Not refereed. Next: laptop packaging (one launcher; Core + Hexagon + Ask/Studio/papers; heavy fits queued to the PC).
