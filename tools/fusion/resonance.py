@@ -46,11 +46,11 @@ def xs(path, E, form=None):
         P, S = pen(l, rho); phi = phase(l, rhoh); pik2 = np.pi / k ** 2
         ER = np.asarray(sec['ER']); AJ = np.asarray(sec['AJ']); GN = np.asarray(sec['GN']); GG = np.asarray(sec['GG'])
         # spin groups present
-        Js = sorted(set(np.round(np.abs(AJ), 3)))
+        Js = sorted(set(np.round(AJ, 3)))   # N4 DEV-1: the SIGN of AJ marks the channel spin -> separate, non-interfering groups
         gsum = 0.0
         for J in Js:
-            g = (2 * J + 1) / (2 * (2 * I + 1)); gsum += g
-            sel = np.isclose(np.abs(AJ), J)
+            g = (2 * abs(J) + 1) / (2 * (2 * I + 1)); gsum += g
+            sel = np.isclose(AJ, J)
             er, gn, gg = ER[sel], GN[sel], GG[sel]
             kr = C_K * awri / (awri + 1) * np.sqrt(np.abs(er)); Pr, Sr = pen(l, kr * a_pen)
             if form == 'RM':

@@ -22519,3 +22519,13 @@ Rerun (8 seeds): mean shift 21.4+-0.5 / 34.84+-0.56 / 51.7+-0.5 keV vs Ballabio 
 397.0 / 562.0 / 795.3 keV vs 397.1 / 561.9 / 795.3 (<0.01%); histogram half-max widths 0.5-0.7% lower -> Ballabio widths are moment-based.
 E0 (rest) 14.0284 MeV. Tool: neutron_birth.py. Data access for N3+: ENDF/B-VIII.0 (OpenMC HDF5, 659 nuclides) via
 github.com/openmc-data-storage/ENDF-B-VIII.0-NNDC; raw ENDF tapes (Fe-56, Be-9, Ca-40, U-235, Pb-208...) via njoy/NJOY2016 tests.
+
+## D2205 (NEUTRON LADDER N3+N4, 23 Nov 2026 ~14:20 CT) — nuclear data in hand; resonances rebuilt from their parameters: PASS
+Lock PREREG_N3N4_RESONANCE; hints n3n4.json. Data: ENDF/B-VIII.0 (OpenMC HDF5 from openmc-data-storage; raw tapes from njoy/NJOY2016 tests).
+N3 (DATA): thermal Li-6(n,t) 938.1 b, H-1(n,g) 0.3326, Li-7(n,g) 0.0454, Fe-56(n,g) 2.604, Mn-55(n,g) 13.28 b; 14.1 MeV Be-9(n,2n) 0.484 b,
+Pb-208(n,2n) 2.223 b, Li-7 triton production 0.301 b - all within the locked Atlas tolerances.
+N4 (LIVE, our own SLBW/MLBW/Reich-Moore from ENDF-102 App. D): first completed run R1/R2/R4 PASS, R3 FAIL (my unsourced 336 eV goalpost).
+R94 found a real bug (channel-spin sign of AJ ignored -> 32% error in a Mn-55 interference minimum at 119 keV). Rerun (signed-J grouping):
+Mn-55 RM elastic vs NJOY 0 K over 21,000 points: median 4.1e-7, p95 1.1e-6, max 1.8e-5; Zr-90 MLBW: median 8.5e-6, max 6.3e-4; big Mn-55
+s-wave resonance ER 340.7875 eV, peak 3192.157 b vs 3192.155 b; single-level BW (no interference) misses by 2.4% median (can-fail works).
+Capture formula confirmed below 300 eV (1e-4 vs 294 K); above ~3 keV the difference is Doppler -> N5. Tools: ndata.py, resonance.py.
