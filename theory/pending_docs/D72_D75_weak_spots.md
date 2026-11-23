@@ -21618,3 +21618,23 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
    - With compressed CMB: u_i = 0.148, Δχ² = −2.8.
    - With plik-lite (D2131): u_i = 0.013, Δχ² = +0.13.
 7. **Not claimed: the DESI pull on w0wa.** At b = +0.025 the CPL fit is (−0.92, −0.07), far from DESI's (−0.75, −0.8). The apparent crossing depends on which anchor is used.
+
+## D2136 (CENTRE, the 10th layer: resonance pulsing plus breathing, three shapes; lock PREREG_D2136 + addendum R36-1…4 + DEV-1). **Verdict: DOES NOT SOLVE the Hubble tension. The outer shell wants ΔN_eff ≈ 0.6, and the negative-space shell forbids it.** (2026-11-22 ~19:40 CT)
+- **Method:** tools/loom/resonance10.py. Results in field_tests/results/d2136_resonance10_{V0,VA,VB,VC}.json. Deterministic consistency map, not evidence (D1948).
+- **Baseline H0 = 67.43,** the median of three newest-data b = 0 fits. s = 6.2 [E].
+
+| run | locked layers | ΔN_eff | H0 | SH0ES margin (pull) | what it means |
+|---|---|---|---|---|---|
+| V0 (9 layers) | 1, 2, 5, 6, 7, 8 | 0 | 67.43 | — (5.4σ) | base unchanged (3, 4, 9 TRUST, as D1972) |
+| VA (+ outer data shell) | + **10** | **0.60** | 71.15 | +0.18 (1.8σ) | the shell locks only by spending dark radiation that ACT forbids |
+| VB (+ negative-space shell) | 1, 2, 5, 6, 7, 8 | 0.395 | 69.88 | −1.04 (3.0σ) | **NO LOCK**: the optimizer splits the failure evenly between SH0ES and the ACT bound (both −1.04) |
+| VC (+ spine) | same as VB | 0.395 | 69.88 | −1.04 | the spine adds nothing: the BBN bound never binds (as R36-2 said) |
+
+- **Breathing:**
+  - Inhale and exhale both give the same result, and no inner layer unlocked in any breath, so the inner field stays balanced.
+  - The new rung simply cannot lock with the negative-space shell in place.
+- **Pinned at the ACT bound** (ΔN_eff = 0.14): H0 = 68.30, a pull of 4.6σ. That is a drop of only 0.8σ, below the 1σ "eases" bar. **Not eased.**
+- **Fluid reading** (self-interacting dark radiation, the PS type; WZDR from 2512.19633): H0 = 68.75, margin −1.09 (3.1σ). **Not solved.**
+- **CCHP second reading** (69.96 ± 1.53): the baseline is already only **1.7σ** away, so it passes (margin +0.35 at ΔN_eff = 0). Whether "the tension" exists depends on which distance ladder is used. Against SH0ES it does not close.
+- **PS window side test** (0.11 ≤ ΔN_eff < 0.14): it exists only for the vectors-only case. It is closed once the hidden fermions are included (0.50) or all massless states (0.76).
+- **Reading in Danny's picture:** the outer ring (shape A) reaches for SH0ES. The second ring wrapped around it (shape B, negative space: ACT's "no extra radiation") holds it back, and the two meet halfway, both failing by the same amount. **The negative space is exactly what blocks the extra rung.** A Weave route to 73 needs a lever that ACT's negative space does not see. The referee's audit found none within the Weave: u_i and b move H0 the wrong way or too little, α and m_e are ≈ 0, and curvature is 0.
