@@ -23,3 +23,9 @@ DEV-9/10 (minor): "not included" list extended (tau sneutrino, QCD/gluino correc
   README states: third family only; not yet checked against DEW4SLHA on a real Isajet/SoftSUSY file; examples
   hand-built; the cross-check compares our derivative with the printed closed form, not with his code.
 T2 is rerun after the fixes (JS vs Python, now through the same command-line path).
+
+## Round 2 (R75b) returned NULL on blockers/majors; minors fixed (written before the fix), 08:15 CT
+DEV-11: when a tachyonic field-dependent state is met, the headline is printed as "UNRELIABLE (tachyonic state)".
+DEV-12: Python raises a clear error when YU has no (3,3) entry (JS already did).
+DEV-13: T3 to Baer is quoted only as the mu bound Delta_EW >= 2 mu^2/mZ^2 ~ 1.8e6, not the printed headline
+        (which depends on the hand-picked m_Hd^2).

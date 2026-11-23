@@ -22261,3 +22261,16 @@ Referee confirmed arithmetic, ħ, reduced Planck mass (as in 2609.04412), closed
 - D2186's "1.9–2.9e12 GeV, inside the window" is SUPERSEDED (it used the higgsino-tuned coupling).
 - Framing: mini-split with μ ≈ m_3/2 is outside Baer's natural-SUSY setting; the calculation extends his mechanism, it does not test his framework. Only τ ≤ 0.1 s is treated as cleared; the window's upper edge is the all-axion (relic) edge, not BBN.
 Result for the Weave: the decaying-wino escape works only with leptonic RPV and f_a ≈ 1e12 GeV; with baryonic RPV it does not. Not adopted.
+
+### D2187 (CENTRE / tools) Zurvan v1: our own Δ_EW toolkit for Prof. Baer (2026-11-23)
+- Lock PREREG_D2187 (07:35), DEVIATIONS DEV-1..13 after referee R75 (2 blockers, 3 major, 5 minor), R75b NULL.
+- Method: Σ_u^u, Σ_d^d = (1/2v) ∂V_1/∂v by numerical derivative of the one-loop CW potential (third family), checked
+  against an analytic eigenvalue derivative (agree to 1e-9).
+- T1 (vs arXiv:2111.03096 Eqs. A.20/A.21, transcription verified against App. A): Σ_u^u per stop within 1% on 5/6
+  terms (P1 t̃1 1.16% = the μcotβ part of X_t); stop-pair sum Σ_u^u within 0.06%. Σ_d^d per stop differs strongly
+  when A_t ≠ 0: the exact derivative keeps −y_t²A_tμ tanβ (and −y_t²A_tμ cotβ in Σ_u^u); adding these reproduces
+  Zurvan exactly (R75). Verdict: CONVENTION DIFFERENCE, NOT A PASS. Sent to Baer as a question.
+- T2 (JS vs Python): PASS, worst 1e-14, names/headline/warnings identical.
+- T3 (Weave benchmark): only the robust bound is quoted: Δ_EW ≥ 2μ²/m_Z² ≈ 1.8e6 (μ = 87.6 TeV). Very unnatural by
+  Baer's measure. The illustrative P1–P3 inputs do not satisfy EWSB and are labelled so.
+- Limits stated: third family only; not yet cross-checked against DEW4SLHA on a real generator file.

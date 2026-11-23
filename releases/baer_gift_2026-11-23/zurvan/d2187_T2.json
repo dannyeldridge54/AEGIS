@@ -1,0 +1,29 @@
+{
+ "example_P1_natural.slha": {
+  "py": 47.54149642814607,
+  "js": 47.54149642814607,
+  "summed": 21.72961093920572,
+  "headline": "per_term",
+  "maxrel": 0.0,
+  "names_headline_warnings_match": true,
+  "EWSB_residual": 83284.77373448253
+ },
+ "example_P2_heavy_mixing.slha": {
+  "py": 98.29771771219744,
+  "js": 98.29771771219744,
+  "summed": 29.35403583015509,
+  "headline": "per_term",
+  "maxrel": 1.7329284156439534e-16,
+  "names_headline_warnings_match": true,
+  "EWSB_residual": 167945.94741479133
+ },
+ "example_P3_weave_minisplit.slha": {
+  "py": 14258353.524155717,
+  "js": 14258353.524155717,
+  "summed": 2315252.5807259227,
+  "headline": "pairs_summed",
+  "maxrel": 9.98030046127534e-15,
+  "names_headline_warnings_match": true,
+  "EWSB_residual": 501667277.5093001
+ }
+}

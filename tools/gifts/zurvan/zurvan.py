@@ -152,6 +152,7 @@ def params_from_slha(text):
     B, S, warns = read_slha(text)
     for need in ('MSOFT', 'HMIX', 'YU'):
         if need not in B: raise ValueError('SLHA block %s is missing' % need)
+    if (3, 3) not in B['YU']: raise ValueError('YU(3,3) missing: the top Yukawa is unknown')
     ms, hm = B['MSOFT'], B['HMIX']
     def sq(k):  # soft masses are written as masses; keep a negative sign as a negative m^2 (DEV-7)
         m = ms[k]
@@ -181,7 +182,8 @@ def params_from_slha(text):
 
 def report(res):
     head = res['Delta_EW_pairs_summed'] if res['headline'] == 'pairs_summed' else res['Delta_EW']
-    lines = ['HEADLINE Delta_EW = %.4g (%s view)' % (head, res['headline'].replace('_', ' ')),'Delta_EW = %.4g   (largest term: %s)' % (res['Delta_EW'], res['largest']),
+    tach = any('tachyonic' in w for w in res['warnings'])
+    lines = [('HEADLINE Delta_EW = UNRELIABLE (tachyonic state)' if tach else 'HEADLINE Delta_EW = %.4g (%s view)' % (head, res['headline'].replace('_', ' '))),'Delta_EW = %.4g   (largest term: %s)' % (res['Delta_EW'], res['largest']),
              'Delta_EW with each sfermion pair summed = %.4g   (largest: %s)' % (res['Delta_EW_pairs_summed'], res['largest_pairs_summed']), 'Top contributions (C_i, GeV^2; Delta_i = 2|C_i|/mZ^2):']
     for k, v, d in res['contributions'][:10]:
         lines.append('  %-24s %+.4e   %.4g' % (k, v, d))
