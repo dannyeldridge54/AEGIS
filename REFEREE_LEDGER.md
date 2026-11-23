@@ -13,3 +13,4 @@
   -> DEV-1 (extend to 1e-5 eV vs NJOY), DEV-2 (exclude top 200 eV).
 - R96 (23 Nov 2026, N6-N8 transport): BUG Kalbach-Mann branches swapped (TBR-blind); T4 strawman -> yield-1 can-fail; 8 batches thin;
   "consistent with", not "validated"; target-at-rest is the main untested approximation.
+- R97 (23 Nov 2026, N9/N10): no bug; He/dpa failure from the workshop steel's 5 wt% C (78% of He) -> Fe-only scoring; front cm 10.7 dpa/fpy/MWm2.

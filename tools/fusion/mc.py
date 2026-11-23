@@ -213,9 +213,10 @@ def run(regions, radii, n_hist=20000, seed=7, E0=14.0e6, kill_mt=(), tally_regio
                 if reg in tally_regions:
                     for (nu, dens), lc in zip(mat.items, locs):
                         if nu.trit is not None: trit[nu.name] = trit.get(nu.name, 0.0) + dens * Nuclide.val(nu.trit, *lc) / St
-                for (sreg, smt) in sc:
+                for key in sc:
+                    sreg, smt = key[0], key[1]; pre = key[2] if len(key) > 2 else ''
                     if sreg == reg:
-                        sc[(sreg, smt)] += sum(dens * Nuclide.val(nu.extra[smt], *lc) for (nu, dens), lc in zip(mat.items, locs) if smt in nu.extra) / St
+                        sc[key] += sum(dens * Nuclide.val(nu.extra[smt], *lc) for (nu, dens), lc in zip(mat.items, locs) if smt in nu.extra and nu.name.startswith(pre)) / St
                 # nuclide
                 xi = rng.random() * St; acc = 0.0
                 for j, ((nu, dens), t) in enumerate(zip(mat.items, tots)):
@@ -243,7 +244,7 @@ def run(regions, radii, n_hist=20000, seed=7, E0=14.0e6, kill_mt=(), tally_regio
                         if Eo > 1e-5: new.append((r, _rotate(u, m, rng), Eo))
                 if not new: alive = False; break
                 (r, u, E) = new[0]; bank.extend(new[1:])
-    out = dict(leakage=leak / n_hist, leak_energy_eV=leakE / n_hist, collisions_per_hist=ncoll / n_hist, n_hist=n_hist, scores={f'{k[0]}_{k[1]}': v / n_hist for k, v in sc.items()})
+    out = dict(leakage=leak / n_hist, leak_energy_eV=leakE / n_hist, collisions_per_hist=ncoll / n_hist, n_hist=n_hist, scores={'_'.join(str(x) for x in k): v / n_hist for k, v in sc.items()})
     for k, v in trit.items(): out[f'T_{k}'] = v / n_hist
     out['TBR'] = sum(v for k, v in out.items() if k.startswith('T_Li'))
     return out
