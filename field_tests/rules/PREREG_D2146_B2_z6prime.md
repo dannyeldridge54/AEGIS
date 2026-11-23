@@ -100,3 +100,20 @@ A B2 model is a **different brane content** from UFE v4's |M| = 9 flux model. Th
   - the Z₆′ USp K-theory probes;
   - the Sym/Anti exotics;
   - Z₃-sector status quoted (§2.2.3).
+
+## ADDENDUM 4: scan step 3a (visible-sector search), locked before running
+- **Space:**
+  - the 20 saturated bulk cycles (D2149), with all fractional variants over σ ∈ {0, ½}⁴ and τ ∈ {0, 1}³, deduplicated;
+  - lattice ABa, ϱ = ½;
+  - stacks a (N = 3), b (N = 2, U(2); USp(2) deferred to step 3b), c and d (N = 1);
+  - plus up to 2 hidden stacks with N ∈ {1, 2, 3, 4}.
+- **Filters, in this order:**
+  1. **Bulk tadpoles:** Σ N(P + Q) = 8 and Σ N(U − V) = 24.
+  2. **Quark doublets:** a∘b and a∘b′ carry the same sign (or are zero) and |a∘b + a∘b′| = 3.
+  3. **No exotics on a:** Sym_a = 0.
+  4. **Right-handed quarks:** Σ over x ∈ {c, d} of (a∘x + a∘x′) = −6 for the sign convention in which a∘b′ = +3, with no term of the opposite sign.
+  5. **Exceptional tadpoles:** Σ N(Π + Π′) = 4Π_O6 in full.
+- **Control 3:** the published SM (D2147) must appear among the survivors.
+- **Reported:** the survivor count, and their distinct chiral spectra (fingerprints).
+- **Not in this step** (left for step 3b): hypercharge masslessness and the GS rank, lepton counts, K-theory, and the ΔN_eff and Yukawa dials.
+- **Runtime cap:** 90 minutes. If the cap is hit, the partial counts are reported as partial.
