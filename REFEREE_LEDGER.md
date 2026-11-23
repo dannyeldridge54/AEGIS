@@ -16,3 +16,5 @@
 - R97 (23 Nov 2026, N9/N10): no bug; He/dpa failure from the workshop steel's 5 wt% C (78% of He) -> Fe-only scoring; front cm 10.7 dpa/fpy/MWm2.
 - R100 (23 Nov 2026, N11 activation): sound, no bug; goalposts weak (A4 tautology, A2 by half-life, A1 T-dependent); headline is the 0 s total.
 - R101 (23 Nov 2026, N12): C1/C2 failures are my test errors (pump term omitted; hold = 1 + lambda I0/b, not t_d -> inf); idealised TBR margin ~1%.
+- R102 (23 Nov 2026, JET-1 beam-target): model correct; J4 definition mismatch (FAIL stands; sigma peak 108 keV); thermal targets +12.5% (fair fix);
+  open: fraction type (current vs power), losses, inputs n_i/n_e, E_b, Te -> overshoot is model+input, not a bug.

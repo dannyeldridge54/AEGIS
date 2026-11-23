@@ -22574,3 +22574,15 @@ reference from raw data and our own code (after referee-found bugs were fixed). 
 Pb-Li blanket is at the edge of net electricity (+5 MW) and of tritium self-sufficiency (~1% margin at full coverage) - consistent with why
 real designs push to larger size, higher Q, Be/Pb multipliers and Li-6 enrichment.
 Process: preflight.py guards every lock (compile, fingerprints, stale values incl. the new 'hold TBR' trap).
+
+## D2209 (FUSION, JET level, 23 Nov 2026 ~15:00 CT) — measured JET D-T record pulses as held-out: beam-target fusion
+Lock PREREG_JET1_BEAMTARGET; hints jet1.json (Maslov et al. NF 2023 for #99971; arXiv:2504.11222 for #104522). New tool beam_target.py
+(classical Spitzer slowing down with E_c, Bosch-Hale sigma). Key hint: #99971 (59 MJ) is ~93% beam-target, ~7% thermal (TRANSP), so the
+thermal 0-D engine cannot be tested on JET without this term.
+- Locked run (targets at rest): #99971 11.5 MW vs 8.7 MW TRANSP-implied NBI beam-target (+32%, J1 PASS), #104522 12.1 vs 11.6 (J2 PASS),
+  f_T 0.5 -> -45% (J3), J4 FAIL (my metric max Y/E peaks at 191 keV; the hint's 100-120 keV is the sigma peak = 108 keV in our code).
+- R102: physics correct; thermal target motion missing (fair fix); open: power vs current fractions (+29% if current), no fast-ion losses.
+- Rerun with Maxwellian T targets at Ti 9 keV: #99971 14.7 MW (+68%) J1 FAIL; #104522 15.4 MW (+33%) J2 PASS; thermal-target effect +27% here
+  vs R102's scratch +12.5% (open discrepancy).
+Verdict: classical slowing down without fast-ion losses over-predicts JET's beam-target fusion by ~1.3-1.7x on published inputs. Not tuned.
+Next on this level: fast-ion loss/ripple estimate and the NBI fraction definition from the primary source; T_e/n_e profiles from JET data papers.
