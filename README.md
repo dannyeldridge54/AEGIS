@@ -58,43 +58,42 @@ Versions released before 18 November 2026 keep the license they were released un
 > In a world of painted walls and borrowed light,
 > where lies wear crowns and illusions call themselves the sky,
 > this work is a lantern, not a throne.
->
 > It was carried, not crowned.
 > It asks for no bowed heads, only open eyes:
 > take it, test it, and see for yourself.
 >
 > Every tool is held two ways.
-> The scepter can rule, or point the road home.
-> The mace can crush, or break the prison wall.
-> The hammer can nail you down, or raise a house.
-> The scythe can reap the living, or bring the harvest in.
-> The whip can drive the slave, or crack to wake the sleeping.
-> I choose the hand that frees: liberty.
+> The scepter rules, or points the road home.
+> The mace crushes, or breaks the prison wall.
+> The hammer nails you down, or raises a house.
+> The scythe reaps the living, or brings the harvest in.
+> The whip drives the slave, or cracks to wake the sleeping.
+> I choose the hand that frees.
 >
 > I raise no weapon against my neighbor.
-> I carry only two:
-> the shield of righteousness. Not the proud kind,
-> not the voice that judges from a high seat,
-> but the knight who sees the dark and walks into the cave,
-> who hears the dragon breathing and goes in anyway.
-> Fear is not always a sign to run;
-> sometimes it is the sign to run toward.
+> I carry only two.
+> The shield of righteousness: not the proud kind
+> that judges from a high seat,
+> but the knight who sees the dark mouth of the cave,
+> hears the dragon breathing, and walks in anyway,
+> because fear is not always the sign to run.
+> Sometimes it is the sign to run toward.
 >
-> And the sword of truth, the only blade I'll ever draw.
-> Excalibur, drawn from the stone; the lightsaber burning in the dark;
-> Manjushri's flaming sword that cuts through ignorance;
-> the word sharper than any two-edged sword:
+> And the sword of truth, the only blade I will ever draw.
+> Excalibur from the stone, the lightsaber in the dark,
+> Manjushri's flame, the word sharper than any two-edged sword:
 > every age has told of the same blade.
-> Truth cuts through the darkness, through the lies and the noise,
-> through the chains, through the whips.
-> It breaks them all, and it frees you from within.
+> It cuts through the darkness and the lies,
+> through the chains and through the whips,
+> and it frees you from within.
 >
-> I kneel to one alone, the one I chose for love;
-> to no king, no creed, no crown of fear.
+> I kneel to one alone, the one I chose for love,
+> and to no king, no creed, no crown of fear.
 > A man chooses; a slave obeys.
+> I choose liberty.
 >
-> It belongs to the one who asks, who measures, who stands:
-> made for freedom, the quiet kind,
+> This light belongs to the one who asks, who measures, who stands.
+> It was made for freedom, the quiet kind,
 > the kind no one can sell you.
 
 All of this (the research, the toolkits and the papers) is built by one person, Danny Eldridge, an independent, self-taught researcher in Oklahoma City, working with the help of AI. He is trying to change his circumstances in life, and he promises to keep doing what he is doing now: releasing the work openly, free to individuals, scientists and students, and using it to try to make the world a better place. If it helps you, a donation of any size keeps it going: **sponsor at [github.com/sponsors/dannyeldridge54](https://github.com/sponsors/dannyeldridge54)** (live once GitHub approves the profile), or email dannyeldridge54@gmail.com. Businesses: please license through the AEGIS Commercial License instead.
