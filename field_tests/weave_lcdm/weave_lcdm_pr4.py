@@ -30,7 +30,7 @@ else:
     theory = {'rtcamb': {'external': rt_theory(), 'extra_args': ex, 'stop_at_error': False}}
 info = {'packages_path': P, 'theory': theory, 'params': pr,
         'likelihood': {('planck_NPIPE_highl_CamSpec.TTTEEE' if HL == 'camspec' else 'planck_2020_hillipop.TTTEEE_bin'): None, 'planck_2020_lollipop.lowlE': None, 'planck_2018_lowl.TT': None, 'planckpr4lensing.PlanckPR4Lensing': None, 'bao.desi_dr2': None, 'sn.' + sn: None},
-        'sampler': {'minimize': {'method': 'bobyqa', 'best_of': int(os.environ.get('BEST_OF', 2))}}, 'output': f'/tmp/claude-0/weave_pr4/{model}_{sn}' + os.environ.get('OUT_SUFFIX', '') + ('' if HL == 'hillipop' else '_' + HL), 'force': True}
+        'sampler': {'minimize': dict({'method': 'bobyqa', 'best_of': int(os.environ.get('BEST_OF', 2))}, **({'override_bobyqa': json.loads(os.environ['OVERRIDE_BOBYQA'])} if os.environ.get('OVERRIDE_BOBYQA') else {}))}, 'output': f'/tmp/claude-0/weave_pr4/{model}_{sn}' + os.environ.get('OUT_SUFFIX', '') + ('' if HL == 'hillipop' else '_' + HL), 'force': True}
 if model == 'C': info['prior'] = {'w0wa_bound': 'lambda w, wa: 0.0 if w + wa < 0 else -np.inf'}
 os.makedirs('/tmp/claude-0/weave_pr4', exist_ok=True)
 t = time.time(); upd, smp = crun(info)

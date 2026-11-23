@@ -1,0 +1,6 @@
+# PREREG D2169: tightened minimiser, the first speed-up/robustness step (locked 22 Nov 2026 ~23:46 CT, before running)
+Danny 23:42 "do all in one pass". From the referee-checked research list (SPEEDUPS_RESEARCH): Cobaya 3.6.2's BOBYQA default rhoend = 0.05 is a deliberately relaxed stop (confirmed in the installed minimize.yaml); the 3-4 chi2 scatter between best-of-2 runs is likely early stopping or separate minima, not numerical noise (inference, to be tested).
+Run (headline pair only: PR4 HiLLiPoP + DESI DR2 + DES-Dovekie, L and W), queued to start automatically when the D2163 best-of-4 runs finish (so nothing running is disturbed):
+- same script, env OVERRIDE_BOBYQA='{"rhoend": 0.005, "seek_global_minimum": true}', BEST_OF=4, OUT_SUFFIX=_tight.
+Score: (1) the spread of the 4 minima per model (chi2 units); success if the spread falls below 0.5 for both models; (2) the lowest chi2_eff over ALL runs of that pair (2 original + 4 D2163 + 4 here) gives the robust dchi2; apply the D2132 rule; (3) wall time per fit vs the original.
+Reading fixed now: if the spread stays >= 0.5, the scatter is not just the stopping rule (separate minima or numerical noise) and step 0 of the plan (line scans between end points) comes next.
