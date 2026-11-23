@@ -28,6 +28,13 @@ else:
     ex.update({'num_massive_neutrinos': 3, 'neutrino_hierarchy': 'normal', 'dark_energy_model': 'ppf'})
     pr['rt_ui'] = {'prior': {'min': 1e-6, 'max': 0.6}, 'ref': {'dist': 'uniform', 'min': 0.02, 'max': 0.20}, 'proposal': 0.02}
     theory = {'rtcamb': {'external': rt_theory(), 'extra_args': ex, 'stop_at_error': False}}
+if os.environ.get('LOOM_SEED'): np.random.seed(int(os.environ['LOOM_SEED']))
+if os.environ.get('LOOM_WARM'):   # D2173-A1 warm start: centre each 'ref' on a known best fit (same prior box, so the fit itself is unchanged)
+    _w = json.loads(os.environ['LOOM_WARM'])
+    for _k, _v in pr.items():
+        if isinstance(_v, dict) and 'ref' in _v and _k in _w:
+            _sc = _v['ref'].get('scale', (_v['ref'].get('max', 1) - _v['ref'].get('min', 0))/4)
+            _v['ref'] = {'dist': 'norm', 'loc': float(_w[_k]), 'scale': float(_sc)/2}
 info = {'packages_path': P, 'theory': theory, 'params': pr,
         'likelihood': {('planck_NPIPE_highl_CamSpec.TTTEEE' if HL == 'camspec' else 'planck_2020_hillipop.TTTEEE_bin'): None, 'planck_2020_lollipop.lowlE': None, 'planck_2018_lowl.TT': None, 'planckpr4lensing.PlanckPR4Lensing': None, 'bao.desi_dr2': None, 'sn.' + sn: None},
         'sampler': {'minimize': dict({'method': 'bobyqa', 'best_of': int(os.environ.get('BEST_OF', 2))}, **({'override_bobyqa': json.loads(os.environ['OVERRIDE_BOBYQA'])} if os.environ.get('OVERRIDE_BOBYQA') else {}))}, 'output': f'/tmp/claude-0/weave_pr4/{model}_{sn}' + os.environ.get('OUT_SUFFIX', '') + ('' if HL == 'hillipop' else '_' + HL), 'force': True}

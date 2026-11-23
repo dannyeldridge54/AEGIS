@@ -7,3 +7,10 @@ Validation (pre-stated), after the running PC fits finish, on the already-finish
  V2 the W−L Δχ²_eff agrees with the posted +2.46 within 0.5;
  V3 wall time ≤ 1/5 of the CAMB run of the same fit.
 Adopt (registry 'fast_cmb_ole') only if V1–V3 pass. Even then: exploratory scans and new pairs may use it, but every verdict that goes into a paper is confirmed with plain CAMB. If OLÉ cannot run Cobaya's minimizer, record that and fall back to its MCMC-only use (DEVIATIONS note first).
+
+## Addendum 1 (2026-11-23 ~01:02 CT, before any run) — our own build, raced against OLÉ
+Danny 00:56: "Why not build it and optimize it". Our own fast route, tools/fastcmb/loom_fast.py (TOOL):
+ (a) parallel starts, one process per start; (b) warm starts centred on a best fit already on disk for the same model (same prior box);
+ (c) next pass: a local Cl emulator that learns along the minimiser path (cache + PCA + local quadratic, CAMB called whenever its leave-one-out error is above 0.1 in χ²).
+fit-script hook: LOOM_WARM / LOOM_SEED env vars only; with them unset the locked fits run exactly as before.
+Same validation V1–V3 as above on the same finished pair; both routes are scored; the faster one that passes is adopted; verdicts still confirmed with plain CAMB.
