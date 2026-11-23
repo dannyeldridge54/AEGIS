@@ -1,0 +1,323 @@
+{
+ "rows": [
+  {
+   "node": "N2",
+   "equation": "Sum m_nu = m1 + sqrt(m1^2 + dm21^2) + sqrt(m1^2 + dm31^2)  [S]; DESI DR2+CMB bound",
+   "knob": "Sum m_nu (eV)",
+   "knob_base": 0.0587,
+   "value": {
+    "in": 0.03913333333333333,
+    "wall": 0.0587,
+    "out": 0.08805
+   },
+   "bound": "< 0.064 eV",
+   "margin": {
+    "in": 0.49190846463378557,
+    "wall": 0.08644335652562106,
+    "out": -0.31902175158254326
+   },
+   "holds": {
+    "in": true,
+    "wall": true,
+    "out": false
+   }
+  },
+  {
+   "node": "N3",
+   "equation": "BR = (alpha^3 pi / G_F^2) delta12^2 tan^2(beta) / m_s^4  [E], delta12 = 1, tan(beta) = 4",
+   "knob": "m_s (GeV)",
+   "knob_base": 250000.0,
+   "value": {
+    "in": 1.8606976747556782e-16,
+    "wall": 3.675452197048252e-17,
+    "out": 7.260152487996548e-18
+   },
+   "bound": "MEG II < 1.5e-13",
+   "margin": {
+    "in": 6.692268875740677,
+    "wall": 8.314129308173335,
+    "out": 9.935989740605992
+   },
+   "holds": {
+    "in": true,
+    "wall": true,
+    "out": true
+   }
+  },
+  {
+   "node": "N4a",
+   "equation": "D = T_R phi0^2 / (6 T_d), T_d = (90/pi^2 g*)^(1/4) sqrt(Gamma M_P), Gamma = m^3/(4 pi M_P^2)  [R+S]",
+   "knob": "m_tau_q (GeV)",
+   "knob_base": 20000000000.0,
+   "value": {
+    "in": 1484.2468563762045,
+    "wall": 807.9216556559309,
+    "out": 439.7768463336902
+   },
+   "bound": "D <= 1e3",
+   "margin": {
+    "in": -0.3949074761783331,
+    "wall": 0.21329018598391383,
+    "out": 0.8214878481461603
+   },
+   "holds": {
+    "in": false,
+    "wall": true,
+    "out": true
+   }
+  },
+  {
+   "node": "N4b",
+   "equation": "Omega_w h^2 = 2.744e8 m_w min(Y_3/2, Y_cap), Y_3/2 = 1.5 Br T_d/m  [S], generic Br = 0.01 (EHT)",
+   "knob": "Br_3/2",
+   "knob_base": 0.01,
+   "value": {
+    "in": 9.21984,
+    "wall": 9.21984,
+    "out": 9.21984
+   },
+   "bound": "Omega_w h^2 <= 0.036",
+   "margin": {
+    "in": -5.545594024364779,
+    "wall": -5.545594024364779,
+    "out": -5.545594024364779
+   },
+   "holds": {
+    "in": false,
+    "wall": false,
+    "out": false
+   }
+  },
+  {
+   "node": "N5",
+   "equation": "tau_3/2 = 1.4e-3 s (2.6e5 GeV / m3/2)^3  [S scaling, R normalisation]",
+   "knob": "m3/2 (GeV)",
+   "knob_base": 260000.0,
+   "value": {
+    "in": 0.004725000000000002,
+    "wall": 0.0014,
+    "out": 0.0004148148148148147
+   },
+   "bound": "tau < 0.1 s (BBN)",
+   "margin": {
+    "in": 3.052302625042385,
+    "wall": 4.268697949366879,
+    "out": 5.485093273691372
+   },
+   "holds": {
+    "in": true,
+    "wall": true,
+    "out": true
+   }
+  },
+  {
+   "node": "N5w",
+   "equation": "m_wino = m3/2 / 375  [R anomaly mediation]",
+   "knob": "m3/2 (GeV)",
+   "knob_base": 260000.0,
+   "value": {
+    "in": 462.2222222222222,
+    "wall": 693.3333333333334,
+    "out": 1040.0
+   },
+   "bound": "m_w > 670 GeV (ATLAS 2603.08315)",
+   "margin": {
+    "in": -0.37123193646592223,
+    "wall": 0.034233171642242176,
+    "out": 0.43969827975040665
+   },
+   "holds": {
+    "in": false,
+    "wall": true,
+    "out": true
+   }
+  },
+  {
+   "node": "N6",
+   "equation": "r = 8/(beta^2 N*^2) on the plateau, r0 = 5.4e-4 at N* = 68  [S]",
+   "knob": "N* (e-folds)",
+   "knob_base": 68.0,
+   "value": {
+    "in": 0.0012150000000000006,
+    "wall": 0.00054,
+    "out": 0.00023999999999999998
+   },
+   "bound": "BK18 r < 0.036",
+   "margin": {
+    "in": 3.3887748616635975,
+    "wall": 4.199705077879927,
+    "out": 5.0106352940962555
+   },
+   "holds": {
+    "in": true,
+    "wall": true,
+    "out": true
+   }
+  },
+  {
+   "node": "N7",
+   "equation": "tau_p = 1.6e35 yr (M_X / M_X0)^4  [S scaling, R normalisation]",
+   "knob": "M_X / M_X0",
+   "knob_base": 1.0,
+   "value": {
+    "in": 3.160493827160493e+34,
+    "wall": 1.6e+35,
+    "out": 8.1e+35
+   },
+   "bound": "Super-K > 2.4e34 yr",
+   "margin": {
+    "in": 0.2752595524532236,
+    "wall": 1.8971199848858813,
+    "out": 3.518980417318539
+   },
+   "holds": {
+    "in": true,
+    "wall": true,
+    "out": true
+   }
+  },
+  {
+   "node": "N7e",
+   "equation": "d_e = e m_e (alpha/4pi) sin(phi) / m_s^2  [E one loop], sin(phi) = 1",
+   "knob": "m_s (GeV)",
+   "knob_base": 250000.0,
+   "value": {
+    "in": 2.1076861843759356e-31,
+    "wall": 9.367494152781935e-32,
+    "out": 4.1633307345697486e-32
+   },
+   "bound": "JILA < 4.1e-30 e cm",
+   "margin": {
+    "in": 2.967981315999136,
+    "wall": 3.7789115322154654,
+    "out": 4.589841748431795
+   },
+   "holds": {
+    "in": true,
+    "wall": true,
+    "out": true
+   }
+  },
+  {
+   "node": "N8",
+   "equation": "Delta N* = (1/3) ln(T_R / T_R0)  [R]",
+   "knob": "T_R / T_R0",
+   "knob_base": 1.0,
+   "value": {
+    "in": -0.1351550360360548,
+    "wall": 0.0,
+    "out": 0.1351550360360548
+   },
+   "bound": "clock tie (no bound)",
+   "margin": {
+    "in": null,
+    "wall": null,
+    "out": null
+   },
+   "holds": {
+    "in": true,
+    "wall": true,
+    "out": true
+   }
+  },
+  {
+   "node": "N9",
+   "equation": "Delta alpha / alpha = zeta_alpha |Delta phi|, zeta_alpha = 3.8e-10, |Delta phi| = 0.19 (b = 0)  [R]",
+   "knob": "zeta_alpha",
+   "knob_base": 3.8e-10,
+   "value": {
+    "in": 4.8893333333333324e-11,
+    "wall": 7.334e-11,
+    "out": 1.1001e-10
+   },
+   "bound": "quasars < 1e-6",
+   "margin": {
+    "in": 9.925869503429258,
+    "wall": 9.520404395321094,
+    "out": 9.11493928721293
+   },
+   "holds": {
+    "in": true,
+    "wall": true,
+    "out": true
+   }
+  },
+  {
+   "node": "N12",
+   "equation": "N_species < (M_P/H)^2, H = pi sqrt(A_s r / 2) M_P  [S]",
+   "knob": "r",
+   "knob_base": 0.00054,
+   "value": {
+    "in": 268045459371.2639,
+    "wall": 178696972914.176,
+    "out": 119131315276.11731
+   },
+   "bound": "more room than the visible + hidden species (~1e3)",
+   "margin": {
+    "in": 19.40666714861016,
+    "wall": 19.001202040501997,
+    "out": 18.59573693239383
+   },
+   "holds": {
+    "in": true,
+    "wall": true,
+    "out": true
+   }
+  },
+  {
+   "node": "N13s",
+   "equation": "|V'|/V = beta u/(1-u), beta = 2 sqrt 2  [S], evaluated at the path minimum u_i",
+   "knob": "u_i",
+   "knob_base": 0.1575,
+   "value": {
+    "in": 0.3318266459199441,
+    "wall": 0.5287564061098219,
+    "out": 0.8749144461162521
+   },
+   "bound": "slope >= sqrt(2/3)",
+   "margin": {
+    "in": -0.9004100432233317,
+    "wall": -0.43449487906682893,
+    "out": 0.06910338078204746
+   },
+   "holds": {
+    "in": false,
+    "wall": false,
+    "out": true
+   }
+  },
+  {
+   "node": "N13c",
+   "equation": "V''/V = -beta^2 u/(1-u)  [S], at u_i",
+   "knob": "u_i",
+   "knob_base": 0.1575,
+   "value": {
+    "in": -0.9385474860335195,
+    "wall": -1.4955489614243322,
+    "out": -2.4746317512274962
+   },
+   "bound": "V''/V <= -1 (c' = 1)",
+   "margin": {
+    "in": -0.06342182643749618,
+    "wall": 0.4024933377190068,
+    "out": 0.9060915975678832
+   },
+   "holds": {
+    "in": false,
+    "wall": true,
+    "out": true
+   }
+  }
+ ],
+ "open": [
+  "N1 rung-state masses (no equation yet)",
+  "N14 pre-inflation (E10 billiard)",
+  "N16 flux -> D3 charge map (record: |M| = 9 gives 46 vs chi/24 = 2; no derived scaling)"
+ ],
+ "clock_rows_from": "D2143a anchored: u_i x/\u00f71.5 -> +28.6 / -10.6 Myr; b: -0.025 -> -50 Myr, +0.025 collapses",
+ "trust": [
+  "N8 dNeff = 0",
+  "N11 TCC flag on r",
+  "N15 Montgomery (no knob)"
+ ]
+}

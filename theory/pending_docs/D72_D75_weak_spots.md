@@ -21805,3 +21805,38 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
   - **Data-constrained best-fit ages** (each b refitted, not a pull): 13.683 / 13.715 / 13.694 Gyr for b = −0.025 / 0 / +0.025. The −21 to −33 Myr differences are comparable to the age's own uncertainty (tens of Myr), so they are **not significant**.
 - **N4/N8:** equal and opposite **by construction** (both enter as ⅓ ln). This is not a finding.
 - **What survives:** six of the 16 negative-space nodes have a numeric tie to a cosmic clock (N4, N6, N8, N9/N13, N10, ΔN_eff weakly). The other ten tie through mass or charge. That is a map of couplings, nothing more.
+
+## D2144 (CENTRE, derivation table: lock PREREG_D2144). Each negative-space node's equation at the wall, then pulled inward (÷1.5) and outward (×1.5). Margins are log headroom; ✔ means the wall holds (2026-11-22 ~20:50 CT, referee review pending)
+
+| node | equation | knob | in / wall / out | holds in / wall / out |
+|---|---|---|---|---|
+| N2 ν mass | Σm_ν from the splittings [S], DESI < 0.064 | Σm_ν | 0.039 / 0.0587 / 0.088 eV | ✔ / ✔ (+0.09) / **✘** |
+| N3 μ→eγ | α³π δ² tan²β/(G_F² m_s⁴) [E] | m_s | 1.9e-16 / 3.7e-17 / 7.3e-18 | ✔ / ✔ / ✔ |
+| N4a dilution | D = T_R φ0²/(6T_d), T_d ∝ m^{3/2} [R+S] | m_τq | 1480 / 808 / 440 | **✘** / ✔ / ✔ |
+| N4b moduli gravitinos | 2.744e8 m_w min(Y_3/2, Y_cap) [S] | Br | 9.2 / 9.2 / 9.2 (capped by re-annihilation) | ✘ / ✘ / ✘. **Pulling the knob cannot fix it**; only N4-seq or N4-φ0 can |
+| N5 gravitino lifetime | τ ∝ m3/2⁻³ [S] | m3/2 | 4.7e-3 / 1.4e-3 / 4.2e-4 s | ✔ / ✔ / ✔ |
+| N5w wino vs LHC | m3/2/375 [R] | m3/2 | 462 / 693 / 1040 GeV | **✘** / ✔ (+0.03) / ✔ |
+| N6 r | r = r0(68/N\*)² [S] | N\* | 1.2e-3 / 5.4e-4 / 2.4e-4 | ✔ / ✔ / ✔ |
+| N7 proton | τ_p ∝ M_X⁴ [S] | M_X | 3.2e34 / 1.6e35 / 8.1e35 yr | ✔ (+0.28) / ✔ / ✔ |
+| N7e electron EDM | e m_e (α/4π) sinφ/m_s² [E] | m_s | 2.1e-31 / 9.4e-32 / 4.2e-32 | ✔ / ✔ / ✔ |
+| N8 reheating clock | ΔN\* = ⅓ ln(T_R/T_R0) [R] | T_R | −0.135 / 0 / +0.135 | clock tie only |
+| N9 α leak | ζ_α\|Δφ\| [R] | ζ_α | 4.9e-11 / 7.3e-11 / 1.1e-10 | ✔ / ✔ / ✔ |
+| N12 species room | (M_P/H)², H = π√(A_s r/2) M_P [S] | r | 2.7e11 / 1.8e11 / 1.2e11 | ✔ / ✔ / ✔ |
+| N13 slope | βu/(1−u) [S] at u_i | u_i | 0.33 / 0.53 / 0.88 | ✘ / ✘ / ✔ (outward only) |
+| N13 curvature | V″/V = −8u/(1−u) [S] | u_i | −0.94 / −1.50 / −2.47 | ✘ / ✔ / ✔ |
+
+- **Clock rows** (from D2143a, anchored to ℓ_A): u_i ×/÷1.5 gives +28.6 / −10.6 Myr; b = −0.025 gives −50 Myr, and +0.025 makes the solver collapse.
+- **OPEN, no equation derived:**
+  - N1: rung-state masses;
+  - N14: pre-inflation (E10 billiard);
+  - N16: the flux → D3-charge map. The record has |M| = 9 → 46 against χ/24 = 2, with no derived scaling.
+- **TRUST:** N8's ΔN_eff = 0; N11's TCC flag; N15 (a theorem, with no knob).
+- **Which way the walls lean:**
+  - **Pulling outward breaks** only N2: neutrino mass up to 0.088 eV crosses DESI.
+  - **Pulling inward breaks:**
+    - N4a: a lighter τ_q dilutes too much;
+    - N5w: a lighter gravitino puts the wino under ATLAS;
+    - N13: a smaller thread start is too flat for the swampland.
+  - **N4b breaks in every direction** (re-annihilation caps it).
+  - **The tightest walls at the base point:** N5w (+0.03), N2 (+0.09) and N4a (+0.21).
+  - **Inward is the dangerous direction:** three walls break that way and only one breaks outward.
