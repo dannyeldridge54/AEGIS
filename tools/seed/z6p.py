@@ -27,3 +27,46 @@ def chiral(stacks, image, O6):
             if names.index(b) <= names.index(a): continue
             out[(a, b)] = inter(ca, stacks[b][1]); out[(a, b + "'")] = inter(ca, image(stacks[b][1]))
     return out
+# ---- generator (PREREG_D2146 addendum 2)
+from fractions import Fraction as Fr
+H = Fr(1, 2)
+T2_TABLE = {  # (s1,s2),(s5,s6) -> {T3 parity: [(i1,j1),(i1,j2),(i2,j1),(i2,j2)]}  (Table 2, (n1,m1) odd,odd)
+ ((0,0),(0,0)):  {'oo': [(1,1),(1,3),(6,1),(6,3)], 'oe': [(1,1),(1,2),(6,1),(6,2)], 'eo': [(1,1),(1,4),(6,1),(6,4)]},
+ ((0,0),(0,H)):  {'oo': [(1,2),(1,4),(6,2),(6,4)], 'oe': [(1,3),(1,4),(6,3),(6,4)], 'eo': [(1,1),(1,4),(6,1),(6,4)]},
+ ((H,0),(0,0)):  {'oo': [(4,1),(4,3),(5,1),(5,3)], 'oe': [(4,1),(4,2),(5,1),(5,2)], 'eo': [(4,1),(4,4),(5,1),(5,4)]},
+ ((H,0),(0,H)):  {'oo': [(4,2),(4,4),(5,2),(5,4)], 'oe': [(4,3),(4,4),(5,3),(5,4)], 'eo': [(4,1),(4,4),(5,1),(5,4)]},
+ ((0,0),(H,0)):  {'oo': [(1,2),(1,4),(6,2),(6,4)], 'oe': [(1,1),(1,2),(6,1),(6,2)], 'eo': [(1,2),(1,3),(6,2),(6,3)]},
+ ((0,0),(H,H)):  {'oo': [(1,1),(1,3),(6,1),(6,3)], 'oe': [(1,3),(1,4),(6,3),(6,4)], 'eo': [(1,2),(1,3),(6,2),(6,3)]},
+ ((H,0),(H,0)):  {'oo': [(4,2),(4,4),(5,2),(5,4)], 'oe': [(4,1),(4,2),(5,1),(5,2)], 'eo': [(4,2),(4,3),(5,2),(5,3)]},
+ ((H,0),(H,H)):  {'oo': [(4,1),(4,3),(5,1),(5,3)], 'oe': [(4,3),(4,4),(5,3),(5,4)], 'eo': [(4,2),(4,3),(5,2),(5,3)]}}
+def orbit(i, j, w3, w4):
+    """Z6' orbit of d_ij x (w3 pi3 + w4 pi4) in the (delta, dtilde) basis (Table 1). Point 1 drops out."""
+    d = [0]*4; e = [0]*4; k = j - 1
+    if i == 4: d[k] += w3; e[k] += w4
+    elif i == 5: e[k] += -w3; d[k] += w4; e[k] += -w4
+    elif i == 6: e[k] += w3; d[k] += -w3; d[k] += -w4
+    return d, e
+def bulk(w):
+    n1, m1, n2, m2, n3, m3 = w
+    a = n1*n2 - m1*m2; c = n1*m2 + m1*n2 + m1*m2
+    return [a*n3, c*n3, a*m3, c*m3]
+def exceptional(w, sig, tau):
+    n1, m1, n2, m2, n3, m3 = w
+    assert n1 % 2 and m1 % 2, 'use the (odd,odd) representative on T1'
+    par = ('o' if n3 % 2 else 'e') + ('o' if m3 % 2 else 'e')
+    s12 = (Fr(sig[0]), Fr(sig[1])); s56 = (Fr(sig[2]), Fr(sig[3]))
+    if s12 == (H, H): s12 = (0, 0)            # caption: (1/2,1/2) acts like (0,0) for (odd,odd)
+    if s12 == (0, H): s12 = (H, 0)            # underlined: either ordering
+    pts = T2_TABLE[(s12, s56)][par]
+    t0, t1, t3 = tau; signs = [1, (-1)**t3, (-1)**t1, (-1)**(t1 + t3)]   # order: i1j1, i1j2, i2j1, i2j2
+    d = [0]*4; e = [0]*4
+    for (i, j), s in zip(pts, signs):
+        dd, ee = orbit(i, j, n2, m2)
+        for k in range(4): d[k] += s*dd[k]; e[k] += s*ee[k]
+    g = (-1)**t0
+    return [g*x for x in d], [g*x for x in e]
+def cycle(w, sig, tau):
+    d, e = exceptional(w, sig, tau); return bulk(w) + d + e
+def susy_ABa(c, rho):
+    P, Q, U, V = c[:4]
+    return (Fr(P - Q)/(2*Fr(rho)) - (U + V) == 0) and ((P + Q) - Fr(2, 3)*Fr(rho)*(V - U) > 0)
