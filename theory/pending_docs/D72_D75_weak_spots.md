@@ -22039,3 +22039,8 @@ Fixed: (1) "consistent with standard cosmology" -> mild tension on both finished
 - VN (three new scales): L6 n_s vs P-ACT-LB = +0.93 (holds; plus 1.21 vs SPA+DESI); L8 dark-baryon window [3, 15] GeV with the wino share taken out = +0.59 (holds); L9 thread_PR4 = 2 - 2.46 = -0.46 (L9 has no dial, so it cannot lock: the data scale is fixed). inner_unlocked = [] in every breath: no node that locked before fell out when the newest scales were added.
 - Unchanged weak points the scales show: L4 rung agreement -0.003 (never locks); L7 alpha_s locks ONLY by spending the split-stack dial (a fit), consistent with the preprint's "alpha_s fail" for the single-stack model; L10 H0 fails both breaths.
 - Matches the stated expectation except L7 (expected fail; it locks through the split fit; the paper reports the no-split value, which is the honest one).
+
+## D2157 (housekeeping, Danny 22:26-22:27: "CubeMind failing on the email", fix and speed up). The failure emails were GitHub's "tools" CI, failing on every push since 20 Nov.
+- Cause: tools/ladder/ladder.py check requires a MAP line in every D-note from D739 on; MAP lines lapsed from D1740 (the theory/map ladder was not carried into the Weave era), so ~320 notes failed the check. No physics test was failing.
+- Fix (recorded, not silent): MAP_UNTIL = 1739. The check is unchanged for D739..D1739; later notes track status in balance boards and field_tests/balance/BALANCE_LEDGER.md. No D-note was edited. Ladder tests 7/7 pass; ladder check OK; tracker runs.
+- Speed: the workflow now cancels an older run when a newer push arrives (concurrency group), and caches pip downloads.

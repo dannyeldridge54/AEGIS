@@ -22,6 +22,8 @@ STATE = ROOT / "theory/map/ladder_state.json"
 EXPORT = ROOT / "docs/map/map.json"
 CARD = ROOT / "ufe-v2/model_current.json"
 MAP_FROM = 739            # MAP lines are required from this D-number on
+MAP_UNTIL = 1739          # 22 Nov 2026 (D2157): MAP lines lapsed from D1740 (20 Nov); the theory/map ladder is retired; Weave-era notes track status in
+                          # balance boards and field_tests/balance/BALANCE_LEDGER.md. The check now covers D739..D1739 only (unchanged there).
 STALE_AFTER = 5           # a flag older than this many D-notes fails `check`
 STATUSES = {"computed", "estimate", "literature", "assumed", "corrected", "killed", "open", "frozen", "postulate"}
 LINE = re.compile(r"MAP:\s*node=(\S+)\s+status=(\S+)(?:\s+touches=\[([^\]]*)\])?(\s+ripple=no)?")
@@ -154,8 +156,8 @@ def main(argv=None):
     elif a.cmd == "export":
         export(m); print("wrote", EXPORT.relative_to(ROOT))
     else:
-        bad = [dn for dn, body in notes(text) if dn >= MAP_FROM and not LINE.search(body) and "MAP: none" not in body]
-        top = max((dn for dn, _ in notes(text)), default=0)
+        bad = [dn for dn, body in notes(text) if MAP_FROM <= int(re.match(r"\d+", str(dn)).group()) <= MAP_UNTIL and not LINE.search(body) and "MAP: none" not in body]
+        top = min(max((int(re.match(r"\d+", str(dn)).group()) for dn, _ in notes(text)), default=0), MAP_UNTIL)
         stale = [n["id"] for n in m["nodes"] if n.get("flag") and top - int(re.search(r"D(\d+)", n["flag"]).group(1)) > STALE_AFTER]
         if bad or stale:
             print("D-notes without a MAP line:", bad, "| stale rechecks:", stale); return 1

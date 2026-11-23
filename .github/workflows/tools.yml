@@ -4,6 +4,9 @@ on:
     paths: ["tools/**", "requirements-tools.txt", "apps/skymap/**", "ufe-v2/aegis/discoveries.py", "ufe-v2/aegis/map_feed.py", "ufe-v2/aegis/community_reviews.py", ".github/workflows/tools.yml"]
   pull_request:
     paths: ["tools/**", "apps/skymap/**"]
+concurrency:                      # speed (Danny 22:27): a newer push cancels the older run on the same branch
+  group: tools-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -17,6 +20,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: tools/**/pyproject.toml
       - run: pip install ./tools/aion ./tools/scorecard pytest pyyaml
       - run: git config --global user.email ci@example.com && git config --global user.name ci
       - run: pytest -q tools/aion/tests tools/scorecard/tests tools/tracker/tests apps/skymap/tests/test_export.py
@@ -33,6 +38,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip
+          cache-dependency-path: .github/workflows/tools.yml
       - run: pip install numpy scipy sympy mpmath numba pyhf galpy astropy camb pytest
       - run: python -m pytest -q tools/kaluza/tests tools/lhc/tests tools/lattice/tests tools/janus_astro/tests tools/janus_lt/tests tools/serapis_calc/tests tools/chem/tests tools/golden/tests
       - run: python -m tools.golden.golden check
