@@ -114,5 +114,145 @@
    "value": 8.0555932225493,
    "shown": "8.056"
   }
+ ],
+ "inputs": [
+  {
+   "call": 0,
+   "key": "M_Ni_Msun",
+   "value": 0.6,
+   "shown": "0.6"
+  },
+  {
+   "call": 0,
+   "key": "days",
+   "value": 18,
+   "shown": "18"
+  },
+  {
+   "call": 0,
+   "key": "t0_days",
+   "value": 35,
+   "shown": "35"
+  },
+  {
+   "call": 1,
+   "key": "L_erg_s",
+   "value": 1e+41,
+   "shown": "1&times;10<sup>41</sup>"
+  },
+  {
+   "call": 1,
+   "key": "days",
+   "value": 200,
+   "shown": "200"
+  },
+  {
+   "call": 1,
+   "key": "t0_days",
+   "value": 40,
+   "shown": "40"
+  },
+  {
+   "call": 2,
+   "key": "M_ej_Msun",
+   "value": 0.05,
+   "shown": "0.05"
+  },
+  {
+   "call": 2,
+   "key": "days",
+   "value": 1,
+   "shown": "1"
+  },
+  {
+   "call": 3,
+   "key": "period_s",
+   "value": 765,
+   "shown": "765"
+  },
+  {
+   "call": 3,
+   "key": "m1",
+   "value": 0.26,
+   "shown": "0.26"
+  },
+  {
+   "call": 3,
+   "key": "m2",
+   "value": 0.5,
+   "shown": "0.5"
+  },
+  {
+   "call": 4,
+   "key": "log_eps_observed",
+   "value": -0.52,
+   "shown": "-0.52"
+  },
+  {
+   "call": 4,
+   "key": "production_ratio",
+   "value": 0.45,
+   "shown": "0.45"
+  },
+  {
+   "call": 0,
+   "key": "M_Ni_Msun",
+   "value": 0.6,
+   "shown": "0.6"
+  },
+  {
+   "call": 0,
+   "key": "days",
+   "value": 18,
+   "shown": "18"
+  },
+  {
+   "call": 0,
+   "key": "t0_days",
+   "value": 35,
+   "shown": "35"
+  },
+  {
+   "call": 1,
+   "key": "L_erg_s",
+   "value": 1e+41,
+   "shown": "1&times;10<sup>41</sup>"
+  },
+  {
+   "call": 1,
+   "key": "days",
+   "value": 200,
+   "shown": "200"
+  },
+  {
+   "call": 1,
+   "key": "t0_days",
+   "value": 40,
+   "shown": "40"
+  },
+  {
+   "call": 2,
+   "key": "M_ej_Msun",
+   "value": 0.05,
+   "shown": "0.05"
+  },
+  {
+   "call": 2,
+   "key": "days",
+   "value": 1,
+   "shown": "1"
+  }
+ ],
+ "consts": [
+  {
+   "name": "KN_fth_default",
+   "value": 0.5,
+   "shown": "0.5"
+  },
+  {
+   "name": "Th_factor_Gyr",
+   "value": 46.50699332842308,
+   "shown": "46.51"
+  }
  ]
 }

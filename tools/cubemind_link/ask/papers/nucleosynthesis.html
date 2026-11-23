@@ -14,15 +14,15 @@ pre{white-space:pre-wrap;font:11px Consolas,monospace;color:var(--muted);backgro
 <p class="tag">CubeMind &middot; Chronos technical note &middot; Nuclear Research Limb &sect;3 &middot; built 2026-11-23</p>
 <h1>Radioactive clocks of the cosmos: supernova heating, nickel masses, kilonovae, white-dwarf mergers and stellar ages</h1>
 <p class="by">Danny Lee Eldridge (independent researcher, Oklahoma City) with the CubeMind/Chronos engine. Every number below is printed directly from a logged engine call (appendix).</p>
-<h2>Abstract</h2><p class="abs">0.6 solar masses of Ni-56 heats a Type Ia supernova at 1.206&times;10<sup>43</sup>&nbsp;erg/s on day 18. Inverting a tail of 10<sup>41</sup>&nbsp;erg/s at day 200 with trapping time 40&nbsp;d gives 0.5957&nbsp;M&#8857; of Ni-56. A 0.05&nbsp;M&#8857; kilonova ejecta heats at about 4.972&times;10<sup>41</sup>&nbsp;erg/s at one day. The 765&nbsp;s double white dwarf J0651 merges in 1.109&nbsp;Myr (GW frequency 2.614&nbsp;mHz), and a Th/Eu abundance of &minus;0.52 dex with production ratio 0.45 gives a star age of 8.056&nbsp;Gyr.</p>
+<h2>Abstract</h2><p class="abs">0.6 solar masses of Ni-56 heats a Type Ia supernova at 1.206&times;10<sup>43</sup>&nbsp;erg/s on day 18, with gamma-ray trapping time t<sub>0</sub> = 35&nbsp;d. Inverting a tail of 1&times;10<sup>41</sup>&nbsp;erg/s at day 200 with t<sub>0</sub> = 40&nbsp;d gives 0.5957&nbsp;M&#8857; of Ni-56 (the two examples use different, separately chosen t<sub>0</sub>). 0.05&nbsp;M&#8857; of kilonova ejecta gives a thermalised luminosity of about 4.972&times;10<sup>41</sup>&nbsp;erg/s at day 1 (f<sub>th</sub> = 0.5). The 765&nbsp;s double white dwarf J0651 (0.26 + 0.5 M&#8857;) merges in 1.109&nbsp;Myr (GW frequency 2.614&nbsp;mHz), and an observed Th/Eu of -0.52 dex with a linear production ratio of 0.45 gives a star age of 8.056&nbsp;Gyr.</p>
 <h2>Context from the field</h2><p>[study] Open r-process questions: dominant sites (neutron-star mergers confirmed; collapsars unresolved), delay times, actinide-boost stars; nuclear data needed for neutron-rich half-lives, masses and capture rates (arXiv:2507.08760).</p>
-<h2>Method</h2><p>Ni-56&rarr;Co-56&rarr;Fe-56 heating with gamma trapping 1&minus;e<sup>&minus;t<sub>0</sub><sup>2</sup>/t<sup>2</sup></sup> and local positron deposition; kilonova heating from the Korobkin et al. (2012) power law; Peters (1964) gravitational-wave coalescence time; Th-232 cosmochronometry t = 46.7 Gyr &times; [log(Th/Eu)<sub>0</sub> &minus; log(Th/Eu)<sub>obs</sub>].</p>
-<h2>Results</h2><table><tr><th>Quantity</th><th>Engine value</th></tr><tr><td>Ni-56 heating, 0.6 M&#8857;, day 18</td><td>1.206&times;10<sup>43</sup>&nbsp;erg/s</td></tr><tr><td>Ni-56 mass from tail 1e41 erg/s at 200 d</td><td>0.5957&nbsp;M&#8857;</td></tr><tr><td>Kilonova heating, 0.05 M&#8857;, 1 d</td><td>4.972&times;10<sup>41</sup>&nbsp;erg/s</td></tr><tr><td>J0651 merger time</td><td>1.109&nbsp;Myr</td></tr><tr><td>J0651 GW frequency</td><td>2.614&nbsp;mHz</td></tr><tr><td>Th/Eu star age</td><td>8.056&nbsp;Gyr</td></tr></table>
+<h2>Method</h2><p>Ni-56&rarr;Co-56&rarr;Fe-56 heating with gamma trapping 1&minus;e<sup>&minus;t<sub>0</sub><sup>2</sup>/t<sup>2</sup></sup> and local positron deposition; kilonova luminosity L = f<sub>th</sub> M<sub>ej</sub> 10<sup>10</sup> (t/day)<sup>&minus;1.3</sup> erg s<sup>&minus;1</sup> g<sup>&minus;1</sup> (Korobkin et al. 2012 heating; Metzger 2019 normalisation); Peters (1964) gravitational-wave coalescence time; Th-232 cosmochronometry t = 46.51&nbsp;Gyr &times; [log<sub>10</sub>(Th/Eu)<sub>0</sub> &minus; log<sub>10</sub>(Th/Eu)<sub>obs</sub>], with the production ratio given linearly and converted to dex.</p>
+<h2>Results</h2><table><tr><th>Quantity</th><th>Engine value</th></tr><tr><td>Ni-56 heating, 0.6 M&#8857;, day 18, t<sub>0</sub> 35&nbsp;d</td><td>1.206&times;10<sup>43</sup>&nbsp;erg/s</td></tr><tr><td>Ni-56 mass from tail 1&times;10<sup>41</sup>&nbsp;erg/s at 200&nbsp;d, t<sub>0</sub> 40&nbsp;d</td><td>0.5957&nbsp;M&#8857;</td></tr><tr><td>Kilonova thermalised luminosity, 0.05 M&#8857;, 1&nbsp;d</td><td>4.972&times;10<sup>41</sup>&nbsp;erg/s</td></tr><tr><td>J0651 merger time</td><td>1.109&nbsp;Myr</td></tr><tr><td>J0651 GW frequency</td><td>2.614&nbsp;mHz</td></tr><tr><td>Th/Eu star age</td><td>8.056&nbsp;Gyr</td></tr></table>
 <div id="charts"></div><p class="tag">Charts are drawn from the engine's own output; hover to read exact values.</p>
 <h2>Validation</h2><p>Chronos was built under locked pre-registrations (D2189 and amendments A1&ndash;A3), with two independent solvers (analytic Bateman and matrix exponential)
 agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b NULL) recorded in the public ledger. Engine files sha256: <code>28a593bc4e290399&hellip;</code></p>
-<h2>Limits</h2><p>Kilonova heating is order-of-magnitude only; the Peters time is a point-mass upper bound to contact; the production ratio dominates the stellar-age uncertainty; no radiative transfer or light-curve fitting.</p>
-<h2>References</h2><ol><li>Arnett, W. D. (1982) ApJ 253, 785.</li><li>Korobkin, O. et al. (2012) MNRAS 426, 1940.</li><li>Peters, P. C. (1964) Phys. Rev. 136, B1224.</li><li>Brown, W. R. et al. (2011) ApJL 737, L23 (J0651).</li><li>Recent advances in r-process nucleosynthesis, arXiv:2507.08760.</li></ol>
+<h2>Limits</h2><p>Kilonova luminosity is order-of-magnitude only, with a constant thermalisation efficiency; the Peters time is a point-mass upper bound to contact; the production ratio dominates the stellar-age uncertainty; no radiative transfer or light-curve fitting.</p>
+<h2>References</h2><ol><li>Arnett, W. D. (1982) ApJ 253, 785.</li><li>Korobkin, O. et al. (2012) MNRAS 426, 1940.</li><li>Metzger, B. D. (2019) Living Rev. Relativ. 23, 1.</li><li>Peters, P. C. (1964) Phys. Rev. 136, B1224.</li><li>Brown, W. R. et al. (2011) ApJL 737, L23 (J0651).</li><li>Recent advances in r-process nucleosynthesis, arXiv:2507.08760.</li></ol>
 <h2>Appendix: engine calls</h2><pre>[
  {
   &quot;name&quot;: &quot;chronos_supernova&quot;,
@@ -152,11 +152,16 @@ agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b
   function prepare(spec, W, H, dpr) {
     const M = { l: 92 * dpr, r: 24 * dpr, t: 54 * dpr, b: 58 * dpr };
     const PW = W - M.l - M.r, PH = H - M.t - M.b, logy = !!spec.logy;
-    const ser = spec.series.map(s => {
-      const X = [], Y = [];
-      for (let i = 0; i < s.x.length; i++) { const yv = +s.y[i], xv = +s.x[i]; if (!isFinite(xv) || !isFinite(yv) || (logy && !(yv > 0))) continue; X.push(xv); Y.push(logy ? Math.log10(yv) : yv); }
-      return { name: s.name, X, Y, rawX: s.x.map(Number), rawY: s.y.map(Number) };
-    }).filter(s => s.X.length);
+    const ser = spec.series.map(s => {   // DEV-3: clean (finite, non-null, y>0 for logy) and sort by x; empty series kept as placeholders
+      const pts = [];
+      for (let i = 0; i < Math.min(s.x.length, s.y.length); i++) {
+        if (s.x[i] == null || s.y[i] == null) continue; const xv = +s.x[i], yv = +s.y[i];
+        if (!Number.isFinite(xv) || !Number.isFinite(yv) || (logy && !(yv > 0))) continue; pts.push([xv, yv]);
+      }
+      pts.sort((a, b) => a[0] - b[0]);
+      const rawX = pts.map(p => p[0]), rawY = pts.map(p => p[1]);
+      return { name: s.name, X: rawX.slice(), Y: rawY.map(v => logy ? Math.log10(v) : v), rawX, rawY, logy };
+    });
     let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
     ser.forEach(s => { for (let i = 0; i < s.X.length; i++) { const a = s.X[i], b = s.Y[i]; if (a < x0) x0 = a; if (a > x1) x1 = a; if (b < y0) y0 = b; if (b > y1) y1 = b; } });
     if (!isFinite(x0)) { x0 = 0; x1 = 1; y0 = 0; y1 = 1; }
@@ -201,6 +206,8 @@ agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b
     const { M, PH, dpr } = L, base = M.t + PH;
     L.ser.forEach((s, k) => {
       const c = PAL[k % PAL.length], P = s.P, n = P.length / 2;
+      if (!n) return;
+      if (n === 1) { g.fillStyle = c; g.beginPath(); g.arc(P[0], P[1], 4 * dpr, 0, 7); g.fill(); return; }
       const grad = g.createLinearGradient(0, M.t, 0, base); grad.addColorStop(0, c + '55'); grad.addColorStop(1, c + '00');
       g.beginPath(); g.moveTo(P[0], base); for (let j = 0; j < n; j++) g.lineTo(P[2 * j], P[2 * j + 1]); g.lineTo(P[2 * n - 2], base); g.closePath(); g.fillStyle = grad; g.fill();
       const path = () => { g.beginPath(); g.moveTo(P[0], P[1]); for (let j = 1; j < n; j++) g.lineTo(P[2 * j], P[2 * j + 1]); };
@@ -212,17 +219,19 @@ agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b
   }
 
   function headAt(s, X) { // position of series at plot-x X (on decimated path; for the tracer only)
-    const P = s.P, n = P.length / 2; if (X <= P[0]) return [P[0], P[1]]; if (X >= P[2 * n - 2]) return [P[2 * n - 2], P[2 * n - 1]];
+    const P = s.P, n = P.length / 2; if (!n) return null; if (X <= P[0]) return [P[0], P[1]]; if (X >= P[2 * n - 2]) return [P[2 * n - 2], P[2 * n - 1]];
     let lo = 0, hi = n - 1; while (hi - lo > 1) { const m = (lo + hi) >> 1; if (P[2 * m] <= X) lo = m; else hi = m; }
     const t = (X - P[2 * lo]) / ((P[2 * hi] - P[2 * lo]) || 1); return [P[2 * lo] + t * (P[2 * hi] - P[2 * lo]), P[2 * lo + 1] + t * (P[2 * hi + 1] - P[2 * lo + 1])];
   }
 
   // value of the FULL engine series at data-x (linear interpolation) — used for readouts (I4)
   function valueAt(s, x) {
-    const X = s.rawX, Y = s.rawY, n = X.length; if (!n) return NaN;
+    if (!s) return NaN; const X = s.rawX, Y = s.rawY, n = X.length; if (!n || !Number.isFinite(x)) return NaN;
     if (x <= X[0]) return Y[0]; if (x >= X[n - 1]) return Y[n - 1];
     let lo = 0, hi = n - 1; while (hi - lo > 1) { const m = (lo + hi) >> 1; if (X[m] <= x) lo = m; else hi = m; }
-    const t = (x - X[lo]) / (X[hi] - X[lo]); return Y[lo] + t * (Y[hi] - Y[lo]);
+    const t = (x - X[lo]) / ((X[hi] - X[lo]) || 1);
+    if (s.logy) return 10 ** (Math.log10(Y[lo]) + t * (Math.log10(Y[hi]) - Math.log10(Y[lo])));   // DEV-3: match the drawn log curve
+    return Y[lo] + t * (Y[hi] - Y[lo]);
   }
 
   function render(cv, spec, opts = {}) {
@@ -266,7 +275,7 @@ agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b
       compose(e);
       if (e < 1) L.ser.forEach((s, k) => {
         const fk = Math.min(1, Math.max(0, (el - stag * k) / (DUR - lastStag || DUR))), ek = 1 - (1 - fk) ** 3;
-        const [hx, hy] = headAt(s, M.l + PW * Math.min(e, ek));
+        const hh = headAt(s, M.l + PW * Math.min(e, ek)); if (!hh) return; const [hx, hy] = hh;
         for (let i = 0; i < 2; i++) sparks.push({ x: hx, y: hy, vx: (R() - 0.7) * 1.6 * dpr, vy: (R() - 0.5) * 1.6 * dpr, life: 1, c: PAL[k % PAL.length] });
         const rg = g.createRadialGradient(hx, hy, 0, hx, hy, 14 * dpr); rg.addColorStop(0, '#ffffff'); rg.addColorStop(0.25, PAL[k % PAL.length]); rg.addColorStop(1, 'rgba(0,0,0,0)');
         g.fillStyle = rg; g.beginPath(); g.arc(hx, hy, 14 * dpr, 0, 7); g.fill();

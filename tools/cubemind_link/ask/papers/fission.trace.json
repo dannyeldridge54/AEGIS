@@ -59,5 +59,74 @@
    "value": 0.001306697429982309,
    "shown": "0.001307"
   }
+ ],
+ "inputs": [
+  {
+   "call": 0,
+   "key": "days_operated",
+   "value": 365,
+   "shown": "365"
+  },
+  {
+   "call": 0,
+   "key": "hours_after_shutdown",
+   "value": 1,
+   "shown": "1"
+  },
+  {
+   "call": 1,
+   "key": "hours_after_shutdown",
+   "value": 24,
+   "shown": "24"
+  },
+  {
+   "call": 2,
+   "key": "hours_after_shutdown",
+   "value": 720,
+   "shown": "720"
+  },
+  {
+   "call": 0,
+   "key": "hours_after_shutdown",
+   "value": 1,
+   "shown": "1"
+  },
+  {
+   "call": 0,
+   "key": "days_operated",
+   "value": 365,
+   "shown": "365"
+  },
+  {
+   "call": 1,
+   "key": "hours_after_shutdown",
+   "value": 24,
+   "shown": "24"
+  },
+  {
+   "call": 1,
+   "key": "days_operated",
+   "value": 365,
+   "shown": "365"
+  },
+  {
+   "call": 2,
+   "key": "hours_after_shutdown",
+   "value": 720,
+   "shown": "720"
+  },
+  {
+   "call": 2,
+   "key": "days_operated",
+   "value": 365,
+   "shown": "365"
+  }
+ ],
+ "consts": [
+  {
+   "name": "WW_coeff",
+   "value": 0.0622,
+   "shown": "0.0622"
+  }
  ]
 }

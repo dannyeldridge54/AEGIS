@@ -70,5 +70,68 @@
    "value": 430.28238685641213,
    "shown": "430.3"
   }
+ ],
+ "inputs": [
+  {
+   "call": 0,
+   "key": "grams",
+   "value": 1000,
+   "shown": "1000"
+  },
+  {
+   "call": 0,
+   "key": "years",
+   "value": 1,
+   "shown": "1"
+  },
+  {
+   "call": 1,
+   "key": "years",
+   "value": 10,
+   "shown": "10"
+  },
+  {
+   "call": 0,
+   "key": "years",
+   "value": 1,
+   "shown": "1"
+  },
+  {
+   "call": 0,
+   "key": "grams",
+   "value": 1000,
+   "shown": "1000"
+  },
+  {
+   "call": 0,
+   "key": "years",
+   "value": 1,
+   "shown": "1"
+  },
+  {
+   "call": 0,
+   "key": "years",
+   "value": 1,
+   "shown": "1"
+  },
+  {
+   "call": 1,
+   "key": "years",
+   "value": 10,
+   "shown": "10"
+  },
+  {
+   "call": 1,
+   "key": "years",
+   "value": 10,
+   "shown": "10"
+  }
+ ],
+ "consts": [
+  {
+   "name": "T12_H3_y",
+   "value": 12.32,
+   "shown": "12.32"
+  }
  ]
 }

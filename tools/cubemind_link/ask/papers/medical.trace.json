@@ -131,5 +131,174 @@
    "value": 0.0030141882168106507,
    "shown": "0.003014"
   }
+ ],
+ "inputs": [
+  {
+   "call": 0,
+   "key": "A_needed",
+   "value": 370,
+   "shown": "370"
+  },
+  {
+   "call": 0,
+   "key": "nuclide",
+   "value": "F-18",
+   "shown": "F-18"
+  },
+  {
+   "call": 0,
+   "key": "hours",
+   "value": 2.5,
+   "shown": "2.5"
+  },
+  {
+   "call": 1,
+   "key": "parent",
+   "value": "Mo-99",
+   "shown": "Mo-99"
+  },
+  {
+   "call": 2,
+   "key": "parent",
+   "value": "Ge-68",
+   "shown": "Ge-68"
+  },
+  {
+   "call": 3,
+   "key": "Ac225_MBq_at_purification",
+   "value": 10,
+   "shown": "10"
+  },
+  {
+   "call": 3,
+   "key": "hours",
+   "value": 6,
+   "shown": "6"
+  },
+  {
+   "call": 3,
+   "key": "ac227_ratio_eob",
+   "value": 0.0015,
+   "shown": "0.0015"
+  },
+  {
+   "call": 3,
+   "key": "days_stored",
+   "value": 10,
+   "shown": "10"
+  },
+  {
+   "call": 0,
+   "key": "nuclide",
+   "value": "F-18",
+   "shown": "F-18"
+  },
+  {
+   "call": 0,
+   "key": "A_needed",
+   "value": 370,
+   "shown": "370"
+  },
+  {
+   "call": 0,
+   "key": "hours",
+   "value": 2.5,
+   "shown": "2.5"
+  },
+  {
+   "call": 1,
+   "key": "hours",
+   "value": 23,
+   "shown": "23"
+  },
+  {
+   "call": 1,
+   "key": "parent_GBq",
+   "value": 10,
+   "shown": "10"
+  },
+  {
+   "call": 1,
+   "key": "parent",
+   "value": "Mo-99",
+   "shown": "Mo-99"
+  },
+  {
+   "call": 1,
+   "key": "parent",
+   "value": "Mo-99",
+   "shown": "Mo-99"
+  },
+  {
+   "call": 1,
+   "key": "hours",
+   "value": 23,
+   "shown": "23"
+  },
+  {
+   "call": 2,
+   "key": "hours",
+   "value": 4,
+   "shown": "4"
+  },
+  {
+   "call": 2,
+   "key": "parent_GBq",
+   "value": 1.85,
+   "shown": "1.85"
+  },
+  {
+   "call": 2,
+   "key": "parent",
+   "value": "Ge-68",
+   "shown": "Ge-68"
+  },
+  {
+   "call": 3,
+   "key": "hours",
+   "value": 6,
+   "shown": "6"
+  },
+  {
+   "call": 3,
+   "key": "Ac225_MBq_at_purification",
+   "value": 10,
+   "shown": "10"
+  },
+  {
+   "call": 3,
+   "key": "hours",
+   "value": 6,
+   "shown": "6"
+  },
+  {
+   "call": 3,
+   "key": "days_stored",
+   "value": 10,
+   "shown": "10"
+  },
+  {
+   "call": 3,
+   "key": "ac227_ratio_eob",
+   "value": 0.0015,
+   "shown": "0.0015"
+  }
+ ],
+ "consts": [
+  {
+   "name": "BR_Mo99_Tc99m",
+   "value": 0.876,
+   "shown": "0.876"
+  },
+  {
+   "name": "BR_Bi213_Po213_pct",
+   "value": 97.8,
+   "shown": "97.8"
+  },
+  {
+   "name": "BR_Bi213_Tl209_pct",
+   "value": 2.1999999999999997,
+   "shown": "2.2"
+  }
  ]
 }

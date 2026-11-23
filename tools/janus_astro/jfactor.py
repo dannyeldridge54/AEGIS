@@ -42,9 +42,11 @@ def J_route_B(rho, r_sun, psi_max_deg=1.0, b_mask_deg=0.3, n_psi=160, n_phi=256)
         tot += wp*math.sin(psi)*2*math.pi*frac*los(rho, psi, r_sun)
     return tot
 
-def J_route_A_fast(rho, r_sun, psi_max_deg=1.0, b_mask_deg=0.3, n=120, n_cheb=96):
+def J_route_A_fast(rho, r_sun, psi_max_deg=1.0, b_mask_deg=0.3, n=120, n_cheb=96, smooth=True):
     """SPEED-Hyperion H1: same (l, b) Gauss-Legendre grid as J_route_A, but los(psi) is sampled once on Chebyshev nodes in
     log(psi) over [b_mask, psi_max] and evaluated by barycentric interpolation (psi >= b_mask everywhere in the region)."""
+    # R80 / DEV-1: scope is smooth (uncored) profiles with a plane mask; otherwise use the reference route.
+    if b_mask_deg <= 0 or not smooth: return J_route_A(rho, r_sun, psi_max_deg, b_mask_deg, n)
     pm, bm = math.radians(psi_max_deg), math.radians(b_mask_deg)
     lo, hi = math.log(bm), math.log(pm)
     k = np.arange(n_cheb); u = np.cos(np.pi*(2*k + 1)/(2*n_cheb))            # Chebyshev nodes (first kind) in [-1, 1]

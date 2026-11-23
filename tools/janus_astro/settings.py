@@ -55,7 +55,7 @@ def neutron_star(eos='SLy'):
     return dict(eos=eos, M_max_Msun=float(mm[0]))
 
 def jfactor(profile='Einasto', survey='HESS_IGS', rho_sun=0.4, r_sun=8.21, fast=True):
-    """fast=True: J_route_A_fast (SPEED-Hyperion H1: 100x, matches route A to 4e-11); fast=False: the reference route A."""
+    """fast=True: J_route_A_fast (SPEED-Hyperion H1; smooth uncored profiles only, <= 1e-12 vs route A per R80; 26-100x); fast=False: reference route A."""
     from . import jfactor as J
     h = HALOS[profile]
     shape = J.einasto(h['rs'], h['alpha']) if profile == 'Einasto' else (J.nfw(h['rs']) if profile == 'NFW' else J.burkert(h['r0']))

@@ -1,0 +1,10 @@
+{
+ "E1_decreasing": true,
+ "E2_nan_x": true,
+ "E3_null_y": true,
+ "E4_logy_index": true,
+ "E5_single_point_visible": true,
+ "I1b_column_extent_dev_px": 0.02186639364799703,
+ "page_errors": [],
+ "PASS": true
+}

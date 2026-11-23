@@ -40,5 +40,67 @@
    "value": 9.82615889764574,
    "shown": "9.826"
   }
+ ],
+ "inputs": [
+  {
+   "call": 0,
+   "key": "pair",
+   "value": "Cs-134/Cs-137",
+   "shown": "Cs-134/Cs-137"
+  },
+  {
+   "call": 0,
+   "key": "ratio_at_release",
+   "value": 1,
+   "shown": "1"
+  },
+  {
+   "call": 0,
+   "key": "ratio_now",
+   "value": 0.05,
+   "shown": "0.05"
+  },
+  {
+   "call": 1,
+   "key": "am_over_pu_activity",
+   "value": 0.02,
+   "shown": "0.02"
+  },
+  {
+   "call": 0,
+   "key": "pair",
+   "value": "Cs-134/Cs-137",
+   "shown": "Cs-134/Cs-137"
+  },
+  {
+   "call": 0,
+   "key": "ratio_now",
+   "value": 0.05,
+   "shown": "0.05"
+  },
+  {
+   "call": 0,
+   "key": "ratio_at_release",
+   "value": 1,
+   "shown": "1"
+  },
+  {
+   "call": 1,
+   "key": "am_over_pu_activity",
+   "value": 0.02,
+   "shown": "0.02"
+  }
+ ],
+ "consts": [
+  {
+   "name": "T12_Pu241_y",
+   "value": 14.29,
+   "shown": "14.29"
+  },
+  {
+   "name": "T12_Am241_y",
+   "value": 432.6,
+   "shown": "432.6"
+  }
  ]
 }

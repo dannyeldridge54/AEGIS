@@ -1,10 +1,49 @@
 {
- "P3_seconds": 0.012724876403808594,
+ "P3_seconds": 0.012981891632080078,
  "P1": {
   "numbers": 47,
   "mismatches": [],
   "n_bad": 0
  },
+ "P1b": {
+  "inputs": 73,
+  "n_bad": 0,
+  "bad": []
+ },
+ "P1c": {
+  "consts": 9,
+  "n_bad": 0,
+  "bad": []
+ },
+ "P1d_untraced_tokens": [
+  [
+   "nucleosynthesis",
+   "Method",
+   "1964"
+  ],
+  [
+   "nucleosynthesis",
+   "Method",
+   "2012"
+  ],
+  [
+   "nucleosynthesis",
+   "Method",
+   "2019"
+  ],
+  [
+   "safeguards",
+   "Method",
+   "134"
+  ],
+  [
+   "safeguards",
+   "Method",
+   "137"
+  ]
+ ],
+ "P4b": true,
+ "P5_maxrel": 5.679514724774496e-16,
  "P4": true,
  "P2_detail": {
   "medical.html": {
@@ -55,6 +94,11 @@
   "P2": true,
   "P3": true,
   "P4": true,
+  "P1b": true,
+  "P1c": true,
+  "P4b": true,
+  "P5": true,
   "PASS": true
- }
+ },
+ "P1d_note": "informational scan; flagged tokens reviewed by hand: citation years (1964, 2012, 2019) and isotope mass numbers in lambda subscripts (134, 137) are labels, not quantities"
 }

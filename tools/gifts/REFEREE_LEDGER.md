@@ -44,3 +44,8 @@ charts shown once: fission 3->1, fusion 2->1); test rerun still PASS. Referee ro
 ## R80 (2026-11-23 10:20 CT): Iris, paper generator, Hyperion fast J-factor — 3 MAJOR
 Iris: readout wrong for decreasing x; NaN/null leak into readout. Papers: P1 did not cover literal inputs/constants; t0 omitted.
 Hyperion: fast route exceeds 1e-6 for cored profiles with the core edge inside the region; b_mask 0 crash. DEVIATIONS written first.
+R80 fixes (after DEVIATIONS): Iris DEV-3 edge tests E1-E5 + I1b (sub-pixel column extent 0.022 px) PASS; locked I4 now FAILS on logy
+(3.9e-8) by design: DEV-3 makes the log-axis readout interpolate in log y to match the drawn curve; recorded, not hidden. Papers DEV-1:
+73 inputs echoed from call args (P1b), 9 constants read from the engine (P1c), chart labels (P4b), Ac-225 matrix exponential vs 50-digit
+analytic Bateman 5.7e-16 (P5) all PASS; untraced-token scan flags only citation years and isotope mass numbers. Hyperion DEV-1: fast path
+falls back to route A for b_mask 0 or smooth=False; scope narrowed in docstrings. Referee R80b pending.

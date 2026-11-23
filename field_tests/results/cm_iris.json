@@ -24,13 +24,13 @@
   "npts": 3137,
   "maxdev_px": 0.00004038079896417912,
   "extremes_kept": true,
-  "I4_rel": 2.5525870888075376e-16,
-  "I4_range_norm": 1.1368797460136203e-16
+  "I4_rel": 3.862294893868847e-8,
+  "I4_range_norm": 3.71968761637423e-8
  },
  "I2_frac_diff": 0,
  "I3": {
-  "prep_ms": 25.29999999993015,
-  "mean_frame_ms": 0.3855932203547682,
+  "prep_ms": 55.5,
+  "mean_frame_ms": 0.26610169491841124,
   "frames": 118
  },
  "I4_locked_metric_pass": false,
@@ -38,7 +38,7 @@
   "I1": true,
   "I2": true,
   "I3": true,
-  "I4": true,
-  "PASS": true
+  "I4": false,
+  "PASS": false
  }
 }

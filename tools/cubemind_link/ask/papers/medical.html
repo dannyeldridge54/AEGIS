@@ -16,13 +16,13 @@ pre{white-space:pre-wrap;font:11px Consolas,monospace;color:var(--muted);backgro
 <p class="by">Danny Lee Eldridge (independent researcher, Oklahoma City) with the CubeMind/Chronos engine. Every number below is printed directly from a logged engine call (appendix).</p>
 <h2>Abstract</h2><p class="abs">Using the Chronos decay engine we work four routine planning questions. To have 370&nbsp;MBq of F-18 left after 2.5&nbsp;h, 954&nbsp;MBq must be made now (1.366 half-lives). A Mo-99/Tc-99m generator eluted to zero reaches its Tc-99m maximum 22.85&nbsp;h later, with transient-equilibrium ratio 0.9637; a Ge-68/Ga-68 generator peaks after 14.1&nbsp;h. For 10&nbsp;MBq of Ac-225, Bi-213 reaches 9.814&nbsp;MBq after 6&nbsp;h, and an Ac-227/Ac-225 activity ratio of 0.0015 at end of bombardment grows to 0.003014 after 10 days of storage.</p>
 <h2>Context from the field</h2><p>[study] The DOE Isotope Program reports world Ac-225 supply of about 1.2&ndash;1.7 Ci per year from Th-229 generators, judged insufficient, with demand that could reach hundreds of Ci per year; the accelerator route co-produces Ac-227 (21.8 y), a licensing, waste and perception problem. In Oklahoma, the OU College of Pharmacy cyclotron is set to make PET and therapy agents in-state.</p>
-<h2>Method</h2><p>Single-nuclide decay: A(t) = A<sub>0</sub> e<sup>&minus;&lambda;t</sup>, so the activity to make now is A<sub>0</sub> = A<sub>need</sub> e<sup>&lambda;t</sup>. Generators: two-member Bateman solution with the parent-to-daughter branching (0.876 for Mo-99&rarr;Tc-99m); the daughter maximum after elution is t<sub>max</sub> = ln(&lambda;<sub>d</sub>/&lambda;<sub>p</sub>)/(&lambda;<sub>d</sub>&minus;&lambda;<sub>p</sub>) and the transient-equilibrium activity ratio is b&middot;&lambda;<sub>d</sub>/(&lambda;<sub>d</sub>&minus;&lambda;<sub>p</sub>). The Ac-225 chain (Fr-221, At-217, Bi-213, then Po-213 97.8% / Tl-209 2.2%, Pb-209) is solved by matrix exponential and checked against the analytic Bateman form; Ac-227 grows relative to Ac-225 as Ac-225 decays away.</p>
-<h2>Results</h2><table><tr><th>Quantity</th><th>Engine value</th></tr><tr><td>F-18 to make now for 370 MBq at 2.5 h</td><td>954&nbsp;MBq</td></tr><tr><td>Tc-99m peak after elution</td><td>22.85&nbsp;h</td></tr><tr><td>Tc-99m activity at 23 h (10 GBq Mo-99)</td><td>6.891&nbsp;GBq</td></tr><tr><td>Mo-99 left at 23 h</td><td>7.853&nbsp;GBq</td></tr><tr><td>Ga-68 peak after elution</td><td>14.1&nbsp;h</td></tr><tr><td>Ga-68 at 4 h (1.85 GBq Ge-68)</td><td>1.691&nbsp;GBq</td></tr><tr><td>Ac-225 at 6 h (10 MBq start)</td><td>9.827&nbsp;MBq</td></tr><tr><td>Bi-213 at 6 h</td><td>9.814&nbsp;MBq</td></tr><tr><td>Ac-227/Ac-225 after 10 d storage (0.0015 at EOB)</td><td>0.003014</td></tr></table>
+<h2>Method</h2><p>Single-nuclide decay: A(t) = A<sub>0</sub> e<sup>&minus;&lambda;t</sup>, so the activity to make now is A<sub>0</sub> = A<sub>need</sub> e<sup>&lambda;t</sup>. Generators: two-member Bateman solution with the parent-to-daughter branching (0.876 for Mo-99&rarr;Tc-99m); the daughter maximum after elution is t<sub>max</sub> = ln(&lambda;<sub>d</sub>/&lambda;<sub>p</sub>)/(&lambda;<sub>d</sub>&minus;&lambda;<sub>p</sub>) and the transient-equilibrium activity ratio is b&middot;&lambda;<sub>d</sub>/(&lambda;<sub>d</sub>&minus;&lambda;<sub>p</sub>). The Ac-225 chain (Fr-221, At-217, Bi-213, then Po-213 97.8&nbsp;% / Tl-209 2.2&nbsp;% as used by the engine (ENSDF gives about 97.9/2.1), Pb-209) is solved by matrix exponential; the test suite checks it against the analytic Bateman form (CM-PAPERS P5). Ac-227 grows relative to Ac-225 as Ac-225 decays away.</p>
+<h2>Results</h2><table><tr><th>Quantity</th><th>Engine value</th></tr><tr><td>F-18 to make now for 370&nbsp;MBq at 2.5&nbsp;h</td><td>954&nbsp;MBq</td></tr><tr><td>Tc-99m peak after elution</td><td>22.85&nbsp;h</td></tr><tr><td>Tc-99m activity at 23&nbsp;h (10&nbsp;GBq Mo-99)</td><td>6.891&nbsp;GBq</td></tr><tr><td>Mo-99 left at 23&nbsp;h</td><td>7.853&nbsp;GBq</td></tr><tr><td>Ga-68 peak after elution</td><td>14.1&nbsp;h</td></tr><tr><td>Ga-68 at 4&nbsp;h (1.85&nbsp;GBq Ge-68)</td><td>1.691&nbsp;GBq</td></tr><tr><td>Ac-225 at 6&nbsp;h (10&nbsp;MBq start)</td><td>9.827&nbsp;MBq</td></tr><tr><td>Bi-213 at 6&nbsp;h</td><td>9.814&nbsp;MBq</td></tr><tr><td>Ac-227/Ac-225 after 10 d storage (0.0015 at EOB)</td><td>0.003014</td></tr></table>
 <div id="charts"></div><p class="tag">Charts are drawn from the engine's own output; hover to read exact values.</p>
 <h2>Validation</h2><p>Chronos was built under locked pre-registrations (D2189 and amendments A1&ndash;A3), with two independent solvers (analytic Bateman and matrix exponential)
 agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b NULL) recorded in the public ledger. Engine files sha256: <code>28a593bc4e290399&hellip;</code></p>
-<h2>Limits</h2><p>No dosimetry, shielding, radiochemical yield, or clinical or regulatory judgement. Elution efficiency is taken as 100%. Half-lives are fixed evaluated values without uncertainties propagated.</p>
-<h2>References</h2><ol><li>NNDC/ENSDF evaluated half-lives (nndc.bnl.gov).</li><li>Bateman, H. (1910) Proc. Cambridge Phil. Soc. 15, 423.</li><li>DOE Isotope Program, Ac-225 user group report (isotopes.gov, 2022).</li></ol>
+<h2>Limits</h2><p>No dosimetry, shielding, radiochemical yield, or clinical or regulatory judgement. Elution efficiency is taken as 100%. Half-lives and branchings are fixed evaluated values without uncertainties propagated.</p>
+<h2>References</h2><ol><li>NNDC/ENSDF evaluated half-lives and branchings (nndc.bnl.gov).</li><li>Bateman, H. (1910) Proc. Cambridge Phil. Soc. 15, 423.</li><li>DOE Isotope Program, Ac-225 user group report (isotopes.gov, 2022).</li></ol>
 <h2>Appendix: engine calls</h2><pre>[
  {
   &quot;name&quot;: &quot;chronos_make_now&quot;,
@@ -156,11 +156,16 @@ agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b
   function prepare(spec, W, H, dpr) {
     const M = { l: 92 * dpr, r: 24 * dpr, t: 54 * dpr, b: 58 * dpr };
     const PW = W - M.l - M.r, PH = H - M.t - M.b, logy = !!spec.logy;
-    const ser = spec.series.map(s => {
-      const X = [], Y = [];
-      for (let i = 0; i < s.x.length; i++) { const yv = +s.y[i], xv = +s.x[i]; if (!isFinite(xv) || !isFinite(yv) || (logy && !(yv > 0))) continue; X.push(xv); Y.push(logy ? Math.log10(yv) : yv); }
-      return { name: s.name, X, Y, rawX: s.x.map(Number), rawY: s.y.map(Number) };
-    }).filter(s => s.X.length);
+    const ser = spec.series.map(s => {   // DEV-3: clean (finite, non-null, y>0 for logy) and sort by x; empty series kept as placeholders
+      const pts = [];
+      for (let i = 0; i < Math.min(s.x.length, s.y.length); i++) {
+        if (s.x[i] == null || s.y[i] == null) continue; const xv = +s.x[i], yv = +s.y[i];
+        if (!Number.isFinite(xv) || !Number.isFinite(yv) || (logy && !(yv > 0))) continue; pts.push([xv, yv]);
+      }
+      pts.sort((a, b) => a[0] - b[0]);
+      const rawX = pts.map(p => p[0]), rawY = pts.map(p => p[1]);
+      return { name: s.name, X: rawX.slice(), Y: rawY.map(v => logy ? Math.log10(v) : v), rawX, rawY, logy };
+    });
     let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
     ser.forEach(s => { for (let i = 0; i < s.X.length; i++) { const a = s.X[i], b = s.Y[i]; if (a < x0) x0 = a; if (a > x1) x1 = a; if (b < y0) y0 = b; if (b > y1) y1 = b; } });
     if (!isFinite(x0)) { x0 = 0; x1 = 1; y0 = 0; y1 = 1; }
@@ -205,6 +210,8 @@ agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b
     const { M, PH, dpr } = L, base = M.t + PH;
     L.ser.forEach((s, k) => {
       const c = PAL[k % PAL.length], P = s.P, n = P.length / 2;
+      if (!n) return;
+      if (n === 1) { g.fillStyle = c; g.beginPath(); g.arc(P[0], P[1], 4 * dpr, 0, 7); g.fill(); return; }
       const grad = g.createLinearGradient(0, M.t, 0, base); grad.addColorStop(0, c + '55'); grad.addColorStop(1, c + '00');
       g.beginPath(); g.moveTo(P[0], base); for (let j = 0; j < n; j++) g.lineTo(P[2 * j], P[2 * j + 1]); g.lineTo(P[2 * n - 2], base); g.closePath(); g.fillStyle = grad; g.fill();
       const path = () => { g.beginPath(); g.moveTo(P[0], P[1]); for (let j = 1; j < n; j++) g.lineTo(P[2 * j], P[2 * j + 1]); };
@@ -216,17 +223,19 @@ agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b
   }
 
   function headAt(s, X) { // position of series at plot-x X (on decimated path; for the tracer only)
-    const P = s.P, n = P.length / 2; if (X <= P[0]) return [P[0], P[1]]; if (X >= P[2 * n - 2]) return [P[2 * n - 2], P[2 * n - 1]];
+    const P = s.P, n = P.length / 2; if (!n) return null; if (X <= P[0]) return [P[0], P[1]]; if (X >= P[2 * n - 2]) return [P[2 * n - 2], P[2 * n - 1]];
     let lo = 0, hi = n - 1; while (hi - lo > 1) { const m = (lo + hi) >> 1; if (P[2 * m] <= X) lo = m; else hi = m; }
     const t = (X - P[2 * lo]) / ((P[2 * hi] - P[2 * lo]) || 1); return [P[2 * lo] + t * (P[2 * hi] - P[2 * lo]), P[2 * lo + 1] + t * (P[2 * hi + 1] - P[2 * lo + 1])];
   }
 
   // value of the FULL engine series at data-x (linear interpolation) — used for readouts (I4)
   function valueAt(s, x) {
-    const X = s.rawX, Y = s.rawY, n = X.length; if (!n) return NaN;
+    if (!s) return NaN; const X = s.rawX, Y = s.rawY, n = X.length; if (!n || !Number.isFinite(x)) return NaN;
     if (x <= X[0]) return Y[0]; if (x >= X[n - 1]) return Y[n - 1];
     let lo = 0, hi = n - 1; while (hi - lo > 1) { const m = (lo + hi) >> 1; if (X[m] <= x) lo = m; else hi = m; }
-    const t = (x - X[lo]) / (X[hi] - X[lo]); return Y[lo] + t * (Y[hi] - Y[lo]);
+    const t = (x - X[lo]) / ((X[hi] - X[lo]) || 1);
+    if (s.logy) return 10 ** (Math.log10(Y[lo]) + t * (Math.log10(Y[hi]) - Math.log10(Y[lo])));   // DEV-3: match the drawn log curve
+    return Y[lo] + t * (Y[hi] - Y[lo]);
   }
 
   function render(cv, spec, opts = {}) {
@@ -270,7 +279,7 @@ agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b
       compose(e);
       if (e < 1) L.ser.forEach((s, k) => {
         const fk = Math.min(1, Math.max(0, (el - stag * k) / (DUR - lastStag || DUR))), ek = 1 - (1 - fk) ** 3;
-        const [hx, hy] = headAt(s, M.l + PW * Math.min(e, ek));
+        const hh = headAt(s, M.l + PW * Math.min(e, ek)); if (!hh) return; const [hx, hy] = hh;
         for (let i = 0; i < 2; i++) sparks.push({ x: hx, y: hy, vx: (R() - 0.7) * 1.6 * dpr, vy: (R() - 0.5) * 1.6 * dpr, life: 1, c: PAL[k % PAL.length] });
         const rg = g.createRadialGradient(hx, hy, 0, hx, hy, 14 * dpr); rg.addColorStop(0, '#ffffff'); rg.addColorStop(0.25, PAL[k % PAL.length]); rg.addColorStop(1, 'rgba(0,0,0,0)');
         g.fillStyle = rg; g.beginPath(); g.arc(hx, hy, 14 * dpr, 0, 7); g.fill();

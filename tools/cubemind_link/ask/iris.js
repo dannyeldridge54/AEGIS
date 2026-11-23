@@ -64,11 +64,16 @@
   function prepare(spec, W, H, dpr) {
     const M = { l: 92 * dpr, r: 24 * dpr, t: 54 * dpr, b: 58 * dpr };
     const PW = W - M.l - M.r, PH = H - M.t - M.b, logy = !!spec.logy;
-    const ser = spec.series.map(s => {
-      const X = [], Y = [];
-      for (let i = 0; i < s.x.length; i++) { const yv = +s.y[i], xv = +s.x[i]; if (!isFinite(xv) || !isFinite(yv) || (logy && !(yv > 0))) continue; X.push(xv); Y.push(logy ? Math.log10(yv) : yv); }
-      return { name: s.name, X, Y, rawX: s.x.map(Number), rawY: s.y.map(Number) };
-    }).filter(s => s.X.length);
+    const ser = spec.series.map(s => {   // DEV-3: clean (finite, non-null, y>0 for logy) and sort by x; empty series kept as placeholders
+      const pts = [];
+      for (let i = 0; i < Math.min(s.x.length, s.y.length); i++) {
+        if (s.x[i] == null || s.y[i] == null) continue; const xv = +s.x[i], yv = +s.y[i];
+        if (!Number.isFinite(xv) || !Number.isFinite(yv) || (logy && !(yv > 0))) continue; pts.push([xv, yv]);
+      }
+      pts.sort((a, b) => a[0] - b[0]);
+      const rawX = pts.map(p => p[0]), rawY = pts.map(p => p[1]);
+      return { name: s.name, X: rawX.slice(), Y: rawY.map(v => logy ? Math.log10(v) : v), rawX, rawY, logy };
+    });
     let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
     ser.forEach(s => { for (let i = 0; i < s.X.length; i++) { const a = s.X[i], b = s.Y[i]; if (a < x0) x0 = a; if (a > x1) x1 = a; if (b < y0) y0 = b; if (b > y1) y1 = b; } });
     if (!isFinite(x0)) { x0 = 0; x1 = 1; y0 = 0; y1 = 1; }
@@ -113,6 +118,8 @@
     const { M, PH, dpr } = L, base = M.t + PH;
     L.ser.forEach((s, k) => {
       const c = PAL[k % PAL.length], P = s.P, n = P.length / 2;
+      if (!n) return;
+      if (n === 1) { g.fillStyle = c; g.beginPath(); g.arc(P[0], P[1], 4 * dpr, 0, 7); g.fill(); return; }
       const grad = g.createLinearGradient(0, M.t, 0, base); grad.addColorStop(0, c + '55'); grad.addColorStop(1, c + '00');
       g.beginPath(); g.moveTo(P[0], base); for (let j = 0; j < n; j++) g.lineTo(P[2 * j], P[2 * j + 1]); g.lineTo(P[2 * n - 2], base); g.closePath(); g.fillStyle = grad; g.fill();
       const path = () => { g.beginPath(); g.moveTo(P[0], P[1]); for (let j = 1; j < n; j++) g.lineTo(P[2 * j], P[2 * j + 1]); };
@@ -124,17 +131,19 @@
   }
 
   function headAt(s, X) { // position of series at plot-x X (on decimated path; for the tracer only)
-    const P = s.P, n = P.length / 2; if (X <= P[0]) return [P[0], P[1]]; if (X >= P[2 * n - 2]) return [P[2 * n - 2], P[2 * n - 1]];
+    const P = s.P, n = P.length / 2; if (!n) return null; if (X <= P[0]) return [P[0], P[1]]; if (X >= P[2 * n - 2]) return [P[2 * n - 2], P[2 * n - 1]];
     let lo = 0, hi = n - 1; while (hi - lo > 1) { const m = (lo + hi) >> 1; if (P[2 * m] <= X) lo = m; else hi = m; }
     const t = (X - P[2 * lo]) / ((P[2 * hi] - P[2 * lo]) || 1); return [P[2 * lo] + t * (P[2 * hi] - P[2 * lo]), P[2 * lo + 1] + t * (P[2 * hi + 1] - P[2 * lo + 1])];
   }
 
   // value of the FULL engine series at data-x (linear interpolation) — used for readouts (I4)
   function valueAt(s, x) {
-    const X = s.rawX, Y = s.rawY, n = X.length; if (!n) return NaN;
+    if (!s) return NaN; const X = s.rawX, Y = s.rawY, n = X.length; if (!n || !Number.isFinite(x)) return NaN;
     if (x <= X[0]) return Y[0]; if (x >= X[n - 1]) return Y[n - 1];
     let lo = 0, hi = n - 1; while (hi - lo > 1) { const m = (lo + hi) >> 1; if (X[m] <= x) lo = m; else hi = m; }
-    const t = (x - X[lo]) / (X[hi] - X[lo]); return Y[lo] + t * (Y[hi] - Y[lo]);
+    const t = (x - X[lo]) / ((X[hi] - X[lo]) || 1);
+    if (s.logy) return 10 ** (Math.log10(Y[lo]) + t * (Math.log10(Y[hi]) - Math.log10(Y[lo])));   // DEV-3: match the drawn log curve
+    return Y[lo] + t * (Y[hi] - Y[lo]);
   }
 
   function render(cv, spec, opts = {}) {
@@ -178,7 +187,7 @@
       compose(e);
       if (e < 1) L.ser.forEach((s, k) => {
         const fk = Math.min(1, Math.max(0, (el - stag * k) / (DUR - lastStag || DUR))), ek = 1 - (1 - fk) ** 3;
-        const [hx, hy] = headAt(s, M.l + PW * Math.min(e, ek));
+        const hh = headAt(s, M.l + PW * Math.min(e, ek)); if (!hh) return; const [hx, hy] = hh;
         for (let i = 0; i < 2; i++) sparks.push({ x: hx, y: hy, vx: (R() - 0.7) * 1.6 * dpr, vy: (R() - 0.5) * 1.6 * dpr, life: 1, c: PAL[k % PAL.length] });
         const rg = g.createRadialGradient(hx, hy, 0, hx, hy, 14 * dpr); rg.addColorStop(0, '#ffffff'); rg.addColorStop(0.25, PAL[k % PAL.length]); rg.addColorStop(1, 'rgba(0,0,0,0)');
         g.fillStyle = rg; g.beginPath(); g.arc(hx, hy, 14 * dpr, 0, 7); g.fill();
