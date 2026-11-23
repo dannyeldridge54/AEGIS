@@ -1,4 +1,4 @@
-# Zurvan test spectrum P1_natural (D2187 locked test point; hand-built, NOT a spectrum-generator output)
+# Zurvan test spectrum P1_natural (D2187 locked test point; hand-built, ILLUSTRATIVE: m_Hu^2, m_Hd^2 hand-picked, does NOT satisfy EWSB)
 BLOCK MINPAR
     3  1.000000E+01  # tanb
 BLOCK GAUGE Q= 1.390876E+03

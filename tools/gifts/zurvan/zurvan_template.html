@@ -29,7 +29,7 @@ label{font-size:13px;color:var(--muted)}
 <h2 style="margin-top:0">1 · Spectrum (SLHA output from Isajet, SoftSUSY, SPheno…)</h2>
 <div class="row" style="margin-bottom:8px">
 <input type="file" id="file" accept=".slha,.txt,.out,.spc">
-<select id="ex"><option value="">Load a test point…</option></select>
+<select id="ex"><option value="">Load an illustrative test point (hand-built, not EWSB-consistent)…</option></select>
 <button class="primary" id="go">Compute Δ_EW</button>
 </div>
 <textarea id="slha" spellcheck="false" placeholder="Paste an SLHA file here"></textarea>
@@ -41,9 +41,10 @@ label{font-size:13px;color:var(--muted)}
 <div><div class="note">Δ<sub>EW</sub>, each mass eigenstate its own term (DEW4SLHA style)</div><div class="big" id="d1"></div><div class="note" id="d1l"></div></div>
 <div><div class="note">Δ<sub>EW</sub>, each sfermion pair summed (t̃1+t̃2 etc.)</div><div class="big2" id="d2"></div><div class="note" id="d2l"></div></div>
 </div>
+<div id="warn" class="note warn"></div><p class="note" id="meta"></p>
 <div class="row" style="margin:10px 0"><label>View <select id="view"><option value="c">per term</option><option value="s">pairs summed</option></select></label><span class="note">Δ<sub>i</sub> = 2|C<sub>i</sub>|/m<sub>Z</sub>². Natural is usually taken as Δ<sub>EW</sub> ≲ 30.</span></div>
 <div class="tbl"><table><thead><tr><th>term</th><th>C<sub>i</sub> (GeV²)</th><th>Δ<sub>i</sub></th><th class="barc"></th></tr></thead><tbody id="tb"></tbody></table></div>
-<p class="note">Zurvan takes Σ<sup>u</sup><sub>u</sub>, Σ<sup>d</sup><sub>d</sub> by numerically differentiating the one-loop Coleman–Weinberg potential (DR̄, scale Q) of the third-family sfermions and fermions. <b>Not included in v1:</b> first/second-family sfermions, charginos, neutralinos, Higgs bosons, W/Z, the two-loop gluino terms. DEW4SLHA has all of those, so use it for the full answer; Zurvan is a quick, transparent cross-check.</p>
+<p class="note">Zurvan takes Σ<sup>u</sup><sub>u</sub>, Σ<sup>d</sup><sub>d</sub> by numerically differentiating the one-loop Coleman–Weinberg potential (DR̄, scale Q) of the third-family sfermions and fermions. <b>Not included in v1:</b> first/second-family sfermions, the tau sneutrino, charginos, neutralinos, Higgs bosons, W/Z, QCD/gluino corrections to y<sub>t</sub>, and all two-loop terms. DEW4SLHA has those, so use it for the full answer. Zurvan is a small, transparent cross-check of the third-family terms, and it has not yet been compared with DEW4SLHA on a real Isajet or SoftSUSY file.</p>
 </div>
 
 <div class="card">
@@ -72,7 +73,8 @@ function draw(){if(!last)return;const rows=$('view').value==='s'?last.summed:las
 $('tb').innerHTML=rows.slice(0,14).map(([k,v,d])=>`<tr><td>${k}</td><td>${v>=0?'+':''}${fmt(v)}</td><td>${fmt(d)}</td><td class="barc"><div class="bar${$('view').value==='s'?' g':''}" style="width:${Math.max(1,100*d/mx)}%"></div></td></tr>`).join('');}
 function run(){try{const p=Z.paramsFromSLHA($('slha').value);if(!(p.tanb>1))throw new Error('tan(beta) must be > 1');
 p.mZ=Math.sqrt((p.g**2+p.gp**2)/2*(p.vu**2+p.vd**2));last=Z.deltaEW(p);
-$('d1').textContent=fmt(last.Delta_EW);$('d1l').textContent='largest: '+last.largest;$('d2').textContent=fmt(last.Delta_EW_pairs_summed);$('d2l').textContent='largest: '+last.largest_pairs_summed+'  ·  Q = '+p.Q.toFixed(0)+' GeV';
+$('d1').textContent=fmt(last.Delta_EW);$('d1l').textContent='largest: '+last.largest+(last.headline==='pairs_summed'?'  (not the headline here: see warning)':'');$('view').value=last.headline==='pairs_summed'?'s':'c';
+$('warn').innerHTML=last.warnings.map(w=>'⚠ '+w.replace(/</g,'&lt;')).join('<br>');$('meta').textContent='m_Z used: '+last.mZ_used.toFixed(3)+' GeV (running, from g, g′, v at Q) · EWSB residual Σ C_i − m_Z²/2 = '+last.EWSB_residual.toExponential(3)+' GeV²';$('d2').textContent=fmt(last.Delta_EW_pairs_summed);$('d2l').textContent='largest: '+last.largest_pairs_summed+'  ·  Q = '+p.Q.toFixed(0)+' GeV';
 $('out').hidden=false;draw();}catch(err){$('out').hidden=false;$('tb').innerHTML=`<tr><td class="warn" colspan="4">Could not read this file: ${String(err.message).replace(/</g,'&lt;')}. Needs MSOFT, HMIX and YU blocks.</td></tr>`;$('d1').textContent='–';$('d2').textContent='–';$('d1l').textContent='';$('d2l').textContent='';}}
 $('go').onclick=run;$('view').onchange=draw;
 function rpv(){const m=+$('mw').value,ms=+$('ms').value*1e3,t=+$('tm').value;if(!(m>0&&ms>0&&t>0))return;
