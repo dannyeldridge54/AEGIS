@@ -1,0 +1,45 @@
+{
+ "sweeps": 2,
+ "G7": {
+  "specific_yield": 337387374563.07025,
+  "rel": 0.00114947941563881,
+  "Phi3": 0.3333333333333333,
+  "pass_": true
+ },
+ "G8": {
+  "gain_2022": 1.5365853658536586,
+  "gain_2025": 2.439024390243903,
+  "pass_": true
+ },
+ "G9": {
+  "gain_needed": 100.0,
+  "pass_": true
+ },
+ "G10": {
+  "T_kg": 56.083169097773606,
+  "rel": 0.0050747150138639174,
+  "Li6_kg": 111.85067701887797,
+  "half_life": 12.32,
+  "tbr_example": 1.0347504225815491,
+  "pass_": false
+ },
+ "G11": {
+  "wall_load_at_model_P": 0.5634835284678691,
+  "wall_load_500MW": 0.5462706100608319,
+  "area": {
+   "area_m2": 730.0,
+   "src": "ITER FDR PDD 2.14: inboard ~200 + outboard ~470 + divertor ~60 m^2; average 0.55 MW/m^2 at 500 MW"
+  },
+  "pass_": "report"
+ },
+ "G12": {
+  "He": {
+   "He_appm_per_fpy": 140.0,
+   "flux_n_cm2_s": 825000000000000.0,
+   "conditions": "pure Fe, DEMO outboard equatorial FW armour, 3.0 GWt (Gilbert et al. 2013, arXiv:1311.5079)"
+  },
+  "dpa": "not wired: Gilbert et al. give dpa only in figures (no number in the text)",
+  "pass_": "partial: He quoted with conditions; dpa conversion not available in the text read"
+ },
+ "example_rhoR_for_200MJ_from_1mg": 8.73442704481639
+}
