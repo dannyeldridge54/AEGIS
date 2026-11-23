@@ -41,7 +41,14 @@ def plasma_fast(m, n_avg, Te_avg, E_alpha_MeV, f_He=None):
     ne2 = float(np.dot(w, ne * ne)); ne2_core = float(np.dot(w[core], (ne * ne)[core]))
     Wth = float(np.dot(w, 1.5 * (ne * Te + ne * c['ions_per_e'] * Ti) * F.KEV_J)) * V / 1e6
     nline = float(ne.sum()) / g['N']
-    Ps = F.p_synch(mm, n0, T0); Pline = mm['P_line']; Prad = Pb + Ps + Pline; Prad_core = Pb_core + Ps + Pline * (ne2_core / ne2)
+    Ps = F.p_synch(mm, n0, T0)
+    if mm.get('line_model') == 'adas':   # PROM-5: line radiation derived from OPEN-ADAS (Ar, Be, He; W if f_W given)
+        import adas as AD
+        pl = sum(mm.get(f'f_{k}', 0.0) * AD.L_interp(k.lower(), Te) for k in ('Ar', 'Be', 'He', 'W') if mm.get(f'f_{k}', 0.0) > 0) * ne * ne
+        pl = w * pl * V / 1e6; Pline = float(pl.sum()); Pline_core = float(pl[core].sum())
+    else:
+        Pline = mm['P_line']; Pline_core = Pline * (ne2_core / ne2)
+    Prad = Pb + Ps + Pline; Prad_core = Pb_core + Ps + Pline_core
     beta = 2 * F.MU0 * (Wth * 1e6 / 1.5 / V) / mm['B'] ** 2; nG = mm['Ip'] / (math.pi * mm['a'] ** 2) * 1e20
     return dict(P_fus=Pf, P_alpha=Pf * E_alpha_MeV / F.q_value('DT'), P_brems=Pb, P_synch=Ps, P_line=Pline, P_rad=Prad, P_rad_core=Prad_core, W_MJ=Wth,
                 beta_N=100 * beta * mm['a'] * mm['B'] / mm['Ip'], n_G=nG, n_line=nline, f_G=nline / nG, Zeff=c['Zeff'], f_DT=c['f_DT'], Te0=T0, ne0=n0, f_He=mm['f_He'])

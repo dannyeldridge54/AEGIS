@@ -22400,3 +22400,16 @@ Not yet refereed (R86 launched).
 - Simulations (SIM-1, all PASS): burn settles on the operating point (1e-6), resettles 24.5 s after a 50->40 MW heating step, is thermally
   stable for +-10% temperature kicks, helium ash rises with t63 = 12 s (5 tau_E = 14.4 s); tritium plant-life doubling exact; the
   minimum breeding ratio just to hold inventory at 10 kg and 1 GW is 1.010.
+
+## D2196 (FUSION, 23 Nov 2026 13:45 CT) — cycles 4-5: NIF ignition consistency (PROM-4) and ADAS line radiation (PROM-5)
+- Cycle 4 (R87 no MAJOR): from yield 1.37 MJ, T 10.9 keV, burn width 89 ps and volume 6.4e5 um^3 the engine infers a hot-spot pressure of
+  545 Gbar (published 569 +- 61; volume error alone 516-580; with T_DD 575). This is a CONSISTENCY check (the published value uses the same
+  0-D inference), not independent validation. Generalized Lawson G_LC 1.45 (sphere radius = proxy), alpha fraction 2.49 (> 1.4), target
+  gain 0.715. N210808 ignited by these criteria, as the paper says.
+- Cycle 5: OPEN-ADAS ADF11 (Ar, Be, He, W; public mirror, Danny-approved) wired: reader + coronal balance + line cooling. Sanity PASS
+  (fractions sum to 1 within 3e-16; Ar 99.3% in its top two charge states at 8 keV; He stripped). Ar ~1e-31 W m^3 at 10 eV, ~2e-33 at
+  1 keV; W 1.9e-31 at 1 keV (consistent with published W cooling ~1e-31 near 1-2 keV).
+- HELD-OUT FAIL: coronal core line radiation with ITER's Be 2% and Ar 0.14% is 7.8 MW vs the table's 27 MW (-71%). Using it lowers P_rad,
+  raises P_loss, worsens the ITER match (400 MW held-out now fails). Not accepted; the 27 MW input stays. Reading: most of ITER's line
+  radiation must come from the cold edge (non-coronal, transport-enhanced) and/or tungsten, which a coronal core model cannot see.
+  Next for this thread: an edge radiation layer (non-coronal enhancement) or a W fraction — both need sources.
