@@ -22224,3 +22224,11 @@ Lock PREREG_D2184. Using only their fitted c2/h = 23.7 Hz and their initial stat
 - P2 periods: T(15 Hz) = 23.9 ms, T(42 Hz) = 13.1 ms, T(65 Hz) = 7.97 ms — inside their plotted 5–40 ms, falling with q, diverging toward q* → PASS.
 - Full predicted T(q) curve, 10–70 Hz, saved in field_tests/results/d2184_qsim_vs_liu2023.json for direct comparison with their Fig. 1g (their individual T values are only plotted, not tabulated, so the comparison is to the plot range, not point by point).
 Scope: this reproduces their own single-mode fit physics; it is a calibration of our tool, not a new physics claim.
+
+## D2185-G4 (PREDICTION, 23 Nov 2026 06:50 CT) — Loom knob tuner (compass steering), honest read
+Lock D2185 A1. Results field_tests/results/d2185_tuner.json (full knob trace per step).
+- N = 6 per site: tuner moved (p⊥/c2, ρ0) from (0.33, 0.60) to (0.339, 0.459); best revival F = 0.53 at t = 4.75/c2 (136 ms for c2 = 35 Hz). Dominant knob: p⊥/c2, then ρ0.
+- N = 10: (0.313, 0.539), F = 0.29 at 7.26/c2 (207 ms at 35 Hz).
+- N = 16, 24: NO real revival inside the 0.3 s window — the "best" value sat at the window edge (t ≈ T_max), so the tuner had nothing to climb and did not move. These are recorded as "no revival within 300 ms", not as results.
+- η(0) never moved: its compass entry was ~100× smaller than the others at these settings (and its step was under-scaled by the update rule) — so this pass says nothing reliable about η. Flagged for the next pass.
+Verdict: within 300 ms at c2 = 35 Hz, clear revivals need ≲ 10 atoms per site; tuning p⊥/c2 ≈ 0.31–0.34 and ρ0(0) ≈ 0.46–0.54 strengthens them. Local optimum; prediction only.
