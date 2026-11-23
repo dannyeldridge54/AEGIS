@@ -183,16 +183,17 @@ def run(regions, radii, n_hist=20000, seed=7, E0=14.0e6, kill_mt=(), tally_regio
     """scores: iterable of (region, mt) collision-estimator tallies (sum over nuclides of N sigma_mt / Sigma_t per collision)."""
     """regions: list of Material or None (void) per shell; radii: outer radius per shell (cm). Returns dict of tallies per source neutron."""
     rng = np.random.default_rng(seed); leak = 0.0; trit = {}; ncoll = 0; sc = {k: 0.0 for k in scores}; leakE = 0.0
+    book = dict(source=0, leaks=0, absorptions=0, cutoffs=0, multiplication=0, li6_n_t=0)   # HARDEN-1 bookkeeping
     for h in range(n_hist):
         mu = 2 * rng.random() - 1; ph = 2 * math.pi * rng.random(); s = math.sqrt(1 - mu * mu)
-        bank = [((0.0, 0.0, 0.0), (s * math.cos(ph), s * math.sin(ph), mu), E0)]
+        bank = [((0.0, 0.0, 0.0), (s * math.cos(ph), s * math.sin(ph), mu), E0)]; book['source'] += 1
         while bank:
             r, u, E = bank.pop()
             alive = True
             while alive:
                 rr = math.sqrt(r[0] ** 2 + r[1] ** 2 + r[2] ** 2)
                 reg = next((i for i, R in enumerate(radii) if rr < R - 1e-9 or (abs(rr - R) <= 1e-9 and (r[0] * u[0] + r[1] * u[1] + r[2] * u[2]) < 0)), len(radii))
-                if reg >= len(radii): leak += 1; leakE += E; break
+                if reg >= len(radii): leak += 1; leakE += E; book['leaks'] += 1; break
                 # distance to the outer and inner boundaries of this shell
                 b = r[0] * u[0] + r[1] * u[1] + r[2] * u[2]; c2 = rr * rr
                 Ro = radii[reg]; d_out = -b + math.sqrt(max(b * b - (c2 - Ro * Ro), 0.0))
@@ -232,8 +233,9 @@ def run(regions, radii, n_hist=20000, seed=7, E0=14.0e6, kill_mt=(), tally_regio
                     if i + 1 < rx.i0: continue
                     acc += Nuclide.val(rx.xs, i, f)
                     if acc >= xi: break
-                if rx.mt in kill_mt or not rx.prods: alive = False; break
-                new = []
+                if nu.name == 'Li6' and rx.mt == 105: book['li6_n_t'] += 1
+                if rx.mt in kill_mt or not rx.prods: alive = False; book['absorptions'] += 1; break
+                new = []; n_gen = 0
                 for yf, ds in rx.prods:
                     yo = None
                     if yield_override:   # audit R99: key (mt, nuclide prefix) or plain mt
@@ -248,10 +250,13 @@ def run(regions, radii, n_hist=20000, seed=7, E0=14.0e6, kill_mt=(), tally_regio
                         if rx.mt == 2: Eo = E * (nu.awr / (nu.awr + 1)) ** 2          # elastic: CM neutron energy
                         if m is None: m = 2 * rng.random() - 1
                         if rx.com: Eo, m = to_lab(E, Eo, m, nu.awr)
+                        n_gen += 1
                         if Eo > 1e-5: new.append((r, _rotate(u, m, rng), Eo))
+                        else: book['cutoffs'] += 1
+                book['multiplication'] += n_gen - 1   # HARDEN-1: neutrons out minus the one in
                 if not new: alive = False; break
                 (r, u, E) = new[0]; bank.extend(new[1:])
-    out = dict(leakage=leak / n_hist, leak_energy_eV=leakE / n_hist, collisions_per_hist=ncoll / n_hist, n_hist=n_hist, scores={'_'.join(str(x) for x in k): v / n_hist for k, v in sc.items()})
+    out = dict(book=book, leakage=leak / n_hist, leak_energy_eV=leakE / n_hist, collisions_per_hist=ncoll / n_hist, n_hist=n_hist, scores={'_'.join(str(x) for x in k): v / n_hist for k, v in sc.items()})
     for k, v in trit.items(): out[f'T_{k}'] = v / n_hist
     out['TBR'] = sum(v for k, v in out.items() if k.startswith('T_Li'))
     return out

@@ -1,0 +1,28 @@
+{
+ "goals": {
+  "B1": true,
+  "B2": true,
+  "B3": 1
+ },
+ "book": {
+  "source": 2000,
+  "leaks": 92,
+  "absorptions": 2703,
+  "cutoffs": 0,
+  "multiplication": 795,
+  "li6_n_t": 2014
+ },
+ "residual": 0,
+ "book_yield1": {
+  "source": 2000,
+  "leaks": 69,
+  "absorptions": 2317,
+  "cutoffs": 0,
+  "multiplication": 386,
+  "li6_n_t": 1696
+ },
+ "residual_yield1": 0,
+ "T_Li6_estimator": 1.0023062553640325,
+ "T_Li6_analog": 1.007,
+ "combined_se": 0.022589863714529437
+}
