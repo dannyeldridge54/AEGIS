@@ -6,3 +6,4 @@
   separatrix P_loss; synchrotron included vs omitted). -> DEV-1/2 rerun; A2 relabelled composition check.
 - R92 (23 Nov 2026, PROM-9 tree): L1/L8/L3 stale goalposts (already corrected in FUSION-1 DEVs); L4 SPARC popcon branch matches cfspopcon
   (tau 0.674 vs 0.673 s at 7.3 keV) yet runs hot (218 MW): steep point, ~20-30% tau optimism amplified. No bug. -> DEV-1 relock, DEV-2 V/n/kappa_A.
+- R93 (23 Nov 2026, N1 birth spectrum): sound; shift agreement within MC noise at 5 keV; B2/B4 weak; check FWHM definition -> DEV-1/2 rerun.

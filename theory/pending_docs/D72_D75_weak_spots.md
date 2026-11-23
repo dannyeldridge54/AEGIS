@@ -22510,3 +22510,12 @@ Verdict: every layer but the self-solved tokamak power balance reproduces its so
 cfspopcon's formulas (tau 0.674 vs 0.673 s at 7.3 keV), so the remaining difference is upstream of the formulas (profile-dependent W/P_alpha
 vs POPCON's own profile integrals). Not tuned (H98 left at 1.0). Next: run cfspopcon itself on the SPARC input as a code-to-code check,
 then JET DTE2 (measured) held-out.
+
+## D2204 (NEUTRON LADDER N1, 23 Nov 2026 ~13:50 CT) — the D-T neutron birth spectrum from first principles: PASS
+Plan: tools/fusion/NEUTRON_LADDER.md (12 rungs, D-T birth -> resonances -> transport -> breeding -> damage -> activation -> plant).
+Lock PREREG_N1_BIRTH; hints n1.json. Monte Carlo: Maxwellian D, T weighted by Bosch-Hale sigma(E_cm) v_rel, relativistic two-body decay, boost.
+Locked run B1-B4 PASS. R93: pass real; 5 keV shift agreement inside MC noise; widths test kinematics more than reactivity; check width definition.
+Rerun (8 seeds): mean shift 21.4+-0.5 / 34.84+-0.56 / 51.7+-0.5 keV vs Ballabio 21.71 / 34.84 / 51.87 (within 1.6 sigma); variance FWHM
+397.0 / 562.0 / 795.3 keV vs 397.1 / 561.9 / 795.3 (<0.01%); histogram half-max widths 0.5-0.7% lower -> Ballabio widths are moment-based.
+E0 (rest) 14.0284 MeV. Tool: neutron_birth.py. Data access for N3+: ENDF/B-VIII.0 (OpenMC HDF5, 659 nuclides) via
+github.com/openmc-data-storage/ENDF-B-VIII.0-NNDC; raw ENDF tapes (Fe-56, Be-9, Ca-40, U-235, Pb-208...) via njoy/NJOY2016 tests.
