@@ -9,3 +9,5 @@ Rules: lock before computing; DEVIATIONS before reruns; no reruns to chase; neve
 
 Update 01:26 CT (Danny: "Forget prize stuff"): all prize work dropped from this plan and the queue — no Mersenne/GIMPS, Hutter, Beal or other prize items. D2174/D2175 stay recorded as done; no follow-ups. Focus: the Weave fits, ping-pong/negative space, emulator, UFE derivations.
 Also: D2169 tight pair will hit its 7000 s cloud timeout (~02:24 CT) still on start 1/4. Write PREREG_D2169 DEVIATIONS (move to PC, no timeout) BEFORE any rerun; no result has been seen.
+
+Update 01:31 CT (Danny: "Before neg space ... schedule these all, fold into 1 run"): NEW PHASE 1b = D2178 battery (one lock, one driver tools/battery/run_battery.py, one report). Order T1 profile u_i → T2 freed inputs → T3 Planck+ACT+SPT → T4 growth → T5 GoF → T6 BBN → T8 forecasts → T7 MCMC/evidence (only after D2173 passes). Runs before Phase 2 (negative space). T5/T6 are cheap (from existing best fits) — do them in the cloud right away.
