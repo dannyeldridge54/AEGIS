@@ -1,0 +1,38 @@
+{
+ "T7": {
+  "worst_rel": 4.440892098500626e-16,
+  "pass_": true
+ },
+ "T8_report": {
+  "L_peak": 9.42e+42,
+  "t_rise_d": 13,
+  "M_Ni_Msun": 0.3422667394126785,
+  "context": "GRB-SNe typically 0.1-0.5 Msun in the literature; mean-peak value only"
+ },
+ "T9": {
+  "note": "masses 0.26/0.50 Msun from Hermes et al. 2012; Peters point-mass coalescence = upper bound (Brown et al. 2011: ~0.9 Myr to contact)",
+  "J0651_merger_Myr": 1.1093205092274938,
+  "f_gw_mHz": 2.6143790849673203,
+  "pass_": true
+ },
+ "T10": {
+  "frac": 0.75,
+  "pass_": true
+ },
+ "example_Awasthi_F18_day": {
+  "A_sat_GBq": 300,
+  "t_irr_min": 90,
+  "EOB_GBq": 130.05518403768522,
+  "after_synthesis_qc_transport_100min_GBq": 69.16567678277478
+ },
+ "example_Kilic_ELM_P_minutes": {
+  "12.75": 1.089804670231516,
+  "20": 3.620218864290705,
+  "40": 22.98695693412073,
+  "60": 67.77322825966586
+ },
+ "example_tail_Msun_per_1e41_at_200d": {
+  "full_trapping_TypeIIP": 0.041767440347620206,
+  "SN_Ia_t0_40d": 0.5956508450464507
+ }
+}

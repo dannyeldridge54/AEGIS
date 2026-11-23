@@ -1,0 +1,31 @@
+{
+ "T11": {
+  "Bi213_over_eq_at_6h": 0.9955514380666575,
+  "atom_conservation_rel": 0.0,
+  "pass_": true
+ },
+ "Ac227_example": {
+  "0 d": 0.0015,
+  "10 d": 0.0030141882168106507,
+  "20 d": 0.006056887070906781,
+  "30 d": 0.012171065093119996
+ },
+ "T12": {
+  "max_err_y": 4.440892098500626e-16,
+  "pass_": true
+ },
+ "T13": {
+  "annual_fraction": 0.05470851231559637,
+  "pass_": true
+ },
+ "T14_report": {
+  "1 h": 0.010125180318797321,
+  "1 d": 0.004437862692401424,
+  "1 y": 0.00025472393564174653
+ },
+ "T15": {
+  "roundtrip_err_Gyr": 0.0,
+  "pass_": true,
+  "note": "no published example quoted; inversion test only"
+ }
+}

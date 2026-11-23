@@ -24,3 +24,7 @@ DEV-13: cosmochronometry UI: log-eps input (ratio = 10^log), U/Th option, note "
   assumption", negative-age guard.
 DEV-14: Way-Wigner note adds "excludes U-239/Np-239 heating".
 DEV-15: "Ac-225 activity at purification"; show Ac-225 at t; tritium line gives He-3 mass via the mass ratio.
+
+DEV-16 (R78b minor, written before the fix): switching the cosmochronometry pair resets defaults (U/Th: observed -0.94 dex, production 0.57; Th/Eu: -0.52, 0.45) and the production label.
+
+R78b verdict: NULL (all of DEV-10..15 verified).

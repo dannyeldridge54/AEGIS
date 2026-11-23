@@ -9,7 +9,7 @@ the claims; the builder fixes only through a DEVIATIONS note written before any 
 | Spindle | Y. Liu (OSU) | D2183-D2185 | R71, R72 | NULL after fixes | PREREG_D2183_*_DEVIATIONS, D2185 DEV-1 |
 | Zurvan | H. Baer (OU) | D2187 | R75, R75b | NULL | DEV-1..13 |
 | Aion | K. S. Babu (OSU) | D2188 | R76, R76b | NULL | DEV-1..9 (DEV-8 Lantern kept by author) |
-| Chronos | Nuclear rung (OU/OSU) | D2189 + A1-A3 | R77 (3 major, fixed); R78 running | pending | DEV-1..9 |
+| Chronos | Nuclear rung (OU/OSU) | D2189 + A1-A3 | R77, R78, R78b | NULL | DEV-1..16 |
 
 ## Next in the rotation (older toolkits, one per loop tick)
 Hyperion (astro / BBN / neutron stars) -> CERN+1 (LHC toolkit) -> Lattice Lab -> Janus (astro, lt) -> SERAPIS calc -> chem -> golden.
