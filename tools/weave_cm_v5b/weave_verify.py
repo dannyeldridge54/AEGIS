@@ -14,6 +14,23 @@ def weave_wtoday(a):
     r = W.run({'mode': 'background', 'ui': float(a['ui'])})
     if 'error' in r: return r
     return {'w0': r['w_thread(z)']['0'], 'H0_engine': r['H0']}
+def weave_tally(dst):
+    """D2153 locked rule: one entry per W/L pair on the same likelihood set; count per D2132 class; never sum dchi2 across entries."""
+    dst = pathlib.Path(dst); R = {}
+    for p in glob.glob(str(dst / 'pr4_*.json')):
+        try: R[os.path.basename(p)[4:-5]] = json.load(open(p))
+        except Exception: pass
+    entries = []
+    for tag, d in sorted(R.items()):
+        if not tag.startswith('W_') or ('L_' + tag[2:]) not in R: continue
+        rest = tag[2:]; v = weave_verdict({'chi2_W': d['chi2_eff'], 'chi2_L': R['L_' + rest]['chi2_eff']})
+        entries.append({'set': rest, 'headline': rest == 'desdovekie', 'dchi2': round(v['dchi2'], 2), 'verdict': v['verdict'],
+                        'H0_W': d.get('point', {}).get('H0'), 'u_i': d.get('point', {}).get('rt_ui')})
+    counts = {c: sum(e['verdict'] == c for e in entries) for c in CODE.values()}
+    out = {'rule': 'PREREG_D2153 (D2132 classes; dchi2 not summed across entries: shared data)', 'updated': time.strftime('%Y-%m-%d %H:%M'),
+           'entries': entries, 'counts': counts, 'n_entries': len(entries)}
+    (dst / 'WEAVE_TALLY.json').write_text(json.dumps(out, indent=1))
+    return out
 def step(cm_root):
     """Called from the learn loop. Returns a small status dict."""
     cm = pathlib.Path(cm_root); dst = cm / 'weave_data' / 'lcdm'; dst.mkdir(parents=True, exist_ok=True)
@@ -63,4 +80,7 @@ def step(cm_root):
                 fq.write(json.dumps({'id': 'verdict_' + rest, 'task': 'Given Weave and LCDM effective chi-squares {x}, compute dchi2 = chi2_W - chi2_L (same number of free parameters).',
                                      'tool': 'weave_verdict', 'key': 'dchi2', 'tol': 0.001, 'args': args}) + '\n')
     seen_f.write_text('\n'.join(sorted(seen)))
-    return {'lcdm_watch': f'{len(new)} new result(s) stored and queued for re-derivation'}
+    t = weave_tally(dst)
+    S.add('WEAVE TALLY (D2153): ' + ', '.join(f"{e['set']} {e['dchi2']:+.2f} {e['verdict']}" for e in t['entries']) + ' | counts ' + json.dumps(t['counts']),
+          'weave_pc_runs', kind='tool_result', tier='EVIDENCE', topic='weave_lcdm', importance=5)
+    return {'lcdm_watch': f'{len(new)} new result(s) stored and queued for re-derivation', 'tally': t['counts']}
