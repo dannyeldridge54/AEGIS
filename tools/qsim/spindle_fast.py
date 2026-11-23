@@ -18,7 +18,8 @@ def _z(rho0, phi):
     return np.array([math.sqrt((1 - rho0)/2)*np.exp(1j*phi/2), math.sqrt(rho0), math.sqrt((1 - rho0)/2)*np.exp(1j*phi/2)])
 
 def mf_single_fast(c, q, rho0, phi, ts):
-    z = _z(rho0, phi)
+    """Normalised single site (nbar = 1) only."""
+    z = _z(rho0, phi); assert abs(np.sum(abs(z)**2) - 1) < 1e-12
     def f(t, y):
         psi = (y[:3] + 1j*y[3:]).reshape(1, 3); d = mf_rhs(psi, c, q, 0.0, 1.0)[0]
         return np.concatenate([d.real, d.imag])
@@ -26,14 +27,20 @@ def mf_single_fast(c, q, rho0, phi, ts):
     return abs(sol.y[1] + 1j*sol.y[4])**2
 
 def period_analytic(c, q, rho0, phi):
-    """Single-mode mean field, m = 0: E = c r(1-r)(1+cos th) - q r with th = 2*phi/2 + ... (th = phase(z1 zm / z0^2))."""
+    """Single-mode mean field, m = 0: E = c r(1-r)(1+cos th) - q r, th = arg(z1 zm / z0^2)."""
     z = _z(rho0, phi); th = np.angle(z[0]*z[2]/z[1]**2)
     E = c*rho0*(1 - rho0)*(1 + math.cos(th)) - q*rho0
     g = lambda r: 4*(E + q*r)*(2*c*r*(1 - r) - E - q*r)       # (dr/dt)^2
     # turning points: roots of the cubic in [0, 1] bracketing rho0
     rs = np.linspace(1e-12, 1 - 1e-12, 20001); gv = np.array([g(r) for r in rs])
     roots = [brentq(g, rs[i], rs[i + 1]) for i in range(len(rs) - 1) if gv[i] == 0 or gv[i]*gv[i + 1] < 0]
-    lo = max([r for r in roots if r <= rho0 + 1e-12], default=0.0); hi = min([r for r in roots if r >= rho0 - 1e-12], default=1.0)
+    if abs(g(rho0)) < 1e-12:   # DEV-2: rho0 is itself a turning point (sin th = 0); go to the side where g > 0
+        d = 1e-7; side = 1 if g(min(rho0 + d, 1 - 1e-12)) > 0 else -1
+        far = [r for r in roots if (r - rho0)*side > 1e-9]
+        if not far: return float('nan')
+        other = min(far, key=lambda r: abs(r - rho0)); lo, hi = sorted((rho0, other))
+    else:
+        lo = max([r for r in roots if r <= rho0 + 1e-12], default=0.0); hi = min([r for r in roots if r >= rho0 - 1e-12], default=1.0)
     if abs(hi - lo) < 1e-12: return float('nan')
     # substitution r = lo + (hi-lo) sin^2(u) removes the endpoint singularities
     def integrand(u):
@@ -43,7 +50,8 @@ def period_analytic(c, q, rho0, phi):
     return 2*T
 
 def bh_spectrum_sparse(L, N, J, U, k=3):
-    """OPT-IN for large lattices. Lanczos: levels may be MISSING when degenerate (SPEED-Spindle S4 failed). Use bh_spectrum for exact."""
+    """OPT-IN for large lattices only: may return wrong lowest levels, INCLUDING THE GROUND STATE (SPEED-Spindle S4 failed:
+    diagonal or symmetric cases collapse the Krylov space). Dense is used below dim 5000. Use bh_spectrum for exact."""
     basis = [s for s in itertools.product(range(N + 1), repeat=L) if sum(s) == N]; idx = {s: i for i, s in enumerate(basis)}
     D = len(basis); H = lil_matrix((D, D))
     for i, s in enumerate(basis):
@@ -55,6 +63,6 @@ def bh_spectrum_sparse(L, N, J, U, k=3):
                 if s[y] > 0:
                     t = list(s); amp = math.sqrt(s[y]*(s[x] + 1)); t[y] -= 1; t[x] += 1
                     H[idx[tuple(t)], i] += -J*amp
-    if D <= max(4*k + 1, 20) + 2: return np.linalg.eigvalsh(H.toarray())[:k], D
+    if D < 5000: return np.linalg.eigvalsh(H.toarray())[:k], D
     kk = k + 2; v0 = np.ones(D)/math.sqrt(D)   # DEV-1: fixed start, extra levels, wide Krylov space (degenerate pairs)
     return np.sort(eigsh(H.tocsr(), k=kk, which='SA', tol=1e-12, v0=v0, ncv=max(4*kk + 1, 20))[0])[:k], D

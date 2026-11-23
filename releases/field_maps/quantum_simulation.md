@@ -134,21 +134,24 @@ Rotation rung 1, 2026-11-23. Toolkit: **Spindle** (tools/qsim, locks D2183-D2185
 - [study] Verification and certification: a simulator's energy is only an upper bound; certified lower bounds (semidefinite
   hierarchies) and entanglement certification are open (Fraxanet, Salamon, Lewenstein, arXiv:2204.08905).
 - [study] Scaling, error, robustness, programmability; honest classical baselines (tensor networks keep challenging claims).
-- [study] Dynamics, thermalisation and many-body scars: scars stabilised by periodic driving (Bluvstein et al.); exact
+- [study] Dynamics, thermalisation and many-body scars: scars stabilised by periodic driving (Bluvstein et al., Science 371,
+  1355 (2021)); exact
   diagonalisation still carries much of the small-system work.
 - [study] Readout: quantum-gas microscopes, randomized measurements for entropies; scaling them.
 - [study] Targets: Fermi-Hubbard and high-Tc, frustrated/disordered magnets, lattice gauge theories (Schwinger, Higgs).
 
 ## Oklahoma
-- Y. Liu (OSU): spinor Bose gases; ergodicity breaking and quantum many-body scars in spinor gases (arXiv:2410.09015,
-  Floquet driving). Gift packet sent 2026-11-23 (Spindle + data packet).
+- Y. Liu (OSU): spinor Bose gases; Austin-Harris, Rana, Begg, Binegar, Bilitewski, Liu, "Observation of ergodicity breaking
+  and quantum many-body scars in spinor gases" (arXiv:2410.09015, Floquet driving). Gift packet sent 2026-11-23 (Spindle + data packet).
 
 ## What Spindle covers
 - [ours] Exact spin-1 single-mode (SMA) dynamics; mean-field spin-1 lattice; exact Bose-Hubbard spectra; the static Floquet
   Hamiltonian of Liu's Eq. S9; separatrix, revivals and per-atom fidelity (D2183-D2185); a sensitivity compass.
-- [ours, speed rung] Mean-field runs 35x faster (DOP853, matches to 4e-10); SMA time series 2.6x; an analytic
-  oscillation period by quadrature (agrees to 2e-8 where it oscillates). The sparse Bose-Hubbard path was REJECTED as a
-  replacement (Lanczos can miss degenerate levels) and is opt-in only for bigger lattices.
+- [ours, speed rung] Mean-field runs 37x faster (DOP853, matches to 4e-10); SMA time series 2.6x. An analytic oscillation
+  period by quadrature agrees with long-window simulation to 5e-8 on four cases (after a turning-point fix for phi = 0 or pi);
+  it failed its locked test as first written and is offered as an option. The sparse Bose-Hubbard path was REJECTED: it can
+  return wrong lowest levels, including the ground state (diagonal or symmetric cases collapse the Krylov space); it is
+  opt-in only above dimension 5000.
 
 ## Gaps and build order (cheapest real value first)
 1. Symmetry-resolved Bose-Hubbard (momentum and parity sectors): exact and large, with no degeneracy blind spot.
@@ -158,5 +161,7 @@ Rotation rung 1, 2026-11-23. Toolkit: **Spindle** (tools/qsim, locks D2183-D2185
 5. Truncated Wigner for beyond-mean-field lattice dynamics.
 
 ## Sources
-Fraxanet, Salamon, Lewenstein, "The Coming Decades of Quantum Simulation", arXiv:2204.08905; Liu group,
-arXiv:2410.09015; Stamper-Kurn & Ueda, "Spinor Bose gases", arXiv:1205.1888.
+Fraxanet, Salamon, Lewenstein, "The Coming Decades of Quantum Simulation", arXiv:2204.08905; Austin-Harris et al.,
+arXiv:2410.09015; Stamper-Kurn & Ueda, "Spinor Bose gases: Symmetries, magnetism, and quantum dynamics", Rev. Mod. Phys. 85,
+1191 (2013), arXiv:1205.1888; Bluvstein et al., "Controlling quantum many-body dynamics in driven Rydberg atom arrays",
+Science 371, 1355 (2021).
