@@ -1,0 +1,2 @@
+# D2173 DEVIATIONS
+1. (2026-11-23 06:05 CT, before any run) Smoke test before the full V1–V3 validation: weave_ole.py (sha256 a3225c706b52…) = weave_lcdm_pr4c.py + LOOM_OLE env switch (imports OLE's Cobaya interface before CAMB; adds emulate=True and OLE's example quality thresholds 1.0/0.1 to the theory block). Smoke = L on HiLLiPoP + DESI DR2 + Pantheon+, best of 1, OMP 2, in venv_ole. It checks only that OLE runs inside our minimiser and how fast; it scores nothing. OLE documents MCMC use; if the minimiser path fails, that is recorded and OLE is kept for T7 (MCMC) only.
