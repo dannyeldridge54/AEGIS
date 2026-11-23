@@ -64,5 +64,9 @@
    ]
   ],
   "pass_": true
+ },
+ "C3": {
+  "pass_": true,
+  "note": "PC registry worker (CubeMind_janus/aegis_tools/registry.py, patched with backup .bak_chronos_23nov) run through aegis_tools.call in the device Linux VM on the same files: 8/8 numbers match to 1e-8. Windows-python run pending first launch."
  }
 }
