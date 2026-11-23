@@ -51,6 +51,13 @@ th{font-weight:500;color:var(--muted);font-size:12px}
 .tscroll{overflow-x:auto}
 .note{font-size:12.5px;color:var(--muted);margin:8px 0 0;max-width:75ch}
 .neg{color:var(--set)} .pos{color:var(--off)}
+.parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.part{border:1px solid var(--line);border-radius:8px;padding:12px 14px;min-width:0}
+.part h3{font-family:var(--display);font-weight:500;font-size:16.5px;margin:0 0 6px}
+.part p{margin:0;font-size:13.5px}
+.tag{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.03em}
+.twist{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin:4px 0 14px}
+.twist svg text{font-size:11px}
 @media (prefers-reduced-motion:no-preference){.ring{transition:opacity .2s}}
 </style>
 
@@ -80,6 +87,41 @@ th{font-weight:500;color:var(--muted);font-size:12px}
       <div class="close" id="close"></div>
     </section>
   </div>
+
+
+  <section class="panel" aria-label="Twists, bends and parts">
+    <h2>Twists, bends and the parts of a particle</h2>
+    <div class="twist" id="twist"></div>
+    <div class="parts">
+      <div class="part"><div class="tag">THE TWIST · geometry</div><h3>Six turns that pin the shape</h3>
+        <p>The space folds by the Z₆-II twist (1, 2, −3)/6: torus one turns 60°, torus two turns 120°, torus three turns 180°, all at once. A torus can only survive a 60° or 120° turn if it is hexagonal, which forces its shape to τ = ρ = e^{iπ/3}. That is the same point as the knot ρ, and in the Weave's reading the twist is what pins it at the centre. The third torus only flips, so its shape stays free, and that is where something can still move.</p></div>
+      <div class="part"><div class="tag">TWISTED STRINGS · geometry</div><h3>Strings caught at the fixed points</h3>
+        <p>The twist leaves fixed points, where a closed string can be caught half-turned. Those twisted strings are the small, hidden cycles in the brane cycles (the ½Σ(d δ + e δ̃) part). They carry the blow-up moduli, and they let a brane split into fractional pieces.</p></div>
+      <div class="part"><div class="tag">THE BEND · branes</div><h3>Branes wrap at angles</h3>
+        <p>Each force lives on a stack of D6-branes that wraps one loop on each torus, bent at an angle given by its wrapping numbers. All the wrapping has to cancel the orientifold's charge: ΣN(P+Q) = 8 and ΣN(U − V) = 24. That accounting is the tadpole, and its flux version is the wall that fails (46 against 2).</p></div>
+      <div class="part"><div class="tag">THE CROSSINGS · matter</div><h3>Where branes cross, matter lives</h3>
+        <p>At each point where two stacks cross at an angle, a string stretched between them has one massless spin-½ state: a chiral particle. Count the crossings and you count the families; the published Z₆-II model has exactly three. Strings between parallel stacks give the Higgs pair instead.</p></div>
+      <div class="part"><div class="tag">THE FLOWS · couplings</div><h3>Mass flows across triangles</h3>
+        <p>A Yukawa coupling links three crossings. The string sweeps the triangle between them, and the coupling falls off with that triangle's area. Small triangles give heavy particles, large ones light. In the Weave the same pattern is written as modular forms of τ, so how far τ sits from ρ sets the mass ratios.</p></div>
+      <div class="part"><div class="tag">THE MOVING PARTS · fields</div><h3>What rolls, swings and decays</h3>
+        <p>Rolls: the inflaton down its plateau, then the thread today toward the knot i. Swings: the heavy quark modulus τ_q oscillates after inflation. Decays: τ_q and the gravitinos decay late into winos, which is the N4 wall. Stays put: the shapes pinned by the twist.</p></div>
+    </div>
+    <h2 style="margin-top:18px">A particle's parts: where its string ends</h2>
+    <p class="note" style="margin-top:0">The typical assignment in a four-stack model (a colour, b weak, c and d U(1)); the published Z₆-II model follows this pattern with an extra hidden stack.</p>
+    <div class="tscroll"><table>
+      <thead><tr><th>Particle</th><th>String ends on</th><th>Why it has the charges it has</th></tr></thead>
+      <tbody>
+        <tr><td>Gluon, W, Z, photon</td><td>both ends on the same stack</td><td>a string inside one stack carries that stack's force</td></tr>
+        <tr><td>Quark doublet</td><td>colour stack (a) to weak stack (b)</td><td>one end gives colour, the other the weak charge</td></tr>
+        <tr><td>Up and down quarks</td><td>colour stack (a) to a U(1) stack (c)</td><td>colour, but no weak charge</td></tr>
+        <tr><td>Lepton doublet</td><td>lepton stack (d) to weak stack (b)</td><td>weak charge, no colour</td></tr>
+        <tr><td>Higgs pair</td><td>weak stack (b) to stack (c), where they run parallel</td><td>no crossing, so not chiral; it can get a mass term</td></tr>
+        <tr><td>Wino</td><td>the superpartner of the W, on the weak stack</td><td>its mass comes from supersymmetry breaking (L5), not from a string end</td></tr>
+        <tr><td>Hidden states</td><td>a visible stack to a hidden stack</td><td>these can carry fractional electric charge, the hazard the Z₆-II checks still owe</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">The general rules (strings on stacks, chirality at crossings, triangle couplings, tadpoles) are standard intersecting-brane physics. The specific twist, the knot at ρ, the three-family Z₆-II model and the wall numbers are this model's.</p>
+  </section>
 
   <section class="panel" aria-label="Tonight's fits">
     <h2>Tonight's fits: the seesaw</h2>
@@ -199,4 +241,24 @@ function lists(){
 lists(); draw();
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw);
 new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+
+function twist(){
+  const box=document.getElementById('twist'); const ns='http://www.w3.org/2000/svg';
+  box.innerHTML='';
+  [[60,'torus 1 · 60°','pinned to ρ'],[120,'torus 2 · 120°','pinned to ρ'],[180,'torus 3 · 180°','shape free']].forEach(([deg,lab,sub])=>{
+    const svg=document.createElementNS(ns,'svg'); svg.setAttribute('viewBox','0 0 120 120'); svg.setAttribute('width','120'); svg.setAttribute('role','img'); svg.setAttribute('aria-label',lab+', '+sub);
+    const add=(t,a)=>{const e=document.createElementNS(ns,t);for(const k in a)e.setAttribute(k,a[k]);svg.appendChild(e);return e};
+    const pts=[]; const n=deg===180?4:6; for(let i=0;i<n;i++){const a=i*2*Math.PI/n+(n===4?Math.PI/4:0);pts.push([60+34*Math.cos(a),58+34*Math.sin(a)])}
+    add('polygon',{points:pts.map(p=>p.join(',')).join(' '),fill:'none',stroke:C('--muted'),'stroke-width':1.2,'stroke-dasharray':deg===180?'4 3':'none'});
+    const r=40,a1=-Math.PI/2,a2=a1+deg*Math.PI/180;
+    add('path',{d:`M${60+r*Math.cos(a1)},${58+r*Math.sin(a1)} A${r},${r} 0 ${deg>180?1:0} 1 ${60+r*Math.cos(a2)},${58+r*Math.sin(a2)}`,fill:'none',stroke:C('--accent'),'stroke-width':2.2});
+    add('circle',{cx:60+r*Math.cos(a2),cy:58+r*Math.sin(a2),r:3.2,fill:C('--accent')});
+    add('text',{x:60,y:112,'text-anchor':'middle',fill:C('--fg')}).textContent=lab;
+    const w=document.createElement('div'); w.style.textAlign='center'; w.appendChild(svg);
+    const c=document.createElement('div'); c.className='tag'; c.textContent=sub; w.appendChild(c); box.appendChild(w);
+  });
+}
+twist();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',twist);
+new MutationObserver(twist).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
 </script>
