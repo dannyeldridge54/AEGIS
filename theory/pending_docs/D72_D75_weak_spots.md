@@ -22186,3 +22186,8 @@ Lock PREREG_D2151 (Addendum 2 likelihoods: SPT-3G D1 T&E lite via candl, Planck 
 - Not refereed. Minimiser scatter on these fits not yet measured.
 ## D2176a (CORRECTION, 23 Nov 2026 01:16 CT) — the ACT/SPT status in the posted paper was wrong in v1 and v1.1
 At the 00:20 final check I changed "still running" to "set up and smoke-tested, not yet started" for the ACT and SPT fits. That was wrong: they had been running since 21:33 CT (launched_extcmb.txt, which I missed). The original wording was right. Zenodo v1 (24453859) and v1.1 (24457128) both carry the wrong wording; the next version must correct it and report D2176.
+
+## D2179 (CENTRE, 23 Nov 2026 01:40 CT) — D2178 T6 (BBN) scored; T5 per-likelihood χ² tabulated
+Lock PREREG_D2178 + DEV-1 (BBN references corrected before running). Results field_tests/results/d2178_T5T6.json (21 best fits: L, W, C on HiLLiPoP/CamSpec/SPT × three SN sets).
+- T6: every fit's Ω_b h² (0.02215–0.02242) sits +2.6σ to +4.0σ above Cooke+2018 with the theoretical d(p,γ)³He rate (0.02166 ± 0.00019), and within −0.5σ to +0.2σ of Cooke+2018 with the measured rate (0.02235 ± 0.00037). The W − L difference on the same data is ≤ 0.0001 (≤ 0.5σ of the tighter reference). Verdict: the Weave changes nothing here; it inherits ΛCDM's known BBN situation, which hinges on the d(p,γ)³He rate, not on the model. Consistent with the measured rate.
+- T5: per-likelihood χ² saved for all fits. PTEs need each likelihood's effective dof; deferred to the battery driver (it will take dof from each likelihood's own data vector length minus fitted nuisances), noted, not chased.
