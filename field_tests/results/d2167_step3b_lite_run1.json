@@ -1,0 +1,11 @@
+{
+ "n": 2000,
+ "counts": {
+  "T1_fail": 2000
+ },
+ "extra_massless_U1_hist": {},
+ "dNeff_per_U1": 0.019381546567000127,
+ "n_clean": 0,
+ "first_clean": [],
+ "any_self_image_U1": 0
+}

@@ -9,8 +9,11 @@ res = collections.Counter(); extra_hist = collections.Counter(); clean = []; sel
 for i, m in enumerate(d['survivors']):
     st = [('a', 3, m['a']), ('b', 2, m['b']), ('c', 1, m['c']), ('d', 1, m['d'])] + [(f'h{k}', N, c) for k, (N, c) in enumerate(m['hidden'])]
     M = sp.Matrix([odd(N, c) for _, N, c in st]).T
-    Y = sp.Matrix([sp.Rational(1, 6), 0, sp.Rational(1, 2), sp.Rational(1, 2)] + [0]*(len(st) - 4))
-    t1 = (M * Y).is_zero_matrix
+    t1 = False
+    for sc in (1, -1):      # DEV-1: sign of Q_c and Q_d depends on brane vs image storage
+        for sd in (1, -1):
+            Y = sp.Matrix([sp.Rational(1, 6), 0, sp.Rational(sc, 2), sp.Rational(sd, 2)] + [0]*(len(st) - 4))
+            if (M * Y).is_zero_matrix: t1 = True
     extra = len(M.nullspace()) - 1 if t1 else None
     vis = [x for x in st[:4]]; hid = st[4:]
     t3 = 0
@@ -26,4 +29,4 @@ for i, m in enumerate(d['survivors']):
 out = dict(n=len(d['survivors']), counts=dict(res), extra_massless_U1_hist={str(k): v for k, v in sorted(extra_hist.items())},
            dNeff_per_U1=PER, n_clean=len(clean), first_clean=clean[:20], any_self_image_U1=selfimg)
 print(json.dumps(out, indent=1))
-json.dump(out, open(os.path.join(os.path.dirname(__file__), '..', '..', 'field_tests', 'results', 'd2167_step3b_lite.json'), 'w'), indent=1)
+json.dump(out, open(os.path.join(os.path.dirname(__file__), '..', '..', 'field_tests', 'results', 'd2167_step3b_lite_dev1.json'), 'w'), indent=1)
