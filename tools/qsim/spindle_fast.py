@@ -1,4 +1,6 @@
-"""Spindle fast paths (SPEED-Spindle). Reference engine: loom_qsim.py (unchanged)."""
+"""Spindle fast paths (SPEED-Spindle). Reference engine: loom_qsim.py (unchanged).
+Accepted: sma_rho0_fast (S1, 2.6x, 5.6e-16), mf_single_fast (S2, 35x, 3.9e-10). Option: period_analytic (S3, 2e-8 where it oscillates).
+Not accepted: bh_spectrum_sparse (S4; opt-in only)."""
 import math, numpy as np, itertools
 from scipy.integrate import solve_ivp, quad
 from scipy.optimize import brentq
@@ -41,6 +43,7 @@ def period_analytic(c, q, rho0, phi):
     return 2*T
 
 def bh_spectrum_sparse(L, N, J, U, k=3):
+    """OPT-IN for large lattices. Lanczos: levels may be MISSING when degenerate (SPEED-Spindle S4 failed). Use bh_spectrum for exact."""
     basis = [s for s in itertools.product(range(N + 1), repeat=L) if sum(s) == N]; idx = {s: i for i, s in enumerate(basis)}
     D = len(basis); H = lil_matrix((D, D))
     for i, s in enumerate(basis):
@@ -52,5 +55,6 @@ def bh_spectrum_sparse(L, N, J, U, k=3):
                 if s[y] > 0:
                     t = list(s); amp = math.sqrt(s[y]*(s[x] + 1)); t[y] -= 1; t[x] += 1
                     H[idx[tuple(t)], i] += -J*amp
-    if D <= k + 2: return np.linalg.eigvalsh(H.toarray())[:k], D
-    return np.sort(eigsh(H.tocsr(), k=k, which='SA', tol=1e-12)[0]), D
+    if D <= max(4*k + 1, 20) + 2: return np.linalg.eigvalsh(H.toarray())[:k], D
+    kk = k + 2; v0 = np.ones(D)/math.sqrt(D)   # DEV-1: fixed start, extra levels, wide Krylov space (degenerate pairs)
+    return np.sort(eigsh(H.tocsr(), k=kk, which='SA', tol=1e-12, v0=v0, ncv=max(4*kk + 1, 20))[0])[:k], D

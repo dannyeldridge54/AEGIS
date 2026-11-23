@@ -14,6 +14,10 @@ the claims; the builder fixes only through a DEVIATIONS note written before any 
 ## Speed record (speed rung, before/after on the locked test set)
 | Tool | Slow path | Before | After | Accuracy kept |
 |---|---|---|---|---|
+| Spindle | mean-field run (Python RK4) | 3.81 s | 0.108 s DOP853 (35x) | 3.9e-10 |
+| Spindle | SMA time series | 0.0139 s | 0.0053 s vectorised (2.6x) | 5.6e-16 |
+| Spindle | oscillation period (osc_obs) | ~0.7 s | ~0.01 s analytic quadrature (option) | 2e-8 where it oscillates |
+| Spindle | Bose-Hubbard sparse Lanczos | - | NOT accepted (misses degenerate levels) | fails S4 |
 | Chronos | chain solve (matrix exponential, 1,995 solves) | 0.016 s | 0.004 s analytic Bateman (4.4x); browser engine instant | 3e-13 (T1) |
 
 ## Next in the rotation (older toolkits, one per loop tick)
