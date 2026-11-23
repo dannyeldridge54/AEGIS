@@ -1,0 +1,22 @@
+{"cycle": 1, "target": "S3 ITER check fails after radiation was added (P_fus 340 MW, Q 6.8, P_loss 62 < P_LH)", "hints": [
+ {"id": 1, "hint": "Radiation correction for IPB98 in 0-D: P_L = P_heat - 0.6 * (radiation inside rho = 0.75); best of four models, rho_core 0.75 +- 0.05, C3 0.6 +- 0.1", "src": "Lux et al., MPG pure item 2306505 (Lux_Radiation.pdf)", "act": true},
+ {"id": 2, "hint": "IPB98 database had low core radiation; ITER expects little radiation inside the separatrix; P_L is the conductive/convective channel", "src": "Lux et al.", "act": true},
+ {"id": 3, "hint": "ITER P_loss is the power across the pedestal top: 87 MW (400 MW case); P_SOL ~75 MW", "src": "ITER FDR PDD 4 Physics, sec 4.3.1", "act": true},
+ {"id": 4, "hint": "Helium ash: tau_He*/tau_E = 5 in the reference scenario (pumping speed set for it)", "src": "ITER FDR PDD 4", "act": true},
+ {"id": 5, "hint": "He fraction axis/average 4.3%/3.2% (400 MW), 4.4%/3.2% (500 MW)", "src": "ITER FDR Table 4.3.1-1", "act": true},
+ {"id": 6, "hint": "Pedestal: T_ped 3-4 keV, n_ped 7-9e19 m^-3, width 10-15 cm", "src": "ITER FDR Table 4.5.2-1", "act": true},
+ {"id": 7, "hint": "400 MW case: <Te> 8.8, <Ti> 8.0 keV, <ne> 1.01e20, n/nG 0.85, tau_E 3.7 s, P_aux 40 MW — an independent held-out check", "src": "ITER FDR Table 4.3.1-1", "act": true},
+ {"id": 8, "hint": "H_H98(y,2) = 1.0 for both reference cases", "src": "ITER FDR", "act": true},
+ {"id": 9, "hint": "500 MW case radiation split: brems 26, synch 8, line 27 MW", "src": "ITER FDR Table 4.3.1-1", "act": false},
+ {"id": 10, "hint": "Synchrotron: Albajar 2001 fit with Fidone reflection term; fit valid T_e0 10-100 keV, RMS 5.8%", "src": "UKAEA PROCESS docs, plasma_radiation", "act": false},
+ {"id": 11, "hint": "Line radiation needs impurity cooling rates L_z(T) (ADAS / Putterich); not found in a usable fit this cycle", "src": "search miss (Mavrin 2018 not reached)", "act": false},
+ {"id": 12, "hint": "Tritium burn fraction in D-T plants is a few percent and sets the TBR need with fuelling efficiency", "src": "arXiv:2106.01304 (The tritium burn-fraction in DT fusion)", "act": false},
+ {"id": 13, "hint": "Burn stability depends on uncertain helium ash confinement; feedback needed", "src": "arXiv:physics/0410118", "act": false},
+ {"id": 14, "hint": "Global gyrokinetic profile predictions for ITER burning plasma exist (benchmark for profiles)", "src": "arXiv:2511.03336", "act": false},
+ {"id": 15, "hint": "Neon seeding studies of ITER baseline core transport", "src": "arXiv:2512.23682", "act": false},
+ {"id": 16, "hint": "STEP flat-top operational space: systems-code mapping of the operating window", "src": "arXiv:2403.09460", "act": false},
+ {"id": 17, "hint": "Radiation and confinement in 0-D fusion systems codes (UKAEA report, 2016)", "src": "EUROfusion WPPMIPR16 15548", "act": false},
+ {"id": 18, "hint": "Alpha particles affect core turbulence in ARC-class plants", "src": "arXiv:2606.15965", "act": false},
+ {"id": 19, "hint": "Spin-polarised fuel can raise D-T reactivity (~50%) and alpha channelling", "src": "arXiv:2607.25313", "act": false},
+ {"id": 20, "hint": "0-D L-H threshold scaling and regression stability (DIII-D)", "src": "arXiv:2607.16509", "act": false}
+]}
