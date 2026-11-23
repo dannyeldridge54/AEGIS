@@ -21547,3 +21547,17 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 ## D2130a (referee sweep: RL-1, RL-2). D2130 is now NULL — BALANCED.
 - **RL-1, M3 is not a priori.** u_i = 0.113 came from the earlier full Planck+DESI+Pantheon+ *fit*, so M3 is "u_i fixed to the earlier full-data fit", not a priori. Even there the thread gives (w0, wa) ≈ (−0.97, −0.04). So the card's (−0.79, −0.36) comes from neither fit and is **withdrawn**. In the SN extension u_i must stay free, or the test is circular.
 - **RL-2, where the ΔAIC ≈ −1.9 comes from.** It is the bookkeeping gain of fixing n_s and Σm_ν (M5 also gives −1.97). The dark-energy sector contributes Δχ² ≈ 0. **The headline is M2: CONSISTENT (ΔAIC +0.03).**
+
+## D2131 (CENTRE, ping-pong): the Weave in ΛCDM parts on Planck plik-lite (+ τ prior) + DESI DR2 + SN. Locked, run once. **Pending referee sweep.**
+
+| SN set | W − L Δχ²_eff (same k) | Verdict W vs L | Thread CPL (w0, wa) | C − L Δχ² (ΔAIC) | W vs C ΔAIC |
+|---|---|---|---|---|---|
+| Pantheon+ | +0.13 | **CONSISTENT** | (−1.00, 0.00), u_i = 0.013 | −6.2 (−2.2) | +2.4 |
+| **DES-Y5** | **−10.1** | **PREFERRED** | (−0.89, −0.18), u_i = 0.173 | −19.2 (−15.2) | +5.1 |
+| Union3 | −0.46 | **CONSISTENT** | (−0.97, −0.04) | −13.1 (−9.1) | **+8.6** |
+
+**Readings:**
+- The Weave never does worse than ΛCDM, and on DES-Y5 it is clearly better.
+- **It falls short of free w0wa everywhere.** On Union3 that is decisively so (ΔAIC +8.6): w0wa prefers wa ≈ −0.63, while a thawing field with w ≥ −1 stays near Λ.
+- Pinning n_s = 0.9706 costs nothing: L finds n_s 0.969–0.970.
+- **Limitations:** no low-ℓ TT and no lensing; the τ prior stands in for low-ℓ EE.
