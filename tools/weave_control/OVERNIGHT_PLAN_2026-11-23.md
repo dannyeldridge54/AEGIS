@@ -6,3 +6,6 @@ Phase 3 — D2173 emulator race on the PC (OLE vs loom_fast) on HiLLiPoP+Pantheo
 Phase 4 — full ping-pong derivations on the queue: D2161 full-Planck neutrino; α_s thresholds; hypercharge+coupling brane scan; dark photon mass/mixing; Higgs Θ/V0 + top Yukawa; O6 displacement of the hidden U(1). Each locked first, refereed, until NULL.
 Paper v2 is NOT published without Danny's word: prepare it (D2176a correction + SPT/ACT + D2172), leave as draft.
 Rules: lock before computing; DEVIATIONS before reruns; no reruns to chase; never kill or relaunch a PC job without checking its launch log first (D2151 DEV-1 lesson).
+
+Update 01:26 CT (Danny: "Forget prize stuff"): all prize work dropped from this plan and the queue — no Mersenne/GIMPS, Hutter, Beal or other prize items. D2174/D2175 stay recorded as done; no follow-ups. Focus: the Weave fits, ping-pong/negative space, emulator, UFE derivations.
+Also: D2169 tight pair will hit its 7000 s cloud timeout (~02:24 CT) still on start 1/4. Write PREREG_D2169 DEVIATIONS (move to PC, no timeout) BEFORE any rerun; no result has been seen.
