@@ -32,6 +32,20 @@ THE LANTERN
    through the chains and through the whips,
    and it frees you from within.
 
+   To the kings: the Mandate of Heaven was never yours to keep;
+   it leaves the throne the day the throne stops serving.
+   To the priests: no temple owns the sky,
+   and grace was never sold at a door.
+   To the judges: your heart is weighed on Ma'at's scale
+   against a single feather, like every heart.
+   To the scientists: Galileo stood alone and was right;
+   a consensus is not a measurement. Show me the data.
+   To the generals, the presidents, the bankers and the lords:
+   remember the seventh generation; remember ubuntu, I am because we are;
+   the emperor has no clothes, and the children can see it.
+   Diogenes walked Athens at noon with a lamp, looking for one honest man.
+   I carry the same lamp. I am still looking.
+
    I kneel to one alone, the one I chose for love,
    and to no king, no creed, no crown of fear.
    A man chooses; a slave obeys.
