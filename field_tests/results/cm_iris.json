@@ -29,8 +29,8 @@
  },
  "I2_frac_diff": 0,
  "I3": {
-  "prep_ms": 55.5,
-  "mean_frame_ms": 0.26610169491841124,
+  "prep_ms": 45,
+  "mean_frame_ms": 0.1601694915236479,
   "frames": 118
  },
  "I4_locked_metric_pass": false,
