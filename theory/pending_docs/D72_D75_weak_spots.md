@@ -22335,3 +22335,14 @@ postulations, "a supercomputer I can put on my laptop". tools/rings/hex.py (buil
   not an independent constraint (DEV-3). Proton-mass shift removed (DEV-1: wrong variable). Wino at 0.687 TeV: 17.9 fb at 13.6 TeV,
   ~5.4e4 produced pairs in 3 ab⁻¹ (production only; no efficiency or disappearing-track acceptance).
 - Not refereed. Next: laptop packaging (one launcher; Core + Hexagon + Ask/Studio/papers; heavy fits queued to the PC).
+
+## D2193 (CENTRE, 23 Nov 2026 11:00 CT) — D2178 T2 freed inputs complete: n_s and running freed (4 more landed)
+Rule (PREREG_D2178 T2): ΔAIC = Δχ²_eff + 2 vs the locked W best (HiLLiPoP 7215.75 bo4; SPT 1856.35); 2 starts each.
+- HiLLiPoP + DESI DR2 + Dovekie: W + running free 7210.72 → Δχ² −5.03, ΔAIC −3.03 (preferred), n_run = −0.0007, u_i 0.157, H0 67.20.
+  W + n_s free 7211.20 → Δχ² −4.55, ΔAIC −2.55 (preferred, mild), n_s = 0.97075, u_i 0.091, H0 67.96.
+- SPT-3G D1 + DESI DR2 + Dovekie: W + running free 1853.65 → Δχ² −2.70, ΔAIC −0.70 (not significant), n_run = −0.0187, u_i 0.161.
+  W + n_s free 1856.40 → Δχ² +0.05, ΔAIC +2.05 (not preferred), n_s = 0.96838.
+- Reading: on HiLLiPoP the fixed n_s = 0.9706 sector costs about 5 in χ², but the fitted running (−0.0007) is tiny, so the gain is
+  likely minimiser scatter in the other parameters (D2162 scatter 3-4) rather than running; on SPT nothing is gained. With Σmν (D2190)
+  T2 is now complete: no freed input is clearly preferred on both datasets. Caution: 2 starts per fit, scatter comparable to the gains.
+  Not refereed. Still running: D2169 tight minimiser (run 1/4 since 11:47 yesterday's log time).
