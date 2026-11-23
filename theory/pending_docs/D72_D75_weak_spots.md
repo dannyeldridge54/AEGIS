@@ -22713,3 +22713,12 @@ EDGE, but the stage map's locked gauss band (bandmap1.marks: EDGE <= 2 sigma, el
 Wired into the map (no other change): hex.py Forces/centre alpha_s base 0.1142 -> 0.11446 (computed), centre_score now scores the LIVE
 alpha_s (was the data file's static 0.1142), Nuclear pull includes the omega_b error; stagemap JET uses the JET-2 locked Ti = 1.2 Te.
 Map 6: 27 IN, 6 EDGE, 4 OUT (alpha_s -3.93, Hoyle 7.10, D/H -2.07, JET +64%).
+
+## D2222 (PING-PONG round 4, 23 Nov 2026) — wiring audited OK; housekeeping; EDGE sweep: all six are honest finals
+Referee round 4: hex.py/stagemap.py wiring confirmed (Bus last-writer-wins, live alpha_s 0.11446, D/H -2.07 OUT correctly not rescued, JET
+Ti 1.2 Te). Locked PREREG_D2222_HOUSEKEEPING: alpha_s single constant AS_ENGINE; Y_p pull gets the omega_b error too (0.73, IN, unchanged).
+EDGE sweep: theta12 +1.03 sigma (prediction, no fix); ITER tau 2.88 vs 3.4 s - the 3.4 s is the ITER FDR 500 MW column (353 MJ / 104 MW),
+the Physics Basis 3.7 s (Shimada et al. 2007 NF 47 S1) is the 400 MW column -> goalpost correct, EDGE final; SPARC EDGE ceiling (D2217);
+N10 front dpa -28.9% (no composition/E_d mismatch found); N10 He/dpa 7.38 - band is Fe-matrix and the locked metric is already Fe-only
+(front cm 9.19), EUROFER would need a new MC run + new lock, not a fix of this one; N11 goalposts too weak (cannot become IN retroactively).
+Map 7: 27 IN, 6 EDGE, 4 OUT; diagnoses refreshed (JET +64%, D/H -2.07, alpha_s 0.11446).

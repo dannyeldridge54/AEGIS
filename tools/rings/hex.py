@@ -8,6 +8,7 @@ Usage: python hex.py            one settled pass + board
 import functools, json, math, os, sys, time
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 import rings as G
+AS_ENGINE = 0.11446   # D2221/D2222: Weave alpha_s(M_Z) from theory/tests/d2221_as_top.py (single source)
 AEGIS = G.AEGIS; W = G.W; B = G.B
 sys.path.insert(0, AEGIS)
 
@@ -52,7 +53,8 @@ class Nuclear(Node):
         Yp, DH = _bbn(bus.get('ombh2'), bus.get('dNeff'))
         from tools.janus_astro import bbn as _b
         sYp, sDH = _b.sigma(bus.get('ombh2'), bus.get('dNeff'))      # DEV-2: PRIMAT theory error in quadrature
-        wb = bus.get('ombh2'); sDH = math.hypot(sDH, abs(_b.DH(wb + 1e-4, bus.get('dNeff')) - _b.DH(wb - 1e-4, bus.get('dNeff'))) / 2e-4 * 0.00015)   # D2221: omega_b error (Planck 0.00015)
+        wb = bus.get('ombh2'); sYp = math.hypot(sYp, abs(_b.Yp(wb + 1e-4, bus.get('dNeff')) - _b.Yp(wb - 1e-4, bus.get('dNeff'))) / 2e-4 * 0.00015)   # D2222
+        sDH = math.hypot(sDH, abs(_b.DH(wb + 1e-4, bus.get('dNeff')) - _b.DH(wb - 1e-4, bus.get('dNeff'))) / 2e-4 * 0.00015)   # D2221: omega_b error (Planck 0.00015)
         bus.put(self.name, 'hoyle_radius', hoyle['radius'], 'LIVE'); bus.put(self.name, 'hoyle_inside', hoyle['inside'], 'LIVE')
         bus.put(self.name, 'dmq_over_Lambda', hoyle['dmq_over_Lambda'], 'LIVE'); bus.put(self.name, 'dm_p_MeV', 'not wired (DEV-1)', 'NONE')
         bus.put(self.name, 'Yp', Yp, 'LIVE'); bus.put(self.name, 'DH', DH, 'LIVE')
@@ -66,7 +68,7 @@ class Forces(Node):
     name = 'N2 forces'
     def run(self, bus):
         s = bus.get('s_m32'); m_w, m_g = 0.687 * s, 4.93 * s
-        a_s = 0.11446 * math.exp(   # D2221: engine value with MS->DR (D2220) + top decoupling (D2221); was 0.1142
+        a_s = AS_ENGINE * math.exp(   # D2221: engine value with MS->DR (D2220) + top decoupling (D2221); was 0.1142
             B.D['levers']['lnm32']['moves']['alpha_s'] * math.log(s))
         xs = _wino_xsec(round(m_w * 1000, 6))
         bus.put(self.name, 'm_wino_TeV', m_w, 'LINEAR'); bus.put(self.name, 'm_gluino_TeV', m_g, 'LINEAR'); bus.put(self.name, 'alpha_s', a_s, 'LINEAR')
@@ -74,7 +76,7 @@ class Forces(Node):
         bus.put(self.name, 'wino_events_3ab', xs * 3000 if xs is not None else float('nan'), 'LIVE')
         return dict(pull_alpha_s=gauss_pull(a_s, 0.118, 0.0009))
     def postulates(self, bus, knobs):
-        k = B.D['levers']['lnm32']['moves']['alpha_s']; s = math.exp(math.log(0.118 / 0.11446) / k) if k else None
+        k = B.D['levers']['lnm32']['moves']['alpha_s']; s = math.exp(math.log(0.118 / AS_ENGINE) / k) if k else None
         return [dict(node=self.name, why='zero the alpha_s pull through the m32 lever', knobs=dict(knobs, s_m32=s))] if s else []
 
 class Neutrinos(Node):
@@ -131,7 +133,7 @@ def centre_score(bus):
 
 def settle(knobs, max_sweeps=6):
     bus = Bus(); centre_publish(bus, knobs); local = {}; prev = None
-    dNeff0 = 0.0; bus.put('centre', 'dNeff', dNeff0, 'INPUT'); bus.put('centre', 'alpha_s', 0.11446, 'INPUT')
+    dNeff0 = 0.0; bus.put('centre', 'dNeff', dNeff0, 'INPUT'); bus.put('centre', 'alpha_s', AS_ENGINE, 'INPUT')
     for sw in range(1, max_sweeps + 1):
         bus.sweep = sw
         for n in NODES: local[n.name] = n.run(bus)
