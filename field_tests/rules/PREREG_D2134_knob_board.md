@@ -30,3 +30,10 @@
 **Verdict:**
 - The **one change is ADOPTED** only if a single b, the same for all three SN sets within ±0.025, improves χ² over b = 0 by ≥ 2 on at least 2 of the 3 SN sets, does not worsen any set by > 1, and keeps the S₈ proxy ≤ 0.83.
 - Otherwise it is **REJECTED**, and the Weave stays at b = 0.
+
+## DEVIATION (written before any code was run)
+r_s(z*) and r_d are taken from CAMB, as a function of the early-universe parameters (ω_b, early ω_c, N_eff, Σm_ν), instead of a home-made sound-horizon integral. The reason: CAMB's exact recombination differs by ~1–2% from Eisenstein–Hu fitting formulas, which would fail G0.
+
+The coupling's effect before recombination is negligible, because ρ_c ∝ e^{bΔφ} with Δφ ≈ 0 before z*. **That assumption is itself reported** as a dial: Δφ(z*).
+
+The late universe (H(z), D_M) comes from the coupled solver. H0 is derived: the knobs are ω_b, ω_c, V̂_L and u_i, with V̂_L fitted in place of H0, so no shooting is needed. The ΛCDM reference is b = 0, u_i = 1e-4, with the same fixed n_s (an M5-type control).
