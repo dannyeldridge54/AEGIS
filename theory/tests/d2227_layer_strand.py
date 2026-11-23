@@ -7,7 +7,8 @@ pts = []
 for ReS, g, N in itertools.product((ReS0, 1.0), (2, 3, 4), (4, 5, 6, 7, 8)):
     ReT = 28 - g * g * ReS
     if ReT <= 1: pts.append(dict(ReS=ReS, g=g, N=N, void=True)); continue
-    ns['N'] = N; k = dict(base, g_s=1 / ReS, sigma=20.15 + (ReT - ReT0)); m32 = chain(k)['m32']
+    k = dict(base, g_s=1 / ReS, sigma=20.15 + (ReT - ReT0)); xx = 2 * math.pi * k['sigma'] / N; W0 = k['A'] * math.exp(-xx) * (1 + 2 * xx / 3)
+    m32 = math.sqrt(k['g_s'] / 2) / k['Vol'] * W0 * ns['MP']   # DEV-0: chain's m3/2 lines only
     pts.append(dict(ReS=round(ReS, 4), g=g, N=N, ReT=ReT, m32=m32, s_m32=m32 / M0, T_R=8.94e8 * (g * g * ReS / 28) / x0))
 code = r'''
 import json, sys; sys.path.insert(0, 'tools/rings'); import hex as H, bandmap1 as BM
