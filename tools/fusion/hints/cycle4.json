@@ -1,0 +1,14 @@
+{"cycle": 4, "target": "S4 inertial fusion had only burn arithmetic; OU's hub is inertial (IFE-STARFIRE)", "hints_found": 12, "searches": 3,
+ "hints": [
+ {"id": 1, "hint": "Generalized Lawson criterion (alpha on): G_LC = (P_hs / 420 Gbar)(R_hs / 50 um) > 1", "src": "Abu-Shawareb/Hurricane et al., PRL 129, 075001 (2022), Eq. 2", "act": true},
+ {"id": 2, "hint": "Alpha-energy fraction: E_alpha / (2 E_hs) > 1.4, E_alpha = Y/5", "src": "PRL 129, 075001 Eq. 4", "act": true},
+ {"id": 3, "hint": "N210808: E_laser 1.917 MJ, Y 1.37 MJ, T_i 10.9 +- 0.4 keV, rhoR_hs 0.44 +- 0.05, p_hs 569 +- 61 Gbar, burn width 89 +- 5 ps, E_hs 55 +- 6 kJ, V_hs 6.4e5 um^3; target/capsule/fuel gain 0.72/5.8/75.6", "src": "PRL 129, 075001", "act": true},
+ {"id": 4, "hint": "Measurable ignition metric f_alpha = 0.31 E_alpha / (<p> V_hs) >= 1.4; <p> ~ sqrt(16 Y T_i^2 / (tau V_hs <sv>))", "src": "Christopherson/Betti, OSTI 1498067", "act": true},
+ {"id": 5, "hint": "chi_noalpha = (rhoR)^0.61 (0.12 Y16 / M_stag,mg)^0.34 ~ 1 at ignition (yield amplification ~20)", "src": "OSTI 1498067 Eq. 8", "act": true},
+ {"id": 6, "hint": "Required yield Y_ign(MJ) ~ (M_stag,mg / 0.21)^0.81 rhoR^-2.61 (+-15%)", "src": "OSTI 1498067 Eq. 9", "act": true},
+ {"id": 7, "hint": "ITFX: Y_amp = exp(0.9 ITFX^0.47), ITFX = (170 ug/m_fuel)(Y13-15/4e15)(DSR/0.067)^2.1", "src": "PRL 129, 075001 Eqs. 5-6", "act": false},
+ {"id": 8, "hint": "Thermodynamic ignition G = p tau_BW H(T) > 1 (H in the appendix)", "src": "PRL 129, 075001 Eq. 3", "act": false},
+ {"id": 9, "hint": "N221204 (Dec 2022) 3.15 MJ from 2.05 MJ; 2025-04-07 8.6 MJ from 2.08 MJ (gain 4.13)", "src": "LLNL (cycle 0 data)", "act": true},
+ {"id": 10, "hint": "Theory of ignition and burn propagation in ICF implosions", "src": "OSTI 1631033", "act": false},
+ {"id": 11, "hint": "Lawson criterion for ignition exceeded in an inertial fusion experiment (Nature Physics)", "src": "Imperial spiral c8459bd5", "act": false},
+ {"id": 12, "hint": "Ignition criteria compared: Cheng, Tipton, Atzeni, Coutant all satisfied by N210808", "src": "PRL 129, 075001", "act": false}]}
