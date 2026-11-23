@@ -22678,3 +22678,12 @@ atomic_number attr; equilibrium_* = coronal copies), tools/fusion/cfsp_cycle3/.
   value) gives 136 MW / 4.97 MW (not scored).
 - Verdict: B.L4 EDGE (ceiling fixed in DEVIATIONS before the rerun: the pedestal rebuild is a freedom the lock did not name, and the
   reproduction clause failed). Map 5: 27 IN, 6 EDGE, 4 OUT (alpha_s, Hoyle, D/H, JET #99971). Loop continues: next JET.
+
+## D2218 (STAGE MAP, JET #99971 goalpost cross-check, 23 Nov 2026) — target confirmed from measurement; marker stays OUT
+Primary sources searched for the open JET inputs (NBI species/power fractions, deposition Te, fast-ion losses): none give pulse values in text
+(King 2023 NF 63 112005: fractions are POWER fractions from BES, values only in figures; Stancar 2023 TRANSP overview: T-rich pulses over-predicted
+by TRANSP up to 25%, #99972 ~4-5% Maxwellian + ~10% RF tail, the rest beam-target). Maslov (IAEA FEC 2023, T-rich scenario): #99971 best 5 s
+<P_fus> = 10.1 MW measured, thermal <~10%, ~90% beam-target from the neutron spectrum -> measured beam-target ~9.1 MW, within 4% of the locked
+TRANSP-implied 8.7 MW. So the goalpost is independently confirmed (not changed). Our model 14.66 MW stays +68%: OUT. The gap is ours (single
+deposition Te, no fast-ion losses/orbit/shine-through, fraction definition); closing it needs the measured Te profile and deposition from a
+primary source; no unconstrained knob is moved. No computation in this note.
