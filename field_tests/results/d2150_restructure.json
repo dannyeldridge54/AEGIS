@@ -1,0 +1,80 @@
+{
+ "rows": [
+  {
+   "option": "D_r0.005",
+   "margins": {
+    "n_s": 1.044,
+    "r": 1.974,
+    "control_gs": 0.916
+   },
+   "min_margin": 0.916,
+   "n_moved": 7,
+   "n_unprotected": 0,
+   "note": "fibre inflation, low-r end",
+   "ns": 0.9711,
+   "r": 0.005
+  },
+  {
+   "option": "F",
+   "margins": {
+    "n_s": 0.867,
+    "r": 4.2
+   },
+   "min_margin": 0.867,
+   "n_moved": 0,
+   "n_unprotected": 5,
+   "note": "F-theory constant-coupling point at rho",
+   "ns": 0.9706,
+   "r": 0.00054
+  },
+  {
+   "option": "A",
+   "margins": {
+    "n_s": 0.867,
+    "r": 4.2,
+    "control_gs": -0.837
+   },
+   "min_margin": -0.837,
+   "n_moved": 0,
+   "n_unprotected": 5,
+   "note": "null",
+   "ns": 0.9706,
+   "r": 0.00054
+  },
+  {
+   "option": "B_D1398",
+   "margins": {
+    "n_s": -2.467,
+    "r": 3.139,
+    "control_gs": 0.916
+   },
+   "min_margin": -2.467,
+   "n_moved": 4,
+   "n_unprotected": 0,
+   "note": "U3 inflaton, full-Y variant",
+   "ns": 0.9606,
+   "r": 0.00156
+  },
+  {
+   "option": "D_r0.01",
+   "margins": {
+    "n_s": -2.942,
+    "r": 1.281,
+    "control_gs": 0.916
+   },
+   "min_margin": -2.942,
+   "n_moved": 7,
+   "n_unprotected": 0,
+   "note": "fibre inflation, high-r end",
+   "ns": 0.9592,
+   "r": 0.01
+  }
+ ],
+ "unprotected_list_A_F": [
+  "alpha_GUT from f_vis = T + 9S (perturbative gauge kinetic function)",
+  "magnetised-D7 family flux |M| = 9 (perturbative D-brane flux)",
+  "D-instanton / E3 mu-term weight",
+  "Yukawa normalisations (worldsheet instantons)",
+  "KKLT W0-volume-m3/2 chain (perturbative Kahler potential)"
+ ]
+}

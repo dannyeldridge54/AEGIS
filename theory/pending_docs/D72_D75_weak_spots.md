@@ -21948,3 +21948,26 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 - The first batch job hit its 2-hour background cap. C (w0wa) on Dovekie and L on Pantheon+ were killed mid-fit, so neither produced a result. These are not reruns to chase results: no output exists for them.
 - **Restarted in priority order** (the same script, the same lock): L and W on Pantheon+ and Union3, for the W-vs-L verdict. The C fits and the D2135 CamSpec cross-check come after, in a later job.
 - **The CamSpec waiter was stopped** before it had started any fit, so the cores go to the D2132 verdict first.
+
+## D2150 (CENTRE, the g_s restructure triangulation; lock PREREG_D2150 after ping-pong round 1). **Verdict by the locked rule: option F. Keep S = ρ and reinterpret it as the constant-coupling F-theory point; 5 scored derivations are flagged "unprotected". Option D (fibre inflation) is the backup.** (2026-11-22 ~21:10 CT; referee check pending)
+
+| option | n_s (margin) | r (margin) | g_s control | min margin | scored items moved |
+|---|---|---|---|---|---|
+| D, fibre inflation at r = 0.005 | 0.9711 (+1.04) | 0.005 (+1.97) | +0.92 | **+0.92** | 7 (n_s, r, the A = 7.30 link, the m3/2/wino chain, τ_q, α_GUT, a K3-fibre blow-up) |
+| **F, F-theory point at ρ** | 0.9706 (+0.87) | 5.4e-4 (+4.20) | replaced by protection | **+0.87** | **0** (5 unprotected) |
+| A, null | 0.9706 (+0.87) | 5.4e-4 (+4.20) | −0.84 | −0.84 | 0 |
+| B, the D1398 U₃ variant | 0.9606 (−2.47) | 1.56e-3 | +0.92 | −2.47 | 4 |
+| D, fibre inflation at r = 0.01 | 0.9592 (−2.94) | 0.01 | +0.92 | −2.94 | 7 |
+
+- **The rule's tie-break decides it.** D at r = 0.005 and F differ by only 0.05 (< 0.3), so the option that moves fewer scored items wins: **F**.
+- **The 5 "unprotected" derivations under F** (they relied on weak-coupling perturbation theory and must be redone in F-theory language):
+  1. α_GUT from f_vis = T + 9S;
+  2. the |M| = 9 magnetised-D7 family flux;
+  3. the D-instanton μ-term weight;
+  4. the Yukawa normalisations;
+  5. the KKLT W₀–volume–m3/2 chain.
+
+  The E(S,3/2) plateau that drives inflation is exact in S (SL(2,Z)), so it is protected.
+- **Joint with B2.** The family-flux item (2) is already scheduled to be replaced by brane crossings (D2146–D2149). In F-theory, constant-coupling 7-brane stacks at ρ are E6/E8-type, so the matter sector would become an F-theory one. That is the natural home for both pieces at once.
+- **Dead or disfavoured.** E is dead. B (the D1398 variant) and high-r D are 2.5–3σ against ACT's n_s. Other B variants stay OPEN.
+- **What D would cost.** Fibre inflation would trade the Weave's own prediction (r = 5.4e-4, the same A at both ends) for the literature's r ≈ 0.005, which LiteBIRD could test, and it needs a K3-fibred geometry that T⁶/Z6-II does not have.
