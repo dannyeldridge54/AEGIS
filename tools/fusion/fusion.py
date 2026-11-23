@@ -126,7 +126,8 @@ def _ploss(m, p, P_aux):
     return p['P_alpha'] + P_aux - p['P_rad']
 def tau_ipb98(m, P_loss, n_line):
     eps = m['a'] / m['R']; ka = m['V'] / (2 * math.pi ** 2 * m['R'] * m['a'] ** 2)
-    return 0.0562 * m['Ip'] ** 0.93 * m['B'] ** 0.15 * P_loss ** -0.69 * (n_line / 1e19) ** 0.41 * m['M'] ** 0.19 * m['R'] ** 1.97 * eps ** 0.58 * ka ** 0.78
+    # PROM-6: H98 factor (default 1 -> ITER unchanged)
+    return m.get('H98', 1.0) * 0.0562 * m['Ip'] ** 0.93 * m['B'] ** 0.15 * P_loss ** -0.69 * (n_line / 1e19) ** 0.41 * m['M'] ** 0.19 * m['R'] ** 1.97 * eps ** 0.58 * ka ** 0.78
 def p_LH(m, n_line):   # Martin 2008 (deuterium), S = plasma surface (m^2); PROM-2 C1: isotope factor 2/A_eff
     return 0.0488 * (n_line / 1e20) ** 0.717 * m['B'] ** 0.803 * m['S'] ** 0.941 * (2.0 / m['M'] if m.get('lh_isotope') else 1.0)
 def _op_fixed_he(m, E_alpha_MeV, n_avg, P_aux, f_He):
