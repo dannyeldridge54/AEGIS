@@ -11,7 +11,7 @@ Status of each posting is as shown on the page today; several pages carry stale 
 | 4 | OU Physics & Astronomy | Instrumentation Research Scientist (condensed matter) | Norman | not listed | not specified on page | Long shot; ask. |
 | 5 | OU Physics & Astronomy | Dodge Postdoc (astrophysics); ATLAS ML postdoc; condensed-matter postdocs | Norman | fellowship | PhD | No (PhD). Useful as names of groups with money. |
 | 6 | OU Health Stephenson Cancer Center | Staff Research Assistant (HPRC) | OKC | by experience | Bachelor's + 1 y research, **or experience 1:1 in place of the degree** | Yes on paper: the equivalency clause. Not nuclear (health app research), but a paid research foot in the door. |
-| 7 | OU (various labs) | Research Technician | OKC/Norman | hourly | usually HS/GED + experience | Yes. The most realistic paid entry. |
+| 7 | OU (various labs) | Research Technician (OU job description 3736) | OKC/Norman | grade S06, hourly | Bachelor's (bio, chem, **physics**, ...) **or 48 months equivalent experience**; no prior experience required | Yes, if 4 years of documented work counts as equivalent. The most realistic paid entry. |
 | 8 | Oklo | Senior Neutronics Engineer, Isotope Production | Remote / Santa Clara | $130k-220k | Nuclear eng. degree; reactor analysis; Python; HPC; MCNP/Serpent/SCALE | No (degree), but it is exactly Chronos's field: isotope production. |
 | 9 | Oklo | Nuclear Training Instructor | Lockhart TX / remote CA | $145k-180k | Bachelor's or equivalent industry experience; 5+ y nuclear | No yet. |
 | 10 | Oklo | Technical Product Engineer | Remote | $110k-165k | Bachelor's **or equivalent industry experience**; 5+ y technical PM | Stretch; "equivalent experience" clause. |
@@ -40,4 +40,4 @@ Status of each posting is as shown on the page today; several pages carry stale 
 ## Sources
 Oklo postings (greenhouse API 6001495004, 6130371004, 5979482004, 6145900004; Wellfound 4243423); OU College of Engineering hiring page;
 OU Physics & Astronomy job opportunities page; academicjobs.com 691843 (Radiochemist) and 332288 (Asst RSO); jobs.ou.edu Staff Research Assistant HPRC;
-OU news March 2026 (new cyclotron).
+OU news March 2026 (new cyclotron); OU HR job description 3736 (Research Technician).
