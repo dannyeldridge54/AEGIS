@@ -21734,3 +21734,16 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
   - FAIL: N10 (H0) and N16 (tadpole)
   - OPEN: N1, N14, and N4's moduli-cosmology items (a)–(c)
 - **Referee verdict after this restatement:** the conditions R39-1…3 are all folded in.
+
+## D2141 (RIGHT, data check, class D: not blind; the number was read before this note). The wino against the newest LHC disappearing-track limit. **ALIVE, at the edge.**
+- **Source:** ATLAS, 2603.08315 (137 fb⁻¹, 13 TeV), long-lived charginos with a disappearing track. On the pure-wino mass-splitting line (~160 MeV), charginos are **excluded up to 670 GeV observed (770 GeV expected)**. For ~1 ns lifetimes the reach is 880 GeV (1020 expected). This is a single source; the rule asks for three, so a CMS cross-check is owed.
+- **Weave:** m_w = m3/2/375 = 2.6e5/375 = **693 GeV** (central), window 0.67–1.0 TeV [R].
+- **Reading:**
+  - The central value is **23 GeV above the observed limit**, but below the expected reach (770). The observed limit is weaker than expected, a fluctuation in the data that is **not claimable** as a hint.
+  - The low end of the window (0.67 TeV) now coincides with the observed exclusion.
+  - The HL-LHC projection (~0.98 TeV, record) covers almost the whole window, so this is a **live falsification test**.
+- **Verdict:** **PASS (barely)**, and the window starts at 0.67 TeV. Recorded as the sharpest near-term collider test of the Weave.
+
+## D2142 (RIGHT, status only). The 12.8 GeV asymmetric DM against LZ
+- The record already used the LZ ceiling to bound the dark-photon mixing (D1688). So the direct-detection rate is **accommodated (a bound sets a knob), not predicted**. No independent test exists until the mixing is derived.
+- **Label:** NO-POWER (cannot fail today). An honest line for the big-questions board.
