@@ -159,3 +159,13 @@ Criteria: works with a custom CAMB w(a), works inside Cobaya with PR4 likelihood
 - Retrain CosmoPower on our w(a) model; later consider the JAX/candl/clipy gradient path for NUTS or GPU nested sampling.
 
 Expected overall: about **3–5× faster per fit and a reproducible best fit (≲0.5 χ² spread)** after Steps 1–4. Sampling and profiling should gain 1–2 orders of magnitude from OLÉ or GPry. *These are estimates; the per-step factors quoted from papers apply to their setups, not ours.*
+
+
+## Referee R70 corrections (22 Nov 2026, accepted)
+- #43: Hamann et al. Table 5 is CAMB, not "CLASS-like" (numbers unchanged).
+- #62 GPry: shown in low dimensions (Planck lite, ~7 parameters; "of the order of seconds" likelihoods). Our fits have ~30-40 parameters with nuisances, so ~100x does not carry over; use only after reducing dimensions.
+- #49: "amongst the more efficient solvers" on noisy problems (not "best"); seek_global_minimum is documented in the Py-BOBYQA user guide, not the paper.
+- #47: the yaml comment reads "Relaxed convergence criterion for numerically-noisy likelihoods" (paraphrase quotes removed).
+- #1: the <0.4% figure applies to the nonlinear correction only, in 99% of spectra. #23: ">100x" is against one serial core; ~6x against 32 cores.
+- Top-10 additions: rhoend is in Cobaya's rescaled units (covmat sigmas), so a good covmat is the main fix; add objfun_has_noise: true; method: iminuit is supported; item 1 is a heuristic, not a guarantee.
+- Diagnosis wording: loose tolerance or several minima, possibly worsened by noise (incl. w(a)-table interpolation); step 0 line scans decide.
