@@ -58,3 +58,4 @@ Stop rule: a full turn of all three wheels returns NULL.
 | 11 | W1 full verify | **NULL** (both round-10 fixes verified; Pantheon+ budget, fail count, scatter scope, sigma labels all in unison) | - | - |
 
 **State at ~00:00 CT 23 Nov: NULL again after the post-Union3 / D2164 / D2170 additions. Remaining for 00:15: refresh Status of runs only (fits that land), then publish 00:33.**
+| 12 | W1 on the folded-in "night of posting" section | 2 must-fix (D2166 not locked; engine "failures" vs paper results), 3 should-fix (referee-correction count, Methods exceptions list, "8 come out" includes 3 borrowed), 2 nits | all applied | inner spin: Methods exceptions extended |
