@@ -22054,3 +22054,11 @@ Fixed: (1) "consistent with standard cosmology" -> mild tension on both finished
 - Reading: the high-l cost of the fixed inputs is much smaller with CamSpec (+2.4) than with HiLLiPoP (+6.7), so on CamSpec + Pantheon+ the thread's late-time gain wins. This is ONE robustness entry; the headline (HiLLiPoP + Dovekie, +2.4) is unchanged. Entries are never summed. Also finished: L CamSpec on Dovekie (12259.08) and Union3 (10652.75); their W partners still running.
 
 ## D2158a (referee round 7 on D2158): the pre-registered D2135 label applies and was missed. HiLLiPoP (+2.46) and CamSpec (-3.80) on Pantheon+ differ in sign and by 6.26 >= 3, so the Pantheon+ entry is **"CMB-likelihood dependent"** (PREREG_D2135 lines 16-17). The preprint now uses that label, with the minimiser caveat as a second reason for caution. D2158 is not edited.
+
+## D2159 (CENTRE, pattern read across the three finished W/L pairs; POST-HOC observation, not a test, not evidence) (22:45 CT)
+| pair | dchi2 | u_i | H0 W/L | omch2 W/L | high-l | lensing | BAO | SN |
+|---|---|---|---|---|---|---|---|---|
+| HiLLiPoP+Dovekie | +2.40 | 0.0016 | 68.20/68.12 | 0.1177/0.1179 | +2.84 | +0.71 | -0.58 | +0.25 |
+| HiLLiPoP+Pantheon+ | +2.46 | 0.143 | 67.42/67.85 | 0.1172/0.1184 | +6.66 | +2.70 | -5.17 | -2.13 |
+| CamSpec+Pantheon+ | -3.80 | 0.140 | 67.34/68.07 | 0.1174/0.1179 | +2.42 | -0.48 | -1.79 | -2.58 |
+Patterns: (1) the SUPERNOVAE set the thaw (u_i 0.002 vs 0.14) and the CMB likelihood does not move it (0.143 vs 0.140); (2) the CMB LIKELIHOOD sets the price (high-l +6.7 vs +2.4); (3) a seesaw with omch2 as the fulcrum: when the thread thaws, omch2 drops ~0.001 and BAO/SN gain is paid in high-l + lensing, more steeply for HiLLiPoP; (4) thawing always lowers H0 (by 0.4-0.7), so it worsens the Hubble tension; (5) L's n_s sits at 0.966-0.969 in all three, below the frozen 0.9706, so the fixed n_s cost is present in every pair. Testable next (to lock before running): Union3 should thaw (it pulled toward w > -1 in DESI DR2); the CamSpec Dovekie pair should stay frozen with a small cost.
