@@ -1,6 +1,3 @@
-{"k": "pulse", "s": "serapis_point", "t": "string_meter", "w": 1.0, "why": "tool string_meter ok", "ts": 1795044122.8270187}
-{"k": "pulse", "s": "serapis_point", "t": "serapis_point", "w": 1.0, "why": "tool nstar_match ok", "ts": 1795044122.8607419}
-{"k": "pulse", "s": "serapis_point", "t": "serapis_point", "w": 1.0, "why": "tool nstar_match ok", "ts": 1795044122.8932855}
 {"k": "pulse", "s": "serapis_e", "t": "serapis_point", "w": 1.0, "why": "tool serapis_emulator ok", "ts": 1795044122.982947}
 {"k": "pulse", "s": "tests_lhc", "t": "tests_lhc", "w": 1.0, "why": "tool lhc_lifetime ok", "ts": 1795044123.028603}
 {"k": "pulse", "s": "tests_lhc", "t": "tests_lhc", "w": 1.0, "why": "tool lhc_dt_limit ok", "ts": 1795044123.7415082}
@@ -498,3 +495,6 @@
 {"k": "pulse", "s": "toolkits", "t": "toolkits", "w": 1.0, "why": "tool chronos_wd_merger ok", "ts": 1795451422.9392169}
 {"k": "pulse", "s": "toolkits", "t": "toolkits", "w": 1.0, "why": "tool chronos_kilonova ok", "ts": 1795451423.1607852}
 {"k": "pulse", "s": "toolkits", "t": "toolkits", "w": 1.0, "why": "tool chronos_star_age ok", "ts": 1795451423.388389}
+{"k": "pulse", "s": "serapis_e", "t": "serapis_point", "w": 1.0, "why": "tool serapis_emulator ok", "ts": 1795451716.4670742}
+{"k": "pulse", "s": "serapis_e", "t": "serapis_point", "w": 1.0, "why": "tool serapis_point ok", "ts": 1795451717.2832742}
+{"k": "pulse", "s": "serapis_e", "t": "serapis_point", "w": 1.0, "why": "tool serapis_point ok", "ts": 1795451805.806739}
