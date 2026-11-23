@@ -1,3 +1,4 @@
+# D2132 DEVIATIONS
 
 ## DEV (2026-11-22 20:41 CT). W Pantheon+ crashed before producing any fit result
 - **What happened:** Cobaya's minimiser drew u_i = 0.26 from the reference range uniform(0.02, 0.3). That start is past the thread's collapse edge (u_i ≈ 0.22, the referee's RD-2 warning), so the log-likelihood was −inf and the run stopped with "Cannot reproduce log minimum".
