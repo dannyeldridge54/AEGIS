@@ -1,0 +1,146 @@
+{
+ "base": {
+  "age_Gyr": 13.715471672670988,
+  "H0": 67.4272142311515,
+  "Nstar": 68.02721088435378
+ },
+ "nodes": [
+  {
+   "node": "N4 (tau_q dilution D)",
+   "knob": "D x/\u00f7 1.5",
+   "clock": "e-folds",
+   "d_up": -0.1351550360360548,
+   "d_down": 0.1351550360360548,
+   "response": -0.1351550360360548,
+   "thrust": 0.0,
+   "ties_through_time": true,
+   "thrust_seen": false
+  },
+  {
+   "node": "N6 (r, CMB wall)",
+   "knob": "r x/\u00f7 1.5",
+   "clock": "e-folds",
+   "d_up": -12.483225787229522,
+   "d_down": 15.288766761332596,
+   "response": -13.885996274281059,
+   "thrust": 1.4027704870515372,
+   "ties_through_time": true,
+   "thrust_seen": true
+  },
+  {
+   "node": "N8 (T_R reheating)",
+   "knob": "T_R x/\u00f7 1.5",
+   "clock": "e-folds",
+   "d_up": 0.1351550360360548,
+   "d_down": -0.1351550360360548,
+   "response": 0.1351550360360548,
+   "thrust": 0.0,
+   "ties_through_time": true,
+   "thrust_seen": false
+  },
+  {
+   "node": "N9/N13 (thread start u_i)",
+   "knob": "u_i x/\u00f7 1.5",
+   "clock": "Gyr",
+   "d_up": 0.2534616550353803,
+   "d_down": -0.1908012100004317,
+   "response": 0.222131432517906,
+   "thrust": 0.031330222517474304,
+   "ties_through_time": true,
+   "thrust_seen": true
+  },
+  {
+   "node": "N9 (coupling b, best fits)",
+   "knob": "b = +/-0.025",
+   "clock": "Gyr",
+   "d_up": -0.02131331636812206,
+   "d_down": -0.032550825171449915,
+   "response": 0.005618754401663928,
+   "thrust": -0.026932070769785987,
+   "ties_through_time": true,
+   "thrust_seen": true
+  },
+  {
+   "node": "N8/N10 (dark radiation dNeff)",
+   "knob": "dNeff = 0.14 / 0",
+   "clock": "Gyr",
+   "d_up": -0.00010824762811800781,
+   "d_down": 0.0,
+   "response": -5.4123814059003905e-05,
+   "thrust": -5.4123814059003905e-05,
+   "ties_through_time": false,
+   "thrust_seen": false
+  },
+  {
+   "node": "N10 (H0 shell: V_L)",
+   "knob": "V_L x/\u00f7 1.5",
+   "clock": "Gyr",
+   "d_up": -0.8554212536477941,
+   "d_down": 0.7765641634118037,
+   "response": -0.8159927085297989,
+   "thrust": -0.039428545117995206,
+   "ties_through_time": true,
+   "thrust_seen": false
+  },
+  {
+   "node": "N1 rung states",
+   "clock": "none",
+   "ties_through_time": false,
+   "note": "ties through mass or charge, not time (no numeric clock tie)"
+  },
+  {
+   "node": "N2 neutrinos (Sigma m_nu: mass tie, H(z) shift < 0.1%)",
+   "clock": "none",
+   "ties_through_time": false,
+   "note": "ties through mass or charge, not time (no numeric clock tie)"
+  },
+  {
+   "node": "N3 leptons",
+   "clock": "none",
+   "ties_through_time": false,
+   "note": "ties through mass or charge, not time (no numeric clock tie)"
+  },
+  {
+   "node": "N5 m3/2 / wino",
+   "clock": "none",
+   "ties_through_time": false,
+   "note": "ties through mass or charge, not time (no numeric clock tie)"
+  },
+  {
+   "node": "N7 forces / proton",
+   "clock": "none",
+   "ties_through_time": false,
+   "note": "ties through mass or charge, not time (no numeric clock tie)"
+  },
+  {
+   "node": "N11 swampland",
+   "clock": "none",
+   "ties_through_time": false,
+   "note": "ties through mass or charge, not time (no numeric clock tie)"
+  },
+  {
+   "node": "N12 QG consistency",
+   "clock": "none",
+   "ties_through_time": false,
+   "note": "ties through mass or charge, not time (no numeric clock tie)"
+  },
+  {
+   "node": "N14 before the beginning",
+   "clock": "none",
+   "ties_through_time": false,
+   "note": "ties through mass or charge, not time (no numeric clock tie)"
+  },
+  {
+   "node": "N15 vacuum selection",
+   "clock": "none",
+   "ties_through_time": false,
+   "note": "ties through mass or charge, not time (no numeric clock tie)"
+  },
+  {
+   "node": "N16 tadpole",
+   "clock": "none",
+   "ties_through_time": false,
+   "note": "ties through mass or charge, not time (no numeric clock tie)"
+  }
+ ]
+}

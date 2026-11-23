@@ -21776,3 +21776,23 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 - **Two hubs now tie to it:**
   - **N4-φ0 ↔ r:** the CMB measurement of r would decide between the branches (5.4e-4 vs 5.7e-4; this needs σ_r ≲ 1e-5, so it is not testable soon).
   - **N4-seq ↔ N16:** sequestering is exactly what a B2 rebuild of the fold would have to supply.
+
+## D2143 (CENTRE, sensitivity map: lock PREREG_D2143 + DEV-1). Danny's "wall here, pull each node both ways, look for a thrust". **A one-way clock shift from a two-way pull IS seen at three nodes, strongest at the thread–DM coupling b.** (2026-11-22 ~20:25 CT, referee review pending)
+- **Clocks:** the early clock is N\* (e-folds at horizon exit; base 68.0). The late clock is the age t₀ (base 13.715 Gyr at H0 = 67.43), from the calibrated engine.
+- **Definitions:** response = (Δ₊ − Δ₋)/2; thrust = (Δ₊ + Δ₋)/2, the net drift under a symmetric pull.
+
+| node (pulled ×1.5 and ÷1.5, or ±) | clock | Δ₊ / Δ₋ | response | thrust | reading |
+|---|---|---|---|---|---|
+| N4 τ_q dilution D | N\* | −0.135 / +0.135 | −0.135 | 0 | ties through time, linear (ln D): no thrust |
+| N8 reheating T_R | N\* | +0.135 / −0.135 | +0.135 | 0 | ties through time, linear: no thrust. **N4 and N8 are mirror images: pulling the wall cancels pulling the centre** |
+| N6 r (CMB wall) | N\* | −12.5 / +15.3 | −13.9 | **+1.4** | strong tie, curved (r ∝ N\*⁻²): thrust toward longer inflation. This is the algebra of the plateau, not new physics |
+| N9/N13 thread start u_i | t₀ | +0.254 / −0.191 Gyr | +0.222 | **+0.031 Gyr** | ties through time; the thawing curve is bent, so a symmetric pull leaves the universe 31 Myr older |
+| **N9 coupling b (best fits)** | t₀ | **−0.021 / −0.033 Gyr** | +0.006 | **−0.027 Gyr** | **both directions make the universe younger.** A two-way pull gives a one-way drift. The cause is D2134a: DM loses mass for either sign of b, so the pull always runs the same way. This is the clearest case of Danny's "thrust" |
+| N10 H0 shell (V_L) | t₀ | −0.855 / +0.777 Gyr | −0.816 | −0.039 | the strongest time tie, nearly linear (5%, below the 10% bar) |
+| N8/N10 ΔN_eff (late clock only) | t₀ | ≈ 0 | — | — | no late-time tie (its effect is on the early sound horizon) |
+| N1, N2, N3, N5, N7, N11, N12, N14, N15, N16 | — | — | — | — | tie through mass or charge, not time |
+
+- **What this says about the postulate:**
+  - Six of the 16 nodes tie through the cosmic clock. Ten tie through mass or charge only, so the postulate is **partly** right.
+  - Where the wall is curved, a symmetric pull gives a net clock drift ("thrust"): N6, u_i and, most cleanly, b.
+- **Honest bound:** this "thrust" is a re-timing of cosmic history (the universe's age, or when inflation's scales left the horizon). It is **not** motion through time. Nothing in the equations permits that.
