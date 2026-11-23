@@ -22161,3 +22161,10 @@ Locked rule (PREREG_D2163): lowest chi2_eff over all runs per model; dchi2 = W �
 - Δχ²_eff = +2.46 (posted: +2.40). Same class: mild tension (just over +2). Verdict: "stable to minimiser starts".
 - Spread of the four new minima (in −log posterior; ×2 for χ²): L 3594.14–3596.18 (χ² spread ≈ 4.1); W 3596.76, 3598.87, then 3747.66 and 5007.64 (one run not converged). Both models gained ≈2 in χ² from more starts, so the gap held while each fit improved: the ±2 scatter caveat in the paper stands, but the class did not move.
 - Files: field_tests/weave_lcdm/pr4_{L,W}_desdovekie_bo4.json; logs kept. Not refereed. Goes into version 2.
+
+## D2174 (TOOL, 23 Nov 2026 01:10 CT) — Mersenne trial factoring: 4620-class wheel + small-prime sieve vs D2005 naive loop
+Lock PREREG_D2174. 200 prime exponents in [1e6, 1e6+2e4), TF to 2^40. Results field_tests/results/d2174_mersenne_wheel.json.
+- C1 correctness: PASS. Both find the identical smallest factor (or none) on all 200; 93/200 have a factor below 2^40. Wheel keeps 960/4620 classes (checks the 96/420 law).
+- C2 speed: FAIL against the 4–10× prediction. Wheel 162 s vs naive 14.7 s (0.09×, i.e. 11× slower).
+- Why (diagnosis, not a rerun): (1) early exit — the naive loop scans k upward and stops at the first factor; 93 exponents stop very early. Our wheel scans class by class to the full depth before it can know the smallest factor, so it does the whole range on every exponent. GIMPS avoids this by doing one bit level at a time across all classes, so it can stop at the first level holding a factor. (2) Python overhead — the per-chunk loop over ~1,000 sieve primes runs in Python, which costs more than the powmods it saves at 40 bits.
+- Verdict: the factor law and the wheel are correct, but our Python build does not speed up shallow TF. A real gain needs (i) bit-level-major order with early exit, and (ii) the sieve in compiled code (C/numba) or on the GPU, as in mfaktc. Next build gets its own lock; no rerun of this one.

@@ -1,0 +1,12 @@
+{
+ "n": 200,
+ "bits": 40,
+ "factors_found": 93,
+ "mismatches": [],
+ "C1": "PASS",
+ "t_naive": 14.682933568954468,
+ "t_wheel": 162.11015224456787,
+ "speedup": 0.09057380654854376,
+ "naive_k_per_s": 7478577.593797497,
+ "wheel_k_covered_per_s": 677363.2402388884
+}
