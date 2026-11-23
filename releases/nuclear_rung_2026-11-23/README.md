@@ -164,6 +164,10 @@ energy released heats something: a patient, a crew, a plume, a waste canister, o
 that core two independent ways (matrix exponential and analytic Bateman, agreeing to 3e-13) and then each branch adds
 the one thing its field needs.
 
+## The research limb
+What every field needs according to its own big planning studies (NSAC, DOE fusion roadmap, WANDA nuclear data,
+r-process reviews, the Ac-225 user group), folded into one build order: see RESEARCH_LIMB.md.
+
 ## Honest status
 - Chronos v1: locked tests T1-T10 pass; first referee round found 3 major defects, all fixed (DEVIATIONS DEV-1..9);
   the second referee round was stopped before it finished, so it has **not** been cleared yet. Nothing goes out until
