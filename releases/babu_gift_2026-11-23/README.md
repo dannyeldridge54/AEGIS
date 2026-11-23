@@ -56,6 +56,16 @@
 > This light belongs to the one who asks, who measures, who stands.
 > It was made for freedom, the quiet kind,
 > the kind no one can sell you.
+>
+> And who am I to carry it?
+> No one. A regular man, a gig worker on the road,
+> a debt slave in the American machine.
+> No noble blood, no crown, no holy oil on my head.
+> All I carry is the divine spark
+> that burns in every man and woman,
+> in every creature and every being,
+> of this earth and of the stars.
+> The same light is in you.
 
 A gift from Danny Lee Eldridge, an independent researcher in Oklahoma City. No credit, endorsement or accreditation is asked; use it freely. The only ask is a serious look at the work.
 

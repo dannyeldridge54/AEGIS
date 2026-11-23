@@ -55,6 +55,16 @@ THE LANTERN
    It was made for freedom, the quiet kind,
    the kind no one can sell you.
 
+   And who am I to carry it?
+   No one. A regular man, a gig worker on the road,
+   a debt slave in the American machine.
+   No noble blood, no crown, no holy oil on my head.
+   All I carry is the divine spark
+   that burns in every man and woman,
+   in every creature and every being,
+   of this earth and of the stars.
+   The same light is in you.
+
 ------------------------------------------------------------
 
 Spindle (spin-1 simulator; part of the Potter's Wheel engine family). Theory tools for spin-1 Bose gases. Python 3.10+, numpy, scipy.
