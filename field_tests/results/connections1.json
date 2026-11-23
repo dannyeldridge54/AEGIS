@@ -1,0 +1,26 @@
+{
+ "need": -0.2819911543827356,
+ "M12_GeV": 1.06e+16,
+ "P2_triplet": {
+  "M_T_over_M12": 0.477949062573978,
+  "M_T_GeV": 5066260063284167.0,
+  "link": "proton ring: dim-5 decay via triplets ~ M_T^2 m_sf^2 / m_gaugino; scalars 4.7e5 GeV (weave_point)",
+  "note": "coefficient 12/5 is the MSSM value (higgsino triplets light relative to scalars?); sign: lighter triplets raise alpha_s",
+  "label": "postulate, estimate"
+ },
+ "P3_kappa": {
+  "m3=1": 0.04070191722299143,
+  "m3=2": 0.06512306755678629,
+  "m3=4": -0.04651647682627592
+ },
+ "P3_note": "kappa must come from the D7 gauge kinetic function; m3 != m2 breaks alpha_1 = alpha_2 = alpha_3 at M12 and moves x = flux/alpha^-1 (T_R ring)",
+ "P4_spectrum": {
+  "max_natural_dalpha_s": 0.0027,
+  "needed": 0.003799999999999998,
+  "fraction_of_need": 0.7105263157894741,
+  "link": "gluino/wino ratio fixed by AMSB; wino mass fixed by relic density (dark ring); scalar mass by m3/2 lever"
+ },
+ "P1_KK": {
+  "note": "complete SU(5) multiplets give universal shifts (no alpha_s change); requires a split tower with delta_b3 != delta_b2: undetermined in the current model"
+ }
+}
