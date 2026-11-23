@@ -22782,3 +22782,14 @@ Run 1 was invalid (the ring pulse re-set s_m32 at every point, erasing the stran
   moves T_R 4.0e8-1.6e9 GeV, and genesis / inflation stay in band across that range). Late layer: no string connection (Lambda input).
 So the string data the rings can fix: N = 6 and S = rho (both the model's own values - a consistency, not a prediction, since the wino band was
 already used to set m3/2); g = 3 is not selected by the rings (it is fixed by alpha^-1 = 28 in weave_magd7, D1758).
+
+## D2229 (UFE derivation, filtered Z6-II scan at rho = 1/2, breath 1, 23 Nov 2026) — CLOSED: tree-unified (V_b = V_a) brane pairs cannot carry 3 chiral quark doublets
+Locked PREREG_D2229_FILTERED_SCAN; tools/seed/z6p_scan_d2229.py = D2146 step 3a + F1 (tree split |ln(R/1.02)| < ln 1.15 -> V_b = V_a at
+rho 1/2, 78 of 400 bulk pairs) + F2 (massless hypercharge, D2167 test). Run 1: 2397 bulk configs pass F1 + bulk tadpoles; 0 (a,b) pairs give
+3 chiral doublets; 0 survivors. Referee round 9 (independent scratch rebuild): CONFIRMED - all 768 Sym_a = 0, |I_ab + I_ab'| = 3 pairs on
+F1 bulks are opposite-sign (vector-like), and all 3264 SM-like pairs without F1 fail F1; F2 = D2167 test (controls: published a,c,d pass;
+stored 2000 -> 0/2000). One gap: bulk (9,-3,18,-6) had 0 fractional variants at |w| <= 4 (inherited from D2146). DEVIATIONS DEV-1 widened
+wrappings to |w| <= 6; rerun (field_tests/results/d2229_filtered_scan_rerun.json): still 0 pairs, 0 survivors (8 s).
+Verdict: on T6/Z6' ABa at rho = 1/2, a three-generation visible sector cannot have tree-level colour/weak unification (the chiral doublet
+count and V_b = V_a exclude each other). So the forces ring cannot be balanced by the tau = i threshold on this lattice: the derivation needs
+another rho (steering knob, next breath, own lock) or another geometry. tau = i stays CONDITIONAL with no host at rho = 1/2.
