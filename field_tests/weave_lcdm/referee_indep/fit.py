@@ -1,5 +1,5 @@
 import sys, json, math, time, numpy as np, camb
-sys.path.insert(0,'/tmp/claude-0/referee/indep')
+import os; sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from thread import wtable
 from scipy.optimize import minimize
 C=299792.458; D='/tmp/claude-0/cobaya_pkgs/data/'
@@ -22,6 +22,7 @@ def model(p,kind,ui=None):
     wb,wc,H0=p[:3]; h=H0/100
     if not(0.018<wb<0.027 and 0.09<wc<0.15 and 58<H0<78): return None
     if kind=='L': ns=p[3]; mnu=0.06; nm=1; hier='degenerate'
+    elif kind=='Lnu': ns=p[3]; mnu=0.0587; nm=3; hier='normal'   # D2161
     else: ns=0.9706; mnu=0.0587; nm=3; hier='normal'
     P=camb.CAMBparams()
     try: P.set_cosmology(H0=H0,ombh2=wb,omch2=wc,mnu=mnu,num_massive_neutrinos=nm,neutrino_hierarchy=hier,nnu=3.044,TCMB=2.7255,omk=0)
@@ -52,10 +53,10 @@ if __name__=='__main__':
     kind=sys.argv[1]; nodes=[float(v) for v in sys.argv[2:]] or [None]; out={}
     for ui in nodes:
         t=time.time(); best=None
-        starts=[[0.02236,0.119,67.5,0.965],[0.0225,0.118,66.0,0.97]] if kind=='L' else [[0.02236,0.119,67.5],[0.0225,0.118,66.0]]
+        starts=[[0.02236,0.119,67.5,0.965],[0.0225,0.118,66.0,0.97]] if kind in ('L','Lnu') else [[0.02236,0.119,67.5],[0.0225,0.118,66.0]]
         for s in starts:
             r=minimize(chi,s,args=(kind,ui),method='Nelder-Mead',options={'maxiter':400,'xatol':1e-5,'fatol':1e-3})
             if best is None or r.fun<best.fun: best=r
         m=model(best.x,kind,ui); out[str(ui)]=dict(chi2=best.fun,x=list(best.x),parts=m[1],sec=time.time()-t)
         print(kind,ui,round(best.fun,3),[round(v,3) for v in m[1]],round(time.time()-t,1),flush=True)
-    json.dump(out,open(f'/tmp/claude-0/referee/indep/res_{kind}_{"_".join(sys.argv[2:]) or "x"}.json','w'),indent=1)
+    json.dump(out,open(os.path.dirname(os.path.abspath(__file__))+f'/res_{kind}_{"_".join(sys.argv[2:]) or "x"}.json','w'),indent=1)
