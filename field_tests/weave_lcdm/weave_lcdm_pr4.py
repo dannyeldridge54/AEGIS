@@ -26,7 +26,7 @@ if model in ('L', 'C'):
 else:
     pr['ns'] = 0.9706; pr['nrun'] = -9.7e-4; pr['r'] = 5.4e-4; pr['mnu'] = 0.0587
     ex.update({'num_massive_neutrinos': 3, 'neutrino_hierarchy': 'normal', 'dark_energy_model': 'ppf'})
-    pr['rt_ui'] = {'prior': {'min': 1e-6, 'max': 0.6}, 'ref': {'dist': 'uniform', 'min': 0.02, 'max': 0.3}, 'proposal': 0.02}
+    pr['rt_ui'] = {'prior': {'min': 1e-6, 'max': 0.6}, 'ref': {'dist': 'uniform', 'min': 0.02, 'max': 0.20}, 'proposal': 0.02}
     theory = {'rtcamb': {'external': rt_theory(), 'extra_args': ex, 'stop_at_error': False}}
 info = {'packages_path': P, 'theory': theory, 'params': pr,
         'likelihood': {('planck_NPIPE_highl_CamSpec.TTTEEE' if HL == 'camspec' else 'planck_2020_hillipop.TTTEEE_bin'): None, 'planck_2020_lollipop.lowlE': None, 'planck_2018_lowl.TT': None, 'planckpr4lensing.PlanckPR4Lensing': None, 'bao.desi_dr2': None, 'sn.' + sn: None},
