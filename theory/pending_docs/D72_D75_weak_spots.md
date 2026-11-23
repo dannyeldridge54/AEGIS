@@ -22617,3 +22617,9 @@ m3 = 1: alpha_s 0.547; m3 = 2: 0.226; m3 = 3: 0.1142 (-4.2 sigma); m3 = 4: 0.067
 normalisation: m3 = 2 -> 0.124 (+6.6 sigma), m3 = 4 -> 0.103. No integer lock gives 0.118: the forces ring locks at m3 = m2 = 3 (0.1142) and the
 nearest other locks overshoot by a factor of ~2. The -0.28 needed is a FRACTION of one flux step -> it must come from a continuous piece
 (one-loop KK/string threshold, Wilson lines, or the S-T mixing normalisation), not from the flux lock. Exploratory (no goalposts); referee next cycle.
+
+## D2213 (CENTRE, 23 Nov 2026 ~16:00 CT) — connections 1 + R105: no single cross-ring connection balances the forces ring
+P2 (colour triplets, forces<->proton) had the WRONG SIGN in my postulate: light triplets lower alpha_s (0.5 M12 -> 0.1130). P4 (spectrum,
+forces<->dark) is right-signed but pinned by the wino window: ~+0.001 usable of the +0.0038 needed. P3 tunable/untied, P1 undetermined.
+Standing result: the Weave's alpha_s is 0.114-0.115, ~3.5-4 sigma low; the only remaining physics lever is the non-universal one-loop
+string threshold of the N = 6 D7 stack (Delta_3 - Delta_{1,2}, from b^{N=2} ln(Re T |eta|^4) + flux). That derivation decides the forces ring.
