@@ -22289,3 +22289,10 @@ Result for the Weave: the decaying-wino escape works only with leptonic RPV and 
 - L (LCDM) Dovekie+SPT best-of-4: chi2 = 1862.9207 vs single-start 1862.9213 (ORIG) / 1862.9310 (relaunch): the LCDM
   minimum is stable to 5e-4. W best-of-4 still running; Delta chi2 scored by the D2132 rule when it lands
   (single-start W = 1856.3247 gave -6.57).
+
+### D2177 result (2026-11-23 09:20 CT): SPT best-of-4, both models landed
+- W Dovekie+SPT best-of-4 chi2 = 1856.3440 (10,477 s); L best-of-4 = 1862.9207. Delta chi2 (W - L) = -6.58 -> PREFERRED by the
+  D2132 rule (< -2), the same verdict as the single-start D2176 (-6.57).
+- Honest note: W's best-of-4 minimum is 0.019 HIGHER than the single-start W (1856.3247), i.e. none of the 4 starts beat the
+  original run; the minimum is flat to ~0.02 in chi2. L agrees to 5e-4 across runs. Verdict unchanged either way.
+- Still running on the PC: D2169 tight minimiser (L, W), T2 freed inputs x6.
