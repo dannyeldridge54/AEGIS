@@ -21688,3 +21688,23 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
   - **r is the most-used joint.** It appears at N6, N11 and N14: the CMB passes it, the TCC flags it, and it sets the pre-inflation dimension.
   - **The outer negative space bends back to the centre:** N15 (vacuum selection) lands on L1's knot ρ.
   - **The two live outer walls are N13's dS slope (marginal) and N16's tadpole (FAIL).** These are the outer-space mirrors of the inner FAILs (α_s, Δ₃).
+
+## D2139 (CENTRE, derived: lock PREREG_D2139). Three negative-space nodes computed; three more scoped as projects (2026-11-22 ~19:50 CT, referee review pending)
+
+| node | what was derived | result | verdict |
+|---|---|---|---|
+| **N13** refined de Sitter | thread slope \|V′\|/V = βu/(1−u) along the fitted D2134 b = 0 Dovekie thread | 0.53 at the start (u_i = 0.157) → **1.06 today** (u₀ = 0.272) | **PASS** against c ≥ √(2/3) = 0.816, the TCC/asymptotic form |
+| **N4** light moduli | τ_q decay temperature at m = 2e10 GeV, Γ = m³/(4πM_P²), O(1) and 1/8π couplings | T_d = 5.5e4 – 2.8e5 GeV | **PASS** (≫ 5 MeV) |
+| **N3** lepton-flavour violation | μ→eγ by mass insertion at m_s = 0.25 PeV, tan β = 4, δ₁₂ = 1 [E] | BR = 3.7e-17 | **PASS** (MEG II limit 1.5e-13; any δ₁₂ ≤ 64 is allowed) |
+
+- **Correction to D2138's N13 line.** It said the slope is "smaller today". That is wrong. The thread thaws (φ falls), so u grows and the slope rises from 0.53 to 1.06. N13 moves from MARGINAL to **PASS** today. The early-time slope of 0.53 applies only while dark energy is negligible.
+- **Not derivable tonight; scoped as projects:**
+  - **N1:** hidden-family masses on the empty rungs. Needs the rung-spectrum project.
+  - **N14:** the pre-inflation E10 billiard. A research programme.
+  - **N16:** the tadpole. Needs the B2 rebuild (families from intersections in IIB). The PS seed shows that such charge closure is possible.
+- **Negative-space scoreboard (N1–N16):**
+  - PASS: N2, N3, N4, N5, N6, N7, N9, N12, N13, N15
+  - TRUST: N8
+  - FLAG: N11 (TCC on r)
+  - FAIL: N10 (the H0 shell) and N16 (tadpole)
+  - OPEN: N1, N14
