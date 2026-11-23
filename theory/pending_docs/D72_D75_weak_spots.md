@@ -22743,3 +22743,13 @@ pair is GENERIC; i and rho give the same count; (-3, 0) ties with (-2, -1) on |D
 O(1) vs L ~1 would move the line (still a line). Verdict: CONDITIONAL. Claim allowed: "the forces ring balances at tau = i if the visible N=2
 sector gives Db32 + 0.7 Db12 ~ -3"; no prediction until (Db32, Db12) is derived from the Z2 x Z6' spectrum and the T/U identification fixed.
 No bug -> no rerun. Status of A.alpha_s unchanged (OUT) until that derivation.
+
+## D2226 (UFE PASS of D2225, 23 Nov 2026) — all six rings pulsed with each tau = i pair: forces ring balances, map 29 IN / 6 EDGE / 2 OUT (CONDITIONAL)
+Locked PREREG_D2226_UFE_PASS. theory/tests/d2226_ufe_pass.py: for the baseline and each of the 9 stable tau = i pairs, hex.loop() pulses all
+six rings until a NULL round; Bloom lnL / target with BIC charge k+0 (pair derived) and k+2 (pair chosen); stage map rerun (stagemap_ufe_*.json).
+- Baseline (alpha_s 0.11446): lnL -8.62, target -20.80; alpha_s OUT -3.93, Hoyle OUT; map 27/6/4.
+- Every pair: alpha_s IN (pulls -0.49..+0.49), Hoyle IN, no other marker worse; map 29 IN / 6 EDGE / 2 OUT (D/H, JET #99971 only).
+  (-6,4): lnL -0.88, target -13.06 (k+0) / -16.11 (k+2). (-3,0): lnL -0.88, -13.06 / -16.11. Worst pair (1,-6): -13.18 / -16.23.
+- BIC: even charging two chosen integers (k+2), the target improves by ~4.6-4.7 over the baseline (Delta lnL ~ +7.7). By the pre-stated reading
+  the pairs "balance under UFE". Status stays CONDITIONAL (D2225 referee): the pair and the T/U identification of the threshold torus at
+  tau = i must be derived from the Z2 x Z6' visible N=2 spectrum before the A.alpha_s marker may move on the official map (map 7 unchanged).
