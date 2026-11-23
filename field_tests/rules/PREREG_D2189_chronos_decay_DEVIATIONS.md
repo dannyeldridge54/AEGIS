@@ -13,3 +13,14 @@ DEV-7 (minor): pharmacy warning when t > 10 half-lives; O-15 and Rb-82 removed f
 DEV-8 (minor): energy tab normalised to 1 Bq of parent at t = 0, axis labelled.
 DEV-9 (minor): t0 <= 0 means full escape, labelled.
 T1-T6 and the A2 tests are rerun after the fixes as a check (T6 is full trapping and unaffected by DEV-1).
+
+## Round 2 (R78), written before the fixes, ~09:00 CT: 1 major, 5 minor
+DEV-10 (major): ni_mass_from_tail requires t0_days explicitly; full trapping labelled "Type II-P / full-trapping only"; the
+  example is reported with t0 = 40 d (SN Ia) and with full trapping.
+DEV-11: I-131/Cs-137 pair clears the release ratio and shows "—" until entered.
+DEV-12: J0651 masses cited to Hermes et al. 2012; result labelled "Peters point-mass coalescence (upper bound; Brown et al.
+  2011: ~0.9 Myr to contact)". T9 window unchanged (passes as locked).
+DEV-13: cosmochronometry UI: log-eps input (ratio = 10^log), U/Th option, note "0.1 dex = 4.65 Gyr for Th/Eu; single-event
+  assumption", negative-age guard.
+DEV-14: Way-Wigner note adds "excludes U-239/Np-239 heating".
+DEV-15: "Ac-225 activity at purification"; show Ac-225 at t; tritium line gives He-3 mass via the mass ratio.
