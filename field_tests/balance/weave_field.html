@@ -27,7 +27,13 @@ svg text{fill:var(--fg);font-family:var(--body)}
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .sw{width:12px;height:12px;border-radius:3px;display:inline-block}
 .layers{display:grid;gap:6px;margin-top:12px}
-.layer{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:10px;align-items:baseline;font-size:13.5px;padding:6px 8px;border-radius:6px;cursor:default}
+.layer{font-size:13.5px;padding:6px 8px;border-radius:6px}
+.layer summary{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:10px;align-items:baseline;cursor:pointer;list-style:none}
+.layer summary::-webkit-details-marker{display:none}
+.layer summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.layer dl{display:grid;grid-template-columns:110px minmax(0,1fr);gap:4px 12px;margin:8px 0 4px 54px;font-size:13px}
+.layer dt{color:var(--muted);font-weight:500}.layer dd{margin:0}
+@media (max-width:520px){.layer dl{grid-template-columns:1fr;margin-left:0}.layer summary{grid-template-columns:36px minmax(0,1fr)}.layer .pill{grid-column:2}}
 .layer:hover,.layer.hl{background:color-mix(in srgb,var(--accent) 10%,transparent)}
 .layer .k{font-family:var(--mono);color:var(--muted)}
 .pill{font-family:var(--mono);font-size:11.5px;padding:2px 8px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
@@ -50,7 +56,7 @@ th{font-weight:500;color:var(--muted);font-size:12px}
 
 <div class="wrap">
   <header>
-    <div class="asof">State at 23:08 CT, 22 Nov 2026 · balance ledger round 8 · Loom pulse D2156</div>
+    <div class="asof">State at 23:25 CT, 22 Nov 2026 · balance ledger round 8 · Loom pulse D2156</div>
     <h1>The Weave, as one field</h1>
     <p class="sub">Every layer from the centre point ρ outward, the negative-space shell around them, and the points where the field still has to close. Green holds on its own. Amber holds only because a dial was spent as a fit. Grey has no scale to test yet. Red is off balance.</p>
   </header>
@@ -65,6 +71,7 @@ th{font-weight:500;color:var(--muted);font-size:12px}
         <span><i class="sw" style="background:var(--noscale)"></i>no scale yet</span>
         <span><i class="sw" style="background:var(--off)"></i>off balance</span>
       </div>
+      <p class="note">Tap a layer to see what it contains, what flows through it, and how it moves. Closed strings carry gravity and the moduli; open strings between branes carry the forces and, where branes cross, the matter. These are the model’s statements, not established physics.</p>
       <div class="layers" id="layers"></div>
     </section>
 
@@ -81,10 +88,11 @@ th{font-weight:500;color:var(--muted);font-size:12px}
       <tbody>
         <tr><td>HiLLiPoP + Dovekie</td><td class="pos">+2.40</td><td>0.0016 frozen</td><td>68.20 / 68.12</td><td>0.1177 / 0.1179</td><td class="pos">+2.84</td><td class="pos">+0.71</td><td class="neg">−0.58</td><td class="pos">+0.25</td><td>mild tension (headline)</td></tr>
         <tr><td>HiLLiPoP + Pantheon+</td><td class="pos">+2.46</td><td>0.143 thawed</td><td>67.42 / 67.85</td><td>0.1172 / 0.1184</td><td class="pos">+6.66</td><td class="pos">+2.70</td><td class="neg">−5.17</td><td class="neg">−2.13</td><td>mild tension</td></tr>
+        <tr><td>HiLLiPoP + Union3</td><td class="neg">−1.65</td><td>0.148 thawed</td><td>67.24 / 68.36</td><td>0.1174 / 0.1172</td><td class="neg">−1.26</td><td class="pos">+2.48</td><td class="pos">+0.62</td><td class="neg">−4.25</td><td>consistent</td></tr>
         <tr><td>CamSpec + Pantheon+</td><td class="neg">−3.80</td><td>0.140 thawed</td><td>67.34 / 68.07</td><td>0.1174 / 0.1179</td><td class="pos">+2.42</td><td class="neg">−0.48</td><td class="neg">−1.79</td><td class="neg">−2.58</td><td>preferred by rule; CMB-likelihood dependent; minimiser not clean</td></tr>
       </tbody>
     </table></div>
-    <p class="note">The supernovae decide whether the thread thaws; the Planck likelihood sets the price on the high-ℓ spectrum; ω_c is the pivot. Thawing always lowers H0. Five forecasts from this pattern were locked (D2160) before the Union3 and CamSpec-Dovekie fits finish. Entries share data and are never added together.</p>
+    <p class="note">The supernovae decide whether the thread thaws; the Planck likelihood sets the price on the high-ℓ spectrum; ω_c is the pivot. Thawing always lowers H0. Five forecasts from this pattern were locked (D2160) before the last fits finished. Union3 so far: it thaws (pass), H0 drops (pass), ω_c as the pivot fails. On HiLLiPoP the headline (consistent on all three sets) is not met. Entries share data and are never added together.</p>
   </section>
 </div>
 
@@ -92,16 +100,46 @@ th{font-weight:500;color:var(--muted);font-size:12px}
 const C = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const ST = {set:'--set', fit:'--fit', noscale:'--noscale', off:'--off'};
 const LAYERS = [
-  {k:'L1', name:'Torus: centre, rung step', st:'set', m:'quark window +0.03'},
-  {k:'L2', name:'Pyramid: i, neutrinos', st:'set', m:'ν ratio +0.29'},
-  {k:'L3', name:'Turnover: ρ, leptons (Koide)', st:'noscale', m:'trust, no scale'},
-  {k:'L4', name:'Cube: three tori together', st:'off', m:'rung agreement −0.003'},
-  {k:'L5', name:'Fold: volumes, m3/2, wino', st:'set', m:'wino +0.03 vs ATLAS'},
-  {k:'L6', name:'Dilaton: inflation, n_s', st:'set', m:'n_s +0.93 vs P-ACT'},
-  {k:'L7', name:'Forces: S–T seam, α_s', st:'fit', m:'α_s 0.1142 (−4.2σ) unless split'},
-  {k:'L8', name:'Cosmology: reheating, genesis, dark baryon', st:'set', m:'dark baryon +0.59'},
-  {k:'L9', name:'Late universe: the thread', st:'off', m:'thread −0.46 (HiLLiPoP)'},
-  {k:'L10', name:'Shells + spine: H0, ΔN_eff', st:'off', m:'H0 vs SH0ES −3.39'}
+  {k:'L1', name:'Torus: centre, rung step', st:'set', m:'quark window +0.03',
+   has:'The complex-structure modulus τ of one torus, sitting near the knot ρ = e^{iπ/3}; the quark Yukawas are modular forms of τ.',
+   flow:'Closed strings carry τ. Open strings at brane crossings carry the quarks; how far τ sits from ρ (the rung size |ε|) sets their mass ratios.',
+   move:'τ settles into a supergravity minimum on a rung of a discrete ladder; rung 1 holds the down quarks, around rung 8 the up quarks.'},
+  {k:'L2', name:'Pyramid: i, neutrinos', st:'set', m:'ν ratio +0.29',
+   has:'The second knot, τ = i, and three heavy right-handed neutrinos at about 1.8 × 10¹¹ GeV.',
+   flow:'Lepton doublets meet the heavy neutrinos through Yukawa couplings; the seesaw passes a tiny mass down to the light neutrinos.',
+   move:'Fixed at the knot; nothing rolls. The light masses come out normal-ordered, summing to 0.0587 eV.'},
+  {k:'L3', name:'Turnover: ρ, leptons (Koide)', st:'noscale', m:'trust, no scale',
+   has:'The charged leptons, held exactly at ρ, where the Z₃ symmetry of the knot fixes Koide Q = 2/3.',
+   flow:'Open strings at one set of brane crossings carry e, μ, τ; the symmetry at ρ ties their three masses together.',
+   move:'Pinned at ρ, so nothing flows yet that a measurement could test beyond Koide itself (m_τ forecast locked).'},
+  {k:'L4', name:'Cube: three tori together', st:'off', m:'rung agreement −0.003',
+   has:'The six-dimensional space T⁶/Z₆-II: three two-tori, each with its own shape and size.',
+   flow:'Closed-string moduli of all three tori; their rung readings have to agree with one another.',
+   move:'Each torus settles on its own; the three readings miss agreeing by 0.003 because the rung coefficient is fitted, not derived.'},
+  {k:'L5', name:'Fold: volumes, m3/2, wino', st:'set', m:'wino +0.03 vs ATLAS',
+   has:'The volumes of the folded space (Kähler moduli) and the flux superpotential W₀ ≈ 5.6 × 10⁻⁹, which fix the gravitino at about 2.6 × 10⁵ GeV.',
+   flow:'Supersymmetry breaking flows out through anomaly mediation: the gaugino masses come out as bino 2.3 TeV, wino 0.69 TeV, gluino about 5 TeV.',
+   move:'The volumes are held by a racetrack potential; the wino ends up the lightest partner and is stable.'},
+  {k:'L6', name:'Dilaton: inflation, n_s', st:'set', m:'n_s +0.93 vs P-ACT',
+   has:'The inflaton ψ on the plateau V∞(1 − A e^{−β_inf ψ}), with the same A = 7.30 as the late-time thread.',
+   flow:'Vacuum energy drives about 68 e-folds of expansion; quantum ripples in ψ become the seeds of all structure.',
+   move:'ψ rolls slowly down the plateau and falls off the edge: n_s = 0.9706, r = 5.4 × 10⁻⁴, running −9.7 × 10⁻⁴.'},
+  {k:'L7', name:'Forces: S–T seam, α_s', st:'fit', m:'α_s 0.1142 (−4.2σ) unless split',
+   has:'The gauge forces: SU(3) × SU(2) × U(1) living on stacks of D-branes, plus hidden stacks.',
+   flow:'Open strings that start and end on the same stack are the gauge bosons; the stack volumes set the couplings at the string scale.',
+   move:'The couplings run down to everyday energies; α_s arrives 4.2σ low unless the stacks are split, which costs a fit.'},
+  {k:'L8', name:'Cosmology: reheating, genesis, dark baryon', st:'set', m:'dark baryon +0.59',
+   has:'Reheating at about 3.7 × 10⁸ GeV, the heavy quark modulus τ_q (10¹⁰–10¹¹ GeV), gravitinos and winos, and a 10–12 GeV dark baryon.',
+   flow:'The inflaton decays into heavy neutrinos, whose decays make the matter–antimatter asymmetry; the same asymmetry is shared into the dark sector.',
+   move:'τ_q oscillates and decays late, which dilutes the universe and makes too many winos (the N4 wall); gravitinos decay into winos.'},
+  {k:'L9', name:'Late universe: the thread', st:'off', m:'+2.4 / +2.5 / −1.7 by SN set',
+   has:'The thread φ on V_L(1 − A e^{−βφ}), A = 7.30, β = 2√2: the dark energy.',
+   flow:'Its potential energy is today’s dark energy; with w ≥ −1 at every redshift it never goes phantom.',
+   move:'φ starts at u_i and rolls toward the knot i. Dovekie keeps it frozen (u_i ≈ 0.002); Pantheon+ and Union3 thaw it (≈ 0.14–0.15), which lowers H0.'},
+  {k:'L10', name:'Shells + spine: H0, ΔN_eff', st:'off', m:'H0 vs SH0ES −3.39',
+   has:'The outer data shell, the negative-space shell of walls, and the spine of extra radiation ΔN_eff.',
+   flow:'Any light hidden particle would add radiation, speed up early expansion and raise H0.',
+   move:'Opening ΔN_eff to about 0.4 lifts H0 to about 69.9, but that breaks ACT’s limit of 0.14; held at zero, H0 stays near 67–68.'}
 ];
 const WALLS = [
   ['N1','rung-state masses','noscale'],['N2','ν mass vs DESI','set'],['N3','μ→eγ','set'],['N4','quark modulus winos','off'],
@@ -111,6 +149,7 @@ const WALLS = [
   ['N15','why this vacuum → ρ','noscale'],['N16','flux tadpole','off']
 ];
 const CLOSE = [
+  {c:'off', where:'All fits · the fitter', what:'Fitting scatter is as large as the results', how:'Two runs of the same fit differ by 3–4 in χ²; every Δχ² tonight sits inside that. <b>Close by</b> more starts per fit: the headline pair is refitting with best of 4 now (D2163).'},
   {c:'off', where:'L9 · late universe', what:'The verdict depends on which Planck likelihood you use', how:'HiLLiPoP +2.5, CamSpec −3.8 on the same Pantheon+ data. <b>Close by</b> the systematics wheel. Neutrino setting: tested 23:08, Δχ² +0.004, closed at background level (D2161). Still open: more fitter starts per pair, a run without nuisance priors; then score the D2160 forecasts.'},
   {c:'off', where:'L10 · N10 · outer shell', what:'Hubble tension not solved', how:'H0 ≈ 67–68; thawing lowers it further. Extra radiation is blocked by ACT. <b>No closing move in the model yet.</b>'},
   {c:'fit', where:'L7 · forces', what:'α_s = 0.1142 against 0.1180 (−4.2σ)', how:'Balances only by spending the split-stack dial. <b>Close by</b> a derived threshold (stack split or gluino scale) instead of a fitted one.'},
@@ -150,7 +189,7 @@ function draw(){
 }
 function lists(){
   const ly=document.getElementById('layers');
-  ly.innerHTML=LAYERS.map(L=>`<div class="layer" data-k="${L.k}"><span class="k">${L.k}</span><span>${L.name}</span><span class="pill" style="color:var(${ST[L.st]})">${L.m}</span></div>`).join('');
+  ly.innerHTML=LAYERS.map(L=>`<details class="layer" data-k="${L.k}"><summary><span class="k">${L.k}</span><span>${L.name}</span><span class="pill" style="color:var(${ST[L.st]})">${L.m}</span></summary><dl><dt>Contains</dt><dd>${L.has}</dd><dt>What flows</dt><dd>${L.flow}</dd><dt>How it moves</dt><dd>${L.move}</dd></dl></details>`).join('');
   document.getElementById('close').innerHTML=CLOSE.map(x=>`<div class="cp ${x.c==='off'?'':x.c}"><div class="where">${x.where}</div><div class="what">${x.what}</div><div class="how">${x.how}</div></div>`).join('');
   ly.querySelectorAll('.layer').forEach(row=>{
     row.addEventListener('mouseenter',()=>document.querySelectorAll('.ring').forEach(r=>r.style.opacity=r.dataset.k===row.dataset.k?1:0.25));
