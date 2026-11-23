@@ -21561,3 +21561,18 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 - **It falls short of free w0wa everywhere.** On Union3 that is decisively so (ΔAIC +8.6): w0wa prefers wa ≈ −0.63, while a thawing field with w ≥ −1 stays near Λ.
 - Pinning n_s = 0.9706 costs nothing: L finds n_s 0.969–0.970.
 - **Limitations:** no low-ℓ TT and no lensing; the τ prior stands in for low-ℓ EE.
+
+## D2133 (CENTRE, referee pole's own locked test, archived at field_tests/weave_lcdm/referee_indep/): independent thread plus a Dovekie fit.
+- **T1:** the referee re-derived the thread from the potential alone, without seeing our code. **It agrees with rt_wtable to ≤ 8e-6 in w(a)** at u_i = 0.013, 0.109 and 0.173.
+  - Both codes find **no flat solution for u_i ≳ 0.22**: V goes negative before today and the universe collapses. That is a physical upper edge on the thread.
+- **T2** (compressed CHW + DESI DR2 with full covariance + **DES-Dovekie**, 1820 SNe, analytic M marginalisation):
+  - ΛCDM χ² = 1648.23. Weave profile minimum at u_i ≈ 0.157 (**single minimum**), giving **Δχ²(W − L) = −4.24**: CMB +1.57, BAO −1.37, SN −4.44.
+  - **The Dovekie recalibration removes about 60% of the DES-Y5 gain** (−10.1 → −4.2).
+  - Builder review of fit.py: correct (the Dovekie inverse covariance unpacked as in Cobaya, d_L = (1 + z_hel)D_M(z_HD), analytic M, BAO keys from the shipped file). One minor point: the w-table cache rounds Ω_m to 3 decimals, a negligible coarsening.
+- **This predicts "SN-calibration dependent"** under the D2132 −6 rule. D2132's full PR4 number decides.
+
+## D2132 setup notes from the referee (RD-1…RD-4; recorded before any D2132 output)
+- **RD-1:** check that χ²_eff misses no info-level Gaussian priors (verify upd['prior']).
+- **RD-2:** the u_i prior runs to 0.6 and the ref to 0.3, past the ~0.22 collapse edge, so some BOBYQA starts may hit −∞. Any stall must be recorded.
+- **RD-3:** the likelihood set is the standard PR4 combination (null).
+- **RD-4:** the docstring is stale (cosmetic).
