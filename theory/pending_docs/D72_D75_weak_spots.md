@@ -21993,3 +21993,20 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
   - **D fails.**
   - **B** (other variants) and **F's mechanism** are the open research directions.
 - **Where we stand on g_s:** the Weave does not yet have a weak-coupling home. Saying so plainly is part of the paper.
+
+## Run note: the PC is now in use (Danny is home, 20:56 "get the test ready on the computer and have it run"), 21:03 CT
+- **12 fits launched on Danny's PC** (16 cores; each fit single-threaded at BelowNormal priority):
+  - the full D2135 CamSpec-NPIPE grid (L/W/C × Dovekie/Pantheon+/Union3);
+  - the three D2132 w0wa (C) fits on HiLLiPoP.
+- **The same locked script.** tools/weave_pc/weave_lcdm_pr4.py differs from field_tests/weave_lcdm/weave_lcdm_pr4.py only in its paths. It already contains the D2132 DEV u_i reference-range fix.
+- **Environment:** Danny's existing venv312 (Cobaya 3.6.2, CAMB 2.0.5, the same versions as the cloud).
+  - Added from the cloud: the PR4 likelihood packages (planckpr4lensing 1.0.3, hillipop 4.3.1, lollipop 4.1.2), copied with SHA-256 checks.
+  - Added from the cloud: the planck_2020 data.
+  - CamSpec runs on the PC's own NPIPE data.
+- **Still in the cloud:** L/W on Pantheon+ and Union3 (HiLLiPoP), and the Z₆′ scan.
+- **CubeMind v5b** (tools/weave_cm_v5b), installed with backups. A learn-loop step watches the PC results folder and weave_data/lcdm. For each new fit it:
+  - stores the fit as EVIDENCE;
+  - computes the locked W-vs-L verdict with the new tool weave_verdict;
+  - queues blind re-derivations (Δχ², and w today via weave_wtoday) into calc_queue, so CubeMind derives each one itself and is graded mechanically.
+
+  Tested on a mock first, where a duplicate-record bug was found and fixed before install.
