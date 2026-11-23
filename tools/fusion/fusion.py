@@ -64,7 +64,10 @@ def ideal_ignition_T(E_alpha_MeV, Zeff=1.0):
 MU0 = 4e-7 * math.pi
 ITER = dict(R=6.2, a=2.0, kappa=1.85, B=5.3, Ip=15.0, V=831.0, S=683.0, P_aux=50.0, M=2.5, alpha_n=0.1, alpha_T=1.0, beta_T=2.0,
             f_He=0.032, f_Be=0.020, f_Ar=0.0014, Ti_over_Te=8.1 / 8.9, f_reflect=0.6, P_line=27.0, n_avg=1.13e20, fG_max=0.94,
-            src='ITER FDR Physics Table 4.3.1-1, 500 MW column; Be/Ar are axis values used as averages; P_line is an INPUT')
+            src='ITER FDR Physics Table 4.3.1-1, 500 MW column; Be/Ar are axis values used as averages; P_line is an INPUT',
+            # PROM-1 (cycle 1): pedestal profiles (C2), radiation correction (C1), self-consistent He ash (C3)
+            profile='pedestal', rho_ped=0.94, T_ped=3.5, n_ped=0.8e20, T_sep=0.1, n_sep=0.4e20, rad_C3=0.6, rho_core=0.75, tauHe_ratio=5.0, he_selfconsistent=True)
+ITER_400 = dict(ITER, P_aux=40.0, n_avg=1.01e20, P_line=27.0, Ti_over_Te=8.0 / 8.8, src='ITER FDR Table 4.3.1-1, 400 MW column (held out in PROM-1)')
 Z_IMP = dict(He=2, Be=4, Ar=18)
 def composition(m):
     """Fully stripped impurities as fractions of n_e: fuel fraction n_DT/n_e, ion count per electron, Z_eff."""
@@ -75,10 +78,23 @@ def composition(m):
 def line_avg_factor(alpha_n):
     """n_line / n_avg for n = n0 (1 - rho^2)^alpha_n: n_avg = n0/(1+alpha_n), n_line = n0 sqrt(pi) Gamma(alpha_n+1) / (2 Gamma(alpha_n+1.5))."""
     return (math.sqrt(math.pi) * math.gamma(alpha_n + 1) / (2 * math.gamma(alpha_n + 1.5))) * (1 + alpha_n)
+def _ped_shape(rho, X0, Xp, Xs, rp, alpha, beta=2.0):
+    return Xp + (X0 - Xp) * (1 - (rho / rp) ** beta) ** alpha if rho <= rp else Xs + (Xp - Xs) * (1 - rho) / (1 - rp)
 def _profiles(m, n_avg, Te_avg, N=400):
-    rho2 = [(i + 0.5) / N for i in range(N)]
-    n0 = n_avg * (1 + m['alpha_n']); T0 = Te_avg * (1 + m['alpha_T'])
-    return [(n0 * (1 - x) ** m['alpha_n'], T0 * (1 - x) ** m['alpha_T']) for x in rho2], n0, T0
+    """Returns ([(n_e, T_e, w, rho)], n0, T0, n_line). Weights w are volume fractions (sum 1). Parabolic (FUSION-1) or pedestal (PROM-1 C2)."""
+    rhos = [(i + 0.5) / N for i in range(N)]; w = [2 * r / N for r in rhos]; ws = sum(w); w = [x / ws for x in w]
+    if m.get('profile') != 'pedestal':
+        n0 = n_avg * (1 + m['alpha_n']); T0 = Te_avg * (1 + m['alpha_T'])
+        prof = [(n0 * (1 - r * r) ** m['alpha_n'], T0 * (1 - r * r) ** m['alpha_T'], wi, r) for r, wi in zip(rhos, w)]
+        return prof, n0, T0, n_avg * line_avg_factor(m['alpha_n'])
+    rp = m['rho_ped']
+    def solve(Xavg, Xp, Xs, alpha):
+        avg = lambda X0: sum(wi * _ped_shape(r, X0, Xp, Xs, rp, alpha) for r, wi in zip(rhos, w))
+        a0, a1 = avg(Xp), avg(2 * Xp); return Xp + Xp * (Xavg - a0) / (a1 - a0)
+    n0 = solve(n_avg, m['n_ped'], m['n_sep'], m['alpha_n']); T0 = solve(Te_avg, m['T_ped'], m['T_sep'], m['alpha_T'])
+    prof = [(_ped_shape(r, n0, m['n_ped'], m['n_sep'], rp, m['alpha_n']), _ped_shape(r, T0, m['T_ped'], m['T_sep'], rp, m['alpha_T']), wi, r) for r, wi in zip(rhos, w)]
+    nline = sum(p[0] for p in prof) / N
+    return prof, n0, T0, nline
 def p_synch(m, ne0, Te0):
     """Albajar et al. 2001 fit with the Fidone reflection term (UKAEA PROCESS docs), MW."""
     r = m['f_reflect']; aT, an, bT = m['alpha_T'], m['alpha_n'], m['beta_T']; A = m['R'] / m['a']; n20 = ne0 / 1e20
@@ -87,40 +103,56 @@ def p_synch(m, ne0, Te0):
     G = 0.93 * (1 + 0.85 * math.exp(-0.82 * A))
     return (3.84e-8 * (1 - r) ** 0.62 / (1 + 0.12 * Te0 / pa0 ** 0.41 * (1 - r) ** 0.41) ** 1.51
             * m['R'] * m['a'] ** 1.38 * m['kappa'] ** 0.79 * m['B'] ** 2.62 * n20 ** 0.38 * Te0 * (16 + Te0) ** 2.61 * K * G)
-def plasma(m, n_avg, Te_avg, E_alpha_MeV):
-    c = composition(m); prof, ne0, Te0 = _profiles(m, n_avg, Te_avg); V = m['V']; Pf = Pb = Wth = 0.0
-    Efus = q_value('DT') * MEV_J; r = m['Ti_over_Te']
-    for ne, Te in prof:
+def plasma(m, n_avg, Te_avg, E_alpha_MeV, f_He=None):
+    mm = dict(m) if f_He is None else dict(m, f_He=f_He)
+    c = composition(mm); prof, ne0, Te0, nline = _profiles(mm, n_avg, Te_avg); V = mm['V']; Pf = Pb = Wth = Pb_core = ne2 = ne2_core = 0.0
+    Efus = q_value('DT') * MEV_J; r = mm['Ti_over_Te']; rc = mm.get('rho_core', 1.0)
+    for ne, Te, wi, rho in prof:
         Ti = r * Te
         if Ti > 0.2:
-            nD = nT = ne * c['f_DT'] / 2; Pf += nD * nT * sigmav('DT', min(Ti, 100.0)) * 1e-6 * Efus
-        Pb += C_B * c['Zeff'] * ne * ne * math.sqrt(max(Te, 0.0))
-        Wth += 1.5 * (ne * Te + ne * c['ions_per_e'] * Ti) * KEV_J
-    k = V / len(prof); Pf *= k / 1e6; Pb *= k / 1e6; Wth *= k / 1e6
-    Ps = p_synch(m, ne0, Te0); Prad = Pb + Ps + m['P_line']
-    beta = 2 * MU0 * (Wth * 1e6 / 1.5 / V) / m['B'] ** 2
-    nG = m['Ip'] / (math.pi * m['a'] ** 2) * 1e20; nline = n_avg * line_avg_factor(m['alpha_n'])
-    return dict(P_fus=Pf, P_alpha=Pf * E_alpha_MeV / q_value('DT'), P_brems=Pb, P_synch=Ps, P_line=m['P_line'], P_rad=Prad, W_MJ=Wth,
-                beta_N=100 * beta * m['a'] * m['B'] / m['Ip'], n_G=nG, n_line=nline, f_G=nline / nG, Zeff=c['Zeff'], f_DT=c['f_DT'], Te0=Te0)
+            nD = nT = ne * c['f_DT'] / 2; Pf += wi * nD * nT * sigmav('DT', min(Ti, 100.0)) * 1e-6 * Efus
+        pb = wi * C_B * c['Zeff'] * ne * ne * math.sqrt(max(Te, 0.0)); Pb += pb; ne2 += wi * ne * ne
+        if rho < rc: Pb_core += pb; ne2_core += wi * ne * ne
+        Wth += wi * 1.5 * (ne * Te + ne * c['ions_per_e'] * Ti) * KEV_J
+    Pf *= V / 1e6; Pb *= V / 1e6; Pb_core *= V / 1e6; Wth *= V / 1e6
+    Ps = p_synch(mm, ne0, Te0); Pline = mm['P_line']; Prad = Pb + Ps + Pline
+    Prad_core = Pb_core + Ps + Pline * (ne2_core / ne2)          # C1: line radiation shaped like n_e^2 (L_z flat, interim); synchrotron all core
+    beta = 2 * MU0 * (Wth * 1e6 / 1.5 / V) / mm['B'] ** 2
+    nG = mm['Ip'] / (math.pi * mm['a'] ** 2) * 1e20
+    return dict(P_fus=Pf, P_alpha=Pf * E_alpha_MeV / q_value('DT'), P_brems=Pb, P_synch=Ps, P_line=Pline, P_rad=Prad, P_rad_core=Prad_core, W_MJ=Wth,
+                beta_N=100 * beta * mm['a'] * mm['B'] / mm['Ip'], n_G=nG, n_line=nline, f_G=nline / nG, Zeff=c['Zeff'], f_DT=c['f_DT'], Te0=Te0, ne0=ne0, f_He=mm['f_He'])
+def _ploss(m, p, P_aux):
+    if m.get('profile') == 'pedestal': return p['P_alpha'] + P_aux - m['rad_C3'] * p['P_rad_core']    # C1 (Lux et al.)
+    return p['P_alpha'] + P_aux - p['P_rad']
 def tau_ipb98(m, P_loss, n_line):
     eps = m['a'] / m['R']; ka = m['V'] / (2 * math.pi ** 2 * m['R'] * m['a'] ** 2)
     return 0.0562 * m['Ip'] ** 0.93 * m['B'] ** 0.15 * P_loss ** -0.69 * (n_line / 1e19) ** 0.41 * m['M'] ** 0.19 * m['R'] ** 1.97 * eps ** 0.58 * ka ** 0.78
 def p_LH(m, n_line):   # Martin 2008, S = plasma surface (m^2)
     return 0.0488 * (n_line / 1e20) ** 0.717 * m['B'] ** 0.803 * m['S'] ** 0.941
-def operating_point(m, E_alpha_MeV, n_avg=None, P_aux=None):
-    """Power balance W/tau_E(P_loss) = P_loss, P_loss = P_alpha + P_aux - P_rad; solve <T_e>; hottest root."""
+def _op_fixed_he(m, E_alpha_MeV, n_avg, P_aux, f_He):
     from scipy.optimize import brentq
-    n_avg = m['n_avg'] if n_avg is None else n_avg; P_aux = m['P_aux'] if P_aux is None else P_aux
     def f(T):
-        p = plasma(m, n_avg, T, E_alpha_MeV); Pl = p['P_alpha'] + P_aux - p['P_rad']
+        p = plasma(m, n_avg, T, E_alpha_MeV, f_He); Pl = _ploss(m, p, P_aux)
         return (p['W_MJ'] / tau_ipb98(m, Pl, p['n_line']) - Pl) if Pl > 0 else 1e9
     Ts = [2 + 0.25 * i for i in range(150)]; vals = [f(T) for T in Ts]; roots = []
     for a, b, fa, fb in zip(Ts, Ts[1:], vals, vals[1:]):
         if fa * fb < 0 and abs(fa) < 1e8 and abs(fb) < 1e8: roots.append(brentq(f, a, b, xtol=1e-9))
     if not roots: return None
-    T = max(roots); p = plasma(m, n_avg, T, E_alpha_MeV); Pl = p['P_alpha'] + P_aux - p['P_rad']
+    T = max(roots); p = plasma(m, n_avg, T, E_alpha_MeV, f_He); Pl = _ploss(m, p, P_aux)
     return dict(p, Te_avg=T, Ti_avg=T * m['Ti_over_Te'], n_avg=n_avg, P_aux=P_aux, P_loss=Pl, tau_E=tau_ipb98(m, Pl, p['n_line']),
                 Q=p['P_fus'] / P_aux if P_aux > 0 else float('inf'), P_LH=p_LH(m, p['n_line']), roots=roots)
+def operating_point(m, E_alpha_MeV, n_avg=None, P_aux=None):
+    """Power balance W/tau_E(P_loss) = P_loss; hottest root. PROM-1 C3: f_He iterated to (alpha birth rate) x 5 tau_E / (V <n_e>)."""
+    n_avg = m['n_avg'] if n_avg is None else n_avg; P_aux = m['P_aux'] if P_aux is None else P_aux
+    fHe = m['f_He']; op = None
+    for it in range(30):
+        op = _op_fixed_he(m, E_alpha_MeV, n_avg, P_aux, fHe)
+        if op is None or not m.get('he_selfconsistent'): break
+        S_alpha = op['P_fus'] * 1e6 / (q_value('DT') * MEV_J); new = S_alpha * m['tauHe_ratio'] * op['tau_E'] / (m['V'] * n_avg)
+        if abs(new - fHe) < 1e-7: break
+        fHe = 0.5 * fHe + 0.5 * new
+    if op is not None: op['he_iterations'] = it + 1
+    return op
 def dials(m, E_alpha_MeV, betaN_max=2.8):
     """Dials: <n> scanned with P_aux fixed; maximise Q subject to f_G <= fG_max, beta_N <= betaN_max, P_loss >= P_LH. Names the binding limit."""
     best = None; nG = m['Ip'] / (math.pi * m['a'] ** 2) * 1e20; lf = line_avg_factor(m['alpha_n'])
