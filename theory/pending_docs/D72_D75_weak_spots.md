@@ -22608,3 +22608,12 @@ Result: only the new alpha_s threshold knob moved (+0.00378); all rings balanced
 R104: that is a 1-parameter FIT, not a prediction; the Weave's own computed two-loop Yukawa correction is -0.0002 to -0.0006 (wrong sign);
 so the Weave's alpha_s stays 0.1140-0.1147 (~3.7 sigma low) unless the M12 threshold Delta_3 ~ -0.27 comes out of the D7 stack. Open: compute
 Delta_3 (sign, size) from the N = 6 magnetised-D7 stack and carry it into M12 and the proton lifetime; open omega_b / dN_eff to the centre for D/H.
+
+## D2212 (CENTRE, 23 Nov 2026 ~15:40 CT) — spin-and-lock of the forces ring through the D7 flux locks (Danny 14:40: "spin all the rings ... lock
+unless it needs to go centre-out; consider an extra layer in the loop")
+Extra layer = the threshold ring at M12 (magnetised D7 stack, f_a = T + m_a^2 S, Re S = sqrt3/2; weave_magd7 label E, normalisation assumed).
+Lock positions are integers m3 (with m2 = 3 giving alpha^-1 = 28): delta(alpha_3^-1) = (m3^2 - 9) Re S.
+m3 = 1: alpha_s 0.547; m3 = 2: 0.226; m3 = 3: 0.1142 (-4.2 sigma); m3 = 4: 0.0675. Needed delta -0.282. With an extra 1/(2 pi) in the
+normalisation: m3 = 2 -> 0.124 (+6.6 sigma), m3 = 4 -> 0.103. No integer lock gives 0.118: the forces ring locks at m3 = m2 = 3 (0.1142) and the
+nearest other locks overshoot by a factor of ~2. The -0.28 needed is a FRACTION of one flux step -> it must come from a continuous piece
+(one-loop KK/string threshold, Wilson lines, or the S-T mixing normalisation), not from the flux lock. Exploratory (no goalposts); referee next cycle.
