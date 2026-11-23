@@ -1,0 +1,290 @@
+{
+ "counts": {
+  "IN": 29,
+  "EDGE": 6,
+  "OUT": 2,
+  "BLOCKED": 0
+ },
+ "markers": {
+  "A.alpha_s": {
+   "status": "IN",
+   "value": 0.22,
+   "band": "Bloom/PRIMAT band",
+   "note": "DIAGNOSIS: D2220/D2221: engine alpha_s 0.11446 after MS->DR conversion (+0.00018) and top decoupling (+0.00026): -3.9 sigma exp, -3.3 with computed theory sigma. Remaining lever: D7 one-loop threshold, needs the visible-sector D7 assignment (not specified by the model)."
+  },
+  "A.n_s": {
+   "status": "IN",
+   "value": 0.57,
+   "band": "Bloom/PRIMAT band",
+   "note": ""
+  },
+  "A.r": {
+   "status": "IN",
+   "value": 0.00048137285305578046,
+   "band": "Bloom/PRIMAT band",
+   "note": ""
+  },
+  "A.running": {
+   "status": "IN",
+   "value": 0.52,
+   "band": "Bloom/PRIMAT band",
+   "note": ""
+  },
+  "A.dNeff": {
+   "status": "IN",
+   "value": 0.32,
+   "band": "Bloom/PRIMAT band",
+   "note": ""
+  },
+  "A.wino": {
+   "status": "IN",
+   "value": 0.687,
+   "band": "Bloom/PRIMAT band",
+   "note": ""
+  },
+  "A.gluino": {
+   "status": "IN",
+   "value": 4.93,
+   "band": "Bloom/PRIMAT band",
+   "note": ""
+  },
+  "A.proton": {
+   "status": "IN",
+   "value": 16.0,
+   "band": "Bloom/PRIMAT band",
+   "note": ""
+  },
+  "A.alpha_drift": {
+   "status": "IN",
+   "value": 3.8e-10,
+   "band": "Bloom/PRIMAT band",
+   "note": ""
+  },
+  "A.sum_mnu": {
+   "status": "IN",
+   "value": 0.05878431004734465,
+   "band": "Bloom/PRIMAT band",
+   "note": ""
+  },
+  "A.theta12": {
+   "status": "EDGE",
+   "value": 1.03,
+   "band": "Bloom/PRIMAT band",
+   "note": ""
+  },
+  "A.delta_CP": {
+   "status": "IN",
+   "value": -0.02,
+   "band": "Bloom/PRIMAT band",
+   "note": ""
+  },
+  "A.m_bb": {
+   "status": "IN",
+   "value": 3.7934989401444064,
+   "band": "Bloom/PRIMAT band",
+   "note": ""
+  },
+  "A.Yp": {
+   "status": "IN",
+   "value": 0.73,
+   "band": "Bloom/PRIMAT band",
+   "note": ""
+  },
+  "A.DH": {
+   "status": "OUT",
+   "value": -2.07,
+   "band": "Bloom/PRIMAT band",
+   "note": "DIAGNOSIS: D2221: -2.07 sigma with the omega_b error propagated (was -2.5); remaining gap is the PRIMAT vs PArthENoPE nuclear-rate systematic (d(p,g)3He etc.), not a Weave lever; rates not switched post hoc. Cooke 2018 alone: -1.56 (unscored)."
+  },
+  "A.Hoyle": {
+   "status": "IN",
+   "value": 0.395,
+   "band": "Bloom/PRIMAT band",
+   "note": "DIAGNOSIS: restates the alpha_s shift (hex DEV-3); moves with A.alpha_s."
+  },
+  "A.genesis": {
+   "status": "IN",
+   "value": null,
+   "band": "Bloom/PRIMAT band",
+   "note": ""
+  },
+  "B.L1_S1_reactions": {
+   "status": "IN",
+   "value": {
+    "sv10": 1.1361654705836233e-16,
+    "sv20": 4.330201895538215e-16,
+    "Q": 17.589300075488893,
+    "n_share": 0.7975550906888145
+   },
+   "band": "PROM-9 DEV-corrected goalposts",
+   "note": ""
+  },
+  "B.L2_S2_ignition": {
+   "status": "IN",
+   "value": {
+    "T_min": 14.237291158473074,
+    "nTtau": 2.914748453826461e+21,
+    "T_ideal": 4.285067214554446
+   },
+   "band": "PROM-9 DEV-corrected goalposts",
+   "note": ""
+  },
+  "B.L3_S3_ITER": {
+   "status": "EDGE",
+   "value": {
+    "P500": 532.0845855447161,
+    "Q500": 10.641691710894323,
+    "tau500": 2.883346565766908,
+    "P400": 389.5285915471233
+   },
+   "band": "PROM-9 DEV-corrected goalposts",
+   "note": ""
+  },
+  "B.L4_S3_SPARC": {
+   "status": "EDGE",
+   "value": {
+    "P_fus": 121.0,
+    "P_aux_req": 7.99
+   },
+   "band": "cfspopcon PRD cell 115.8 MW, P_aux+ohm 8.29 MW, +-25% (EDGE ceiling)",
+   "note": "cycle 3: dP +0.045, dPaux -0.037; literal 140/Q11 clause FAILED (goalpost, DEV-1) | DIAGNOSIS: D2217 (cycle 3): cfspopcon 9.0.1 SPARC_PRD run with our ADAS-built atomic data reproduces cfspopcon's own regression (116 MW, Q 12.7, 9.14 keV at 2.5e20; the 140/Q11/7.3 literature goalpost is not their pipeline's PRD cell - clause FAILED, recorded). Our engine at that cell, SPARC dict rebuilt by the PROM-8 recipe: 121 MW (+4.5%), P_aux 7.99 vs 8.29 MW (-3.7%). EDGE is the ceiling (R107). Residual: edge-Ar via coronal copies (+41%), W mean charge 53 vs 58."
+  },
+  "B.L5_S3_ARC": {
+   "status": "IN",
+   "value": {
+    "P_fus": 471.0697433574652,
+    "H98_implied": 1.8562306583270798
+   },
+   "band": "PROM-9 DEV-corrected goalposts",
+   "note": ""
+  },
+  "B.L6_S4_inertial": {
+   "status": "IN",
+   "value": {
+    "specific_yield": 337387374563.07025,
+    "Phi3": 0.3333333333333333,
+    "p_Gbar": 544.9582031348752
+   },
+   "band": "PROM-9 DEV-corrected goalposts",
+   "note": ""
+  },
+  "B.L7_S5_fuel": {
+   "status": "IN",
+   "value": {
+    "T_kg": 56.083169097773606,
+    "TBR": 1.05094400110683
+   },
+   "band": "PROM-9 DEV-corrected goalposts",
+   "note": ""
+  },
+  "B.L8_S7_stars": {
+   "status": "IN",
+   "value": {
+    "E0_157": 6.088095116103876,
+    "E0_15": 5.905760535176327
+   },
+   "band": "PROM-9 DEV-corrected goalposts",
+   "note": ""
+  },
+  "B.L9_data": {
+   "status": "IN",
+   "value": {
+    "Fe56": 8.790356241500001,
+    "He4": 7.0739155955,
+    "H3_y": 12.319736903490762
+   },
+   "band": "PROM-9 DEV-corrected goalposts",
+   "note": ""
+  },
+  "C.N1_birth": {
+   "status": "IN",
+   "value": {
+    "5.0": -0.0133,
+    "10.0": -0.0001,
+    "20.0": -0.0026
+   },
+   "band": "shift 5%, FWHM 2%",
+   "note": ""
+  },
+  "C.N3N4_data_resonances": {
+   "status": "IN",
+   "value": {
+    "D1": true,
+    "D2": true,
+    "R1": true,
+    "R2": true,
+    "R3": true,
+    "R4": true
+   },
+   "band": "locked D1 D2 R1-R4",
+   "note": ""
+  },
+  "C.N5_doppler": {
+   "status": "IN",
+   "value": {
+    "P1": true,
+    "P2": true,
+    "P3": true,
+    "P4": true
+   },
+   "band": "locked P1-P4",
+   "note": ""
+  },
+  "C.N8_TBR": {
+   "status": "IN",
+   "value": 1.0209,
+   "band": "1.0266 +-5%",
+   "note": "rel -0.006"
+  },
+  "C.N9_M": {
+   "status": "IN",
+   "value": 1.161,
+   "band": "1.05-1.35",
+   "note": "D2207a source-energy correction"
+  },
+  "C.N10_front_dpa": {
+   "status": "EDGE",
+   "value": 7.11,
+   "band": "10 +-30% dpa/fpy per MW/m2",
+   "note": "rel -0.289"
+  },
+  "C.N10_He_per_dpa_Fe": {
+   "status": "EDGE",
+   "value": 7.38,
+   "band": "7-16 appm/dpa",
+   "note": "R106: within 10% of the band edge"
+  },
+  "C.N11_activation": {
+   "status": "EDGE",
+   "value": {
+    "A1": true,
+    "A2": true,
+    "A3": true,
+    "A4": true
+   },
+   "band": "R100/R106: goalposts too weak to count as IN (A4 tautology, A2 by half-life)",
+   "note": ""
+  },
+  "C.N12_closed_loop": {
+   "status": "IN",
+   "value": {
+    "C1": true,
+    "C2": true
+   },
+   "band": "C1 algebra, C2 hold/double",
+   "note": ""
+  },
+  "D.JET_99971": {
+   "status": "OUT",
+   "value": 14.28,
+   "band": "8.7 MW +-40%",
+   "note": "rel 0.642 | DIAGNOSIS: D2219: +64% after the sourced Ti/Te = 1.2 fix (JET-2). Closing it needs #99971's measured Te(rho) and beam deposition (figures only in Maslov FEC2023 / Stancar 2023) and the NBI fraction definition; a Te near 5 keV would reach the band edge, but choosing it is tuning. Goalpost confirmed by measurement (~9.1 MW, D2218)."
+  },
+  "D.JET_104522": {
+   "status": "IN",
+   "value": 15.04,
+   "band": "11.6 MW +-40%",
+   "note": "rel 0.296"
+  }
+ }
+}
