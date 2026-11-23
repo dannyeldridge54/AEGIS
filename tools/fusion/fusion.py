@@ -66,7 +66,7 @@ ITER = dict(R=6.2, a=2.0, kappa=1.85, B=5.3, Ip=15.0, V=831.0, S=683.0, P_aux=50
             f_He=0.032, f_Be=0.020, f_Ar=0.0014, Ti_over_Te=8.1 / 8.9, f_reflect=0.6, P_line=27.0, n_avg=1.13e20, fG_max=0.94,
             src='ITER FDR Physics Table 4.3.1-1, 500 MW column; Be/Ar are axis values used as averages; P_line is an INPUT',
             # PROM-1 (cycle 1): pedestal profiles (C2), radiation correction (C1), self-consistent He ash (C3)
-            profile='pedestal', rho_ped=0.94, T_ped=3.5, n_ped=0.8e20, T_sep=0.1, n_sep=0.4e20, rad_C3=0.6, rho_core=0.75, tauHe_ratio=5.0, he_selfconsistent=True)
+            profile='pedestal', rho_ped=0.94, T_ped=3.5, n_ped=0.8e20, T_sep=0.1, n_sep=0.4e20, rad_C3=0.6, rho_core=0.75, tauHe_ratio=5.0, he_selfconsistent=True, lh_isotope=True)
 ITER_400 = dict(ITER, P_aux=40.0, n_avg=1.01e20, P_line=27.0, Ti_over_Te=8.0 / 8.8, src='ITER FDR Table 4.3.1-1, 400 MW column (held out in PROM-1)')
 Z_IMP = dict(He=2, Be=4, Ar=18)
 def composition(m):
@@ -127,8 +127,8 @@ def _ploss(m, p, P_aux):
 def tau_ipb98(m, P_loss, n_line):
     eps = m['a'] / m['R']; ka = m['V'] / (2 * math.pi ** 2 * m['R'] * m['a'] ** 2)
     return 0.0562 * m['Ip'] ** 0.93 * m['B'] ** 0.15 * P_loss ** -0.69 * (n_line / 1e19) ** 0.41 * m['M'] ** 0.19 * m['R'] ** 1.97 * eps ** 0.58 * ka ** 0.78
-def p_LH(m, n_line):   # Martin 2008, S = plasma surface (m^2)
-    return 0.0488 * (n_line / 1e20) ** 0.717 * m['B'] ** 0.803 * m['S'] ** 0.941
+def p_LH(m, n_line):   # Martin 2008 (deuterium), S = plasma surface (m^2); PROM-2 C1: isotope factor 2/A_eff
+    return 0.0488 * (n_line / 1e20) ** 0.717 * m['B'] ** 0.803 * m['S'] ** 0.941 * (2.0 / m['M'] if m.get('lh_isotope') else 1.0)
 def _op_fixed_he(m, E_alpha_MeV, n_avg, P_aux, f_He):
     from scipy.optimize import brentq
     def f(T):

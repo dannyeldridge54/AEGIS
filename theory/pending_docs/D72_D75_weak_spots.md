@@ -22346,3 +22346,19 @@ Rule (PREREG_D2178 T2): ΔAIC = Δχ²_eff + 2 vs the locked W best (HiLLiPoP 72
   likely minimiser scatter in the other parameters (D2162 scatter 3-4) rather than running; on SPT nothing is gained. With Σmν (D2190)
   T2 is now complete: no freed input is clearly preferred on both datasets. Caution: 2 starts per fit, scatter comparable to the gains.
   Not refereed. Still running: D2169 tight minimiser (run 1/4 since 11:47 yesterday's log time).
+
+## D2194 (FUSION, 23 Nov 2026 11:50 CT) — Fusion engine + Prometheus loop, cycles 0-2 (PREREG_FUSION1, PROM-1, PROM-2)
+Goal at the top: net electricity from D-T fusion; tools/fusion (fractal engine net; S1 reactions, S2 ignition, S3 tokamak with dials,
+S4 inertial (OU's IFE-STARFIRE), S5 fuel cycle linked to Chronos tritium, S6 neutrons/materials, S7 stars).
+- Cycle 0 (FUSION-1 + R81-R83): reactions match Bosch-Hale Table VIII to 4 figures (D-He3 coefficients confirmed in 4 codes);
+  Q(D-T) 17.589 MeV, E_n 14.028 MeV (relativistic, at rest); ignition min nTtau 2.91e21 keV s m^-3 at 14.2 keV, ideal ignition 4.29 keV;
+  D-T 3.374e11 J/g; tritium burn 56.08 kg/GW·fpy; NIF target gains 1.54, 2.44, 4.13 (8.6 MJ / 2.08 MJ, 2025-04-07); p+p Gamow peak
+  5.91 keV at 15 MK. Three goalposts were mine and wrong (shortcut values); corrected post-hoc and labelled.
+- Cycle 1 (PROM-1, R84 no MAJOR): pedestal profiles + Lux radiation correction + self-consistent He ash: ITER 400 MW held-out column
+  P_fus 390 MW, tau_E 3.41 s, Q 9.7, W 328 MJ (PASS); 500 MW: P_fus 532, Q 10.6, tau_E 2.88 s (-15.2%). f_He derived 2.8-2.9% (table 3.2).
+  tau_E is band-dependent within Lux's own uncertainty: 2.66-3.23 s (500), 3.09-3.93 s (400).
+- Cycle 2 (PROM-2): L-H threshold isotope factor 2/A_eff: P_LH 97 -> 78 MW (ITER table 51); P_loss/P_LH = 1.35 at 400 MW (>1.3 floor;
+  Polevoi 1.8). Held-out vs Polevoi transport runs: W 328 (320-327), f_He 2.8% (3.1-3.2), tau_E 3.41 (3.71) — PASS. Diagnostic: subtracting
+  ALL radiation (ITER-convention guess) collapses the plasma to a cold root (P_fus 24 MW): partial core-radiation subtraction is essential
+  in this 0-D model. Kept.
+- Open: line radiation is still an INPUT (no closed-form L_z fit reachable); synchrotron 4 MW vs table 8 (fit outside its profile family).
