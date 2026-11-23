@@ -22423,3 +22423,13 @@ Danny 12:04/12:08: pulse out and collect data on all other elements; build a ful
   253 ground states marked stable). AUDIT: all 38 Chronos half-lives agree with NUBASE2020 within 0.40% (largest: Po-213 +0.40%,
   Pu-241 -0.27% [Chronos 14.29 y vs 14.329 y], Ga-68 -0.19%, Cs-137 +0.14% [30.08 vs 30.04 y]); fusion-engine masses within 3.3e-10 u.
   Suggestion (not applied; an engine change needs a D2189 deviation): move Chronos to NUBASE2020 values. 119 CubeMind records (one per element).
+
+## D2196a (CORRECTION, referee R88, 23 Nov 2026 14:35 CT) — the 27 MW gap was mostly MY omission of recombination radiation
+- PROM-5 dropped ADAS PRB; at 5-15 keV argon's recombination radiation exceeds its line radiation. Rerun (DEV-1) with all impurity
+  radiation beyond the Z_eff bremsstrahlung S3 already counts (PLT + PRB - C_B <z^2> sqrt(T)): 19.1 MW at the PROM-1 state vs ITER's 27 MW
+  (-29%, inside the locked +-40%: L2 PASS on the rerun; run 1 FAIL stays recorded). D2196's "cold edge and/or tungsten" reading is
+  WITHDRAWN.
+- Swapping the derived radiation into the full model still worsens the ITER match (400 MW held-out tau_E 3.08 s, -16.8%, just outside 15%;
+  500 MW distance 0.33 -> 0.46), so by the accept rule the 27 MW input stays the default; the derived value is recorded beside it.
+- W now uses the recommended year-50 ADAS set. Element pulse: the 4 flags (He, F, Ne, Cl) are neutral emission switching on at 1-2.7 eV,
+  not artefacts; with the post-hoc check above 5 eV they pass (labelled post-hoc).

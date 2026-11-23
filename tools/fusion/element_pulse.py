@@ -42,13 +42,18 @@ def checks(Z, tab):
             if not all(math.isfinite(x) and x > 0 for x in v): return False
             if any(max(a, b) / min(a, b) > 30 for a, b in zip(v, v[1:])): return False
         return True
-    return dict(C1=c1, C2=c2, C3=c3, C4_line=ok('L_line'), C4_rb=ok('L_rb'))
+    def ok5(key):   # DEV-4 post-hoc: jump check above 5 eV only
+        for rows in tab.values():
+            v = [r[key] for r in rows if r['T_keV'] > 0.005]
+            if any(max(a, b) / min(a, b) > 30 for a, b in zip(v, v[1:])): return False
+        return True
+    return dict(C1=c1, C2=c2, C3=c3, C4_line=ok('L_line'), C4_rb=ok('L_rb'), C4p_line_above5eV=ok5('L_line'), C4p_rb_above5eV=ok5('L_rb'))
 
 if __name__ == '__main__':
     t0 = time.time(); cat = {}
     for el in Z_OF:
         try:
-            Z, tab = table(el); ch = checks(Z, tab); status = 'OK' if all(ch.values()) else 'FLAGGED'
+            Z, tab = table(el); ch = checks(Z, tab); status = 'OK' if all(ch.values()) else ('OK (post-hoc C4 above 5 eV)' if all(v for k, v in ch.items() if not k.startswith('C4_')) else 'FLAGGED')
         except Exception as e:
             Z, tab, ch, status = Z_OF[el], {}, {'error': f'{type(e).__name__}: {e}'}, 'FLAGGED'
         cat[el] = dict(Z=Z, files=MAN[el], checks=ch, status=status, table=tab)

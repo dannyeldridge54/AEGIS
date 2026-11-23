@@ -44,7 +44,8 @@ def plasma_fast(m, n_avg, Te_avg, E_alpha_MeV, f_He=None):
     Ps = F.p_synch(mm, n0, T0)
     if mm.get('line_model') == 'adas':   # PROM-5: line radiation derived from OPEN-ADAS (Ar, Be, He; W if f_W given)
         import adas as AD
-        pl = sum(mm.get(f'f_{k}', 0.0) * AD.L_interp(k.lower(), Te) for k in ('Ar', 'Be', 'He', 'W') if mm.get(f'f_{k}', 0.0) > 0) * ne * ne
+        Lfun = AD.Limp_interp if mm.get('line_prb', True) else AD.L_interp   # DEV-1: PLT + PRB - impurity Z_eff bremsstrahlung
+        pl = sum(mm.get(f'f_{k}', 0.0) * Lfun(k.lower(), Te) for k in ('Ar', 'Be', 'He', 'W') if mm.get(f'f_{k}', 0.0) > 0) * ne * ne
         pl = w * pl * V / 1e6; Pline = float(pl.sum()); Pline_core = float(pl[core].sum())
     else:
         Pline = mm['P_line']; Pline_core = Pline * (ne2_core / ne2)

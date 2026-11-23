@@ -5,7 +5,7 @@ import os, re
 import numpy as np
 from scipy.interpolate import RectBivariateSpline
 HERE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'adas')
-FILES = dict(ar='89', be='89', he='89', w='89')
+FILES = dict(ar='89', be='89', he='89', w='50')   # PROM-5 DEV-3: year-50 W set
 
 def read_adf11(path):
     txt = open(path).read().split('\n'); h = txt[0].split(); iz0, idm, itm = int(h[0]), int(h[1]), int(h[2])
@@ -59,3 +59,20 @@ def L_table(el, ne_m3=1e20, n=240, Tmin=0.01, Tmax=40.0):
     return _TAB[k]
 def L_interp(el, T_keV, ne_m3=1e20):
     lt, ll = L_table(el, ne_m3); return np.exp(np.interp(np.log(np.clip(T_keV, 0.0105, 39.9)), lt, ll))
+
+
+def L_imp(el, ne_m3, Te_keV, C_B=5.35e-37):
+    """PROM-5 DEV-1: impurity radiation per impurity ion per electron beyond the Z_eff bremsstrahlung already in S3 (W m^3):
+    sum_z f_z PLT_z + sum_z f_{z+1} PRB_z - C_B <z^2> sqrt(T_e)."""
+    f = fractions(el, ne_m3, Te_keV); plt, prb = _load(el, 'plt'), _load(el, 'prb'); ne = ne_m3 * 1e-6; Te = Te_keV * 1e3; Z = plt['iz0']
+    Lp = sum(f[z] * _coef(plt, z + 1, ne, Te) for z in range(Z)) * 1e-6
+    Lr = sum(f[z + 1] * _coef(prb, z + 1, ne, Te) for z in range(Z)) * 1e-6
+    z2 = float(sum(f[z] * z * z for z in range(Z + 1)))
+    return Lp + Lr - C_B * z2 * Te_keV ** 0.5
+
+_TAB2 = {}
+def Limp_interp(el, T_keV, ne_m3=1e20, n=240):
+    k = (el, ne_m3)
+    if k not in _TAB2:
+        Ts = np.geomspace(0.01, 40.0, n); _TAB2[k] = (np.log(Ts), np.array([L_imp(el, ne_m3, T) for T in Ts]))
+    lt, L = _TAB2[k]; return np.interp(np.log(np.clip(T_keV, 0.0105, 39.9)), lt, L)

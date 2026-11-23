@@ -415,20 +415,20 @@
  },
  "w": {
   "scd": {
-   "file": "scd89_w.dat",
-   "sha256": "de6dd576fc01b2a5"
+   "file": "scd50_w.dat",
+   "sha256": "1075a9f12621ebbf"
   },
   "acd": {
-   "file": "acd89_w.dat",
-   "sha256": "3e8b91917785803a"
+   "file": "acd50_w.dat",
+   "sha256": "a79fc40f857e885e"
   },
   "plt": {
-   "file": "plt89_w.dat",
-   "sha256": "1b88d652a63996f7"
+   "file": "plt50_w.dat",
+   "sha256": "c4b5c464c58e5129"
   },
   "prb": {
-   "file": "prb89_w.dat",
-   "sha256": "ef88fede4f833640"
+   "file": "prb50_w.dat",
+   "sha256": "5c755126cef6ab6e"
   }
  }
 }
