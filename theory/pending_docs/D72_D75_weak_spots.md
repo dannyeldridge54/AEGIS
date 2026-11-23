@@ -22284,3 +22284,8 @@ Result for the Weave: the decaying-wino escape works only with leptonic RPV and 
   Sum m_nu: NO 0.0590 eV; IO 0.0994 eV (in tension with DESI DR2+CMB LCDM < 0.0642 eV; generic to IO with m3 = 0).
   MEG II (1.5e-13) h+-only ceiling at m_h = 1 TeV: |f_mutau| < 0.031-0.049 (NO), 0.011-0.012 (IO); scales as m_h.
 - Scope: flavour ratios only; Babu & Saad SU(5) completion (2412.14562) and the k++ sector not covered.
+
+### D2177 partial (2026-11-23 08:33 CT): SPT best-of-4, L landed
+- L (LCDM) Dovekie+SPT best-of-4: chi2 = 1862.9207 vs single-start 1862.9213 (ORIG) / 1862.9310 (relaunch): the LCDM
+  minimum is stable to 5e-4. W best-of-4 still running; Delta chi2 scored by the D2132 rule when it lands
+  (single-start W = 1856.3247 gave -6.57).
