@@ -23,3 +23,12 @@ L (ΛCDM, n_s free) and W (Weave: fixed n_s 0.9706, running, r, Σm_ν = 0.0587 
 - **Cross-experiment rule.** A verdict is "CMB-robust" only if Planck PR4 (D2132/D2135), ACT and SPT all fall in the same class or neighbouring classes.
 
 No reruns to chase results. Code fixes go in DEVIATIONS written before any rerun.
+
+## ADDENDUM 1 (install facts, 21:20 CT; no fit has run)
+- **Planned:** a separate venv. **What happened:** the first version of the install script ran, and it installs into the existing venv312.
+- **What it added:** only act_dr6_mflike 1.1.0, fgspectra 1.4.1, mflike 1.0.2 and syslibrary 0.2.
+  - act_dr6_lenslike 1.2.1, candl-like 2.0.3 and spt_candl_data were **already installed** from earlier sessions.
+  - cobaya 3.6.2, camb 2.0.5, numpy and scipy are **unchanged**. The 12 running fits are not affected.
+- **Decision:** use venv312 for D2151. This also keeps the versions identical to D2132/D2135.
+- **ACT DR6 data:** being fetched by cobaya-install from lambda.gsfc.nasa.gov (dr6_data.tar.gz, 394 MB), into ufe_data\packages.
+- **The pip install of spt_candl_data from git failed** (git is not on PATH), but the package was already importable.
