@@ -1,0 +1,2 @@
+# D2175 DEVIATIONS
+1. (2026-11-23 01:14 CT) First run killed by the out-of-memory guard (exit 137) while building the R2 string: R2 = {8,3,5,7,11,13,17,19,23} has period 4·3·5·7·11·13·17·19·23 ≈ 4.5e8 with ~7e7 kept residues, too large for a Python list on a 7 GB cloud box. No result was produced or seen. Change before the rerun: R2 := R1 + {13} (period 60,060). R1, C1–C3 and the benchmark are unchanged.
