@@ -66,7 +66,7 @@ def fits_spent(s):
     return [x for x in ('u', 'MN', 'm32', 'TR') if abs(s[x] / D[x] - 1) > 0.01] + (['split'] if abs(s['split']) > 1e-9 else [])
 
 D['dNeff'] = 0.0
-H0_BASE = statistics.median([67.43, 67.63, 67.42])   # addendum R36-4; S_H0 = statistics.median([5.0, 6.2, 7.0])
+H0_BASE = statistics.median([67.43, 67.63, 67.42]); S_H0 = statistics.median([5.0, 6.2, 7.0])   # addendum R36-4
 _base_margins = margins
 VAR = sys.argv[1] if len(sys.argv) > 1 else 'VC'
 def margins(k):
