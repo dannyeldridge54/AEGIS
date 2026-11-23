@@ -1,0 +1,280 @@
+{
+ "dials": [
+  "u",
+  "MN",
+  "m32",
+  "TR",
+  "split",
+  "dNeff"
+ ],
+ "nodes": {
+  "L1.quark_window": 0.0285,
+  "L2.nu_ratio": 0.2852,
+  "L2.MN_top": 2.6069,
+  "L2.MN_bottom": 1.4104,
+  "L4.rung_agreement": -0.0029,
+  "L5.wino": -0.0195,
+  "L6.n_s": 1.1852,
+  "L6.n_s_PACT": 0.9118,
+  "L7.alpha_s": -1.7454,
+  "L7.split_natural": 1.0986,
+  "L8.gravitino_box": 1.75,
+  "L8.leptogenesis": -1.4116,
+  "L8.spine_BBN_dNeff": 12.6115,
+  "L8.dark_baryon_window": 0.3487,
+  "L9.thread_PR4": -0.46,
+  "L10.H0_vs_SH0ES": -3.3942,
+  "L10.sum_mnu_DESI": 0.0864,
+  "L10.negspace_dNeff_ACT": 11.8494,
+  "L10.negspace_alpha_null": 6.9078
+ },
+ "n_nodes": 19,
+ "n_holding": 13,
+ "fingerprint": {
+  "L1.quark_window": {
+   "u": -0.0317
+  },
+  "L2.nu_ratio": {},
+  "L2.MN_top": {
+   "MN": -1.0
+  },
+  "L2.MN_bottom": {
+   "MN": 1.0
+  },
+  "L4.rung_agreement": {},
+  "L5.wino": {
+   "m32": 1.0
+  },
+  "L6.n_s": {
+   "TR": 0.0722
+  },
+  "L6.n_s_PACT": {
+   "TR": 0.0573
+  },
+  "L7.alpha_s": {
+   "m32": -2.7183
+  },
+  "L7.split_natural": {},
+  "L8.gravitino_box": {
+   "m32": -1.5,
+   "TR": -1.0
+  },
+  "L8.leptogenesis": {
+   "MN": 3.0,
+   "TR": 1.0
+  },
+  "L8.spine_BBN_dNeff": {
+   "dNeff": -3453.8776
+  },
+  "L8.dark_baryon_window": {
+   "m32": 0.3155,
+   "TR": 0.2103
+  },
+  "L9.thread_PR4": {},
+  "L10.H0_vs_SH0ES": {
+   "dNeff": 5.9615
+  },
+  "L10.sum_mnu_DESI": {},
+  "L10.negspace_dNeff_ACT": {
+   "dNeff": -3453.8776
+  },
+  "L10.negspace_alpha_null": {}
+ },
+ "lenses": {
+  "rank": 1
+ },
+ "singular_values": [
+  4884.5242,
+  3.4776,
+  3.2843,
+  0.9545,
+  0.0317,
+  0.0
+ ],
+ "compass": {
+  "L1.quark_window": {
+   "direction": {
+    "u": -1.0
+   },
+   "hurts": []
+  },
+  "L2.nu_ratio": {
+   "direction": null,
+   "note": "no dial moves this node (data-fixed or TRUST)"
+  },
+  "L2.MN_top": {
+   "direction": {
+    "MN": -1.0
+   },
+   "hurts": [
+    "L2.MN_bottom"
+   ]
+  },
+  "L2.MN_bottom": {
+   "direction": {
+    "MN": 1.0
+   },
+   "hurts": [
+    "L2.MN_top"
+   ]
+  },
+  "L4.rung_agreement": {
+   "direction": null,
+   "note": "no dial moves this node (data-fixed or TRUST)"
+  },
+  "L5.wino": {
+   "direction": {
+    "m32": 1.0
+   },
+   "hurts": [
+    "L8.gravitino_box"
+   ]
+  },
+  "L6.n_s": {
+   "direction": {
+    "TR": 1.0
+   },
+   "hurts": [
+    "L8.gravitino_box"
+   ]
+  },
+  "L6.n_s_PACT": {
+   "direction": {
+    "TR": 1.0
+   },
+   "hurts": [
+    "L8.gravitino_box"
+   ]
+  },
+  "L7.alpha_s": {
+   "direction": {
+    "m32": -1.0
+   },
+   "hurts": [
+    "L8.dark_baryon_window"
+   ]
+  },
+  "L7.split_natural": {
+   "direction": null,
+   "note": "no dial moves this node (data-fixed or TRUST)"
+  },
+  "L8.gravitino_box": {
+   "direction": {
+    "m32": -0.832,
+    "TR": -0.555
+   },
+   "hurts": [
+    "L6.n_s",
+    "L6.n_s_PACT",
+    "L8.dark_baryon_window"
+   ]
+  },
+  "L8.leptogenesis": {
+   "direction": {
+    "MN": 0.949,
+    "TR": 0.316
+   },
+   "hurts": [
+    "L2.MN_top",
+    "L8.gravitino_box"
+   ]
+  },
+  "L8.spine_BBN_dNeff": {
+   "direction": {
+    "dNeff": -1.0
+   },
+   "hurts": []
+  },
+  "L8.dark_baryon_window": {
+   "direction": {
+    "m32": 0.832,
+    "TR": 0.555
+   },
+   "hurts": [
+    "L8.gravitino_box"
+   ]
+  },
+  "L9.thread_PR4": {
+   "direction": null,
+   "note": "no dial moves this node (data-fixed or TRUST)"
+  },
+  "L10.H0_vs_SH0ES": {
+   "direction": {
+    "dNeff": 1.0
+   },
+   "hurts": [
+    "L8.spine_BBN_dNeff",
+    "L10.negspace_dNeff_ACT"
+   ]
+  },
+  "L10.sum_mnu_DESI": {
+   "direction": null,
+   "note": "no dial moves this node (data-fixed or TRUST)"
+  },
+  "L10.negspace_dNeff_ACT": {
+   "direction": {
+    "dNeff": -1.0
+   },
+   "hurts": []
+  },
+  "L10.negspace_alpha_null": {
+   "direction": null,
+   "note": "no dial moves this node (data-fixed or TRUST)"
+  }
+ },
+ "per_node_optimisation": {
+  "L4.rung_agreement": {
+   "verdict": "NOT CLOSABLE BY DIALS",
+   "margin": -0.0029
+  },
+  "L5.wino": {
+   "verdict": "CLOSABLE",
+   "margin": -0.0195,
+   "move": {
+    "m32": 0.0195
+   },
+   "fits_spent": [
+    "m32"
+   ],
+   "who_pays": []
+  },
+  "L7.alpha_s": {
+   "verdict": "CLOSABLE",
+   "margin": -1.7454,
+   "move": {},
+   "fits_spent": [
+    "split",
+    "dNeff"
+   ],
+   "who_pays": []
+  },
+  "L8.leptogenesis": {
+   "verdict": "CLOSABLE",
+   "margin": -1.4116,
+   "move": {
+    "MN": 0.4235,
+    "TR": 0.1412
+   },
+   "fits_spent": [
+    "MN",
+    "TR",
+    "split",
+    "dNeff"
+   ],
+   "who_pays": [
+    "L2.MN_top",
+    "L8.gravitino_box"
+   ]
+  },
+  "L9.thread_PR4": {
+   "verdict": "NOT CLOSABLE BY DIALS",
+   "margin": -0.46
+  },
+  "L10.H0_vs_SH0ES": {
+   "verdict": "NOT CLOSABLE BY DIALS",
+   "margin": -3.3942
+  }
+ },
+ "seconds_fingerprint": 0.0,
+ "seconds_total": 19.39
+}
