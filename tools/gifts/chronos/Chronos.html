@@ -18,7 +18,7 @@ canvas{width:100%;height:240px;display:block;margin-top:10px}
 <main>
 <h1>Chronos</h1>
 <p class="sub">One nuclear-decay engine for Oklahoma's nuclear rung: medicine, monitoring, energy, supernovae and kilonovae. Runs in your browser.</p>
-<details class="lantern" style="border-left:3px solid #b8860b;padding:.4em .9em;margin:1em 0;font-style:italic;opacity:.85" open><summary style="cursor:pointer;font-style:normal;font-weight:600">The Lantern</summary><div style="white-space:pre-line;margin-top:.4em">In a world of painted walls and borrowed light,
+<details class="lantern" style="border-left:3px solid #b8860b;padding:.4em .9em;margin:1em 0;font-style:italic;opacity:.85"><summary style="cursor:pointer;font-style:normal;font-weight:600">The Lantern</summary><div style="white-space:pre-line;margin-top:.4em">In a world of painted walls and borrowed light,
 where lies wear crowns and illusions call themselves the sky,
 this work is a lantern, not a throne.
 It was carried, not crowned.
@@ -150,19 +150,19 @@ the kind no one can sell you.</div></details>
 <p class="note">Daughter activity after a full elution at t = 0. Branching Mo-99 → Tc-99m taken as 0.876.</p></section>
 <section id="t-mon" class="card" hidden><h2>Release clock: how long ago was it released?</h2>
 <div class="row"><label>Pair<select id="m_pair"><option value="Cs-134|Cs-137">Cs-134 / Cs-137</option><option value="I-131|Cs-137">I-131 / Cs-137</option></select></label>
-<label>Ratio at release<input id="m_r0" type="number" value="1.0" step="0.01"></label><label>Measured ratio now<input id="m_r" type="number" value="0.05" step="0.001"></label></div>
-<div class="out" id="m_out"></div><p class="note">Activity ratio a/b. For Fukushima (March 2011) the release ratio Cs-134/Cs-137 was close to 1.</p></section>
+<label>Ratio at release<input id="m_r0" type="number" value="1.0" step="0.01" placeholder="site-specific"></label><label>Measured ratio now<input id="m_r" type="number" value="0.05" step="0.001"></label></div>
+<div class="out" id="m_out"></div><p class="note">Activity ratio a/b. For Fukushima (March 2011) the release ratio Cs-134/Cs-137 was close to 1. For I-131/Cs-137, enter your site-specific release ratio (Fukushima roughly 10–100); that clock is only useful for about three months.</p></section>
 <section id="t-energy" class="card" hidden><h2>Energy and waste: long-lived chains</h2>
 <div class="row"><label>Chain<select id="e_ch"></select></label><label>Years shown<input id="e_y" type="number" value="150"></label></div>
 <div class="out" id="e_out"></div><canvas id="e_cv" width="900" height="260"></canvas></section>
 <section id="t-sn" class="card" hidden><h2>Supernova: the Ni-56 → Co-56 → Fe-56 engine</h2>
-<div class="row"><label>Ni-56 mass (M☉)<input id="s_m" type="number" value="0.6" step="0.05"></label><label>Gamma trapping t₀ (days, blank = full)<input id="s_t0" type="number" placeholder="e.g. 35"></label></div>
+<div class="row"><label>Ni-56 mass (M☉)<input id="s_m" type="number" value="0.6" step="0.05"></label><label>Gamma trapping t₀ (days; blank = full trapping, 0 = full escape)<input id="s_t0" type="number" placeholder="e.g. 35"></label></div>
 <div class="out" id="s_out"></div><canvas id="s_cv" width="900" height="260"></canvas>
-<p class="note">Energy per decay deposited: Ni-56 1.75 MeV, Co-56 3.73 MeV (neutrinos excluded). Trapping 1 − exp(−t₀²/t²) applied to the total. Type Ia scale: ~0.6 M☉ of Ni-56; the white-dwarf binaries that make them are one of the open questions.</p></section>
+<p class="note">Energy per decay deposited: Ni-56 1.75 MeV, Co-56 3.73 MeV (neutrinos excluded). Gamma trapping 1 − exp(−t₀²/t²); the Co-56 positrons' kinetic energy (0.12 MeV) is deposited locally. This is the radioactive heating (deposition) rate: it equals the bolometric luminosity near and after peak (Arnett's rule); no diffusion is modelled. Type Ia scale: ~0.6 M☉ of Ni-56; the white-dwarf binaries that make them are one of the open questions.</p></section>
 <section id="t-kn" class="card" hidden><h2>Kilonova: r-process heating</h2>
 <div class="row"><label>Ejecta mass (M☉)<input id="k_m" type="number" value="0.05" step="0.01"></label><label>Thermalisation fraction<input id="k_f" type="number" value="0.5" step="0.05"></label></div>
 <div class="out" id="k_out"></div><canvas id="k_cv" width="900" height="260"></canvas>
-<p class="note">Specific heating ~10¹⁰ (t/1 day)⁻¹·³ erg g⁻¹ s⁻¹ (Metzger et al. 2010), order of magnitude only.</p></section>
+<p class="note">Specific heating ~10¹⁰ (t/1 day)⁻¹·³ erg g⁻¹ s⁻¹ (Korobkin et al. 2012; Metzger 2019, Living Reviews in Relativity), order of magnitude only, with a constant thermalisation fraction (it actually falls with time; Barnes et al. 2016). Heating rate, not the light curve before peak.</p></section>
 <p class="note">Half-lives from NNDC NuDat / ENSDF adopted values, entered by hand; verify before critical use. Decay arithmetic only: no production cross sections, dose or shielding (a dose branch is planned). Not a clinical or regulatory tool. Chains are solved by the analytic Bateman equations, checked against a matrix-exponential solver to 3×10⁻¹³.</p>
 <p class="note">Chronos v1 · Danny Lee Eldridge, Oklahoma City · 23 Nov 2026 · github.com/dannyeldridge54/AEGIS (tools/gifts/chronos). Named for Chronos, the Greek figure of time. Free to use, change and share.</p>
 </main>
@@ -173,7 +173,7 @@ const CH = (() => {
   const T12 = { 'F-18': 109.77 * MIN, 'C-11': 20.364 * MIN, 'N-13': 9.965 * MIN, 'O-15': 122.24, 'Ga-68': 67.71 * MIN, 'Ge-68': 270.95 * D,
     'Tc-99m': 6.0067 * H, 'Mo-99': 65.976 * H, 'Rb-82': 1.2575 * MIN, 'Sr-82': 25.35 * D, 'Cu-64': 12.701 * H, 'Zr-89': 78.41 * H,
     'Lu-177': 6.647 * D, 'Ac-225': 9.920 * D, 'In-111': 2.8047 * D, 'I-123': 13.2234 * H, 'I-131': 8.0252 * D, 'Y-90': 64.05 * H,
-    'Sr-90': 28.79 * Y, 'Cs-137': 30.08 * Y, 'Cs-134': 2.0652 * Y, 'Ba-137m': 2.552 * MIN, 'Co-60': 5.2714 * Y, 'Pu-241': 14.29 * Y,
+    'Sr-90': 28.91 * Y, 'Cs-137': 30.08 * Y, 'Cs-134': 2.0652 * Y, 'Ba-137m': 2.552 * MIN, 'Co-60': 5.2714 * Y, 'Pu-241': 14.29 * Y,
     'Am-241': 432.6 * Y, 'Ni-56': 6.075 * D, 'Co-56': 77.236 * D };
   const LAM = {}; for (const k in T12) LAM[k] = Math.LN2 / T12[k];
   const CHAINS = { 'Mo-99 -> Tc-99m (generator)': [['Mo-99', 'Tc-99m'], [0.876]], 'Ge-68 -> Ga-68 (generator)': [['Ge-68', 'Ga-68'], [1]],
@@ -192,9 +192,10 @@ const CH = (() => {
   function genRatio(c) { const [n, br] = CHAINS[c], lp = LAM[n[0]], ld = LAM[n[1]]; return br[0] * ld / (ld - lp); }
   const ratioAt = (ty, r0 = 1, a = 'Cs-134', b = 'Cs-137') => r0 * Math.exp(-(LAM[a] - LAM[b]) * ty * Y);
   const releaseAge = (r, r0 = 1, a = 'Cs-134', b = 'Cs-137') => Math.log(r0 / r) / (LAM[a] - LAM[b]) / Y;
-  const MEV = 1.602176634e-6, NA = 6.02214076e23, MSUN = 1.98892e33, QNI = 1.75, QCO = 3.73;
+  const MEV = 1.602176634e-6, NA = 6.02214076e23, MSUN = 1.98892e33, QNI = 1.75, QCO = 3.73, QPOS = 0.12;
   function snL(t, M = 0.6, t0 = null) { const [n, br] = CHAINS['Ni-56 -> Co-56 (supernova)'], N = bateman(n, br, [M * MSUN * NA / 56, 0], t);
-    const f = t0 == null ? 1 : 1 - Math.exp(-((t0 * D) ** 2) / (t * t)); return (QNI * MEV * LAM['Ni-56'] * N[0] + QCO * MEV * LAM['Co-56'] * N[1]) * f; }
+    const f = t0 == null ? 1 : (t0 <= 0 ? 0 : 1 - Math.exp(-((t0 * D) ** 2) / (t * t))), fp = QPOS / QCO;
+    return QNI * MEV * LAM['Ni-56'] * N[0] * f + QCO * MEV * LAM['Co-56'] * N[1] * ((1 - fp) * f + fp); }
   const knL = (t, M = 0.05, f = 0.5) => M * MSUN * 1e10 * Math.pow(t / D, -1.3) * f;
   return { MIN, H, D, Y, T12, LAM, CHAINS, bateman, needed, timeTo, genPeak, genRatio, ratioAt, releaseAge, snL, knL };
 })();
@@ -204,7 +205,7 @@ const $=id=>document.getElementById(id);const css=v=>getComputedStyle(document.d
 const TABS=[['t-pharm','Nuclear pharmacy'],['t-mon','Monitoring'],['t-energy','Energy & waste'],['t-sn','Supernova'],['t-kn','Kilonova']];
 $('tabs').innerHTML=TABS.map(([id,n],i)=>`<button data-t="${id}" class="${i?'':'on'}">${n}</button>`).join('');
 $('tabs').onclick=e=>{const b=e.target.closest('button');if(!b)return;for(const [id] of TABS)$(id).hidden=id!==b.dataset.t;[...$('tabs').children].forEach(x=>x.className=x===b?'on':'');draw();};
-const tracers=['F-18','C-11','N-13','O-15','Ga-68','Tc-99m','Rb-82','Cu-64','Zr-89','In-111','I-123','I-131','Lu-177','Y-90','Ac-225'];
+const tracers=['F-18','C-11','N-13','Ga-68','Tc-99m','Cu-64','Zr-89','In-111','I-123','I-131','Lu-177','Y-90','Ac-225'];
 $('p_nuc').innerHTML=tracers.map(t=>`<option>${t}</option>`).join('');
 const gens=Object.keys(CH.CHAINS).filter(c=>c.includes('generator')),longc=Object.keys(CH.CHAINS).filter(c=>!c.includes('generator')&&!c.includes('supernova'));
 $('g_ch').innerHTML=gens.map(t=>`<option>${t}</option>`).join('');$('e_ch').innerHTML=longc.map(t=>`<option>${t}</option>`).join('');
@@ -216,20 +217,20 @@ g.fillText(logy?'1e'+hi.toFixed(1):hi.toPrecision(3),2,16);g.fillText(logy?'1e'+
 const x0=xs[0],x1=xs[xs.length-1];series.forEach(s=>{g.strokeStyle=css(s.c);g.lineWidth=2.5;g.beginPath();let st=false;s.y.forEach((v,i)=>{if(logy&&!(v>0))return;const q=logy?Math.max(Math.log10(v),lo):v,x=L+(W-L-8)*(xs[i]-x0)/(x1-x0),y=B-(B-10)*(q-lo)/(hi-lo);st?g.lineTo(x,y):g.moveTo(x,y);st=true;});g.stroke();});}
 function draw(){
 const n=$('p_nuc').value,need=+$('p_need').value,t=+$('p_t').value*3600;
-$('p_out').textContent=`Make ${CH.needed(n,need,t).toFixed(1)} MBq now  ·  half-life ${fmtT(CH.T12[n])}`;
+$('p_out').textContent=(t>10*CH.T12[n]?'⚠ more than 10 half-lives: not practical to make ahead. ':'')+`Make ${CH.needed(n,need,t).toPrecision(4)} MBq now  ·  half-life ${fmtT(CH.T12[n])}`;
 const gc=$('g_ch').value,[gn,gb]=CH.CHAINS[gc],Ap=+$('g_A').value,tp=CH.genPeak(gc),lp=CH.LAM[gn[0]],ld=CH.LAM[gn[1]],N0=[Ap*1e9/lp,0];
 const tmax=Math.min(4*tp,10*CH.T12[gn[0]]),xs=[],yp=[],yd=[];for(let i=0;i<=200;i++){const tt=tmax*i/200,N=CH.bateman(gn,gb,N0,tt);xs.push(tt/3600);yp.push(lp*N[0]/1e9);yd.push(ld*N[1]/1e9);}
 const Np=CH.bateman(gn,gb,N0,tp);$('g_out').textContent=`Daughter peaks at ${fmtT(tp)} with ${(ld*Np[1]/1e9).toFixed(3)} GBq; equilibrium ratio ${isFinite(CH.genRatio(gc))?CH.genRatio(gc).toFixed(3):'—'}`;
 if(!$('t-pharm').hidden)plot($('g_cv'),xs,[{y:yp,c:'--accent2'},{y:yd,c:'--accent'}],'hours (blue parent, orange daughter)',false);
 const [a,b]=$('m_pair').value.split('|'),r0=+$('m_r0').value,r=+$('m_r').value;$('m_out').textContent=r>0&&r0>0?`${CH.releaseAge(r,r0,a,b).toFixed(3)} years since release (${(CH.releaseAge(r,r0,a,b)*365.25).toFixed(1)} days)`:'—';
-const ec=$('e_ch').value,[en,eb]=CH.CHAINS[ec],yrs=+$('e_y').value,ex=[],e1=[],e2=[];for(let i=0;i<=200;i++){const tt=yrs*CH.Y*i/200,N=CH.bateman(en,eb,[1e20,0],tt);ex.push(tt/CH.Y);e1.push(CH.LAM[en[0]]*N[0]);e2.push(CH.LAM[en[1]]*N[1]);}
+const ec=$('e_ch').value,[en,eb]=CH.CHAINS[ec],yrs=+$('e_y').value,ex=[],e1=[],e2=[];for(let i=0;i<=200;i++){const tt=yrs*CH.Y*i/200,N=CH.bateman(en,eb,[1/CH.LAM[en[0]],0],tt);ex.push(tt/CH.Y);e1.push(CH.LAM[en[0]]*N[0]);e2.push(CH.LAM[en[1]]*N[1]);}
 const ep=Math.log(CH.LAM[en[1]]/CH.LAM[en[0]])/(CH.LAM[en[1]]-CH.LAM[en[0]]);$('e_out').textContent=`${en[1]} activity peaks at ${fmtT(ep)} (from pure ${en[0]})`;
-if(!$('t-energy').hidden)plot($('e_cv'),ex,[{y:e1,c:'--accent2'},{y:e2,c:'--accent'}],'years (blue parent, orange daughter)',true);
+if(!$('t-energy').hidden)plot($('e_cv'),ex,[{y:e1,c:'--accent2'},{y:e2,c:'--accent'}],'years · activity in Bq per Bq of parent at t=0 (blue parent, orange daughter)',true);
 const M=+$('s_m').value,t0=$('s_t0').value===''?null:+$('s_t0').value,sx=[],sy=[];for(let d=2;d<=400;d+=2){sx.push(d);sy.push(CH.snL(d*86400,M,t0));}
-$('s_out').textContent=`L(18 d) = ${CH.snL(18*86400,M,t0).toExponential(2)} erg/s  ·  L(100 d) = ${CH.snL(100*86400,M,t0).toExponential(2)} erg/s`;
-if(!$('t-sn').hidden)plot($('s_cv'),sx,[{y:sy,c:'--accent'}],'days after explosion (log L)',true);
+$('s_out').textContent=`Heating at 18 d = ${CH.snL(18*86400,M,t0).toExponential(2)} erg/s  ·  at 100 d = ${CH.snL(100*86400,M,t0).toExponential(2)} erg/s`;
+if(!$('t-sn').hidden)plot($('s_cv'),sx,[{y:sy,c:'--accent'}],'days after explosion (log heating rate)',true);
 const km=+$('k_m').value,kf=+$('k_f').value,kx=[],ky=[];for(let d=0.25;d<=30;d+=0.25){kx.push(d);ky.push(CH.knL(d*86400,km,kf));}
-$('k_out').textContent=`L(1 d) ≈ ${CH.knL(86400,km,kf).toExponential(2)} erg/s  ·  L(7 d) ≈ ${CH.knL(7*86400,km,kf).toExponential(2)} erg/s`;
-if(!$('t-kn').hidden)plot($('k_cv'),kx,[{y:ky,c:'--accent'}],'days after merger (log L)',true);}
+$('k_out').textContent=`Heating at 1 d ≈ ${CH.knL(86400,km,kf).toExponential(2)} erg/s  ·  at 7 d ≈ ${CH.knL(7*86400,km,kf).toExponential(2)} erg/s`;
+if(!$('t-kn').hidden)plot($('k_cv'),kx,[{y:ky,c:'--accent'}],'days after merger (log heating rate)',true);}
 document.querySelectorAll('input,select').forEach(e=>e.addEventListener('input',draw));draw();
 </script>
