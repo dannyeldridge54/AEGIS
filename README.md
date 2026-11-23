@@ -42,6 +42,8 @@ python tools/release_smoketest.py            # 11 checks against published value
 
 ## Earlier work
 The Twist / torsion-cosmology tests (2025–Nov 2026) and the TypeScript agent are in [archive/](archive/README.md).
+**Gift packets for researchers:** [releases/GIFTS.md](releases/GIFTS.md).
+
 The clean Twist release: [the-twist-torsion-cosmology](https://github.com/dannyeldridge54/the-twist-torsion-cosmology).
 
 ## License
