@@ -21596,3 +21596,25 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 - **α leak:** ≤ 7.5e-10 at every b, even |b| = 0.15. The α-drift is untouched, as the referee confirmed (F-2).
 - **Sign-convention correction (addendum item 1 was wrong):** the DM mass FALLS for both signs of b. The coupling force −bρ_c pushes φ so that bΔφ < 0 (Δφ = +0.62 at b = −0.05 and −0.84 at b = +0.05). So "b < 0 means DM gains mass" is false here. The addendum's text is superseded by this note, not edited.
 - **The bookkeeping lesson:** the Weave's late-time gain lives at b = 0, and coupling dark matter to the thread buys at most about 2 more units of χ². The scored results (D2131–D2133) stand unchanged.
+
+## D2134a (CENTRE, referee pass on D2134: verdict **BALANCED**, NOT ADOPTED confirmed). Corrections to D2134, each a dated note; D2134 itself is not edited (2026-11-22 ~19:25 CT)
+1. **Sign.** The coupling drives φ down V + ρ_c(φ), so the DM mass falls for both signs of b. The referee agrees, and its own K-mapping was the source of addendum item 1's wrong sign.
+2. **Bounds and crashes.**
+   - At b = −0.025, u_i sits at the 0.21 bound on both sets (the χ² there is a constrained value).
+   - At b = −0.15, H0 is at its bound (80).
+   - b = +0.10 is a **crash** ("cannot unpack non-iterable float"), not an excluded value.
+   - The adoptable rows (|b| ≤ 0.025) are clean. u_i falls as b rises (0.157 → 0.068 → 0.031): the coupling takes over the thawing.
+   - The dial `dm_loss_since_zstar` actually measures the total since a = 1e-6, so it is mislabelled.
+3. **S₈ proxy: D2134's "weak spot" line is WITHDRAWN.**
+   - The proxy's absolute level is not calibrated, because A_s is not fitted.
+   - The 0.83 cut would reject Planck ΛCDM itself, which sits at about 0.832.
+   - On differences, the coupling slightly LOWERS S₈ (0.856 → 0.851 → 0.842 for b = 0 → 0.025 → 0.05).
+   - A future lock should cut on ΔS₈ relative to LCDM_ref, at ≤ +0.02.
+4. **Robustness.**
+   - A parabola through the b = 0, +0.025 and +0.05 rows bottoms out at b ≈ 0.023 with Δχ² ≈ −2.1, so no b reaches −4.
+   - The verdict does not depend on Union3.
+5. **Triangulation.** At b = 0 on Dovekie, my fit gives u_i = 0.157 and Δχ² = −4.47; the referee's independent D2133 gives 0.157 and −4.24. **They agree.**
+6. **Caveat: Pantheon+ at b = 0 depends on the CMB treatment.**
+   - With compressed CMB: u_i = 0.148, Δχ² = −2.8.
+   - With plik-lite (D2131): u_i = 0.013, Δχ² = +0.13.
+7. **Not claimed: the DESI pull on w0wa.** At b = +0.025 the CPL fit is (−0.92, −0.07), far from DESI's (−0.75, −0.8). The apparent crossing depends on which anchor is used.
