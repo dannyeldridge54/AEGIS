@@ -41,3 +41,23 @@ def J_route_B(rho, r_sun, psi_max_deg=1.0, b_mask_deg=0.3, n_psi=160, n_phi=256)
         frac = 1 - 2*math.asin(min(1.0, math.sin(bm)/math.sin(psi)))/math.pi
         tot += wp*math.sin(psi)*2*math.pi*frac*los(rho, psi, r_sun)
     return tot
+
+def J_route_A_fast(rho, r_sun, psi_max_deg=1.0, b_mask_deg=0.3, n=120, n_cheb=96):
+    """SPEED-Hyperion H1: same (l, b) Gauss-Legendre grid as J_route_A, but los(psi) is sampled once on Chebyshev nodes in
+    log(psi) over [b_mask, psi_max] and evaluated by barycentric interpolation (psi >= b_mask everywhere in the region)."""
+    pm, bm = math.radians(psi_max_deg), math.radians(b_mask_deg)
+    lo, hi = math.log(bm), math.log(pm)
+    k = np.arange(n_cheb); u = np.cos(np.pi*(2*k + 1)/(2*n_cheb))            # Chebyshev nodes (first kind) in [-1, 1]
+    nodes = 0.5*(hi - lo)*(u + 1) + lo; fvals = np.array([los(rho, math.exp(t), r_sun) for t in nodes])
+    wts = (-1.0)**k*np.sin(np.pi*(2*k + 1)/(2*n_cheb))                         # barycentric weights for first-kind nodes
+    x, w = np.polynomial.legendre.leggauss(n)
+    bs = 0.5*(pm - bm)*(x + 1) + bm; wb = 0.5*(pm - bm)*w
+    lmax = np.arccos(np.minimum(1.0, math.cos(pm)/np.cos(bs)))
+    L = lmax[:, None]*x[None, :]; WL = lmax[:, None]*w[None, :]
+    psi = np.arccos(np.clip(np.cos(bs)[:, None]*np.cos(L), -1, 1))
+    t = np.clip(np.log(np.maximum(psi, bm)), lo, hi)
+    d = t[..., None] - nodes; exact = np.isclose(d, 0.0, atol=1e-15)
+    d = np.where(exact, 1.0, d); q = wts/d
+    vals = (q*fvals).sum(-1)/q.sum(-1)
+    if exact.any(): vals = np.where(exact.any(-1), (exact*fvals).sum(-1), vals)
+    return float((2*wb[:, None]*WL*np.cos(bs)[:, None]*vals).sum())

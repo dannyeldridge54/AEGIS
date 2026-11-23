@@ -54,13 +54,14 @@ def neutron_star(eos='SLy'):
     e = ns.PPEOS(*ns.TABLE3[eos]); mm = ns.max_mass(e)
     return dict(eos=eos, M_max_Msun=float(mm[0]))
 
-def jfactor(profile='Einasto', survey='HESS_IGS', rho_sun=0.4, r_sun=8.21):
+def jfactor(profile='Einasto', survey='HESS_IGS', rho_sun=0.4, r_sun=8.21, fast=True):
+    """fast=True: J_route_A_fast (SPEED-Hyperion H1: 100x, matches route A to 4e-11); fast=False: the reference route A."""
     from . import jfactor as J
     h = HALOS[profile]
     shape = J.einasto(h['rs'], h['alpha']) if profile == 'Einasto' else (J.nfw(h['rs']) if profile == 'NFW' else J.burkert(h['r0']))
     rho = J.normalise(shape, rho_sun, r_sun); S = LINE_SURVEYS[survey]
     return dict(profile=profile, survey=survey, rho_sun=rho_sun, r_sun=r_sun,
-                J_GeV2_cm5=J.J_route_A(rho, r_sun, S['psi_max_deg'], S['b_mask_deg']))
+                J_GeV2_cm5=(J.J_route_A_fast if fast else J.J_route_A)(rho, r_sun, S['psi_max_deg'], S['b_mask_deg']))
 
 # H1b (20 Nov 2026): real column types and units in ECSV, so astropy gives numbers with units, not strings.
 UNITS = {'omega_b': '', 'Yp': '', 'DH': '', 'M_max_Msun': 'solMass', 'rho_sun': 'GeV / cm3', 'r_sun': 'kpc',

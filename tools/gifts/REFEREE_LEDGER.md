@@ -21,6 +21,7 @@ the claims; the builder fixes only through a DEVIATIONS note written before any 
 | Zurvan | Sigma terms (float64 finite differences) | 65 ms /600 | 4.4 ms exact derivative (15x), ADOPTED (more accurate: 1e-17 vs 50-digit check; float64 reference off by up to 6e-5) | Z1 failed as locked, see DEVIATIONS |
 | Aion | 3-sigma scan (53k points, Python loops) | 0.40 s | 6.4 ms numpy broadcasting (62x) | 4e-16 |
 | Aion | Monte Carlo 1-sigma (20k) | 0.16 s | 14 ms (12x) | 2e-16 |
+| Hyperion | J-factor route A (14,400 adaptive quads) | 18.0 s /4 profiles | 0.18 s Chebyshev los table (102x), now the default | 4e-11 |
 | Chronos | chain solve (matrix exponential, 1,995 solves) | 0.016 s | 0.004 s analytic Bateman (4.4x); browser engine instant | 3e-13 (T1) |
 
 ## Next in the rotation (older toolkits, one per loop tick)
