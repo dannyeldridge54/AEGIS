@@ -1,4 +1,53 @@
 {
+ "joint_v2": {
+  "split_off": {
+   "t_star": -0.4816,
+   "move": {
+    "MN": 0.279,
+    "m32": -0.4622,
+    "TR": 0.093
+   },
+   "targets": {
+    "L5.wino": -0.4816,
+    "L7.alpha_s": -0.4816,
+    "L8.leptogenesis": -0.4816
+   },
+   "closed_together": [],
+   "fits_spent": [
+    "MN",
+    "m32",
+    "TR"
+   ]
+  },
+  "split_on": {
+   "t_star": 2.9693,
+   "move": {
+    "u": 0.0103,
+    "MN": 2.5269,
+    "m32": 2.9888,
+    "TR": -3.0,
+    "split": 0.001,
+    "dNeff": 0.0137
+   },
+   "targets": {
+    "L5.wino": 2.9693,
+    "L8.leptogenesis": 3.169
+   },
+   "closed_together": [
+    "L5.wino",
+    "L8.leptogenesis",
+    "L7.alpha_s (split step)"
+   ],
+   "fits_spent": [
+    "u",
+    "MN",
+    "m32",
+    "TR",
+    "split",
+    "dNeff"
+   ]
+  }
+ },
  "joint": {
   "split_off": {
    "t_star": -0.4816,
@@ -344,6 +393,6 @@
    "margin": -3.3942
   }
  },
- "ms_fingerprint": 0.346,
- "seconds_total": 58.61
+ "ms_fingerprint": 0.325,
+ "seconds_total": 62.07
 }
