@@ -22136,3 +22136,8 @@ Triangulation (three readers): records (statuses above), data (PDG tau mass 1776
 - Split off: maximin t* = -0.48 at ln M_N +0.28, ln m3/2 -0.46, ln T_R +0.09; nothing closes; every node that held still holds.
 - Split on: feasible; maximin drives the dials to their bounds (m3/2 x e^3, T_R x e^-3), which only shows feasibility. The SMALLEST move that closes all three with the split is the useful number (next run: minimise |z| subject to all targets >= 0).
 - So tonight's engine verdict for the "machine": the three tunable failures are tunable together only if the split-stack fit is accepted; that is the knob the Weave would have to derive.
+
+## D2170 (DEEP, PREREG_D2170, run once; PROVISIONAL until the referee checks the volume formula). **On the published Z6-II model the tree-level colour/weak split is FAR OFF: alpha_3/alpha_2 = 6 at the string scale against 1.02 needed.** (22 Nov ~23:57 CT)
+- Volumes V = (P+Q) - (2/3) rho (V-U), rho = 1/2: a (colour) 2/3, b (weak) 4, c, d, e 2. So alpha_3/alpha_2 = V_b/V_a = 6.
+- Needed: MSSM one-loop running from M_Z to 1e16 GeV gives 1/alpha_3 = 23.9, 1/alpha_2 = 24.4, ratio 1.02. ln(6/1.02) = 1.77 > ln 3 -> FAR OFF by the lock.
+- Reading if it survives review: the published brane model does not unify at tree level; its colour coupling is 6x stronger than its weak coupling at the string scale. One-loop thresholds cannot plausibly close a factor of 6, so the brane route needs a different stack choice (or this formula is wrong). This is the same split the engine (D2168c) said the Weave must derive: here it is derived, and it is the wrong size.
