@@ -35,7 +35,7 @@ $('go').onclick=go;
 $('replay').onclick=()=>CH.forEach(c=>c.replay());
 $('png').onclick=()=>CH.forEach((c,i)=>{const a=document.createElement('a');a.href=c.png();a.download='cubemind_chart_'+(i+1)+'.png';a.click();});
 const post=(u,b)=>fetch(u,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b||{})}).then(r=>r.json());
-let TL={};post('/api/tools').then(t=>{TL=t;const ks=Object.keys(t).filter(k=>k.startsWith('chronos_')).concat(Object.keys(t).filter(k=>!k.startsWith('chronos_')));$('tool').innerHTML=ks.map(k=>`<option>${k}</option>`).join('');$('tool').onchange();}).catch(e=>$('sst').textContent='tool list unavailable: '+e);
+let TL={};post('/api/tools').then(t=>{TL=t;const g={};Object.keys(t).forEach(k=>{const f=t[k].field||'other';(g[f]=g[f]||[]).push(k);});$('tool').innerHTML=Object.keys(g).sort((a,b)=>a.startsWith('nuclear')?-1:b.startsWith('nuclear')?1:a.localeCompare(b)).map(f=>`<optgroup label="${f}">`+g[f].map(k=>`<option>${k}</option>`).join('')+'</optgroup>').join('');$('tool').onchange();}).catch(e=>$('sst').textContent='tool list unavailable: '+e);
 $('tool').onchange=()=>{const t=TL[$('tool').value];$('args').value=t?(typeof t.example==='string'?t.example:JSON.stringify(t.example)):'{}';$('sst').textContent=t&&t.doc?t.doc:'';};
 async function studio(){let a;try{a=JSON.parse($('args').value||'{}');}catch(e){$('sst').textContent='inputs must be JSON: '+e.message;return;}
 $('drawbtn').disabled=true;$('sst').textContent='running engine…';const t0=performance.now();

@@ -4,7 +4,22 @@ Run: START_ASK.bat  (opens http://127.0.0.1:8765). Model: env CM_ASK_MODEL (defa
 Guards: read-only; no downloads, no publishing, no system changes; numbers only from tool results."""
 import json, os, re, sys, time, urllib.request, http.server, socketserver, threading, webbrowser
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE); sys.path.insert(0, ROOT)
-from aegis_tools.registry import call, TOOLS
+from aegis_tools.registry import call as _reg_call, TOOLS
+# CORE-1: route every call through AEGIS Core when present (validation, content-hash cache, provenance ledger, all tools + adapters)
+CORE = None
+for _p in (os.path.join(ROOT, 'core'), os.path.join(HERE, '..', '..', 'core')):
+    if os.path.isfile(os.path.join(_p, 'core.py')):
+        sys.path.insert(0, os.path.abspath(_p))
+        try: import core as CORE
+        except Exception: CORE = None
+        break
+def call(name, args):
+    if CORE is None: return _reg_call(name, args)
+    r = CORE.call(name, args)
+    return r['structuredContent'] if not r['isError'] else {'error': r['content'][0]['text']}
+def all_specs():
+    if CORE is not None: return CORE.specs()
+    return {k: dict(name=k, field='nuclear (Chronos)' if k.startswith('chronos_') else 'other', example=json.loads(v[0]), description='') for k, v in TOOLS.items()}
 MODEL = os.environ.get('CM_ASK_MODEL', 'qwen3:14b'); OLLAMA = os.environ.get('OLLAMA_URL', 'http://localhost:11434')
 DOCS = {
  'chronos_half_life': 'half-life of a nuclide', 'chronos_activity_after': 'activity left after some hours (same unit as A0)',
@@ -17,8 +32,9 @@ DOCS = {
  'chronos_wd_merger': 'double white dwarf GW merger time (Myr) and GW frequency', 'chronos_kilonova': 'order-of-magnitude kilonova r-process heating',
  'chronos_star_age': 'old-star age from Th/Eu or U/Th (log eps observed, production ratio)'}
 def tool_intro():
-    lines = [f'- {k} {TOOLS[k][0]}  :: {DOCS.get(k, "")}' for k in TOOLS if k.startswith('chronos_')]
-    others = ', '.join(k for k in TOOLS if not k.startswith('chronos_'))
+    S = all_specs()
+    lines = [f'- {k} {json.dumps(s["example"])}  :: {DOCS.get(k, s.get("description", ""))}' for k, s in S.items() if k.startswith('chronos_')]
+    others = '; '.join(f'{k} {json.dumps(s["example"])}' for k, s in S.items() if not k.startswith('chronos_'))
     return ('You are CubeMind, answering questions about Danny Lee Eldridge\'s work. You can call validated tools. To call one, write a line exactly:\n'
             'TOOL: <name> <JSON args>\n(one per line, nothing else on that line). You will get RESULT lines back. Use the tools for EVERY number; never quote a '
             'number from memory. When you have what you need, write the final answer for a scientist: 2-6 sentences with units, then a line "Assumptions:". '
@@ -74,7 +90,8 @@ class H(http.server.SimpleHTTPRequestHandler):
                 j = JOBS.get(str(body.get('job', ''))); out = dict(error='unknown job') if j is None else dict(status=j['status'], log=j['log'][-6:], elapsed=round(time.time() - j['t0'], 1), result=j.get('result'))
             elif self.path == '/api/paper':
                 import cm_paper; out = cm_paper.build(body.get('section'), out_dir=os.path.join(HERE, 'papers'))
-            elif self.path == '/api/tools': out = {k: dict(example=v[0], doc=DOCS.get(k, '')) for k, v in TOOLS.items()}
+            elif self.path == '/api/tools': out = {k: dict(example=json.dumps(s['example']), doc=DOCS.get(k, s.get('description', '')), field=s.get('field', '')) for k, s in all_specs().items()}
+            elif self.path == '/api/board' and CORE is not None: out = dict(rows=CORE.status())
             else: out = dict(error='unknown path')
         except Exception as e: out = dict(error=f'{type(e).__name__}: {e}')
         b = json.dumps(out, default=str).encode(); self.send_response(200); self.send_header('Content-Type', 'application/json'); self.send_header('Content-Length', str(len(b))); self.end_headers(); self.wfile.write(b)
