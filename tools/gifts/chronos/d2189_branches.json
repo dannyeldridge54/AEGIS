@@ -10,6 +10,7 @@
   "context": "GRB-SNe typically 0.1-0.5 Msun in the literature; mean-peak value only"
  },
  "T9": {
+  "note": "masses 0.26/0.50 Msun from Hermes et al. 2012; Peters point-mass coalescence = upper bound (Brown et al. 2011: ~0.9 Myr to contact)",
   "J0651_merger_Myr": 1.1093205092274938,
   "f_gw_mHz": 2.6143790849673203,
   "pass_": true
@@ -30,5 +31,8 @@
   "40": 22.98695693412073,
   "60": 67.77322825966586
  },
- "example_Baron_tail_Msun_per_1e41_at_200d": 0.041767440347620206
+ "example_tail_Msun_per_1e41_at_200d": {
+  "full_trapping_TypeIIP": 0.041767440347620206,
+  "SN_Ia_t0_40d": 0.5956508450464507
+ }
 }

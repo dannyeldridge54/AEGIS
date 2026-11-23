@@ -43,7 +43,7 @@ canvas{width:100%;height:240px;display:block;margin-top:10px}
 <div class="out" id="k_out"></div><canvas id="k_cv" width="900" height="260"></canvas>
 <p class="note">Specific heating ~10¹⁰ (t/1 day)⁻¹·³ erg g⁻¹ s⁻¹ (Korobkin et al. 2012; Metzger 2019, Living Reviews in Relativity), order of magnitude only, with a constant thermalisation fraction (it actually falls with time; Barnes et al. 2016). Heating rate, not the light curve before peak.</p></section>
 <section id="t-more" class="card" hidden><h2>Ac-225 therapy chain</h2>
-<div class="row"><label>Ac-225 activity (MBq)<input id="a_A" type="number" value="10"></label><label>Hours since purification<input id="a_t" type="number" value="6" step="0.5"></label>
+<div class="row"><label>Ac-225 activity at purification (MBq)<input id="a_A" type="number" value="10"></label><label>Hours since purification<input id="a_t" type="number" value="6" step="0.5"></label>
 <label>Ac-227/Ac-225 activity ratio at end of bombardment<input id="a_r" type="number" value="0.0015" step="0.0005"></label><label>Days stored<input id="a_d" type="number" value="10"></label></div>
 <div class="out" id="a_out"></div><p class="note">Chain Ac-225 → Fr-221 → At-217 → Bi-213 → Po-213 (97.8%) / Tl-209 (2.2%) → Pb-209 → Bi-209. Ac-227 (21.8 y) is the long-lived impurity of accelerator-made Ac-225; its share grows during storage. The ratio at end of bombardment is yours to enter.</p>
 <h2 style="margin-top:18px">Plutonium separation age (safeguards)</h2>
@@ -53,10 +53,10 @@ canvas{width:100%;height:240px;display:block;margin-top:10px}
 <div class="row"><label>Tritium (g)<input id="h_g" type="number" value="1000"></label><label>Years stored<input id="h_y" type="number" value="1" step="0.5"></label></div><div class="out" id="h_out"></div>
 <h2 style="margin-top:18px">Decay heat after shutdown (Way–Wigner approximation)</h2>
 <div class="row"><label>Days operated<input id="w_T" type="number" value="365"></label><label>Hours after shutdown<input id="w_t" type="number" value="24"></label></div><div class="out" id="w_out"></div>
-<p class="note">P/P₀ = 0.0622 [t⁻⁰·² − (t+T)⁻⁰·²]: a classic approximation, roughly a factor 2 at very short and very long times. Not the ANS-5.1 standard.</p>
+<p class="note">P/P₀ = 0.0622 [t⁻⁰·² − (t+T)⁻⁰·²]: a classic approximation, roughly a factor 2 at very short and very long times. Excludes U-239/Np-239 heating (matters from about a day on). Not the ANS-5.1 standard.</p>
 <h2 style="margin-top:18px">Star ages from thorium (cosmochronometry)</h2>
-<div class="row"><label>Observed Th/Eu (number ratio)<input id="c_o" type="number" value="0.3" step="0.01"></label><label>Production Th/Eu (model)<input id="c_p" type="number" value="0.45" step="0.01"></label></div><div class="out" id="c_out"></div>
-<p class="note">Age = ln(production / observed) / λ(Th-232). The production ratio comes from r-process models and is the dominant uncertainty; enter the one you trust.</p></section>
+<div class="row"><label>Pair<select id="c_pair"><option value="ThEu">Th/Eu</option><option value="UTh">U/Th</option></select></label><label>Observed log ε ratio (dex)<input id="c_o" type="number" value="-0.52" step="0.01"></label><label>Production ratio (number; Th/Eu ~0.42-0.48, Schatz+2002, Kratz+2007)<input id="c_p" type="number" value="0.45" step="0.01"></label></div><div class="out" id="c_out"></div>
+<p class="note">Age = ln(production / observed) / λ, with λ = λ(Th-232) for Th/Eu and λ(U-238) − λ(Th-232) for U/Th; observed ratio = 10^(log ε). For Th/Eu, 0.1 dex ≈ 4.65 Gyr. Assumes a single r-process event (no chemical evolution). The production ratio is the dominant uncertainty; enter the one you trust.</p></section>
 <p class="note">Half-lives from NNDC NuDat / ENSDF adopted values, entered by hand; verify before critical use. Decay arithmetic only: no production cross sections, dose or shielding (a dose branch is planned). Not a clinical or regulatory tool. Chains are solved by the analytic Bateman equations, checked against a matrix-exponential solver to 3×10⁻¹³.</p>
 <p class="note">Chronos v1 · Danny Lee Eldridge, Oklahoma City · 23 Nov 2026 · github.com/dannyeldridge54/AEGIS (tools/gifts/chronos). Named for Chronos, the Greek figure of time. Free to use, change and share.</p>
 </main>
@@ -83,7 +83,7 @@ const gc=$('g_ch').value,[gn,gb]=CH.CHAINS[gc],Ap=+$('g_A').value,tp=CH.genPeak(
 const tmax=Math.min(4*tp,10*CH.T12[gn[0]]),xs=[],yp=[],yd=[];for(let i=0;i<=200;i++){const tt=tmax*i/200,N=CH.bateman(gn,gb,N0,tt);xs.push(tt/3600);yp.push(lp*N[0]/1e9);yd.push(ld*N[1]/1e9);}
 const Np=CH.bateman(gn,gb,N0,tp);$('g_out').textContent=`Daughter peaks at ${fmtT(tp)} with ${(ld*Np[1]/1e9).toFixed(3)} GBq; equilibrium ratio ${isFinite(CH.genRatio(gc))?CH.genRatio(gc).toFixed(3):'—'}`;
 if(!$('t-pharm').hidden)plot($('g_cv'),xs,[{y:yp,c:'--accent2'},{y:yd,c:'--accent'}],'hours (blue parent, orange daughter)',false);
-const [a,b]=$('m_pair').value.split('|'),r0=+$('m_r0').value,r=+$('m_r').value;$('m_out').textContent=r>0&&r0>0?`${CH.releaseAge(r,r0,a,b).toFixed(3)} years since release (${(CH.releaseAge(r,r0,a,b)*365.25).toFixed(1)} days)`:'—';
+const [a,b]=$('m_pair').value.split('|'),r0=$('m_r0').value===''?NaN:+$('m_r0').value,r=+$('m_r').value;$('m_out').textContent=r>0&&r0>0&&r<r0?`${CH.releaseAge(r,r0,a,b).toFixed(3)} years since release (${(CH.releaseAge(r,r0,a,b)*365.25).toFixed(1)} days)`:'—';
 const ec=$('e_ch').value,[en,eb]=CH.CHAINS[ec],yrs=+$('e_y').value,ex=[],e1=[],e2=[];for(let i=0;i<=200;i++){const tt=yrs*CH.Y*i/200,N=CH.bateman(en,eb,[1/CH.LAM[en[0]],0],tt);ex.push(tt/CH.Y);e1.push(CH.LAM[en[0]]*N[0]);e2.push(CH.LAM[en[1]]*N[1]);}
 const ep=Math.log(CH.LAM[en[1]]/CH.LAM[en[0]])/(CH.LAM[en[1]]-CH.LAM[en[0]]);$('e_out').textContent=`${en[1]} activity peaks at ${fmtT(ep)} (from pure ${en[0]})`;
 if(!$('t-energy').hidden)plot($('e_cv'),ex,[{y:e1,c:'--accent2'},{y:e2,c:'--accent'}],'years · activity in Bq per Bq of parent at t=0 (blue parent, orange daughter)',true);
@@ -93,10 +93,11 @@ if(!$('t-sn').hidden)plot($('s_cv'),sx,[{y:sy,c:'--accent'}],'days after explosi
 const km=+$('k_m').value,kf=+$('k_f').value,kx=[],ky=[];for(let d=0.25;d<=30;d+=0.25){kx.push(d);ky.push(CH.knL(d*86400,km,kf));}
 $('k_out').textContent=`Heating at 1 d ≈ ${CH.knL(86400,km,kf).toExponential(2)} erg/s  ·  at 7 d ≈ ${CH.knL(7*86400,km,kf).toExponential(2)} erg/s`;
 if(!$('t-kn').hidden)plot($('k_cv'),kx,[{y:ky,c:'--accent'}],'days after merger (log heating rate)',true);
-const AA=CH3.ac225(+$('a_t').value*3600,+$('a_A').value);$('a_out').textContent=`Bi-213 ${AA['Bi-213'].toFixed(3)} MBq · Fr-221 ${AA['Fr-221'].toFixed(3)} · Pb-209 ${AA['Pb-209'].toFixed(3)}  ·  Ac-227/Ac-225 after ${$('a_d').value} d: ${CH3.ac227(+$('a_d').value*86400,+$('a_r').value).toExponential(2)}`;
+const AA=CH3.ac225(+$('a_t').value*3600,+$('a_A').value);$('a_out').textContent=`Ac-225 ${AA['Ac-225'].toFixed(3)} MBq · Bi-213 ${AA['Bi-213'].toFixed(3)} MBq · Fr-221 ${AA['Fr-221'].toFixed(3)} · Pb-209 ${AA['Pb-209'].toFixed(3)}  ·  Ac-227/Ac-225 after ${$('a_d').value} d: ${CH3.ac227(+$('a_d').value*86400,+$('a_r').value).toExponential(2)}`;
 const ur=+$('u_r').value;$('u_out').textContent=ur>0?`${CH3.puAge(ur).toFixed(2)} years since separation`:'—';
-const hg=+$('h_g').value,hy=+$('h_y').value,hl=CH3.tritiumLeft(hg,hy);$('h_out').textContent=`${hl.toFixed(1)} g left; ${(hg-hl).toFixed(1)} g decayed to helium-3 (${(100*(1-hl/hg)).toFixed(2)}%)`;
+const hg=+$('h_g').value,hy=+$('h_y').value,hl=CH3.tritiumLeft(hg,hy);$('h_out').textContent=`${hl.toFixed(1)} g left; ${((hg-hl)*3.016029/3.016049).toFixed(1)} g of helium-3 formed (${(100*(1-hl/hg)).toFixed(2)}%)`;
 const wv=CH3.wayWigner(+$('w_t').value*3600,+$('w_T').value*86400);$('w_out').textContent=`${(100*wv).toFixed(3)}% of operating power`;
-const cg=CH3.cosmoAge(+$('c_o').value,+$('c_p').value);$('c_out').textContent=isFinite(cg)?`${cg.toFixed(2)} billion years`:'—';}
+const cpair=$('c_pair').value,cobs=Math.pow(10,+$('c_o').value),cg=cpair==='UTh'?CH3.cosmoAge(cobs,+$('c_p').value,'U-238','Th-232'):CH3.cosmoAge(cobs,+$('c_p').value);$('c_out').textContent=isFinite(cg)&&cg>0?`${cg.toFixed(2)} billion years`:'— (observed ratio must be below the production ratio)';}
+$('m_pair').addEventListener('change',()=>{$('m_r0').value=$('m_pair').value.startsWith('I-131')?'':'1.0';draw();});
 document.querySelectorAll('input,select').forEach(e=>e.addEventListener('input',draw));draw();
 </script>
