@@ -1,0 +1,9 @@
+{
+ "alpha_s_noconv_guard": 0.114194,
+ "alpha_s_DRconv": 0.11445645722996521,
+ "shift": 0.00026245722996520726,
+ "pull_exp": -3.937269744483092,
+ "pull_with_theory": -3.3279499146130522,
+ "valid": true,
+ "verdict": "OUT"
+}

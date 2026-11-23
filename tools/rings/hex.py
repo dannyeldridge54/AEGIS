@@ -52,6 +52,7 @@ class Nuclear(Node):
         Yp, DH = _bbn(bus.get('ombh2'), bus.get('dNeff'))
         from tools.janus_astro import bbn as _b
         sYp, sDH = _b.sigma(bus.get('ombh2'), bus.get('dNeff'))      # DEV-2: PRIMAT theory error in quadrature
+        wb = bus.get('ombh2'); sDH = math.hypot(sDH, abs(_b.DH(wb + 1e-4, bus.get('dNeff')) - _b.DH(wb - 1e-4, bus.get('dNeff'))) / 2e-4 * 0.00015)   # D2221: omega_b error (Planck 0.00015)
         bus.put(self.name, 'hoyle_radius', hoyle['radius'], 'LIVE'); bus.put(self.name, 'hoyle_inside', hoyle['inside'], 'LIVE')
         bus.put(self.name, 'dmq_over_Lambda', hoyle['dmq_over_Lambda'], 'LIVE'); bus.put(self.name, 'dm_p_MeV', 'not wired (DEV-1)', 'NONE')
         bus.put(self.name, 'Yp', Yp, 'LIVE'); bus.put(self.name, 'DH', DH, 'LIVE')
@@ -65,14 +66,15 @@ class Forces(Node):
     name = 'N2 forces'
     def run(self, bus):
         s = bus.get('s_m32'); m_w, m_g = 0.687 * s, 4.93 * s
-        a_s = 0.1142 * math.exp(B.D['levers']['lnm32']['moves']['alpha_s'] * math.log(s))
+        a_s = 0.11446 * math.exp(   # D2221: engine value with MS->DR (D2220) + top decoupling (D2221); was 0.1142
+            B.D['levers']['lnm32']['moves']['alpha_s'] * math.log(s))
         xs = _wino_xsec(round(m_w * 1000, 6))
         bus.put(self.name, 'm_wino_TeV', m_w, 'LINEAR'); bus.put(self.name, 'm_gluino_TeV', m_g, 'LINEAR'); bus.put(self.name, 'alpha_s', a_s, 'LINEAR')
         bus.put(self.name, 'wino_xsec_fb_13p6', xs if xs is not None else float('nan'), 'LIVE')
         bus.put(self.name, 'wino_events_3ab', xs * 3000 if xs is not None else float('nan'), 'LIVE')
         return dict(pull_alpha_s=gauss_pull(a_s, 0.118, 0.0009))
     def postulates(self, bus, knobs):
-        k = B.D['levers']['lnm32']['moves']['alpha_s']; s = math.exp(math.log(0.118 / 0.1142) / k) if k else None
+        k = B.D['levers']['lnm32']['moves']['alpha_s']; s = math.exp(math.log(0.118 / 0.11446) / k) if k else None
         return [dict(node=self.name, why='zero the alpha_s pull through the m32 lever', knobs=dict(knobs, s_m32=s))] if s else []
 
 class Neutrinos(Node):
@@ -121,14 +123,15 @@ def centre_publish(bus, knobs):
     bus.put('centre', 'ombh2', 0.02237, 'INPUT')
 
 def centre_score(bus):
-    live = dict(n_s=bus.get('ns'), r=bus.get('r'), running=bus.get('running'), theta12=bus.get('theta12'), m_bb=bus.get('m_bb_meV'), sum_mnu=bus.get('sum_mnu'))
+    live = dict(alpha_s=bus.get('alpha_s'), n_s=bus.get('ns'),   # D2221: live engine alpha_s (was the data file's 0.1142)
+                 r=bus.get('r'), running=bus.get('running'), theta12=bus.get('theta12'), m_bb=bus.get('m_bb_meV'), sum_mnu=bus.get('sum_mnu'))
     base = B.apply_levers(B.D['terms'], {'lnm32': bus.get('s_m32')})
     terms = [dict(t, ours=live[t['id']]) if t['id'] in live else t for t in base]
     return terms
 
 def settle(knobs, max_sweeps=6):
     bus = Bus(); centre_publish(bus, knobs); local = {}; prev = None
-    dNeff0 = 0.0; bus.put('centre', 'dNeff', dNeff0, 'INPUT'); bus.put('centre', 'alpha_s', 0.1142, 'INPUT')
+    dNeff0 = 0.0; bus.put('centre', 'dNeff', dNeff0, 'INPUT'); bus.put('centre', 'alpha_s', 0.11446, 'INPUT')
     for sw in range(1, max_sweeps + 1):
         bus.sweep = sw
         for n in NODES: local[n.name] = n.run(bus)

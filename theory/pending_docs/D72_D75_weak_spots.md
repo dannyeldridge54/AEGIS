@@ -22703,3 +22703,13 @@ m_scalar). theory/tests/d2220_as_drbar.py: guard 0.114009 reproduced; with conve
 expected sign). Pulls vs 0.1180 +- 0.0009: -4.23 sigma (exp only), -3.57 sigma with the computed theory sigma 0.00057 (D1944). OUT stays.
 The engine's own +-0.004 label (0.9 sigma reading) is not a computation and is not used for status (D1944a). Hoyle: moves with it (no new
 information). Remaining lever named in R104/R105: the D7 one-loop threshold (needs the visible-sector D7 assignment) - OBSTRUCTED.
+
+## D2221 (PING-PONG round 3 fixes, 23 Nov 2026) — top decoupling: alpha_s 0.11446 (-3.9 / -3.3 sigma, OUT); omega_b error: D/H -2.07 sigma (OUT, at the edge)
+Locked PREREG_D2221_LEVEL_TOP_DH. (A) theory/tests/d2221_as_top.py: one-loop top decoupling below m_t 172.6 GeV (Delta b = 17/30, 1/2, 2/3;
+two-loop/finite threshold pieces unchanged, stated) -> alpha_s(M_Z) 0.114456 (+0.00026 on D2220). Pulls -3.94 (exp) / -3.33 (with computed
+theory sigma). OUT. (B) D/H: omega_b +-0.00015 (Planck 2018) propagated via the PRIMAT table derivative (dD/H/d omega_b = -1.80e-3 ->
+sigma 0.27e-6): pull -2.50 -> -2.07 sigma (Cooke 2018 value, unscored: -1.56). STATUS RULE ERROR in the prereg: it said 2 < |pull| <= 2.2 =
+EDGE, but the stage map's locked gauss band (bandmap1.marks: EDGE <= 2 sigma, else OUT) governs -> A.DH OUT at -2.07 (recorded; not rescued).
+Wired into the map (no other change): hex.py Forces/centre alpha_s base 0.1142 -> 0.11446 (computed), centre_score now scores the LIVE
+alpha_s (was the data file's static 0.1142), Nuclear pull includes the omega_b error; stagemap JET uses the JET-2 locked Ti = 1.2 Te.
+Map 6: 27 IN, 6 EDGE, 4 OUT (alpha_s -3.93, Hoyle 7.10, D/H -2.07, JET +64%).

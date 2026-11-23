@@ -35,7 +35,7 @@ g = L('n11_activation.json')['goals']; M['C.N11_activation'] = mk('EDGE' if all(
 g = L('n12_rerun.json')['goals']; M['C.N12_closed_loop'] = mk('IN' if all(g.values()) else 'OUT', g, 'C1 algebra, C2 hold/double')
 # D. JET (live, current beam-target model)
 import beam_target as BT
-fr = (0.53, 0.33, 0.14); p71 = BT.P_bt(26.5, 108.0, fr, 6.5, 6e19, 0.85, 0.85, Ti_keV=9.0); p522 = BT.P_bt(30.0, 108.0, fr, 6.5, 6e19, 0.80, 0.85, Ti_keV=9.0)
+fr = (0.53, 0.33, 0.14); p71 = BT.P_bt(26.5, 108.0, fr, 6.5, 6e19, 0.85, 0.85, Ti_keV=1.2 * 6.5); p522 = BT.P_bt(30.0, 108.0, fr, 6.5, 6e19, 0.80, 0.85, Ti_keV=1.2 * 6.5)   # D2219 JET-2 lock
 c3 = json.load(open(os.path.join(RES, 'stagemap_cycle3_sparc.json')))['rerun']['engine_npk13']   # D2217: cycle 3 code-to-code (cfspopcon PRD cell), EDGE ceiling
 M['B.L4_S3_SPARC'] = mk(c3['B_L4'], dict(P_fus=round(c3['P_fus'], 1), P_aux_req=round(c3['P_aux_req'], 2)), 'cfspopcon PRD cell 115.8 MW, P_aux+ohm 8.29 MW, +-25% (EDGE ceiling)', f"cycle 3: dP {c3['dP_fus']:+.3f}, dPaux {c3['dPaux_vs_abs_plus_ohmic']:+.3f}; literal 140/Q11 clause FAILED (goalpost, DEV-1)")
 st, r_ = rel(p71, 8.7, .40); M['D.JET_99971'] = mk(st, round(p71, 2), '8.7 MW +-40%', f'rel {r_}')
