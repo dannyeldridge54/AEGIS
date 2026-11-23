@@ -22046,3 +22046,9 @@ Fixed: (1) "consistent with standard cosmology" -> mild tension on both finished
 - Speed: the workflow now cancels an older run when a newer push arrives (concurrency group), and caches pip downloads.
 
 ## D2144b (correction to D2144a, record-side, from the W2 outside-world referee 22:35 CT): the "CMS 650 GeV" wino limit could not be confirmed in CMS SUS-21-006 text; the pure-wino (0.2 ns) CMS figure in 2004.05153 is 474 GeV. ATLAS 2603.08315 (2026) gives 670 GeV observed, 770 GeV expected, so the Weave's 693 GeV sits inside ATLAS's expected sensitivity and passes only through a downward fluctuation. The preprint now says this. D2144a is not edited.
+
+## D2158 (CENTRE, D2135 CamSpec cross-check, first entry: Planck PR4 CamSpec NPIPE + LoLLiPoP + PR4 lensing + DESI DR2 + Pantheon+; PC runs, locked script, run once). **dchi2(W-L) = -3.80 -> PREFERRED by the D2132 rule, BUT the minimiser is not clean on this pair: treat as NOT ROBUST.** (2026-11-22 ~22:45 CT)
+- L: chi2_eff 12033.95, H0 68.07, n_s 0.966. W: chi2_eff 12030.16, H0 67.34, u_i = 0.140 (thread thaws, as with HiLLiPoP + Pantheon+).
+- Per likelihood W-L: CamSpec high-l +2.42 (vs +6.66 with HiLLiPoP), low-l TT -0.92, lowlE -0.03, lensing -0.48, DESI BAO -1.79, Pantheon+ -2.58. Likelihoods alone -3.38; nuisance priors -0.42.
+- Minimiser warnings (logs): L "modest spread in minima" 6011.92 vs 6012.49 in -log posterior (1.13 in chi2); W "some minimizations failed" (one of two runs). The minimiser uncertainty (~1 in chi2) is smaller than the 3.8 gap but not negligible, and W rests on one converged run.
+- Reading: the high-l cost of the fixed inputs is much smaller with CamSpec (+2.4) than with HiLLiPoP (+6.7), so on CamSpec + Pantheon+ the thread's late-time gain wins. This is ONE robustness entry; the headline (HiLLiPoP + Dovekie, +2.4) is unchanged. Entries are never summed. Also finished: L CamSpec on Dovekie (12259.08) and Union3 (10652.75); their W partners still running.
