@@ -45,3 +45,16 @@ jobs:
       - run: python -m tools.golden.golden check
       - run: python tools/release_smoketest.py
       - run: python -m tools.aegis_cli cern xsec 700 14 && python -m tools.aegis_cli hyperion orbit 269.452 4.6934 1.8266 -802.8 10362.4 -110.5
+  gifts:
+    # The ping-pong suite: every gift tool's locked tests, Python-vs-JS parity and the Lantern header (tools/gifts/pingpong_suite.py)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: pip install numpy scipy
+      - run: python tools/gifts/pingpong_suite.py
