@@ -13,3 +13,9 @@ Validation (pre-stated; tool adopted only if all pass):
  V4 Q2 conserves total atom number and energy to < 1e-6 relative over the run.
  V5 Q1 total-spin sector check: H commutes with N and M (built in M=0); Hermiticity error < 1e-12.
 Then (not a test of any physics claim): run the compass on the sodium (antiferromagnetic, c > 0) case relevant to the OSU apparatus.
+
+## Addendum 1 (2026-11-23 06:24 CT, after V1–V5 passed, before the lens pass) — lenses, as with the emulator
+Danny 06:19 "examine it through lenses like with emulator". Compass fix already applied (period by interpolated crossings, eps 1e-2; the first compass print had a grid-quantised period and is void — validation unaffected).
+L1 LENS SVD: Jacobian of 6 observables [period, amplitude, mean ρ0, quantum break time t_b (exact vs mean-field |Δρ0| > 0.02), BH ground energy E0, BH gap] vs 6 dials [c, q, ρ0_init, φ_init, J, U] (log-derivatives); report singular values and the effective lens rank (σ_i/σ_1 > 1e-2) — how many independent knobs the experiment really has.
+L2 EMULATOR LENS: quadratic surrogate of (period, amplitude) on a 7×7 grid in (c, q) around the sodium point (c=1, q in 0.1–0.6); leave-one-out error and speed-up vs the RK4 twin. Pass if LOO max relative error < 2% away from the separatrix.
+L3 SCALE LENS: t_b vs N for N = 250…8000; fit t_b ∝ N^a and ∝ ln N; report which form fits (the known result for this model is t_b ∝ ln N for unstable/near-separatrix and ∝ √N-type for stable orbits; we report what we get, labelled).
