@@ -11,3 +11,5 @@
   unsourced (tape ER 340.79 eV). Agreement genuine (NJOY reconr grid). -> DEV-1/2 rerun.
 - R95 (23 Nov 2026, N5 Doppler): holds; discriminating; second exponential untested (>1 eV) and thermal check self-referential; edge leak top ~100 eV.
   -> DEV-1 (extend to 1e-5 eV vs NJOY), DEV-2 (exclude top 200 eV).
+- R96 (23 Nov 2026, N6-N8 transport): BUG Kalbach-Mann branches swapped (TBR-blind); T4 strawman -> yield-1 can-fail; 8 batches thin;
+  "consistent with", not "validated"; target-at-rest is the main untested approximation.

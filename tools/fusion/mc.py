@@ -54,9 +54,9 @@ class Tabular:   # continuous tabular E_out (optionally Kalbach-Mann r, a rows)
         if self.km:
             r = self.t[3, a + k]; aa = self.t[4, a + k]
             if aa < 1e-8: mu = 2 * rng.random() - 1
-            elif rng.random() < r:
+            elif rng.random() > r:   # N6-N8 DEV-1: cosh (symmetric) branch with probability 1 - r
                 T = (2 * rng.random() - 1) * math.sinh(aa); mu = math.log(T + math.sqrt(T * T + 1)) / aa
-            else:
+            else:                    # precompound e^{a mu} branch with probability r
                 xi = rng.random(); mu = math.log(xi * math.exp(aa) + (1 - xi) * math.exp(-aa)) / aa
         return max(e, 0.0), mu, (a + k)
 
@@ -176,7 +176,7 @@ class Material:
         if E >= g[-1]: return float(self.sig[-1])
         i = int(np.searchsorted(g, E)) - 1; return float(self.sig[i] + (E - g[i]) / (g[i + 1] - g[i]) * (self.sig[i + 1] - self.sig[i]))
 
-def run(regions, radii, n_hist=20000, seed=7, E0=14.0e6, kill_mt=(), tally_regions=(), max_coll=100000, scores=()):
+def run(regions, radii, n_hist=20000, seed=7, E0=14.0e6, kill_mt=(), tally_regions=(), max_coll=100000, scores=(), yield_override=None):
     """scores: iterable of (region, mt) collision-estimator tallies (sum over nuclides of N sigma_mt / Sigma_t per collision)."""
     """regions: list of Material or None (void) per shell; radii: outer radius per shell (cm). Returns dict of tallies per source neutron."""
     rng = np.random.default_rng(seed); leak = 0.0; trit = {}; ncoll = 0; sc = {k: 0.0 for k in scores}; leakE = 0.0
@@ -231,7 +231,7 @@ def run(regions, radii, n_hist=20000, seed=7, E0=14.0e6, kill_mt=(), tally_regio
                 if rx.mt in kill_mt or not rx.prods: alive = False; break
                 new = []
                 for yf, ds in rx.prods:
-                    y = _yield(yf, E); n = int(y + rng.random())
+                    y = yield_override[rx.mt] if (yield_override and rx.mt in yield_override) else _yield(yf, E); n = int(y + rng.random())
                     for _ in range(n):
                         dist = ds[0]
                         if len(ds) > 1:
