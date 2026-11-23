@@ -21576,3 +21576,23 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 - **RD-2:** the u_i prior runs to 0.6 and the ref to 0.3, past the ~0.22 collapse edge, so some BOBYQA starts may hit −∞. Any stall must be recorded.
 - **RD-3:** the likelihood set is the standard PR4 combination (null).
 - **RD-4:** the docstring is stale (cosmetic).
+
+## D2134 (CENTRE, knob board, locked PREREG_D2134 + addendum + DEVIATION 2). Thread–DM coupling b scanned on compressed CMB + DESI DR2 + SN. **Verdict: NOT ADOPTED. The knob does not earn its place.** (2026-11-22 ~19:10 CT)
+- **Gate G0 PASS:** the own late-time solver matches CAMB to a max relative deviation of 8.3e-5.
+- **Results** (Δχ² relative to the ΛCDM reference; ω_b, ω_c, V̂_L and u_i re-fit at each b):
+
+| b | Dovekie | Pantheon+ | Ω_φ(z*) | Δφ_total | DM mass change |
+|---|---|---|---|---|---|
+| −0.05 | +10.3 | +9.2 | 5.5e-4 (r_s guard: not adoptable) | +0.62 | −3.1% |
+| −0.025 | −2.1 | −1.8 | 1.3e-4 | +0.22 | −0.5% |
+| **0** (Weave) | **−4.5** | **−2.8** | 1e-9 | −0.19 | 0 |
+| +0.025 | −6.6 | −4.8 | 1.3e-4 | −0.50 | −1.3% |
+| +0.05 | −4.1 | −1.6 | 5.4e-4 (not adoptable) | −0.84 | −4.1% |
+| ±0.075 … ±0.15 | worse, or solver failure at +0.1 | | | | |
+
+- **Adoption test** (best adoptable b = +0.025, relative to b = 0): Dovekie −2.1 and Pantheon+ −2.0. Both miss the locked Δχ² ≤ −4, so the 2-of-3 rule cannot pass whatever Union3 gives. **NOT ADOPTED.**
+- **Union3 run crashed in the data loader** (a column-count mismatch on the Union3 file). No numbers came out. A fix would need a DEVIATION, but it cannot change the verdict.
+- **S₈ proxy:** 0.857 at b = 0 and 0.851 at +0.025. The Weave baseline is already above the locked 0.83 ceiling in this proxy, and b < 0 lowers it (0.80 at −0.05) but costs χ². Stated honestly: **S₈ is a weak spot of the Weave baseline, not something the knob fixes.**
+- **α leak:** ≤ 7.5e-10 at every b, even |b| = 0.15. The α-drift is untouched, as the referee confirmed (F-2).
+- **Sign-convention correction (addendum item 1 was wrong):** the DM mass FALLS for both signs of b. The coupling force −bρ_c pushes φ so that bΔφ < 0 (Δφ = +0.62 at b = −0.05 and −0.84 at b = +0.05). So "b < 0 means DM gains mass" is false here. The addendum's text is superseded by this note, not edited.
+- **The bookkeeping lesson:** the Weave's late-time gain lives at b = 0, and coupling dark matter to the thread buys at most about 2 more units of χ². The scored results (D2131–D2133) stand unchanged.
