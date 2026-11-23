@@ -58,10 +58,19 @@ def _locks_for(name):
     hits = [f for f, t in _LOCKS.items() if name in t]
     return sorted(hits)[:4] or sorted(f for f, t in _LOCKS.items() if f.lower().find(fam) >= 0)[:3]
 
+EXAMPLE_FIX = {  # DEV-2: registry examples that were placeholders or doc strings
+    'lock_verdict': {'lock_text': '```claims\n- {id: C1, quantity: x, op: "<=", value: 1}\n```', 'results': {'x': 0.5}},
+    'lhc_dt_limit': {'lumi': 136, 'sqrts': '13', 'search': 'ATLAS_136', 'boost': 'fixed', 'band': False}}
+_SPECS = None
 def specs():
+    global _SPECS   # DEV-1: built once per process
+    if _SPECS is None: _SPECS = _build_specs()
+    return _SPECS
+
+def _build_specs():
     out = {}
     for name, (ex, timeout) in R.TOOLS.items():
-        try: exd = json.loads(ex)
+        try: exd = EXAMPLE_FIX.get(name) or json.loads(ex)
         except Exception: exd = {}
         doc = next((l.strip() for l in (R.__doc__ or '').splitlines() if l.strip().startswith(name + ' ')), '')
         out[name] = dict(name=name, title=name.replace('_', ' '), field=_field(name), backend='registry', example=exd, timeout_s=timeout,
@@ -109,6 +118,30 @@ def _nonfinite(x, path=''):
     if isinstance(x, list): return [q for i, v in enumerate(x[:2000]) for q in _nonfinite(v, f'{path}[{i}]')]
     return []
 
+_MEM = False
+def _memory():
+    """DEV-3: CubeMind's own memory store (mindmem), if this core sits inside a CubeMind folder."""
+    global _MEM
+    if _MEM is False:
+        _MEM = None
+        for root in [HERE.parent, pathlib.Path(os.environ.get('CUBEMIND_DIR', HERE.parent))]:
+            if (root / 'mindmem' / 'store.py').is_file():
+                try:
+                    sys.path.insert(0, str(root)); from mindmem.store import Store
+                    _MEM = Store(str(root / 'cubemind_memory.jsonl')); break
+                except Exception: _MEM = None
+    return _MEM
+
+def learn(name, field, args, out, is_err, rec_id):
+    m = _memory()
+    if m is None: return False
+    try:
+        body = _canon({k: v for k, v in out.items() if k not in ('chart',)})[:700] if isinstance(out, dict) else str(out)[:700]
+        m.add(text=f'AEGIS Core {name} ({field}) inputs {_canon(args)[:300]} -> {"ERROR " if is_err else ""}{body} [ledger {rec_id}]',
+              source='aegis_core', kind='error' if is_err else 'result', tier='HYPOTHESIS' if is_err else 'EVIDENCE', topic=field, importance=2 if is_err else 3)
+        return True
+    except Exception: return False
+
 def _ledger(rec):
     with open(LEDGER, 'a', encoding='utf-8') as f: f.write(_canon(rec) + '\n')
 
@@ -120,6 +153,7 @@ def call(name, args, parents=()):
                    result_hash=_h(out), isError=is_err, cached=cached, source_id=source, parents=list(parents),
                    t=time.strftime('%Y-%m-%dT%H:%M:%S'), seconds=round(time.time() - t0, 4))
         _ledger(rec)
+        if not cached: rec['learned'] = learn(name, S['field'] if S else 'other', args, out, is_err, rec['id'])
         msg = out.get('error') if is_err and isinstance(out, dict) else None
         return dict(structuredContent=None if is_err else out, isError=is_err,
                     content=[dict(type='text', text=msg or _canon(out)[:4000])], provenance=rec)

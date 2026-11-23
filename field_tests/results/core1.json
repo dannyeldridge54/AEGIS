@@ -1,7 +1,7 @@
 {
  "n_tools": 66,
  "K1": {},
- "K2_seconds": 168.0,
+ "K2_seconds": 162.2,
  "K2_pass": [
   "aion_mbb_band",
   "chronos_ac225",
@@ -26,6 +26,7 @@
   "kaluza_stable",
   "kaluza_tensor",
   "lattice_lab",
+  "lhc_dt_limit",
   "lhc_future",
   "lhc_lifetime",
   "lhc_panel",
@@ -33,6 +34,7 @@
   "lhc_ul",
   "lhc_xsec",
   "lock_lint",
+  "lock_verdict",
   "nstar_match",
   "serapis_emulator",
   "serapis_ms",
@@ -68,14 +70,12 @@
   "weave_engine": "KeyError: 'weave_engine'",
   "weave_control": "FileNotFoundError: [Errno 2] No such file or directory: '/home/claude/aegis_current'",
   "evidence_atlas": "FileNotFoundError: [Errno 2] No such file or directory: '/home/claude/aegis_current'",
-  "hyperion_bbn": "FileNotFoundError: [Errno 2] No such file or directory: '/home/claude/aegis_current'",
-  "lock_verdict": "ValueError: lock has no ```claims block",
-  "lhc_dt_limit": "ValueError: unknown search 'ATLAS_136|ATLAS_36'; use one of ATLAS_136, ATLAS_36"
+  "hyperion_bbn": "FileNotFoundError: [Errno 2] No such file or directory: '/home/claude/aegis_current'"
  },
  "K2_crashes": {},
  "K2_err_without_msg": [],
  "K3": {
-  "ms": 67.8,
+  "ms": 0.24,
   "identical": true,
   "cached": true,
   "linked": true
@@ -96,10 +96,10 @@
  "verdict": {
   "K1": true,
   "K2": true,
-  "K3": false,
+  "K3": true,
   "K4": true,
   "K5": true,
-  "PASS": false
+  "PASS": true
  },
- "K2_pass_rate": "58/66"
+ "K2_pass_rate": "60/66"
 }
