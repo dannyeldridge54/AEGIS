@@ -13,6 +13,7 @@ STALE = {  # value (as written) -> why it is stale / what replaced it
     r'3\.0 *<= *a\[.tau_E.\] *<= *4\.4|3\.0-4\.4 s': 'ITER 500 MW tau window relocked to 3.4 s +-15% (FUSION-1 DEV-7)',
     r'\b336\b': 'Mn-55 s-wave resonance ER is 340.7875 eV (N3/N4 DEV-2)',
     r'\b4\.468e9\b': 'U-238 half-life NUBASE2020 4.463e9 y (CM-CARDS DEV-1)',
+    r'tbr_required\([^)]*1e6\)': 'hold-inventory TBR is 1 + lambda I0/b; t_d -> inf gives the eventual-doubling TBR (N12 DEV-2)',
     r'elif rng\.random\(\) < r:': 'Kalbach-Mann branch swapped (N6-N8 DEV-1): precompound with probability r'}
 def main(files):
     bad = []

@@ -22560,3 +22560,17 @@ audit_neutron_2026-11-23.md. Corrections (no silent edits of the notes above):
   D1 (10 cm average 5.5) and D2 (Fe-only He/dpa 7.4) are WEAK passes at their band edges.
 - Process: locked-result files had been overwritten by test imports (prom5/6/7/8) -> originals restored from git, JSON writes moved under __main__;
   two CubeMind cards were wrong (ignition missing a unit factor; Ne stripping) -> corrected; preflight.py now guards every locked compute.
+
+## D2208 (NEUTRON LADDER N11 + N12, 23 Nov 2026 ~14:50 CT) — wall activation; computed blanket numbers back into the plant: ladder closed
+N11 (PREREG_N11_ACTIVATION; R100): front-cm Fe after 1 fpy at 1 MW/m2: 1.03e14 Bq/kg at shutdown (~half Mn-56), 5e13 at 1 d, 3.6e13 at 1 y,
+3.4e12 at 10 y; Mn-56 -> Fe-55/Mn-54 -> Fe-55; He 66 appm/fpy/MWm2. Sound, no bug, but goalposts weak (A4 tautology, A2 by half-life, A1 holds
+only for T_irr < ~1.3 fpy); no MC error bars. Consistent with ~1e14-2e14 Bq/kg at DEMO conditions.
+N12 (PREREG_N12_CLOSE; R101): locked C1/C2 FAIL from MY test errors (pump recirculation omitted; 'hold' computed as eventual doubling).
+Rerun: C1 dP_net 14.3277 MW = plant algebra exactly; C2 TBR 1.021+-0.004 holds the inventory (needs 1.0101, +2.7 sigma) but cannot double it in
+5 y (needs 1.0509, -7.5 sigma). Best ITER-sized net electricity with the COMPUTED blanket M 1.161: +4.9 MW at Q_e 1.02 (vs +19.2 MW with the
+PROCESS M 1.2387) - sign not robust. Minimum blanket coverage to hold the tritium inventory with this TBR: 98.9% (no real machine has that).
+LADDER VERDICT (N1-N12): from the D-T reaction to resonances, transport, breeding, heating, damage and activation, every rung reproduces its
+reference from raw data and our own code (after referee-found bugs were fixed). Closing the loop says: an ITER-sized Q~9 tokamak with a simple
+Pb-Li blanket is at the edge of net electricity (+5 MW) and of tritium self-sufficiency (~1% margin at full coverage) - consistent with why
+real designs push to larger size, higher Q, Be/Pb multipliers and Li-6 enrichment.
+Process: preflight.py guards every lock (compile, fingerprints, stale values incl. the new 'hold TBR' trap).

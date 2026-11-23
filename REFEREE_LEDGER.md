@@ -14,3 +14,5 @@
 - R96 (23 Nov 2026, N6-N8 transport): BUG Kalbach-Mann branches swapped (TBR-blind); T4 strawman -> yield-1 can-fail; 8 batches thin;
   "consistent with", not "validated"; target-at-rest is the main untested approximation.
 - R97 (23 Nov 2026, N9/N10): no bug; He/dpa failure from the workshop steel's 5 wt% C (78% of He) -> Fe-only scoring; front cm 10.7 dpa/fpy/MWm2.
+- R100 (23 Nov 2026, N11 activation): sound, no bug; goalposts weak (A4 tautology, A2 by half-life, A1 T-dependent); headline is the 0 s total.
+- R101 (23 Nov 2026, N12): C1/C2 failures are my test errors (pump term omitted; hold = 1 + lambda I0/b, not t_d -> inf); idealised TBR margin ~1%.
