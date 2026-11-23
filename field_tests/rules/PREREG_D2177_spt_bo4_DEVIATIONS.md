@@ -1,0 +1,2 @@
+# D2177 DEVIATIONS
+1. (2026-11-23 02:08 CT, before launch) The PC D2151 script (weave_extcmb2.py) has no BEST_OF/OUT_SUFFIX knobs. D2177 runs weave_extcmb3.py (sha256 a5823408fd39…): identical physics, likelihoods, priors and minimiser; only (i) best_of read from BEST_OF=4, (ii) OUT_SUFFIX=_bo4 on chains and result names (no overwrite), (iii) the D2151 DEV-2 chi2-sum fix (SPT keys were unaffected). OMP threads 3 per process. Scoring as locked.
