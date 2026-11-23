@@ -22445,3 +22445,12 @@ Danny 12:14: give CubeMind the fusion work, tell it exactly how we got here, hav
   tool grades it (its existing step_derive). CUBEMIND_FUSION_PLAYBOOK.md (method, results, caught mistakes, its job) stored as a MEANING
   record (importance 5). CubeMind's outputs stay graded derivations / HYPOTHESIS proposals; engine changes still go through lock +
   referee + Danny.
+
+## D2199 (CUBEMIND, 23 Nov 2026 12:35 CT) — CM-CARDS: cards for every element + open-book fusion cards (PREREG_CM_CARDS)
+- 119 element cards (n + Z=1..118): mendeleev 1.x atomic/thermal/geo data, NUBASE2020 (all 5,823 nuclides), BE/A from AME2020 mass excess,
+  OPEN-ADAS cooling (24). C1 PASS; C2 PASS (Fe-56 8.7904, Ni-62 8.7946, He-4 7.0739 MeV); C3 FAIL as locked: my U-238 goalpost 4.468e9 y
+  was the older value (NUBASE2020 4.463e9 y) and Au's config format (DEV-1/2). New tools element_card / element_property / nuclide_binding;
+  119 cards in CubeMind memory (EVIDENCE); 14 element tasks queued.
+- PC run: A1 PASS 5/8 (caveat: those task texts already gave formulas); S1 FAIL, ~39 s per derive unchanged (time is output generation +
+  self-check call, not prompt length). 3 failures had the right formula and wrong hand arithmetic. DEV-4..6 (skip self-check when the formula
+  is right; num_predict 600; record calc_ok) written; NOT yet applied: the PC disconnected at 18:33 UTC.
