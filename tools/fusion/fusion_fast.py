@@ -61,14 +61,14 @@ def _op_fixed_he_fast(m, E_alpha_MeV, n_avg, P_aux, f_He):
     def _pl(p): return p['P_alpha'] + P_aux if pop else F._ploss(m, p, P_aux)
     def f(T):
         p = plasma_fast(m, n_avg, T, E_alpha_MeV, f_He); Pl = _pl(p); W = _w(p, T) if pop else p['W_MJ']
-        return (W / F.tau_ipb98(m, Pl, p['n_line']) - Pl) if Pl > 0 else 1e9
+        return (W / F.tau_ipb98(m, Pl, n_avg if m.get('tau_n_volume') else p['n_line']) - Pl) if Pl > 0 else 1e9
     Ts = [2 + 0.25 * i for i in range(150)]; vals = [f(T) for T in Ts]; roots = []
     for a, b, fa, fb in zip(Ts, Ts[1:], vals, vals[1:]):
         if fa * fb < 0 and abs(fa) < 1e8 and abs(fb) < 1e8: roots.append(brentq(f, a, b, xtol=1e-9))
     if not roots: return None
     T = max(roots); p = plasma_fast(m, n_avg, T, E_alpha_MeV, f_He); Pl = _pl(p)
     if pop: p = dict(p, W_MJ=_w(p, T))
-    return dict(p, Te_avg=T, Ti_avg=T * m['Ti_over_Te'], n_avg=n_avg, P_aux=P_aux, P_loss=Pl, tau_E=F.tau_ipb98(m, Pl, p['n_line']),
+    return dict(p, Te_avg=T, Ti_avg=T * m['Ti_over_Te'], n_avg=n_avg, P_aux=P_aux, P_loss=Pl, tau_E=F.tau_ipb98(m, Pl, n_avg if m.get('tau_n_volume') else p['n_line']),
                 Q=p['P_fus'] / P_aux if P_aux > 0 else float('inf'), P_LH=F.p_LH(m, p['n_line']), roots=roots)
 
 def operating_point_fast(m, E_alpha_MeV, n_avg=None, P_aux=None):

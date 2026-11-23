@@ -127,6 +127,7 @@ def _ploss(m, p, P_aux):
     return p['P_alpha'] + P_aux - p['P_rad']
 def tau_ipb98(m, P_loss, n_line):
     eps = m['a'] / m['R']; ka = m['V'] / (2 * math.pi ** 2 * m['R'] * m['a'] ** 2)
+    if m.get('kappa_A_popcon'): ka = m['V'] / (2 * math.pi * m['R'] ** 3 * eps ** 2 * (math.pi - (math.pi - 8 / 3) * eps))   # PROM-9 DEV-2 (cfspopcon)
     # PROM-6: H98 factor (default 1 -> ITER unchanged)
     return m.get('H98', 1.0) * 0.0562 * m['Ip'] ** 0.93 * m['B'] ** 0.15 * P_loss ** -0.69 * (n_line / 1e19) ** 0.41 * m['M'] ** 0.19 * m['R'] ** 1.97 * eps ** 0.58 * ka ** 0.78
 def p_LH(m, n_line):   # Martin 2008 (deuterium), S = plasma surface (m^2); PROM-2 C1: isotope factor 2/A_eff

@@ -22494,3 +22494,19 @@ Verdict: with SPARC's composition, profiles and loss-power convention, our IPB98
 profiles are no longer the gap (prescribed P_fus within 10%); the gap is in the power balance itself - how POPCON turns H98 = 1 into
 7.3 keV (W definition, which power enters IPB98, radiation model). Next cycle: CFS's open-source POPCON code (cfspopcon) as the primary
 source for its exact power-balance equations, then JET DTE2 (measured) as a held-out.
+
+## D2203 (FUSION, Prometheus cycle 7, 23 Nov 2026 ~13:40 CT) — PROM-9: the whole fusion tree in one layered run
+Danny 13:06 "layered testing in one run, research entire tree, set goal, get". Lock PREREG_PROM9_TREE; hints tools/fusion/hints/cycle7.json
+(main new source: cfspopcon 9.0.1 code - tau_E evaluated at P_heat = P_alpha + P_aux + P_OH, radiation NOT subtracted; W from the product of
+volume averages). New: S3 convention='popcon' (SPARC node only), oxygen ADAS, extra impurity species.
+- Locked run: TREE FAIL, 5/9. R92: L1/L8/L3 used goalposts already corrected in FUSION-1 DEVs (my stale-lock error, same class the playbook lists).
+- Rerun (DEV-1 corrected goalposts; DEV-2 cfspopcon kappa_A, volume n_e, Creely V 20.9 m^3): 7/9 PASS -
+  L1 reactions, L2 ignition, L5 ARC (471 MW prescribed; implied H98 1.86 vs 1.8), L6 inertial (NIF 545 vs 569+-61 Gbar), L7 fuel (56.08 kg; TBR 1.051),
+  L8 stars (6.09 keV at 15.7 MK, 5.91 at 15 MK), L9 data (Fe-56 8.7904, He-4 7.0739 MeV; H-3 12.320 y).
+  FAIL L3 ITER 500 MW tau_E 2.883 s (window 2.89-3.91; the known ~15% gap, 0.2% outside); FAIL L4 SPARC: 211 MW / 9.50 keV under cfspopcon's own
+  convention (+51%), 120 MW under our ITER convention, 80 MW with all radiation subtracted.
+Verdict: every layer but the self-solved tokamak power balance reproduces its source. The SPARC operating point is so steep in T that the
+0-D power-balance CONVENTION alone brackets the answer from 80 to 211 MW around the published 140 MW; R92 confirmed our popcon branch matches
+cfspopcon's formulas (tau 0.674 vs 0.673 s at 7.3 keV), so the remaining difference is upstream of the formulas (profile-dependent W/P_alpha
+vs POPCON's own profile integrals). Not tuned (H98 left at 1.0). Next: run cfspopcon itself on the SPARC input as a code-to-code check,
+then JET DTE2 (measured) held-out.
