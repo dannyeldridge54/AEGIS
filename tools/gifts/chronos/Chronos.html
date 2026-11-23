@@ -163,6 +163,21 @@ the kind no one can sell you.</div></details>
 <div class="row"><label>Ejecta mass (M☉)<input id="k_m" type="number" value="0.05" step="0.01"></label><label>Thermalisation fraction<input id="k_f" type="number" value="0.5" step="0.05"></label></div>
 <div class="out" id="k_out"></div><canvas id="k_cv" width="900" height="260"></canvas>
 <p class="note">Specific heating ~10¹⁰ (t/1 day)⁻¹·³ erg g⁻¹ s⁻¹ (Korobkin et al. 2012; Metzger 2019, Living Reviews in Relativity), order of magnitude only, with a constant thermalisation fraction (it actually falls with time; Barnes et al. 2016). Heating rate, not the light curve before peak.</p></section>
+<section id="t-more" class="card" hidden><h2>Ac-225 therapy chain</h2>
+<div class="row"><label>Ac-225 activity (MBq)<input id="a_A" type="number" value="10"></label><label>Hours since purification<input id="a_t" type="number" value="6" step="0.5"></label>
+<label>Ac-227/Ac-225 activity ratio at end of bombardment<input id="a_r" type="number" value="0.0015" step="0.0005"></label><label>Days stored<input id="a_d" type="number" value="10"></label></div>
+<div class="out" id="a_out"></div><p class="note">Chain Ac-225 → Fr-221 → At-217 → Bi-213 → Po-213 (97.8%) / Tl-209 (2.2%) → Pb-209 → Bi-209. Ac-227 (21.8 y) is the long-lived impurity of accelerator-made Ac-225; its share grows during storage. The ratio at end of bombardment is yours to enter.</p>
+<h2 style="margin-top:18px">Plutonium separation age (safeguards)</h2>
+<div class="row"><label>Measured Am-241 / Pu-241 activity ratio<input id="u_r" type="number" value="0.02" step="0.001"></label></div><div class="out" id="u_out"></div>
+<p class="note">Assumes all americium was removed at separation.</p>
+<h2 style="margin-top:18px">Tritium inventory (fusion fuel)</h2>
+<div class="row"><label>Tritium (g)<input id="h_g" type="number" value="1000"></label><label>Years stored<input id="h_y" type="number" value="1" step="0.5"></label></div><div class="out" id="h_out"></div>
+<h2 style="margin-top:18px">Decay heat after shutdown (Way–Wigner approximation)</h2>
+<div class="row"><label>Days operated<input id="w_T" type="number" value="365"></label><label>Hours after shutdown<input id="w_t" type="number" value="24"></label></div><div class="out" id="w_out"></div>
+<p class="note">P/P₀ = 0.0622 [t⁻⁰·² − (t+T)⁻⁰·²]: a classic approximation, roughly a factor 2 at very short and very long times. Not the ANS-5.1 standard.</p>
+<h2 style="margin-top:18px">Star ages from thorium (cosmochronometry)</h2>
+<div class="row"><label>Observed Th/Eu (number ratio)<input id="c_o" type="number" value="0.3" step="0.01"></label><label>Production Th/Eu (model)<input id="c_p" type="number" value="0.45" step="0.01"></label></div><div class="out" id="c_out"></div>
+<p class="note">Age = ln(production / observed) / λ(Th-232). The production ratio comes from r-process models and is the dominant uncertainty; enter the one you trust.</p></section>
 <p class="note">Half-lives from NNDC NuDat / ENSDF adopted values, entered by hand; verify before critical use. Decay arithmetic only: no production cross sections, dose or shielding (a dose branch is planned). Not a clinical or regulatory tool. Chains are solved by the analytic Bateman equations, checked against a matrix-exponential solver to 3×10⁻¹³.</p>
 <p class="note">Chronos v1 · Danny Lee Eldridge, Oklahoma City · 23 Nov 2026 · github.com/dannyeldridge54/AEGIS (tools/gifts/chronos). Named for Chronos, the Greek figure of time. Free to use, change and share.</p>
 </main>
@@ -200,9 +215,32 @@ const CH = (() => {
   return { MIN, H, D, Y, T12, LAM, CHAINS, bateman, needed, timeTo, genPeak, genRatio, ratioAt, releaseAge, snL, knL };
 })();
 
+// ---- A3 branches (same algorithm as chronos_a3.py) ----
+const CH3 = (() => {
+  const { MIN, H, D, Y, bateman } = CH;
+  const T = { 'Ac-225': 9.920 * D, 'Fr-221': 4.801 * MIN, 'At-217': 32.6e-3, 'Bi-213': 45.61 * MIN, 'Po-213': 3.72e-6, 'Tl-209': 2.162 * MIN,
+    'Pb-209': 3.234 * H, 'Ac-227': 21.772 * Y, 'H-3': 12.32 * Y, 'Th-232': 1.40e10 * Y, 'U-238': 4.468e9 * Y, 'Pu-241': 14.29 * Y, 'Am-241': 432.6 * Y };
+  const L = {}; for (const k in T) L[k] = Math.LN2 / T[k];
+  for (const k in T) { CH.T12[k] = CH.T12[k] || T[k]; CH.LAM[k] = CH.LAM[k] || L[k]; }
+  function ac225(t, A0 = 1) { // two linear paths through Po-213 and Tl-209, summed at Pb-209
+    const N0 = A0 / L['Ac-225'], top = ['Ac-225', 'Fr-221', 'At-217', 'Bi-213'];
+    const pPo = bateman([...top, 'Po-213', 'Pb-209'], [1, 1, 1, 0.978, 1], [N0, 0, 0, 0, 0, 0], t);
+    const pTl = bateman([...top, 'Tl-209', 'Pb-209'], [1, 1, 1, 0.022, 1], [N0, 0, 0, 0, 0, 0], t);
+    const A = {}; top.forEach((k, i) => A[k] = L[k] * pPo[i]); A['Po-213'] = L['Po-213'] * pPo[4]; A['Tl-209'] = L['Tl-209'] * pTl[4];
+    A['Pb-209'] = L['Pb-209'] * (pPo[5] + pTl[5]); return A; }
+  const ac227 = (t, r) => r * Math.exp(-(L['Ac-227'] - L['Ac-225']) * t);
+  const puK = 0.99998 * L['Am-241'] / (L['Am-241'] - L['Pu-241']);
+  const puAge = r => -Math.log(1 - r / puK) / (L['Am-241'] - L['Pu-241']) / Y;
+  const puRatio = ty => puK * (1 - Math.exp(-(L['Am-241'] - L['Pu-241']) * ty * Y));
+  const tritiumLeft = (g, ty) => g * Math.exp(-L['H-3'] * ty * Y);
+  const wayWigner = (t, Top) => 0.0622 * (Math.pow(t, -0.2) - Math.pow(t + Top, -0.2));
+  const cosmoAge = (obs, prod, a = 'Th-232', b = null) => Math.log(prod / obs) / (L[a] - (b ? L[b] : 0)) / Y / 1e9;
+  return { L, ac225, ac227, puAge, puRatio, tritiumLeft, wayWigner, cosmoAge };
+})();
+
 
 const $=id=>document.getElementById(id);const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
-const TABS=[['t-pharm','Nuclear pharmacy'],['t-mon','Monitoring'],['t-energy','Energy & waste'],['t-sn','Supernova'],['t-kn','Kilonova']];
+const TABS=[['t-pharm','Nuclear pharmacy'],['t-mon','Monitoring'],['t-energy','Energy & waste'],['t-sn','Supernova'],['t-kn','Kilonova'],['t-more','Medicine · safeguards · fusion · stars']];
 $('tabs').innerHTML=TABS.map(([id,n],i)=>`<button data-t="${id}" class="${i?'':'on'}">${n}</button>`).join('');
 $('tabs').onclick=e=>{const b=e.target.closest('button');if(!b)return;for(const [id] of TABS)$(id).hidden=id!==b.dataset.t;[...$('tabs').children].forEach(x=>x.className=x===b?'on':'');draw();};
 const tracers=['F-18','C-11','N-13','Ga-68','Tc-99m','Cu-64','Zr-89','In-111','I-123','I-131','Lu-177','Y-90','Ac-225'];
@@ -231,6 +269,11 @@ $('s_out').textContent=`Heating at 18 d = ${CH.snL(18*86400,M,t0).toExponential(
 if(!$('t-sn').hidden)plot($('s_cv'),sx,[{y:sy,c:'--accent'}],'days after explosion (log heating rate)',true);
 const km=+$('k_m').value,kf=+$('k_f').value,kx=[],ky=[];for(let d=0.25;d<=30;d+=0.25){kx.push(d);ky.push(CH.knL(d*86400,km,kf));}
 $('k_out').textContent=`Heating at 1 d ≈ ${CH.knL(86400,km,kf).toExponential(2)} erg/s  ·  at 7 d ≈ ${CH.knL(7*86400,km,kf).toExponential(2)} erg/s`;
-if(!$('t-kn').hidden)plot($('k_cv'),kx,[{y:ky,c:'--accent'}],'days after merger (log heating rate)',true);}
+if(!$('t-kn').hidden)plot($('k_cv'),kx,[{y:ky,c:'--accent'}],'days after merger (log heating rate)',true);
+const AA=CH3.ac225(+$('a_t').value*3600,+$('a_A').value);$('a_out').textContent=`Bi-213 ${AA['Bi-213'].toFixed(3)} MBq · Fr-221 ${AA['Fr-221'].toFixed(3)} · Pb-209 ${AA['Pb-209'].toFixed(3)}  ·  Ac-227/Ac-225 after ${$('a_d').value} d: ${CH3.ac227(+$('a_d').value*86400,+$('a_r').value).toExponential(2)}`;
+const ur=+$('u_r').value;$('u_out').textContent=ur>0?`${CH3.puAge(ur).toFixed(2)} years since separation`:'—';
+const hg=+$('h_g').value,hy=+$('h_y').value,hl=CH3.tritiumLeft(hg,hy);$('h_out').textContent=`${hl.toFixed(1)} g left; ${(hg-hl).toFixed(1)} g decayed to helium-3 (${(100*(1-hl/hg)).toFixed(2)}%)`;
+const wv=CH3.wayWigner(+$('w_t').value*3600,+$('w_T').value*86400);$('w_out').textContent=`${(100*wv).toFixed(3)}% of operating power`;
+const cg=CH3.cosmoAge(+$('c_o').value,+$('c_p').value);$('c_out').textContent=isFinite(cg)?`${cg.toFixed(2)} billion years`:'—';}
 document.querySelectorAll('input,select').forEach(e=>e.addEventListener('input',draw));draw();
 </script>

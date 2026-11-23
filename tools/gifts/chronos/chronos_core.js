@@ -31,3 +31,26 @@ const CH = (() => {
   return { MIN, H, D, Y, T12, LAM, CHAINS, bateman, needed, timeTo, genPeak, genRatio, ratioAt, releaseAge, snL, knL };
 })();
 if (typeof module !== 'undefined') module.exports = CH;
+// ---- A3 branches (same algorithm as chronos_a3.py) ----
+const CH3 = (() => {
+  const { MIN, H, D, Y, bateman } = CH;
+  const T = { 'Ac-225': 9.920 * D, 'Fr-221': 4.801 * MIN, 'At-217': 32.6e-3, 'Bi-213': 45.61 * MIN, 'Po-213': 3.72e-6, 'Tl-209': 2.162 * MIN,
+    'Pb-209': 3.234 * H, 'Ac-227': 21.772 * Y, 'H-3': 12.32 * Y, 'Th-232': 1.40e10 * Y, 'U-238': 4.468e9 * Y, 'Pu-241': 14.29 * Y, 'Am-241': 432.6 * Y };
+  const L = {}; for (const k in T) L[k] = Math.LN2 / T[k];
+  for (const k in T) { CH.T12[k] = CH.T12[k] || T[k]; CH.LAM[k] = CH.LAM[k] || L[k]; }
+  function ac225(t, A0 = 1) { // two linear paths through Po-213 and Tl-209, summed at Pb-209
+    const N0 = A0 / L['Ac-225'], top = ['Ac-225', 'Fr-221', 'At-217', 'Bi-213'];
+    const pPo = bateman([...top, 'Po-213', 'Pb-209'], [1, 1, 1, 0.978, 1], [N0, 0, 0, 0, 0, 0], t);
+    const pTl = bateman([...top, 'Tl-209', 'Pb-209'], [1, 1, 1, 0.022, 1], [N0, 0, 0, 0, 0, 0], t);
+    const A = {}; top.forEach((k, i) => A[k] = L[k] * pPo[i]); A['Po-213'] = L['Po-213'] * pPo[4]; A['Tl-209'] = L['Tl-209'] * pTl[4];
+    A['Pb-209'] = L['Pb-209'] * (pPo[5] + pTl[5]); return A; }
+  const ac227 = (t, r) => r * Math.exp(-(L['Ac-227'] - L['Ac-225']) * t);
+  const puK = 0.99998 * L['Am-241'] / (L['Am-241'] - L['Pu-241']);
+  const puAge = r => -Math.log(1 - r / puK) / (L['Am-241'] - L['Pu-241']) / Y;
+  const puRatio = ty => puK * (1 - Math.exp(-(L['Am-241'] - L['Pu-241']) * ty * Y));
+  const tritiumLeft = (g, ty) => g * Math.exp(-L['H-3'] * ty * Y);
+  const wayWigner = (t, Top) => 0.0622 * (Math.pow(t, -0.2) - Math.pow(t + Top, -0.2));
+  const cosmoAge = (obs, prod, a = 'Th-232', b = null) => Math.log(prod / obs) / (L[a] - (b ? L[b] : 0)) / Y / 1e9;
+  return { L, ac225, ac227, puAge, puRatio, tritiumLeft, wayWigner, cosmoAge };
+})();
+if (typeof module !== 'undefined') module.exports.CH3 = CH3;
