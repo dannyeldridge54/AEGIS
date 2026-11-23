@@ -30,7 +30,7 @@ else:
     theory = {'rtcamb': {'external': rt_theory(), 'extra_args': ex, 'stop_at_error': False}}
 info = {'packages_path': P, 'theory': theory, 'params': pr,
         'likelihood': {('planck_NPIPE_highl_CamSpec.TTTEEE' if HL == 'camspec' else 'planck_2020_hillipop.TTTEEE_bin'): None, 'planck_2020_lollipop.lowlE': None, 'planck_2018_lowl.TT': None, 'planckpr4lensing.PlanckPR4Lensing': None, 'bao.desi_dr2': None, 'sn.' + sn: None},
-        'sampler': {'minimize': {'method': 'bobyqa', 'best_of': 2}}, 'output': f'/tmp/claude-0/weave_pr4/{model}_{sn}' + ('' if HL == 'hillipop' else '_' + HL), 'force': True}
+        'sampler': {'minimize': {'method': 'bobyqa', 'best_of': int(os.environ.get('BEST_OF', 2))}}, 'output': f'/tmp/claude-0/weave_pr4/{model}_{sn}' + os.environ.get('OUT_SUFFIX', '') + ('' if HL == 'hillipop' else '_' + HL), 'force': True}
 if model == 'C': info['prior'] = {'w0wa_bound': 'lambda w, wa: 0.0 if w + wa < 0 else -np.inf'}
 os.makedirs('/tmp/claude-0/weave_pr4', exist_ok=True)
 t = time.time(); upd, smp = crun(info)
@@ -43,5 +43,5 @@ if model == 'W':
     h = row['H0']/100; Om = (row['ombh2'] + row['omch2'] + 0.0587/93.14)/h**2
     a, w = rt_wtable(row['rt_ui'], Om, 2.4728e-5*(1 + 0.2271*3.044)/h**2); z = 1/a - 1; s = (z <= 2) & (z >= 0)
     out['thread_w0wa_cpl'] = [float(x) for x in np.linalg.lstsq(np.vstack([np.ones(s.sum()), 1 - a[s]]).T, w[s], rcond=None)[0]]
-json.dump(out, open(os.path.join(HERE, f'pr4_{model}_{sn}' + ('' if HL == 'hillipop' else '_' + HL) + '.json'), 'w'), indent=1)
+json.dump(out, open(os.path.join(HERE, f'pr4_{model}_{sn}' + os.environ.get('OUT_SUFFIX', '') + ('' if HL == 'hillipop' else '_' + HL) + '.json'), 'w'), indent=1)
 print('DONE', model, sn, round(chi2eff, 2), flush=True)

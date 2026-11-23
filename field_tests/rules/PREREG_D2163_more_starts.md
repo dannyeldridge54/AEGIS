@@ -1,0 +1,5 @@
+# PREREG D2163: minimiser robustness on the headline pair (locked 22 Nov 2026 ~23:18 CT, before running)
+Why: D2162 found the two BOBYQA runs of one fit differ by 3-4 in chi2 on every fit, larger than the W-L differences.
+What: the headline pair (Planck PR4 HiLLiPoP + LoLLiPoP + PR4 lensing + 2018 low-l TT + DESI DR2 + DES-Dovekie), L and W, each re-minimised with best_of = 4 (new random starts from the same ref distributions), same script otherwise (weave_lcdm_pr4.py with the best_of value and output path as the only changes; output files pr4_<M>_desdovekie_bo4.json; the original files are kept).
+Score: for each model take the lowest chi2_eff over all 6 runs (2 original + 4 new); recompute dchi2 = W - L; apply the D2132 rule. Report the spread of the 6 minima per model.
+Reading fixed now: if the recomputed dchi2 changes class, the posted verdict is superseded in the next version with a dated note; if it stays in class, the verdict is "stable to minimiser starts". This is not a rerun to chase a result: both models get the same extra starts, and every run is reported.
