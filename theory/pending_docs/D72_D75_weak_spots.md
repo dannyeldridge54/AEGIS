@@ -22019,3 +22019,7 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 - **Not yet applied (step 3b):** hypercharge masslessness and the GS rank, lepton counts, K-theory probes, and the dials (hidden massless states / ΔN_eff, Yukawa texture, hidden β-functions).
   - **Step 3b runs on a locked random sample:** the 2,000 stored survivors.
   - **Lesson for the next scan:** a full enumeration needs canonical-form deduplication first.
+
+## D2153 (CENTRE, engine tally: every finished fit now counts in CubeMind; PREREG_D2153 locked 21:52 CT before the pending fits finished)
+Danny (21:47): "Can we plug these tests into the engine and have it count." Done: weave_verify.weave_tally() rebuilds weave_data/lcdm/WEAVE_TALLY.json each step (installed on the PC CubeMind, backup .bak_d2153). One entry = W and L on the same likelihood set, scored by the D2132 classes; dchi2 is NOT summed across entries (shared Planck/ACT/SPT, DESI and SN data would be counted several times). Headline entry = PR4 HiLLiPoP + DESI DR2 + DES-Dovekie.
+Tally at 21:55 CT: 1 entry, desdovekie dchi2 = +2.40 -> MILD TENSION. Pending: CamSpec x 3 SN sets, HiLLiPoP Pantheon+/Union3 (cloud), ACT DR6 lite and SPT-3G D1 lite on Dovekie. C_union3_camspec crashed at start (CamSpec cache lock, sibling process); counts as not run (DEV note in PREREG_D2135_DEVIATIONS).
