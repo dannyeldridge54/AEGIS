@@ -21796,3 +21796,12 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
   - Six of the 16 nodes tie through the cosmic clock. Ten tie through mass or charge only, so the postulate is **partly** right.
   - Where the wall is curved, a symmetric pull gives a net clock drift ("thrust"): N6, u_i and, most cleanly, b.
 - **Honest bound:** this "thrust" is a re-timing of cosmic history (the universe's age, or when inflation's scales left the horizon). It is **not** motion through time. Nothing in the equations permits that.
+
+## D2143a (CENTRE, referee pass on D2143: NOT BALANCED on R43-1/2, now fixed via DEV-2). D2143 itself is not edited (2026-11-22 ~20:40 CT)
+- **Up front:** these numbers re-time cosmic history (the universe's age, inflation's horizon-exit time). They are not motion through time. A non-zero "even response" appears at ANY extremum of ANY smooth function, so **it cannot validate the postulate**. The words "thrust", "clearest case of Danny's effect" and "postulate partly right" are **withdrawn**.
+- **Common protocol (DEV-2).** ω_b and ω_c are held at the b = 0 fit, and V_L is re-solved so the CMB scale ℓ_A is unchanged. The first run held V_L fixed instead, so the u_i row was not anchored either.
+  - **u_i ×/÷1.5, anchored:** +28.6 / −10.6 Myr. Response +19.6 Myr, even part +9.0 Myr. That is roughly 10× smaller than the unanchored numbers, which were mostly an H0 shift.
+  - **b, anchored:** b = −0.025 gives −50 Myr. At b = +0.025 the solver collapses at u_i = 0.157 (no number), so no symmetric pull exists for b under this protocol.
+  - **Data-constrained best-fit ages** (each b refitted, not a pull): 13.683 / 13.715 / 13.694 Gyr for b = −0.025 / 0 / +0.025. The −21 to −33 Myr differences are comparable to the age's own uncertainty (tens of Myr), so they are **not significant**.
+- **N4/N8:** equal and opposite **by construction** (both enter as ⅓ ln). This is not a finding.
+- **What survives:** six of the 16 negative-space nodes have a numeric tie to a cosmic clock (N4, N6, N8, N9/N13, N10, ΔN_eff weakly). The other ten tie through mass or charge. That is a map of couplings, nothing more.
