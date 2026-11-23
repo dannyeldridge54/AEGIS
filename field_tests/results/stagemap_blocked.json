@@ -1,0 +1,3 @@
+{"A.alpha_s": "BLOCKED: needs the visible-sector D7 assignment (twisted charges / N=2 beta coefficients of the SU(3) vs SU(2) stacks) to compute the one-loop threshold; the model specifies only the uplift-sector D3 stacks (D695-D697). The Weave's own alpha_s is 0.114-0.115 (R104/R105). No integer flux lock reaches 0.118 (D2212).",
+ "A.Hoyle": "BLOCKED: restates the alpha_s shift (hex DEV-3); moves with A.alpha_s.",
+ "A.DH": "BLOCKED: standard-physics nuclear-rate systematic, not a Weave lever: at omega_b 0.02237, PRIMAT gives D/H 2.448e-5 (-2.5 sigma), PArthENoPE 2.586e-5 (+1.5 sigma); omega_b is an input, dN_eff = 0. Not switched post hoc."}

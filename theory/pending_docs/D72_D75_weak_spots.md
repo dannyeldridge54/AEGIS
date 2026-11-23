@@ -22632,3 +22632,11 @@ THE CONFLICT: alpha_s is IN only for s_m32 <= 0.37 (EDGE <= 0.53), the wino band
 Grid note: the wino window is narrower than the grid step (no grid point inside); exact window computed analytically.
 Map of the imbalance: one lever (m3/2) carries two opposed demands (alpha_s wants it 2.6x lower, the wino dark matter pins it); an independent
 alpha_s source (the D7 one-loop threshold, D2213) would release the lever; D/H needs omega_b/N_eff or nuclear-rate input.
+
+## D2215 (STAGE MAP, 23 Nov 2026 ~16:30 CT) — every stage marked in one run (STAGEMAP_GOALPOSTS, locked), cycle 1
+Map 1 (37 markers): 30 IN, 2 EDGE (theta12 +1.03 sigma; ITER 500 MW tau_E 2.883 s, 0.2% outside), 5 OUT (alpha_s, Hoyle, D/H, SPARC power balance
+211/140 MW, JET #99971 +68%).
+Cycle 1: alpha_s -> BLOCKED (visible-sector D7 twisted charges / N=2 b_a not in the model; Weave alpha_s 0.114-0.115); Hoyle -> BLOCKED (same shift);
+D/H -> BLOCKED (standard BBN rate systematic: PRIMAT -2.5 sigma vs PArthENoPE +1.5 sigma at the same omega_b; not a Weave lever; not switched).
+Map 2: OUT left = SPARC power balance, JET #99971 (both standard-physics fusion modelling). Next cycles: SPARC code-to-code (run cfspopcon itself
+on the SPARC point); JET fast-ion losses + NBI power-vs-current fractions from a primary source; then EDGE items.
