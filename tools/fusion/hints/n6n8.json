@@ -1,0 +1,11 @@
+{"rungs": "N6 slowing-down kernel, N7 transport, N8 breeding", "hints": [
+ "H1 elastic, target at rest: E'/E = (A^2 + 2 A mu_cm + 1)/(A+1)^2; mean lethargy gain xi = 1 + alpha ln(alpha)/(1-alpha), alpha = ((A-1)/(A+1))^2 (isotropic CM)",
+ "H2 xi: H-1 1.000, C-12 0.158, Fe-56 0.0353, Pb-208 0.00963 (textbook, Lamarsh)",
+ "H3 OpenMC HDF5 formats: angle (energy, mu[3,N] = mu,pdf,cdf, offsets, interpolation 1 hist / 2 lin); level (E_cm = mass_ratio (E - threshold)); kalbach-mann (distribution[5,N] = e_out,p,c,r,a; n_discrete_lines); continuous tabular; evaporation; correlated",
+ "H4 CM -> lab: E_lab = E_cm + (E + 2 mu (A+1) sqrt(E E_cm))/(A+1)^2; mu_lab = mu sqrt(E_cm/E_lab) + sqrt(E/E_lab)/(A+1)",
+ "H5 Kalbach-Mann angle: with prob r precompound: T = (2 xi - 1) sinh a, mu = ln(T + sqrt(T^2+1))/a; else mu = ln(xi e^a + (1-xi) e^-a)/a",
+ "H6 reaction attrs: Q_value, center_of_mass, redundant (skip redundant MTs when sampling); product yield Polynomial (MT16 = 2)",
+ "H7 tritium production: Li-6 / Li-7 MT205 (= OpenMC 'H3-production')",
+ "H8 neutronics-workshop task 5 (fusion-energy.github.io): void sphere r < 500 cm, steel 500-510 (95 wt% Fe, 5 wt% C, 7.75 g/cc), Pb-Li 510-610 (Pb 84.2 at%, Li 15.8 at%, Li 50 at% Li-6, 3.2720171e-2 atoms/b-cm), vacuum outside; 14 MeV isotropic point source at the centre; 294 K",
+ "H9 workshop result (OpenMC, library not named, 5000 particles): TBR 1.0266 +- 0.0182 (Li-6 1.0228, Li-7 0.0038), leakage fraction 0.0437 +- 0.0028",
+ "H10 Pb (n,2n) at 14 MeV ~2.2 b (N3) is the neutron multiplier in Pb-Li"]}
