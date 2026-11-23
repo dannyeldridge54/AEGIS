@@ -1,0 +1,9 @@
+{"rung": "N5 Doppler broadening", "hints": [
+ "H1 exact free-gas (Solbrig 1961) kernel, as in NJOY BROADR / SIGMA1 (Cullen-Weisbin 1976): sigma_T(y) = sqrt(alpha/pi)/y^2 * Int_0^inf x^2 sigma_0(x) [exp(-alpha (x-y)^2) - exp(-alpha (x+y)^2)] dx, x = sqrt(E'), y = sqrt(E), alpha = AWR/kT",
+ "H2 kT = 8.617333e-5 * T eV; 294 K -> 0.025335 eV",
+ "H3 the second exponential matters only for E below ~ a few kT/AWR",
+ "H4 1/v cross sections are invariant under broadening (sigma v constant) -> thermal capture unchanged",
+ "H5 broadening lowers and widens resonance peaks; area (integral sigma dE) approximately conserved for narrow resonances",
+ "H6 Doppler width Delta = sqrt(4 E kT / AWR): Mn-55 at 340.8 eV, 294 K -> ~0.79 eV (vs Gamma ~24 eV: weak effect); at 1-100 keV narrow p-wave resonances broadened strongly",
+ "H7 OpenMC HDF5 temperature grids are NJOY BROADR outputs (thinned): held-out reference",
+ "H8 our 0 K input: N4 reconstruction (matches NJOY RECONR to 4e-7)"]}
