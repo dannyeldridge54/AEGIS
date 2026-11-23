@@ -44,7 +44,28 @@ CARDS = {
    "sum z f_z. Rules of thumb: at 1 keV argon is near its He-like/H-like shells (mean charge ~16); light elements (Be, C, N, O, Ne)\n"
    "are fully stripped above ~0.5 keV. Read the element card's ADAS cooling block for tabulated points.",
 }
-FUSION_TOOLS = set(CARDS) | {'element_card', 'element_property', 'fusion_operating_point'}
+CARDS['nuclide_binding'] = ("Binding energy per nucleon from the AME2020 mass excess ME (keV) of nuclide (Z, N, A):\n"
+   "BE/A [MeV] = (Z*7288.971064 + N*8071.318062 - ME) / A / 1000   (7288.971 keV = ME of 1H, 8071.318 keV = ME of the neutron).\n"
+   "The element card below lists ME for each nuclide; N = A - Z.")
+CARDS['element_property'] = "Read the value from the element card below (sources: mendeleev, NUBASE2020/AME2020, OPEN-ADAS)."
+CARDS['element_card'] = CARDS['element_property']
+FUSION_TOOLS = set(CARDS) | {'fusion_operating_point'}
 
-def card(tool):
-    return CARDS.get(tool, 'No closed-form card: estimate and state your method.') + '\n' + CONST
+def element_context(args):
+    """Element card text for tasks that name an element or nuclide (nuclide_lookup, nuclide_binding, element_*), incl. ME rows."""
+    try:
+        import fusion_cm as FC, element_cards as E
+        nm = args.get('element') or str(args.get('name', '')).split('-')[0]
+        if not nm: return ''
+        c = FC._cards()[FC._sym(nm)]; txt = E.summary(c, 8)
+        if 'name' in args:
+            A = int(str(args['name']).split('-')[1].rstrip('m'))
+            r = [x for x in c['nuclides'] if x['A'] == A and x['isomer'] == 0]
+            if r: txt += f" ROW {r[0]['name']}: Z={c['Z']}, N={r[0]['N']}, A={A}, mass excess {r[0]['mass_excess_keV']} keV, half-life {r[0]['half_life_s']} s."
+        return '\n' + txt
+    except Exception:
+        return ''
+
+def card(tool, args=None):
+    return (CARDS.get(tool, 'No closed-form card: estimate and state your method.') + '\n' + CONST +
+            (element_context(args) if args and tool in ('nuclide_lookup', 'nuclide_binding', 'element_property', 'element_card', 'element_cooling') else ''))

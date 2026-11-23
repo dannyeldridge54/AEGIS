@@ -44,7 +44,8 @@ def build(path_out=None):
     cards['n'] = dict(Z=0, symbol='n', name='neutron', nuclides=n0, n_nuclides=len(n0), sources={'nuclides': 'NUBASE2020'})
     for Z in range(1, 119):
         t = T.loc[Z]; sym = t['symbol']
-        c = dict(Z=Z, symbol=sym, name=t['name'], electron_configuration=t['electronic_configuration'])
+        import re as _re; raw = t['electronic_configuration']; ec = ' '.join((p + '1') if _re.fullmatch(r'\d+[spdfg]', p) else p for p in raw.split())  # DEV-2
+        c = dict(Z=Z, symbol=sym, name=t['name'], electron_configuration=ec, electron_configuration_raw=raw)
         c.update({f: _clean(t.get(f)) for f in FIELDS if f in t.index})
         ie = IE[IE['atomic_number'] == Z].sort_values('ion_charge')
         c['ionization_energies_eV'] = {int(d) + 1: _clean(v) for d, v in zip(ie['ion_charge'], ie['ionization_energy'])}
@@ -80,7 +81,7 @@ def build(path_out=None):
 def summary(c, max_nuclides=12):
     """Text breakdown CubeMind reads (memory record / prompt card)."""
     if c['Z'] == 0: return 'neutron: ' + '; '.join(f"{x['name']} t1/2 {x['half_life_s']} s" for x in c['nuclides'][:3])
-    ie = c['ionization_energies_eV']; gs = [x for x in c['nuclides'] if x['isomer'] == 0]
+    ie = {int(k): v for k, v in c['ionization_energies_eV'].items()}; gs = [x for x in c['nuclides'] if x['isomer'] == 0]
     keep = [x for x in gs if x['stable']] + sorted((x for x in gs if not x['stable'] and x['half_life_s']), key=lambda x: -x['half_life_s'])
     nl = '; '.join(f"{x['name']} " + ('stable' if x['stable'] else f"t1/2 {x['half_life_s']:.4g} s") + (f", B/A {x['BE_per_A_MeV']:.4f} MeV" if x['BE_per_A_MeV'] else '')
                    for x in keep[:max_nuclides])

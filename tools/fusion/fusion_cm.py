@@ -45,12 +45,46 @@ def nuclide(a):
     if not rows: return dict(error=f'{a["name"]} not in NUBASE2020')
     r = rows[0]; return dict(name=a['name'], mass_excess_keV=r['me_keV'], half_life_s=r['t12_s'], stable=r['stable'], decay=r['modes'])
 
+_EC = None
+def _cards():
+    global _EC
+    if _EC is None:
+        p = os.path.join(HERE, 'element_cards.json')
+        if not os.path.exists(p):
+            import element_cards as E; E.build(p)
+        _EC = json.load(open(p))['cards']
+    return _EC
+def _sym(x):
+    x = str(x).strip(); c = _cards()
+    if x in c: return x
+    for k, v in c.items():
+        if v.get('name', '').lower() == x.lower() or k.lower() == x.lower() or str(v.get('Z')) == x: return k
+    raise KeyError(f'unknown element {x}')
+def element_card(a):
+    import element_cards as E
+    c = _cards()[_sym(a['element'])]; full = bool(a.get('full', False))
+    out = dict(summary=E.summary(c, int(a.get('max_nuclides', 12))), **{k: v for k, v in c.items() if k != 'nuclides'})
+    if full: out['nuclides'] = c['nuclides']
+    return out
+def element_property(a):
+    c = _cards()[_sym(a['element'])]; f = a['field']; v = c.get(f)
+    if f.startswith('IE'): v = c['ionization_energies_eV'].get(f[2:])
+    return dict(element=c['symbol'], field=f, value=v)
+def nuclide_binding(a):
+    import nuclide_pulse as P
+    sym, A = a['name'].split('-'); A = int(A.rstrip('m')); c = _cards()[_sym(sym)]
+    x = [r for r in c['nuclides'] if r['A'] == A and r['isomer'] == 0][0]
+    return dict(name=x['name'], Z=c['Z'], N=x['N'], A=A, mass_excess_keV=x['mass_excess_keV'], BE_per_A_MeV=x['BE_per_A_MeV'],
+                BE_total_MeV=x['BE_per_A_MeV'] * A, half_life_s=x['half_life_s'], stable=x['stable'])
+
 TOOLS = {'fusion_sigmav': sigmav, 'fusion_q_value': q_value, 'fusion_ignition': ignition, 'fusion_operating_point': operating_point,
          'fusion_plant': plant, 'fusion_nif_pressure': nif_pressure, 'fusion_gamow': gamow, 'fusion_tritium_burn': tritium_burn,
-         'fusion_tbr': tbr, 'fusion_burn_fraction': burn_fraction, 'element_cooling': element_cooling, 'nuclide_lookup': nuclide}
+         'fusion_tbr': tbr, 'fusion_burn_fraction': burn_fraction, 'element_cooling': element_cooling, 'nuclide_lookup': nuclide,
+         'element_card': element_card, 'element_property': element_property, 'nuclide_binding': nuclide_binding}
 EXAMPLES = {'fusion_sigmav': '{"reaction": "DT", "T_keV": 10}', 'fusion_q_value': '{"reaction": "DT"}', 'fusion_ignition': '{}',
             'fusion_operating_point': '{"machine": "ITER"}', 'fusion_plant': '{"P_fus": 500, "P_aux": 50}',
             'fusion_nif_pressure': '{"Y_MJ": 1.37, "T_keV": 10.9, "tau_ps": 89, "V_um3": 640000}', 'fusion_gamow': '{"Z1": 1, "Z2": 1, "mu_u": 0.5036, "T_K": 15000000}',
             'fusion_tritium_burn': '{"P_GW": 1}', 'fusion_tbr': '{"P_GW": 1, "inventory_kg": 10, "doubling_years": 5}', 'fusion_burn_fraction': '{"rhoR": 3}',
-            'element_cooling': '{"element": "Ar", "T_keV": 1.0}', 'nuclide_lookup': '{"name": "Pu-241"}'}
+            'element_cooling': '{"element": "Ar", "T_keV": 1.0}', 'nuclide_lookup': '{"name": "Pu-241"}',
+            'element_card': '{"element": "Fe"}', 'element_property': '{"element": "Ar", "field": "IE1"}', 'nuclide_binding': '{"name": "Fe-56"}'}
 def run(name, args): return TOOLS[name](args)
