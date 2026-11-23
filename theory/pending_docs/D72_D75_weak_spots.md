@@ -21971,3 +21971,25 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 - **Joint with B2.** The family-flux item (2) is already scheduled to be replaced by brane crossings (D2146–D2149). In F-theory, constant-coupling 7-brane stacks at ρ are E6/E8-type, so the matter sector would become an F-theory one. That is the natural home for both pieces at once.
 - **Dead or disfavoured.** E is dead. B (the D1398 variant) and high-r D are 2.5–3σ against ACT's n_s. Other B variants stay OPEN.
 - **What D would cost.** Fibre inflation would trade the Weave's own prediction (r = 5.4e-4, the same A at both ends) for the literature's r ≈ 0.005, which LiteBIRD could test, and it needs a K3-fibred geometry that T⁶/Z6-II does not have.
+
+## D2150a (CENTRE, referee pass on D2150: NOT BALANCED, accepted). **The verdict "F wins" is WITHDRAWN. No restructure cleanly wins; the strong coupling stays the core open problem.** D2150 itself is not edited (2026-11-22 ~21:15 CT)
+- **R50-1.** F's unprotected list was about half complete. Beyond the five already listed, it also takes in:
+  - n_s and r (through K = −ln(S + S̄) and β);
+  - the thread's potential and w(a);
+  - m3/2 and the wino (AMSB);
+  - the moduli cosmology: Γ(τ_q), T_d, D, T_R, τ_3/2;
+  - M_X and τ_p;
+  - Koide/TM1/δ_CP, the seesaw Σm_ν and η_B;
+  - the tadpole budget, which in F-theory becomes χ(Y₄)/24.
+
+  That makes **about 14 unprotected items**.
+- **R50-2.** E(S,3/2) is exact *as a function*. But A = 16ζ(2)/(3ζ(3)) is the ratio of its two weak-coupling terms, and at Im S ≈ 0.87 the D-instanton terms are O(1). So **A, β, n_s, r and the thread are "unprotected near the knot"**. My statement that "the inflation plateau stays protected" is withdrawn.
+- **R50-3.** A constant-coupling F-theory point freezes τ through the 7-brane configuration, so S cannot be a rolling inflaton that ends there. F needs an explicit mechanism, such as 7-branes collapsing into an E6 stack as inflation ends, or a re-identified inflaton. **This is OPEN.**
+- **R50-4.** D's r = 0.005 point implies N\* ≈ 69. LVS fibre inflation with volume-modulus reheating gives N\* ≈ 45–55, so n_s ≈ 0.960–0.964 and r ≈ 0.008–0.012 (the referee's recollection of the literature; to be sourced). At a self-consistent N\*, **D fails** against ACT's n_s (≈ −2.9 margin).
+- **R50-5.** The tie-break rewarded relabelling. With moved and unprotected items both counted, F is not ahead.
+- **Restated verdict:**
+  - **A is the defended null:** honest strong coupling, with ~14 derivations flagged.
+  - **F is CONDITIONAL** on an R50-3 mechanism.
+  - **D fails.**
+  - **B** (other variants) and **F's mechanism** are the open research directions.
+- **Where we stand on g_s:** the Weave does not yet have a weak-coupling home. Saying so plainly is part of the paper.
