@@ -21840,3 +21840,40 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
   - **N4b breaks in every direction** (re-annihilation caps it).
   - **The tightest walls at the base point:** N5w (+0.03), N2 (+0.09) and N4a (+0.21).
   - **Inward is the dangerous direction:** three walls break that way and only one breaks outward.
+
+## D2144a (CENTRE, referee pass on D2144: NOT BALANCED on R44-1/2, now fixed). D2144 itself is not edited (2026-11-22 ~21:00 CT)
+- **R44-1, N6.** N\* is not a free knob: N\* = 2/(1 − n_s), so pulling it moves the scored n_s by about 3σ. N6 is relabelled **"locked to n_s (no independent knob)"**. The scaling r₀(68/N\*)² is a record scaling [R], not Starobinsky's 12/N².
+- **R44-2, N5w, now sourced.** Two readings:
+  - **ATLAS** 2603.08315, pure-wino line: excluded up to **670 GeV** (770 expected).
+  - **CMS** SUS-21-006 (2309.16823, 137 fb⁻¹): "excluded up to **650 GeV** for the wino model".
+
+  The referee's possible 0.88 TeV figure is the ATLAS ~1 ns case, not the pure-wino lifetime. The 693 GeV wino **survives both readings** (margins +0.034 against ATLAS and +0.064 against CMS). This is still the tightest wall.
+- **R44-3, N2.** The inward point (0.039 eV) is **unphysical**, because the measured splittings put the floor at 0.0587. The wall sits on the floor and its only freedom is outward. **Flag:** the DESI bound assumes ΛCDM; with w ≥ −1 it tightens, so the +0.09 margin may be optimistic.
+- **R44-4, N12.** This is restated as a comparison of scales: Λ_species ≳ M_s ≥ H_inf = 5.8e12 GeV, which passes easily.
+- **R44-5.** The tally "inward is the dangerous direction" is **withdrawn**, because the ×1.5 step and the in/out labels are conventions. N13's curvature verdict depends on the O(1) bar c′ = 1, and that bar is now stated.
+
+## D2145 (CENTRE, equations for the three OPEN negative-space nodes; Danny 19:36 "make an equation for each of them"). Equations are written from standard physics plus the record; no new fits
+**N1, hidden families on the empty rungs**
+- **Equations:**
+  - m₂/m₃ = ε_m and m₁/m₃ = ε_m², with ε_m = 0.0251/(m + 1/16) [R, rung rule; O(1) couplings smear this by ×3].
+  - If its light states thermalise, each light hidden Weyl fermion adds ΔN_eff = (4/7)(7/8)(2)(10.75/g\*s(T_dec))^{4/3} = **0.047** when it decouples above the electroweak scale [S].
+- **Wall:** ACT ΔN_eff < 0.14 allows **at most 2 light hidden Weyl fermions**.
+- **Example** [A, illustrative]: a rung-11 family (ε = 2.3e-3) with m₃ = 12.8 GeV would have m₁ ≈ 66 keV. That is light, so it would count against the dark-radiation budget.
+- **The joint this gives: N1 ↔ N8** (ΔN_eff). The empty rungs are only allowed if their light states are few, or decouple early, or are heavy.
+
+**N14, before the beginning**
+- **Equation:** N\* + ½ ln(Ω_k,i/1e-3) ≤ N_tot ≤ ln(M_P/H_inf).
+  - The left side is "enough inflation", which hides initial curvature and anisotropy [S].
+  - The right side is the TCC bound [literature].
+- **Numbers:** the lower end is 71.5 and the upper end is 13.0. **The window is empty.** This is the N11 TCC flag reappearing at the start of time.
+- **Reading:** either the TCC is wrong (an open conjecture), or the Weave's inflation needs a pre-inflation history outside it. The E10 billiard is the candidate (OPEN).
+
+**N16, the D3 tadpole of the fold**
+- **Equation:** N_D3 + ½∫G₃∧Ḡ₃ + Σ_a Q_ind(D7_a, F_a) = χ/24 [S], with χ = 48, so the budget is **2**.
+- **Record:** the |M| = 9 family flux induces **46** [R], an excess of **44**. The scaling from |M| to the charge has not been re-derived here; it is an open step.
+- **The B2 route:** families from intersection numbers I_ab = ∏ᵢ(n_aⁱm_bⁱ − m_aⁱn_bⁱ), with no extra D3 flux. The PS seed (D2110–D2129) closes its charge exactly that way.
+
+**Board:** every one of the 16 nodes now has an equation. The status of the three nodes formerly marked OPEN:
+- **N1:** CONDITIONAL (≤ 2 light hidden Weyl species).
+- **N14:** **EMPTY WINDOW under the TCC** (FLAG, the same as N11).
+- **N16:** **FAIL** (46 against 2), with B2 as the named repair.

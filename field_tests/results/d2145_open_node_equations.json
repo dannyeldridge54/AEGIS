@@ -1,0 +1,25 @@
+{
+ "N1": {
+  "eq": "m1/m3 = eps_m^2, m2/m3 = eps_m, eps_m = 0.0251/(m+1/16); light hidden Weyl fermion: dNeff = 1.0*(10.75/g*s(T_dec))^(4/3)",
+  "rung11": {
+   "eps": 0.0022689265536723164,
+   "m1_over_m3": 5.148027705959335e-06
+  },
+  "dNeff_per_light_weyl_decoupled_above_EW": 0.046851205946277924,
+  "max_light_weyl_species": 2,
+  "example": "if a hidden rung-11 family had m3 = 12.8 GeV [A], m1 = 65.9 keV -> light -> counts as dark radiation"
+ },
+ "N14": {
+  "eq": "N* + (1/2) ln(Omega_k,i/1e-3) <= N_tot <= ln(M_P/H_inf) (TCC)",
+  "N_min": 71.48108852384485,
+  "N_TCC_max": 12.954478659742067,
+  "verdict": "no solution: the window is empty (the TCC wall N11 again)"
+ },
+ "N16": {
+  "eq": "N_D3 + (1/2) int G3^G3bar + sum_a Q_ind(D7_a, F_a) = chi(X)/24, chi = 48 -> 2 [S]; record: |M| = 9 family flux gives Q_ind = 46 [R]",
+  "budget": 2.0,
+  "record_charge": 46,
+  "excess": 44,
+  "B2_route": "families from intersections I_ab = prod_i (n_a^i m_b^i - m_a^i n_b^i) with no extra D3 flux; the PS seed closes its charge exactly (D2110-D2129)"
+ }
+}
