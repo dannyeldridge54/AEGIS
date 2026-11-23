@@ -22529,3 +22529,9 @@ R94 found a real bug (channel-spin sign of AJ ignored -> 32% error in a Mn-55 in
 Mn-55 RM elastic vs NJOY 0 K over 21,000 points: median 4.1e-7, p95 1.1e-6, max 1.8e-5; Zr-90 MLBW: median 8.5e-6, max 6.3e-4; big Mn-55
 s-wave resonance ER 340.7875 eV, peak 3192.157 b vs 3192.155 b; single-level BW (no interference) misses by 2.4% median (can-fail works).
 Capture formula confirmed below 300 eV (1e-4 vs 294 K); above ~3 keV the difference is Doppler -> N5. Tools: ndata.py, resonance.py.
+
+## D2206 (NEUTRON LADDER N5, 23 Nov 2026 ~14:40 CT) — resonances at temperature (exact free-gas Doppler kernel): PASS
+Lock PREREG_N5_DOPPLER. Solbrig kernel on OUR 0 K reconstruction vs NJOY BROADR (ENDF/B-VIII.0 HDF5) at 294 K and 900 K, elastic and capture.
+Locked run PASS (1 eV-EH). R95: discriminating (1% T error or AWR+1 already fail), normalisation correct; low-energy term untested; edge leak.
+Rerun 1e-5 eV to EH-200 eV: Mn-55 medians 6e-6 to 9e-5, max 0.26%; Zr-90 medians 8e-6 to 5e-5, max 0.45% (at 1e-5 eV). Unbroadened capture
+misses 900 K by 9.8% median (Mn-55). Tool: doppler.py. Resonance chain N3 -> N4 -> N5 now reproduces the evaluated library from raw parameters.

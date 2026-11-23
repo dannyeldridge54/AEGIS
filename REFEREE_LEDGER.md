@@ -9,3 +9,5 @@
 - R93 (23 Nov 2026, N1 birth spectrum): sound; shift agreement within MC noise at 5 keV; B2/B4 weak; check FWHM definition -> DEV-1/2 rerun.
 - R94 (23 Nov 2026, N3/N4 resonances): BUG - channel-spin sign of AJ ignored (Mn-55 l=1) -> 32% max error in an interference minimum; R3 336 eV
   unsourced (tape ER 340.79 eV). Agreement genuine (NJOY reconr grid). -> DEV-1/2 rerun.
+- R95 (23 Nov 2026, N5 Doppler): holds; discriminating; second exponential untested (>1 eV) and thermal check self-referential; edge leak top ~100 eV.
+  -> DEV-1 (extend to 1e-5 eV vs NJOY), DEV-2 (exclude top 200 eV).
