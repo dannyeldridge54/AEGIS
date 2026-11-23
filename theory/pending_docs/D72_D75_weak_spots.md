@@ -22623,3 +22623,12 @@ P2 (colour triplets, forces<->proton) had the WRONG SIGN in my postulate: light 
 forces<->dark) is right-signed but pinned by the wino window: ~+0.001 usable of the +0.0038 needed. P3 tunable/untied, P1 undetermined.
 Standing result: the Weave's alpha_s is 0.114-0.115, ~3.5-4 sigma low; the only remaining physics lever is the non-universal one-loop
 string threshold of the N = 6 D7 stack (Delta_3 - Delta_{1,2}, from b^{N=2} ln(Re T |eta|^4) + flux). That derivation decides the forces ring.
+
+## D2214 (CENTRE, 23 Nov 2026 ~16:15 CT) — band map 1 (exploratory, Danny 14:48): every node marked across the edge knobs
+315 points (s_m32 0.3-3 log, C 1.0-1.6e-6, T_R 1e8-5e9), whole hexagon settled at each. Always IN: Y_p, dN_eff, delta_CP, sum m_nu, m_bb, r, running,
+alpha drift, proton lifetime, leptogenesis. n_s IN on 63% (C sets it). theta12 always EDGE (+1.03 sigma). gluino IN for s >= 0.53.
+THE CONFLICT: alpha_s is IN only for s_m32 <= 0.37 (EDGE <= 0.53), the wino band (0.67-0.70 TeV) only for s_m32 0.975-1.019 -> no overlap, a factor
+2.6 apart along the same m3/2 lever (alpha_s ~ s^-0.0254, wino ~ s). D/H OUT everywhere (-2.5 sigma; depends only on omega_b, not on any edge knob).
+Grid note: the wino window is narrower than the grid step (no grid point inside); exact window computed analytically.
+Map of the imbalance: one lever (m3/2) carries two opposed demands (alpha_s wants it 2.6x lower, the wino dark matter pins it); an independent
+alpha_s source (the D7 one-loop threshold, D2213) would release the lever; D/H needs omega_b/N_eff or nuclear-rate input.
