@@ -22,3 +22,17 @@ From R82 (S2, S3) and the ITER FDR Physics Table 4.3.1-1 (500 MW column) read on
 - DEV-8 dials: Greenwald fraction capped at 0.94 (the ITER design value); the report names the binding constraint.
 - DEV-9 G3's flag stored as a real boolean.
 R83 (S4-S6) findings will be appended here before their fixes. One rerun of all tests after all fixes.
+
+From R83 (S4-S6), appended before their fixes:
+- DEV-10 G10 goalpost (55.8 kg) is a rounded literature figure; the rule's own recipe gives 56.08 kg. Run 1 FAIL stands. New goalpost
+  G10b (post-hoc): 56.08 kg +- 0.1%.
+- DEV-11 NIF record: 8.6 MJ on 2025-04-07 from 2.08 MJ on target, target gain 4.13 (LLNL Annual 2025); the 5.0 MJ shot at 2.05 MJ
+  (gain 2.44) is kept with its date unconfirmed. Bus keys renamed target_gain_* and labelled "target gain (yield / laser energy on
+  target), not wall-plug".
+- DEV-12 tbr_required uses the exact constant-burn doubling condition: I(t_d) = 2 I0 with dI/dt = (TBR-1-losses) b - lambda I ->
+  TBR = 1 + losses + lambda I0 (2 - e^{-lambda t_d}) / (b (1 - e^{-lambda t_d})); the docstring states what is left out
+  (burn fraction, fuelling efficiency, residence times; Abdou et al. 2021).
+- DEV-13 wall area relabelled "first wall + divertor, 730 m^2" (ITER FDR PDD 2.14); first wall only (670 m^2) also reported.
+  Li-6 use labelled "per bred T, Li-6 only".
+- DEV-14 dpa wired as a literature conversion: ~10 dpa per MW·yr/m^2 in front-wall steel (Stork et al. 2014, arXiv:1408.3546:
+  >= 2 MW·yr/m^2 ~ 20 dpa), labelled LIT; He 220 appm/fpy and ~12 appm He/dpa from the same source.

@@ -31,9 +31,18 @@ def settle(root, bus, max_sweeps=8):
         bus.sweep = sw
         for e in root.walk(): e.local = e.run(bus) or {}
         snap = bus.snap()
-        if prev is not None and snap.keys() == prev.keys() and all(_same(snap[k], prev[k]) for k in snap): return sw
+        if prev is not None and snap.keys() == prev.keys() and all(_same(snap[k], prev[k]) for k in snap): return sw, True
         prev = snap
-    return max_sweeps
+    return max_sweeps, False   # DEV-3: not settled
+
+def judge(root, bus, evaluate, current_score):
+    """DEV-3: collect every engine's postulates (anywhere in the tree) and keep the best one that raises the parent's score."""
+    best, log = None, []
+    for e in root.walk():
+        for p in e.postulates(bus):
+            sc = evaluate(p); ok = sc > current_score + 1e-12; log.append(dict(p, score=sc, accepted=ok))
+            if ok and (best is None or sc > best[1]): best = (p, sc)
+    return best, log
 
 def tree(root, depth=0):
     out = ['  ' * depth + f'- {root.name}']

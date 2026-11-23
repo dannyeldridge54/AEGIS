@@ -15,7 +15,7 @@ BH = {  # Bosch & Hale, Nucl. Fusion 32 (1992) 611: BG [keV^1/2], mrc2 [keV], C1
     'DT':   dict(BG=34.3827, mrc2=1124656.0, C=(1.17302e-9, 1.51361e-2, 7.51886e-2, 4.60643e-3, 1.35000e-2, -1.06750e-4, 1.36600e-5), src='listing (tokamak_neutron_source)'),
     'DDn':  dict(BG=31.3970, mrc2=937814.0, C=(5.43360e-12, 5.85778e-3, 7.68222e-3, 0.0, -2.96400e-6, 0.0, 0.0), src='listing (tokamak_neutron_source)'),
     'DDp':  dict(BG=31.3970, mrc2=937814.0, C=(5.65718e-12, 3.41267e-3, 1.99167e-3, 0.0, 1.05060e-5, 0.0, 0.0), src='listing (tokamak_neutron_source)'),
-    'DHe3': dict(BG=68.7508, mrc2=1124572.0, C=(5.51036e-10, 6.41918e-3, -2.02896e-3, -1.91080e-5, 1.35776e-4, 0.0, 0.0), src='as recalled (flagged)'),
+    'DHe3': dict(BG=68.7508, mrc2=1124572.0, C=(5.51036e-10, 6.41918e-3, -2.02896e-3, -1.91080e-5, 1.35776e-4, 0.0, 0.0), src='confirmed vs METIS, ASCOT5, PROCESS, PlasmaPy (R81)'),
 }
 def sigmav(reaction, T_keV):
     """Bosch-Hale thermal reactivity <sigma v> in cm^3/s for a Maxwellian at ion temperature T (keV)."""
@@ -161,15 +161,15 @@ def rhoR_for(yield_J, fuel_mg):
     """Areal density needed to release yield_J from fuel_mg of D-T (inverts Phi)."""
     phi = yield_J / (fuel_mg * 1e-3 * specific_yield_J_per_g())
     return float('inf') if phi >= 1 else H_B * phi / (1 - phi)
-NIF = [dict(shot='2022-12-05', yield_MJ=3.15, laser_MJ=2.05), dict(shot='2025-02-23', yield_MJ=5.0, laser_MJ=2.05, gain_reported=2.44),
-       dict(shot='2025 (reported 8.6 MJ)', yield_MJ=8.6, laser_MJ=None)]
+NIF = [dict(shot='2022-12-05', yield_MJ=3.15, laser_MJ=2.05), dict(shot='2025 (5.0 MJ; date unconfirmed)', yield_MJ=5.0, laser_MJ=2.05, gain_reported=2.44),
+       dict(shot='2025-04-07', yield_MJ=8.6, laser_MJ=2.08, gain_reported=4.13, src='LLNL Annual 2025')]   # DEV-11
 
 class Inertial(Engine):
     name = 'S4 inertial (IFE)'
     def run(self, bus):
         bus.put(self.name, 'specific_yield_J_per_g', specific_yield_J_per_g(), 'LIVE', 'J/g'); bus.put(self.name, 'Phi_rhoR3', burn_fraction(3.0), 'LIVE')
         for s in NIF:
-            if s['laser_MJ']: bus.put(self.name, f'NIF_gain_{s["shot"]}', s['yield_MJ'] / s['laser_MJ'], 'DATA')
+            if s['laser_MJ']: bus.put(self.name, f'NIF_target_gain_{s["shot"]}', s['yield_MJ'] / s['laser_MJ'], 'DATA (target gain = yield / laser energy on target; not wall-plug)')
         bus.put(self.name, 'IFE_gain_needed_eta0.1', 10 / 0.1, 'LIVE')
         return dict(note='NIF entries are data bookkeeping, not derivations')
 
@@ -184,22 +184,24 @@ def burn_kg_per_GWfpy(species='T'):
     molar = dict(T=M['T'], D=M['D'], Li6=6.0151228874)[species]   # g/mol (atomic)
     return rate * YEAR * molar / NA / 1e3
 def tbr_required(P_GW, inventory_kg, doubling_years, losses_frac=0.0):
-    """Breeding ratio to double a start-up inventory in doubling_years at P_GW fusion power, with tritium decay (Chronos half-life):
-    dI/dt = (TBR - 1 - losses) b - lambda I  ->  TBR = 1 + losses + (I ln2 / t_d + lambda I) / b, b = burn rate (kg/y)."""
-    t12, _ = tritium_half_life_y(); lam = math.log(2) / t12; b = burn_kg_per_GWfpy('T') * P_GW
-    return 1 + losses_frac + (inventory_kg * math.log(2) / doubling_years + lam * inventory_kg) / b
+    """DEV-12: breeding ratio to double a start-up inventory I0 in t_d at constant burn b (kg/y) with tritium decay (Chronos half-life):
+    dI/dt = (TBR - 1 - losses) b - lambda I, I(t_d) = 2 I0  ->  TBR = 1 + losses + lambda I0 (2 - e^-lt) / (b (1 - e^-lt)).
+    Leaves out burn fraction, fuelling efficiency and residence times, which dominate real requirements (Abdou et al. 2021)."""
+    t12, _ = tritium_half_life_y(); lam = math.log(2) / t12; b = burn_kg_per_GWfpy('T') * P_GW; e = math.exp(-lam * doubling_years)
+    return 1 + losses_frac + lam * inventory_kg * (2 - e) / (b * (1 - e))
 
 class FuelCycle(Engine):
     name = 'S5 fuel cycle'
     def run(self, bus):
         t12, src = tritium_half_life_y()
-        bus.put(self.name, 'T_burn_kg_per_GWfpy', burn_kg_per_GWfpy('T'), 'LIVE', 'kg'); bus.put(self.name, 'Li6_use_kg_per_GWfpy', burn_kg_per_GWfpy('Li6'), 'LIVE', 'kg')
+        bus.put(self.name, 'T_burn_kg_per_GWfpy', burn_kg_per_GWfpy('T'), 'LIVE', 'kg'); bus.put(self.name, 'Li6_use_kg_per_GWfpy', burn_kg_per_GWfpy('Li6'), 'LIVE (per bred T, Li-6 only)', 'kg')
         bus.put(self.name, 'D_burn_kg_per_GWfpy', burn_kg_per_GWfpy('D'), 'LIVE', 'kg'); bus.put(self.name, 'tritium_half_life_y', t12, 'LINK', 'y')
         bus.put(self.name, 'TBR_example_1GW_10kg_5y', tbr_required(1.0, 10.0, 5.0), 'EXAMPLE')
         return dict(half_life_source=src)
 
 # ------------------------------------------------------------------ S6 neutrons and materials
-ITER_WALL = dict(area_m2=730.0, src='ITER FDR PDD 2.14: inboard ~200 + outboard ~470 + divertor ~60 m^2; average 0.55 MW/m^2 at 500 MW')
+ITER_WALL = dict(area_m2=730.0, fw_only_m2=670.0, label='first wall + divertor (FW only 670 m^2)', src='ITER FDR PDD 2.14: inboard ~200 + outboard ~470 + divertor ~60 m^2; average 0.55 MW/m^2 at 500 MW')
+STORK = dict(dpa_per_MWa_m2=10.0, He_appm_per_dpa=12.0, src='Stork et al. 2014, arXiv:1408.3546: >= 2 MW yr/m^2 ~ 20 dpa in front-wall steel; ~12 appm He/dpa')
 GILBERT = dict(He_appm_per_fpy=140.0, flux_n_cm2_s=8.25e14, conditions='pure Fe, DEMO outboard equatorial FW armour, 3.0 GWt (Gilbert et al. 2013, arXiv:1311.5079)')
 class Neutrons(Engine):
     name = 'S6 neutrons & materials'
@@ -208,7 +210,10 @@ class Neutrons(Engine):
         bus.put(self.name, 'iter_neutron_power_MW', P * share, 'LIVE', 'MW'); bus.put(self.name, 'iter_wall_load_MW_m2', P * share / ITER_WALL['area_m2'], 'LIVE', 'MW/m^2')
         bus.put(self.name, 'design_wall_load_500MW', 500 * share / ITER_WALL['area_m2'], 'LIVE', 'MW/m^2')
         bus.put(self.name, 'He_appm_per_fpy_DEMO_Fe', GILBERT['He_appm_per_fpy'], 'LIT', 'appm')
-        bus.put(self.name, 'dpa_conversion', 'not wired: Gilbert et al. give dpa only in figures (no number in the text)', 'NONE')
+        L = P * share / ITER_WALL['area_m2']
+        bus.put(self.name, 'iter_wall_load_FW_only_MW_m2', P * share / ITER_WALL['fw_only_m2'], 'LIVE', 'MW/m^2')
+        bus.put(self.name, 'dpa_per_fpy_at_model_load', STORK['dpa_per_MWa_m2'] * L, 'LIT x LIVE', 'dpa/fpy')   # DEV-14
+        bus.put(self.name, 'He_appm_per_dpa_steel', STORK['He_appm_per_dpa'], 'LIT', 'appm/dpa')
         return dict(area_src=ITER_WALL['src'], gilbert=GILBERT['conditions'])
 
 # ------------------------------------------------------------------ engines
@@ -237,6 +242,6 @@ def build(sections=None):
     return Fusion(secs)
 
 if __name__ == '__main__':
-    root = build(); bus = Bus(); sw = settle(root, bus)
+    root = build(); bus = Bus(); sw, ok = settle(root, bus)
     print('\n'.join(tree(root))); print(f'settled in {sw} sweeps')
     for k, v in bus.v.items(): print(f'  {k:28s} {v:.6g} {bus.meta[k]["unit"]}' if isinstance(v, float) else f'  {k} {v}')

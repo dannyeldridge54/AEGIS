@@ -52,3 +52,12 @@ falls back to route A for b_mask 0 or smooth=False; scope narrowed in docstrings
 R80b (10:22 CT): no MAJOR; 7 MINOR fixed after PREREG_R80b_MINORS_DEVIATIONS (I4 post-hoc label; "" filtered; empty series out of
 legend/tooltip; index chart counts 3->1, 2->1; per-note Validation wording; Way-Wigner coefficient recovered from the engine value;
 cored profiles auto-fall back: NFW rc 0.1 kpc now 0.0 vs route A). Formula exponents stay typed, labelled as law constants. Round closed.
+
+## FUSION-1 R81-R83 + single rerun (2026-11-23 11:10 CT)
+R81 (S1/S7): goalposts G2 and G13 were wrong (mass-number shortcut; 15 vs 15.7 MK); code right; D-He3 coefficients confirmed.
+R82 (S2/S3): no synchrotron/line radiation; ITER columns mixed; G5 passed by cancellation. R83 (S4-S6): G10 goalpost a rounded figure;
+NIF 8.6 MJ / 2.08 MJ = 4.13; TBR doubling model; wall-area label; dpa via Stork 2014.
+Rerun after DEV-1..14: G1, G2 (post-hoc), G3, G4, G7, G9, G10b (post-hoc), G13 (post-hoc) PASS; TBR example 1.051 (R83 value).
+G5/G6 (post-hoc ITER 500 MW column) FAIL: P_fus 340 MW, Q 6.8, tau_E 4.82 s, W 301 MJ, P_loss 62 MW (< P_LH 97), f_G 0.98.
+Cause found: subtracting ALL radiation (56 MW) from P_loss; ITER's 104 MW P_loss implies only ~46 of 61 MW is counted (core vs edge
+radiation convention). Dials find no admissible point (P_loss < P_LH everywhere). Open for the next loop cycle; not hidden.
