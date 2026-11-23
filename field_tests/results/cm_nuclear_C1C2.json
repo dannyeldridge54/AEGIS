@@ -1,0 +1,68 @@
+{
+ "C1": {
+  "rel": {
+   "make": 1.2434497875801753e-14,
+   "gp": 1.856756970397555e-10,
+   "gr": 2.3367086043890595e-11,
+   "rel": 7.771916443743976e-11,
+   "ni": 7.798317547269562e-11,
+   "wd": 6.963778442781177e-10,
+   "bi": 4.298434941318874e-10,
+   "pu": 2.3959101369541713e-10,
+   "h3": 4.658495811327157e-12,
+   "star": 3.164633000096728e-10
+  },
+  "worst": 6.963778442781177e-10,
+  "pass_": true,
+  "tolerance": 1e-09
+ },
+ "C2": {
+  "charts": [
+   [
+    "chronos_activity_after",
+    true
+   ],
+   [
+    "chronos_make_now",
+    true
+   ],
+   [
+    "chronos_generator",
+    true
+   ],
+   [
+    "chronos_release_age",
+    true
+   ],
+   [
+    "chronos_ac225",
+    true
+   ],
+   [
+    "chronos_pu_age",
+    true
+   ],
+   [
+    "chronos_tritium",
+    true
+   ],
+   [
+    "chronos_decay_heat",
+    true
+   ],
+   [
+    "chronos_supernova",
+    true
+   ],
+   [
+    "chronos_wd_merger",
+    true
+   ],
+   [
+    "chronos_kilonova",
+    true
+   ]
+  ],
+  "pass_": true
+ }
+}

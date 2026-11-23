@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CubeMind Ask</title>
+<style>
+:root{--bg:#07040f;--panel:#120b22;--fg:#ece6ff;--muted:#a69ccc;--line:#2c2147;--accent:#b18cff;--gold:#e0b24a}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 Segoe UI,system-ui,sans-serif;padding:20px max(16px,3vw)}
+main{max-width:1100px;margin:0 auto}h1{margin:0 0 4px;font-size:1.8rem}.sub{color:var(--muted);margin:0 0 14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin:12px 0}
+.row{display:flex;gap:8px;flex-wrap:wrap}input{flex:1;min-width:0;background:#0b0718;color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:10px;font:15px Segoe UI,sans-serif}
+button{background:var(--accent);color:#120b22;border:0;border-radius:8px;padding:10px 16px;font-weight:600;cursor:pointer}button.ghost{background:transparent;color:var(--fg);border:1px solid var(--line);font-weight:400;padding:6px 10px;border-radius:14px;font-size:13px}
+#ans{white-space:pre-wrap;line-height:1.6}pre{white-space:pre-wrap;font:12px Consolas,monospace;color:var(--muted)}canvas{width:100%;height:320px;display:block;background:#0b0718;border-radius:8px;margin-top:8px}
+.small{color:var(--muted);font-size:13px}
+</style></head><body><main>
+<h1>CubeMind Ask</h1><p class="sub">Type any question someone might test you on. CubeMind answers only through the validated AEGIS tools (nuclear: Chronos), shows every calculation, and draws the charts.</p>
+<div class="card"><div class="row"><input id="q" placeholder="e.g. How much F-18 should we make at 7 am so 370 MBq is left at 9:30?"><button id="go">Ask</button></div>
+<div class="row" id="ex" style="margin-top:10px"></div><p class="small" id="st"></p></div>
+<div class="card"><h3 style="margin:0 0 6px">Answer</h3><div id="ans" class="small">—</div></div>
+<div class="card" id="chartcard" hidden><h3 style="margin:0 0 6px">Charts</h3><div id="charts"></div></div>
+<div class="card"><details><summary class="small" style="cursor:pointer">Engine calls (every number comes from here)</summary><pre id="calls"></pre></details></div>
+</main><script>
+const $=id=>document.getElementById(id);
+const EX=['How much F-18 do I make now so 370 MBq is left in 2.5 hours?','When does a Mo-99 generator give the most Tc-99m after elution, and what is the equilibrium ratio?','A sample has Cs-134/Cs-137 = 0.05 and started at 1. How long since the release?','What Ni-56 mass gives a tail of 1e41 erg/s at 200 days if t0 is 40 days? Show the heating curve.','How long until the double white dwarf J0651 (765 s, 0.26 and 0.50 solar masses) merges?','Plot the Ac-225 chain for 10 MBq over 12 hours.'];
+$('ex').innerHTML=EX.map(e=>`<button class="ghost">${e}</button>`).join('');$('ex').onclick=e=>{const b=e.target.closest('button');if(b){$('q').value=b.textContent;go();}};
+const COL=['#b18cff','#e0b24a','#4cc3ff','#ff6fa8','#7ee787'];
+function draw(cv,c){const g=cv.getContext('2d'),W=cv.width=cv.clientWidth*2,H=cv.height=640;g.scale(1,1);g.clearRect(0,0,W,H);const L=150,B=H-80,T=40,R=W-30;
+const xs=c.series.flatMap(s=>s.x),ys=c.series.flatMap(s=>s.y).filter(v=>!c.logy||v>0);let x0=Math.min(...xs),x1=Math.max(...xs),f=v=>c.logy?Math.log10(v):v,y0=Math.min(...ys.map(f)),y1=Math.max(...ys.map(f));if(y1===y0)y1=y0+1;
+g.strokeStyle='#2c2147';g.lineWidth=2;g.beginPath();g.moveTo(L,T);g.lineTo(L,B);g.lineTo(R,B);g.stroke();g.fillStyle='#a69ccc';g.font='24px Segoe UI';
+g.fillText(c.title,L,28);g.fillText(c.x_label,(L+R)/2-100,H-24);g.save();g.translate(26,(T+B)/2+60);g.rotate(-Math.PI/2);g.fillText(c.y_label+(c.logy?' (log)':''),0,0);g.restore();
+const fmt=v=>Math.abs(v)>=1e4||(Math.abs(v)<1e-2&&v!==0)?v.toExponential(1):(+v.toPrecision(3)).toString();
+for(let i=0;i<=4;i++){const yv=y0+(y1-y0)*i/4,yy=B-(B-T)*i/4;g.fillText(c.logy?'1e'+yv.toFixed(1):fmt(yv),8,yy+8);const xv=x0+(x1-x0)*i/4,xx=L+(R-L)*i/4;g.fillText(fmt(xv),xx-20,B+30);}
+c.series.forEach((s,k)=>{g.strokeStyle=COL[k%5];g.lineWidth=4;g.beginPath();let st=false;s.x.forEach((xv,i)=>{const yv=s.y[i];if(c.logy&&!(yv>0))return;const X=L+(R-L)*(xv-x0)/(x1-x0||1),Y=B-(B-T)*(f(yv)-y0)/(y1-y0);st?g.lineTo(X,Y):g.moveTo(X,Y);st=true;});g.stroke();g.fillStyle=COL[k%5];g.fillText('— '+s.name,R-260,T+30*(k+1));});}
+async function go(){const q=$('q').value.trim();if(!q)return;$('go').disabled=true;$('st').textContent='CubeMind is working (local model + tools)…';$('ans').textContent='';$('calls').textContent='';$('charts').innerHTML='';$('chartcard').hidden=true;
+try{const r=await (await fetch('/api/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({q})})).json();
+if(r.error){$('ans').textContent='Error: '+r.error;return;}$('ans').textContent=r.answer||'(no answer)';$('calls').textContent=r.calls.map(c=>c.name+' '+JSON.stringify(c.args)+'\n  -> '+JSON.stringify(c.result)).join('\n\n');
+$('st').textContent=`${r.calls.length} engine call(s) · ${r.charts.length} chart(s) · model ${r.model} · ${r.seconds} s`;
+if(r.charts.length){$('chartcard').hidden=false;r.charts.forEach(c=>{const cv=document.createElement('canvas');$('charts').appendChild(cv);draw(cv,c);});}}
+catch(e){$('ans').textContent='Could not reach CubeMind Ask: '+e;}finally{$('go').disabled=false;}}
+$('go').onclick=go;$('q').addEventListener('keydown',e=>{if(e.key==='Enter')go();});
+</script></body></html>
