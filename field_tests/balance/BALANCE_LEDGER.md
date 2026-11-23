@@ -47,3 +47,4 @@ Stop rule: a full turn of all three wheels returns NULL.
 
 **State at 22:42 CT: all three wheels NULL together = SET.** Only the "Status of runs" section changes at the 00:15 check (finished fits get scored by the locked rule); that section is re-checked alone, then publish at 00:33.
 | 7 | new data (PC) | CamSpec + Pantheon+ entry: dchi2 -3.80 PREFERRED, minimiser not clean (L spread 1.1 in chi2; W one run failed) | doc Status + Where-it-stands get the entry with the caveat; headline unchanged | the doc's "does not beat it" sentence must now say "on HiLLiPoP"; re-check those sections |
+| 7 | W1.labels | CamSpec entry: locked D2135 label "CMB-likelihood dependent" (sign flip, gap 6.26 >= 3) missed | label applied in table + Where it stands; "(HiLLiPoP)" added to the equation paragraph + CamSpec sentence; "+2.4 (high-l only)" | inner spin: equation paragraph was HiLLiPoP-only |
