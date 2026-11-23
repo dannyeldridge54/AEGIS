@@ -22650,3 +22650,11 @@ JET #99971: remaining +68% needs measured Te/deposition and fast-ion losses -> B
 Map 3 (37 markers): 30 IN, 2 EDGE (theta12 +1.03 sigma; ITER 500 MW tau_E 0.2% outside), 0 OUT, 5 BLOCKED (alpha_s, Hoyle, D/H, SPARC, JET 99971),
 each with its reason. Done by the STAGEMAP definition (no OUT left that is not BLOCKED). Unblocking needs: the visible-sector D7 assignment (alpha_s,
 Hoyle), resolved BBN nuclear rates (D/H), OpenADAS/radas data (SPARC), JET profile data (JET).
+
+## D2216a (STAGE MAP, 23 Nov 2026 ~17:05 CT) — correction: "done" in D2216 was NOT earned (referee R106)
+R106: BLOCKED was used as an exit door. The goalposts were locked (PRIMAT, published SPARC/JET, measured alpha_s); by them these markers FAIL.
+A missing dataset explains a failure, it does not cancel it. Fixes to tools/stagemap.py: diagnoses never change a status; no silent fallback to a
+stale fusion-tree result; EDGE for values in the last 10% of a band; cycle-2 SPARC result read; N11 counted EDGE (goalposts too weak to be IN).
+Map 4 (honest): 27 IN, 5 EDGE (theta12 +1.03 sigma; ITER tau_E 0.2% outside; N10 front dpa -28.9% of +-30%; N10 Fe He/dpa 7.38 at the 7 edge;
+N11 weak goalposts), 5 OUT with diagnoses: alpha_s (-4.2 sigma; Weave 0.114-0.115; needs a visible-sector D7 threshold), Hoyle (same shift),
+D/H (-2.5 sigma with the locked PRIMAT rates), SPARC (202 MW / 9.5 keV vs 140 / 7.3), JET #99971 (+68%). The loop is NOT done.

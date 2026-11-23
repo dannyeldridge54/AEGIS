@@ -21,3 +21,4 @@
 - R103 (23 Nov 2026, HARDEN-1): balance real but bookkeeping-only; B3 not independent (Li-6 MT205 == MT105) - not claimed.
 - R104 (23 Nov 2026, resonance run 1): d_as is a fit; computed Yukawa 2-loop is -0.0002..-0.0006 (wrong sign); Weave alpha_s 0.1140-0.1147; D/H independent tension.
 - R105 (23 Nov 2026, connections 1): P2 wrong sign (light triplets lower alpha_s); P4 partial (~+0.001 usable); no single connection closes alpha_s; next: D7 one-loop threshold.
+- R106 (23 Nov 2026, stage map): BLOCKED used to exit the loop - reverted; honest map 4: 27 IN, 5 EDGE, 5 OUT.
