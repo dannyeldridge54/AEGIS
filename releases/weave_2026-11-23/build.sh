@@ -19,7 +19,19 @@ import sys
 t = open('theory/pending_docs/D72_D75_weak_spots.md', encoding='utf-8').read()
 i = t.find('## D2110'); open(sys.argv[1], 'w', encoding='utf-8').write(t[i if i >= 0 else 0:])
 PY
-cp $R/README.md LICENSE $T/
+cp $R/README.md $R/MAKERS_MARK.txt LICENSE $T/
+python3 - "$T" <<'PY2'
+import hashlib, os, sys
+T = sys.argv[1]; mk = hashlib.sha256(open(os.path.join(T, 'MAKERS_MARK.txt'), 'rb').read()).hexdigest()
+lines = [f'{mk}  MAKERS_MARK.txt  (the mark)']
+for root, _, files in sorted(os.walk(T)):
+    for f in sorted(files):
+        p = os.path.join(root, f); rel = os.path.relpath(p, T)
+        if rel in ('FINGERPRINTS.sha256', 'MAKERS_MARK.txt'): continue
+        lines.append(f'{hashlib.sha256(open(p, "rb").read()).hexdigest()}  {rel}  mark:{mk[:12]}')
+open(os.path.join(T, 'FINGERPRINTS.sha256'), 'w').write('\n'.join(lines) + '\n')
+print('fingerprinted', len(lines) - 1, 'files with mark', mk[:12])
+PY2
 (cd $(dirname $T) && rm -f Weave_supplement.zip && zip -qr Weave_supplement.zip Weave_supplement)
 cp $(dirname $T)/Weave_supplement.zip $R/
 ls -la $R; unzip -l $R/Weave_supplement.zip | tail -1
