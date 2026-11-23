@@ -1,4 +1,68 @@
 {
+ "joint": {
+  "split_off": {
+   "t_star": -0.4816,
+   "move": {
+    "MN": 0.279,
+    "m32": -0.4622,
+    "TR": 0.093,
+    "dNeff": 0.4886
+   },
+   "holding": [
+    "L1.quark_window",
+    "L2.nu_ratio",
+    "L2.MN_top",
+    "L2.MN_bottom",
+    "L6.n_s",
+    "L6.n_s_PACT",
+    "L7.split_natural",
+    "L8.gravitino_box",
+    "L8.dark_baryon_window",
+    "L10.sum_mnu_DESI",
+    "L10.negspace_alpha_null",
+    "L10.dNeff_nonneg"
+   ],
+   "failing": {
+    "L4.rung_agreement": -0.0029,
+    "L5.wino": -0.4816,
+    "L7.alpha_s": -0.4816,
+    "L8.leptogenesis": -0.4816,
+    "L8.spine_BBN_dNeff": -0.4877,
+    "L9.thread_PR4": -0.46,
+    "L10.H0_vs_SH0ES": -0.4816,
+    "L10.negspace_dNeff_ACT": -1.2498
+   },
+   "worse_than_start": {
+    "L2.MN_top": [
+     2.6069,
+     2.3279
+    ],
+    "L5.wino": [
+     -0.0195,
+     -0.4816
+    ],
+    "L8.spine_BBN_dNeff": [
+     12.6115,
+     -0.4877
+    ],
+    "L8.dark_baryon_window": [
+     0.3487,
+     0.258
+    ],
+    "L10.negspace_dNeff_ACT": [
+     11.8494,
+     -1.2498
+    ]
+   },
+   "fits_spent": [
+    "MN",
+    "m32",
+    "TR",
+    "dNeff"
+   ]
+  },
+  "split_on": "no solution"
+ },
  "dials": [
   "u",
   "MN",
@@ -280,6 +344,6 @@
    "margin": -3.3942
   }
  },
- "ms_fingerprint": 0.345,
- "seconds_total": 48.15
+ "ms_fingerprint": 0.346,
+ "seconds_total": 58.61
 }
