@@ -134,6 +134,11 @@ class Nuclide:
         t205 = h['reactions'].get('reaction_205'); self.trit = None
         if t205 is not None and T in t205:
             d = t205[T]['xs']; i0 = int(d.attrs.get('threshold_idx', 0)); full = np.zeros_like(self.E); full[i0:i0 + len(d)] = d[()]; self.trit = full
+        self.extra = {}   # N9/N10 scores (redundant summary MTs): heating, damage energy, gas production
+        for mt in (301, 444, 901, 203, 207):
+            rr = h['reactions'].get(f'reaction_{mt:03d}')
+            if rr is not None and T in rr:
+                d = rr[T]['xs']; i0 = int(d.attrs.get('threshold_idx', 0)); full = np.zeros_like(self.E); full[i0:i0 + len(d)] = d[()]; self.extra[mt] = full
     def at(self, arr, E): return float(np.interp(E, self.E, arr))
     def loc(self, E):
         n = len(self.E)
@@ -171,9 +176,10 @@ class Material:
         if E >= g[-1]: return float(self.sig[-1])
         i = int(np.searchsorted(g, E)) - 1; return float(self.sig[i] + (E - g[i]) / (g[i + 1] - g[i]) * (self.sig[i + 1] - self.sig[i]))
 
-def run(regions, radii, n_hist=20000, seed=7, E0=14.0e6, kill_mt=(), tally_regions=(), max_coll=100000):
+def run(regions, radii, n_hist=20000, seed=7, E0=14.0e6, kill_mt=(), tally_regions=(), max_coll=100000, scores=()):
+    """scores: iterable of (region, mt) collision-estimator tallies (sum over nuclides of N sigma_mt / Sigma_t per collision)."""
     """regions: list of Material or None (void) per shell; radii: outer radius per shell (cm). Returns dict of tallies per source neutron."""
-    rng = np.random.default_rng(seed); leak = 0.0; trit = {}; ncoll = 0
+    rng = np.random.default_rng(seed); leak = 0.0; trit = {}; ncoll = 0; sc = {k: 0.0 for k in scores}; leakE = 0.0
     for h in range(n_hist):
         mu = 2 * rng.random() - 1; ph = 2 * math.pi * rng.random(); s = math.sqrt(1 - mu * mu)
         bank = [((0.0, 0.0, 0.0), (s * math.cos(ph), s * math.sin(ph), mu), E0)]
@@ -183,7 +189,7 @@ def run(regions, radii, n_hist=20000, seed=7, E0=14.0e6, kill_mt=(), tally_regio
             while alive:
                 rr = math.sqrt(r[0] ** 2 + r[1] ** 2 + r[2] ** 2)
                 reg = next((i for i, R in enumerate(radii) if rr < R - 1e-9 or (abs(rr - R) <= 1e-9 and (r[0] * u[0] + r[1] * u[1] + r[2] * u[2]) < 0)), len(radii))
-                if reg >= len(radii): leak += 1; break
+                if reg >= len(radii): leak += 1; leakE += E; break
                 # distance to the outer and inner boundaries of this shell
                 b = r[0] * u[0] + r[1] * u[1] + r[2] * u[2]; c2 = rr * rr
                 Ro = radii[reg]; d_out = -b + math.sqrt(max(b * b - (c2 - Ro * Ro), 0.0))
@@ -207,6 +213,9 @@ def run(regions, radii, n_hist=20000, seed=7, E0=14.0e6, kill_mt=(), tally_regio
                 if reg in tally_regions:
                     for (nu, dens), lc in zip(mat.items, locs):
                         if nu.trit is not None: trit[nu.name] = trit.get(nu.name, 0.0) + dens * Nuclide.val(nu.trit, *lc) / St
+                for (sreg, smt) in sc:
+                    if sreg == reg:
+                        sc[(sreg, smt)] += sum(dens * Nuclide.val(nu.extra[smt], *lc) for (nu, dens), lc in zip(mat.items, locs) if smt in nu.extra) / St
                 # nuclide
                 xi = rng.random() * St; acc = 0.0
                 for j, ((nu, dens), t) in enumerate(zip(mat.items, tots)):
@@ -234,7 +243,7 @@ def run(regions, radii, n_hist=20000, seed=7, E0=14.0e6, kill_mt=(), tally_regio
                         if Eo > 1e-5: new.append((r, _rotate(u, m, rng), Eo))
                 if not new: alive = False; break
                 (r, u, E) = new[0]; bank.extend(new[1:])
-    out = dict(leakage=leak / n_hist, collisions_per_hist=ncoll / n_hist, n_hist=n_hist)
+    out = dict(leakage=leak / n_hist, leak_energy_eV=leakE / n_hist, collisions_per_hist=ncoll / n_hist, n_hist=n_hist, scores={f'{k[0]}_{k[1]}': v / n_hist for k, v in sc.items()})
     for k, v in trit.items(): out[f'T_{k}'] = v / n_hist
-    out['TBR'] = sum(v for k, v in out.items() if k.startswith('T_'))
+    out['TBR'] = sum(v for k, v in out.items() if k.startswith('T_Li'))
     return out
