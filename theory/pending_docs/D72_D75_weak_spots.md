@@ -22771,3 +22771,14 @@ modulus (1.44 per unit) would need Db ~ 8. So the reading by the lock ("candidat
 CANNOT host the tau = i route; and none has a massless hypercharge (D2167). The UFE derivation therefore needs a NEW scan with two filters
 up front: tree split |ln(R/1.02)| < ln 1.15 and massless U(1)_Y; only on such a survivor does the N=2 Delta b (tori 2 and 3 of Z6') decide
 alpha_s. Status: forces ring OUT (official); tau = i CONDITIONAL; brane derivation BLOCKED on the scan.
+
+## D2227 (STRING CONNECTION per layer, flux/twist/condensate strand, after DEVIATIONS 1-2 rerun, 23 Nov 2026)
+Run 1 was invalid (the ring pulse re-set s_m32 at every point, erasing the strand; sigma tied to Re T was an invented coupling, R109). Rerun
+(strand frozen, only C may re-settle; sigma held 20.15; field_tests/results/d2227_layer_strand_rerun.json), 30 points:
+- Official alpha_s: 0/30 stable (the model point fails only on alpha_s/Hoyle, as known).
+- With the D2225 conditional threshold (-3,0): 3/30 stable = Re S at rho (sqrt3/2), condensate rank N = 6, flux g = 2, 3 or 4.
+- Strand reading by layer: N is PINNED by the wino/gluino band (N = 5: m3/2 x 0.017; N = 7: x 17.7 -> proton/wino OUT); the dilaton twist is
+  PINNED to rho (Re S = 1 at i lowers m3/2 by 7% -> wino 0.639 TeV, below the 0.67 band); the flux g is NOT pinned by any layer here (it only
+  moves T_R 4.0e8-1.6e9 GeV, and genesis / inflation stay in band across that range). Late layer: no string connection (Lambda input).
+So the string data the rings can fix: N = 6 and S = rho (both the model's own values - a consistency, not a prediction, since the wino band was
+already used to set m3/2); g = 3 is not selected by the rings (it is fixed by alpha^-1 = 28 in weave_magd7, D1758).
