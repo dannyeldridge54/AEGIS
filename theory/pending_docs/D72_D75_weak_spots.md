@@ -22433,3 +22433,15 @@ Danny 12:04/12:08: pulse out and collect data on all other elements; build a ful
   500 MW distance 0.33 -> 0.46), so by the accept rule the 27 MW input stays the default; the derived value is recorded beside it.
 - W now uses the recommended year-50 ADAS set. Element pulse: the 4 flags (He, F, Ne, Cl) are neutral emission switching on at 1-2.7 eV,
   not artefacts; with the post-hoc check above 5 eV they pass (labelled post-hoc).
+
+## D2198 (CUBEMIND, 23 Nov 2026 15:00 CT) — fusion work handed to CubeMind (PREREG_CM_FUSION)
+Danny 12:14: give CubeMind the fusion work, tell it exactly how we got here, have it run it.
+- tools/fusion/fusion_cm.py exposes 12 validated tools (fusion_sigmav, _q_value, _ignition, _operating_point, _plant, _nif_pressure,
+  _gamow, _tritium_burn, _tbr, _burn_fraction, element_cooling, nuclide_lookup); K1/K3: every example runs and equals the engine.
+- PC: fusion engine deployed to aegis_bundle/tools/fusion; registry patched (backup registry.py.bak_fusion_23nov; 75 tools); K4: a
+  registry call returns the engine value (sigmav(10 keV) 1.1362e-16; Cs-137 9.4797e8 s).
+- 46 derivation tasks appended to weave_data/calc_queue.jsonl (reactivities, Q-values, ignition, tritium burn, breeding ratio, burn
+  fraction, Gamow peaks, NIF pressures, plant net power, NUBASE half-lives, ADAS charge states): CubeMind derives each blind, then the
+  tool grades it (its existing step_derive). CUBEMIND_FUSION_PLAYBOOK.md (method, results, caught mistakes, its job) stored as a MEANING
+  record (importance 5). CubeMind's outputs stay graded derivations / HYPOTHESIS proposals; engine changes still go through lock +
+  referee + Danny.
