@@ -21877,3 +21877,22 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 - **N1:** CONDITIONAL (≤ 2 light hidden Weyl species).
 - **N14:** **EMPTY WINDOW under the TCC** (FLAG, the same as N11).
 - **N16:** **FAIL** (46 against 2), with B2 as the named repair.
+
+## D2146 (CENTRE, ping-pong round 1→2 on B2; plan locked as PREREG_D2146). The families-from-intersections route on IIA T⁶/Z₆′
+- **Referee confirmations:**
+  - Z₆′ = (1, 2, −3)/6 is the Weave's Z6-II.
+  - T₁ and T₂ are SU(3) lattices, so their complex structure is frozen (the "ρ" pin is automatic). T₃ has only a Z₂ action.
+  - There is no discrete torsion.
+- **Referee fixes, all folded into the lock:**
+  - z2z6p.py's Z₆′ is the wrong one (it would give Z6-I), so a new builder is needed.
+  - The mirror map relabels the tadpole; it does not cure it. B2 is a NEW brane content, so the scored flavour, proton and r items may move. This is pre-registered.
+  - N4-seq stays OPEN: the classified D6 models carry no SUSY-breaking sector.
+  - The scan must also count hidden massless states (ΔN_eff), check K-theory and the GS rank, and reject exotics.
+- **Data gathered (0708.2285, read through a summariser):**
+  - bulk coefficients P = (n₁n₂ − m₁m₂)n₃, Q = (n₁m₂ + m₁n₂ + m₁m₂)n₃, U = (n₁n₂ − m₁m₂)m₃, V = (n₁m₂ + m₁n₂ + m₁m₂)m₃;
+  - the intersection form (ρ₁∘ρ₃ = ρ₂∘ρ₄ = 4, ρ₂∘ρ₃ = ρ₁∘ρ₄ = 2);
+  - the AA bulk tadpoles Σ N(2P + Q) = 8 and Σ N(−V − bQ) = 8(1 − b);
+  - the SUSY condition;
+  - the fractional-cycle formula over the Z₂ fixed points on T₁ × T₃;
+  - an SM example (U(3) × U(2) × U(1) × U(1) × hidden U(2), ϱ = 1/4).
+- **Blocker:** the builder needs the paper's exact tables. These are Table 2 (fixed-point traversal), Table 5 (exceptional images), Eq. (2.8) (exceptional tadpoles) and Appendix D.1 (the example's wrapping numbers). The summariser cannot reproduce them verbatim. Downloading the PDF needs Danny's OK.
