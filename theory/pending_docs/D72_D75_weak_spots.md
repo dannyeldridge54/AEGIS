@@ -21930,3 +21930,10 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
   - **This supersedes the compressed-CMB Dovekie claim for newest-data purposes.**
 - **Still running:** Pantheon+ and Union3 (L/W/C), C on Dovekie, and then the D2135 CamSpec cross-check. No verdict on the other SN sets yet.
 - **Clock correction:** the times written in D2146a–D2147 ("~21:25", "~21:30 CT") are wrong. Those notes were written at about 19:40–19:45 CT.
+
+## D2148 (CENTRE, B2 step 2b: generator control 2 **PASS after DEV-1**). The Z₆′ fractional-cycle generator regenerates all 5 published branes from wrapping numbers plus displacements and Wilson lines, all SUSY at ϱ = 1/2 (2026-11-22 ~19:58 CT)
+- **First run:** a and b matched exactly; c, d and e did not. **DEV-1** was written before the rerun:
+  1. **c** matched up to one global exceptional sign. That sign is a representative-orientation convention, absorbed into τ₀. A scan runs over τ₀ ∈ {0, 1}, so **the space of models does not depend on it**.
+  2. **d and e:** Appendix D.1's wrapping numbers give the wrong bulk, (0, 0, −1, −1). With one sign corrected, (1, 1; 1, −2; 0, 1), they reproduce Table 13 in full, bulk and exceptional. So **0708.2285 Appendix D.1 has a typo** (m₁ for branes d and e).
+- **Rerun:** **5/5 match and 5/5 SUSY.** Files: tools/seed/z6p_control2_dev1.json, tools/seed/z6p.py (generator).
+- **Next (step 3, after the referee's round-4 review):** the bounded scan on ABa at ϱ = 1/2 in the locked filter order, with ΔN_eff as a dial.
