@@ -84,3 +84,19 @@ A B2 model is a **different brane content** from UFE v4's |M| = 9 flux model. Th
   - **Exceptional cycle.** Π^Z₂ = (−1)^τ₀ [d_{i₁j₁} + (−1)^τ₁ d_{i₂j₁} + (−1)^τ₃ d_{i₁j₂} + (−1)^{τ₁+τ₃} d_{i₂j₂}] ⊗ (n₂π₃ + m₂π₄), with the orbits from Table 1.
   - **Hand checks (pre-run):** branes a and b of the published example reproduce their (d, e).
   - **Control 2:** all 5 published branes must regenerate their (P, Q, U, V, d, e) from the Appendix D.1 wrapping numbers plus their σ and τ, and satisfy SUSY at ϱ = 1/2: (P − Q)/(2ϱ) = U + V, with Re Z > 0.
+
+## ADDENDUM 3 (referee R-B2-10…13; DEV-1 conditions), written before running these checks
+- **DEV-1 condition (end-to-end).** Control 1 is rerun **from the regenerated cycles**: wrapping + σ + τ → (P, Q, U, V, d, e) → tadpoles and the 26 chiral numbers. Scans use the generator's own orientation convention throughout; the published τ₀ labels are used only for matching.
+- **R-B2-10 (saturation).** Enumerate the distinct SUSY bulk cycles on ABa at ϱ = ½ that do not overshoot the tadpoles: 0 ≤ P + Q ≤ 8, |U − V| ≤ 24, gcd-coprime wrapping on each torus. Do this at |n|, |m| ≤ 3, 4, 5, 6.
+  - **Pass:** the set stops growing from one bound to the next.
+  - The comparison with Gmeiner–Honecker's own list is reported if their TeX tabulates one.
+- **R-B2-11 (representatives).**
+  - **Argument:** θ cycles the three T₁ parity classes, so every orbit has exactly one (odd, odd) T₁ class, within which the remaining freedom is θ³ and the two-torus sign flips.
+  - **Numerical test:** on about 20 orbits, every (odd, odd) representative — θ³, (n₂, m₂, n₃, m₃) → −, and (n₁, m₁, n₂, m₂) → − — must give the **same set** of fractional cycles over all σ and τ.
+  - **If any differ:** scan all representatives and deduplicate.
+- **R-B2-12/13.** USp(2)_b and every massless hypercharge combination are allowed. These items are locked as listed by the referee:
+  - ABa tadpole right-hand sides, 8 and 24 (z6prime.tex eq. eqrrtadpoles);
+  - SUSY necessary and sufficient forms (Eq. SUSY1/SUSY2);
+  - the Z₆′ USp K-theory probes;
+  - the Sym/Anti exotics;
+  - Z₃-sector status quoted (§2.2.3).
