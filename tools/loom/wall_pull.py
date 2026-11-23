@@ -7,6 +7,7 @@ p = json.load(open('field_tests/weave_lcdm/knob_dovekie.json'))['0.0']['p']; wb,
 GYR = 977.8   # 1/H in Gyr for H = 1 km/s/Mpc
 def age(wb=wb, wc=wc, VL=math.exp(lVL), ui=ui, b=0.0, extra_rad=0.0):
     sol = W.solve(wb, wc, VL, ui, b, a0=1e-8)
+    if sol is None: return float('nan'), float('nan')
     N = np.linspace(math.log(1e-8), 0, 6000); a = np.exp(N); Y = sol.sol(N); phi, v, rc = Y[0], Y[1], np.exp(Y[2])
     rn = np.array([W.nu(x)[0] for x in a]); V = VL*(1 - W.A*np.exp(-W.BETA*phi))
     E2 = (W.OG*(1 + extra_rad*0.2271)/a**4 + rn + wb/a**3 + rc + V)/(1 - v*v/6); H = 100*np.sqrt(E2)
@@ -24,7 +25,10 @@ rec('N4 (tau_q dilution D)', 'D x/÷ 1.5', -math.log(f)/3, math.log(f)/3, 'e-fol
 rec('N6 (r, CMB wall)', 'r x/÷ 1.5', -Nst/2*math.log(f)*0 + (Nst/math.sqrt(f) - Nst), (Nst*math.sqrt(f) - Nst), 'e-folds')   # r ∝ N^-2 exactly
 rec('N8 (T_R reheating)', 'T_R x/÷ 1.5', math.log(f)/3, -math.log(f)/3, 'e-folds')
 rec('N9/N13 (thread start u_i)', 'u_i x/÷ 1.5', age(ui=min(ui*f, 0.21))[0] - t_base, age(ui=ui/f)[0] - t_base, 'Gyr')
-rec('N9 (coupling b)', 'b = +/-0.025', age(b=0.025)[0] - t_base, age(b=-0.025)[0] - t_base, 'Gyr')
+KB = json.load(open('field_tests/weave_lcdm/knob_dovekie.json'))
+def agep(bb):
+    q = KB[str(bb)]['p']; return age(wb=q[0], wc=q[1], VL=math.exp(q[2]), ui=q[3], b=bb)[0]
+rec('N9 (coupling b, best fits)', 'b = +/-0.025', agep(0.025) - t_base, agep(-0.025) - t_base, 'Gyr')
 rec('N8/N10 (dark radiation dNeff)', 'dNeff = 0.14 / 0', age(extra_rad=0.14)[0] - t_base, 0.0, 'Gyr')
 rec('N10 (H0 shell: V_L)', 'V_L x/÷ 1.5', age(VL=math.exp(lVL)*f)[0] - t_base, age(VL=math.exp(lVL)/f)[0] - t_base, 'Gyr')
 for n in ('N1 rung states', 'N2 neutrinos (Sigma m_nu: mass tie, H(z) shift < 0.1%)', 'N3 leptons', 'N5 m3/2 / wino', 'N7 forces / proton',
