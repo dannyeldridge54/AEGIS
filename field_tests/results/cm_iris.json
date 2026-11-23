@@ -29,8 +29,8 @@
  },
  "I2_frac_diff": 0,
  "I3": {
-  "prep_ms": 45,
-  "mean_frame_ms": 0.1601694915236479,
+  "prep_ms": 53.79999999993015,
+  "mean_frame_ms": 0.18728813560683502,
   "frames": 118
  },
  "I4_locked_metric_pass": false,
@@ -39,6 +39,7 @@
   "I2": true,
   "I3": true,
   "I4": false,
+  "I4_label": "post_hoc_DEV2 (range-normalised); after DEV-3 the logy readout interpolates in log y, so the linear-y I4 reference no longer applies to logy",
   "PASS": false
  }
 }

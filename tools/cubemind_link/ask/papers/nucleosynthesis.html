@@ -19,8 +19,7 @@ pre{white-space:pre-wrap;font:11px Consolas,monospace;color:var(--muted);backgro
 <h2>Method</h2><p>Ni-56&rarr;Co-56&rarr;Fe-56 heating with gamma trapping 1&minus;e<sup>&minus;t<sub>0</sub><sup>2</sup>/t<sup>2</sup></sup> and local positron deposition; kilonova luminosity L = f<sub>th</sub> M<sub>ej</sub> 10<sup>10</sup> (t/day)<sup>&minus;1.3</sup> erg s<sup>&minus;1</sup> g<sup>&minus;1</sup> (Korobkin et al. 2012 heating; Metzger 2019 normalisation); Peters (1964) gravitational-wave coalescence time; Th-232 cosmochronometry t = 46.51&nbsp;Gyr &times; [log<sub>10</sub>(Th/Eu)<sub>0</sub> &minus; log<sub>10</sub>(Th/Eu)<sub>obs</sub>], with the production ratio given linearly and converted to dex.</p>
 <h2>Results</h2><table><tr><th>Quantity</th><th>Engine value</th></tr><tr><td>Ni-56 heating, 0.6 M&#8857;, day 18, t<sub>0</sub> 35&nbsp;d</td><td>1.206&times;10<sup>43</sup>&nbsp;erg/s</td></tr><tr><td>Ni-56 mass from tail 1&times;10<sup>41</sup>&nbsp;erg/s at 200&nbsp;d, t<sub>0</sub> 40&nbsp;d</td><td>0.5957&nbsp;M&#8857;</td></tr><tr><td>Kilonova thermalised luminosity, 0.05 M&#8857;, 1&nbsp;d</td><td>4.972&times;10<sup>41</sup>&nbsp;erg/s</td></tr><tr><td>J0651 merger time</td><td>1.109&nbsp;Myr</td></tr><tr><td>J0651 GW frequency</td><td>2.614&nbsp;mHz</td></tr><tr><td>Th/Eu star age</td><td>8.056&nbsp;Gyr</td></tr></table>
 <div id="charts"></div><p class="tag">Charts are drawn from the engine's own output; hover to read exact values.</p>
-<h2>Validation</h2><p>Chronos was built under locked pre-registrations (D2189 and amendments A1&ndash;A3), with two independent solvers (analytic Bateman and matrix exponential)
-agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b NULL) recorded in the public ledger. Engine files sha256: <code>28a593bc4e290399&hellip;</code></p>
+<h2>Validation</h2><p>Chronos was built under locked pre-registrations (D2189 and amendments A1&ndash;A3); each law is closed-form or a two-member Bateman solution, checked in the D2189 tests, and cleared by adversarial referee rounds (R77, R78, R78b NULL) recorded in the public ledger. Engine files sha256: <code>28a593bc4e290399&hellip;</code></p>
 <h2>Limits</h2><p>Kilonova luminosity is order-of-magnitude only, with a constant thermalisation efficiency; the Peters time is a point-mass upper bound to contact; the production ratio dominates the stellar-age uncertainty; no radiative transfer or light-curve fitting.</p>
 <h2>References</h2><ol><li>Arnett, W. D. (1982) ApJ 253, 785.</li><li>Korobkin, O. et al. (2012) MNRAS 426, 1940.</li><li>Metzger, B. D. (2019) Living Rev. Relativ. 23, 1.</li><li>Peters, P. C. (1964) Phys. Rev. 136, B1224.</li><li>Brown, W. R. et al. (2011) ApJL 737, L23 (J0651).</li><li>Recent advances in r-process nucleosynthesis, arXiv:2507.08760.</li></ol>
 <h2>Appendix: engine calls</h2><pre>[
@@ -155,7 +154,7 @@ agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b
     const ser = spec.series.map(s => {   // DEV-3: clean (finite, non-null, y>0 for logy) and sort by x; empty series kept as placeholders
       const pts = [];
       for (let i = 0; i < Math.min(s.x.length, s.y.length); i++) {
-        if (s.x[i] == null || s.y[i] == null) continue; const xv = +s.x[i], yv = +s.y[i];
+        if (s.x[i] == null || s.y[i] == null || s.x[i] === '' || s.y[i] === '') continue; const xv = +s.x[i], yv = +s.y[i];
         if (!Number.isFinite(xv) || !Number.isFinite(yv) || (logy && !(yv > 0))) continue; pts.push([xv, yv]);
       }
       pts.sort((a, b) => a[0] - b[0]);
@@ -198,7 +197,7 @@ agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b
     g.textAlign = 'center'; g.fillText(spec.x_label || '', M.l + PW / 2, H - 14 * dpr);
     g.save(); g.translate(18 * dpr, M.t + PH / 2); g.rotate(-Math.PI / 2); g.fillText((spec.y_label || '') + (L.logy ? '  (log)' : ''), 0, 0); g.restore();
     g.textAlign = 'right';
-    L.ser.forEach((s, k) => { g.fillStyle = PAL[k % PAL.length]; g.fillText(s.name + '  ●', M.l + PW, 22 * dpr + 15 * dpr * k); });
+    let li = 0; L.ser.forEach((s, k) => { if (!s.X.length) return; g.fillStyle = PAL[k % PAL.length]; g.fillText(s.name + '  ●', M.l + PW, 22 * dpr + 15 * dpr * li++); });
     g.textAlign = 'left';
   }
 
@@ -261,7 +260,7 @@ agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b
       const xd = L.x0 + (X - M.l) / PW * (L.x1 - L.x0);
       g.strokeStyle = 'rgba(236,230,255,0.35)'; g.lineWidth = dpr; g.setLineDash([4 * dpr, 4 * dpr]); g.beginPath(); g.moveTo(X, M.t); g.lineTo(X, M.t + PH); g.stroke(); g.setLineDash([]);
       const lines = ['x = ' + fmt(xd)];
-      L.ser.forEach((s, k) => { const v = valueAt(s, xd); lines.push(s.name + ' = ' + fmt(v)); const Y = L.py(L.logy ? Math.log10(v) : v); if (isFinite(Y)) { g.fillStyle = PAL[k % PAL.length]; g.beginPath(); g.arc(X, Y, 4 * dpr, 0, 7); g.fill(); } });
+      L.ser.forEach((s, k) => { if (!s.X.length) return; const v = valueAt(s, xd); lines.push(s.name + ' = ' + fmt(v)); const Y = L.py(L.logy ? Math.log10(v) : v); if (isFinite(Y)) { g.fillStyle = PAL[k % PAL.length]; g.beginPath(); g.arc(X, Y, 4 * dpr, 0, 7); g.fill(); } });
       g.font = `${12 * dpr}px Consolas, monospace`; const w = Math.max(...lines.map(t => g.measureText(t).width)) + 16 * dpr, h = lines.length * 16 * dpr + 10 * dpr;
       const bx = Math.min(X + 12 * dpr, M.l + PW - w), by = M.t + 8 * dpr;
       g.fillStyle = 'rgba(13,8,32,0.92)'; g.strokeStyle = '#3a2c62'; g.fillRect(bx, by, w, h); g.strokeRect(bx, by, w, h);

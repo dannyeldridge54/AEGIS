@@ -67,7 +67,7 @@
     const ser = spec.series.map(s => {   // DEV-3: clean (finite, non-null, y>0 for logy) and sort by x; empty series kept as placeholders
       const pts = [];
       for (let i = 0; i < Math.min(s.x.length, s.y.length); i++) {
-        if (s.x[i] == null || s.y[i] == null) continue; const xv = +s.x[i], yv = +s.y[i];
+        if (s.x[i] == null || s.y[i] == null || s.x[i] === '' || s.y[i] === '') continue; const xv = +s.x[i], yv = +s.y[i];
         if (!Number.isFinite(xv) || !Number.isFinite(yv) || (logy && !(yv > 0))) continue; pts.push([xv, yv]);
       }
       pts.sort((a, b) => a[0] - b[0]);
@@ -110,7 +110,7 @@
     g.textAlign = 'center'; g.fillText(spec.x_label || '', M.l + PW / 2, H - 14 * dpr);
     g.save(); g.translate(18 * dpr, M.t + PH / 2); g.rotate(-Math.PI / 2); g.fillText((spec.y_label || '') + (L.logy ? '  (log)' : ''), 0, 0); g.restore();
     g.textAlign = 'right';
-    L.ser.forEach((s, k) => { g.fillStyle = PAL[k % PAL.length]; g.fillText(s.name + '  ●', M.l + PW, 22 * dpr + 15 * dpr * k); });
+    let li = 0; L.ser.forEach((s, k) => { if (!s.X.length) return; g.fillStyle = PAL[k % PAL.length]; g.fillText(s.name + '  ●', M.l + PW, 22 * dpr + 15 * dpr * li++); });
     g.textAlign = 'left';
   }
 
@@ -173,7 +173,7 @@
       const xd = L.x0 + (X - M.l) / PW * (L.x1 - L.x0);
       g.strokeStyle = 'rgba(236,230,255,0.35)'; g.lineWidth = dpr; g.setLineDash([4 * dpr, 4 * dpr]); g.beginPath(); g.moveTo(X, M.t); g.lineTo(X, M.t + PH); g.stroke(); g.setLineDash([]);
       const lines = ['x = ' + fmt(xd)];
-      L.ser.forEach((s, k) => { const v = valueAt(s, xd); lines.push(s.name + ' = ' + fmt(v)); const Y = L.py(L.logy ? Math.log10(v) : v); if (isFinite(Y)) { g.fillStyle = PAL[k % PAL.length]; g.beginPath(); g.arc(X, Y, 4 * dpr, 0, 7); g.fill(); } });
+      L.ser.forEach((s, k) => { if (!s.X.length) return; const v = valueAt(s, xd); lines.push(s.name + ' = ' + fmt(v)); const Y = L.py(L.logy ? Math.log10(v) : v); if (isFinite(Y)) { g.fillStyle = PAL[k % PAL.length]; g.beginPath(); g.arc(X, Y, 4 * dpr, 0, 7); g.fill(); } });
       g.font = `${12 * dpr}px Consolas, monospace`; const w = Math.max(...lines.map(t => g.measureText(t).width)) + 16 * dpr, h = lines.length * 16 * dpr + 10 * dpr;
       const bx = Math.min(X + 12 * dpr, M.l + PW - w), by = M.t + 8 * dpr;
       g.fillStyle = 'rgba(13,8,32,0.92)'; g.strokeStyle = '#3a2c62'; g.fillRect(bx, by, w, h); g.strokeRect(bx, by, w, h);

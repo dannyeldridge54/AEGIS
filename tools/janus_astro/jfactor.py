@@ -8,9 +8,12 @@ KPC_CM = 3.0856775814913673e21
 def einasto(rs, alpha):  return lambda r: math.exp(-2/alpha*((r/rs)**alpha - 1))
 def nfw(rs):             return lambda r: 1/((r/rs)*(1+r/rs)**2)
 def burkert(r0):         return lambda r: 1/((1+r/r0)*(1+(r/r0)**2))
-def cored(shape, rc):    return lambda r: shape(max(r, rc))
+def cored(shape, rc):
+    f = lambda r: shape(max(r, rc)); f._cored = True; return f   # R80b: tagged so the fast J route falls back automatically
 def normalise(shape, rho_sun, r_sun):
-    k = rho_sun/shape(r_sun); return lambda r: k*shape(r)
+    k = rho_sun/shape(r_sun); f = lambda r: k*shape(r)
+    if getattr(shape, '_cored', False): f._cored = True
+    return f
 def los(rho, psi, r_sun, smax=100.0):
     """∫ρ² ds along a line of sight at angle psi from the GC, in GeV² cm⁻⁵ (ds in cm)."""
     cp = math.cos(psi)
@@ -44,9 +47,10 @@ def J_route_B(rho, r_sun, psi_max_deg=1.0, b_mask_deg=0.3, n_psi=160, n_phi=256)
 
 def J_route_A_fast(rho, r_sun, psi_max_deg=1.0, b_mask_deg=0.3, n=120, n_cheb=96, smooth=True):
     """SPEED-Hyperion H1: same (l, b) Gauss-Legendre grid as J_route_A, but los(psi) is sampled once on Chebyshev nodes in
-    log(psi) over [b_mask, psi_max] and evaluated by barycentric interpolation (psi >= b_mask everywhere in the region)."""
+    log(psi) over [b_mask, psi_max] and evaluated by barycentric interpolation (psi >= b_mask everywhere in the region).
+    Scope (R80/R80b): smooth uncored profiles with b_mask > 0. Cored profiles (tagged by cored()) and b_mask = 0 fall back to J_route_A."""
     # R80 / DEV-1: scope is smooth (uncored) profiles with a plane mask; otherwise use the reference route.
-    if b_mask_deg <= 0 or not smooth: return J_route_A(rho, r_sun, psi_max_deg, b_mask_deg, n)
+    if b_mask_deg <= 0 or not smooth or getattr(rho, '_cored', False): return J_route_A(rho, r_sun, psi_max_deg, b_mask_deg, n)
     pm, bm = math.radians(psi_max_deg), math.radians(b_mask_deg)
     lo, hi = math.log(bm), math.log(pm)
     k = np.arange(n_cheb); u = np.cos(np.pi*(2*k + 1)/(2*n_cheb))            # Chebyshev nodes (first kind) in [-1, 1]

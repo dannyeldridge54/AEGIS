@@ -41,8 +41,11 @@ def engine_hash():
 
 import inspect as _inspect
 A3 = C.A3
-def _ww_coeff():   # Way-Wigner coefficient as written in the engine (DEV-1: read, not retyped)
-    return float(re.search(r'return\s+([0-9.]+)\s*\*\s*\(t_s', _inspect.getsource(A3)).group(1))
+def _ww_coeff():   # Way-Wigner coefficient recovered from the engine function's value (R80b), regex on the source as a cross-check
+    t, T = 3600.0, 3.15e7; v = A3.decay_heat_way_wigner(t, T) / (t ** -0.2 - (t + T) ** -0.2)
+    m = re.search(r'return\s+([0-9.]+)\s*\*\s*\(t_s', _inspect.getsource(A3))
+    if m and abs(float(m.group(1)) - v) > 1e-12 * v: raise ValueError('Way-Wigner coefficient: source and value disagree')
+    return v
 def _t12_y(nuc):
     t = C.T12.get(nuc) or A3.T12x[nuc]; return t / C.Y
 def _br(a, b):
@@ -199,6 +202,14 @@ details.lantern{font:13px 'Segoe UI',sans-serif;color:var(--muted);border:1px so
 pre{white-space:pre-wrap;font:11px Consolas,monospace;color:var(--muted);background:var(--panel);padding:10px;border-radius:6px;overflow-x:auto}
 .tag{font:12px 'Segoe UI',sans-serif;color:var(--muted)}@media print{canvas{break-inside:avoid}details.lantern{display:none}}"""
 
+VALID = {'medical': 'chains are solved two independent ways (analytic Bateman and matrix exponential) agreeing to round-off',
+         'safeguards': 'the two-member clocks use the analytic Bateman solution, cross-checked against the matrix-exponential solver',
+         'fusion': 'the tritium law is a closed-form decay checked in the D2189 tests', 'fission': 'the Way&ndash;Wigner law is closed-form and checked in the D2189 tests',
+         'nucleosynthesis': 'each law is closed-form or a two-member Bateman solution, checked in the D2189 tests'}
+
+def n_charts(n):
+    return len({c['chart']['title'] for c in n.calls if c.get('chart')})
+
 def render(n, sec_no, ehash):
     charts, seen = [], set()
     for c in n.calls:
@@ -218,8 +229,7 @@ def render(n, sec_no, ehash):
 <h2>Method</h2><p>{n.methods}</p>
 <h2>Results</h2><table><tr><th>Quantity</th><th>Engine value</th></tr>{rows}</table>
 <div id="charts"></div><p class="tag">Charts are drawn from the engine's own output; hover to read exact values.</p>
-<h2>Validation</h2><p>Chronos was built under locked pre-registrations (D2189 and amendments A1&ndash;A3), with two independent solvers (analytic Bateman and matrix exponential)
-agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b NULL) recorded in the public ledger. Engine files sha256: <code>{ehash[:16]}&hellip;</code></p>
+<h2>Validation</h2><p>Chronos was built under locked pre-registrations (D2189 and amendments A1&ndash;A3); {VALID[n.key]}, and cleared by adversarial referee rounds (R77, R78, R78b NULL) recorded in the public ledger. Engine files sha256: <code>{ehash[:16]}&hellip;</code></p>
 <h2>Limits</h2><p>{n.limits}</p>
 <h2>References</h2><ol>{refs}</ol>
 <h2>Appendix: engine calls</h2><pre>{html.escape(json.dumps(prov, indent=1, default=str))}</pre>
@@ -233,7 +243,7 @@ def build(section='all', out_dir=None):
         sec_no, fn = SECTIONS[k]; n = fn()
         open(os.path.join(out_dir, f'{k}.html'), 'w', encoding='utf-8').write(render(n, sec_no, ehash))
         json.dump(dict(calls=[dict(name=c['name'], args=c['args']) for c in n.calls], printed=n.printed, inputs=n.inputs, consts=n.consts), open(os.path.join(out_dir, f'{k}.trace.json'), 'w'), indent=1)
-        made.append(dict(section=k, title=n.title, file=f'papers/{k}.html', numbers=len(n.printed), charts=sum(1 for c in n.calls if c.get('chart'))))
+        made.append(dict(section=k, title=n.title, file=f'papers/{k}.html', numbers=len(n.printed), charts=n_charts(n)))
     if len(keys) > 1:
         items = ''.join(f'<li><a href="{m["section"]}.html">{m["title"]}</a> <span class="tag">&sect;{SECTIONS[m["section"]][0]} &middot; {m["numbers"]} engine numbers &middot; {m["charts"]} charts</span></li>' for m in made)
         open(os.path.join(out_dir, 'index.html'), 'w', encoding='utf-8').write(f"""<!doctype html><html><head><meta charset="utf-8"><title>Chronos Notes</title><style>{CSS}</style></head><body><main>{lantern()}

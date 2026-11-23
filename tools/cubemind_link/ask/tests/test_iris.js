@@ -50,7 +50,7 @@ const iris = fs.readFileSync(path.join(__dirname, '..', 'iris.js'), 'utf8');
   const I4_locked = ['exp', 'bateman', 'noisy', 'logy'].every(k => res[k].I4_rel <= 1e-12); // as locked
   const I4 = ['exp', 'bateman', 'logy'].every(k => res[k].I4_rel <= 1e-12) && ['exp', 'bateman', 'noisy', 'logy'].every(k => res[k].I4_range_norm <= 1e-12); // DEV-2
   res.I4_locked_metric_pass = I4_locked;
-  res.verdict = { I1, I2, I3, I4, PASS: I1 && I2 && I3 && I4 };
+  res.verdict = { I1, I2, I3, I4, I4_label: 'post_hoc_DEV2 (range-normalised); after DEV-3 the logy readout interpolates in log y, so the linear-y I4 reference no longer applies to logy', PASS: I1 && I2 && I3 && I4 };
   console.log(JSON.stringify(res, null, 1));
   fs.writeFileSync(path.join(__dirname, '..', '..', '..', '..', 'field_tests', 'results', 'cm_iris.json'), JSON.stringify(res, null, 1));
   await b.close();

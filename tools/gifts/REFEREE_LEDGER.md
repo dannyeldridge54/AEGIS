@@ -49,3 +49,6 @@ R80 fixes (after DEVIATIONS): Iris DEV-3 edge tests E1-E5 + I1b (sub-pixel colum
 73 inputs echoed from call args (P1b), 9 constants read from the engine (P1c), chart labels (P4b), Ac-225 matrix exponential vs 50-digit
 analytic Bateman 5.7e-16 (P5) all PASS; untraced-token scan flags only citation years and isotope mass numbers. Hyperion DEV-1: fast path
 falls back to route A for b_mask 0 or smooth=False; scope narrowed in docstrings. Referee R80b pending.
+R80b (10:22 CT): no MAJOR; 7 MINOR fixed after PREREG_R80b_MINORS_DEVIATIONS (I4 post-hoc label; "" filtered; empty series out of
+legend/tooltip; index chart counts 3->1, 2->1; per-note Validation wording; Way-Wigner coefficient recovered from the engine value;
+cored profiles auto-fall back: NFW rc 0.1 kpc now 0.0 vs route A). Formula exponents stay typed, labelled as law constants. Round closed.

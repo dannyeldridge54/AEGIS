@@ -19,8 +19,7 @@ pre{white-space:pre-wrap;font:11px Consolas,monospace;color:var(--muted);backgro
 <h2>Method</h2><p>T-3 decays by beta emission to He-3 with half-life 12.32&nbsp;y: m(t) = m<sub>0</sub> e<sup>&minus;&lambda;t</sup>, and the He-3 mass formed is (m<sub>0</sub> &minus; m(t))&middot;M(He-3)/M(T).</p>
 <h2>Results</h2><table><tr><th>Quantity</th><th>Engine value</th></tr><tr><td>T left after 1 y (1000&nbsp;g)</td><td>945.3&nbsp;g</td></tr><tr><td>He-3 formed in 1 y</td><td>54.71&nbsp;g</td></tr><tr><td>Percent decayed in 1 y</td><td>5.471&nbsp;%</td></tr><tr><td>T left after 10 y</td><td>569.7&nbsp;g</td></tr><tr><td>He-3 formed in 10 y</td><td>430.3&nbsp;g</td></tr></table>
 <div id="charts"></div><p class="tag">Charts are drawn from the engine's own output; hover to read exact values.</p>
-<h2>Validation</h2><p>Chronos was built under locked pre-registrations (D2189 and amendments A1&ndash;A3), with two independent solvers (analytic Bateman and matrix exponential)
-agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b NULL) recorded in the public ledger. Engine files sha256: <code>28a593bc4e290399&hellip;</code></p>
+<h2>Validation</h2><p>Chronos was built under locked pre-registrations (D2189 and amendments A1&ndash;A3); the tritium law is a closed-form decay checked in the D2189 tests, and cleared by adversarial referee rounds (R77, R78, R78b NULL) recorded in the public ledger. Engine files sha256: <code>28a593bc4e290399&hellip;</code></p>
 <h2>Limits</h2><p>Decay only: no breeding, burn-up, permeation, isotope exchange or holdup models.</p>
 <h2>References</h2><ol><li>Lucas, L. L. &amp; Unterweger, M. P. (2000) J. Res. NIST 105, 541 (tritium half-life).</li><li>DOE Fusion Science &amp; Technology Roadmap (energy.gov, Oct 2025).</li></ol>
 <h2>Appendix: engine calls</h2><pre>[
@@ -118,7 +117,7 @@ agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b
     const ser = spec.series.map(s => {   // DEV-3: clean (finite, non-null, y>0 for logy) and sort by x; empty series kept as placeholders
       const pts = [];
       for (let i = 0; i < Math.min(s.x.length, s.y.length); i++) {
-        if (s.x[i] == null || s.y[i] == null) continue; const xv = +s.x[i], yv = +s.y[i];
+        if (s.x[i] == null || s.y[i] == null || s.x[i] === '' || s.y[i] === '') continue; const xv = +s.x[i], yv = +s.y[i];
         if (!Number.isFinite(xv) || !Number.isFinite(yv) || (logy && !(yv > 0))) continue; pts.push([xv, yv]);
       }
       pts.sort((a, b) => a[0] - b[0]);
@@ -161,7 +160,7 @@ agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b
     g.textAlign = 'center'; g.fillText(spec.x_label || '', M.l + PW / 2, H - 14 * dpr);
     g.save(); g.translate(18 * dpr, M.t + PH / 2); g.rotate(-Math.PI / 2); g.fillText((spec.y_label || '') + (L.logy ? '  (log)' : ''), 0, 0); g.restore();
     g.textAlign = 'right';
-    L.ser.forEach((s, k) => { g.fillStyle = PAL[k % PAL.length]; g.fillText(s.name + '  ●', M.l + PW, 22 * dpr + 15 * dpr * k); });
+    let li = 0; L.ser.forEach((s, k) => { if (!s.X.length) return; g.fillStyle = PAL[k % PAL.length]; g.fillText(s.name + '  ●', M.l + PW, 22 * dpr + 15 * dpr * li++); });
     g.textAlign = 'left';
   }
 
@@ -224,7 +223,7 @@ agreeing to round-off, and cleared by adversarial referee rounds (R77, R78, R78b
       const xd = L.x0 + (X - M.l) / PW * (L.x1 - L.x0);
       g.strokeStyle = 'rgba(236,230,255,0.35)'; g.lineWidth = dpr; g.setLineDash([4 * dpr, 4 * dpr]); g.beginPath(); g.moveTo(X, M.t); g.lineTo(X, M.t + PH); g.stroke(); g.setLineDash([]);
       const lines = ['x = ' + fmt(xd)];
-      L.ser.forEach((s, k) => { const v = valueAt(s, xd); lines.push(s.name + ' = ' + fmt(v)); const Y = L.py(L.logy ? Math.log10(v) : v); if (isFinite(Y)) { g.fillStyle = PAL[k % PAL.length]; g.beginPath(); g.arc(X, Y, 4 * dpr, 0, 7); g.fill(); } });
+      L.ser.forEach((s, k) => { if (!s.X.length) return; const v = valueAt(s, xd); lines.push(s.name + ' = ' + fmt(v)); const Y = L.py(L.logy ? Math.log10(v) : v); if (isFinite(Y)) { g.fillStyle = PAL[k % PAL.length]; g.beginPath(); g.arc(X, Y, 4 * dpr, 0, 7); g.fill(); } });
       g.font = `${12 * dpr}px Consolas, monospace`; const w = Math.max(...lines.map(t => g.measureText(t).width)) + 16 * dpr, h = lines.length * 16 * dpr + 10 * dpr;
       const bx = Math.min(X + 12 * dpr, M.l + PW - w), by = M.t + 8 * dpr;
       g.fillStyle = 'rgba(13,8,32,0.92)'; g.strokeStyle = '#3a2c62'; g.fillRect(bx, by, w, h); g.strokeRect(bx, by, w, h);
