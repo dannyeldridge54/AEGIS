@@ -1,0 +1,13 @@
+{"rungs": "N3 nuclear data, N4 resonance reconstruction", "hints": [
+ "H1 ENDF/B-VIII.0 processed (OpenMC HDF5) via github.com/openmc-data-storage/ENDF-B-VIII.0-NNDC: per nuclide 0K, 250K, 294K, 600K, 900K, 1200K, 2500K grids",
+ "H2 raw ENDF-6 tapes (ENDF/B-VIII.0) in njoy/NJOY2016 tests/resources: Mn-55 (Reich-Moore LRF=3, 1e-5 eV-125 keV, NAPS=1, AP=APL=0.5365e-12 cm, l=0 69 res, l=1 118 res), Zr-90 (MLBW LRF=2, to 200 keV, NAPS=0, AP 0.716, l=0,1,2)",
+ "H3 ENDF-102 Appendix D: k = 2.196807e-3 * AWRI/(AWRI+1) * sqrt|E| (1e12 cm^-1, E in eV); sigma in barns via pi/k^2",
+ "H4 penetrabilities/shift/phase: P0=rho, P1=rho^3/(1+rho^2), P2=rho^5/(9+3rho^2+rho^4); S0=0, S1=-1/(1+rho^2), S2=-(18+3rho^2)/(9+3rho^2+rho^4); phi0=rho, phi1=rho-atan(rho), phi2=rho-atan(3rho/(3-rho^2))",
+ "H5 channel radius: NAPS=0 -> a = 0.123 AWRI^(1/3) + 0.08 for P, S; AP (or APL) for phi; NAPS=1 -> AP for both",
+ "H6 g_J = (2J+1)/(2(2I+1)); potential scattering for J-values without resonances added via (2l+1) - sum g_J",
+ "H7 MLBW: U = e^{-2i phi}[1 + sum_r i Gn_r(E)/(E'_r - E - i Gt_r/2)], Gn_r(E) = Gn_r P_l(E)/P_l(|E_r|), E'_r = E_r + Gn_r (S_l(|E_r|) - S_l(E))/(2 P_l(|E_r|)); sigma_el = pi/k^2 sum g |1-U|^2; capture = pi/k^2 sum g Gn Gg/((E'-E)^2 + Gt^2/4)",
+ "H8 Reich-Moore (one neutron channel, no fission): R = sum_r (Gn_r(E)/2)/(E_r - E - i Gg_r/2), U = e^{-2i phi}(1 + iR)/(1 - iR); sigma_tot = 2pi/k^2 sum g (1 - Re U); sigma_el = pi/k^2 sum g |1-U|^2; capture = tot - el; no shift factor",
+ "H9 MF3 background cross sections are added to the resonance contribution",
+ "H10 thermal (0.0253 eV) values (Mughabghab Atlas / ENDF): Li-6(n,t) ~940 b, H-1(n,g) 0.3326 b, Li-7(n,g) 0.0454 b, Fe-56(n,g) 2.59 b, Mn-55(n,g) 13.3 b",
+ "H11 14 MeV: Be-9(n,2n) ~0.5 b, Pb-208(n,2n) ~2.2 b, Li-7(n,n't) ~0.3 b",
+ "H12 Mn-55 big s-wave resonance at ~336 eV (Gn ~ 21 eV)"]}
