@@ -1,0 +1,14 @@
+parameter,value,range_or_band,status,source
+m_3/2_TeV,159,156-162,derived window (with one fitted O(1) knob mu_W/mu=0.25),D2100 P6
+mu_over_m3/2,0.551,,fitted O(1) knob,D2100 P6
+B_over_m3/2,1.246,,derived from tan(beta) condition,D2100 P6
+m2_Hu_over_m3/2^2,0.058,,derived (running),D2099
+m2_Hd_over_m3/2^2,1.0,,derived (running),D2099
+tan_beta,1.9,,input for light Higgs,D2100 P6
+m_wino_LSP_GeV,693,670-1000,prediction,paper table
+m_gluino_TeV,3.8,3.77-3.90,prediction,D2100 P6
+m_h_GeV,125,,matched,D2100 P6
+M1,not computed,,assumption 3.3*M2 in the card,-
+scalar_splittings,not computed,,assumption common = m_3/2 in the card,-
+A_terms,not computed,,assumption 0 in the card,-
+modulus_mass_GeV,1.6e8,,derived (KKLT chain),D2090

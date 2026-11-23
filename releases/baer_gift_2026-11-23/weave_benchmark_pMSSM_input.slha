@@ -1,0 +1,41 @@
+# SLHA pMSSM input card: the Weave mini-split benchmark (Danny Lee Eldridge, 23 Nov 2026). THEORY / APPROXIMATE.
+# Purpose: a starting card you can run through your own spectrum code (Isajet/ISASUGRA pMSSM mode, SoftSUSY, SPheno)
+# so the decaying-wino numbers in the note can be checked against an exact spectrum, widths and mixings.
+# Sources (github.com/dannyeldridge54/aegis, theory/pending_docs/D72_D75_weak_spots.md): D2089-D2100.
+#   m_3/2 = 156-162 TeV (central 159); mu = 0.551 m_3/2; B = 1.246 m_3/2; m^2_Hu = 0.058 m_3/2^2, m^2_Hd = 1.0 m_3/2^2 (D2100, P6);
+#   tan(beta) = 1.9; gluino 3.77-3.90 TeV; wino LSP 693 GeV (band 0.67-1.0 TeV); m_h = 125 GeV at these settings.
+# NOT computed by us (flagged): M1 (set to the pure-AMSB ratio 3.3*M2 as an assumption), the first/second/third
+#   generation scalar splittings (set common = m_3/2), A-terms (set 0). Treat these three as free knobs.
+BLOCK MODSEL
+    1    0    # general MSSM (pMSSM) input
+BLOCK SMINPUTS
+    3    1.1800000E-01   # alpha_s(MZ) MSbar
+    5    4.1800000E+00   # mb(mb)
+    6    1.7270000E+02   # mt pole
+BLOCK MINPAR
+    3    1.9000000E+00   # tan(beta)(MZ)
+BLOCK EXTPAR
+    0    1.5900000E+05   # input scale Q = m_3/2 (GeV)
+    1    2.2900000E+03   # M1  (ASSUMPTION: 3.3 x M2, pure-AMSB ratio)
+    2    6.9300000E+02   # M2  (wino; tree-level ~ LSP mass)
+    3    3.5000000E+03   # M3  (so that the gluino pole lands near 3.8 TeV; adjust)
+   11    0.0000000E+00   # At  (ASSUMPTION)
+   12    0.0000000E+00   # Ab  (ASSUMPTION)
+   13    0.0000000E+00   # Atau(ASSUMPTION)
+   23    8.7600000E+04   # mu = 0.551 m_3/2
+   26    1.2000000E+05   # mA (approx. from m^2_Hu, m^2_Hd, mu; adjust to tan(beta)=1.9)
+   31    1.5900000E+05   # meL   (common = m_3/2, ASSUMPTION)
+   32    1.5900000E+05   # mmuL
+   33    1.5900000E+05   # mtauL
+   34    1.5900000E+05   # meR
+   35    1.5900000E+05   # mmuR
+   36    1.5900000E+05   # mtauR
+   41    1.5900000E+05   # mqL1
+   42    1.5900000E+05   # mqL2
+   43    1.5900000E+05   # mqL3
+   44    1.5900000E+05   # muR
+   45    1.5900000E+05   # mcR
+   46    1.5900000E+05   # mtR
+   47    1.5900000E+05   # mdR
+   48    1.5900000E+05   # msR
+   49    1.5900000E+05   # mbR
