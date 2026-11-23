@@ -22303,3 +22303,18 @@ Locked rule (PREREG_D2178 T2): each freed input costs one parameter, ΔAIC = Δ�
 - SPT-3G D1 + DESI DR2 + Dovekie: W 1856.35; W + Σmν free 1856.62 → Δχ² = +0.27, ΔAIC = +2.27. Σmν = 0.0615 eV, u_i = 0.166, H0 66.89.
 - Verdict: freeing Σmν recovers nothing; the fits sit on the normal-ordering floor. The positive Δχ² on a nested model is minimiser scatter (D2162: 3-4 in χ² per fit), not a real cost. Not preferred on either dataset.
 - Still running on the PC: W + n_s free and W + running free (both datasets), D2169 tight minimiser (L, W; run 1 of 4). Files: ufe_data/weave_pc/results/pr4_W_desdovekie_freemnu{,_spt}.json. Not refereed.
+
+## D2191 (CENTRE, TOOL, 23 Nov 2026 10:50 CT) — Ring Engine v1: the UFE layers in one pass (PREREG_RING1, PASS as locked)
+Danny 10:34: one program for the unified field's layers, rings and where they settle, with the fastest fits. tools/rings/rings.py.
+- One pass, in-process: settle (adopted vacuum point) -> ring 0 rungs -> ring 1 TM1 + m_bb + Σmν -> ring 2 one-loop RG -> ring 3
+  genesis/wino filters + m32 lever -> pattern (exact SERAPIS at self-consistent N*), scored with the Bloom's own lnL and BIC.
+- R1 speed: cold pass 0.53 s, warm 0.36 ms, C fit 2.9 s (10 evaluations). R2 fidelity: every LIVE node equals the standalone tool
+  exactly (0.0; TM1 identity 1e-16). R5 map: 6 LIVE (n_s, r, running, Σmν, θ12, m_bb), 4 linear response (α_s, wino, gluino, proton,
+  via the D1937 m32 lever), 3 STORED (ΔN_eff, α drift, δ_CP). Label note: the lock listed α_s as STORED; the engine tags it linear
+  response because the Bloom's lever moves it; at s = 1 the value is identical.
+- R3 finding: at the adopted point (C = 1.25e-6, T_R = 8.94e8) the live pattern gives n_s = 0.97446 and r = 4.81e-4, while the Bloom
+  stores n_s = 0.9706 and r = 5.4e-4. The stored n_s is the fixed value used in the W fits, not this point. Against CMB-SPA+DESI
+  (0.9728 ± 0.0029) the live value pulls +0.57σ, the stored −0.76σ. The Bloom's n_s entry should be read as "W-fit input", not derived.
+- R4 fit: fitting C gives C = 1.0955e-6, n_s = 0.97282 (pull +0.01), lnL −9.796 → −9.635, but the extra knob costs 1.52 in BIC:
+  target −21.97 → −23.34. Verdict (Bloom rule): NULL, does not buy its penalty. The adopted point stays.
+- The one big pull is unchanged: α_s at −4.2σ (ring 2). Not refereed.
