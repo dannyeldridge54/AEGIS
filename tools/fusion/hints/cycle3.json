@@ -1,0 +1,17 @@
+{"cycle": 3, "target": "the goal node itself (net electricity) is not built; R85 fixes (1999 threshold law; non-discriminating held-out test)", "hints_found": 14, "searches": 6,
+ "hints": [
+ {"id": 1, "hint": "ARC: P_fus 525 MW, P_tot thermal 708 MW, eta_elec 0.40, P_e gross 283 MW, P_net 190 MW, Q_e 3.0, LHCD 25 + ICRF 13.6 MW coupled", "src": "Sorbom et al. 2015, arXiv:1409.3540 Table 1", "act": true},
+ {"id": 2, "hint": "ARC plasma: R 3.3, a 1.13, kappa 1.84, B 9.2 T, Ip 7.8 MA, <n> 1.3e20, n0 1.8e20, <T> 14 keV, T0 27 keV, tau_E 0.64 s, H98 1.8, Q_p ~13.6", "src": "arXiv:1409.3540", "act": true},
+ {"id": 3, "hint": "EU DEMO1: P_fus 2014 MW, P_net 500 MW, R 9 m, a 2.9 m, B 5.9 T, Ip 18 MA; aux ~50 MW; heating wall-plug 0.4", "src": "Federici et al. overview (MPG PuRe 3055125)", "act": true},
+ {"id": 4, "hint": "DEMO blanket energy multiplication about 1.2-1.3", "src": "Federici overview sec 4.3.2", "act": true},
+ {"id": 5, "hint": "PROCESS DEMO A: 321 MW from blanket/shield multiplication at P_fus 1686 MW; gross/high-grade heat 36.8%; NBI wall-plug 0.4 (achieved ~0.25)", "src": "Kovari et al., PROCESS Part 2, arXiv:1601.06147", "act": true},
+ {"id": 6, "hint": "Cycle efficiencies: water 31%; helium 41.1% (divertor heat unused); scCO2 Brayton 0.4347 ln(T) - 2.5043", "src": "arXiv:1601.06147 Tables 3-4", "act": false},
+ {"id": 7, "hint": "Coolant pumping: 0.0005 (water), 0.085 (helium) of thermal power in the simple model", "src": "arXiv:1601.06147", "act": true},
+ {"id": 8, "hint": "Recirculating loads: TF coils, cryoplant, vacuum, tritium plant, H&CD, primary pumps, rest of plant", "src": "arXiv:1601.06147 Fig 9", "act": true},
+ {"id": 9, "hint": "Q_e (ARC) = P_e gross / P_recirc = 283 / 93 = 3.0", "src": "arXiv:1409.3540 (definition implied by its numbers)", "act": true},
+ {"id": 10, "hint": "ITER FDR P_L-H 51 MW follows the ITER Physics Basis 1999 law P = 2.84 M^-1 B^0.82 n20^0.58 R a^0.81", "src": "referee R85", "act": true},
+ {"id": 11, "hint": "D-T threshold isotope scaling 1/A_eff from JET DTE1", "src": "Righi et al., Nucl. Fusion 39 (1999) 309 (via R85)", "act": true},
+ {"id": 12, "hint": "Economic viability criteria for fusion plants", "src": "arXiv:2604.07367", "act": false},
+ {"id": 13, "hint": "MANTA negative-triangularity pilot plant design", "src": "arXiv:2405.20243", "act": false},
+ {"id": 14, "hint": "DEMO neutral beams: efficiency challenges", "src": "arXiv:1309.7185", "act": false}],
+ "misses": ["DEMO gross electric and thermal efficiency not in the pages read", "ARC blanket multiplication and heating wall-plug efficiency not stated"]}
