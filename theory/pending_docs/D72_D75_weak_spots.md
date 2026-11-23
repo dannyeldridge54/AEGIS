@@ -22728,3 +22728,18 @@ Balanced in the protocol's sense (no actionable, sourced, non-tuning move left),
 alpha_s -3.9 sigma (+ Hoyle, same shift) - the visible-sector D7 assignment / one-loop threshold; D/H -2.07 sigma - an independent resolution
 of the PRIMAT vs PArthENoPE rate systematic; JET #99971 +64% - digitised Te(rho)/deposition + NBI fraction definition. Minor kept on record:
 N10 front dpa 7.11 (D2207a track-length 7.19) vs the old 10.7 scratch. Next real step: data/theory inputs, not more knob passes.
+
+## D2225 (NEGATIVE SPACE of the forces ring, pulse round 7, 23 Nov 2026) — tau = i lead: CONDITIONAL and GENERIC, not evidence
+Locked PREREG_D2225_NEGSPACE (the tau = i lead disclosed as seen). Needed at M12: delta32 = -0.255 (2 sigma -0.40..-0.10; Hoyle-tight
+-0.29..-0.22). Excluded routes: flux integers (D2212, steps 3-5x too big), DKL on the 4-cycle Re T 20.2 (one Db unit = 1.44, 6x too big),
+lighter split spectrum (wino bound, D2214), light colour triplets (wrong sign, D2213). Not predictive: Planck dim-5 operator (eps ~0.002, sign
+free). OPEN: intermediate-scale extra matter. Sub-torus requirement: Db -1 / -2 / -3 need Im T_i 4.50 / 2.34 / 1.16; Db <= -4 impossible.
+Engine run (theory/tests/d2225_negspace.py): DKL torus at the model's modular vacuum tau = i (L 1.0547), universal flux: 9/169 (Db32, Db12)
+stable on the line Db32 + ~0.7 Db12 ~ -3; simplest (-3, 0): alpha_s 0.117953, M12 1.148e16 (unchanged), pull -0.04. rho (L 1.0335): also 9/169.
+Referee round 7: code OK (L(i), L(rho) checked by hand; prefilter safe; no clamps). BUT (a) tau = i as THE N=2 threshold torus is a hypothesis:
+the SERAPIS torus is the flux-free N=2 plane (D4999/D532), its modulus may be T or U, and if both T and U enter with the 4-cycle-sized T the
+scan dies; (b) look-elsewhere: the Hoyle window is +-0.43 of a Db unit, so ~86% of real requirements land near an integer - a stable integer
+pair is GENERIC; i and rho give the same count; (-3, 0) ties with (-2, -1) on |Db| total and was not pre-declared; (c) a DKL additive constant
+O(1) vs L ~1 would move the line (still a line). Verdict: CONDITIONAL. Claim allowed: "the forces ring balances at tau = i if the visible N=2
+sector gives Db32 + 0.7 Db12 ~ -3"; no prediction until (Db32, Db12) is derived from the Z2 x Z6' spectrum and the T/U identification fixed.
+No bug -> no rerun. Status of A.alpha_s unchanged (OUT) until that derivation.
