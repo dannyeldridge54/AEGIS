@@ -1,0 +1,7 @@
+{"lock":"PREREG_CM_FUSION","checked_utc":"2026-11-23T18:18Z",
+ "K1_K3_examples_equal_engine":"PASS (12/12, cloud)",
+ "K4_registry_call_on_PC":"PASS (75 tools; fusion_sigmav 10 keV = 1.1362e-16; nuclide_lookup Cs-137 = 9.4797e8 s)",
+ "pickup":"CubeMind learn loop took fusion_sv_0 and fusion_sv_1 first (calc_done.txt)",
+ "first_grades":[{"id":"fusion_sv_0","tool":1.3658e-17,"cubemind":3.63e-24,"verdict":"FAIL","class":"formula"},
+                 {"id":"fusion_sv_1","tool":1.1362e-16,"cubemind":1.37e-24,"verdict":"FAIL","class":"arithmetic (invented formula)"}],
+ "note":"Blind derivations fail as expected on first contact; failures are stored with a rule, which is the learning signal. Track pass rate over the 46 tasks."}
