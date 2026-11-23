@@ -1,6 +1,7 @@
 """Zurvan fast path (SPEED-Zurvan): exact derivative of the one-loop CW potential, no finite differences.
 Sigma_x = (1/2 v_x) dV/dv_x, dV/dv = sum_i n_i/(64 pi^2) * 2 m_i^2 (ln(m_i^2/Q^2) - 1) dm_i^2/dv."""
 import math
+import zurvan
 from zurvan import _m2
 
 PI2 = math.pi ** 2
@@ -10,7 +11,12 @@ def _pair(LL, RR, LR, dLL, dRR, dLR):
     ds = 0.5 * (dLL + dRR); dr = (0.25 * (LL - RR) * (dLL - dRR) + LR * dLR) / r if r > 0 else 0.0
     return (s - r, ds - dr), (s + r, ds + dr)
 
-def _F(m2, Q2): return m2 * (math.log(m2 / Q2) - 1) if m2 > 0 else 0.0
+def _F(m2, Q2):
+    if m2 == 0: return 0.0
+    if m2 < 0:   # same handling as the reference (DEV-3)
+        zurvan.WARN.add('a field-dependent mass^2 <= 0 was met (tachyonic sfermion); |m^2| was used, so that term is not reliable')
+        m2 = abs(m2) + 1e-12
+    return m2 * (math.log(m2 / Q2) - 1)
 
 def sigmas_exact(p):
     vu, vd, Q2 = p['vu'], p['vd'], p['Q'] ** 2

@@ -1,14 +1,19 @@
 {
  "Z1": {
   "max_rel_sigma": 5.935719427671315e-05,
-  "t_ref_600": 0.06539976999829378,
-  "t_fast_600": 0.004433477000020503,
-  "speedup": 14.75134978663278,
+  "t_ref_600": 0.06794580099904124,
+  "t_fast_600": 0.004662586999984342,
+  "speedup": 14.572554034759978,
   "pass_": false
  },
- "Z1_supplementary_post_hoc": {
-  "note": "NOT a locked test: Richardson-extrapolated reference (h=1e-4, 5e-5) vs exact",
-  "max_rel_ref_h1e4": 5.936071776236978e-05,
-  "max_rel_richardson": 7.812637416042152e-05
+ "tachyon_case": {
+  "exact_warns": true,
+  "fd_warns": true
+ },
+ "mp50_Sd_sbottom1_P3": {
+  "exact": 10374078.41683086,
+  "mp50": 10374078.41683086,
+  "rel": 9.811381366056784e-18,
+  "fd_float64": 10374694.229571806
  }
 }

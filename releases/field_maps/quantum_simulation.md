@@ -151,7 +151,7 @@ Rotation rung 1, 2026-11-23. Toolkit: **Spindle** (tools/qsim, locks D2183-D2185
   period by quadrature agrees with long-window simulation to 5e-8 on four cases (after a turning-point fix for phi = 0 or pi);
   it failed its locked test as first written and is offered as an option. The sparse Bose-Hubbard path was REJECTED: it can
   return wrong lowest levels, including the ground state (diagonal or symmetric cases collapse the Krylov space); it is
-  opt-in only above dimension 5000.
+  opt-in only above dimension 5000 (its 8x8 numbers in the speed record match dense only at J = 0.2; at J = 0 it returns wrong levels).
 
 ## Gaps and build order (cheapest real value first)
 1. Symmetry-resolved Bose-Hubbard (momentum and parity sectors): exact and large, with no degeneracy blind spot.

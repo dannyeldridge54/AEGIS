@@ -74,10 +74,16 @@ def sigmas(p, h=1e-4):
         res[name] = (dVu / (2 * vu), dVd / (2 * vd))
     return res
 
-def delta_ew(p, h=1e-4):
+def delta_ew(p, h=1e-4, method='exact'):
+    """method='exact' (default since SPEED-Zurvan DEV-2): exact eigenvalue derivative (zurvan_fast.sigmas_exact);
+    method='fd': the original float64 central differences (cross-check; up to ~1e-4 roundoff at multi-hundred-TeV scales)."""
     WARN.clear()
     t2 = p['tanb'] ** 2; den = t2 - 1
-    S = sigmas(p, h)
+    if method == 'exact':
+        from zurvan_fast import sigmas_exact
+        S = sigmas_exact(p)
+    else:
+        S = sigmas(p, h)
     C = {'mu': -p['mu'] ** 2, 'H_u': -p['mHu2'] * t2 / den, 'H_d': p['mHd2'] / den}
     for k, (su, sd) in S.items():
         C['Sigma_u^u(' + k + ')'] = -su * t2 / den
