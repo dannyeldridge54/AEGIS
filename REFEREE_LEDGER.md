@@ -4,3 +4,5 @@
   mix meets both); P1 near-unfalsifiable -> consistency check; ARC T_ped 4 keV; "marginal H-mode".
 - R91 (23 Nov 2026, PROM-8 SPARC ash/composition): A1 pass not like-with-like (ITER-calibrated 0.6 P_rad,core vs POPCON all-radiation
   separatrix P_loss; synchrotron included vs omitted). -> DEV-1/2 rerun; A2 relabelled composition check.
+- R92 (23 Nov 2026, PROM-9 tree): L1/L8/L3 stale goalposts (already corrected in FUSION-1 DEVs); L4 SPARC popcon branch matches cfspopcon
+  (tau 0.674 vs 0.673 s at 7.3 keV) yet runs hot (218 MW): steep point, ~20-30% tau optimism amplified. No bug. -> DEV-1 relock, DEV-2 V/n/kappa_A.
