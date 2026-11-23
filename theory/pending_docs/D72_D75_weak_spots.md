@@ -22385,3 +22385,18 @@ S4 inertial (OU's IFE-STARFIRE), S5 fuel cycle linked to Chronos tritium, S6 neu
   is Greenwald. With eta_wp 0.25 the best is P_aux 40 MW, P_net -7.7 MW (F2: the dial result moves with the plant inputs).
 - E5 lower sections unchanged (sv(10 keV), ignition, tritium burn identical). Run time 511 s (the goal-dial scan is slow; speed rung next).
 Not yet refereed (R86 launched).
+
+## D2195a (CORRECTION, referee R86, 23 Nov 2026 12:55 CT) — net electricity redone on a feasible point with real house loads
+- D2195's E3 (+68 MW) used a plasma over the Greenwald cap (f_G 0.987) with no house loads; withdrawn as the headline (kept, labelled).
+- Rerun (DEV-1..7, fast path): goal dials on the ITER machine with a DEMO-A-consistent plant (pumping 14 MW per 2072 MW deposited and
+  counted; M 1.24; eta_th 0.368; heating wall-plug 0.4) pick P_aux = 73 MW (the top of the allowed set = ITER's installed upgrade) at the
+  Greenwald edge (bisected: f_G 0.9399, binding limit Greenwald): P_fus 639 MW, Q 8.8, beta_N 2.06, P_loss/P_LH 2.3.
+  P_net: +121 MW (no house loads), +71 (50 MW), +21 MW (100 MW = ITER's AC auxiliaries) -> headline P_net ~ +21 MW, Q_e 1.07.
+  With today's achieved heating efficiency 0.25: -89 MW. With helium simple-model pumping (8.5%): -20 MW at 100 MW house loads.
+  Reading: an ITER-sized Q ~ 9-10 machine is marginal for net electricity at best; the result hinges on heating efficiency and pumping.
+- The "dials land on ITER's design point" wording (D2195) is withdrawn: partly circular (S3 is calibrated to ITER; Q = 10 follows from
+  500/50), and the density (f_G 0.94) is above ITER's ~0.85.
+- IPB99 threshold at n_line 1.0e20: 48.5 MW (Snipes 2001: 49 MW for ITER-FEAT; FDR table 51 MW).
+- Simulations (SIM-1, all PASS): burn settles on the operating point (1e-6), resettles 24.5 s after a 50->40 MW heating step, is thermally
+  stable for +-10% temperature kicks, helium ash rises with t63 = 12 s (5 tau_E = 14.4 s); tritium plant-life doubling exact; the
+  minimum breeding ratio just to hold inventory at 10 kg and 1 GW is 1.010.

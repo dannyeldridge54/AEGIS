@@ -81,3 +81,15 @@ def goal_dials_fast(m, E_alpha_MeV, plant_in, P_aux_set=(30.0, 40.0, 50.0, 60.0,
             pl = F.plant(op['P_fus'], Pa, plant_in)
             if best is None or pl['P_net'] > best['P_net']: best = dict(pl, n_avg=n, P_aux=Pa, P_fus=op['P_fus'], Q=op['Q'], f_G=op['f_G'], beta_N=op['beta_N'], lh_ratio=op['P_loss'] / op['P_LH'])
     return best
+
+def binding_limit(m, E_alpha_MeV, P_aux, n_lo, n_hi, lh_margin=1.3, betaN_max=2.8, tol=1e-4):
+    """PROM-3 DEV-4: bisect density between a feasible n_lo and an infeasible n_hi; return the edge and the limit that fails first."""
+    def bad(n):
+        op = operating_point_fast(m, E_alpha_MeV, n_avg=n, P_aux=P_aux)
+        if op is None: return ['no hot root']
+        return [k for k, b in (('Greenwald', op['f_G'] > m['fG_max']), ('beta_N', op['beta_N'] > betaN_max), ('L-H margin', op['P_loss'] < lh_margin * op['P_LH'])) if b]
+    while (n_hi - n_lo) / n_lo > tol:
+        mid = 0.5 * (n_lo + n_hi)
+        if bad(mid): n_hi = mid
+        else: n_lo = mid
+    return dict(n_edge=n_lo, limit=bad(n_hi), op=operating_point_fast(m, E_alpha_MeV, n_avg=n_lo, P_aux=P_aux))

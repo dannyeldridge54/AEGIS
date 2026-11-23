@@ -253,13 +253,15 @@ class Neutrons(Engine):
 
 
 # ------------------------------------------------------------------ S0 GOAL: net electricity (PROM-3)
-PLANT_DEMO = dict(M=None, eta_th=0.368, eta_wp=0.4, f_pump=0.085, P_other=0.0,
-                  src='M from PROCESS DEMO A (E2); eta_th 0.368 PROCESS DEMO A; eta_wp 0.4 Federici/PROCESS; f_pump 0.085 helium (PROCESS simple model); P_other 0 = best case')
+PLANT_DEMO = dict(M=None, eta_th=0.368, eta_wp=0.4, f_pump=14.0 / 2058.0, pump_in_Pth=True, P_other=100.0,
+                  src='M, eta_th 0.368, pumping 14 MW of 2072 MW deposited (PROCESS DEMO A, arXiv:1601.06147); eta_wp 0.4 (Federici/PROCESS); '
+                      'P_other 100 MW = ITER AC auxiliaries (cooling water 40, cryo 30, tritium 10, buildings 10; iter.org) (PROM-3 DEV-2/3)')
 def M_demoA(): return 1 + 321.0 / (1686.0 * two_body_split('DT')[0] / q_value('DT'))
 def plant(P_fus, P_aux, plant_in):
     share = two_body_split('DT')[0] / q_value('DT'); M = plant_in['M'] if plant_in.get('M') else M_demoA()
-    Pn, Pa = P_fus * share, P_fus * (1 - share); Pth = M * Pn + Pa + P_aux; Pg = plant_in['eta_th'] * Pth
-    Prc = P_aux / plant_in['eta_wp'] + plant_in['f_pump'] * Pth + plant_in['P_other']
+    Pn, Pa = P_fus * share, P_fus * (1 - share); P0 = M * Pn + Pa + P_aux
+    Ppump = plant_in['f_pump'] * P0; Pth = P0 + (Ppump if plant_in.get('pump_in_Pth') else 0.0); Pg = plant_in['eta_th'] * Pth
+    Prc = P_aux / plant_in['eta_wp'] + Ppump + plant_in['P_other']
     return dict(P_th=Pth, P_gross=Pg, P_recirc=Prc, P_net=Pg - Prc, Q_e=Pg / Prc if Prc > 0 else float('inf'), M=M)
 def goal_dials(m, E_alpha_MeV, plant_in, P_aux_set=(30.0, 40.0, 50.0, 60.0, 73.0), lh_margin=1.3, betaN_max=2.8):
     best = None; nG = m['Ip'] / (math.pi * m['a'] ** 2) * 1e20

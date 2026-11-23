@@ -1,0 +1,60 @@
+{
+ "E3_feasible": {
+  "n_edge": 1.078958608343689e+20,
+  "f_G": 0.9399478363642275,
+  "binding_limit": [
+   "Greenwald"
+  ],
+  "P_aux": 73.0,
+  "P_fus": 639.2160104828023,
+  "Q": 8.756383705243866,
+  "beta_N": 2.0646029957878005,
+  "lh_ratio": 2.340728088139678,
+  "rows": {
+   "P_other=0, DEMO-A pumping": {
+    "P_net": 120.79628180210068,
+    "Q_e": 1.641943008399068
+   },
+   "P_other=0, helium simple-model pumping": {
+    "P_net": 79.5835225643487,
+    "Q_e": 1.31408394556956
+   },
+   "P_other=50, DEMO-A pumping": {
+    "P_net": 70.79628180210068,
+    "Q_e": 1.2972474190879808
+   },
+   "P_other=50, helium simple-model pumping": {
+    "P_net": 29.583522564348698,
+    "Q_e": 1.0975121401391812
+   },
+   "P_other=100, DEMO-A pumping": {
+    "P_net": 20.79628180210068,
+    "Q_e": 1.0721659854944627
+   },
+   "P_other=100, helium simple-model pumping": {
+    "P_net": -20.416477435651302,
+    "Q_e": 0.9422256326952804
+   }
+  },
+  "headline_P_other_100": {
+   "P_net": 20.79628180210068,
+   "Q_e": 1.0721659854944627
+  },
+  "eta_wp_0p25_P_other_100": {
+   "P_net": -88.70371819789932,
+   "Q_e": 0.7769430184662076
+  }
+ },
+ "E3_old_over_greenwald": {
+  "f_G": 0.9871614902914465,
+  "P_net": 68.39907175698235,
+  "label": "over Greenwald (f_G 0.987), P_other 0, f_pump 0.085: the run-1 number"
+ },
+ "F1": {
+  "ipb99_model_point": 53.31469123938116,
+  "ipb99_at_nline_1e20": 48.47418661244059,
+  "table": 51.0,
+  "snipes_ITER_FEAT": 49.0
+ },
+ "seconds": 18.6
+}
