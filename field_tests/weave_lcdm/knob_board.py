@@ -89,7 +89,7 @@ def load_sn(name):
     return zhd, zhel, m, IS, IS.sum(axis=1), IS.sum()
 def chi2(p, b, sn, extra=False):
     wb, wc, lVL, ui = p
-    if not (0.018 < wb < 0.027 and 0.08 < wc < 0.16 and 0.0 < lVL < 1.5 and 1e-5 <= ui <= 0.21): return 1e9
+    if not (0.018 < wb < 0.027 and 0.08 < wc < 0.16 and -3.0 < lVL < 0.5 and 1e-5 <= ui <= 0.21): return 1e9
     try: bg = background(wb, wc, math.exp(lVL), ui, b)
     except Exception: return 1e9
     if bg is None: return 1e9
@@ -130,6 +130,13 @@ def dials(p, b, sn):
         dc, db = s.y[0, -1], s.y[2, -1]; return (rc0*dc + p[0]*db)/(rc0 + p[0])
     g = grow(b, bg); g0 = grow(0.0, background(p[0], p[1], math.exp(p[2]), 1e-4, 0.0))
     S8 = 0.811*(g/g0)*math.sqrt(Om0/0.3)
+    phiN = bg['phi']; dphi_tot = float(phiN[-1] - bg['sol'].sol(math.log(1e-6))[0])
+    i_s = np.searchsorted(z[::-1], 1090.0); azs = 1/1091.0
+    Ephi_s = float(np.interp(math.log(azs), np.log(a), bg['rphi']/bg['E2']))
+    rc_s = float(np.interp(math.log(azs), np.log(a), bg['rc']))
+    rde2 = bg['rphi'] + bg['rc'] - rc_s*(azs/a)**3; weff2 = -1 - np.gradient(np.log(np.abs(rde2)), lna)/3
+    d.update(Omega_phi_zstar=Ephi_s, dphi_total=dphi_tot, alpha_leak=3.8e-10*abs(dphi_tot), wc_zstar=rc_s*azs**3,
+             w_eff_cross_anchor_zstar=bool(np.any(weff2[sel] < -1)), dm_mass_change_total=float(bg['rc'][-1]/p[1] - 1))
     d.update(chi2=tot, Om0=Om0, dm_loss_since_zstar=float(1 - bg['rc'][-1]*1.0/(p[1]) ), dphi_zstar=bg['dphi_star'],
              w_eff_cross=bool(np.any(weff[sel] < -1)), w_eff_min=float(weff[sel].min()), cpl=[float(w0), float(wa)], S8_proxy=S8)
     return d
@@ -144,7 +151,7 @@ if __name__ == '__main__':
         wb, wc, H0 = 0.02236, 0.1195, 67.5
         # find VL giving H0 with ui = 0.13, b = 0
         from scipy.optimize import brentq
-        f = lambda l: background(wb, wc, math.exp(l), 0.13, 0.0)['h']*100 - H0; l = brentq(f, 0.0, 1.4); bg = background(wb, wc, math.exp(l), 0.13, 0.0)
+        f = lambda l: background(wb, wc, math.exp(l), 0.13, 0.0)['h']*100 - H0; l = brentq(f, -3.0, 0.4); bg = background(wb, wc, math.exp(l), 0.13, 0.0)
         a = bg['a']; w = (bg['E2']*bg['v']**2/6 - (bg['rphi'] - bg['E2']*bg['v']**2/6))/bg['rphi']
         P = camb.CAMBparams(); P.set_cosmology(H0=H0, ombh2=wb, omch2=wc, mnu=0.0587, num_massive_neutrinos=3, neutrino_hierarchy='normal', nnu=NEFF, TCMB=2.7255)
         P.DarkEnergy = camb.dark_energy.DarkEnergyPPF(); aa = np.concatenate([[1e-8], a]); ww = np.concatenate([[-1.0], w]); P.DarkEnergy.set_w_a_table(aa, ww)
@@ -154,12 +161,12 @@ if __name__ == '__main__':
         mx = max(abs(v) for vs in out.values() for v in vs); out['max_rel_dev'] = mx; out['G0'] = 'PASS' if mx < 1.5e-3 else 'FAIL'
         print(json.dumps(out, indent=1)); json.dump(out, open(os.path.join(HERE, 'knob_gate.json'), 'w'), indent=1); sys.exit()
     name = sys.argv[2]; sn = load_sn(name); res = {}
-    ref = fit(0.0, sn, [[0.02236, 0.119, 0.6, 1e-4]])
+    ref = fit(0.0, sn, [[0.02236, 0.119, -1.0, 1e-4]])
     # LCDM-like reference: b = 0, ui -> 1e-4 (fix ui by tight bounds through a wrapper)
-    lc = minimize(lambda q: chi2([q[0], q[1], q[2], 1e-4], 0.0, sn), [0.02236, 0.119, 0.6], method='Nelder-Mead', options={'maxiter': 900, 'xatol': 1e-6, 'fatol': 1e-4})
+    lc = minimize(lambda q: chi2([q[0], q[1], q[2], 1e-4], 0.0, sn), [0.02236, 0.119, -1.0], method='Nelder-Mead', options={'maxiter': 900, 'xatol': 1e-6, 'fatol': 1e-4})
     res['LCDM_ref'] = dict(chi2=float(lc.fun), p=[float(x) for x in lc.x])
     for b in [-0.15, -0.10, -0.075, -0.05, -0.025, 0.0, 0.025, 0.05, 0.10]:
-        t = time.time(); best = fit(b, sn, [[0.02236, 0.119, 0.6, 0.05], [0.0224, 0.118, 0.6, 0.15]])
+        t = time.time(); best = fit(b, sn, [[0.02236, 0.119, -1.0, 0.05], [0.0224, 0.118, -1.0, 0.15]])
         try: dd = dials(list(best.x), b, sn)
         except Exception as e: dd = dict(chi2=float(best.fun), err=str(e))
         dd['p'] = [float(x) for x in best.x]; dd['dchi2_vs_LCDM'] = float(best.fun - lc.fun); dd['sec'] = time.time() - t; res[str(b)] = dd

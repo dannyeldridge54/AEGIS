@@ -37,3 +37,22 @@ r_s(z*) and r_d are taken from CAMB, as a function of the early-universe paramet
 The coupling's effect before recombination is negligible, because ρ_c ∝ e^{bΔφ} with Δφ ≈ 0 before z*. **That assumption is itself reported** as a dial: Δφ(z*).
 
 The late universe (H(z), D_M) comes from the coupled solver. H0 is derived: the knobs are ω_b, ω_c, V̂_L and u_i, with V̂_L fitted in place of H0, so no shooting is needed. The ΛCDM reference is b = 0, u_i = 1e-4, with the same fixed n_s (an M5-type control).
+
+## ADDENDUM (referee K-1…K-6 and the tandem pass), written before any output was read. The gate crashed on a bracket error with no numbers.
+
+1. **Sign convention.** The thread rolls to smaller φ (φ̇ < 0). So b > 0 means DM loses mass (energy flows DM → DE), and b < 0 means DM gains mass.
+2. **Adoption window: |b| ≤ 0.05.** Larger |b| gives matter-era early dark energy (Ω_φ ≈ 2b²/3), where the compressed priors are invalid and full CMB bounds apply. Those points are reported only, as "full-CMB required; not adoptable".
+3. **G0 tightened.**
+   - ℓ_A ≤ 0.01% and R ≤ 0.1%, both via D_M(z*) against CAMB at b = 0;
+   - DESI distances and H(z) ≤ 0.15%.
+4. **Adoption threshold:** Δχ² ≤ −4 relative to b = 0, on at least 2 of the 3 SN sets, with no set worse by more than +1 and the S₈ proxy ≤ 0.83.
+5. **New dials:**
+   - early Ω_φ at z*;
+   - the total field excursion Δφ (a = 1e-6 → today);
+   - the α leak Δα/α = ζ_α·|Δφ| with ζ_α = 3.8e-10 (D1887), against a conservative 1e-6;
+   - the DM mass change since a = 1e-6 (freeze-out for 12.8 GeV is earlier, but the coupling only acts in the matter era);
+   - ω_c(z*).
+
+   **Birefringence** comes from the photon-axion on its own cycle (D1793), not from the thread, so it does not move. This is stated as a model fact, which the referee may contest.
+6. **Apparent crossing:** two definitions, with DM anchored today and anchored at z*. Both are reported and **not** used for adoption.
+7. **Code DEVIATION (pre-output):** the bounds on ln V̂_L were wrong, (0, 1.5) where the true value is ≈ −1. They are corrected to (−3, 0.5), and the start values are set to −1.0.
