@@ -1,0 +1,245 @@
+{
+ "items": [
+  {
+   "item": "Gauge group SU(3)xSU(2)xU(1)",
+   "layer": "L7",
+   "weave": "from D6-brane stacks of the published Z6-II model",
+   "data": "SU(3)xSU(2)xU(1)",
+   "status": "S",
+   "source": "D2147/D2152 (Gmeiner-Honecker model reproduced)"
+  },
+  {
+   "item": "Three generations",
+   "layer": "L7",
+   "weave": "3 crossings in the published Z6-II model",
+   "data": "3",
+   "status": "S",
+   "source": "D2147"
+  },
+  {
+   "item": "Higgs doublet(s)",
+   "layer": "L7",
+   "weave": "non-chiral b-c strings (a pair, MSSM-like)",
+   "data": "1 doublet seen",
+   "status": "S",
+   "source": "D2152"
+  },
+  {
+   "item": "alpha_s (g3)",
+   "layer": "L7",
+   "weave": "0.1142",
+   "data": "0.1180 +- 0.0009",
+   "status": "X",
+   "source": "D1929, -4.2 sigma; balances only with the split-stack fit"
+  },
+  {
+   "item": "sin^2 theta_W (g1, g2)",
+   "layer": "L7",
+   "weave": "assumed via unification",
+   "data": "0.2312",
+   "status": "I",
+   "source": "v4 chain uses MSSM unification; not computed for Z6-II"
+  },
+  {
+   "item": "m_u, m_c, m_t (scale)",
+   "layer": "L1",
+   "weave": "top Yukawa not derived",
+   "data": "m_t = 172.6 GeV",
+   "status": "M",
+   "source": "top Yukawa from brane angles listed as a held-out target (D-note line 20740)"
+  },
+  {
+   "item": "Up-quark ratios",
+   "layer": "L1",
+   "weave": "rung ~8 (68%: 5-14); m_u/m_t ~ 3.9e-6, m_c/m_t ~ 1.2e-3 (medians)",
+   "data": "order-of-magnitude match",
+   "status": "F",
+   "source": "rung coefficient C fitted (NPP 2201.02020)"
+  },
+  {
+   "item": "Down-quark ratios",
+   "layer": "L1",
+   "weave": "rung 1; m_d/m_b ~ 7.6e-4, m_s/m_b ~ 0.017 (medians)",
+   "data": "order-of-magnitude match",
+   "status": "F",
+   "source": "same fitted C"
+  },
+  {
+   "item": "m_e, m_mu",
+   "layer": "L3",
+   "weave": "inputs at the knot rho",
+   "data": "measured",
+   "status": "I",
+   "source": "Koide uses them"
+  },
+  {
+   "item": "m_tau",
+   "layer": "L3",
+   "weave": "1776.969 MeV from Koide Q = 2/3",
+   "data": "1776.93 +- 0.09 MeV (PDG, recalled)",
+   "status": "R",
+   "source": "locked forecast B1; Koide relation, no derivation of Q (D1600s)"
+  },
+  {
+   "item": "CKM angles (3)",
+   "layer": "L1",
+   "weave": "V_us 0.16, V_cb 0.017, V_ub 0.0028 (medians)",
+   "data": "0.2245, 0.0410, 0.0038",
+   "status": "F",
+   "source": "order-of-magnitude from the fitted ladder; V_us obstructed in the Z2xZ6prime brane model (K9)"
+  },
+  {
+   "item": "CKM CP phase",
+   "layer": "L1",
+   "weave": "not derived",
+   "data": "~66 deg",
+   "status": "M",
+   "source": "-"
+  },
+  {
+   "item": "Higgs vev 246 GeV",
+   "layer": "L5",
+   "weave": "not derived (electroweak scale tuned)",
+   "data": "246 GeV",
+   "status": "M",
+   "source": "tan beta chain D2099"
+  },
+  {
+   "item": "Higgs mass 125 GeV",
+   "layer": "L5",
+   "weave": "125 at tan beta 1.9",
+   "data": "125.2 GeV",
+   "status": "F",
+   "source": "tan beta chosen for m_h; boundary gives 1.4 (D2099 tension)"
+  },
+  {
+   "item": "theta-bar (strong CP)",
+   "layer": "L7",
+   "weave": "0 exactly",
+   "data": "< 1e-10",
+   "status": "P",
+   "source": "preprint table"
+  },
+  {
+   "item": "Neutrino mass sum",
+   "layer": "L2",
+   "weave": "0.0587 eV, normal ordering",
+   "data": "< 0.064 eV (DESI DR2)",
+   "status": "I",
+   "source": "chosen input"
+  },
+  {
+   "item": "Lightest neutrino mass",
+   "layer": "L2",
+   "weave": "near zero",
+   "data": "unknown",
+   "status": "P",
+   "source": "seesaw at M_N ~ 1.8e11 GeV"
+  },
+  {
+   "item": "sin^2 theta_12",
+   "layer": "L2",
+   "weave": "0.3184 (TM1)",
+   "data": "0.3092 +- 0.0087 (JUNO)",
+   "status": "I",
+   "source": "TM1 chosen after JUNO"
+  },
+  {
+   "item": "theta_13, theta_23",
+   "layer": "L2",
+   "weave": "inputs to TM1",
+   "data": "measured",
+   "status": "I",
+   "source": "-"
+  },
+  {
+   "item": "delta_CP (leptons)",
+   "layer": "L2",
+   "weave": "262 or 286 deg",
+   "data": "T2K/NOvA: broad",
+   "status": "P",
+   "source": "TM1 + octant"
+  },
+  {
+   "item": "Majorana phases (m_bb)",
+   "layer": "L2",
+   "weave": "m_bb 1.6-3.8 meV",
+   "data": "below reach",
+   "status": "P",
+   "source": "D1667"
+  }
+ ],
+ "layers": [
+  {
+   "layer": "L1",
+   "n": 5,
+   "inhale": 0,
+   "exhale": 3,
+   "fails": 0,
+   "missing": 2,
+   "counts": {
+    "M": 2,
+    "F": 3
+   }
+  },
+  {
+   "layer": "L2",
+   "n": 6,
+   "inhale": 3,
+   "exhale": 6,
+   "fails": 0,
+   "missing": 0,
+   "counts": {
+    "I": 3,
+    "P": 3
+   }
+  },
+  {
+   "layer": "L3",
+   "n": 2,
+   "inhale": 1,
+   "exhale": 2,
+   "fails": 0,
+   "missing": 0,
+   "counts": {
+    "I": 1,
+    "R": 1
+   }
+  },
+  {
+   "layer": "L5",
+   "n": 2,
+   "inhale": 0,
+   "exhale": 1,
+   "fails": 0,
+   "missing": 1,
+   "counts": {
+    "M": 1,
+    "F": 1
+   }
+  },
+  {
+   "layer": "L7",
+   "n": 6,
+   "inhale": 4,
+   "exhale": 5,
+   "fails": 1,
+   "missing": 0,
+   "counts": {
+    "S": 3,
+    "X": 1,
+    "I": 1,
+    "P": 1
+   }
+  }
+ ],
+ "totals": {
+  "S": 3,
+  "X": 1,
+  "I": 5,
+  "M": 3,
+  "F": 4,
+  "R": 1,
+  "P": 4
+ }
+}

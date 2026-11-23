@@ -22092,3 +22092,13 @@ Compressed CMB + DESI DR2 + DES-Dovekie (referee_indep/fit.py): chi2(L, single 0
 - Q_c and Q_e are massless trivially (Pi_c = Pi_c', Pi_e = Pi_e'); such a stack is U(1) only if displaced from the O6-plane, otherwise it enhances to SO/Sp: owed check. The only non-trivial massless direction is (1/3)Q_a + Q_d, "B-L-like, pending a charge-sign check" (GH 0806.3039 reports massless B-L in some examples; not confirmed for this one).
 - "No e-sector chiral states" means no NET chiral matter; the vector-like spectrum is not computed, and vector-like states plus massive string modes generate kinetic mixing (Abel et al. 0803.1449).
 - "Dark photon HAS A HOME" is WITHDRAWN. Restated: the model has a massless hidden U(1)_e; it is a dark-photon CANDIDATE only if a mass (dark Higgs or Stueckelberg) and a kinetic mixing are supplied; neither is derived. Unbroken, it is dark radiation.
+
+## D2166 (CENTRE, the Standard Model pulsed through the Weave, centre outward; consistency map, not a test; tools/loom/sm_pulse.py). **Inhale (no dials): 8 of 21 SM items come out of the Weave; exhale (dials spent): 17 of 21; 1 fails (alpha_s), 3 missing.** (2026-11-22 ~23:40 CT)
+| layer | SM items | inhale (P/S/R) | exhale (+F/I) | fail | missing |
+|---|---|---|---|---|---|
+| L1 torus (quarks) | 5 | 0 | 3 | 0 | 2 (top Yukawa scale, CKM phase) |
+| L2 pyramid (neutrinos) | 6 | 3 (lightest ~0, delta_CP, m_bb) | 6 | 0 | 0 |
+| L3 turnover (leptons) | 2 | 1 (m_tau from Koide) | 2 | 0 | 0 |
+| L5 fold (Higgs) | 2 | 0 | 1 (m_h at tan beta 1.9) | 0 | 1 (the vev) |
+| L7 forces | 6 | 4 (gauge group, 3 families, Higgs pair: borrowed from the Gmeiner-Honecker model; theta-bar = 0) | 5 | 1 (alpha_s -4.2 sigma) | 0 |
+Triangulation (three readers): records (statuses above), data (PDG tau mass 1776.93 +- 0.09 MeV, fetched: the Koide value 1776.969 sits +0.43 sigma; JUNO sin^2 theta12 +1.1 sigma; alpha_s -4.2 sigma), engine (CubeMind weave_koide reproduces Q). Reading: the Weave's real outputs on the SM are structural (borrowed brane model) plus a handful of relations; the quark sector rides on one fitted coefficient, the Higgs sector on one tuned angle, and the electroweak scale and top Yukawa are not derived. Weakest layer: L1 (0 of 5 without dials).
