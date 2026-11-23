@@ -1,0 +1,60 @@
+{
+ "P3_seconds": 0.012724876403808594,
+ "P1": {
+  "numbers": 47,
+  "mismatches": [],
+  "n_bad": 0
+ },
+ "P4": true,
+ "P2_detail": {
+  "medical.html": {
+   "errs": [],
+   "canvases": 4,
+   "distinct_colors": [
+    117,
+    147,
+    186,
+    189
+   ]
+  },
+  "fusion.html": {
+   "errs": [],
+   "canvases": 1,
+   "distinct_colors": [
+    173
+   ]
+  },
+  "nucleosynthesis.html": {
+   "errs": [],
+   "canvases": 3,
+   "distinct_colors": [
+    104,
+    95,
+    146
+   ]
+  },
+  "fission.html": {
+   "errs": [],
+   "canvases": 1,
+   "distinct_colors": [
+    135
+   ]
+  },
+  "safeguards.html": {
+   "errs": [],
+   "canvases": 2,
+   "distinct_colors": [
+    126,
+    121
+   ]
+  }
+ },
+ "P2": true,
+ "verdict": {
+  "P1": true,
+  "P2": true,
+  "P3": true,
+  "P4": true,
+  "PASS": true
+ }
+}

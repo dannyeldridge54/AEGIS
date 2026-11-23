@@ -1,0 +1,135 @@
+{
+ "calls": [
+  {
+   "name": "chronos_make_now",
+   "args": {
+    "nuclide": "F-18",
+    "A_needed": 370,
+    "hours": 2.5
+   }
+  },
+  {
+   "name": "chronos_generator",
+   "args": {
+    "parent": "Mo-99",
+    "parent_GBq": 10,
+    "hours": 23
+   }
+  },
+  {
+   "name": "chronos_generator",
+   "args": {
+    "parent": "Ge-68",
+    "parent_GBq": 1.85,
+    "hours": 4
+   }
+  },
+  {
+   "name": "chronos_ac225",
+   "args": {
+    "Ac225_MBq_at_purification": 10,
+    "hours": 6,
+    "ac227_ratio_eob": 0.0015,
+    "days_stored": 10
+   }
+  }
+ ],
+ "printed": [
+  {
+   "call": 0,
+   "path": "make_now",
+   "value": 954.0195616592118,
+   "shown": "954"
+  },
+  {
+   "call": 0,
+   "path": "half_lives_elapsed",
+   "value": 1.3664935774801859,
+   "shown": "1.366"
+  },
+  {
+   "call": 1,
+   "path": "peak_hours",
+   "value": 22.84702241424214,
+   "shown": "22.85"
+  },
+  {
+   "call": 1,
+   "path": "equilibrium_ratio",
+   "value": 0.9637427150225198,
+   "shown": "0.9637"
+  },
+  {
+   "call": 2,
+   "path": "peak_hours",
+   "value": 14.100164271564934,
+   "shown": "14.1"
+  },
+  {
+   "call": 3,
+   "path": "activities_MBq.Bi-213",
+   "value": 9.81445395421868,
+   "shown": "9.814"
+  },
+  {
+   "call": 3,
+   "path": "ac227_ratio_after",
+   "value": 0.0030141882168106507,
+   "shown": "0.003014"
+  },
+  {
+   "call": 0,
+   "path": "make_now",
+   "value": 954.0195616592118,
+   "shown": "954"
+  },
+  {
+   "call": 1,
+   "path": "peak_hours",
+   "value": 22.84702241424214,
+   "shown": "22.85"
+  },
+  {
+   "call": 1,
+   "path": "daughter_GBq",
+   "value": 6.8905426496054885,
+   "shown": "6.891"
+  },
+  {
+   "call": 1,
+   "path": "parent_GBq_then",
+   "value": 7.8533950913928,
+   "shown": "7.853"
+  },
+  {
+   "call": 2,
+   "path": "peak_hours",
+   "value": 14.100164271564934,
+   "shown": "14.1"
+  },
+  {
+   "call": 2,
+   "path": "daughter_GBq",
+   "value": 1.6909562259413067,
+   "shown": "1.691"
+  },
+  {
+   "call": 3,
+   "path": "activities_MBq.Ac-225",
+   "value": 9.826832615032396,
+   "shown": "9.827"
+  },
+  {
+   "call": 3,
+   "path": "activities_MBq.Bi-213",
+   "value": 9.81445395421868,
+   "shown": "9.814"
+  },
+  {
+   "call": 3,
+   "path": "ac227_ratio_after",
+   "value": 0.0030141882168106507,
+   "shown": "0.003014"
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "calls": [
+  {
+   "name": "chronos_tritium",
+   "args": {
+    "grams": 1000,
+    "years": 1
+   }
+  },
+  {
+   "name": "chronos_tritium",
+   "args": {
+    "grams": 1000,
+    "years": 10
+   }
+  }
+ ],
+ "printed": [
+  {
+   "call": 0,
+   "path": "left_g",
+   "value": 945.2914876844036,
+   "shown": "945.3"
+  },
+  {
+   "call": 0,
+   "path": "He3_g",
+   "value": 54.70814953294722,
+   "shown": "54.71"
+  },
+  {
+   "call": 0,
+   "path": "percent_decayed",
+   "value": 5.470851231559637,
+   "shown": "5.471"
+  },
+  {
+   "call": 1,
+   "path": "left_g",
+   "value": 569.7147598395456,
+   "shown": "569.7"
+  },
+  {
+   "call": 0,
+   "path": "left_g",
+   "value": 945.2914876844036,
+   "shown": "945.3"
+  },
+  {
+   "call": 0,
+   "path": "He3_g",
+   "value": 54.70814953294722,
+   "shown": "54.71"
+  },
+  {
+   "call": 0,
+   "path": "percent_decayed",
+   "value": 5.470851231559637,
+   "shown": "5.471"
+  },
+  {
+   "call": 1,
+   "path": "left_g",
+   "value": 569.7147598395456,
+   "shown": "569.7"
+  },
+  {
+   "call": 1,
+   "path": "He3_g",
+   "value": 430.28238685641213,
+   "shown": "430.3"
+  }
+ ]
+}

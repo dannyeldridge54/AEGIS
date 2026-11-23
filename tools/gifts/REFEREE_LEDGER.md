@@ -35,3 +35,8 @@ Each gets: lock a short referee charge, one independent referee round, DEVIATION
 Run 1 as locked: I2/I3 pass, I1 fail (LTTB 47.8 px on noisy data), I4 fail (relative metric near zero) -> FAILED AS LOCKED.
 Rerun after DEVIATIONS (M4 decimation; DEV-2 range-normalised I4, post-hoc label): I1 max 0.03 px, I2 0 px differ,
 I3 prep 25 ms / frame 0.39 ms (5x20k pts), I4 0 -> PASS under deviations. Referee round: pending.
+
+## CM-PAPERS (nuclear paper generator), 2026-11-23
+As locked, first run: P1 47/47 printed numbers reproduced by independent engine reruns; P2 5 notes, 0 console errors, all
+charts drawn; P3 suite builds in 0.01 s; P4 Limits present -> PASS. After the test, a cosmetic change only (identical-title
+charts shown once: fission 3->1, fusion 2->1); test rerun still PASS. Referee round: pending.

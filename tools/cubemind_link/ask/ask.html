@@ -9,7 +9,7 @@ button{background:var(--accent);color:#120b22;border:0;border-radius:8px;padding
 #ans{white-space:pre-wrap;line-height:1.6}pre{white-space:pre-wrap;font:12px Consolas,monospace;color:var(--muted)}canvas{width:100%;height:340px;cursor:crosshair;display:block;background:#0b0718;border-radius:8px;margin-top:8px}
 .small{color:var(--muted);font-size:13px}
 </style></head><body><main>
-<h1>CubeMind Ask</h1><p class="sub">Type any question someone might test you on. CubeMind answers only through the validated AEGIS tools (nuclear: Chronos), shows every calculation, and draws the charts.</p>
+<h1>CubeMind Ask</h1><p class="small"><a href="papers/index.html" style="color:var(--gold)">Nuclear field papers</a> &middot; <a href="#" id="mkp" style="color:var(--gold)">rebuild all papers now</a> <span id="pst"></span></p><p class="sub">Type any question someone might test you on. CubeMind answers only through the validated AEGIS tools (nuclear: Chronos), shows every calculation, and draws the charts.</p>
 <div class="card"><div class="row"><input id="q" placeholder="e.g. How much F-18 should we make at 7 am so 370 MBq is left at 9:30?"><button id="go">Ask</button></div>
 <div class="row" id="ex" style="margin-top:10px"></div><p class="small" id="st"></p></div>
 <div class="card"><h3 style="margin:0 0 6px">Answer</h3><div id="ans" class="small">—</div></div>
@@ -43,5 +43,6 @@ try{const r=await post('/api/tool',{name:$('tool').value,args:a});if(r.error){$(
 $('ans').textContent=JSON.stringify(r.calls[0].result,null,2);$('calls').textContent=r.calls.map(c=>c.name+' '+JSON.stringify(c.args)+'\n  -> '+JSON.stringify(c.result)).join('\n\n');
 $('charts').innerHTML='';CH=[];if(r.charts.length){$('chartcard').hidden=false;r.charts.forEach(c=>{const cv=document.createElement('canvas');$('charts').appendChild(cv);draw(cv,c);});}
 $('sst').textContent=`engine ${Math.round(performance.now()-t0)} ms · ${r.charts.length} chart(s)`;}catch(e){$('sst').textContent='Could not reach CubeMind: '+e;}finally{$('drawbtn').disabled=false;}}
-$('drawbtn').onclick=studio;$('args').addEventListener('keydown',e=>{if(e.key==='Enter')studio();});$('q').addEventListener('keydown',e=>{if(e.key==='Enter')go();});
+$('drawbtn').onclick=studio;
+$('mkp').onclick=async e=>{e.preventDefault();$('pst').textContent='building…';try{const r=await post('/api/paper',{section:'all'});$('pst').textContent=r.error?('Error: '+r.error):`built ${r.made.length} papers in ${r.seconds} s`;}catch(x){$('pst').textContent=String(x);}};$('args').addEventListener('keydown',e=>{if(e.key==='Enter')studio();});$('q').addEventListener('keydown',e=>{if(e.key==='Enter')go();});
 </script></body></html>

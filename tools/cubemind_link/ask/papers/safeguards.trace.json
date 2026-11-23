@@ -1,0 +1,44 @@
+{
+ "calls": [
+  {
+   "name": "chronos_release_age",
+   "args": {
+    "pair": "Cs-134/Cs-137",
+    "ratio_now": 0.05,
+    "ratio_at_release": 1
+   }
+  },
+  {
+   "name": "chronos_pu_age",
+   "args": {
+    "am_over_pu_activity": 0.02
+   }
+  }
+ ],
+ "printed": [
+  {
+   "call": 0,
+   "path": "years",
+   "value": 9.583628250744832,
+   "shown": "9.584"
+  },
+  {
+   "call": 1,
+   "path": "years",
+   "value": 9.82615889764574,
+   "shown": "9.826"
+  },
+  {
+   "call": 0,
+   "path": "years",
+   "value": 9.583628250744832,
+   "shown": "9.584"
+  },
+  {
+   "call": 1,
+   "path": "years",
+   "value": 9.82615889764574,
+   "shown": "9.826"
+  }
+ ]
+}

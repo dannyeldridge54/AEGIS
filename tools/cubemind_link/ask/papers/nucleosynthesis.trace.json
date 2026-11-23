@@ -1,0 +1,118 @@
+{
+ "calls": [
+  {
+   "name": "chronos_supernova",
+   "args": {
+    "M_Ni_Msun": 0.6,
+    "days": 18,
+    "t0_days": 35
+   }
+  },
+  {
+   "name": "chronos_nickel_mass",
+   "args": {
+    "L_erg_s": 1e+41,
+    "days": 200,
+    "mode": "tail",
+    "t0_days": 40
+   }
+  },
+  {
+   "name": "chronos_kilonova",
+   "args": {
+    "M_ej_Msun": 0.05,
+    "days": 1
+   }
+  },
+  {
+   "name": "chronos_wd_merger",
+   "args": {
+    "period_s": 765,
+    "m1": 0.26,
+    "m2": 0.5
+   }
+  },
+  {
+   "name": "chronos_star_age",
+   "args": {
+    "pair": "Th/Eu",
+    "log_eps_observed": -0.52,
+    "production_ratio": 0.45
+   }
+  }
+ ],
+ "printed": [
+  {
+   "call": 0,
+   "path": "erg_per_s",
+   "value": 1.206471127025973e+43,
+   "shown": "1.206&times;10<sup>43</sup>"
+  },
+  {
+   "call": 1,
+   "path": "M_Ni_Msun",
+   "value": 0.5956508450464507,
+   "shown": "0.5957"
+  },
+  {
+   "call": 2,
+   "path": "erg_per_s",
+   "value": 4.9723e+41,
+   "shown": "4.972&times;10<sup>41</sup>"
+  },
+  {
+   "call": 3,
+   "path": "merger_Myr",
+   "value": 1.1093205092274938,
+   "shown": "1.109"
+  },
+  {
+   "call": 3,
+   "path": "f_gw_mHz",
+   "value": 2.6143790849673203,
+   "shown": "2.614"
+  },
+  {
+   "call": 4,
+   "path": "age_Gyr",
+   "value": 8.0555932225493,
+   "shown": "8.056"
+  },
+  {
+   "call": 0,
+   "path": "erg_per_s",
+   "value": 1.206471127025973e+43,
+   "shown": "1.206&times;10<sup>43</sup>"
+  },
+  {
+   "call": 1,
+   "path": "M_Ni_Msun",
+   "value": 0.5956508450464507,
+   "shown": "0.5957"
+  },
+  {
+   "call": 2,
+   "path": "erg_per_s",
+   "value": 4.9723e+41,
+   "shown": "4.972&times;10<sup>41</sup>"
+  },
+  {
+   "call": 3,
+   "path": "merger_Myr",
+   "value": 1.1093205092274938,
+   "shown": "1.109"
+  },
+  {
+   "call": 3,
+   "path": "f_gw_mHz",
+   "value": 2.6143790849673203,
+   "shown": "2.614"
+  },
+  {
+   "call": 4,
+   "path": "age_Gyr",
+   "value": 8.0555932225493,
+   "shown": "8.056"
+  }
+ ]
+}

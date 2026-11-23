@@ -1,0 +1,63 @@
+{
+ "calls": [
+  {
+   "name": "chronos_decay_heat",
+   "args": {
+    "days_operated": 365,
+    "hours_after_shutdown": 1
+   }
+  },
+  {
+   "name": "chronos_decay_heat",
+   "args": {
+    "days_operated": 365,
+    "hours_after_shutdown": 24
+   }
+  },
+  {
+   "name": "chronos_decay_heat",
+   "args": {
+    "days_operated": 365,
+    "hours_after_shutdown": 720
+   }
+  }
+ ],
+ "printed": [
+  {
+   "call": 0,
+   "path": "fraction",
+   "value": 0.010124910874925641,
+   "shown": "0.01012"
+  },
+  {
+   "call": 1,
+   "path": "fraction",
+   "value": 0.004437594094632348,
+   "shown": "0.004438"
+  },
+  {
+   "call": 2,
+   "path": "fraction",
+   "value": 0.001306697429982309,
+   "shown": "0.001307"
+  },
+  {
+   "call": 0,
+   "path": "fraction",
+   "value": 0.010124910874925641,
+   "shown": "0.01012"
+  },
+  {
+   "call": 1,
+   "path": "fraction",
+   "value": 0.004437594094632348,
+   "shown": "0.004438"
+  },
+  {
+   "call": 2,
+   "path": "fraction",
+   "value": 0.001306697429982309,
+   "shown": "0.001307"
+  }
+ ]
+}
