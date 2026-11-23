@@ -21669,3 +21669,22 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
   - **N2 ↔ L2 through Σm_ν**, which is tight at +0.09: DESI is closing in.
   - **N5 ↔ N9: no joint yet.** m3/2 does not reach the thread. This is open.
 - **Weakest nodes:** N2's Σm_ν (+0.09) is the closest negative-space wall, then N10. The OPEN nodes (N1, N3's LFV rate, N4's τ_q decay temperature) are where the Weave owes a number. **Map only:** none of these is derived. They are queued, not claimed.
+
+## D2138 (MAP ONLY, not derived; Danny 19:19 "start mapping the other way in the negative space… pulse that way… see how many nodes"): the outward pulse from N11
+- **Tool:** tools/loom/negspace_outward.py, with results in field_tests/results/d2138_negspace_outward.json.
+- **Rule (fixed in the tool's docstring):** a ring becomes a node only if it brings a new class of forbidden thing **and** a number or joint that touches the Weave. Stop at the first ring with neither (NULL).
+- **Count:** 5 new nodes beyond N11 (N12–N16). N17 is NULL, so N1–N16 make **16 negative-space nodes in all**.
+
+| node | ring | Weave reading | joint |
+|---|---|---|---|
+| N12 | quantum-gravity consistency | H_inf = 5.8e12 GeV, which leaves room for N < 1.8e11 light species; the residual Z₃ sits inside SL(2,Z), which is gauged (PASS, literature) | the species plateau → L6; Z₃ → L3/L4 |
+| N13 | de Sitter / far future | no eternal dS, because the thread rolls toward i (structural PASS); thread slope \|V′\|/V = 0.53 at the start, less today, so the refined-dS c ~ O(1) is **MARGINAL** | u_i → L9 |
+| N14 | before the beginning | E10 billiard OPEN; the dimension at horizon exit comes from r | r → L6 |
+| N15 | vacuum selection | ρ minimises every lattice sum (Montgomery 1988): **PASS** without anthropics | ρ → L1, the centre |
+| N16 | consistency of the fold | anomalies and K-theory PASS (IIA PS seed); the IIB \|M\| = 9 flux tadpole **FAILS** the tadpole conjecture. The two models differ, which is labelled, not merged | \|M\| = 9 → L5/L7 |
+| N17 | logic / axioms | no number, no joint | **NULL** (the pulse stops here) |
+
+- **What the pulse connected:**
+  - **r is the most-used joint.** It appears at N6, N11 and N14: the CMB passes it, the TCC flags it, and it sets the pre-inflation dimension.
+  - **The outer negative space bends back to the centre:** N15 (vacuum selection) lands on L1's knot ρ.
+  - **The two live outer walls are N13's dS slope (marginal) and N16's tadpole (FAIL).** These are the outer-space mirrors of the inner FAILs (α_s, Δ₃).

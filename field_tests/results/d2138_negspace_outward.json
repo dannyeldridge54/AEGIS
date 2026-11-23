@@ -1,0 +1,59 @@
+{
+ "note": "MAP, not derived (D2138)",
+ "start": "N11",
+ "nodes": [
+  {
+   "node": "N11",
+   "ring": "string-theory swampland wall",
+   "forbids": "TCC (r < ~1e-30), stable de Sitter, axion f > M_P, large field ranges",
+   "weave": "r = 5.4e-4 violates TCC (FLAG); Lambda is an input (TRUST)",
+   "joint": "r -> L6/N6"
+  },
+  {
+   "node": "N12",
+   "ring": "quantum-gravity consistency",
+   "forbids": "global symmetries; more light species than (M_P/H)^2; H above the species scale",
+   "weave": "H_inf = 5.76e+12 GeV; species room N < (M_P/H)^2 = 1.8e+11; the residual Z3 at rho is part of SL(2,Z), a gauge symmetry in string theory (PASS, literature)",
+   "joint": "species plateau of inflation -> L6; residual Z3 -> L3/L4"
+  },
+  {
+   "node": "N13",
+   "ring": "de Sitter / horizon entropy (the far future)",
+   "forbids": "an eternal stable de Sitter; refined dS: |V'|/V >= c ~ O(1)",
+   "weave": "the thread rolls toward the knot i, so there is no eternal dS (structural PASS); thread slope |V'|/V = 0.53 at start (u_i 0.157), smaller today: c ~ 0.5 is MARGINAL",
+   "joint": "u_i -> L9 (the same knob D2133/D2134 fitted)"
+  },
+  {
+   "node": "N14",
+   "ring": "before the beginning (initial conditions)",
+   "forbids": "an inflaton that never starts; pre-inflation remnants larger than the horizon",
+   "weave": "E10 billiard / Te Kore OPEN; dimension at horizon exit read from r (r_D = r_10 * 8/(D-2))",
+   "joint": "r -> L6 (third use of r)"
+  },
+  {
+   "node": "N15",
+   "ring": "vacuum selection (the landscape)",
+   "forbids": "a vacuum chosen by hand",
+   "weave": "rho is the minimum of every lattice sum at fixed area (Montgomery 1988, theorem): selection PASSES without anthropics",
+   "joint": "rho -> L1 (the centre)"
+  },
+  {
+   "node": "N16",
+   "ring": "mathematical consistency of the fold",
+   "forbids": "uncancelled anomalies; K-theory charge; tadpoles beyond the tadpole conjecture",
+   "weave": "anomalies + K-theory PASS (PS seed, D2110-D2129); |M| = 9 flux tadpole (D3 charge 46) FAILS the tadpole conjecture (ENDPOINTS B2: intersection families would remove it)",
+   "joint": "|M| = 9 -> L5/L7 (families and f_vis = T + 9S)"
+  },
+  {
+   "node": "N17",
+   "ring": "beyond consistency (logic / axioms)",
+   "forbids": "-",
+   "weave": "no physical number; no joint",
+   "joint": "NULL"
+  }
+ ],
+ "n_new_nodes": 5,
+ "stopped_at": "N17 (NULL ring)",
+ "H_inf_GeV": 5760237201965.976,
+ "thread_slope_start": 0.5267651940511885
+}
