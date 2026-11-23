@@ -1,0 +1,6 @@
+# PREREG D2165: does the published Z6-II model have a home for the dark photon? (locked 22 Nov 2026 ~23:28 CT, before computing)
+Danny 23:17: derive the missing parts fast with the engine. Missing part: the dark photon's origin on Z6-II (D2100 put it in a dark U(12) stack on another geometry).
+Method (standard for IIA orientifolds): U(1)_a gains a Stueckelberg mass through RR axions in proportion to N_a (Pi_a - Pi_a'). A combination Q = sum_a x_a Q_a is MASSLESS iff sum_a x_a N_a (Pi_a - Pi_a') = 0 (12-component cycle vectors, image map image_ABa).
+Input: the five published Gmeiner-Honecker stacks reproduced in z6p_control (a: U(3), b: U(2), c, d, e: U(1)), lattice ABa.
+Control (must pass first): hypercharge must lie in the massless space. The record (D2152) lists U(1)_Y plus further U(1)s with a hidden U(1); report the full massless space.
+Rule: if the massless space contains a direction beyond hypercharge that involves the hidden stack e -> the dark photon HAS A HOME (a massless hidden U(1); it then needs a small mass from a dark Higgs, and kinetic mixing with hypercharge is allowed). If the only massless direction is hypercharge -> NO HOME on this model (every extra U(1) is string-scale heavy).
