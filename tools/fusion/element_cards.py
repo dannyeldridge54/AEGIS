@@ -24,7 +24,8 @@ def nuclide_rows(rows, Z, sym='n'):
     for r in sorted((r for r in rows if r['Z'] == Z), key=lambda r: (r['A'], r['iso'])):
         A = r['A']; N = A - Z; be = (Z * ME_H + N * ME_N - r['me_keV']) / A / 1000.0 if (r['iso'] == 0 and A > 1) else None
         t = r['t12_s']
-        out.append(dict(name=f"{sym}-{A}" + ('m' * min(r['iso'], 1) + (str(r['iso']) if r['iso'] > 1 else '') if r['iso'] else ''),
+        tag = '' if not r['iso'] else ('IAS' if r['iso'] >= 8 else 'm' + (str(r['iso']) if r['iso'] > 1 else ''))   # audit R98: isobaric analog states 8/9
+        out.append(dict(name=f"{sym}-{A}" + tag,
                         A=A, N=N, isomer=r['iso'], mass_excess_keV=r['me_keV'], mass_excess_estimated=r['me_est'],
                         BE_per_A_MeV=be, half_life_s=t, half_life_y=(t / YEAR if t else None), stable=r['stable'],
                         decay_or_abundance=r['modes']))

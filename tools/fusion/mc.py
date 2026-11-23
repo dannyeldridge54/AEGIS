@@ -18,7 +18,10 @@ def _pick(Egrid, E, rng):
     i = int(np.searchsorted(Egrid, E) - 1); f = (E - Egrid[i]) / (Egrid[i + 1] - Egrid[i])
     return i, (i + 1 if rng.random() < f else i), f
 def _sample_table(x, p, c, interp, ndisc, rng):
-    xi = rng.random(); k = int(np.searchsorted(c, xi, side='right') - 1); k = max(0, min(k, len(x) - 1))
+    xi = rng.random()
+    if ndisc > 0 and xi <= c[ndisc - 1]:   # audit R99: discrete lines use an inclusive cdf
+        k = int(np.searchsorted(c[:ndisc], xi, side='left')); return x[min(k, ndisc - 1)], min(k, ndisc - 1)
+    k = int(np.searchsorted(c, xi, side='right') - 1); k = max(0, min(k, len(x) - 1))
     if k < ndisc: return x[k], k
     if k >= len(x) - 1: return x[-1], len(x) - 1
     if interp == 1 or p[k + 1] == p[k] or x[k + 1] == x[k]:
@@ -232,7 +235,11 @@ def run(regions, radii, n_hist=20000, seed=7, E0=14.0e6, kill_mt=(), tally_regio
                 if rx.mt in kill_mt or not rx.prods: alive = False; break
                 new = []
                 for yf, ds in rx.prods:
-                    y = yield_override[rx.mt] if (yield_override and rx.mt in yield_override) else _yield(yf, E); n = int(y + rng.random())
+                    yo = None
+                    if yield_override:   # audit R99: key (mt, nuclide prefix) or plain mt
+                        for kk, vv in yield_override.items():
+                            if (isinstance(kk, tuple) and kk[0] == rx.mt and nu.name.startswith(kk[1])) or kk == rx.mt: yo = vv
+                    y = yo if yo is not None else _yield(yf, E); n = int(y + rng.random())
                     for _ in range(n):
                         dist = ds[0]
                         if len(ds) > 1:

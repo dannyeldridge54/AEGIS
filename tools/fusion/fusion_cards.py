@@ -20,9 +20,9 @@ CARDS = {
    "\nCheck value: DT at 10 keV -> 1.136e-16 cm^3/s.",
  'fusion_q_value': "Q = (sum of reactant atomic masses - sum of product atomic masses) * 931.49410242 MeV/u.\n"
    "Reactions: DT: D + T -> He4 + n; DDn: D + D -> He3 + n; DDp: D + D -> T + H1; DHe3: D + He3 -> He4 + H1.\n" + CONST,
- 'fusion_ignition': "Ideal ignition with the alpha share of DT (E_alpha = 3.5609 MeV, relativistic split of 17.5893 MeV):\n"
-   "n T tau_E = 12 T^2 / (E_alpha <sv>(T) - 4*5.35e-37*sqrt(T)) in keV s m^-3 with <sv> in m^3/s (use the Bosch-Hale card, x1e-6),\n"
-   "E_alpha in keV-J consistently (E_alpha[J]/keV[J] in keV). Minimise over T; minimum is near 14 keV.",
+ 'fusion_ignition': "Ideal ignition with the alpha share of DT (E_alpha = 3.5609 MeV of the relativistic split of 17.5893 MeV):\n"
+   "n T tau_E [keV s m^-3] = 12 T^2 * 1.602176634e-16 / (E_alpha_J * <sv>_m3 - 4 * 5.35e-37 * sqrt(T)), T in keV, E_alpha_J = 3.5609e6 * 1.602176634e-19 J,\n"
+   "<sv> from the Bosch-Hale card in cm^3/s times 1e-6 -> m^3/s. Minimise over T: minimum 2.91e21 keV s m^-3 near 14.2 keV (audit R98 fix).",
  'fusion_tritium_burn': "Reactions per second per GW = 1e9 / (Q_DT * 1.602176634e-13), Q_DT = 17.5893 MeV.\n"
    "kg per full-power year = rate * P_GW * 31557600 * molar / 6.02214076e23 / 1000, molar(T) = 3.01604928 g/mol,\n"
    "molar(D) = 2.01410178, molar(Li6) = 6.01512289. Check: T at 1 GW -> 56.08 kg/y.",
@@ -41,8 +41,8 @@ CARDS = {
  'nuclide_lookup': "A lookup in NUBASE2020: read the element card for that element (all its nuclides, half-lives in seconds, decay modes).\n"
    "1 year = 31557600 s (Julian). Check: H-3 12.32 y = 3.888e8 s.",
  'element_cooling': "Coronal balance from OPEN-ADAS ADF11: charge-state fractions f_z from ionisation SCD and recombination ACD; mean charge =\n"
-   "sum z f_z. Rules of thumb: at 1 keV argon is near its He-like/H-like shells (mean charge ~16); light elements (Be, C, N, O, Ne)\n"
-   "are fully stripped above ~0.5 keV. Read the element card's ADAS cooling block for tabulated points.",
+   "sum z f_z. Rules of thumb: at 1 keV argon is near its He-like/H-like shells (mean charge ~16); Be, C, N, O are essentially\n"
+   "fully stripped above ~0.5 keV, but Ne is not (mean charge 9.41, bare fraction 0.53 at 0.5 keV; 0.92 at 1 keV) (audit R98 fix). Read the element card's ADAS cooling block for tabulated points.",
 }
 CARDS['nuclide_binding'] = ("Binding energy per nucleon from the AME2020 mass excess ME (keV) of nuclide (Z, N, A):\n"
    "BE/A [MeV] = (Z*7288.971064 + N*8071.318062 - ME) / A / 1000   (7288.971 keV = ME of 1H, 8071.318 keV = ME of the neutron).\n"

@@ -20,5 +20,5 @@ G = dict(A1=bool(A1 and w(A1['P_fus'], 140, .25) and w(A1['Te_avg'], 7.3, .20)),
          A4=bool(abs(it['P_fus'] - 389.53) < 0.5 and abs(it['tau_E'] - 3.406) < 0.005))
 res = dict(goals=G, A1=A1, A2_ash_on=A2, A3_prescribed_at_7p3=A3, composition=F.composition(S), f8=f8, shape=dict(alpha_n=S['alpha_n'], alpha_T=S['alpha_T'], notes=notes),
            ITER400=dict(P_fus=float(it['P_fus']), tau_E=float(it['tau_E'])))
-json.dump(res, open(os.path.join(HERE, '..', '..', 'field_tests', 'results', 'prom8_ash.json'), 'w'), indent=1)
-print(json.dumps(res, indent=1))
+if __name__ == '__main__': json.dump(res, open(os.path.join(HERE, '..', '..', 'field_tests', 'results', 'prom8_ash.json'), 'w'), indent=1)
+if __name__ == '__main__': print(json.dumps(res, indent=1))

@@ -32,5 +32,5 @@ G = dict(D1=bool(s and within(s['P_fus'], 140, .25) and within(s['Te_avg'], 7.9,
 iter400 = X.operating_point_fast(F.ITER_400, EA)
 res = dict(goals=G, runs=out, robustness=rob, geometry=dict(SPARC_V=SP['V'], SPARC_S=SP['S'], ARC_S=AR['S'], cV=cV, cS=cS),
            ITER400_regression=dict(P_fus=float(iter400['P_fus']), tau_E=float(iter400['tau_E'])))
-json.dump(res, open(os.path.join(HERE, '..', '..', 'field_tests', 'results', 'prom6_devices.json'), 'w'), indent=1)
-print(json.dumps(res, indent=1)[:3500])
+if __name__ == '__main__': json.dump(res, open(os.path.join(HERE, '..', '..', 'field_tests', 'results', 'prom6_devices.json'), 'w'), indent=1)
+if __name__ == '__main__': print(json.dumps(res, indent=1)[:3500])

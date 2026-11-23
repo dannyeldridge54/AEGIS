@@ -22547,3 +22547,16 @@ Locks PREREG_N6N8_TRANSPORT, PREREG_N9N10_ENERGY_DAMAGE. Tool mc.py (continuous-
   FW 10 cm average 5.5 NRT dpa/fpy per MW/m2, front cm 7.1 (R97 scratch 10.7: open discrepancy); Fe-only He/dpa 7.4 (10 cm) / 9.2 (front),
   at the low edge of the 7-16 band; front He 67 appm/fpy per MW/m2 vs ~115 Gilbert (different spectrum) - not a clean pass.
 Open: target-at-rest approximation; photon transport; the two scratch-vs-repo discrepancies (yield-1 TBR; front-cm dpa).
+
+## D2201a / D2203a / D2204a / D2207a (23 Nov 2026 ~14:30 CT) — corrections from the two back-end audits (R98 plasma/plant, R99 neutron)
+Danny 13:48 "have the referee go through code and everything to limit this". Full findings: field_tests/results/audit_plasma_2026-11-23.md and
+audit_neutron_2026-11-23.md. Corrections (no silent edits of the notes above):
+- D2201a: the PROM-7 rerun SPARC inherited ITER f_He 0.032 -> its composition was f_DT 0.786 / Z_eff 1.564, NOT the 0.85 / 1.50 written in D2201;
+  other ITER keys inherited silently (f_reflect, beta_T, T_sep); T_ped = 0.39 <T>_published makes PROM-6/7 D1/D2 partly circular.
+- D2203a: the PROM-9 tree rerun took ARC from the pre-DEV PROM-7 (T_ped 5.46): 471.1 MW / H98 1.856; with PROM-7's DEV-2 it is 480.2 MW / 1.862.
+- D2204a: N1 seed spreads were 2.4 / 1.6 / 0.95% (n1_rerun.json), not 1.5 / 0.45 / 0.27% as written in the N1 DEVIATIONS; single-run noise ~2%.
+- D2207a: N6-N8 T4 removed ALL (n,2n) (Pb, Fe, Li-7): 0.69; Pb-only multiplication off gives 0.83 (-18%, R99). M normalised by 14.06 instead of the
+  14.0 MeV source: corrected M = 1.161. FW damage: front-cm 7.1 dpa/fpy per MW/m2 confirmed (track-length 7.19), ~30% below the ~10 rule of thumb;
+  D1 (10 cm average 5.5) and D2 (Fe-only He/dpa 7.4) are WEAK passes at their band edges.
+- Process: locked-result files had been overwritten by test imports (prom5/6/7/8) -> originals restored from git, JSON writes moved under __main__;
+  two CubeMind cards were wrong (ignition missing a unit factor; Ne stripping) -> corrected; preflight.py now guards every locked compute.

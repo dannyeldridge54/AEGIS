@@ -72,10 +72,11 @@ def element_property(a):
     return dict(element=c['symbol'], field=f, value=v)
 def nuclide_binding(a):
     import nuclide_pulse as P
-    sym, A = a['name'].split('-'); A = int(A.rstrip('m')); c = _cards()[_sym(sym)]
-    x = [r for r in c['nuclides'] if r['A'] == A and r['isomer'] == 0][0]
-    return dict(name=x['name'], Z=c['Z'], N=x['N'], A=A, mass_excess_keV=x['mass_excess_keV'], BE_per_A_MeV=x['BE_per_A_MeV'],
-                BE_total_MeV=x['BE_per_A_MeV'] * A, half_life_s=x['half_life_s'], stable=x['stable'])
+    sym, As = a['name'].split('-'); A = int(''.join(ch for ch in As if ch.isdigit())); c = _cards()[_sym(sym)]
+    if As.rstrip('0123456789') != '' and not As.isdigit(): return dict(error='binding energy is defined here for ground states only')   # audit R98
+    x = [r for r in c['nuclides'] if r['A'] == A and r['isomer'] == 0][0]; be = x['BE_per_A_MeV']
+    return dict(name=x['name'], Z=c['Z'], N=x['N'], A=A, mass_excess_keV=x['mass_excess_keV'], BE_per_A_MeV=be if be is not None else 0.0,
+                BE_total_MeV=(be or 0.0) * A, mass_excess_estimated=x['mass_excess_estimated'], half_life_s=x['half_life_s'], stable=x['stable'])
 
 TOOLS = {'fusion_sigmav': sigmav, 'fusion_q_value': q_value, 'fusion_ignition': ignition, 'fusion_operating_point': operating_point,
          'fusion_plant': plant, 'fusion_nif_pressure': nif_pressure, 'fusion_gamow': gamow, 'fusion_tritium_burn': tritium_burn,

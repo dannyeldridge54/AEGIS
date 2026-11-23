@@ -33,5 +33,5 @@ it = X.operating_point_fast(F.ITER_400, EA); G['C2'] = abs(it['P_fus'] - 389.53)
 res = dict(goals=G, P1=P1, P1_PROM6_shapes=P1_old, P2_SPARC=P2, P3_ARC=P3, shapes=dict(SPARC=dict(alpha_n=SPp['alpha_n'], alpha_T=SPp['alpha_T'], T_ped=SPp['T_ped'], notes=nS),
            ARC=dict(alpha_n=ARp['alpha_n'], alpha_T=ARp['alpha_T'], T_ped=ARp['T_ped'], notes=nA)), comp=dict(SPARC=F.composition(SPp), ARC=F.composition(ARp)),
            ITER400=dict(P_fus=float(it['P_fus']), tau_E=float(it['tau_E'])))
-json.dump(res, open(os.path.join(HERE, '..', '..', 'field_tests', 'results', 'prom7_profiles.json'), 'w'), indent=1)
-print(json.dumps(res, indent=1))
+if __name__ == '__main__': json.dump(res, open(os.path.join(HERE, '..', '..', 'field_tests', 'results', 'prom7_profiles.json'), 'w'), indent=1)
+if __name__ == '__main__': print(json.dumps(res, indent=1))
