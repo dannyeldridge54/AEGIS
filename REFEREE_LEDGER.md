@@ -18,3 +18,4 @@
 - R101 (23 Nov 2026, N12): C1/C2 failures are my test errors (pump term omitted; hold = 1 + lambda I0/b, not t_d -> inf); idealised TBR margin ~1%.
 - R102 (23 Nov 2026, JET-1 beam-target): model correct; J4 definition mismatch (FAIL stands; sigma peak 108 keV); thermal targets +12.5% (fair fix);
   open: fraction type (current vs power), losses, inputs n_i/n_e, E_b, Te -> overshoot is model+input, not a bug.
+- R103 (23 Nov 2026, HARDEN-1): balance real but bookkeeping-only; B3 not independent (Li-6 MT205 == MT105) - not claimed.
