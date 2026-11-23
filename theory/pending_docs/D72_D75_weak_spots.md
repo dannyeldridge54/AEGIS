@@ -22694,3 +22694,12 @@ PREREG_JET2_TI_RATIO (Ti = 1.2 Te, Stancar 2023 core Ti/Te 1.1-1.3; Te not moved
 15.04 vs 11.6 MW (+30%) IN. Unscored Te sensitivity (Ti = 1.2 Te): 4/5/6.5/8 keV -> 9.87/11.87/14.28/16.14 MW, so a deposition-weighted Te near
 5 keV would reach the band edge - but no text source gives #99971 profiles; choosing Te now would be tuning. Status: OUT (OBSTRUCTED: needs
 digitised Te(rho), deposition from a primary JET source). Results field_tests/results/jet2.json.
+
+## D2220 (PING-PONG item 2 alpha_s, round 2, 23 Nov 2026) — MS-bar -> DR-bar conversion added: +0.00018, alpha_s stays OUT
+Standing referee round 2: (1) hex.py:68 carries alpha_s as a linearised INPUT (0.1142 x s^-0.0254) - the full engine is theory/tests/d1944;
+(2) the engine imposed MSSM-regime unification without the MS-bar->DR-bar conversion; (3) the 4.2 sigma is experiment-only; (5) Hoyle moves
+with alpha_s. Locked PREREG_D2220_AS_DRBAR (Martin & Vaughn hep-ph/9308222: 1/alpha_i(DR) = 1/alpha_i(MS) - C_A/(12 pi), C_A = 0,2,3, at
+m_scalar). theory/tests/d2220_as_drbar.py: guard 0.114009 reproduced; with conversion 0.114194 (+0.00018, it slightly HELPS, contrary to the
+expected sign). Pulls vs 0.1180 +- 0.0009: -4.23 sigma (exp only), -3.57 sigma with the computed theory sigma 0.00057 (D1944). OUT stays.
+The engine's own +-0.004 label (0.9 sigma reading) is not a computation and is not used for status (D1944a). Hoyle: moves with it (no new
+information). Remaining lever named in R104/R105: the D7 one-loop threshold (needs the visible-sector D7 assignment) - OBSTRUCTED.
