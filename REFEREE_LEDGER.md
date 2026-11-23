@@ -22,3 +22,4 @@
 - R104 (23 Nov 2026, resonance run 1): d_as is a fit; computed Yukawa 2-loop is -0.0002..-0.0006 (wrong sign); Weave alpha_s 0.1140-0.1147; D/H independent tension.
 - R105 (23 Nov 2026, connections 1): P2 wrong sign (light triplets lower alpha_s); P4 partial (~+0.001 usable); no single connection closes alpha_s; next: D7 one-loop threshold.
 - R106 (23 Nov 2026, stage map): BLOCKED used to exit the loop - reverted; honest map 4: 27 IN, 5 EDGE, 5 OUT.
+- R107 (23 Nov 2026, stage map cycle 3 SPARC): radas units OK; reproduction "0.1%" true but not discriminating; 140/Q11 goalpost not cfspopcon's PRD cell (GOALPOST); P_aux compare vs absorbed+ohmic; BUG hollow density from frozen n_ped -> rerun by PROM-8 recipe: 121 MW / 7.99 MW -> EDGE ceiling.

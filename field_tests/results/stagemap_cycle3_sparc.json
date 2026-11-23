@@ -62,5 +62,37 @@
    1.0062
   ]
  },
- "note": "run 1 (before referee); grid ratios = median, p5, p95 over the 40x30 grid"
+ "note": "run 1 (before referee); grid ratios = median, p5, p95 over the 40x30 grid",
+ "rerun": {
+  "engine_npk13": {
+   "n_pk": 1.3,
+   "P_fus": 121.04163020189684,
+   "P_alpha": 24.504261849101066,
+   "W_MJ": 21.958008221685976,
+   "P_heat": 32.49278168939911,
+   "tau_E": 0.6757811144513324,
+   "P_aux_req": 7.988519840298043,
+   "ne0_over_avg": 1.3,
+   "Te0": 22.844827586206886,
+   "notes": [],
+   "dP_fus": 0.045116203834137725,
+   "dPaux_vs_abs_plus_ohmic": -0.03662238726778855,
+   "dPaux_vs_abs": 0.12547652690204747,
+   "dPaux_vs_launched_plus_ohmic": -0.12029441422909348,
+   "B_L4": "EDGE"
+  },
+  "side_npk15": {
+   "n_pk": 1.5,
+   "P_fus": 135.95611066604638,
+   "P_alpha": 27.52362249408927,
+   "W_MJ": 21.958008221685976,
+   "P_heat": 32.49278168939911,
+   "tau_E": 0.6757811144513324,
+   "P_aux_req": 4.969159195309839,
+   "ne0_over_avg": 1.5,
+   "Te0": 22.844827586206886,
+   "notes": []
+  },
+  "rule": "STAGEMAP_CYCLE3_SPARC_DEVIATIONS: pass -> EDGE (ceiling), else OUT"
+ }
 }

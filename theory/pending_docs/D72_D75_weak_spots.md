@@ -22658,3 +22658,23 @@ stale fusion-tree result; EDGE for values in the last 10% of a band; cycle-2 SPA
 Map 4 (honest): 27 IN, 5 EDGE (theta12 +1.03 sigma; ITER tau_E 0.2% outside; N10 front dpa -28.9% of +-30%; N10 Fe He/dpa 7.38 at the 7 edge;
 N11 weak goalposts), 5 OUT with diagnoses: alpha_s (-4.2 sigma; Weave 0.114-0.115; needs a visible-sector D7 threshold), Hoyle (same shift),
 D/H (-2.5 sigma with the locked PRIMAT rates), SPARC (202 MW / 9.5 keV vs 140 / 7.3), JET #99971 (+68%). The loop is NOT done.
+
+## D2217 (STAGE MAP cycle 3, SPARC code-to-code, 23 Nov 2026) — B.L4 OUT -> EDGE (ceiling); literal goalpost clause FAILED
+Lock STAGEMAP_CYCLE3_SPARC.md; DEVIATIONS (after referee R107, before the rerun); one rerun. Tools: tools/fusion/radas_from_adas.py (radas-format
+netCDF from our OPEN-ADAS ADF11 mirror: coronal_Lz = PLT+PRB in W m^3, coordinates unitless in eV / m^-3 with 1 eV / 1 m^-3 references,
+atomic_number attr; equilibrium_* = coronal copies), tools/fusion/cfsp_cycle3/.
+- cfspopcon 9.0.1's own SPARC_PRD pipeline with OUR atomic data: 115.9 MW, Q 12.78, <Te> 9.14 keV at 2.5e20 m^-3. cfspopcon's own regression
+  file (their radas data), same cell: 115.8 MW, Q 12.74. Grid-wide ours/theirs: P_fus 1.0004, Q 1.0007, Z_eff 0.996, P_rad 1.088 (p95 1.15).
+  R107: not discriminating for Q/P_fus (they barely depend on Lz); the atomic-data-sensitive numbers differ more (P_rad +13% at the cell,
+  W mean charge 53.4 vs 58.4, edge-Ar concentration +41% from the coronal-copy approximation).
+- GOALPOST (DEV-1): the locked "reproduce 140 MW / Q~11 / 7.3 keV" fails as written - cfspopcon's own PRD cell is 116 MW / Q 12.7 / 9.14 keV
+  (Q maximised, first cell past the L-H boundary; the 140 MW cap is not binding). The clause's premise (atomic data at fault) is refuted by their
+  own regression. Stays FAILED on the record; not redefined.
+- Our engine at their cell, run 1: P_fus 89.4 MW (-23%), required P_aux 14.4 MW (+73% vs their absorbed + ohmic 8.29 MW) -> OUT.
+  R107 BUG (harness, DEV-3): the PROM-8 SPARC dict was built at 3.1e20 / 7.3 keV with n_ped fixed at 2.7e20, so at 2.5e20 the density profile
+  was hollow (n0/<n> 0.97). Rerun rebuilt the dict at (n, T) by the SAME PROM-8 recipe (n_ped 2.7/3.1 n, T_ped 0.39 T, peaking 1.3 / 2.5).
+- Rerun: P_fus 121.0 MW (+4.5%), required P_aux 7.99 MW (-3.7% vs absorbed + ohmic; +12.5% vs absorbed only), T0 22.84 keV (= their
+  peak_electron_temp), tau_E 0.676 s (+2%, partly a +5.6% volume offset: 20.9 vs 19.79 m^3). Side number: density peaking 1.5 (their
+  value) gives 136 MW / 4.97 MW (not scored).
+- Verdict: B.L4 EDGE (ceiling fixed in DEVIATIONS before the rerun: the pedestal rebuild is a freedom the lock did not name, and the
+  reproduction clause failed). Map 5: 27 IN, 6 EDGE, 4 OUT (alpha_s, Hoyle, D/H, JET #99971). Loop continues: next JET.
