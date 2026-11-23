@@ -61,3 +61,4 @@ Stop rule: a full turn of all three wheels returns NULL.
 | 12 | W1 on the folded-in "night of posting" section | 2 must-fix (D2166 not locked; engine "failures" vs paper results), 3 should-fix (referee-correction count, Methods exceptions list, "8 come out" includes 3 borrowed), 2 nits | all applied | inner spin: Methods exceptions extended |
 | 13 | W1 verify | should-fix: D2166 counts read as additive (8 + 17) | "17 once dials are spent (including those 8)" | - |
 | 14 | W1 full verify | **NULL** (folded-in section and whole paper in unison) | - | - |
+| 15 | W1+W3 on the final fits | numbers verified (CamSpec -0.17/-0.87; W vs w0wa dchi2 +6.2 to +11.4, dAIC +2.2 to +7.4); should-fix: w0/wa ranges too narrow; D2160 wording; 2 nits | all applied (D2171a) | - |
