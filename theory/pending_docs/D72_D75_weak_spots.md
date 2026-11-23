@@ -22296,3 +22296,10 @@ Result for the Weave: the decaying-wino escape works only with leptonic RPV and 
 - Honest note: W's best-of-4 minimum is 0.019 HIGHER than the single-start W (1856.3247), i.e. none of the 4 starts beat the
   original run; the minimum is flat to ~0.02 in chi2. L agrees to 5e-4 across runs. Verdict unchanged either way.
 - Still running on the PC: D2169 tight minimiser (L, W), T2 freed inputs x6.
+
+## D2190 (CENTRE, 23 Nov 2026 10:15 CT) — D2178 T2 freed inputs: Σmν free, 2 of 6 landed
+Locked rule (PREREG_D2178 T2): each freed input costs one parameter, ΔAIC = Δχ² + 2 vs the locked W on the same data; lowest chi2_eff over runs (D2163 rule).
+- HiLLiPoP + DESI DR2 + Dovekie: W best 7215.75 (bo4); W + Σmν free (2 starts) 7219.35 → Δχ² = +3.60, ΔAIC = +5.60. Σmν = 0.0604 eV (prior floor 0.0587), u_i = 0.120, H0 67.63.
+- SPT-3G D1 + DESI DR2 + Dovekie: W 1856.35; W + Σmν free 1856.62 → Δχ² = +0.27, ΔAIC = +2.27. Σmν = 0.0615 eV, u_i = 0.166, H0 66.89.
+- Verdict: freeing Σmν recovers nothing; the fits sit on the normal-ordering floor. The positive Δχ² on a nested model is minimiser scatter (D2162: 3-4 in χ² per fit), not a real cost. Not preferred on either dataset.
+- Still running on the PC: W + n_s free and W + running free (both datasets), D2169 tight minimiser (L, W; run 1 of 4). Files: ufe_data/weave_pc/results/pr4_W_desdovekie_freemnu{,_spt}.json. Not refereed.
