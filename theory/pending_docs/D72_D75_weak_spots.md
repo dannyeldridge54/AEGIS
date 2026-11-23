@@ -21911,3 +21911,22 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
   - re-deriving the scored flavour, proton and r items for the chosen model.
 
   **N16 status: from FAIL to "B2 viable, cost pending".**
+
+## D2132 partial result 1/3 (newest data: Planck PR4 HiLLiPoP + LoLLiPoP + PR4 lensing + 2018 low-ℓ TT + DESI DR2 + **DES-Dovekie**). **The thread does not thaw on full PR4: W is CONSISTENT with ΛCDM but does not beat it.** (2026-11-22 19:46 CT)
+- **Fits:** L (ΛCDM, n_s free): χ²_eff = 7215.30, H0 = 68.12. W (Weave): χ²_eff = 7217.70, H0 = 68.20.
+  - The two BOBYQA starts agree (3597.73 and 3597.90 in −log post).
+  - **u_i → 0.0016**, a frozen thread that is ΛCDM-like, so the CPL fit is (−1.000, 0.000).
+- **Δχ²_eff (W − L) = +2.4.** The locked rule gives **MILD TENSION** (+2 < Δ ≤ +6), but only just.
+- **Block by block** (W − L):
+  - HiLLiPoP high-ℓ: +2.84. This is the price of the fixed n_s = 0.9706 and the 3ν/Σm_ν/r inputs.
+  - LoLLiPoP: +0.69
+  - low-ℓ TT: −0.91
+  - lensing: +0.71
+  - DESI: −0.58
+  - Dovekie: +0.25
+- **Honest reading:**
+  - On full PR4 the thread's late-time gain seen with compressed CMB (D2133/D2134: −4.2 to −4.5 at u_i ≈ 0.157) is **not found**. The minimiser takes u_i → 0. Either the full CMB likelihood penalises the thawing, or the gain was an artefact of the compressed priors.
+  - What remains is the fixed-n_s cost on the high-ℓ spectrum.
+  - **This supersedes the compressed-CMB Dovekie claim for newest-data purposes.**
+- **Still running:** Pantheon+ and Union3 (L/W/C), C on Dovekie, and then the D2135 CamSpec cross-check. No verdict on the other SN sets yet.
+- **Clock correction:** the times written in D2146a–D2147 ("~21:25", "~21:30 CT") are wrong. Those notes were written at about 19:40–19:45 CT.
