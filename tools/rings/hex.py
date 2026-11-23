@@ -8,7 +8,7 @@ Usage: python hex.py            one settled pass + board
 import functools, json, math, os, sys, time
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 import rings as G
-AS_ENGINE = 0.11446   # D2221/D2222: Weave alpha_s(M_Z) from theory/tests/d2221_as_top.py (single source)
+AS_ENGINE = float(os.environ.get('AEGIS_AS_ENGINE', 0.11446))   # D2226: env override for UFE passes; D2221/D2222: Weave alpha_s(M_Z) from theory/tests/d2221_as_top.py (single source)
 AEGIS = G.AEGIS; W = G.W; B = G.B
 sys.path.insert(0, AEGIS)
 
