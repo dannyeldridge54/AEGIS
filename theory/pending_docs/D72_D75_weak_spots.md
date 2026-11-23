@@ -22481,3 +22481,16 @@ scoping did not use confinement; H factors computed afterwards), so the fair ARC
 Verdict: reactivity, composition and profile integration transfer to compact high-field designs (within ~10% at published profiles);
 the self-solved SPARC point is still ~30% low once its published Z_eff is honoured. Open: (1) helium ash - our self-consistent ash
 (tau_He*/tau_E = 5) dilutes on top of the published f_DT 0.85, while SPARC POPCON's ash treatment is not stated; (2) JET DTE2 (measured) next.
+
+## D2202 (FUSION, Prometheus cycle 6, 23 Nov 2026 ~13:25 CT) — PROM-8: SPARC with its own POPCON composition and conventions
+Lock PREREG_PROM8_ASH; 20 hints (tools/fusion/hints/cycle6.json; main source Creely et al. 2020 Sec. 4, Table 2: f_DT 0.85, He 6% fixed,
+lumped Z=8, W 1.5e-5, Z_eff 1.5, nu_T 2.5, <T> 7.3 keV, <n_e> 3.1e20, P_RF 11.1 + P_OH 1.7 MW, 140 MW, Q 11.0). Oxygen (Z 8) line radiation
+from OPEN-ADAS added to the line model; composition takes extra species.
+- Locked run: A1 PASS 120 MW / 7.17 keV / Q 9.4 (Z_eff 1.40); A2 (composition can-fail) 153 MW; A3 prescribed at 7.3 keV 126 MW; ITER unchanged.
+- R91: the pass is not like-with-like - our P_loss subtracts 0.6 P_rad,core (ITER-calibrated Lux) while POPCON's P_loss excludes ALL
+  radiation; POPCON omits synchrotron.
+- Like-with-like rerun (final): 80 MW, <T> 6.18 keV, Q 6.3, tau_E 1.08 s: A1 FAIL. Prescribed at the published <T> still 126 MW (-10%).
+Verdict: with SPARC's composition, profiles and loss-power convention, our IPB98 power balance lands ~40% low. Composition and
+profiles are no longer the gap (prescribed P_fus within 10%); the gap is in the power balance itself - how POPCON turns H98 = 1 into
+7.3 keV (W definition, which power enters IPB98, radiation model). Next cycle: CFS's open-source POPCON code (cfspopcon) as the primary
+source for its exact power-balance equations, then JET DTE2 (measured) as a held-out.

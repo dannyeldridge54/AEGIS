@@ -41,7 +41,7 @@ def plasma_fast(m, n_avg, Te_avg, E_alpha_MeV, f_He=None):
     ne2 = float(np.dot(w, ne * ne)); ne2_core = float(np.dot(w[core], (ne * ne)[core]))
     Wth = float(np.dot(w, 1.5 * (ne * Te + ne * c['ions_per_e'] * Ti) * F.KEV_J)) * V / 1e6
     nline = float(ne.sum()) / g['N']
-    Ps = F.p_synch(mm, n0, T0)
+    Ps = F.p_synch(mm, n0, T0) if mm.get('synch', True) else 0.0   # PROM-8 DEV-2 (POPCON omits synchrotron)
     if mm.get('line_model') == 'adas':   # PROM-5: line radiation derived from OPEN-ADAS (Ar, Be, He; W if f_W given)
         import adas as AD
         Lfun = AD.Limp_interp if mm.get('line_prb', True) else AD.L_interp   # DEV-1: PLT + PRB - impurity Z_eff bremsstrahlung
