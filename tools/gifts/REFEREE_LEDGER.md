@@ -40,3 +40,7 @@ I3 prep 25 ms / frame 0.39 ms (5x20k pts), I4 0 -> PASS under deviations. Refere
 As locked, first run: P1 47/47 printed numbers reproduced by independent engine reruns; P2 5 notes, 0 console errors, all
 charts drawn; P3 suite builds in 0.01 s; P4 Limits present -> PASS. After the test, a cosmetic change only (identical-title
 charts shown once: fission 3->1, fusion 2->1); test rerun still PASS. Referee round: pending.
+
+## R80 (2026-11-23 10:20 CT): Iris, paper generator, Hyperion fast J-factor — 3 MAJOR
+Iris: readout wrong for decreasing x; NaN/null leak into readout. Papers: P1 did not cover literal inputs/constants; t0 omitted.
+Hyperion: fast route exceeds 1e-6 for cored profiles with the core edge inside the region; b_mask 0 crash. DEVIATIONS written first.
