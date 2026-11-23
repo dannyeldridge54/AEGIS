@@ -25,20 +25,21 @@ def tool_intro():
             'If a question is outside the tools (radiation dose, shielding, cross sections, clinical or regulatory decisions), say so plainly and say what the tools can do. '
             'Nuclear tools (examples of args shown):\n' + '\n'.join(lines) + f'\nOther AEGIS tools also available (same format): {others}\n')
 def ollama(msgs):
-    body = json.dumps(dict(model=MODEL, messages=msgs, stream=False, think=False, options=dict(temperature=0))).encode()
+    body = json.dumps(dict(model=MODEL, messages=msgs, stream=False, think=False, keep_alive='30m', options=dict(temperature=0, num_ctx=4096, num_predict=512))).encode()
     req = urllib.request.Request(OLLAMA + '/api/chat', data=body, headers={'Content-Type': 'application/json'})
     with urllib.request.urlopen(req, timeout=600) as r: return json.loads(r.read())['message']['content']
 def strip_think(t): return re.sub(r'<think>.*?</think>', '', t, flags=re.S).strip()
-def ask(q):
+def ask(q, progress=None):
+    say = progress or (lambda m: None)
     msgs = [dict(role='system', content=tool_intro()), dict(role='user', content=q)]; calls = []; charts = []; t0 = time.time()
-    for _ in range(5):
-        text = strip_think(ollama(msgs)); reqs = re.findall(r'^\s*TOOL:\s*(\S+)\s+(\{.*\})\s*$', text, flags=re.M)
+    for rnd in range(4):
+        say(f'round {rnd + 1}: local model thinking ({MODEL})'); text = strip_think(ollama(msgs)); reqs = re.findall(r'^\s*TOOL:\s*(\S+)\s+(\{.*\})\s*$', text, flags=re.M)
         if not reqs: break
         msgs.append(dict(role='assistant', content=text)); res_lines = []
         for name, js in reqs[:6]:
             try: args = json.loads(js)
             except Exception as e: res_lines.append(f'RESULT {name}: error bad JSON {e}'); continue
-            r = call(name, args); ch = r.pop('chart', None) if isinstance(r, dict) else None
+            say(f'round {rnd + 1}: running engine {name}'); r = call(name, args); ch = r.pop('chart', None) if isinstance(r, dict) else None
             if ch: charts.append(ch)
             calls.append(dict(name=name, args=args, result=r)); res_lines.append(f'RESULT {name}: {json.dumps(r, default=str)[:1500]}')
         msgs.append(dict(role='user', content='\n'.join(res_lines) + '\nNow answer (or call more tools if needed).'))
@@ -49,6 +50,16 @@ def ask(q):
                                                               kind='result', tier='EVIDENCE' if calls else 'HYPOTHESIS', topic='nuclear', importance=3, model=MODEL)
     except Exception: pass
     return dict(answer=answer, calls=calls, charts=charts, model=MODEL, seconds=round(time.time() - t0, 1))
+JOBS = {}
+def start_job(q):
+    jid = f'{time.time():.6f}'; JOBS[jid] = dict(status='running', log=['queued'], t0=time.time())
+    def run():
+        try: JOBS[jid]['result'] = ask(q, progress=lambda m: JOBS[jid]['log'].append(m)); JOBS[jid]['status'] = 'done'
+        except Exception as e: JOBS[jid]['result'] = dict(error=f'{type(e).__name__}: {e}'); JOBS[jid]['status'] = 'done'
+    threading.Thread(target=run, daemon=True).start(); return jid
+def warm():
+    try: ollama([dict(role='user', content='ok')])
+    except Exception: pass
 class H(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *a, **k): super().__init__(*a, directory=HERE, **k)
     def log_message(self, *a): pass
@@ -58,11 +69,16 @@ class H(http.server.SimpleHTTPRequestHandler):
             if self.path == '/api/ask': out = ask(str(body.get('q', '')))
             elif self.path == '/api/tool':
                 r = call(body['name'], body.get('args', {})); out = dict(answer='', calls=[dict(name=body['name'], args=body.get('args', {}), result={k: v for k, v in r.items() if k != 'chart'})], charts=[r['chart']] if isinstance(r, dict) and r.get('chart') else [])
+            elif self.path == '/api/ask_start': out = dict(job=start_job(str(body.get('q', ''))))
+            elif self.path == '/api/job':
+                j = JOBS.get(str(body.get('job', ''))); out = dict(error='unknown job') if j is None else dict(status=j['status'], log=j['log'][-6:], elapsed=round(time.time() - j['t0'], 1), result=j.get('result'))
+            elif self.path == '/api/paper':
+                import cm_paper; out = cm_paper.build(body.get('section'), out_dir=os.path.join(HERE, 'papers'))
             elif self.path == '/api/tools': out = {k: dict(example=v[0], doc=DOCS.get(k, '')) for k, v in TOOLS.items()}
             else: out = dict(error='unknown path')
         except Exception as e: out = dict(error=f'{type(e).__name__}: {e}')
         b = json.dumps(out, default=str).encode(); self.send_response(200); self.send_header('Content-Type', 'application/json'); self.send_header('Content-Length', str(len(b))); self.end_headers(); self.wfile.write(b)
 if __name__ == '__main__':
-    port = int(os.environ.get('CM_ASK_PORT', 8765))
+    port = int(os.environ.get('CM_ASK_PORT', 8765)); threading.Thread(target=warm, daemon=True).start()
     with socketserver.ThreadingTCPServer(('127.0.0.1', port), H) as s:
         print(f'CubeMind Ask on http://127.0.0.1:{port}  (model {MODEL})'); threading.Timer(1.0, lambda: webbrowser.open(f'http://127.0.0.1:{port}/ask.html')).start(); s.serve_forever()

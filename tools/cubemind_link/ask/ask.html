@@ -25,7 +25,8 @@ const COL=['#b18cff','#e0b24a','#4cc3ff','#ff6fa8','#7ee787'];
 let CH=[];
 function draw(cv,c){CH.push(Iris.render(cv,c));}
 async function go(){const q=$('q').value.trim();if(!q)return;$('go').disabled=true;$('st').textContent='CubeMind is working (local model + tools)…';$('ans').textContent='';$('calls').textContent='';$('charts').innerHTML='';CH=[];$('chartcard').hidden=true;
-try{const r=await (await fetch('/api/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({q})})).json();
+try{const P=(u,b)=>fetch(u,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)}).then(r=>r.json());
+const {job}=await P('/api/ask_start',{q});let j;do{await new Promise(z=>setTimeout(z,1000));j=await P('/api/job',{job});$('st').textContent=`CubeMind is working · ${j.elapsed} s · ${(j.log||[]).slice(-1)[0]||''}`;}while(j.status==='running');const r=j.result;
 if(r.error){$('ans').textContent='Error: '+r.error;return;}$('ans').textContent=r.answer||'(no answer)';$('calls').textContent=r.calls.map(c=>c.name+' '+JSON.stringify(c.args)+'\n  -> '+JSON.stringify(c.result)).join('\n\n');
 $('st').textContent=`${r.calls.length} engine call(s) · ${r.charts.length} chart(s) · model ${r.model} · ${r.seconds} s`;
 if(r.charts.length){$('chartcard').hidden=false;r.charts.forEach(c=>{const cv=document.createElement('canvas');$('charts').appendChild(cv);draw(cv,c);});}}
