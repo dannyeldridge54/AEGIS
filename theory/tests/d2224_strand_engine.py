@@ -39,8 +39,8 @@ def run(a3, mu1, yuk, conv=True):
     return x
 
 def m12(a3, d12):
-    lo, hi = 1e12, 1e18
-    for _ in range(60):
+    lo, hi = 1e10, 1e20   # D2224 DEV-2
+    for _ in range(70):
         mid = math.sqrt(lo * hi); x = run(a3, mid, True, True); lo, hi = (mid, hi) if x[0] - x[1] > d12 else (lo, mid)
     return mid, run(a3, mid, True, True)
 def alpha_s(d12=0.0, d32=0.0):
