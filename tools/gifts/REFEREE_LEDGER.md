@@ -62,3 +62,4 @@ G5/G6 (post-hoc ITER 500 MW column) FAIL: P_fus 340 MW, Q 6.8, tau_E 4.82 s, W 3
 Cause found: subtracting ALL radiation (56 MW) from P_loss; ITER's 104 MW P_loss implies only ~46 of 61 MW is counted (core vs edge
 radiation convention). Dials find no admissible point (P_loss < P_LH everywhere). Open for the next loop cycle; not hidden.
 R85 (cycle 2): 2 MAJOR (Q2 non-discriminating; 51 MW is the 1999 law) -> cycle 2 NULL; loop stops (D2194a).
+SPEED-fusion: V1 2e-15, V2 1e-14, V3 same best point (P_net rel 2e-14), V4 goal dials 511 s -> 14.7 s (35x). PASS as locked.
