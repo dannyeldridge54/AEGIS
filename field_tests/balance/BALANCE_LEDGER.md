@@ -55,3 +55,6 @@ Stop rule: a full turn of all three wheels returns NULL.
 | 11 | W1+W2+W3 on D2170 | tree-level alpha_s/alpha_w = 6 on the published Z6-II model (needed ~1); referee NULL; GH Table 10 states 6.0 | preprint brane row: "chiral spectrum reproduced; couplings fail; a different model is needed"; postulate 3 updated | inner spin: postulate 3 wording |
 | 9 | W1 full unison | must-fix: "Three results fail" -> four (brane couplings); should-fix: What-next brane row needs realistic couplings; hidden-sector checks "only begun"; nits: scatter is HiLLiPoP-only; postulate 3 "provided couplings realistic" | all applied; Zenodo description "four results fail" | inner spin from D2170 |
 | 10 | W1 verify | should-fix: DeltaN_eff label still "not yet checked on Z6-II" vs brane row "only begun"; nit: +6.7 label | both applied | inner spin from the round-9 brane-row fix |
+| 11 | W1 full verify | **NULL** (both round-10 fixes verified; Pantheon+ budget, fail count, scatter scope, sigma labels all in unison) | - | - |
+
+**State at ~00:00 CT 23 Nov: NULL again after the post-Union3 / D2164 / D2170 additions. Remaining for 00:15: refresh Status of runs only (fits that land), then publish 00:33.**
