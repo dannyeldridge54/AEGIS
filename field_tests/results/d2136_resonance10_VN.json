@@ -1,0 +1,687 @@
+{
+ "variant": "VN",
+ "s_H0": 6.2,
+ "breaths": [
+  {
+   "breath": 1,
+   "phase": "inhale",
+   "locked": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    8
+   ],
+   "H0": 67.43,
+   "dNeff": 0.0,
+   "fits_spent": [
+    "MN",
+    "m32",
+    "TR",
+    "split"
+   ],
+   "inner_unlocked_vs_inhale": [],
+   "rows": [
+    {
+     "layer": 1,
+     "name": "torus (centre, rung step)",
+     "locked": true,
+     "margins": {
+      "quark_window": 0.0285
+     }
+    },
+    {
+     "layer": 2,
+     "name": "pyramid (i, neutrinos)",
+     "locked": true,
+     "margins": {
+      "nu_ratio": 0.2852,
+      "MN_top": 2.6069,
+      "MN_bottom": 1.4104
+     }
+    },
+    {
+     "layer": 3,
+     "name": "turnover (rho, leptons)",
+     "locked": false,
+     "margins": {}
+    },
+    {
+     "layer": 4,
+     "name": "cube (three tori together)",
+     "locked": false,
+     "margins": {
+      "rung_agreement": -0.0029
+     }
+    },
+    {
+     "layer": 5,
+     "name": "fold (volumes, m3/2)",
+     "locked": true,
+     "margins": {
+      "wino": 0.1805
+     }
+    },
+    {
+     "layer": 6,
+     "name": "dilaton (inflation)",
+     "locked": true,
+     "margins": {
+      "n_s": 1.1852,
+      "n_s_PACT": 0.9118
+     }
+    },
+    {
+     "layer": 7,
+     "name": "forces (S-T seam)",
+     "locked": true,
+     "margins": {
+      "alpha_s": 2.0,
+      "split_natural": 0.7986
+     }
+    },
+    {
+     "layer": 8,
+     "name": "cosmology (reheating, genesis)",
+     "locked": true,
+     "margins": {
+      "gravitino_box": 1.05,
+      "leptogenesis": 0.1884,
+      "spine_BBN_dNeff": 12.6115,
+      "dark_baryon_window": 0.5885
+     }
+    },
+    {
+     "layer": 9,
+     "name": "late universe (thread)",
+     "locked": false,
+     "margins": {
+      "thread_PR4": -0.46
+     }
+    },
+    {
+     "layer": 10,
+     "name": "shells + spine + newest data",
+     "locked": false,
+     "margins": {
+      "H0_vs_SH0ES": -3.3942,
+      "sum_mnu_DESI": 0.0864,
+      "negspace_dNeff_ACT": 11.8494,
+      "negspace_alpha_null": 6.9078
+     }
+    }
+   ]
+  },
+  {
+   "breath": 1,
+   "phase": "exhale",
+   "locked": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    8
+   ],
+   "H0": 69.881,
+   "dNeff": 0.39525667001330167,
+   "fits_spent": [
+    "MN",
+    "m32",
+    "TR",
+    "split",
+    "dNeff"
+   ],
+   "inner_unlocked_vs_inhale": [],
+   "rows": [
+    {
+     "layer": 1,
+     "name": "torus (centre, rung step)",
+     "locked": true,
+     "margins": {
+      "quark_window": 0.0285
+     }
+    },
+    {
+     "layer": 2,
+     "name": "pyramid (i, neutrinos)",
+     "locked": true,
+     "margins": {
+      "nu_ratio": 0.2852,
+      "MN_top": 2.2069,
+      "MN_bottom": 1.8104
+     }
+    },
+    {
+     "layer": 3,
+     "name": "turnover (rho, leptons)",
+     "locked": false,
+     "margins": {}
+    },
+    {
+     "layer": 4,
+     "name": "cube (three tori together)",
+     "locked": false,
+     "margins": {
+      "rung_agreement": -0.0029
+     }
+    },
+    {
+     "layer": 5,
+     "name": "fold (volumes, m3/2)",
+     "locked": true,
+     "margins": {
+      "wino": 0.1805
+     }
+    },
+    {
+     "layer": 6,
+     "name": "dilaton (inflation)",
+     "locked": true,
+     "margins": {
+      "n_s": 1.214,
+      "n_s_PACT": 0.9346
+     }
+    },
+    {
+     "layer": 7,
+     "name": "forces (S-T seam)",
+     "locked": true,
+     "margins": {
+      "alpha_s": 2.0,
+      "split_natural": 0.7986
+     }
+    },
+    {
+     "layer": 8,
+     "name": "cosmology (reheating, genesis)",
+     "locked": true,
+     "margins": {
+      "gravitino_box": 1.05,
+      "leptogenesis": 0.1884,
+      "spine_BBN_dNeff": 12.6115,
+      "dark_baryon_window": 0.5885
+     }
+    },
+    {
+     "layer": 9,
+     "name": "late universe (thread)",
+     "locked": false,
+     "margins": {
+      "thread_PR4": -0.46
+     }
+    },
+    {
+     "layer": 10,
+     "name": "shells + spine + newest data",
+     "locked": false,
+     "margins": {
+      "H0_vs_SH0ES": -1.0379,
+      "sum_mnu_DESI": 0.0864,
+      "negspace_dNeff_ACT": -1.0379,
+      "negspace_alpha_null": 6.9078
+     }
+    }
+   ]
+  },
+  {
+   "breath": 2,
+   "phase": "inhale",
+   "locked": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    8
+   ],
+   "H0": 67.43,
+   "dNeff": 0.0,
+   "fits_spent": [
+    "MN",
+    "m32",
+    "TR",
+    "split"
+   ],
+   "inner_unlocked_vs_inhale": [],
+   "rows": [
+    {
+     "layer": 1,
+     "name": "torus (centre, rung step)",
+     "locked": true,
+     "margins": {
+      "quark_window": 0.0285
+     }
+    },
+    {
+     "layer": 2,
+     "name": "pyramid (i, neutrinos)",
+     "locked": true,
+     "margins": {
+      "nu_ratio": 0.2852,
+      "MN_top": 2.2069,
+      "MN_bottom": 1.8104
+     }
+    },
+    {
+     "layer": 3,
+     "name": "turnover (rho, leptons)",
+     "locked": false,
+     "margins": {}
+    },
+    {
+     "layer": 4,
+     "name": "cube (three tori together)",
+     "locked": false,
+     "margins": {
+      "rung_agreement": -0.0029
+     }
+    },
+    {
+     "layer": 5,
+     "name": "fold (volumes, m3/2)",
+     "locked": true,
+     "margins": {
+      "wino": 0.1805
+     }
+    },
+    {
+     "layer": 6,
+     "name": "dilaton (inflation)",
+     "locked": true,
+     "margins": {
+      "n_s": 1.214,
+      "n_s_PACT": 0.9346
+     }
+    },
+    {
+     "layer": 7,
+     "name": "forces (S-T seam)",
+     "locked": true,
+     "margins": {
+      "alpha_s": 2.0,
+      "split_natural": 0.7986
+     }
+    },
+    {
+     "layer": 8,
+     "name": "cosmology (reheating, genesis)",
+     "locked": true,
+     "margins": {
+      "gravitino_box": 1.05,
+      "leptogenesis": 0.1884,
+      "spine_BBN_dNeff": 12.6115,
+      "dark_baryon_window": 0.5885
+     }
+    },
+    {
+     "layer": 9,
+     "name": "late universe (thread)",
+     "locked": false,
+     "margins": {
+      "thread_PR4": -0.46
+     }
+    },
+    {
+     "layer": 10,
+     "name": "shells + spine + newest data",
+     "locked": false,
+     "margins": {
+      "H0_vs_SH0ES": -3.3942,
+      "sum_mnu_DESI": 0.0864,
+      "negspace_dNeff_ACT": 11.8494,
+      "negspace_alpha_null": 6.9078
+     }
+    }
+   ]
+  },
+  {
+   "breath": 2,
+   "phase": "exhale",
+   "locked": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    8
+   ],
+   "H0": 69.881,
+   "dNeff": 0.39525667001330167,
+   "fits_spent": [
+    "MN",
+    "m32",
+    "TR",
+    "split",
+    "dNeff"
+   ],
+   "inner_unlocked_vs_inhale": [],
+   "rows": [
+    {
+     "layer": 1,
+     "name": "torus (centre, rung step)",
+     "locked": true,
+     "margins": {
+      "quark_window": 0.0285
+     }
+    },
+    {
+     "layer": 2,
+     "name": "pyramid (i, neutrinos)",
+     "locked": true,
+     "margins": {
+      "nu_ratio": 0.2852,
+      "MN_top": 2.2069,
+      "MN_bottom": 1.8104
+     }
+    },
+    {
+     "layer": 3,
+     "name": "turnover (rho, leptons)",
+     "locked": false,
+     "margins": {}
+    },
+    {
+     "layer": 4,
+     "name": "cube (three tori together)",
+     "locked": false,
+     "margins": {
+      "rung_agreement": -0.0029
+     }
+    },
+    {
+     "layer": 5,
+     "name": "fold (volumes, m3/2)",
+     "locked": true,
+     "margins": {
+      "wino": 0.1805
+     }
+    },
+    {
+     "layer": 6,
+     "name": "dilaton (inflation)",
+     "locked": true,
+     "margins": {
+      "n_s": 1.214,
+      "n_s_PACT": 0.9346
+     }
+    },
+    {
+     "layer": 7,
+     "name": "forces (S-T seam)",
+     "locked": true,
+     "margins": {
+      "alpha_s": 2.0,
+      "split_natural": 0.7986
+     }
+    },
+    {
+     "layer": 8,
+     "name": "cosmology (reheating, genesis)",
+     "locked": true,
+     "margins": {
+      "gravitino_box": 1.05,
+      "leptogenesis": 0.1884,
+      "spine_BBN_dNeff": 12.6115,
+      "dark_baryon_window": 0.5885
+     }
+    },
+    {
+     "layer": 9,
+     "name": "late universe (thread)",
+     "locked": false,
+     "margins": {
+      "thread_PR4": -0.46
+     }
+    },
+    {
+     "layer": 10,
+     "name": "shells + spine + newest data",
+     "locked": false,
+     "margins": {
+      "H0_vs_SH0ES": -1.0379,
+      "sum_mnu_DESI": 0.0864,
+      "negspace_dNeff_ACT": -1.0379,
+      "negspace_alpha_null": 6.9078
+     }
+    }
+   ]
+  },
+  {
+   "breath": 3,
+   "phase": "inhale",
+   "locked": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    8
+   ],
+   "H0": 67.43,
+   "dNeff": 0.0,
+   "fits_spent": [
+    "MN",
+    "m32",
+    "TR",
+    "split"
+   ],
+   "inner_unlocked_vs_inhale": [],
+   "rows": [
+    {
+     "layer": 1,
+     "name": "torus (centre, rung step)",
+     "locked": true,
+     "margins": {
+      "quark_window": 0.0285
+     }
+    },
+    {
+     "layer": 2,
+     "name": "pyramid (i, neutrinos)",
+     "locked": true,
+     "margins": {
+      "nu_ratio": 0.2852,
+      "MN_top": 2.2069,
+      "MN_bottom": 1.8104
+     }
+    },
+    {
+     "layer": 3,
+     "name": "turnover (rho, leptons)",
+     "locked": false,
+     "margins": {}
+    },
+    {
+     "layer": 4,
+     "name": "cube (three tori together)",
+     "locked": false,
+     "margins": {
+      "rung_agreement": -0.0029
+     }
+    },
+    {
+     "layer": 5,
+     "name": "fold (volumes, m3/2)",
+     "locked": true,
+     "margins": {
+      "wino": 0.1805
+     }
+    },
+    {
+     "layer": 6,
+     "name": "dilaton (inflation)",
+     "locked": true,
+     "margins": {
+      "n_s": 1.214,
+      "n_s_PACT": 0.9346
+     }
+    },
+    {
+     "layer": 7,
+     "name": "forces (S-T seam)",
+     "locked": true,
+     "margins": {
+      "alpha_s": 2.0,
+      "split_natural": 0.7986
+     }
+    },
+    {
+     "layer": 8,
+     "name": "cosmology (reheating, genesis)",
+     "locked": true,
+     "margins": {
+      "gravitino_box": 1.05,
+      "leptogenesis": 0.1884,
+      "spine_BBN_dNeff": 12.6115,
+      "dark_baryon_window": 0.5885
+     }
+    },
+    {
+     "layer": 9,
+     "name": "late universe (thread)",
+     "locked": false,
+     "margins": {
+      "thread_PR4": -0.46
+     }
+    },
+    {
+     "layer": 10,
+     "name": "shells + spine + newest data",
+     "locked": false,
+     "margins": {
+      "H0_vs_SH0ES": -3.3942,
+      "sum_mnu_DESI": 0.0864,
+      "negspace_dNeff_ACT": 11.8494,
+      "negspace_alpha_null": 6.9078
+     }
+    }
+   ]
+  },
+  {
+   "breath": 3,
+   "phase": "exhale",
+   "locked": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    8
+   ],
+   "H0": 69.881,
+   "dNeff": 0.39525667001330167,
+   "fits_spent": [
+    "MN",
+    "m32",
+    "TR",
+    "split",
+    "dNeff"
+   ],
+   "inner_unlocked_vs_inhale": [],
+   "rows": [
+    {
+     "layer": 1,
+     "name": "torus (centre, rung step)",
+     "locked": true,
+     "margins": {
+      "quark_window": 0.0285
+     }
+    },
+    {
+     "layer": 2,
+     "name": "pyramid (i, neutrinos)",
+     "locked": true,
+     "margins": {
+      "nu_ratio": 0.2852,
+      "MN_top": 2.2069,
+      "MN_bottom": 1.8104
+     }
+    },
+    {
+     "layer": 3,
+     "name": "turnover (rho, leptons)",
+     "locked": false,
+     "margins": {}
+    },
+    {
+     "layer": 4,
+     "name": "cube (three tori together)",
+     "locked": false,
+     "margins": {
+      "rung_agreement": -0.0029
+     }
+    },
+    {
+     "layer": 5,
+     "name": "fold (volumes, m3/2)",
+     "locked": true,
+     "margins": {
+      "wino": 0.1805
+     }
+    },
+    {
+     "layer": 6,
+     "name": "dilaton (inflation)",
+     "locked": true,
+     "margins": {
+      "n_s": 1.214,
+      "n_s_PACT": 0.9346
+     }
+    },
+    {
+     "layer": 7,
+     "name": "forces (S-T seam)",
+     "locked": true,
+     "margins": {
+      "alpha_s": 2.0,
+      "split_natural": 0.7986
+     }
+    },
+    {
+     "layer": 8,
+     "name": "cosmology (reheating, genesis)",
+     "locked": true,
+     "margins": {
+      "gravitino_box": 1.05,
+      "leptogenesis": 0.1884,
+      "spine_BBN_dNeff": 12.6115,
+      "dark_baryon_window": 0.5885
+     }
+    },
+    {
+     "layer": 9,
+     "name": "late universe (thread)",
+     "locked": false,
+     "margins": {
+      "thread_PR4": -0.46
+     }
+    },
+    {
+     "layer": 10,
+     "name": "shells + spine + newest data",
+     "locked": false,
+     "margins": {
+      "H0_vs_SH0ES": -1.0379,
+      "sum_mnu_DESI": 0.0864,
+      "negspace_dNeff_ACT": -1.0379,
+      "negspace_alpha_null": 6.9078
+     }
+    }
+   ]
+  }
+ ],
+ "FL_fluid_reading": {
+  "H0": 68.75,
+  "margin_SH0ES": -1.0896108202728243,
+  "source": "WZDR, P-ACT-LBS, no SH0ES (2512.19633)"
+ },
+ "FS_needed_dNeff_for_margin0": 0.5693548387096776,
+ "PS_window_side_test": {
+  "vectors": true,
+  "with_fermions": false,
+  "all_massless": false
+ },
+ "CCHP_second_reading_at_final": 1.9480989242369213
+}
