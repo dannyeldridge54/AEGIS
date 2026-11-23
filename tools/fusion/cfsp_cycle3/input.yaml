@@ -1,0 +1,153 @@
+SOL_momentum_loss_function: KotovReiter
+algorithms:
+- read_atomic_data
+- set_up_impurity_concentration_array
+- calc_separatrix_elongation_from_areal_elongation
+- calc_separatrix_triangularity_from_triangularity95
+- calc_minor_radius_from_inverse_aspect_ratio
+- calc_vertical_minor_radius_from_elongation_and_minor_radius
+- calc_plasma_volume
+- calc_plasma_surface_area
+- calc_f_shaping_for_qstar
+- calc_q_star_from_plasma_current
+- calc_average_ion_mass
+- calc_average_ion_temp_from_temperature_ratio
+- calc_zeff_and_dilution_due_to_impurities
+- calc_plasma_stored_energy
+- read_confinement_scalings
+- solve_energy_confinement_scaling_for_input_power
+- calc_beta_toroidal
+- calc_beta_poloidal
+- calc_beta_total
+- calc_beta_normalized
+- calc_peaking_and_prf_profiles
+- calc_intrinsic_radiated_power_from_core
+- require_P_rad_less_than_P_in
+- calc_min_P_radiation_from_fraction
+- calc_P_radiation_from_core_seeded_impurity
+- calc_core_seeded_impurity_concentration
+- calc_zeff_and_dilution_due_to_impurities
+- calc_peaking_and_prf_profiles
+- calc_bootstrap_fraction
+- calc_inductive_plasma_current
+- calc_Spitzer_loop_resistivity
+- calc_resistivity_trapped_enhancement
+- calc_neoclassical_loop_resistivity
+- calc_loop_voltage
+- calc_ohmic_power
+- calc_fusion_power
+- calc_neutron_flux_to_walls
+- calc_auxiliary_power
+- calc_fusion_gain
+- calc_elongation_at_psi95_from_areal_elongation
+- calc_cylindrical_edge_safety_factor
+- calc_internal_inductivity
+- calc_internal_inductance_for_cylindrical
+- calc_external_inductance
+- calc_vertical_field_mutual_inductance
+- calc_invmu_0_dLedR
+- calc_vertical_magnetic_field
+- calc_internal_flux
+- calc_external_flux
+- calc_resistive_flux
+- calc_poloidal_field_flux
+- calc_flux_needed_from_solenoid_over_rampup
+- calc_max_flattop_duration
+- calc_breakdown_flux_consumption
+- calc_power_crossing_separatrix
+- calc_average_total_pressure
+- calc_PB_over_R
+- calc_PBpRnSq
+- calc_B_pol_omp
+- calc_B_tor_omp
+- calc_fieldline_pitch_at_omp
+- calc_lambda_q
+- calc_parallel_heat_flux_density
+- calc_q_perp
+- calc_separatrix_electron_density
+- two_point_model_fixed_tet
+- calc_edge_impurity_concentration
+- calc_impurity_charge_state
+- calc_LH_transition_threshold_power
+- calc_ratio_P_LH
+- calc_greenwald_density_limit
+- calc_greenwald_fraction
+- calc_f_rad_core
+- calc_normalised_collisionality
+- calc_rho_star
+- calc_triple_product
+- calc_peak_pressure
+- calc_current_relaxation_time
+areal_elongation: 1.75
+confinement_threshold_scalar: 1.0
+confinement_time_scalar: 1.0
+core_impurity_species: Xenon
+edge_impurity_enrichment: 5.0
+edge_impurity_species: Argon
+ejima_coefficient: 0.6
+electron_density_peaking_offset: -0.1
+elongation_ratio_areal_to_psi95: 1.025
+elongation_ratio_sep_to_areal: 1.125
+energy_confinement_scaling: ITER98y2
+fraction_of_P_SOL_to_divertor: 0.6
+fraction_of_external_power_coupled: 0.9
+fusion_reaction: DTFusionBoschHale
+grid:
+  average_electron_density:
+    max: 40.0
+    min: 1.0
+    num: 40
+    spacing: linear
+  average_electron_temp:
+    max: 20.0
+    min: 5.0
+    num: 30
+    spacing: linear
+heavier_fuel_species_fraction: 0.5
+intrinsic_impurity_concentration:
+  Helium: 0.06
+  Oxygen: 0.0031
+  Tungsten: 1.5e-05
+inverse_aspect_ratio: 0.3081
+ion_density_peaking_offset: -0.2
+ion_to_electron_temp_ratio: 1.0
+kappa_e0: 2600.0
+lambda_q_factor: 1.0
+lambda_q_scaling: EichRegression15
+lengyel_overestimation_factor: 4.3
+magnetic_field_on_axis: 12.2
+major_radius: 1.85
+minimum_core_radiated_fraction: 0.0
+nesep_over_nebar: 0.3
+normalized_inverse_temp_scale_length: 2.5
+parallel_connection_length: 30.0
+plasma_current: 8700000.0
+points:
+  PRD:
+    maximize: Q
+    where:
+      P_auxiliary_launched:
+        max: 25.0
+        min: 0.0
+        units: MW
+      P_fusion:
+        max: 140.0
+        units: MW
+      greenwald_fraction:
+        max: 0.9
+      ratio_of_P_SOL_to_P_LH:
+        min: 1.0
+radas_dir: CASE_DIR/radas
+radiated_power_method: Radas
+radiated_power_scalar: 1.0
+reference_ne_tau: 5.0e+16
+safety_factor_on_axis: 1
+sheath_heat_transmission_factor: 7.5
+surface_inductance_coefficients: Barr
+target_electron_temp: 25.0
+temperature_peaking: 2.5
+toroidal_flux_expansion: 0.6974
+total_flux_available_from_CS: 35
+triangularity_psi95: 0.3
+triangularity_ratio_sep_to_psi95: 1.8
+vertical_magnetic_field_equation: Barr

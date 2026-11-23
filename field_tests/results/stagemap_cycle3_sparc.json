@@ -1,0 +1,66 @@
+{
+ "their_code_their_radas": {
+  "Q": 12.743583370228462,
+  "P_fusion": 115.81643242908366,
+  "P_auxiliary_launched": 7.886601576062538,
+  "P_radiation": 5.88485627080745,
+  "z_effective": 1.343818992646174,
+  "dilution": 0.8543260247442559,
+  "energy_confinement_time": 0.6623168200927633,
+  "plasma_stored_energy": 20.83836937767575,
+  "T_keV": 9.137931034482758,
+  "n_1e19": 25.0
+ },
+ "their_code_our_adas": {
+  "Q": 12.775103587989955,
+  "P_fusion": 115.90844664231939,
+  "P_auxiliary_launched": 7.878662805357547,
+  "P_radiation": 6.679208090896836,
+  "z_effective": 1.3354902822868382,
+  "dilution": 0.8544011343856199,
+  "energy_confinement_time": 0.6622590770830964,
+  "plasma_stored_energy": 20.839185654385368,
+  "T_keV": 9.137931034482758,
+  "n_1e19": 25.0
+ },
+ "our_engine_at_their_point": {
+  "n": 2.5e+20,
+  "T": 9.137931034482758,
+  "P_fus": 89.37276743674714,
+  "P_alpha": 18.093061798621953,
+  "W_MJ": 21.958008221685976,
+  "P_heat": 32.49278168939911,
+  "tau_E": 0.6757811144513324,
+  "P_aux_req": 14.399719890777156,
+  "Zeff": 1.40326,
+  "f_DT": 0.85,
+  "P_rad": 6.17707792676696,
+  "dP_fus": -0.22832394710939163,
+  "dP_aux_vs_absorbed": 1.0307619659328826,
+  "dP_aux_vs_absorbed_plus_ohmic": 0.7380268108689156,
+  "pass_L4": false
+ },
+ "grid_ratio_ours_over_theirs": {
+  "P_radiation": [
+   1.0876,
+   1.0001,
+   1.1519
+  ],
+  "z_effective": [
+   0.9962,
+   0.9938,
+   0.998
+  ],
+  "P_fusion": [
+   1.0004,
+   1.0002,
+   1.0008
+  ],
+  "Q": [
+   1.0007,
+   1.0002,
+   1.0062
+  ]
+ },
+ "note": "run 1 (before referee); grid ratios = median, p5, p95 over the 40x30 grid"
+}
