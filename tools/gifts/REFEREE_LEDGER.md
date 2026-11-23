@@ -11,6 +11,10 @@ the claims; the builder fixes only through a DEVIATIONS note written before any 
 | Aion | K. S. Babu (OSU) | D2188 | R76, R76b | NULL | DEV-1..9 (DEV-8 Lantern kept by author) |
 | Chronos | Nuclear rung (OU/OSU) | D2189 + A1-A3 | R77, R78, R78b | NULL | DEV-1..16 |
 
+## Speed record (speed rung, before/after on the locked test set)
+| Tool | Slow path | Before | After | Accuracy kept |
+|---|---|---|---|---|
+
 ## Next in the rotation (older toolkits, one per loop tick)
 Hyperion (astro / BBN / neutron stars) -> CERN+1 (LHC toolkit) -> Lattice Lab -> Janus (astro, lt) -> SERAPIS calc -> chem -> golden.
 Each gets: lock a short referee charge, one independent referee round, DEVIATIONS for any fix, rerun its CI tests, record here.
