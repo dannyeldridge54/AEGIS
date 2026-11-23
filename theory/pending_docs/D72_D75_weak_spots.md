@@ -22602,3 +22602,9 @@ does not yet predict Lambda_QCD or the nucleon mass on its own (weave_proton not
 by ~19% (MeV scale), far larger than the 64 keV D-T resonance: on the Weave's current alpha_s the D-T resonance is not where we observe it.
 => The out-of-balance ring is FORCES (alpha_s), not the fusion data. Next for this ring: two-loop + thresholds + Yukawa at M12 (weave_rg2 says
 +-0.004) to see whether alpha_s can reach 0.118 without breaking the other rings; only then carry the Weave down into the nuclear/fusion layers.
+
+## D2211 (CENTRE, 23 Nov 2026 ~15:30 CT) — resonance run 1 (exploratory, all six rings, centre tunes all knobs) + R104
+Result: only the new alpha_s threshold knob moved (+0.00378); all rings balanced except D/H (-2.5 sigma, untouched by any knob).
+R104: that is a 1-parameter FIT, not a prediction; the Weave's own computed two-loop Yukawa correction is -0.0002 to -0.0006 (wrong sign);
+so the Weave's alpha_s stays 0.1140-0.1147 (~3.7 sigma low) unless the M12 threshold Delta_3 ~ -0.27 comes out of the D7 stack. Open: compute
+Delta_3 (sign, size) from the N = 6 magnetised-D7 stack and carry it into M12 and the proton lifetime; open omega_b / dN_eff to the centre for D/H.
