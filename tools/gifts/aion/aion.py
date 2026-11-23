@@ -2,13 +2,22 @@
 """Aion v1: Zee-Babu prediction engine (minimal model). Danny Lee Eldridge / the Weave, 23 Nov 2026 (D2188).
 A lantern, not a throne: free to use, change and share.
 
-Minimal Zee-Babu: h+ couples through antisymmetric f, k++ through symmetric g; M_nu ~ f Y g^dag Y^T f^T has det = 0,
-so the lightest neutrino is massless at two loops and the f-ratios are fixed by oscillation data
-(Herrero-Garcia, Nebot, Rius, Santamaria, arXiv:1402.4491). Not covered: the SU(5) embedding of arXiv:2412.14562.
+Minimal Zee-Babu model (A. Zee, Nucl. Phys. B264 (1986) 99; K. S. Babu, Phys. Lett. B203 (1988) 132; see also
+Babu & Macesanu, hep-ph/0212058; Nebot et al., arXiv:0711.0483; Herrero-Garcia, Nebot, Rius & Santamaria,
+arXiv:1402.4491, whose formulas are used here). h+ couples through antisymmetric f, k++ through symmetric g;
+M_nu is proportional to f m_l g* m_l f^T, det = 0, so the lightest neutrino is massless at two loops and the
+f-ratios are fixed by oscillation data.
+Predicts flavour RATIOS only: not the overall scale, nor the loop function I(m_k/m_h) (perturbativity and the mu
+bound push m_h, m_k to the few-TeV scale, 1402.4491). Not covered: the SU(5) embedding of Babu & Saad,
+arXiv:2412.14562 (coloured scalars contribute comparably), and the k++ sector (g couplings free).
     Convention: M_nu = U diag(m) U^T (PDG U); the 1402.4491 ratios are null vectors in this convention (D2188 T1).
 """
 import numpy as np, json, sys
 
+NUFIT6_3S = {  # NuFIT 6.0 IC19 w/o SK-atm 3-sigma ranges (s12, s23, s13); delta scanned over [0, 360)
+ 'NO': dict(s12=(0.275, 0.345), s23=(0.430, 0.596), s13=(0.02023, 0.02376)),
+ 'IO': dict(s12=(0.275, 0.345), s23=(0.437, 0.597), s13=(0.02053, 0.02397)),
+}
 NUFIT6 = {  # NuFIT 6.0, IC19 without SK-atm (arXiv:2410.05380): (best, +1s, -1s)
  'NO': dict(s12=(0.307, .012, .011), s23=(0.561, .012, .015), s13=(0.02195, .00054, .00058), d=(177., 19., 20.),
             dm21=(7.49e-5, .19e-5, .19e-5), dm3l=(2.534e-3, .025e-3, .023e-3)),
@@ -47,12 +56,13 @@ def mbb_band(o, p, n=721):
     U = U_pmns(p['s12'], p['s23'], p['s13'], p['d']); m = masses(o, p['dm21'], p['dm3l'])
     vals = []
     for a in np.linspace(0, 2 * np.pi, n):   # only one Majorana phase is physical when m_lightest = 0
-        ph = np.array([1, np.exp(1j * a), 1]) if o == 'NO' else np.array([1, np.exp(1j * a), 1])
+        ph = np.array([1, np.exp(1j * a), 1])
         vals.append(abs(np.sum((U[0] ** 2) * ph * m)))
     return min(vals), max(vals), m.sum()
 
 def fmt_ceiling(ret, mh_tev):
-    """|f_mutau| max from MEG II via BR = alpha |f_etau f_mutau|^2/(48 pi GF^2 mh^4), with f_etau = ret * f_mutau."""
+    """h+-only contribution (k++ has opposite chirality, adds incoherently -> this ceiling is conservative; m_h only).
+    |f_mutau| max from MEG II via BR = alpha |f_etau f_mutau|^2/(48 pi GF^2 mh^4), with f_etau = ret * f_mutau."""
     mh = mh_tev * 1e3; ff2 = MEG2 * 48 * np.pi * GF ** 2 * mh ** 4 / ALPHA
     return np.sqrt(np.sqrt(ff2) / abs(ret))
 
@@ -64,6 +74,19 @@ def sample(o, rng, N):
         z = rng.standard_normal(N); out[k] = b + np.where(z > 0, up, dn) * z
     out['d'] = np.mod(out['d'], 360.0); return out
 
+def scan3s(o, n=9, nd=73):
+    """3-sigma scan (DEV-2): delta over [0,360), s23^2 both octants, s12^2, s13^2 over 3-sigma ranges."""
+    r = NUFIT6_3S[o]; lo = {}; hi = {}
+    def upd(k, v): lo[k] = min(lo.get(k, v), v); hi[k] = max(hi.get(k, v), v)
+    for s12 in np.linspace(*r['s12'], n):
+        for s23 in np.linspace(*r['s23'], n):
+            for s13 in np.linspace(*r['s13'], n):
+                for d in np.linspace(0, 360, nd):
+                    a, b = f_ratios(o, s12, s23, s13, d); br = hplus_br(a, b)
+                    upd('abs_f_etau_over_f_mutau', abs(a)); upd('abs_f_emu_over_f_mutau', abs(b))
+                    upd('BR_e', br[0]); upd('BR_mu', br[1]); upd('BR_tau', br[2]); upd('f_mutau_ceiling_at_1TeV', fmt_ceiling(a, 1.0))
+    return {k: [float(lo[k]), float(hi[k])] for k in lo}
+
 def run(N=20000, seed=2188):
     rng = np.random.default_rng(seed); R = {}
     for o in ('NO', 'IO'):
@@ -74,9 +97,12 @@ def run(N=20000, seed=2188):
             a, b = f_ratios(o, S['s12'][i], S['s23'][i], S['s13'][i], S['d'][i]); BR.append(hplus_br(a, b)); RT.append([abs(a), abs(b)])
         BR, RT = np.array(BR), np.array(RT); q = lambda x: [float(np.percentile(x, 16)), float(np.percentile(x, 84))]
         R[o] = dict(f_etau_over_f_mutau=[float(ret.real), float(ret.imag)], abs_ratios=[float(abs(ret)), float(abs(rem))],
-                    abs_ratio_1sigma=dict(f_etau=q(RT[:, 0]), f_emu=q(RT[:, 1])),
-                    hplus_BR_e_mu_tau=[float(x) for x in br], hplus_BR_1sigma=dict(e=q(BR[:, 0]), mu=q(BR[:, 1]), tau=q(BR[:, 2])),
-                    mbb_band_meV=[lo * 1e3, hi * 1e3], sum_mnu_eV=float(sm), sum_vs_DESI_DR2=('below' if sm < DESI_SUM else 'ABOVE') + ' 0.0642 eV',
+                    ranges_3sigma_scan=scan3s(o),
+                    indicative_1sigma_gaussian_approx_only=dict(f_etau=q(RT[:, 0]), f_emu=q(RT[:, 1]), BR_e=q(BR[:, 0]), BR_mu=q(BR[:, 1]), BR_tau=q(BR[:, 2])),
+                    hplus_BR_e_mu_tau=[float(x) for x in br],
+                    mbb_band_meV=[lo * 1e3, hi * 1e3], sum_mnu_eV=float(sm), sum_vs_DESI_DR2=('below the DESI DR2+CMB LCDM bound (< 0.0642 eV, 95%)' if sm < DESI_SUM else
+                        'in tension with the DESI DR2+CMB LCDM bound (< 0.0642 eV, 95%); model-dependent; applies to any IO model with m3 = 0, not specific to Zee-Babu'),
+                    f_mutau_ceiling_note='h+-only contribution; k++ adds incoherently, so this is a conservative upper bound on |f_mutau|; depends on m_h only',
                     f_mutau_ceiling_MEGII={str(m): float(fmt_ceiling(ret, m)) for m in (0.5, 1, 2, 5)})
     return R
 

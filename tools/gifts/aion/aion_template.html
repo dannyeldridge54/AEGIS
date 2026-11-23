@@ -39,9 +39,9 @@ canvas{width:100%;height:180px;display:block}.note{color:var(--muted);font-size:
 <div class="card"><h2>Mass sum and μ→eγ</h2>
 <p class="mono" id="sum"></p>
 <table><thead><tr><th>m<sub>h</sub> (TeV)</th><th>max |f<sub>μτ</sub>| (MEG II 1.5×10⁻¹³)</th></tr></thead><tbody id="ceil"></tbody></table>
-<p class="note">BR(μ→eγ)<sub>h</sub> = α|f<sub>eτ</sub>*f<sub>μτ</sub>|²/(48πG<sub>F</sub>²m<sub>h</sub>⁴), with f<sub>eτ</sub>/f<sub>μτ</sub> from the dials.</p></div>
+<p class="note">BR(μ→eγ)<sub>h</sub> = α|f<sub>eτ</sub>*f<sub>μτ</sub>|²/(48πG<sub>F</sub>²m<sub>h</sub>⁴), with f<sub>eτ</sub>/f<sub>μτ</sub> from the dials. This is the h⁺ contribution only; the k⁺⁺ loop has the opposite chirality and adds incoherently, so the ceiling is conservative and depends on m<sub>h</sub> alone.</p></div>
 </div>
-<p class="note">Minimal Zee–Babu only (formulas from Herrero-García, Nebot, Rius &amp; Santamaria, arXiv:1402.4491; convention M<sub>ν</sub> = U diag(m) Uᵀ, checked). Not covered: the SU(5) embedding of arXiv:2412.14562, where coloured scalars contribute comparably, and the k⁺⁺ sector (its g couplings are free). Uncertainty bands in the Python version use split-Gaussian 1σ sampling, an approximation (δ is not Gaussian).</p>
+<p class="note">The minimal Zee–Babu model: A. Zee, Nucl. Phys. B264 (1986) 99; K. S. Babu, Phys. Lett. B203 (1988) 132; see also Babu &amp; Macesanu, hep-ph/0212058, and Nebot et al., arXiv:0711.0483. Formulas used here are from Herrero-García, Nebot, Rius &amp; Santamaria, arXiv:1402.4491 (convention M<sub>ν</sub> = U diag(m) Uᵀ, checked). Aion predicts flavour ratios only, not the overall mass scale or the loop function I(m<sub>k</sub>/m<sub>h</sub>); perturbativity and the μ bound push m<sub>h</sub>, m<sub>k</sub> to the few-TeV scale. Not covered: Babu &amp; Saad's SU(5) completion (arXiv:2412.14562), where coloured scalars contribute comparably, and the k⁺⁺ sector (its g couplings are free). The Python version gives 3σ scan ranges over δ and both θ₂₃ octants.</p>
 <p class="note">Aion v1 · Danny Lee Eldridge, Oklahoma City · 23 Nov 2026 · the Weave (doi:10.5281/zenodo.24453858) · github.com/dannyeldridge54/AEGIS (tools/gifts/aion). Named for Aion, the Greek figure of unbounded time. Free to use, change and share.</p>
 </main>
 <script>
@@ -54,7 +54,7 @@ const r=A.run(ord,P),names=['e','μ','τ'];
 $('bars').innerHTML=r.br.map((b,i)=>`<div class="bar mono"><span>h⁺→${names[i]}ν</span><i style="width:${(b*100*2.2).toFixed(1)}px"></i>${(b*100).toFixed(1)}%</div>`).join('');
 $('ratios').textContent=`|f_eτ/f_μτ| = ${r.abs[0].toFixed(3)}   |f_eμ/f_μτ| = ${r.abs[1].toFixed(3)}`;
 $('mbb').textContent=`m_ββ band: ${(r.mbb[0]*1e3).toFixed(2)} – ${(r.mbb[1]*1e3).toFixed(2)} meV`;
-const over=r.sum>A.DESI;$('sum').innerHTML=`Σm<sub>ν</sub> = ${r.sum.toFixed(4)} eV <span class="${over?'warn':''}">(${over?'above':'below'} the DESI DR2 + CMB ΛCDM bound 0.0642 eV)</span>`;
+const over=r.sum>A.DESI;$('sum').innerHTML=`Σm<sub>ν</sub> = ${r.sum.toFixed(4)} eV <span class="note">(${over?'in tension with the DESI DR2 + CMB ΛCDM bound, &lt; 0.0642 eV at 95%; model-dependent, and it applies to any inverted-ordering model with m₃ = 0, not specifically to Zee–Babu':'below the DESI DR2 + CMB ΛCDM bound, &lt; 0.0642 eV at 95%'})</span>`;
 $('ceil').innerHTML=r.ceil.map(([m,c])=>`<tr><td>${m}</td><td>${c.toFixed(4)}</td></tr>`).join('');
 const cv=$('cv'),g=cv.getContext('2d'),W=cv.width,H=cv.height;g.clearRect(0,0,W,H);const pts=[];let mx=0;
 for(let i=0;i<=200;i++){const a=2*Math.PI*i/200,v=A.mbb(ord,P,a)*1e3;pts.push([a,v]);mx=Math.max(mx,v);}mx*=1.15;
