@@ -22687,3 +22687,10 @@ by TRANSP up to 25%, #99972 ~4-5% Maxwellian + ~10% RF tail, the rest beam-targe
 TRANSP-implied 8.7 MW. So the goalpost is independently confirmed (not changed). Our model 14.66 MW stays +68%: OUT. The gap is ours (single
 deposition Te, no fast-ion losses/orbit/shine-through, fraction definition); closing it needs the measured Te profile and deposition from a
 primary source; no unconstrained knob is moved. No computation in this note.
+
+## D2219 (PING-PONG item 1 JET, round 1-2, 23 Nov 2026) — Ti/Te sourced fix: #99971 still OUT (+64%)
+Standing referee round 1: beam_target.py has no bug; the miss is 0-D inputs (single Te 6.5 keV / Ti 9 keV on the whole beam path). Locked
+PREREG_JET2_TI_RATIO (Ti = 1.2 Te, Stancar 2023 core Ti/Te 1.1-1.3; Te not moved): #99971 14.28 MW (+64%, band 14.08-14.49) OUT; #104522
+15.04 vs 11.6 MW (+30%) IN. Unscored Te sensitivity (Ti = 1.2 Te): 4/5/6.5/8 keV -> 9.87/11.87/14.28/16.14 MW, so a deposition-weighted Te near
+5 keV would reach the band edge - but no text source gives #99971 profiles; choosing Te now would be tuning. Status: OUT (OBSTRUCTED: needs
+digitised Te(rho), deposition from a primary JET source). Results field_tests/results/jet2.json.
