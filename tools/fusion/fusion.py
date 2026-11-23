@@ -60,56 +60,79 @@ def ideal_ignition_T(E_alpha_MeV, Zeff=1.0):
     from scipy.optimize import brentq
     return brentq(lambda T: sigmav('DT', T) * 1e-6 * E_alpha_MeV * MEV_J / 4 - C_B * Zeff * math.sqrt(T), 1.0, 20.0, xtol=1e-10)
 
-# ------------------------------------------------------------------ S3 tokamak 0-D with profiles + dials
+# ------------------------------------------------------------------ S3 tokamak 0-D with profiles + dials (DEV-4..8)
 MU0 = 4e-7 * math.pi
-ITER = dict(R=6.2, a=2.0, kappa=1.85, B=5.3, Ip=15.0, V=830.0, P_aux=50.0, M=2.5, alpha_n=0.1, alpha_T=1.0, Zeff=1.7, Z_imp=4.0, n_avg=1.0e20)
-def _profiles(m, n_avg, T_avg, N=400):
-    rho2 = [(i + 0.5) / N for i in range(N)]                      # uniform in rho^2 = uniform in volume
-    n0 = n_avg * (1 + m['alpha_n']); T0 = T_avg * (1 + m['alpha_T'])
-    return [(n0 * (1 - x) ** m['alpha_n'], T0 * (1 - x) ** m['alpha_T']) for x in rho2]
-def plasma(m, n_avg, T_avg, E_alpha_MeV):
-    """0-D integrals over parabolic profiles: fusion, alpha, bremsstrahlung powers (MW), stored energy (MJ), beta_N."""
-    f_fuel = (m['Z_imp'] - m['Zeff']) / (m['Z_imp'] - 1)          # fuel ions per electron for one impurity species (quasi-neutral)
-    f_imp = (m['Zeff'] - 1) / (m['Z_imp'] * (m['Z_imp'] - 1))     # impurity ions per electron
-    prof = _profiles(m, n_avg, T_avg); V = m['V']; Pf = Pb = Wth = 0.0
-    Efus = q_value('DT') * MEV_J
-    for ne, T in prof:
-        if T <= 0.2: continue
-        nD = nT = ne * f_fuel / 2
-        Pf += nD * nT * sigmav('DT', min(T, 100.0)) * 1e-6 * Efus
-        Pb += C_B * m['Zeff'] * ne * ne * math.sqrt(T)
-        Wth += 1.5 * (ne + ne * (f_fuel + f_imp)) * T * KEV_J
+ITER = dict(R=6.2, a=2.0, kappa=1.85, B=5.3, Ip=15.0, V=831.0, S=683.0, P_aux=50.0, M=2.5, alpha_n=0.1, alpha_T=1.0, beta_T=2.0,
+            f_He=0.032, f_Be=0.020, f_Ar=0.0014, Ti_over_Te=8.1 / 8.9, f_reflect=0.6, P_line=27.0, n_avg=1.13e20, fG_max=0.94,
+            src='ITER FDR Physics Table 4.3.1-1, 500 MW column; Be/Ar are axis values used as averages; P_line is an INPUT')
+Z_IMP = dict(He=2, Be=4, Ar=18)
+def composition(m):
+    """Fully stripped impurities as fractions of n_e: fuel fraction n_DT/n_e, ion count per electron, Z_eff."""
+    f = dict(He=m['f_He'], Be=m['f_Be'], Ar=m['f_Ar'])
+    f_DT = 1 - sum(f[k] * Z_IMP[k] for k in f)
+    zeff = f_DT + sum(f[k] * Z_IMP[k] ** 2 for k in f)
+    return dict(f_DT=f_DT, ions_per_e=f_DT + sum(f.values()), Zeff=zeff)
+def line_avg_factor(alpha_n):
+    """n_line / n_avg for n = n0 (1 - rho^2)^alpha_n: n_avg = n0/(1+alpha_n), n_line = n0 sqrt(pi) Gamma(alpha_n+1) / (2 Gamma(alpha_n+1.5))."""
+    return (math.sqrt(math.pi) * math.gamma(alpha_n + 1) / (2 * math.gamma(alpha_n + 1.5))) * (1 + alpha_n)
+def _profiles(m, n_avg, Te_avg, N=400):
+    rho2 = [(i + 0.5) / N for i in range(N)]
+    n0 = n_avg * (1 + m['alpha_n']); T0 = Te_avg * (1 + m['alpha_T'])
+    return [(n0 * (1 - x) ** m['alpha_n'], T0 * (1 - x) ** m['alpha_T']) for x in rho2], n0, T0
+def p_synch(m, ne0, Te0):
+    """Albajar et al. 2001 fit with the Fidone reflection term (UKAEA PROCESS docs), MW."""
+    r = m['f_reflect']; aT, an, bT = m['alpha_T'], m['alpha_n'], m['beta_T']; A = m['R'] / m['a']; n20 = ne0 / 1e20
+    pa0 = 6.04e3 * m['a'] * n20 / m['B']
+    K = (an + 3.87 * aT + 1.46) ** -0.79 * (1.98 + aT) ** 1.36 * bT ** 2.14 * (bT ** 1.53 + 1.87 * aT - 0.16) ** -1.33
+    G = 0.93 * (1 + 0.85 * math.exp(-0.82 * A))
+    return (3.84e-8 * (1 - r) ** 0.62 / (1 + 0.12 * Te0 / pa0 ** 0.41 * (1 - r) ** 0.41) ** 1.51
+            * m['R'] * m['a'] ** 1.38 * m['kappa'] ** 0.79 * m['B'] ** 2.62 * n20 ** 0.38 * Te0 * (16 + Te0) ** 2.61 * K * G)
+def plasma(m, n_avg, Te_avg, E_alpha_MeV):
+    c = composition(m); prof, ne0, Te0 = _profiles(m, n_avg, Te_avg); V = m['V']; Pf = Pb = Wth = 0.0
+    Efus = q_value('DT') * MEV_J; r = m['Ti_over_Te']
+    for ne, Te in prof:
+        Ti = r * Te
+        if Ti > 0.2:
+            nD = nT = ne * c['f_DT'] / 2; Pf += nD * nT * sigmav('DT', min(Ti, 100.0)) * 1e-6 * Efus
+        Pb += C_B * c['Zeff'] * ne * ne * math.sqrt(max(Te, 0.0))
+        Wth += 1.5 * (ne * Te + ne * c['ions_per_e'] * Ti) * KEV_J
     k = V / len(prof); Pf *= k / 1e6; Pb *= k / 1e6; Wth *= k / 1e6
-    P_alpha = Pf * E_alpha_MeV / q_value('DT')
+    Ps = p_synch(m, ne0, Te0); Prad = Pb + Ps + m['P_line']
     beta = 2 * MU0 * (Wth * 1e6 / 1.5 / V) / m['B'] ** 2
-    return dict(P_fus=Pf, P_alpha=P_alpha, P_brems=Pb, W_MJ=Wth, beta_N=100 * beta * m['a'] * m['B'] / m['Ip'], n_G=m['Ip'] / (math.pi * m['a'] ** 2) * 1e20)
-def tau_ipb98(m, P_loss, n_avg):
+    nG = m['Ip'] / (math.pi * m['a'] ** 2) * 1e20; nline = n_avg * line_avg_factor(m['alpha_n'])
+    return dict(P_fus=Pf, P_alpha=Pf * E_alpha_MeV / q_value('DT'), P_brems=Pb, P_synch=Ps, P_line=m['P_line'], P_rad=Prad, W_MJ=Wth,
+                beta_N=100 * beta * m['a'] * m['B'] / m['Ip'], n_G=nG, n_line=nline, f_G=nline / nG, Zeff=c['Zeff'], f_DT=c['f_DT'], Te0=Te0)
+def tau_ipb98(m, P_loss, n_line):
     eps = m['a'] / m['R']; ka = m['V'] / (2 * math.pi ** 2 * m['R'] * m['a'] ** 2)
-    return 0.0562 * m['Ip'] ** 0.93 * m['B'] ** 0.15 * P_loss ** -0.69 * (n_avg / 1e19) ** 0.41 * m['M'] ** 0.19 * m['R'] ** 1.97 * eps ** 0.58 * ka ** 0.78
-def p_LH(m, n_avg):   # Martin 2008 H-mode threshold, S = plasma surface
-    S = 4 * math.pi ** 2 * m['R'] * m['a'] * math.sqrt((1 + m['kappa'] ** 2) / 2)
-    return 0.0488 * (n_avg / 1e20) ** 0.717 * m['B'] ** 0.803 * S ** 0.941
+    return 0.0562 * m['Ip'] ** 0.93 * m['B'] ** 0.15 * P_loss ** -0.69 * (n_line / 1e19) ** 0.41 * m['M'] ** 0.19 * m['R'] ** 1.97 * eps ** 0.58 * ka ** 0.78
+def p_LH(m, n_line):   # Martin 2008, S = plasma surface (m^2)
+    return 0.0488 * (n_line / 1e20) ** 0.717 * m['B'] ** 0.803 * m['S'] ** 0.941
 def operating_point(m, E_alpha_MeV, n_avg=None, P_aux=None):
-    """Solve power balance W/tau_E(P_loss) = P_loss with P_loss = P_alpha + P_aux - P_brems for <T>; returns the hottest root."""
+    """Power balance W/tau_E(P_loss) = P_loss, P_loss = P_alpha + P_aux - P_rad; solve <T_e>; hottest root."""
     from scipy.optimize import brentq
     n_avg = m['n_avg'] if n_avg is None else n_avg; P_aux = m['P_aux'] if P_aux is None else P_aux
     def f(T):
-        p = plasma(m, n_avg, T, E_alpha_MeV); Pl = p['P_alpha'] + P_aux - p['P_brems']
-        return (p['W_MJ'] / tau_ipb98(m, Pl, n_avg) - Pl) if Pl > 0 else 1e9
-    Ts = [1 + 0.25 * i for i in range(160)]; vals = [f(T) for T in Ts]; roots = []
+        p = plasma(m, n_avg, T, E_alpha_MeV); Pl = p['P_alpha'] + P_aux - p['P_rad']
+        return (p['W_MJ'] / tau_ipb98(m, Pl, p['n_line']) - Pl) if Pl > 0 else 1e9
+    Ts = [2 + 0.25 * i for i in range(150)]; vals = [f(T) for T in Ts]; roots = []
     for a, b, fa, fb in zip(Ts, Ts[1:], vals, vals[1:]):
         if fa * fb < 0 and abs(fa) < 1e8 and abs(fb) < 1e8: roots.append(brentq(f, a, b, xtol=1e-9))
     if not roots: return None
-    T = max(roots); p = plasma(m, n_avg, T, E_alpha_MeV); Pl = p['P_alpha'] + P_aux - p['P_brems']
-    return dict(p, T_avg=T, n_avg=n_avg, P_aux=P_aux, P_loss=Pl, tau_E=tau_ipb98(m, Pl, n_avg), Q=p['P_fus'] / P_aux if P_aux > 0 else float('inf'),
-                P_LH=p_LH(m, n_avg), roots=roots)
+    T = max(roots); p = plasma(m, n_avg, T, E_alpha_MeV); Pl = p['P_alpha'] + P_aux - p['P_rad']
+    return dict(p, Te_avg=T, Ti_avg=T * m['Ti_over_Te'], n_avg=n_avg, P_aux=P_aux, P_loss=Pl, tau_E=tau_ipb98(m, Pl, p['n_line']),
+                Q=p['P_fus'] / P_aux if P_aux > 0 else float('inf'), P_LH=p_LH(m, p['n_line']), roots=roots)
 def dials(m, E_alpha_MeV, betaN_max=2.8):
-    """Self-balancing dials: choose <n> (with P_aux fixed) to maximise Q subject to Greenwald, beta_N and the L-H threshold."""
-    best = None; nG = m['Ip'] / (math.pi * m['a'] ** 2) * 1e20
+    """Dials: <n> scanned with P_aux fixed; maximise Q subject to f_G <= fG_max, beta_N <= betaN_max, P_loss >= P_LH. Names the binding limit."""
+    best = None; nG = m['Ip'] / (math.pi * m['a'] ** 2) * 1e20; lf = line_avg_factor(m['alpha_n'])
     for i in range(41):
-        n = nG * (0.5 + 0.5 * i / 40); op = operating_point(m, E_alpha_MeV, n_avg=n)
-        if op is None or op['beta_N'] > betaN_max or op['P_loss'] < op['P_LH']: continue
-        if best is None or op['Q'] > best['Q']: best = op
+        n = nG / lf * (0.5 + 0.5 * i / 40); op = operating_point(m, E_alpha_MeV, n_avg=n)
+        if op is None: continue
+        bind = [k for k, bad in (('Greenwald', op['f_G'] > m['fG_max']), ('beta_N', op['beta_N'] > betaN_max), ('L-H threshold', op['P_loss'] < op['P_LH'])) if bad]
+        if bind: continue
+        if best is None or op['Q'] > best['Q']: best = dict(op, binding=None)
+    if best:   # which limit stops it: step just past the best density
+        nxt = operating_point(m, E_alpha_MeV, n_avg=best['n_avg'] * 1.0125)
+        best['binding'] = 'Greenwald' if nxt and nxt['f_G'] > m['fG_max'] else ('beta_N' if nxt and nxt['beta_N'] > betaN_max else 'L-H threshold or scan edge')
     return best
 
 class Ignition(Engine):
@@ -123,9 +146,9 @@ class Tokamak(Engine):
     name = 'S3 tokamak (dials)'
     def run(self, bus):
         Ea = bus.get('E_alpha_DT_MeV'); op = operating_point(ITER, Ea)
-        for k in ('P_fus', 'Q', 'tau_E', 'T_avg', 'beta_N', 'P_loss', 'P_LH', 'W_MJ'): bus.put(self.name, f'iter_{k}', op[k], 'LIVE')
+        for k in ('P_fus', 'Q', 'tau_E', 'Te_avg', 'Ti_avg', 'beta_N', 'P_loss', 'P_LH', 'W_MJ', 'P_rad', 'P_brems', 'P_synch', 'Zeff', 'f_G'): bus.put(self.name, f'iter_{k}', op[k], 'LIVE')
         d = dials(ITER, Ea)
-        if d: bus.put(self.name, 'dials_best_n', d['n_avg'], 'LIVE', 'm^-3'); bus.put(self.name, 'dials_best_Q', d['Q'], 'LIVE')
+        if d: bus.put(self.name, 'dials_best_n', d['n_avg'], 'LIVE', 'm^-3'); bus.put(self.name, 'dials_best_Q', d['Q'], 'LIVE'); bus.put(self.name, 'dials_binding', d['binding'], 'LIVE')
         return dict(roots=op['roots'])
 
 
