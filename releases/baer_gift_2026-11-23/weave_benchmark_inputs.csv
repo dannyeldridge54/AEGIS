@@ -12,3 +12,5 @@ M1,not computed,,assumption 3.3*M2 in the card,-
 scalar_splittings,not computed,,assumption common = m_3/2 in the card,-
 A_terms,not computed,,assumption 0 in the card,-
 modulus_mass_GeV,1.6e8,,derived (KKLT chain),D2090
+mA_TeV,205,,derived tree level from m2_Hu m2_Hd mu,D2099-D2100
+note_isajet,see this CSV,,Isajet users: enter these values via Isajet's own non-universal input keywords,-

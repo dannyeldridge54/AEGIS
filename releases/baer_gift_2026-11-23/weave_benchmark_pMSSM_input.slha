@@ -1,10 +1,13 @@
 # SLHA pMSSM input card: the Weave mini-split benchmark (Danny Lee Eldridge, 23 Nov 2026). THEORY / APPROXIMATE.
 # Purpose: a starting card you can run through your own spectrum code (Isajet/ISASUGRA pMSSM mode, SoftSUSY, SPheno)
 # so the decaying-wino numbers in the note can be checked against an exact spectrum, widths and mixings.
+# Format: SLHA pMSSM input for SoftSUSY, SPheno or FlexibleSUSY (Isajet takes its own keywords; the same values are in
+#   weave_benchmark_inputs.csv). For m_h at these scales use an EFT code (SusyHD, FlexibleEFTHiggs).
 # Sources (github.com/dannyeldridge54/aegis, theory/pending_docs/D72_D75_weak_spots.md): D2089-D2100.
 #   m_3/2 = 156-162 TeV (central 159); mu = 0.551 m_3/2; B = 1.246 m_3/2; m^2_Hu = 0.058 m_3/2^2, m^2_Hd = 1.0 m_3/2^2 (D2100, P6);
-#   tan(beta) = 1.9; gluino 3.77-3.90 TeV; wino LSP 693 GeV (band 0.67-1.0 TeV); m_h = 125 GeV at these settings.
-# NOT computed by us (flagged): M1 (set to the pure-AMSB ratio 3.3*M2 as an assumption), the first/second/third
+#   tan(beta) = 1.9 (defined at the input scale Q = m_3/2); gluino 3.77-3.90 TeV; wino LSP 693 GeV (band 0.67-1.0 TeV);
+#   m_h = 125 GeV was matched in our own estimate (not verified with an EFT code).
+# NOT computed by us (flagged): M1 (magnitude set to 3.3*M2 as an assumption; sign choice M1, M2, M3 > 0 is also an assumption), the first/second/third
 #   generation scalar splittings (set common = m_3/2), A-terms (set 0). Treat these three as free knobs.
 BLOCK MODSEL
     1    0    # general MSSM (pMSSM) input
@@ -13,17 +16,18 @@ BLOCK SMINPUTS
     5    4.1800000E+00   # mb(mb)
     6    1.7270000E+02   # mt pole
 BLOCK MINPAR
-    3    1.9000000E+00   # tan(beta)(MZ)
+    3    1.9000000E+00   # tan(beta)(MZ) placeholder; the Weave value is defined at Q = m_3/2, see EXTPAR 25
 BLOCK EXTPAR
     0    1.5900000E+05   # input scale Q = m_3/2 (GeV)
-    1    2.2900000E+03   # M1  (ASSUMPTION: 3.3 x M2, pure-AMSB ratio)
-    2    6.9300000E+02   # M2  (wino; tree-level ~ LSP mass)
-    3    3.5000000E+03   # M3  (so that the gluino pole lands near 3.8 TeV; adjust)
+    1    2.2900000E+03   # M1  (ASSUMPTION: |M1| = 3.3 x M2)
+    2    6.9300000E+02   # M2  at Q = m_3/2. The wino POLE mass is not 693 GeV from this as is: running + heavy-higgsino threshold move it by tens of %; tune M2 so the pole = 693 GeV
+    3    3.5000000E+03   # M3  SEED value only: heavy-squark thresholds may push the pole above 4 TeV; tune so the pole is 3.77-3.90 TeV
    11    0.0000000E+00   # At  (ASSUMPTION)
    12    0.0000000E+00   # Ab  (ASSUMPTION)
    13    0.0000000E+00   # Atau(ASSUMPTION)
    23    8.7600000E+04   # mu = 0.551 m_3/2
-   26    1.2000000E+05   # mA (approx. from m^2_Hu, m^2_Hd, mu; adjust to tan(beta)=1.9)
+   25    1.9000000E+00   # tan(beta) at the input scale
+   26    2.0500000E+05   # mA = sqrt(m2_Hu + m2_Hd + 2 mu^2) = 1.29 m_3/2 (tree level; = 2 B mu / sin 2beta, consistent)
    31    1.5900000E+05   # meL   (common = m_3/2, ASSUMPTION)
    32    1.5900000E+05   # mmuL
    33    1.5900000E+05   # mtauL
