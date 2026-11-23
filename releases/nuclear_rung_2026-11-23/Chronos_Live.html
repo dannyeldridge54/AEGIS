@@ -1,0 +1,318 @@
+<title>Chronos Live</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Source+Serif+4:wght@400;600&display=swap">
+<style>
+:root{--bg:#f6f4ef;--panel:#fffdf8;--fg:#1e1c18;--muted:#6a645a;--line:#ddd5c6;--accent:#b3541e;--accent2:#2f6f8f;--gold:#b8860b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--panel:#1e1b16;--fg:#ece5d8;--muted:#a59d8f;--line:#363027;--accent:#f08a4b;--accent2:#6cc0e5;--gold:#e0b24a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15130f;--panel:#1e1b16;--fg:#ece5d8;--muted:#a59d8f;--line:#363027;--accent:#f08a4b;--accent2:#6cc0e5;--gold:#e0b24a;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 "Source Serif 4",Georgia,serif;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px}
+main{max-width:1000px;margin:0 auto}h1{font-size:2rem;margin:0}h2{font-size:1.1rem;margin:0 0 .5em;text-wrap:balance}.sub{color:var(--muted)}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}.tabs button{font:13px "IBM Plex Mono",monospace;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:7px 12px;cursor:pointer}
+.tabs button.on{background:var(--accent);border-color:var(--accent);color:var(--panel)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;margin:10px 0;min-width:0}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:end}label{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:3px}
+input,select{font:13px "IBM Plex Mono",monospace;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:6px 8px;max-width:100%}
+.out{font:600 1.15rem "IBM Plex Mono",monospace;color:var(--accent);margin-top:10px}.note{color:var(--muted);font-size:13px}
+canvas{width:100%;height:240px;display:block;margin-top:10px}
+</style>
+<main>
+<h1>Chronos</h1>
+<p class="sub">One nuclear-decay engine for Oklahoma's nuclear rung: medicine, monitoring, energy, supernovae and kilonovae. Runs in your browser.</p>
+<details class="lantern" style="border-left:3px solid #b8860b;padding:.4em .9em;margin:1em 0;font-style:italic;opacity:.85"><summary style="cursor:pointer;font-style:normal;font-weight:600">The Lantern</summary><div style="white-space:pre-line;margin-top:.4em">In a world of painted walls and borrowed light,
+where lies wear crowns and illusions call themselves the sky,
+this work is a lantern, not a throne.
+It was carried, not crowned.
+It asks for no bowed heads, only open eyes:
+take it, test it, and see for yourself.
+
+Every tool is held two ways.
+The scepter rules, or points the road home.
+The mace crushes, or breaks the prison wall.
+The hammer nails you down, or raises a house.
+The scythe reaps the living, or brings the harvest in.
+The whip drives the slave, or cracks to wake the sleeping.
+I choose the hand that frees.
+
+I raise no weapon against my neighbor.
+I carry only two.
+The shield of righteousness: not the proud kind
+that judges from a high seat,
+but the knight who sees the dark mouth of the cave,
+hears the dragon breathing, and walks in anyway,
+because fear is not always the sign to run.
+Sometimes it is the sign to run toward.
+
+And the sword of truth, the only blade I will ever draw.
+Excalibur from the stone, the lightsaber in the dark,
+Manjushri's flame, the word sharper than any two-edged sword:
+every age has told of the same blade.
+It cuts through the darkness and the lies,
+through the chains and through the whips,
+and it frees you from within.
+
+But who can measure truth? No scale has ever held it.
+It is lost to time, to conquerors and enslavers,
+to the beast that wakes in men;
+whole peoples erased, colonized, and marched in line.
+They told me this was the land of the free.
+They did not tell me that many who signed for freedom
+were dealers in land, sore at a king's line drawn across the West.
+They taught me, and rightly, of my African brothers and sisters in chains.
+They did not teach me of the others who crossed the sea
+toward a torch and a promise,
+and found the debt, the mill, the tenement, the mine.
+Liberty stands in the harbor with her broken chains at her feet.
+Some days she looks blind, and the chains look whole.
+
+To the kings: the Mandate of Heaven was never yours to keep;
+it leaves the throne the day the throne stops serving.
+To the priests: no temple owns the sky,
+and grace was never sold at a door.
+To the judges: your heart is weighed on Ma'at's scale
+against a single feather, like every heart.
+To the scientists: Galileo stood alone and was right;
+a consensus is not a measurement. Show me the data.
+To the generals, the presidents, the bankers and the lords:
+remember the seventh generation; remember ubuntu, I am because we are;
+the emperor has no clothes, and the children can see it.
+Diogenes walked Athens at noon with a lamp, looking for one honest man.
+I carry the same lamp. I am still looking.
+
+When I was a boy, I thought heroes were the finest thing alive:
+knights on horseback, steel and bright banners,
+a shield painted with everything they meant.
+Now the heroes are chosen, born with powers, picked from above.
+I never loved that. In the old way the strength came from within;
+it was learned, not given.
+In the margins of old books the knights fight snails, and some kneel to them,
+but the only one a true knight knelt to
+was the Great Architect, whose fingerprint is on everything.
+
+I cannot tell you I am certain of this faith or that one.
+I can tell you how I got here:
+I tried to stand in the shoes of every man and woman,
+in every culture, in every place and every age,
+and see the world the way they saw it.
+I lower myself to stand beside each of them,
+because I want no power, no wealth, no throne.
+
+It began when I was a little boy and my family broke apart.
+My sisters were divided between my twin and me;
+my mother and father split, and I seldom saw him;
+within two weeks, he had replaced me.
+That spark became a fire, and the fire says:
+you will not replace me.
+I am not a slave. I am not a blind and silent animal.
+I will not kneel to anything that hardens my heart
+or covers me in shame.
+
+At thirty I learned the name of the storm in me: ADHD.
+They say a child like me hears tens of thousands more words of blame
+than the child beside him.
+I carry that shame, and I count it differently:
+twenty-five thousand more reasons to do what is right,
+what is better, and what is true.
+
+I kneel to one alone, the one I chose for love,
+and to no king, no creed, no crown of fear.
+A man chooses; a slave obeys.
+I choose liberty.
+
+Now I am a husband, and a father to a little girl,
+and the boy is still in me, still trying to get home.
+But the world is squeezed, and squeezed, and squeezed,
+and every voice that rises against injustice
+is silenced, enslaved, or made a fool.
+I am tired of living in quiet desperation.
+This lantern was lit by that desperation.
+I will not be quiet anymore.
+
+And who am I to carry it?
+No one. A regular man, a gig worker on the road,
+a debt slave in the American machine.
+No noble blood, no crown, no holy oil on my head.
+All I carry is the divine spark
+that burns in every man and woman,
+in every creature and every being,
+of this earth and of the stars.
+The same light is in you.
+
+This light belongs to the one who asks, who measures, who stands.
+It was made for freedom, the quiet kind,
+the kind no one can sell you.</div></details>
+<section class="card" id="askcard" hidden><h2 style="margin-top:0">Ask Chronos</h2>
+<p class="note">Type a question the way someone would ask it. Claude answers only by running this page's own engine (shown under "Engine calls"), never from memory, and says when a question is outside what Chronos does.</p>
+<div class="row"><input id="askq" style="flex:1;min-width:0" placeholder="e.g. How much F-18 do I need to make at 7 am so 370 MBq is left at 9:30?"><button class="primary" id="askb" style="background:var(--accent);color:var(--panel);border:1px solid var(--accent);border-radius:6px;padding:7px 14px;font:13px 'IBM Plex Mono',monospace;cursor:pointer">Ask</button><button id="asks" style="border:1px solid var(--line);border-radius:6px;padding:7px 12px;font:13px 'IBM Plex Mono',monospace;background:var(--panel);color:var(--fg);cursor:pointer" hidden>Stop</button></div>
+<div class="row" style="margin-top:8px;gap:6px" id="askex"></div>
+<div id="aska" style="white-space:pre-wrap;margin-top:12px;line-height:1.6"></div>
+<details style="margin-top:8px"><summary class="note" style="cursor:pointer">Engine calls</summary><pre id="askl" class="note" style="white-space:pre-wrap;font:12px 'IBM Plex Mono',monospace"></pre></details></section>
+<div class="tabs" id="tabs"></div>
+<section id="t-pharm" class="card"><h2>Nuclear pharmacy: how much to make, and when</h2>
+<div class="row"><label>Tracer<select id="p_nuc"></select></label><label>Activity needed (MBq)<input id="p_need" type="number" value="370"></label><label>Hours until use<input id="p_t" type="number" value="2" step="0.25"></label></label></div>
+<div class="out" id="p_out"></div>
+<h2 style="margin-top:18px">Generator ingrowth</h2>
+<div class="row"><label>Generator<select id="g_ch"></select></label><label>Parent activity now (GBq)<input id="g_A" type="number" value="10"></label></div>
+<div class="out" id="g_out"></div><canvas id="g_cv" width="900" height="260"></canvas>
+<p class="note">Daughter activity after a full elution at t = 0. Branching Mo-99 → Tc-99m taken as 0.876.</p></section>
+<section id="t-mon" class="card" hidden><h2>Release clock: how long ago was it released?</h2>
+<div class="row"><label>Pair<select id="m_pair"><option value="Cs-134|Cs-137">Cs-134 / Cs-137</option><option value="I-131|Cs-137">I-131 / Cs-137</option></select></label>
+<label>Ratio at release<input id="m_r0" type="number" value="1.0" step="0.01" placeholder="site-specific"></label><label>Measured ratio now<input id="m_r" type="number" value="0.05" step="0.001"></label></div>
+<div class="out" id="m_out"></div><p class="note">Activity ratio a/b. For Fukushima (March 2011) the release ratio Cs-134/Cs-137 was close to 1. For I-131/Cs-137, enter your site-specific release ratio (Fukushima roughly 10–100); that clock is only useful for about three months.</p></section>
+<section id="t-energy" class="card" hidden><h2>Energy and waste: long-lived chains</h2>
+<div class="row"><label>Chain<select id="e_ch"></select></label><label>Years shown<input id="e_y" type="number" value="150"></label></div>
+<div class="out" id="e_out"></div><canvas id="e_cv" width="900" height="260"></canvas></section>
+<section id="t-sn" class="card" hidden><h2>Supernova: the Ni-56 → Co-56 → Fe-56 engine</h2>
+<div class="row"><label>Ni-56 mass (M☉)<input id="s_m" type="number" value="0.6" step="0.05"></label><label>Gamma trapping t₀ (days; blank = full trapping, 0 = full escape)<input id="s_t0" type="number" placeholder="e.g. 35"></label></div>
+<div class="out" id="s_out"></div><canvas id="s_cv" width="900" height="260"></canvas>
+<p class="note">Energy per decay deposited: Ni-56 1.75 MeV, Co-56 3.73 MeV (neutrinos excluded). Gamma trapping 1 − exp(−t₀²/t²); the Co-56 positrons' kinetic energy (0.12 MeV) is deposited locally. This is the radioactive heating (deposition) rate: it equals the bolometric luminosity near and after peak (Arnett's rule); no diffusion is modelled. Type Ia scale: ~0.6 M☉ of Ni-56; the white-dwarf binaries that make them are one of the open questions.</p></section>
+<section id="t-kn" class="card" hidden><h2>Kilonova: r-process heating</h2>
+<div class="row"><label>Ejecta mass (M☉)<input id="k_m" type="number" value="0.05" step="0.01"></label><label>Thermalisation fraction<input id="k_f" type="number" value="0.5" step="0.05"></label></div>
+<div class="out" id="k_out"></div><canvas id="k_cv" width="900" height="260"></canvas>
+<p class="note">Specific heating ~10¹⁰ (t/1 day)⁻¹·³ erg g⁻¹ s⁻¹ (Korobkin et al. 2012; Metzger 2019, Living Reviews in Relativity), order of magnitude only, with a constant thermalisation fraction (it actually falls with time; Barnes et al. 2016). Heating rate, not the light curve before peak.</p></section>
+<section id="t-more" class="card" hidden><h2>Ac-225 therapy chain</h2>
+<div class="row"><label>Ac-225 activity at purification (MBq)<input id="a_A" type="number" value="10"></label><label>Hours since purification<input id="a_t" type="number" value="6" step="0.5"></label>
+<label>Ac-227/Ac-225 activity ratio at end of bombardment<input id="a_r" type="number" value="0.0015" step="0.0005"></label><label>Days stored<input id="a_d" type="number" value="10"></label></div>
+<div class="out" id="a_out"></div><p class="note">Chain Ac-225 → Fr-221 → At-217 → Bi-213 → Po-213 (97.8%) / Tl-209 (2.2%) → Pb-209 → Bi-209. Ac-227 (21.8 y) is the long-lived impurity of accelerator-made Ac-225; its share grows during storage. The ratio at end of bombardment is yours to enter.</p>
+<h2 style="margin-top:18px">Plutonium separation age (safeguards)</h2>
+<div class="row"><label>Measured Am-241 / Pu-241 activity ratio<input id="u_r" type="number" value="0.02" step="0.001"></label></div><div class="out" id="u_out"></div>
+<p class="note">Assumes all americium was removed at separation.</p>
+<h2 style="margin-top:18px">Tritium inventory (fusion fuel)</h2>
+<div class="row"><label>Tritium (g)<input id="h_g" type="number" value="1000"></label><label>Years stored<input id="h_y" type="number" value="1" step="0.5"></label></div><div class="out" id="h_out"></div>
+<h2 style="margin-top:18px">Decay heat after shutdown (Way–Wigner approximation)</h2>
+<div class="row"><label>Days operated<input id="w_T" type="number" value="365"></label><label>Hours after shutdown<input id="w_t" type="number" value="24"></label></div><div class="out" id="w_out"></div>
+<p class="note">P/P₀ = 0.0622 [t⁻⁰·² − (t+T)⁻⁰·²]: a classic approximation, roughly a factor 2 at very short and very long times. Excludes U-239/Np-239 heating (matters from about a day on). Not the ANS-5.1 standard.</p>
+<h2 style="margin-top:18px">Star ages from thorium (cosmochronometry)</h2>
+<div class="row"><label>Pair<select id="c_pair"><option value="ThEu">Th/Eu</option><option value="UTh">U/Th</option></select></label><label>Observed log ε ratio (dex)<input id="c_o" type="number" value="-0.52" step="0.01"></label><label><span id="c_plab">Production ratio (number; Th/Eu ~0.42-0.48, Schatz+2002, Kratz+2007)</span><input id="c_p" type="number" value="0.45" step="0.01"></label></div><div class="out" id="c_out"></div>
+<p class="note">Age = ln(production / observed) / λ, with λ = λ(Th-232) for Th/Eu and λ(U-238) − λ(Th-232) for U/Th; observed ratio = 10^(log ε). For Th/Eu, 0.1 dex ≈ 4.65 Gyr. Assumes a single r-process event (no chemical evolution). The production ratio is the dominant uncertainty; enter the one you trust.</p></section>
+<p class="note">Half-lives from NNDC NuDat / ENSDF adopted values, entered by hand; verify before critical use. Decay arithmetic only: no production cross sections, dose or shielding (a dose branch is planned). Not a clinical or regulatory tool. Chains are solved by the analytic Bateman equations, checked against a matrix-exponential solver to 3×10⁻¹³.</p>
+<p class="note">Chronos v1 · Danny Lee Eldridge, Oklahoma City · 23 Nov 2026 · github.com/dannyeldridge54/AEGIS (tools/gifts/chronos). Named for Chronos, the Greek figure of time. Free to use, change and share.</p>
+</main>
+<script>
+// Chronos core (same algorithm as chronos.py, analytic Bateman). Danny Lee Eldridge / the Weave, D2189. Free to use.
+const CH = (() => {
+  const MIN = 60, H = 3600, D = 86400, Y = 365.25 * 86400;
+  const T12 = { 'F-18': 109.77 * MIN, 'C-11': 20.364 * MIN, 'N-13': 9.965 * MIN, 'O-15': 122.24, 'Ga-68': 67.71 * MIN, 'Ge-68': 270.95 * D,
+    'Tc-99m': 6.0067 * H, 'Mo-99': 65.976 * H, 'Rb-82': 1.2575 * MIN, 'Sr-82': 25.35 * D, 'Cu-64': 12.701 * H, 'Zr-89': 78.41 * H,
+    'Lu-177': 6.647 * D, 'Ac-225': 9.920 * D, 'In-111': 2.8047 * D, 'I-123': 13.2234 * H, 'I-131': 8.0252 * D, 'Y-90': 64.05 * H,
+    'Sr-90': 28.91 * Y, 'Cs-137': 30.08 * Y, 'Cs-134': 2.0652 * Y, 'Ba-137m': 2.552 * MIN, 'Co-60': 5.2714 * Y, 'Pu-241': 14.29 * Y,
+    'Am-241': 432.6 * Y, 'Ni-56': 6.075 * D, 'Co-56': 77.236 * D };
+  const LAM = {}; for (const k in T12) LAM[k] = Math.LN2 / T12[k];
+  const CHAINS = { 'Mo-99 -> Tc-99m (generator)': [['Mo-99', 'Tc-99m'], [0.876]], 'Ge-68 -> Ga-68 (generator)': [['Ge-68', 'Ga-68'], [1]],
+    'Sr-82 -> Rb-82 (generator)': [['Sr-82', 'Rb-82'], [1]], 'Sr-90 -> Y-90': [['Sr-90', 'Y-90'], [1]], 'Cs-137 -> Ba-137m': [['Cs-137', 'Ba-137m'], [0.946]],
+    'Pu-241 -> Am-241 (spent fuel)': [['Pu-241', 'Am-241'], [0.99998]], 'Ni-56 -> Co-56 (supernova)': [['Ni-56', 'Co-56'], [1]] };
+  function bateman(nucs, br, N0, t) {
+    const n = nucs.length, lam = nucs.map(k => LAM[k]), out = new Array(n).fill(0);
+    for (let s = 0; s < n; s++) { if (!N0[s]) continue;
+      for (let j = s; j < n; j++) { let pre = N0[s]; for (let m = s; m < j; m++) pre *= br[m] * lam[m];
+        let tot = 0; for (let i = s; i <= j; i++) { let den = 1; for (let p = s; p <= j; p++) if (p !== i) den *= (lam[p] - lam[i]); tot += Math.exp(-lam[i] * t) / den; }
+        out[j] += pre * tot; } }
+    return out;
+  }
+  const needed = (nuc, A, t) => A * Math.exp(LAM[nuc] * t), timeTo = (nuc, A0, A) => Math.log(A0 / A) / LAM[nuc];
+  function genPeak(c) { const [n] = CHAINS[c], lp = LAM[n[0]], ld = LAM[n[1]]; return Math.log(ld / lp) / (ld - lp); }
+  function genRatio(c) { const [n, br] = CHAINS[c], lp = LAM[n[0]], ld = LAM[n[1]]; return br[0] * ld / (ld - lp); }
+  const ratioAt = (ty, r0 = 1, a = 'Cs-134', b = 'Cs-137') => r0 * Math.exp(-(LAM[a] - LAM[b]) * ty * Y);
+  const releaseAge = (r, r0 = 1, a = 'Cs-134', b = 'Cs-137') => Math.log(r0 / r) / (LAM[a] - LAM[b]) / Y;
+  const MEV = 1.602176634e-6, NA = 6.02214076e23, MSUN = 1.98892e33, QNI = 1.75, QCO = 3.73, QPOS = 0.12;
+  function snL(t, M = 0.6, t0 = null) { const [n, br] = CHAINS['Ni-56 -> Co-56 (supernova)'], N = bateman(n, br, [M * MSUN * NA / 56, 0], t);
+    const f = t0 == null ? 1 : (t0 <= 0 ? 0 : 1 - Math.exp(-((t0 * D) ** 2) / (t * t))), fp = QPOS / QCO;
+    return QNI * MEV * LAM['Ni-56'] * N[0] * f + QCO * MEV * LAM['Co-56'] * N[1] * ((1 - fp) * f + fp); }
+  const knL = (t, M = 0.05, f = 0.5) => M * MSUN * 1e10 * Math.pow(t / D, -1.3) * f;
+  return { MIN, H, D, Y, T12, LAM, CHAINS, bateman, needed, timeTo, genPeak, genRatio, ratioAt, releaseAge, snL, knL };
+})();
+
+// ---- A3 branches (same algorithm as chronos_a3.py) ----
+const CH3 = (() => {
+  const { MIN, H, D, Y, bateman } = CH;
+  const T = { 'Ac-225': 9.920 * D, 'Fr-221': 4.801 * MIN, 'At-217': 32.6e-3, 'Bi-213': 45.61 * MIN, 'Po-213': 3.72e-6, 'Tl-209': 2.162 * MIN,
+    'Pb-209': 3.234 * H, 'Ac-227': 21.772 * Y, 'H-3': 12.32 * Y, 'Th-232': 1.40e10 * Y, 'U-238': 4.468e9 * Y, 'Pu-241': 14.29 * Y, 'Am-241': 432.6 * Y };
+  const L = {}; for (const k in T) L[k] = Math.LN2 / T[k];
+  for (const k in T) { CH.T12[k] = CH.T12[k] || T[k]; CH.LAM[k] = CH.LAM[k] || L[k]; }
+  function ac225(t, A0 = 1) { // two linear paths through Po-213 and Tl-209, summed at Pb-209
+    const N0 = A0 / L['Ac-225'], top = ['Ac-225', 'Fr-221', 'At-217', 'Bi-213'];
+    const pPo = bateman([...top, 'Po-213', 'Pb-209'], [1, 1, 1, 0.978, 1], [N0, 0, 0, 0, 0, 0], t);
+    const pTl = bateman([...top, 'Tl-209', 'Pb-209'], [1, 1, 1, 0.022, 1], [N0, 0, 0, 0, 0, 0], t);
+    const A = {}; top.forEach((k, i) => A[k] = L[k] * pPo[i]); A['Po-213'] = L['Po-213'] * pPo[4]; A['Tl-209'] = L['Tl-209'] * pTl[4];
+    A['Pb-209'] = L['Pb-209'] * (pPo[5] + pTl[5]); return A; }
+  const ac227 = (t, r) => r * Math.exp(-(L['Ac-227'] - L['Ac-225']) * t);
+  const puK = 0.99998 * L['Am-241'] / (L['Am-241'] - L['Pu-241']);
+  const puAge = r => -Math.log(1 - r / puK) / (L['Am-241'] - L['Pu-241']) / Y;
+  const puRatio = ty => puK * (1 - Math.exp(-(L['Am-241'] - L['Pu-241']) * ty * Y));
+  const tritiumLeft = (g, ty) => g * Math.exp(-L['H-3'] * ty * Y);
+  const wayWigner = (t, Top) => 0.0622 * (Math.pow(t, -0.2) - Math.pow(t + Top, -0.2));
+  const cosmoAge = (obs, prod, a = 'Th-232', b = null) => Math.log(prod / obs) / (L[a] - (b ? L[b] : 0)) / Y / 1e9;
+  return { L, ac225, ac227, puAge, puRatio, tritiumLeft, wayWigner, cosmoAge };
+})();
+
+
+const $=id=>document.getElementById(id);const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const TABS=[['t-pharm','Nuclear pharmacy'],['t-mon','Monitoring'],['t-energy','Energy & waste'],['t-sn','Supernova'],['t-kn','Kilonova'],['t-more','Medicine · safeguards · fusion · stars']];
+$('tabs').innerHTML=TABS.map(([id,n],i)=>`<button data-t="${id}" class="${i?'':'on'}">${n}</button>`).join('');
+$('tabs').onclick=e=>{const b=e.target.closest('button');if(!b)return;for(const [id] of TABS)$(id).hidden=id!==b.dataset.t;[...$('tabs').children].forEach(x=>x.className=x===b?'on':'');draw();};
+const tracers=['F-18','C-11','N-13','Ga-68','Tc-99m','Cu-64','Zr-89','In-111','I-123','I-131','Lu-177','Y-90','Ac-225'];
+$('p_nuc').innerHTML=tracers.map(t=>`<option>${t}</option>`).join('');
+const gens=Object.keys(CH.CHAINS).filter(c=>c.includes('generator')),longc=Object.keys(CH.CHAINS).filter(c=>!c.includes('generator')&&!c.includes('supernova'));
+$('g_ch').innerHTML=gens.map(t=>`<option>${t}</option>`).join('');$('e_ch').innerHTML=longc.map(t=>`<option>${t}</option>`).join('');
+function fmtT(s){const a=Math.abs(s);return a<120?s.toFixed(1)+' s':a<7200?(s/60).toFixed(1)+' min':a<3*86400?(s/3600).toFixed(2)+' h':a<730*86400?(s/86400).toFixed(2)+' d':(s/CH.Y).toFixed(2)+' y';}
+function plot(cv,xs,series,xl,logy){const g=cv.getContext('2d'),W=cv.width,Hh=cv.height;g.clearRect(0,0,W,Hh);const L=60,B=Hh-30;
+let lo=Infinity,hi=-Infinity;series.forEach(s=>s.y.forEach(v=>{if(logy&&!(v>0))return;const q=logy?Math.log10(v):v;if(isFinite(q)){lo=Math.min(lo,q);hi=Math.max(hi,q);}}));if(logy)lo=Math.max(lo,hi-8);if(!logy)lo=0;if(hi===lo)hi=lo+1;
+g.strokeStyle=css('--line');g.beginPath();g.moveTo(L,8);g.lineTo(L,B);g.lineTo(W-8,B);g.stroke();g.fillStyle=css('--muted');g.font='13px monospace';
+g.fillText(logy?'1e'+hi.toFixed(1):hi.toPrecision(3),2,16);g.fillText(logy?'1e'+lo.toFixed(1):'0',2,B);g.fillText(xl,W/2-60,Hh-8);
+const x0=xs[0],x1=xs[xs.length-1];series.forEach(s=>{g.strokeStyle=css(s.c);g.lineWidth=2.5;g.beginPath();let st=false;s.y.forEach((v,i)=>{if(logy&&!(v>0))return;const q=logy?Math.max(Math.log10(v),lo):v,x=L+(W-L-8)*(xs[i]-x0)/(x1-x0),y=B-(B-10)*(q-lo)/(hi-lo);st?g.lineTo(x,y):g.moveTo(x,y);st=true;});g.stroke();});}
+function draw(){
+const n=$('p_nuc').value,need=+$('p_need').value,t=+$('p_t').value*3600;
+$('p_out').textContent=(t>10*CH.T12[n]?'⚠ more than 10 half-lives: not practical to make ahead. ':'')+`Make ${CH.needed(n,need,t).toPrecision(4)} MBq now  ·  half-life ${fmtT(CH.T12[n])}`;
+const gc=$('g_ch').value,[gn,gb]=CH.CHAINS[gc],Ap=+$('g_A').value,tp=CH.genPeak(gc),lp=CH.LAM[gn[0]],ld=CH.LAM[gn[1]],N0=[Ap*1e9/lp,0];
+const tmax=Math.min(4*tp,10*CH.T12[gn[0]]),xs=[],yp=[],yd=[];for(let i=0;i<=200;i++){const tt=tmax*i/200,N=CH.bateman(gn,gb,N0,tt);xs.push(tt/3600);yp.push(lp*N[0]/1e9);yd.push(ld*N[1]/1e9);}
+const Np=CH.bateman(gn,gb,N0,tp);$('g_out').textContent=`Daughter peaks at ${fmtT(tp)} with ${(ld*Np[1]/1e9).toFixed(3)} GBq; equilibrium ratio ${isFinite(CH.genRatio(gc))?CH.genRatio(gc).toFixed(3):'—'}`;
+if(!$('t-pharm').hidden)plot($('g_cv'),xs,[{y:yp,c:'--accent2'},{y:yd,c:'--accent'}],'hours (blue parent, orange daughter)',false);
+const [a,b]=$('m_pair').value.split('|'),r0=$('m_r0').value===''?NaN:+$('m_r0').value,r=+$('m_r').value;$('m_out').textContent=r>0&&r0>0&&r<r0?`${CH.releaseAge(r,r0,a,b).toFixed(3)} years since release (${(CH.releaseAge(r,r0,a,b)*365.25).toFixed(1)} days)`:'—';
+const ec=$('e_ch').value,[en,eb]=CH.CHAINS[ec],yrs=+$('e_y').value,ex=[],e1=[],e2=[];for(let i=0;i<=200;i++){const tt=yrs*CH.Y*i/200,N=CH.bateman(en,eb,[1/CH.LAM[en[0]],0],tt);ex.push(tt/CH.Y);e1.push(CH.LAM[en[0]]*N[0]);e2.push(CH.LAM[en[1]]*N[1]);}
+const ep=Math.log(CH.LAM[en[1]]/CH.LAM[en[0]])/(CH.LAM[en[1]]-CH.LAM[en[0]]);$('e_out').textContent=`${en[1]} activity peaks at ${fmtT(ep)} (from pure ${en[0]})`;
+if(!$('t-energy').hidden)plot($('e_cv'),ex,[{y:e1,c:'--accent2'},{y:e2,c:'--accent'}],'years · activity in Bq per Bq of parent at t=0 (blue parent, orange daughter)',true);
+const M=+$('s_m').value,t0=$('s_t0').value===''?null:+$('s_t0').value,sx=[],sy=[];for(let d=2;d<=400;d+=2){sx.push(d);sy.push(CH.snL(d*86400,M,t0));}
+$('s_out').textContent=`Heating at 18 d = ${CH.snL(18*86400,M,t0).toExponential(2)} erg/s  ·  at 100 d = ${CH.snL(100*86400,M,t0).toExponential(2)} erg/s`;
+if(!$('t-sn').hidden)plot($('s_cv'),sx,[{y:sy,c:'--accent'}],'days after explosion (log heating rate)',true);
+const km=+$('k_m').value,kf=+$('k_f').value,kx=[],ky=[];for(let d=0.25;d<=30;d+=0.25){kx.push(d);ky.push(CH.knL(d*86400,km,kf));}
+$('k_out').textContent=`Heating at 1 d ≈ ${CH.knL(86400,km,kf).toExponential(2)} erg/s  ·  at 7 d ≈ ${CH.knL(7*86400,km,kf).toExponential(2)} erg/s`;
+if(!$('t-kn').hidden)plot($('k_cv'),kx,[{y:ky,c:'--accent'}],'days after merger (log heating rate)',true);
+const AA=CH3.ac225(+$('a_t').value*3600,+$('a_A').value);$('a_out').textContent=`Ac-225 ${AA['Ac-225'].toFixed(3)} MBq · Bi-213 ${AA['Bi-213'].toFixed(3)} MBq · Fr-221 ${AA['Fr-221'].toFixed(3)} · Pb-209 ${AA['Pb-209'].toFixed(3)}  ·  Ac-227/Ac-225 after ${$('a_d').value} d: ${CH3.ac227(+$('a_d').value*86400,+$('a_r').value).toExponential(2)}`;
+const ur=+$('u_r').value;$('u_out').textContent=ur>0?`${CH3.puAge(ur).toFixed(2)} years since separation`:'—';
+const hg=+$('h_g').value,hy=+$('h_y').value,hl=CH3.tritiumLeft(hg,hy);$('h_out').textContent=`${hl.toFixed(1)} g left; ${((hg-hl)*3.016029/3.016049).toFixed(1)} g of helium-3 formed (${(100*(1-hl/hg)).toFixed(2)}%)`;
+const wv=CH3.wayWigner(+$('w_t').value*3600,+$('w_T').value*86400);$('w_out').textContent=`${(100*wv).toFixed(3)}% of operating power`;
+const cpair=$('c_pair').value,cobs=Math.pow(10,+$('c_o').value),cg=cpair==='UTh'?CH3.cosmoAge(cobs,+$('c_p').value,'U-238','Th-232'):CH3.cosmoAge(cobs,+$('c_p').value);$('c_out').textContent=isFinite(cg)&&cg>0?`${cg.toFixed(2)} billion years`:'— (observed ratio must be below the production ratio)';}
+$('c_pair').addEventListener('change',()=>{const u=$('c_pair').value==='UTh';$('c_o').value=u?'-0.94':'-0.52';$('c_p').value=u?'0.57':'0.45';$('c_plab').textContent=u?'Production ratio (number; U/Th ~0.55-0.6)':'Production ratio (number; Th/Eu ~0.42-0.48, Schatz+2002, Kratz+2007)';draw();});
+$('m_pair').addEventListener('change',()=>{$('m_r0').value=$('m_pair').value.startsWith('I-131')?'':'1.0';draw();});
+document.querySelectorAll('input,select').forEach(e=>e.addEventListener('input',draw));draw();
+(async()=>{let sample=null;try{sample=await window.claude?.use?.("sample");}catch(e){}if(!sample)return;$('askcard').hidden=false;
+const H=3600,Dd=86400,Yy=CH.Y,G=6.674e-8,C=2.998e10,MS=1.98892e33;const log=s=>{$('askl').textContent+=s+'\n';};
+const num=(x,n)=>{const v=Number(x);if(!isFinite(v))throw new Error(n+' must be a number');return v;};
+const nuc=k=>{const s=String(k).replace(/\s+/g,'').replace(/^([A-Za-z]+)(\d+)(m?)$/,'$1-$2$3');const hit=Object.keys(CH.T12).find(x=>x.toLowerCase()===s.toLowerCase());if(!hit)throw new Error('unknown nuclide '+k+'; known: '+Object.keys(CH.T12).join(', '));return hit;};
+const T=[
+{name:'half_life',description:'Half-life of a nuclide in Chronos (seconds and a readable form). Use to check what nuclides are known.',inputSchema:{type:'object',properties:{nuclide:{type:'string'}},required:['nuclide']},execute:i=>{const n=nuc(i.nuclide);return{nuclide:n,half_life_s:CH.T12[n],readable:fmtT(CH.T12[n])};}},
+{name:'activity_after',description:'Activity remaining after a time, from a starting activity (any unit, returned in the same unit).',inputSchema:{type:'object',properties:{nuclide:{type:'string'},A0:{type:'number'},hours:{type:'number'}},required:['nuclide','A0','hours']},execute:i=>{const n=nuc(i.nuclide);return{nuclide:n,A:num(i.A0,'A0')*Math.exp(-CH.LAM[n]*num(i.hours,'hours')*H)};}},
+{name:'make_now_for',description:'Activity to produce now so that a needed activity remains after a delay (tracer planning). Same unit in and out.',inputSchema:{type:'object',properties:{nuclide:{type:'string'},A_needed:{type:'number'},hours:{type:'number'}},required:['nuclide','A_needed','hours']},execute:i=>{const n=nuc(i.nuclide),t=num(i.hours,'hours')*H;return{nuclide:n,make_now:CH.needed(n,num(i.A_needed,'A_needed'),t),half_lives_elapsed:t/CH.T12[n],warning:t>10*CH.T12[n]?'more than 10 half-lives: impractical':null};}},
+{name:'generator',description:'Generator ingrowth after a full elution: time of maximum daughter activity, equilibrium ratio, and daughter activity (GBq) at a given time for a parent activity (GBq). Chains: Mo-99 -> Tc-99m, Ge-68 -> Ga-68, Sr-82 -> Rb-82.',inputSchema:{type:'object',properties:{parent:{type:'string'},parent_GBq:{type:'number'},hours:{type:'number'}},required:['parent']},execute:i=>{const p=nuc(i.parent),c=Object.keys(CH.CHAINS).find(k=>k.startsWith(p+' ')&&k.includes('generator'));if(!c)throw new Error('no generator for '+p);const [n,b]=CH.CHAINS[c],lp=CH.LAM[n[0]],ld=CH.LAM[n[1]];const out={chain:c,peak_hours:CH.genPeak(c)/H,equilibrium_ratio:CH.genRatio(c)};if(i.parent_GBq!=null&&i.hours!=null){const N=CH.bateman(n,b,[num(i.parent_GBq)*1e9/lp,0],num(i.hours)*H);out.daughter_GBq=ld*N[1]/1e9;out.parent_GBq_then=lp*N[0]/1e9;}return out;}},
+{name:'release_age',description:'Years since a release from a measured activity ratio. Pairs: Cs-134/Cs-137 (release ratio ~1 for Fukushima) or I-131/Cs-137 (site-specific release ratio required).',inputSchema:{type:'object',properties:{pair:{type:'string',enum:['Cs-134/Cs-137','I-131/Cs-137']},ratio_now:{type:'number'},ratio_at_release:{type:'number'}},required:['pair','ratio_now','ratio_at_release']},execute:i=>{const [a,b]=String(i.pair).split('/');const r=num(i.ratio_now),r0=num(i.ratio_at_release);if(!(r>0&&r0>0&&r<r0))throw new Error('need 0 < ratio_now < ratio_at_release');const y=CH.releaseAge(r,r0,a,b);return{years:y,days:y*365.25};}},
+{name:'ac225_chain',description:'Ac-225 therapy chain: activities (MBq) of Ac-225 and daughters at a time after purification, and the Ac-227/Ac-225 activity ratio after storage given its value at end of bombardment.',inputSchema:{type:'object',properties:{Ac225_MBq_at_purification:{type:'number'},hours:{type:'number'},ac227_ratio_eob:{type:'number'},days_stored:{type:'number'}},required:['Ac225_MBq_at_purification','hours']},execute:i=>{const A=CH3.ac225(num(i.hours)*H,num(i.Ac225_MBq_at_purification));const o={activities_MBq:A};if(i.ac227_ratio_eob!=null&&i.days_stored!=null)o.ac227_ratio_after=CH3.ac227(num(i.days_stored)*Dd,num(i.ac227_ratio_eob));return o;}},
+{name:'pu_separation_age',description:'Years since plutonium separation from the measured Am-241/Pu-241 activity ratio (assumes all Am removed at separation).',inputSchema:{type:'object',properties:{am_over_pu_activity:{type:'number'}},required:['am_over_pu_activity']},execute:i=>({years:CH3.puAge(num(i.am_over_pu_activity))})},
+{name:'tritium',description:'Tritium left (g) and He-3 formed (g) after storage in years.',inputSchema:{type:'object',properties:{grams:{type:'number'},years:{type:'number'}},required:['grams','years']},execute:i=>{const g=num(i.grams),l=CH3.tritiumLeft(g,num(i.years));return{left_g:l,He3_g:(g-l)*3.016029/3.016049,percent_decayed:100*(1-l/g)};}},
+{name:'decay_heat',description:'Reactor decay heat after shutdown as a fraction of operating power (Way-Wigner approximation; roughly factor 2 at extremes; excludes U-239/Np-239; not ANS-5.1).',inputSchema:{type:'object',properties:{days_operated:{type:'number'},hours_after_shutdown:{type:'number'}},required:['days_operated','hours_after_shutdown']},execute:i=>({fraction:CH3.wayWigner(num(i.hours_after_shutdown)*H,num(i.days_operated)*Dd)})},
+{name:'supernova_heating',description:'Radioactive heating rate (erg/s) from Ni-56 -> Co-56 -> Fe-56 at t days for a Ni-56 mass (Msun); optional gamma trapping time t0 in days (omit for full trapping). Equals the bolometric luminosity only near/after peak.',inputSchema:{type:'object',properties:{M_Ni_Msun:{type:'number'},days:{type:'number'},t0_days:{type:'number'}},required:['M_Ni_Msun','days']},execute:i=>({erg_per_s:CH.snL(num(i.days)*Dd,num(i.M_Ni_Msun),i.t0_days==null?null:num(i.t0_days))})},
+{name:'nickel_mass',description:'Ni-56 mass (Msun) from a luminosity: mode "tail" (needs t0_days or null for full trapping, Type II-P only) or mode "arnett" (peak luminosity at rise time, full trapping).',inputSchema:{type:'object',properties:{L_erg_s:{type:'number'},days:{type:'number'},mode:{type:'string',enum:['tail','arnett']},t0_days:{type:'number'}},required:['L_erg_s','days','mode']},execute:i=>{const L=num(i.L_erg_s),t=num(i.days)*Dd;const t0=i.mode==='tail'?(i.t0_days==null?null:num(i.t0_days)):null;return{M_Ni_Msun:L/CH.snL(t,1,t0),assumption:t0==null?'full gamma trapping':'trapping t0='+t0+' d'};}},
+{name:'white_dwarf_merger',description:'Gravitational-wave merger time (Myr, Peters 1964 point-mass, upper bound to contact) and GW frequency (mHz) for a circular double white dwarf with period P seconds and masses in Msun.',inputSchema:{type:'object',properties:{period_s:{type:'number'},m1:{type:'number'},m2:{type:'number'}},required:['period_s','m1','m2']},execute:i=>{const P=num(i.period_s),M1=num(i.m1)*MS,M2=num(i.m2)*MS,Mt=M1+M2,a=Math.cbrt(G*Mt*P*P/(4*Math.PI*Math.PI));return{merger_Myr:5/256*C**5*a**4/(G**3*M1*M2*Mt)/Yy/1e6,f_gw_mHz:2/P*1e3};}},
+{name:'kilonova_heating',description:'Order-of-magnitude r-process heating (erg/s) at t days for ejecta mass (Msun) and thermalisation fraction.',inputSchema:{type:'object',properties:{M_ej_Msun:{type:'number'},days:{type:'number'},f_th:{type:'number'}},required:['M_ej_Msun','days']},execute:i=>({erg_per_s:CH.knL(num(i.days)*Dd,num(i.M_ej_Msun),i.f_th==null?0.5:num(i.f_th)),note:'order of magnitude (Korobkin+2012)'})},
+{name:'star_age',description:'Age (Gyr) of an old star from observed log-eps ratio (dex) and a production ratio (number), pair Th/Eu or U/Th; single-event assumption.',inputSchema:{type:'object',properties:{pair:{type:'string',enum:['Th/Eu','U/Th']},log_eps_observed:{type:'number'},production_ratio:{type:'number'}},required:['pair','log_eps_observed','production_ratio']},execute:i=>{const o=Math.pow(10,num(i.log_eps_observed)),p=num(i.production_ratio);const g=i.pair==='U/Th'?CH3.cosmoAge(o,p,'U-238','Th-232'):CH3.cosmoAge(o,p);if(!(g>0))throw new Error('observed ratio must be below the production ratio');return{age_Gyr:g};}}
+].map(t=>({...t,execute:async(i)=>{try{const r=t.execute(i);log(t.name+' '+JSON.stringify(i)+' -> '+JSON.stringify(r));return r;}catch(e){log(t.name+' '+JSON.stringify(i)+' -> error: '+e.message);throw e;}}}));
+const RULES=`You are the explainer for Chronos, a nuclear decay and heating calculator built by Danny Lee Eldridge (Oklahoma City). Answer the question below ONLY by calling the provided tools for every number; never quote a number from memory. If the question is outside what the tools do (dose, shielding, cross sections, clinical decisions, anything else), say so plainly in one sentence and suggest what Chronos can do instead. Write for a scientist: 2-6 short sentences, numbers with units and sensible precision, then one line "Assumptions:" listing what the tools assumed. Never give clinical or regulatory advice. Question: `;
+const EX=['How much F-18 do I make now so 370 MBq is left in 2.5 hours?','When does a Mo-99 generator give the most Tc-99m after elution?','A sample has Cs-134/Cs-137 = 0.05 now; how long since the release?','How much Ni-56 gives a tail of 1e41 erg/s at 200 days with t0 = 40 days?'];
+$('askex').innerHTML=EX.map(q=>`<button class="mono" style="border:1px solid var(--line);border-radius:14px;padding:4px 10px;background:var(--panel);color:var(--fg);cursor:pointer;font-size:12px">${q}</button>`).join('');
+$('askex').onclick=e=>{const b=e.target.closest('button');if(b){$('askq').value=b.textContent;go();}};
+let ctl=null;$('asks').onclick=()=>ctl?.abort();
+async function go(){const q=$('askq').value.trim();if(!q)return;ctl=new AbortController();$('askb').disabled=true;$('asks').hidden=false;$('aska').textContent='Thinking...';$('askl').textContent='';
+try{await sample(RULES+q,{tools:T,signal:ctl.signal,cache:false,onText:({text})=>{$('aska').textContent=text;}});}
+catch(e){$('aska').textContent=(e.text||'')+(e.code==='cancelled'?'':'\n\n['+(e.code==='not_granted'?'Asking Claude was not allowed in this view.':e.code==='rate_limited'?'Too many questions at once; wait a moment.':'Could not get an answer ('+e.code+').')+']');}
+finally{$('askb').disabled=false;$('asks').hidden=true;}}
+$('askb').onclick=go;$('askq').addEventListener('keydown',e=>{if(e.key==='Enter')go();});})();
+
+</script>
