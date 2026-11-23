@@ -22722,3 +22722,9 @@ the Physics Basis 3.7 s (Shimada et al. 2007 NF 47 S1) is the 400 MW column -> g
 N10 front dpa -28.9% (no composition/E_d mismatch found); N10 He/dpa 7.38 - band is Fe-matrix and the locked metric is already Fe-only
 (front cm 9.19), EUROFER would need a new MC run + new lock, not a fix of this one; N11 goalposts too weak (cannot become IN retroactively).
 Map 7: 27 IN, 6 EDGE, 4 OUT; diagnoses refreshed (JET +64%, D/H -2.07, alpha_s 0.11446).
+
+## D2223 (PING-PONG close, 23 Nov 2026) — NULL - BALANCED (R108 round 5): map 7 = 27 IN, 6 EDGE, 4 OUT, every OUT obstructed by a named input
+Balanced in the protocol's sense (no actionable, sourced, non-tuning move left), NOT "all IN". OUT list with what would move each:
+alpha_s -3.9 sigma (+ Hoyle, same shift) - the visible-sector D7 assignment / one-loop threshold; D/H -2.07 sigma - an independent resolution
+of the PRIMAT vs PArthENoPE rate systematic; JET #99971 +64% - digitised Te(rho)/deposition + NBI fraction definition. Minor kept on record:
+N10 front dpa 7.11 (D2207a track-length 7.19) vs the old 10.7 scratch. Next real step: data/theory inputs, not more knob passes.
