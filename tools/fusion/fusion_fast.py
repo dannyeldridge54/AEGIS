@@ -52,18 +52,22 @@ def plasma_fast(m, n_avg, Te_avg, E_alpha_MeV, f_He=None):
     Prad = Pb + Ps + Pline; Prad_core = Pb_core + Ps + Pline_core
     beta = 2 * F.MU0 * (Wth * 1e6 / 1.5 / V) / mm['B'] ** 2; nG = mm['Ip'] / (math.pi * mm['a'] ** 2) * 1e20
     return dict(P_fus=Pf, P_alpha=Pf * E_alpha_MeV / F.q_value('DT'), P_brems=Pb, P_synch=Ps, P_line=Pline, P_rad=Prad, P_rad_core=Prad_core, W_MJ=Wth,
-                beta_N=100 * beta * mm['a'] * mm['B'] / mm['Ip'], n_G=nG, n_line=nline, f_G=nline / nG, Zeff=c['Zeff'], f_DT=c['f_DT'], Te0=T0, ne0=n0, f_He=mm['f_He'])
+                beta_N=100 * beta * mm['a'] * mm['B'] / mm['Ip'], n_G=nG, n_line=nline, f_G=nline / nG, Zeff=c['Zeff'], f_DT=c['f_DT'], ions_per_e=c['ions_per_e'], Te0=T0, ne0=n0, f_He=mm['f_He'])
 
 def _op_fixed_he_fast(m, E_alpha_MeV, n_avg, P_aux, f_He):
     from scipy.optimize import brentq
+    pop = m.get('convention') == 'popcon'   # PROM-9: cfspopcon convention (tau at P_heat = P_alpha + P_aux; W from volume averages)
+    def _w(p, T): return 1.5 * n_avg * T * (1 + p['ions_per_e'] * m['Ti_over_Te']) * F.KEV_J * m['V'] / 1e6
+    def _pl(p): return p['P_alpha'] + P_aux if pop else F._ploss(m, p, P_aux)
     def f(T):
-        p = plasma_fast(m, n_avg, T, E_alpha_MeV, f_He); Pl = F._ploss(m, p, P_aux)
-        return (p['W_MJ'] / F.tau_ipb98(m, Pl, p['n_line']) - Pl) if Pl > 0 else 1e9
+        p = plasma_fast(m, n_avg, T, E_alpha_MeV, f_He); Pl = _pl(p); W = _w(p, T) if pop else p['W_MJ']
+        return (W / F.tau_ipb98(m, Pl, p['n_line']) - Pl) if Pl > 0 else 1e9
     Ts = [2 + 0.25 * i for i in range(150)]; vals = [f(T) for T in Ts]; roots = []
     for a, b, fa, fb in zip(Ts, Ts[1:], vals, vals[1:]):
         if fa * fb < 0 and abs(fa) < 1e8 and abs(fb) < 1e8: roots.append(brentq(f, a, b, xtol=1e-9))
     if not roots: return None
-    T = max(roots); p = plasma_fast(m, n_avg, T, E_alpha_MeV, f_He); Pl = F._ploss(m, p, P_aux)
+    T = max(roots); p = plasma_fast(m, n_avg, T, E_alpha_MeV, f_He); Pl = _pl(p)
+    if pop: p = dict(p, W_MJ=_w(p, T))
     return dict(p, Te_avg=T, Ti_avg=T * m['Ti_over_Te'], n_avg=n_avg, P_aux=P_aux, P_loss=Pl, tau_E=F.tau_ipb98(m, Pl, p['n_line']),
                 Q=p['P_fus'] / P_aux if P_aux > 0 else float('inf'), P_LH=F.p_LH(m, p['n_line']), roots=roots)
 
