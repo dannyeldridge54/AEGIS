@@ -1,0 +1,6 @@
+{"rung": "N11 first-wall activation", "hints": [
+ "H1 Gilbert et al. (arXiv:1604.08496): DEMO FW spectrum flux 5.9e14 n/cm2/s; pure Fe He ~100-130 appm per fpy (libraries within 16%); full Fe activity/dominant nuclides in CCFE-R(15)26 handbook (not fetched)",
+ "H2 single-step products in Fe: Fe-54(n,g)Fe-55 (t1/2 2.744 y), Fe-56(n,2n)Fe-55, Fe-54(n,p)Mn-54 (312.2 d), Fe-56(n,p)Mn-56 (2.5789 h), Fe-58(n,g)Fe-59 (44.5 d), Fe-54(n,a)Cr-51 (27.70 d)",
+ "H3 qualitative pattern for irradiated Fe (Gilbert handbook / FISPACT practice): Mn-56 dominates at shutdown; Mn-54 and Fe-55 dominate months-years; Fe-55 dominates after ~1-3 y; long term (>100 y) residual activity from minor chains",
+ "H4 Bateman, single step with constant production R over T_irr: A(t) = R (1 - e^{-lambda T}) e^{-lambda t}",
+ "H5 half-lives from NUBASE2020 (element cards / Chronos)"]}
