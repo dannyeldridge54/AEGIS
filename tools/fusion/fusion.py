@@ -206,7 +206,25 @@ class Inertial(Engine):
         for s in NIF:
             if s['laser_MJ']: bus.put(self.name, f'NIF_target_gain_{s["shot"]}', s['yield_MJ'] / s['laser_MJ'], 'DATA (target gain = yield / laser energy on target; not wall-plug)')
         bus.put(self.name, 'IFE_gain_needed_eta0.1', 10 / 0.1, 'LIVE')
+        d = N210808; R = hs_radius_um(d['V_um3']); pd = hs_pressure_Gbar(d['Y_MJ'], d['T_keV'], d['tau_ps'], d['V_um3'])
+        bus.put(self.name, 'N210808_p_derived_Gbar', pd, 'LIVE'); bus.put(self.name, 'N210808_G_LC', G_LC(d['p_Gbar'], R), 'LIVE')
+        bus.put(self.name, 'N210808_alpha_fraction', alpha_fraction(d['Y_MJ'], d['E_hs_kJ']), 'LIVE')
         return dict(note='NIF entries are data bookkeeping, not derivations')
+
+
+# ------------------------------------------------------------------ S4b inertial ignition (PROM-4)
+GBAR = 1e14   # Pa
+def hs_radius_um(V_um3): return (3 * V_um3 / (4 * math.pi)) ** (1 / 3)
+def G_LC(p_Gbar, R_um): return (p_Gbar / 420.0) * (R_um / 50.0)          # Hurricane et al. PRL 129 075001 Eq. 2
+def alpha_fraction(Y_MJ, E_hs_kJ): return (Y_MJ * 1000 / 5) / (2 * E_hs_kJ)  # Eq. 4, E_alpha = Y/5
+def hs_pressure_Gbar(Y_MJ, T_keV, tau_ps, V_um3):
+    """p = 4 kT sqrt(Y_n / (<sv> V tau)): equal D-T ions, n_e = n_i, Y_n = Y / Q(DT)."""
+    Yn = Y_MJ * 1e6 / (q_value('DT') * MEV_J); sv = sigmav('DT', T_keV) * 1e-6
+    n_i = 2 * math.sqrt(Yn / (sv * V_um3 * 1e-18 * tau_ps * 1e-12))
+    return 2 * n_i * T_keV * KEV_J / GBAR
+def chi_noalpha(rhoR, Y16, M_mg): return rhoR ** 0.61 * (0.12 * Y16 / M_mg) ** 0.34      # OSTI 1498067 Eq. 8
+def Y_ign_MJ(M_mg, rhoR): return (M_mg / 0.21) ** 0.81 * rhoR ** -2.61                 # Eq. 9 (+-15%)
+N210808 = dict(E_laser_MJ=1.917, Y_MJ=1.37, T_keV=10.9, rhoR_hs=0.44, p_Gbar=569.0, p_err=61.0, tau_ps=89.0, E_hs_kJ=55.0, V_um3=6.4e5, src='PRL 129, 075001 (2022)')
 
 # ------------------------------------------------------------------ S5 fuel cycle (links into the Chronos nuclear engine for tritium decay)
 def tritium_half_life_y():
