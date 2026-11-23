@@ -22371,3 +22371,17 @@ S4 inertial (OU's IFE-STARFIRE), S5 fuel cycle linked to Chronos tritium, S6 neu
 - Cycle 2 is NULL (no tested improvement), so by the loop's rule the Prometheus loop stops here. What would restart it: a citable
   impurity cooling-rate source (ADAS L_z for Ar/Be/W) to compute line radiation instead of taking 27 MW as input, and a synchrotron model
   valid for pedestal profiles. D2194's cycle-0/1 results stand.
+
+## D2195 (FUSION, 23 Nov 2026 12:25 CT) — Prometheus cycle 3: R85 fixes + the GOAL node (net electricity) with goal dials (PREREG_PROM3)
+- F1: the ITER Physics Basis 1999 threshold law gives P_LH = 53.3 MW at the model's 500 MW point vs the FDR table's 51 MW (+4.5%);
+  Martin 2008 x 2/A_eff gives 77.9 MW. The gap was between laws, as R85 said.
+- E1 ARC bookkeeping: implied blanket multiplication 1.345 reproduces P_tot 708 MW; P_gross 283.2 MW; with P_net 190, P_recirc 93.2 MW,
+  Q_e 3.04 (published 3.0). E2: PROCESS DEMO-A multiplication M = 1.239 (DEMO range 1.2-1.3).
+- E3 PREDICTION: the model's ITER 500 MW plasma (P_fus 532 MW, P_aux 50) on a DEMO-style plant (M 1.24, eta_th 0.368, heating wall-plug
+  0.4, helium pumping 8.5%, no other loads): P_gross 251, P_recirc 183, P_net +68 MW, Q_e 1.37. With today's achieved heating
+  efficiency (0.25): P_net -7 MW. An ITER-sized Q = 10 machine is at the edge of net electricity even in the best case.
+- E4 GOAL DIALS (maximise P_net on the ITER machine under Greenwald 0.94, beta_N 2.8, P_loss >= 1.3 P_LH): best point
+  <n> 1.07e20, P_aux 50 MW, P_fus 500 MW, Q 10.0, f_G 0.936, P_net +58 MW. The dials land on ITER's own design point; the binding limit
+  is Greenwald. With eta_wp 0.25 the best is P_aux 40 MW, P_net -7.7 MW (F2: the dial result moves with the plant inputs).
+- E5 lower sections unchanged (sv(10 keV), ignition, tritium burn identical). Run time 511 s (the goal-dial scan is slow; speed rung next).
+Not yet refereed (R86 launched).

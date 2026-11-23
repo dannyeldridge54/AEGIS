@@ -141,6 +141,9 @@ def _op_fixed_he(m, E_alpha_MeV, n_avg, P_aux, f_He):
     T = max(roots); p = plasma(m, n_avg, T, E_alpha_MeV, f_He); Pl = _ploss(m, p, P_aux)
     return dict(p, Te_avg=T, Ti_avg=T * m['Ti_over_Te'], n_avg=n_avg, P_aux=P_aux, P_loss=Pl, tau_E=tau_ipb98(m, Pl, p['n_line']),
                 Q=p['P_fus'] / P_aux if P_aux > 0 else float('inf'), P_LH=p_LH(m, p['n_line']), roots=roots)
+def p_LH_ipb99(m, n_line):   # PROM-3 F1: ITER Physics Basis 1999 law (behind the FDR's 51 MW), P = 2.84 M^-1 B^0.82 n20^0.58 R a^0.81
+    return 2.84 / m['M'] * m['B'] ** 0.82 * (n_line / 1e20) ** 0.58 * m['R'] * m['a'] ** 0.81
+
 def operating_point(m, E_alpha_MeV, n_avg=None, P_aux=None):
     """Power balance W/tau_E(P_loss) = P_loss; hottest root. PROM-1 C3: f_He iterated to (alpha birth rate) x 5 tau_E / (V <n_e>)."""
     n_avg = m['n_avg'] if n_avg is None else n_avg; P_aux = m['P_aux'] if P_aux is None else P_aux
@@ -248,6 +251,37 @@ class Neutrons(Engine):
         bus.put(self.name, 'He_appm_per_dpa_steel', STORK['He_appm_per_dpa'], 'LIT', 'appm/dpa')
         return dict(area_src=ITER_WALL['src'], gilbert=GILBERT['conditions'])
 
+
+# ------------------------------------------------------------------ S0 GOAL: net electricity (PROM-3)
+PLANT_DEMO = dict(M=None, eta_th=0.368, eta_wp=0.4, f_pump=0.085, P_other=0.0,
+                  src='M from PROCESS DEMO A (E2); eta_th 0.368 PROCESS DEMO A; eta_wp 0.4 Federici/PROCESS; f_pump 0.085 helium (PROCESS simple model); P_other 0 = best case')
+def M_demoA(): return 1 + 321.0 / (1686.0 * two_body_split('DT')[0] / q_value('DT'))
+def plant(P_fus, P_aux, plant_in):
+    share = two_body_split('DT')[0] / q_value('DT'); M = plant_in['M'] if plant_in.get('M') else M_demoA()
+    Pn, Pa = P_fus * share, P_fus * (1 - share); Pth = M * Pn + Pa + P_aux; Pg = plant_in['eta_th'] * Pth
+    Prc = P_aux / plant_in['eta_wp'] + plant_in['f_pump'] * Pth + plant_in['P_other']
+    return dict(P_th=Pth, P_gross=Pg, P_recirc=Prc, P_net=Pg - Prc, Q_e=Pg / Prc if Prc > 0 else float('inf'), M=M)
+def goal_dials(m, E_alpha_MeV, plant_in, P_aux_set=(30.0, 40.0, 50.0, 60.0, 73.0), lh_margin=1.3, betaN_max=2.8):
+    best = None; nG = m['Ip'] / (math.pi * m['a'] ** 2) * 1e20
+    for Pa in P_aux_set:
+        for i in range(21):
+            n = nG * (0.6 + 0.4 * i / 20); op = operating_point(m, E_alpha_MeV, n_avg=n, P_aux=Pa)
+            if op is None: continue
+            lim = [k for k, bad in (('Greenwald', op['f_G'] > m['fG_max']), ('beta_N', op['beta_N'] > betaN_max), ('L-H margin', op['P_loss'] < lh_margin * op['P_LH'])) if bad]
+            if lim: continue
+            pl = plant(op['P_fus'], Pa, plant_in)
+            if best is None or pl['P_net'] > best['P_net']: best = dict(pl, n_avg=n, P_aux=Pa, P_fus=op['P_fus'], Q=op['Q'], f_G=op['f_G'], beta_N=op['beta_N'], lh_ratio=op['P_loss'] / op['P_LH'])
+    return best
+
+class Plant(Engine):
+    name = 'S0 GOAL: net electricity'
+    def run(self, bus):
+        Pf = bus.get('iter_P_fus'); Pa = ITER['P_aux']
+        if Pf is None: return {}
+        pl = plant(Pf, Pa, PLANT_DEMO)
+        for k in ('P_th', 'P_gross', 'P_recirc', 'P_net', 'Q_e', 'M'): bus.put(self.name, f'plant_{k}', pl[k], 'PREDICTION (DEMO-style plant on the model ITER plasma)', 'MW' if k.startswith('P_') else '')
+        return pl
+
 # ------------------------------------------------------------------ engines
 class Reactions(Engine):
     name = 'S1 reactions'
@@ -270,7 +304,7 @@ class Fusion(Engine):
     name = 'FUSION (goal: net electricity from D-T)'
 
 def build(sections=None):
-    secs = sections or [Reactions(), Ignition(), Tokamak(), Inertial(), FuelCycle(), Neutrons(), Stars()]
+    secs = sections or [Reactions(), Ignition(), Tokamak(), Inertial(), FuelCycle(), Neutrons(), Stars(), Plant()]
     return Fusion(secs)
 
 if __name__ == '__main__':
