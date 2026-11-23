@@ -1,0 +1,39 @@
+{
+ "exp": {
+  "npts": 3136,
+  "maxdev_px": 0.0004499323184745663,
+  "extremes_kept": true,
+  "I4_rel": 2.1799835862753264e-16
+ },
+ "bateman": {
+  "npts": 3137,
+  "maxdev_px": 0.00547339123988877,
+  "extremes_kept": true,
+  "I4_rel": 2.1094069038441846e-16
+ },
+ "noisy": {
+  "npts": 3136,
+  "maxdev_px": 47.7539398090222,
+  "extremes_kept": true,
+  "I4_rel": 3.3987785953180618e-12
+ },
+ "logy": {
+  "npts": 3136,
+  "maxdev_px": 0.00004530242381406424,
+  "extremes_kept": true,
+  "I4_rel": 2.5525870888075376e-16
+ },
+ "I2_frac_diff": 0,
+ "I3": {
+  "prep_ms": 38.40000000002328,
+  "mean_frame_ms": 0.36101694916023763,
+  "frames": 118
+ },
+ "verdict": {
+  "I1": false,
+  "I2": true,
+  "I3": true,
+  "I4": false,
+  "PASS": false
+ }
+}
