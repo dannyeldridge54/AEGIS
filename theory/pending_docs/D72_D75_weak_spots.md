@@ -22153,3 +22153,11 @@ Triangulation (three readers): records (statuses above), data (PDG tau mass 1776
 - D2160 forecasts final: F1 PASS (both Union3 fits thaw: 0.148, 0.102); F2 FAIL (CamSpec Dovekie thawed, u_i 0.084 > 0.02; its dchi2 -0.17 was inside [-1, 2]); F3 FAIL (CamSpec Dovekie thawed but H0 rose); F4 FAIL (CamSpec Union3 -0.87 is not below HiLLiPoP -1.65); F5 FAIL (HiLLiPoP Union3 omch2 rose). The D2159 pattern does not hold as a rule.
 
 ## D2171a (referee round 15): the w0wa best-fit ranges in D2171 were too narrow. From the JSONs: w0 = -0.78 to -0.86, wa = -0.52 to -0.74 (CamSpec Pantheon+: w0 -0.864, wa -0.522). All still have w0 + wa < -1. D2171 is not edited.
+
+## D2172 (CENTRE, 23 Nov 2026 00:27 CT) — D2163 best-of-4 refit scored: verdict stable to minimiser starts
+Locked rule (PREREG_D2163): lowest chi2_eff over all runs per model; dchi2 = W − L; D2132 classes.
+- L (HiLLiPoP + DESI DR2 + Dovekie): best-of-2 7215.30, best-of-4 7213.29 → best 7213.29.
+- W: best-of-2 7217.70, best-of-4 7215.75 → best 7215.75.
+- Δχ²_eff = +2.46 (posted: +2.40). Same class: mild tension (just over +2). Verdict: "stable to minimiser starts".
+- Spread of the four new minima (in −log posterior; ×2 for χ²): L 3594.14–3596.18 (χ² spread ≈ 4.1); W 3596.76, 3598.87, then 3747.66 and 5007.64 (one run not converged). Both models gained ≈2 in χ² from more starts, so the gap held while each fit improved: the ±2 scatter caveat in the paper stands, but the class did not move.
+- Files: field_tests/weave_lcdm/pr4_{L,W}_desdovekie_bo4.json; logs kept. Not refereed. Goes into version 2.
