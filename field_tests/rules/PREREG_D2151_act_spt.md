@@ -1,0 +1,25 @@
+# PREREG D2151: the Weave against ACT DR6 and SPT-3G (Danny 21:12, downloads OK'd). Locked before any install output was read and before any fit
+
+**Why.** ACT DR6 and SPT-3G are the newest ground-based CMB data. ACT's n_s (0.974 ± 0.003 with DESI) is the first number experts will check against the Weave's fixed n_s = 0.9706.
+
+## Data combinations (each × SN ∈ {DES-Dovekie, Pantheon+, Union3}, plus DESI DR2 BAO)
+- **ACT-based:** ACT DR6 MFLike (TT/TE/EE, baseline foreground model and priors from the package) + ACT DR6 lensing + Planck 2018 low-ℓ TT + PR4 LoLLiPoP low-ℓ EE (for τ).
+  - Planck high-ℓ is **not** included, so no sky overlap is double-counted.
+- **SPT-based:** the SPT-3G D1 likelihood via candl / spt_candl_data, using the shortcut for the collaboration's baseline TT/TE/EE (and lensing if the shortcut includes it), + the same low-ℓ Planck.
+  - The exact shortcut name is recorded in an addendum **before** fitting, from print_all_shortcuts().
+
+## Models
+L (ΛCDM, n_s free) and W (Weave: fixed n_s 0.9706, running, r, Σm_ν = 0.0587 eV with normal ordering, thread u_i free). C (w0wa) only if time allows.
+
+## Settings
+- The same as D2132: BOBYQA best_of 2, u_i reference range (0.02, 0.20) per the D2132 DEV, CAMB 2.0.5, Cobaya 3.6.2 in a separate venv.
+- **Labelled deviation from the ACT baseline:** ACT's baseline uses CosmoRec. This run uses CAMB's default recombination unless CosmoRec is available.
+
+## Verdict rule (fixed now)
+- **The D2132 rule** (same free-parameter count): PREFERRED if Δχ²_eff < −2; CONSISTENT if ≤ +2; MILD TENSION if ≤ +6; DISFAVOURED if > +6.
+- **Reported in addition:**
+  - the n_s pull of L's best fit against 0.9706;
+  - the fixed-n_s cost on each CMB block.
+- **Cross-experiment rule.** A verdict is "CMB-robust" only if Planck PR4 (D2132/D2135), ACT and SPT all fall in the same class or neighbouring classes.
+
+No reruns to chase results. Code fixes go in DEVIATIONS written before any rerun.
