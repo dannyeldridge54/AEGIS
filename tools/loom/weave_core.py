@@ -23,7 +23,9 @@ def nodes(z):
     return out
 t0 = time.time()
 z0 = np.zeros(len(DIALS)); base = nodes(z0); names = list(base); m0 = np.array([base[n] for n in names])
-def vec(z): b = nodes(z); return np.array([b[n] for n in names])
+def vec(z):
+    try: b = nodes(z); return np.array([b[n] for n in names])
+    except (ZeroDivisionError, ValueError, OverflowError): return np.full(len(names), -1e6)   # DEV-1
 t1 = time.time(); h = 1e-3
 J = np.array([(vec(z0 + h*e) - vec(z0 - h*e)) / (2*h) for e in np.eye(len(DIALS))]).T     # nodes x dials
 t_fp = time.time() - t1
@@ -43,7 +45,7 @@ for i, n in enumerate(names):
     rng = np.random.default_rng(i)
     for s in range(5):
         x0 = rng.normal(0, 0.3, len(DIALS)) if s else np.zeros(len(DIALS))
-        r = minimize(lambda z: float(z @ z), x0, method='SLSQP', constraints=cons, options={'maxiter': 300, 'ftol': 1e-10})
+        r = minimize(lambda z: float(z @ z), x0, method='SLSQP', constraints=cons, bounds=[(-3, 3)]*len(DIALS), options={'maxiter': 300, 'ftol': 1e-10})
         if r.success:
             v = vec(r.x)
             if v[i] >= -1e-6 and all(v[k] >= -1e-6 for k in hold) and (best is None or r.fun < best[0]): best = (r.fun, r.x, v)
