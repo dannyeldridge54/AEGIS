@@ -6,6 +6,7 @@
 > It belongs to the one who asks, who measures, who will not kneel:
 > take it, test it, and see for yourself.
 > It was made for freedom, the quiet kind, the kind no one can sell you.
+> A man chooses; a slave obeys.
 
 A gift from Danny Lee Eldridge, an independent researcher in Oklahoma City. No credit, endorsement or accreditation is asked; use it freely. The only ask is a serious look at the work.
 

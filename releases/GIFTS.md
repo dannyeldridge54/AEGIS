@@ -6,6 +6,7 @@
 > It belongs to the one who asks, who measures, who will not kneel:
 > take it, test it, and see for yourself.
 > It was made for freedom, the quiet kind, the kind no one can sell you.
+> A man chooses; a slave obeys.
 
 Data packets made for researchers whose work this project touches. Each one is built from their own published work, checked by independent referee passes, and given freely: no credit, endorsement or accreditation asked, only a serious look.
 

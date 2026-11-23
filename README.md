@@ -59,5 +59,6 @@ Versions released before 18 November 2026 keep the license they were released un
 > It belongs to the one who asks, who measures, who will not kneel:
 > take it, test it, and see for yourself.
 > It was made for freedom, the quiet kind, the kind no one can sell you.
+> A man chooses; a slave obeys.
 
 All of this (the research, the toolkits and the papers) is built by one person, Danny Eldridge, an independent, self-taught researcher in Oklahoma City, working with the help of AI. He is trying to change his circumstances in life, and he promises to keep doing what he is doing now: releasing the work openly, free to individuals, scientists and students, and using it to try to make the world a better place. If it helps you, a donation of any size keeps it going: **sponsor at [github.com/sponsors/dannyeldridge54](https://github.com/sponsors/dannyeldridge54)** (live once GitHub approves the profile), or email dannyeldridge54@gmail.com. Businesses: please license through the AEGIS Commercial License instead.
