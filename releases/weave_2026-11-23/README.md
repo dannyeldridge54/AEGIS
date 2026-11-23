@@ -19,3 +19,6 @@ One entry = one Weave fit and one LCDM fit on the same data. dchi2 = chi2(W) - c
 ## Licence
 AEGIS Community License 1.0 (LICENSE, included). The Zenodo record's metadata licence is CC BY-NC-SA 4.0; where they differ for code, the included LICENSE file applies.
 Repository: https://github.com/dannyeldridge54/AEGIS (branch unify-bg).
+
+## Published
+Zenodo record 24453859, DOI 10.5281/zenodo.24453859, published 23 Nov 2026 00:33 CT (https://zenodo.org/records/24453859). Files: The_Weave_Predictions_and_Postulates.pdf (md5 686b15d4df38793acf80a8288712d40d), Weave_supplement.zip (md5 c934e1c49ca9f84904d4ccbaaa7352d1).
