@@ -22466,3 +22466,4 @@ design predictions (code-vs-code). ITER 400 MW regression unchanged (389.5 MW, 3
 Verdict: the engine does NOT yet transfer to compact high-field designs. Two separable gaps: (1) the solved temperature is low (power balance /
 confinement, SPARC below its L-H threshold at the solved point); (2) missing profile data (density peaking). Next: published SPARC/ARC
 profiles (n0/<n>, T0/<T>) as INPUTS before any further claim; JET DTE2 (measured, not a design) as the next held-out.
+D2200a: time-stamp correction: D2200 was written ~12:55 CT (PC clock 18:52 UTC), not 13:15.
