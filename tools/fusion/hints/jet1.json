@@ -1,0 +1,10 @@
+{"level": "JET-1 beam-target fusion (measured held-out)", "hints": [
+ "H1 #99971 (Maslov et al. NF 2023 'JET D-T scenario with optimized non-thermal fusion'): T-rich hybrid, 2.5 MA, 3.86 T, D-NBI ~29 MW injected / 26.5 MW deposited (ETS), mean beam energy ~108 keV (96-115), energy fractions 0.53/0.33/0.14 at E, E/2, E/3; ICRF 4 MW; D/T ~15/85 (core nD/ne ~12-15%)",
+ "H2 #99971: 58.99 MJ total, 50.5 MJ in 5 s, P_fus 10.1 MW average, Q 0.33",
+ "H3 #99971 TRANSP: thermonuclear ~7% near end of flattop; beam-target the rest; ~7% (TRANSP) to ~20% (ETS) RF enhancement of beam ions",
+ "H4 P_th = f_T(1-f_T) n_e^2 <sv> E_DT; P_bt = f_T n_D,beam n_e <sv>_beam E_DT (rises linearly with f_T)",
+ "H5 #104522 (DTE3 record, 69 MJ, 2023): 80% T, 2.5 MA, 3.9 T, 30 MW D-NBI, 5-6 MW on-axis RF, central Te = 8 keV, Ti > Te, ~13.5 MW fusion (arXiv:2504.11222)",
+ "H6 classical fast-ion slowing down (Stix/Spitzer): dE/dt = -(2E/tau_s)(1 + (E_c/E)^(3/2)); tau_s = 6.27e8 A_b Te[eV]^(3/2) / (n_e[cm^-3] lnL) s; E_c = 14.8 A_b Te [sum_j n_j Z_j^2/(n_e A_j)]^(2/3)",
+ "H7 beam-target yield per beam ion: Y = Int_{E_th}^{E_b} n_T sigma(E_cm) v / |dE/dt| dE; n_T/n_e and T_e^(3/2) control it, n_e largely cancels (only via lnL)",
+ "H8 optimal D-into-T beam energy 100-120 keV (sigma_DT peak at E_cm 64 keV -> E_D ~107 keV)",
+ "H9 reference: 1.7 MW, 100 keV NBI L-mode test gave 1.5e17 neutrons/s (Maslov 2023)"]}
