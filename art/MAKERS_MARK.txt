@@ -1,0 +1,14 @@
+MAKER'S MARK: The Weave (AEGIS)
+Maker: Danny Eldridge, independent researcher, Oklahoma City, Oklahoma, USA
+
+Arms (blazon, short form): Sable, a hart argent attired Or, pierced in the neck by an arrow Or, on its breast a heart gules
+charged with two hearts Or, three cords Or issuing to the bordure; in chief a mullet gules and a mullet azure; the hart standing
+on an ashlar Or; a bordure Or charged with an endless knot sable.
+Crest: a hood sable lined Or, issuing a hand holding a mallet Or, the wrist bound with a cord Or; on the hood a mullet gules and a mullet azure.
+Crown: two interlaced rings Or, the band sable alternating an ouroboros and an hourglass Or, a thread Or spiralling through three points each tipped with a mullet Or.
+Supporters: dexter a centaur (Chiron) with a bow; sinister a hart argent; both collared Or with pendants of an endless knot sable.
+Mottoes: IUSTITIA, LIBERTAS, AMOR  /  UNUS CAMPUS, UNA VIA
+
+How the mark is woven into the data: FINGERPRINTS.sha256 lists the SHA-256 of every file in this record. Its first line is the
+SHA-256 of this mark file, and every fingerprint line ends with the first 12 hex digits of that mark hash, so each file's
+fingerprint carries the maker's mark. No data file was altered to add the mark; the originals stay byte-for-byte as computed.
