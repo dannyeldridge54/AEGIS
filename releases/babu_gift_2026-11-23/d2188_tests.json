@@ -1,0 +1,30 @@
+{
+ "NO": {
+  "T1_null_residual": {
+   "M=U* D U^dag": 0.012583845407262116,
+   "M=U D U^T": 6.255569104637227e-17
+  },
+  "T1_pass_any": true,
+  "T1_convention_that_passes": "M=U D U^T",
+  "mbb_meV": [
+   1.4936676339030608,
+   3.7035432276865667
+  ],
+  "T2_pass": true,
+  "sum_mnu": 0.058993330403980394
+ },
+ "IO": {
+  "T1_null_residual": {
+   "M=U* D U^dag": 0.20085176183914483,
+   "M=U D U^T": 5.05274896092354e-17
+  },
+  "T1_pass_any": true,
+  "T1_convention_that_passes": "M=U D U^T",
+  "mbb_meV": [
+   18.300899718244843,
+   48.476077624388566
+  ],
+  "T2_pass": true,
+  "sum_mnu": 0.0994466326141203
+ }
+}

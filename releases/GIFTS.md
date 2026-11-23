@@ -13,3 +13,4 @@ Data packets made for researchers whose work this project touches. Each one is b
 |---|---|---|
 | 2026-11-23 | Prof. Yingmei Liu, Oklahoma State (spinor Bose gases) | [liu_gift_2026-11-23](liu_gift_2026-11-23/) · [one-file zip](Liu_lab_gift_packet.zip) |
 | 2026-11-23 | Prof. Howard Baer, University of Oklahoma (SUSY, axion dark matter) | [baer_gift_2026-11-23](baer_gift_2026-11-23/) · [one-file zip](Baer_gift_packet.zip) |
+| 2026-11-23 | Prof. K. S. Babu, Oklahoma State University (neutrino mass, Zee–Babu model) | [babu_gift_2026-11-23](babu_gift_2026-11-23/) · Aion live tool |

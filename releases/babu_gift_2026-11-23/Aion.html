@@ -1,0 +1,92 @@
+<title>Aion</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Source+Serif+4:wght@400;600&display=swap">
+<style>
+:root{--bg:#f4f6f3;--panel:#fcfdfb;--fg:#17211d;--muted:#5d6b64;--line:#d3dcd6;--accent:#1f6f5c;--gold:#a8741a;--warn:#a3322a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111815;--panel:#18211d;--fg:#e4ece7;--muted:#9aaaa2;--line:#2c3a33;--accent:#5cc4a6;--gold:#e0b04a;--warn:#ff8a7a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111815;--panel:#18211d;--fg:#e4ece7;--muted:#9aaaa2;--line:#2c3a33;--accent:#5cc4a6;--gold:#e0b04a;--warn:#ff8a7a;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 "Source Serif 4",Georgia,serif;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px}
+main{max-width:980px;margin:0 auto}h1{font-size:2rem;margin:0}h2{font-size:1.1rem;margin:0 0 .5em;text-wrap:balance}
+.sub{color:var(--muted);margin:.2em 0 1em}.lantern{border-left:3px solid var(--gold);padding:.4em .9em;color:var(--muted);font-style:italic;margin:1em 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;min-width:0}
+label{display:block;font-size:13px;color:var(--muted);margin:.35em 0}input[type=range]{width:100%}
+.mono{font-family:"IBM Plex Mono",monospace;font-size:13px}.big{font:600 1.5rem "IBM Plex Mono",monospace;color:var(--accent)}
+.seg button{font:13px "IBM Plex Mono",monospace;background:var(--panel);color:var(--fg);border:1px solid var(--line);padding:6px 12px;cursor:pointer}
+.seg button.on{background:var(--accent);color:var(--panel);border-color:var(--accent)}
+.bar{display:flex;align-items:center;gap:8px;margin:4px 0}.bar span{width:52px}.bar i{display:block;height:12px;background:var(--accent);border-radius:2px}
+table{border-collapse:collapse;width:100%}td,th{padding:4px 6px;border-bottom:1px solid var(--line);text-align:left;font:12px "IBM Plex Mono",monospace}
+canvas{width:100%;height:180px;display:block}.note{color:var(--muted);font-size:13px}.warn{color:var(--warn)}
+</style>
+<main>
+<h1>Aion</h1>
+<p class="sub">What the minimal Zee–Babu model predicts, fixed by neutrino oscillation data alone. Move the dials; everything updates live. Runs in your browser.</p>
+<div class="lantern">This work is a lantern, not a throne. It belongs to the one who asks, who measures, who will not kneel: take it, test it, and see for yourself.</div>
+<div class="grid">
+<div class="card"><h2>Oscillation inputs (NuFIT 6.0 defaults)</h2>
+<div class="seg"><button id="bNO" class="on">Normal (m₁ = 0)</button><button id="bIO">Inverted (m₃ = 0)</button></div>
+<label>sin²θ₁₂ <b id="v_s12"></b><input type="range" id="s12" min="0.27" max="0.35" step="0.001"></label>
+<label>sin²θ₂₃ <b id="v_s23"></b><input type="range" id="s23" min="0.43" max="0.60" step="0.001"></label>
+<label>sin²θ₁₃ <b id="v_s13"></b><input type="range" id="s13" min="0.0200" max="0.0240" step="0.00005"></label>
+<label>δ<sub>CP</sub> (°) <b id="v_d"></b><input type="range" id="d" min="0" max="360" step="1"></label>
+<button class="mono" id="reset" style="margin-top:6px;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:5px 10px">Reset to best fit</button>
+<p class="note">Defaults: NuFIT 6.0 (arXiv:2410.05380), IC19 without SK-atm. Δm² held at best fit.</p></div>
+<div class="card"><h2>Singly charged h⁺: where it decays</h2>
+<p class="note">Γ(h⁺→ℓ<sub>a</sub>ν) ∝ Σ<sub>b</sub>|f<sub>ab</sub>|², with the f-ratios fixed by the null vector of M<sub>ν</sub>.</p>
+<div id="bars"></div><p class="mono" id="ratios"></p></div>
+<div class="card"><h2>Neutrinoless double beta decay</h2>
+<p class="note">m<sub>ββ</sub> vs the one physical Majorana phase (lightest mass is zero at two loops).</p>
+<canvas id="cv" width="600" height="220"></canvas><p class="mono" id="mbb"></p></div>
+<div class="card"><h2>Mass sum and μ→eγ</h2>
+<p class="mono" id="sum"></p>
+<table><thead><tr><th>m<sub>h</sub> (TeV)</th><th>max |f<sub>μτ</sub>| (MEG II 1.5×10⁻¹³)</th></tr></thead><tbody id="ceil"></tbody></table>
+<p class="note">BR(μ→eγ)<sub>h</sub> = α|f<sub>eτ</sub>*f<sub>μτ</sub>|²/(48πG<sub>F</sub>²m<sub>h</sub>⁴), with f<sub>eτ</sub>/f<sub>μτ</sub> from the dials. This is the h⁺ contribution only; the k⁺⁺ loop has the opposite chirality and adds incoherently, so the ceiling is conservative and depends on m<sub>h</sub> alone.</p></div>
+</div>
+<p class="note">The minimal Zee–Babu model: A. Zee, Nucl. Phys. B264 (1986) 99; K. S. Babu, Phys. Lett. B203 (1988) 132; see also Babu &amp; Macesanu, hep-ph/0212058, and Nebot et al., arXiv:0711.0483. Formulas used here are from Herrero-García, Nebot, Rius &amp; Santamaria, arXiv:1402.4491 (convention M<sub>ν</sub> = U diag(m) Uᵀ, checked). Aion predicts flavour ratios only, not the overall mass scale or the loop function I(m<sub>k</sub>/m<sub>h</sub>); perturbativity and the μ bound push m<sub>h</sub>, m<sub>k</sub> to the few-TeV scale. Not covered: Babu &amp; Saad's SU(5) completion (arXiv:2412.14562), where coloured scalars contribute comparably, and the k⁺⁺ sector (its g couplings are free). The Python version gives 3σ scan ranges over δ and both θ₂₃ octants.</p>
+<p class="note">Aion v1 · Danny Lee Eldridge, Oklahoma City · 23 Nov 2026 · the Weave (doi:10.5281/zenodo.24453858) · github.com/dannyeldridge54/AEGIS (tools/gifts/aion). Named for Aion, the Greek figure of unbounded time. Free to use, change and share.</p>
+</main>
+<script>
+// Aion core (same algorithm as aion.py). Danny Lee Eldridge / the Weave, D2188. Free to use.
+const A = (() => {
+  const C = (re, im = 0) => ({ re, im }), add = (a, b) => C(a.re + b.re, a.im + b.im), mul = (a, b) => C(a.re * b.re - a.im * b.im, a.re * b.im + a.im * b.re),
+    sc = (a, s) => C(a.re * s, a.im * s), ab = a => Math.hypot(a.re, a.im), ex = t => C(Math.cos(t), Math.sin(t));
+  const NUFIT6 = { NO: { s12: .307, s23: .561, s13: .02195, d: 177, dm21: 7.49e-5, dm3l: 2.534e-3 }, IO: { s12: .308, s23: .562, s13: .02224, d: 285, dm21: 7.49e-5, dm3l: -2.510e-3 } };
+  const ALPHA = 1 / 137.036, GF = 1.1663788e-5, MEG2 = 1.5e-13, DESI = 0.0642;
+  function fRatios(o, p) {
+    const t12 = Math.sqrt(p.s12 / (1 - p.s12)), t13 = Math.sqrt(p.s13 / (1 - p.s13)), c23 = Math.sqrt(1 - p.s23), s23 = Math.sqrt(p.s23), c13 = Math.sqrt(1 - p.s13), e = ex(-p.d * Math.PI / 180);
+    if (o === 'NO') return [add(C(t12 * c23 / c13), sc(e, t13 * s23)), add(C(t12 * s23 / c13), sc(e, -t13 * c23))];
+    return [sc(e, -s23 / t13), sc(e, c23 / t13)];
+  }
+  function hBR(r) { const et = ab(r[0]) ** 2, em = ab(r[1]) ** 2, w = [em + et, em + 1, et + 1], s = w[0] + w[1] + w[2]; return w.map(x => x / s); }
+  function masses(o, p) { if (o === 'NO') return [0, Math.sqrt(p.dm21), Math.sqrt(p.dm3l)]; const m2 = Math.sqrt(-p.dm3l); return [Math.sqrt(m2 * m2 - p.dm21), m2, 0]; }
+  function Ue(p) { // first row of PDG U: c12c13, s12c13, s13 e^{-i d}
+    const c12 = Math.sqrt(1 - p.s12), s12 = Math.sqrt(p.s12), c13 = Math.sqrt(1 - p.s13), s13 = Math.sqrt(p.s13);
+    return [C(c12 * c13), C(s12 * c13), sc(ex(-p.d * Math.PI / 180), s13)];
+  }
+  function mbb(o, p, a) { const u = Ue(p), m = masses(o, p), ph = [C(1), ex(a), C(1)]; let s = C(0); for (let i = 0; i < 3; i++) s = add(s, sc(mul(mul(u[i], u[i]), ph[i]), m[i])); return ab(s); }
+  function mbbBand(o, p, n = 721) { let lo = 1e9, hi = 0; for (let i = 0; i < n; i++) { const v = mbb(o, p, 2 * Math.PI * i / (n - 1)); lo = Math.min(lo, v); hi = Math.max(hi, v); } return [lo, hi]; }
+  function ceiling(r, mhTeV) { const mh = mhTeV * 1e3, ff2 = MEG2 * 48 * Math.PI * GF * GF * mh ** 4 / ALPHA; return Math.sqrt(Math.sqrt(ff2) / ab(r[0])); }
+  function run(o, p) { const r = fRatios(o, p), m = masses(o, p), b = mbbBand(o, p); return { r, abs: [ab(r[0]), ab(r[1])], br: hBR(r), mbb: b, sum: m[0] + m[1] + m[2], m, ceil: [0.5, 1, 2, 5].map(x => [x, ceiling(r, x)]) }; }
+  return { NUFIT6, DESI, MEG2, fRatios, hBR, masses, mbb, mbbBand, ceiling, run };
+})();
+
+
+const $=id=>document.getElementById(id);let ord='NO',P={...A.NUFIT6.NO};
+function setDials(){for(const k of ['s12','s23','s13','d']){$(k).value=P[k];}}
+function css(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim();}
+function draw(){for(const k of ['s12','s23','s13','d']){P[k]=+$(k).value;$('v_'+k).textContent=k==='d'?P[k].toFixed(0):P[k].toFixed(k==='s13'?5:3);}
+const r=A.run(ord,P),names=['e','μ','τ'];
+$('bars').innerHTML=r.br.map((b,i)=>`<div class="bar mono"><span>h⁺→${names[i]}ν</span><i style="width:${(b*100*2.2).toFixed(1)}px"></i>${(b*100).toFixed(1)}%</div>`).join('');
+$('ratios').textContent=`|f_eτ/f_μτ| = ${r.abs[0].toFixed(3)}   |f_eμ/f_μτ| = ${r.abs[1].toFixed(3)}`;
+$('mbb').textContent=`m_ββ band: ${(r.mbb[0]*1e3).toFixed(2)} – ${(r.mbb[1]*1e3).toFixed(2)} meV`;
+const over=r.sum>A.DESI;$('sum').innerHTML=`Σm<sub>ν</sub> = ${r.sum.toFixed(4)} eV <span class="note">(${over?'in tension with the DESI DR2 + CMB ΛCDM bound, &lt; 0.0642 eV at 95%; model-dependent, and it applies to any inverted-ordering model with m₃ = 0, not specifically to Zee–Babu':'below the DESI DR2 + CMB ΛCDM bound, &lt; 0.0642 eV at 95%'})</span>`;
+$('ceil').innerHTML=r.ceil.map(([m,c])=>`<tr><td>${m}</td><td>${c.toFixed(4)}</td></tr>`).join('');
+const cv=$('cv'),g=cv.getContext('2d'),W=cv.width,H=cv.height;g.clearRect(0,0,W,H);const pts=[];let mx=0;
+for(let i=0;i<=200;i++){const a=2*Math.PI*i/200,v=A.mbb(ord,P,a)*1e3;pts.push([a,v]);mx=Math.max(mx,v);}mx*=1.15;
+g.strokeStyle=css('--line');g.beginPath();g.moveTo(40,10);g.lineTo(40,H-25);g.lineTo(W-10,H-25);g.stroke();
+g.fillStyle=css('--muted');g.font='12px monospace';g.fillText(mx.toFixed(0)+' meV',2,14);g.fillText('0',28,H-25);g.fillText('Majorana phase 0 → 2π',W/2-70,H-6);
+g.strokeStyle=css('--accent');g.lineWidth=2.5;g.beginPath();pts.forEach(([a,v],i)=>{const x=40+(W-50)*a/(2*Math.PI),y=(H-25)-(H-35)*v/mx;i?g.lineTo(x,y):g.moveTo(x,y);});g.stroke();}
+for(const k of ['s12','s23','s13','d'])$(k).oninput=draw;
+function pick(o){ord=o;P={...A.NUFIT6[o]};$('bNO').className=o==='NO'?'on':'';$('bIO').className=o==='IO'?'on':'';setDials();draw();}
+$('bNO').onclick=()=>pick('NO');$('bIO').onclick=()=>pick('IO');$('reset').onclick=()=>pick(ord);
+pick('NO');
+</script>
