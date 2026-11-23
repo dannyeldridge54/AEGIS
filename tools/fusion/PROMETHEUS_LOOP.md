@@ -9,4 +9,4 @@ Each cycle breathes:
    (the dials: bounded knobs against named limits; any new knob is charged).
 6. RECORD: D-note, ledger line, commit and push; CubeMind memory gets every engine call through the Core.
 NULL: a cycle whose 20 hints yield no accepted change ends the loop. Honest labels throughout: LIVE / INPUT / LIT / DATA / post-hoc.
-Cycle log: 1 (PROM-1) pedestal + radiation correction + He ash: held-out ITER 400 MW PASS; 500 MW misses tau_E by 15%.
+Cycle log: 1 (PROM-1) pedestal + radiation correction + He ash: held-out ITER 400 MW PASS; 500 MW tau_E -15%. 2 (PROM-2) NULL after R85 -> loop stopped (D2194a).

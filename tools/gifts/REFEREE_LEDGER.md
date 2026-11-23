@@ -61,3 +61,4 @@ Rerun after DEV-1..14: G1, G2 (post-hoc), G3, G4, G7, G9, G10b (post-hoc), G13 (
 G5/G6 (post-hoc ITER 500 MW column) FAIL: P_fus 340 MW, Q 6.8, tau_E 4.82 s, W 301 MJ, P_loss 62 MW (< P_LH 97), f_G 0.98.
 Cause found: subtracting ALL radiation (56 MW) from P_loss; ITER's 104 MW P_loss implies only ~46 of 61 MW is counted (core vs edge
 radiation convention). Dials find no admissible point (P_loss < P_LH everywhere). Open for the next loop cycle; not hidden.
+R85 (cycle 2): 2 MAJOR (Q2 non-discriminating; 51 MW is the 1999 law) -> cycle 2 NULL; loop stops (D2194a).

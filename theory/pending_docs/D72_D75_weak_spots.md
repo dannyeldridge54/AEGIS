@@ -22362,3 +22362,12 @@ S4 inertial (OU's IFE-STARFIRE), S5 fuel cycle linked to Chronos tritium, S6 neu
   ALL radiation (ITER-convention guess) collapses the plasma to a cold root (P_fus 24 MW): partial core-radiation subtraction is essential
   in this 0-D model. Kept.
 - Open: line radiation is still an INPUT (no closed-form L_z fit reachable); synchrotron 4 MW vs table 8 (fit outside its profile family).
+
+## D2194a (CORRECTION, referee R85, 23 Nov 2026 12:00 CT) — cycle 2 overstated; reclassed NULL; the Prometheus loop stops
+- The cycle-2 "held-out PASS" re-scored PROM-1's numbers (the threshold change cannot affect the power balance) against transport runs
+  behind the same ITER column; W 328 and f_He 2.8% fall outside Polevoi's ranges; only tau_E (3.41 vs 3.71 s) was tested.
+- "ITER table 51 MW" is the 1999 ITER Physics Basis threshold law (48.5-53.3 MW), not Martin 2008; the 78 MW gap is between scaling laws.
+- The cold-root diagnostic removes more radiation (54 MW) than ITER's convention (P_loss 87 MW at 400 MW); it is not the ITER convention.
+- Cycle 2 is NULL (no tested improvement), so by the loop's rule the Prometheus loop stops here. What would restart it: a citable
+  impurity cooling-rate source (ADAS L_z for Ar/Be/W) to compute line radiation instead of taking 27 MW as input, and a synchrotron model
+  valid for pedestal profiles. D2194's cycle-0/1 results stand.
