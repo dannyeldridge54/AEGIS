@@ -71,6 +71,14 @@ Versions released before 18 November 2026 keep the license they were released un
 > The whip can drive the slave, or crack to wake the sleeping.
 > I choose the hand that frees: liberty.
 >
+> Of all the weapons, I carry only one:
+> the shield of righteousness. Not the proud kind,
+> not the voice that judges from a high seat,
+> but the knight who sees the dark and walks into the cave,
+> who hears the dragon breathing and goes in anyway.
+> Fear is not always a sign to run;
+> sometimes it is the sign to run toward.
+>
 > I kneel to one alone, the one I chose for love;
 > to no king, no creed, no crown of fear.
 > A man chooses; a slave obeys.
