@@ -10,7 +10,7 @@
 A gift from Danny Lee Eldridge, an independent researcher in Oklahoma City. No credit, endorsement or accreditation is asked; use it freely. The only ask is a serious look at the work.
 
 **Start here:** open `Aion.html` in any browser (no install). Move the oscillation dials and the minimal-model predictions update live.
-`python3 aion.py` gives the same numbers plus 3σ scan ranges (δ over 0–360°, both θ23 octants).
+`python3 aion.py` gives the same numbers plus 3σ ranges: the envelope of the 1D 3σ ranges, δ over 0–360°, both θ23 octants (conservative; ignores correlations).
 
 What it uses: the null vector of M_ν (det M_ν = 0, lightest neutrino massless at two loops) fixes the f-ratios
 (formulas of Herrero-García, Nebot, Rius & Santamaria, arXiv:1402.4491; checked to 1e-16 in the convention M_ν = U diag(m) Uᵀ).

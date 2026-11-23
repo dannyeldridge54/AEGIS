@@ -18,3 +18,5 @@ DEV-5..7 (minor): add the overall-scale caveat (tool predicts flavour ratios onl
 DEV-8 (tone, NOT adopted): the referee suggested dropping the lantern banner and the Weave DOI. Danny explicitly asked
   for the lantern header on every gift packet tied to the GitHub; it stays, kept short and humble.
 T1/T2 are unaffected (re-run after the edits as a check).
+
+DEV-9 (R76b minor, wording only): the 3-sigma scan is labelled "envelope of the 1D 3-sigma ranges (conservative, ignores correlations)".

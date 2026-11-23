@@ -22274,3 +22274,13 @@ Result for the Weave: the decaying-wino escape works only with leptonic RPV and 
 - T3 (Weave benchmark): only the robust bound is quoted: Δ_EW ≥ 2μ²/m_Z² ≈ 1.8e6 (μ = 87.6 TeV). Very unnatural by
   Baer's measure. The illustrative P1–P3 inputs do not satisfy EWSB and are labelled so.
 - Limits stated: third family only; not yet cross-checked against DEW4SLHA on a real generator file.
+
+### D2188 (tools / gift) Aion v1: Zee-Babu prediction engine for Prof. K. S. Babu (2026-11-23)
+- Lock PREREG_D2188 (07:50); DEVIATIONS DEV-1..9 after referee R76 (1 blocker: citations; 3 major), R76b NULL.
+- T1 PASS: 1402.4491 f-ratios are null vectors of M_nu = U diag(m) U^T to 6e-17 (NO, IO). T2 PASS: m_bb NO 1.49-3.70
+  meV, IO 18.3-48.5 meV. JS = Python to 4e-16.
+- Results (NuFIT 6.0 IC19 w/o SK-atm; ranges = envelope of 1D 3-sigma, delta free, both octants):
+  h+ -> e/mu/tau: NO 16/46/38% (e 14-18%, mu 36-47%, tau 36-47%); IO 49/23/29% (e 48.8-49.0%, robust).
+  Sum m_nu: NO 0.0590 eV; IO 0.0994 eV (in tension with DESI DR2+CMB LCDM < 0.0642 eV; generic to IO with m3 = 0).
+  MEG II (1.5e-13) h+-only ceiling at m_h = 1 TeV: |f_mutau| < 0.031-0.049 (NO), 0.011-0.012 (IO); scales as m_h.
+- Scope: flavour ratios only; Babu & Saad SU(5) completion (2412.14562) and the k++ sector not covered.
