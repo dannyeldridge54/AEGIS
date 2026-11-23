@@ -26,10 +26,11 @@
   "L10.H0_vs_SH0ES": -3.3942,
   "L10.sum_mnu_DESI": 0.0864,
   "L10.negspace_dNeff_ACT": 11.8494,
-  "L10.negspace_alpha_null": 6.9078
+  "L10.negspace_alpha_null": 6.9078,
+  "L10.dNeff_nonneg": 0.0
  },
- "n_nodes": 19,
- "n_holding": 13,
+ "n_nodes": 20,
+ "n_holding": 14,
  "fingerprint": {
   "L1.quark_window": {
    "u": -0.0317
@@ -63,9 +64,7 @@
    "MN": 3.0,
    "TR": 1.0
   },
-  "L8.spine_BBN_dNeff": {
-   "dNeff": -3453.8776
-  },
+  "L8.spine_BBN_dNeff": {},
   "L8.dark_baryon_window": {
    "m32": 0.3155,
    "TR": 0.2103
@@ -75,20 +74,28 @@
    "dNeff": 5.9615
   },
   "L10.sum_mnu_DESI": {},
-  "L10.negspace_dNeff_ACT": {
-   "dNeff": -3453.8776
-  },
-  "L10.negspace_alpha_null": {}
+  "L10.negspace_dNeff_ACT": {},
+  "L10.negspace_alpha_null": {},
+  "L10.dNeff_nonneg": {}
  },
  "lenses": {
-  "rank": 1
+  "rank": 5,
+  "rank_column_normalised": 5
  },
  "singular_values": [
-  4884.5242,
+  5.9615,
   3.4776,
   3.2843,
   0.9545,
   0.0317,
+  0.0
+ ],
+ "singular_values_normalised": [
+  1.3092,
+  1.0,
+  1.0,
+  1.0,
+  0.5347,
   0.0
  ],
  "compass": {
@@ -180,10 +187,8 @@
    ]
   },
   "L8.spine_BBN_dNeff": {
-   "direction": {
-    "dNeff": -1.0
-   },
-   "hurts": []
+   "direction": null,
+   "note": "no dial moves this node (data-fixed or TRUST)"
   },
   "L8.dark_baryon_window": {
    "direction": {
@@ -202,22 +207,21 @@
    "direction": {
     "dNeff": 1.0
    },
-   "hurts": [
-    "L8.spine_BBN_dNeff",
-    "L10.negspace_dNeff_ACT"
-   ]
+   "hurts": []
   },
   "L10.sum_mnu_DESI": {
    "direction": null,
    "note": "no dial moves this node (data-fixed or TRUST)"
   },
   "L10.negspace_dNeff_ACT": {
-   "direction": {
-    "dNeff": -1.0
-   },
-   "hurts": []
+   "direction": null,
+   "note": "no dial moves this node (data-fixed or TRUST)"
   },
   "L10.negspace_alpha_null": {
+   "direction": null,
+   "note": "no dial moves this node (data-fixed or TRUST)"
+  },
+  "L10.dNeff_nonneg": {
    "direction": null,
    "note": "no dial moves this node (data-fixed or TRUST)"
   }
@@ -241,12 +245,15 @@
   "L7.alpha_s": {
    "verdict": "CLOSABLE",
    "margin": -1.7454,
-   "move": {},
+   "move": {
+    "m32": -0.6369
+   },
    "fits_spent": [
-    "split",
-    "dNeff"
+    "m32"
    ],
-   "who_pays": []
+   "who_pays": [
+    "L8.dark_baryon_window"
+   ]
   },
   "L8.leptogenesis": {
    "verdict": "CLOSABLE",
@@ -257,9 +264,7 @@
    },
    "fits_spent": [
     "MN",
-    "TR",
-    "split",
-    "dNeff"
+    "TR"
    ],
    "who_pays": [
     "L2.MN_top",
@@ -275,6 +280,6 @@
    "margin": -3.3942
   }
  },
- "seconds_fingerprint": 0.0,
- "seconds_total": 19.39
+ "ms_fingerprint": 0.345,
+ "seconds_total": 48.15
 }

@@ -22118,3 +22118,10 @@ Triangulation (three readers): records (statuses above), data (PDG tau mass 1776
   - L8 leptogenesis: CLOSABLE with M_N +53% and T_R +15% (fits spent M_N, T_R); pays: M_N top wall and the gravitino box lose margin.
   - L4 rung agreement, L9 thread, L10 H0: NOT CLOSABLE BY DIALS (L4 and L9 have no dial at all; H0 needs dNeff, which the ACT wall and BBN spine forbid).
 - Fingerprint: 19 x 6 Jacobian in <1 ms; whole run 19 s. Lens rank 1 by the lens_core 1e-3 rule, but that rule is swamped by the 100 x dNeff penalty (singular values 4885, 3.5, 3.3, 0.95, 0.03, 0): about 4 real independent dial directions.
+
+## D2168a (referee R68 NOT NULL, accepted; DEV-2 rerun). D2168 is not edited.
+- Lens line WITHDRAWN: the 4885 singular value was a kink artefact (log floor in the ACT/BBN rows), not the 100 x dNeff wall. Fixed: **5 independent dials** (rank 5 raw and column-normalised); split is invisible to gradients because it is a step.
+- Spent-dial noise removed (|z| < 1e-6 -> 0): leptogenesis spends M_N and T_R only, as the note said.
+- split now handled as a step (optimised off, then on). Result CHANGED for alpha_s: it is **CLOSABLE without the split**, by lowering m3/2 by 47% (ln move -0.64), paid by the dark-baryon window. Caveat the optimiser does not see: it protects only nodes that held at the start, and the wino was already failing (-0.02), so this move drives the wino to about 0.69 x 0.53 = 0.37 TeV, far below the LHC limit. So alpha_s and the wino cannot both close by m3/2; the conflict is now explicit.
+- dNeff >= 0 wall added (20 nodes, 14 hold at the derived dials). Fingerprint 0.35 ms (perf_counter); whole run 48 s.
+- L4: u does enter, but u sits between the two fixed rung readings whose ratio 1.158 already exceeds 1.15, so no dial value can close it.
