@@ -138,7 +138,7 @@ class Nuclide:
         if t205 is not None and T in t205:
             d = t205[T]['xs']; i0 = int(d.attrs.get('threshold_idx', 0)); full = np.zeros_like(self.E); full[i0:i0 + len(d)] = d[()]; self.trit = full
         self.extra = {}   # N9/N10 scores (redundant summary MTs): heating, damage energy, gas production
-        for mt in (301, 444, 901, 203, 207):
+        for mt in (301, 444, 901, 203, 207, 102, 16, 103, 107):   # N11: activation reaction rates too
             rr = h['reactions'].get(f'reaction_{mt:03d}')
             if rr is not None and T in rr:
                 d = rr[T]['xs']; i0 = int(d.attrs.get('threshold_idx', 0)); full = np.zeros_like(self.E); full[i0:i0 + len(d)] = d[()]; self.extra[mt] = full
