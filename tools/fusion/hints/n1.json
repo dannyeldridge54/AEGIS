@@ -1,0 +1,11 @@
+{"rung": "N1 neutron birth spectrum", "hints": [
+ "H1 Ballabio, Kallne, Gorini 1998 NF 38 1723 Table III (via NeSST 1.1.5 core.py): mean shift dE = a1 T^(2/3)/(1+a2 T^a3) + a4 T, a = 5.30509, 2.4736e-3, 1.84, 1.3818 (keV); valid 0-40 keV",
+ "H2 Ballabio width: FWHM = omega0 (1 + delta) sqrt(T), omega0 = 177.259 keV, delta = a1 T^(2/3)/(1+a2 T^a3) + a4 T, a = 5.1068e-4, 7.6223e-3, 1.78, 8.7691e-5",
+ "H3 E0_DT = ((Md+Mt)^2 + Mn^2 - MHe4^2)/(2(Md+Mt)) - Mn (reactants at rest, nuclear masses; NeSST constants)",
+ "H4 Brysk 1973: Gaussian, non-relativistic; NeSST: 'not relativistically correct'",
+ "H5 Bosch-Hale 1992 Table IV DT cross section: S(E) = (A1+E(A2+E(A3+E A4)))/(1+E(B1+E(B2+E(B3+E B4)))), A = 6.927e4, 7.454e8, 2.050e6, 5.2002e4; B = 63.8, -0.995, 6.981e-5, 1.728e-4; sigma = S/(E exp(BG/sqrt E)) mb, E keV CM, valid 0.5-550 keV",
+ "H6 spectrum = Maxwellian D and T velocities weighted by sigma(E_cm) v_rel, relativistic kinematics, isotropic CM emission (pyDRESS method)",
+ "H7 shift comes from the CM motion + reactant relative energy (the Gamow-weighted E_cm ~ tens of keV)",
+ "H8 FWHM ~ 177 sqrt(T) keV: ~400 keV at 5 keV, ~560 keV at 10 keV",
+ "H9 relativistic first-order correction is in omega0; higher orders in delta",
+ "H10 NeSST validated Ballabio shapes against DRESS Monte Carlo with 1e9 samples"]}
