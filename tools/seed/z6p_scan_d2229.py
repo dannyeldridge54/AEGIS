@@ -7,7 +7,7 @@ H = Fr(1, 2); T0 = time.time(); CAP = 60*60; TB = T0
 BULKS = [tuple(b) for b in json.load(open(os.path.join(os.path.dirname(__file__), 'z6p_checks3.json')))['bulk_cycles']]
 # fractional variants per bulk (from any wrapping realising it)
 FR = {b: set() for b in BULKS}
-rng = range(-4, 5)
+rng = range(-6, 7)   # D2229 DEV-1
 for w in itertools.product(rng, repeat=6):
     n1, m1, n2, m2, n3, m3 = w
     if not (n1 % 2 and m1 % 2) or math.gcd(n1, m1) != 1 or math.gcd(n2, m2) != 1 or math.gcd(n3, m3) != 1: continue
@@ -75,5 +75,5 @@ PUB = {'a': (0, 0, 1, -1, 0, 1, -1, 0, 0, 1, -1, 0), 'b': (3, 0, 3, 0, -3, 0, -3
 found_pub = any(tuple(s['a']) == PUB['a'] and tuple(s['b']) == PUB['b'] for s in surv)
 json.dump(dict(n_bulk_cfgs=len(cfgs), n_F1=len(surv), n_F1F2=nF2, partial=partial, published_found=found_pub,
                F1F2=[x for x in surv if x['massless_Y']][:2000], F1_sample=surv[:200]),
-          open(os.path.join(os.path.dirname(__file__), '..', '..', 'field_tests', 'results', 'd2229_filtered_scan.json'), 'w'), default=lambda o: list(o) if isinstance(o, tuple) else str(o))
+          open(os.path.join(os.path.dirname(__file__), '..', '..', 'field_tests', 'results', 'd2229_filtered_scan_rerun.json'), 'w'), default=lambda o: list(o) if isinstance(o, tuple) else str(o))
 print('published SM among survivors:', found_pub)
