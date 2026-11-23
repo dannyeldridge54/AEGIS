@@ -12,6 +12,17 @@ def age(wb=wb, wc=wc, VL=math.exp(lVL), ui=ui, b=0.0, extra_rad=0.0):
     rn = np.array([W.nu(x)[0] for x in a]); V = VL*(1 - W.A*np.exp(-W.BETA*phi))
     E2 = (W.OG*(1 + extra_rad*0.2271)/a**4 + rn + wb/a**3 + rc + V)/(1 - v*v/6); H = 100*np.sqrt(E2)
     return float(np.trapezoid(1/H, N))*GYR, float(H[-1])
+from scipy.optimize import brentq
+def lA(VL, ui, b):
+    bg = W.background(wb, wc, VL, ui, b)
+    if bg is None: return float('nan')
+    rd, rs, zs = W.early(wb, wc); return math.pi*W.DM(bg, zs)/rs
+LA0 = lA(math.exp(lVL), ui, 0.0)
+def anchored_age(ui_=ui, b=0.0):
+    f = lambda l: lA(math.exp(l), ui_, b) - LA0
+    try: l = brentq(f, lVL - 0.6, lVL + 0.6, xtol=1e-7)
+    except Exception: return float('nan')
+    return age(VL=math.exp(l), ui=ui_, b=b)[0]
 t_base, H_base = age()
 Nst = 2/(1 - 0.9706); out = dict(base=dict(age_Gyr=t_base, H0=H_base, Nstar=Nst), nodes=[])
 def rec(node, knob, up, dn, unit):
@@ -31,11 +42,14 @@ def agep(bb):
 rec('N9 (coupling b, best fits)', 'b = +/-0.025', agep(0.025) - t_base, agep(-0.025) - t_base, 'Gyr')
 rec('N8/N10 (dark radiation dNeff)', 'dNeff = 0.14 / 0', age(extra_rad=0.14)[0] - t_base, 0.0, 'Gyr')
 rec('N10 (H0 shell: V_L)', 'V_L x/÷ 1.5', age(VL=math.exp(lVL)*f)[0] - t_base, age(VL=math.exp(lVL)/f)[0] - t_base, 'Gyr')
+rec('N9/N13 (u_i, l_A-anchored, DEV-2)', 'u_i x/÷ 1.5', anchored_age(ui_=min(ui*f, 0.21)) - t_base, anchored_age(ui_=ui/f) - t_base, 'Gyr')
+rec('N9 (b, l_A-anchored, DEV-2)', 'b = +/-0.025', anchored_age(b=0.025) - t_base, anchored_age(b=-0.025) - t_base, 'Gyr')
+out['data_constrained_age_at_b'] = {str(bb): agep(bb) for bb in (-0.025, 0.0, 0.025)}
 for n in ('N1 rung states', 'N2 neutrinos (Sigma m_nu: mass tie, H(z) shift < 0.1%)', 'N3 leptons', 'N5 m3/2 / wino', 'N7 forces / proton',
           'N11 swampland', 'N12 QG consistency', 'N14 before the beginning', 'N15 vacuum selection', 'N16 tadpole'):
     out['nodes'].append(dict(node=n, clock='none', ties_through_time=False, note='ties through mass or charge, not time (no numeric clock tie)'))
-json.dump(out, open('field_tests/results/d2143_wall_pull.json', 'w'), indent=1)
+json.dump(out, open('field_tests/results/d2143_wall_pull_dev2.json', 'w'), indent=1)
 print('base age %.3f Gyr H0 %.2f N* %.1f' % (t_base, H_base, Nst))
 for n in out['nodes']:
     if n['clock'] == 'none': print(n['node'], '| no clock tie')
-    else: print(n['node'], '|', n['clock'], '| up %+.4f down %+.4f | response %+.4f thrust %+.4f | time-tie %s thrust %s' % (n['d_up'], n['d_down'], n['response'], n['thrust'], n['ties_through_time'], n['thrust_seen']))
+    else: print(n['node'], '|', n['clock'], '| up %+.4f down %+.4f | response %+.4f curvature %+.4f | time-tie %s curved %s' % (n['d_up'], n['d_down'], n['response'], n['thrust'], n['ties_through_time'], n['thrust_seen']))
