@@ -1,0 +1,34 @@
+# Balance ledger: "The Weave: Predictions and Postulates" (Zenodo, 23 Nov 2026)
+Danny 22:24: every part set; every time something is off balance, log and record it; triangulate; wheels spinning with their axes spinning inside them.
+
+## Wheels and axes
+- W1 RECORDS (D-notes, locks, fit JSONs): axes = numbers, labels (P/F/I/C), wording/claims.
+- W2 OUTSIDE WORLD (literature, newest data): axes = prior work/credit, current limits, status of experiments.
+- W3 ENGINE (recompute every number in code): axes = arithmetic, units, definitions.
+A claim is SET when all three wheels agree. A fix on one axis is re-checked on the other wheels (inner spin): a fix can unbalance another axis.
+Stop rule: a full turn of all three wheels returns NULL.
+
+## Log (round, wheel.axis, finding -> fix, knock-on)
+| R | Wheel.axis | Finding | Fix | Knock-on |
+|---|---|---|---|---|
+| 1 | W1.wording | "consistent with standard cosmology" vs locked rule | mild tension on both SN sets | - |
+| 1 | W1.numbers | "one fewer free parameter" | same count, u_i replaces n_s | -> R3 Methods row |
+| 1 | W1.labels | "five numbers fixed by theory" | n_s fitted once/frozen; others follow or chosen | -> R3 "early-universe inputs" |
+| 1 | W1.wording | "every result locked and refereed" | most, exceptions listed | - |
+| 1 | W1.numbers | alpha_s 0.1158 | 0.1147 (-3.7 sigma) | - |
+| 1 | W1.numbers | walls 10/16 | 9/16 pass, 3 fail | - |
+| 1 | W1.numbers | Pantheon+ "same net cost" | split likelihood +0.50 / priors +1.96 | -> R2 terms did not add up |
+| 1 | W2.status | CMB-S4 named as future tester | removed (US support ended Jul 2025) | - |
+| 1 | W1.labels | TM1 P; proton/running/r testability | relabelled / softened | - |
+| 2 | W1.wording | Status section empty | filled (as of final check) | refresh at 00:15 |
+| 2 | W1+W3 | 12.8 GeV dark baryon assumes all DM; wino ~22% | 10-12 GeV, label C | wino share 6-22% by branch |
+| 2 | W1.numbers | Pantheon+ terms sum +2.1 not +0.5 | added low-l -1.6 | (inner spin from R1 fix) |
+| 2 | W1.labels | DeltaN_eff P | C | applied late -> R3 |
+| 2 | W1.wording | brane route hides Z2xZ6' failures | noted, checks not run on Z6-II | - |
+| 2 | W1.wording | wino "fixed before the data" | before HL-LHC data; gamma line unchecked | - |
+| 2 | W2.credit | alpha-attractor shape presented without credit | credited, incl. quintessential inflation class | - |
+| 3 | W1.labels | DeltaN_eff label wording | C, not checked on Z6-II | - |
+| 3 | W1.numbers | L's neutrino setting unstated | L fixes 0.06 eV; W 0.0587 NO | (inner spin from R1 fix) |
+| 3 | W1.wording | "early-universe inputs" includes neutrinos | "fixed inputs (n_s, running, r, neutrino sector)" | - |
+| 4 | W1.numbers | alpha_s 0.1147 (-3.7 sigma) superseded by D1929 (4.93 TeV gluino): 0.1142 (-4.2 sigma) | changed to 0.1142, -4.2 sigma | inner spin from the R1 fix (which picked the older figure) |
+| 4 | W3.definitions | engine wheel first turn: 25/27 OK; 2 OFF were CHECKER errors (used the old Twist plateau bridge for r and running); v4's r, running come from the computed R2-shape tilt model (r 5.432e-4, alpha_s -9.7e-4 at n_s 0.9706) | checker fixed; doc unchanged | none |

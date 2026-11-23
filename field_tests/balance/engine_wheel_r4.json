@@ -1,0 +1,137 @@
+{
+ "A = 16 zeta2/(3 zeta3)": [
+  7.298308,
+  7.3,
+  "OK"
+ ],
+ "beta = 2 sqrt2": [
+  2.828427,
+  2.83,
+  "OK"
+ ],
+ "alpha-attractor alpha = 2/(3 beta^2)": [
+  0.083333,
+  0.08333333333333333,
+  "OK"
+ ],
+ "desdovekie dchi2_eff": [
+  2.402302,
+  2.4,
+  "OK"
+ ],
+ "desdovekie likelihoods": [
+  3.000862,
+  3.0,
+  "OK"
+ ],
+ "desdovekie priors": [
+  -0.59856,
+  -0.6,
+  "OK"
+ ],
+ "pantheonplus dchi2_eff": [
+  2.457531,
+  2.5,
+  "OK"
+ ],
+ "pantheonplus likelihoods": [
+  0.502007,
+  0.5,
+  "OK"
+ ],
+ "pantheonplus priors": [
+  1.955524,
+  2.0,
+  "OK"
+ ],
+ "P+ bao.desi_dr2": [
+  -5.172017,
+  -5.2,
+  "OK"
+ ],
+ "P+ sn.pantheonplus": [
+  -2.125268,
+  -2.1,
+  "OK"
+ ],
+ "P+ planck_2020_hillipop.TTTEEE_bin": [
+  6.6564,
+  6.7,
+  "OK"
+ ],
+ "P+ planckpr4lensing.PlanckPR4Lensing": [
+  2.702614,
+  2.7,
+  "OK"
+ ],
+ "P+ low-l (lowlE+lowlTT)": [
+  -1.559721,
+  -1.6,
+  "OK"
+ ],
+ "u_i Dovekie": [
+  0.001609,
+  0.0016,
+  "OK"
+ ],
+ "u_i Pantheon+": [
+  0.143306,
+  0.14,
+  "OK"
+ ],
+ "H0 Dovekie W ~68": [
+  68.200329,
+  68.0,
+  "OK"
+ ],
+ "m_X all-DM = 5.364 m_p 28/11": [
+  12.810968,
+  12.8,
+  "OK"
+ ],
+ "m_X with wino 22%": [
+  9.992555,
+  10.0,
+  "OK"
+ ],
+ "m_X with wino 6%": [
+  12.04231,
+  12.0,
+  "OK"
+ ],
+ "wino margin vs ATLAS 670": [
+  0.034328,
+  0.034,
+  "OK"
+ ],
+ "wino margin vs ATLAS (686.5)": [
+  0.024627,
+  0.024,
+  "OK"
+ ],
+ "sum m_nu NO lightest 0 (NuFIT-like)": [
+  0.058718,
+  0.0587,
+  "OK"
+ ],
+ "(4/11)^(1/3)": [
+  0.713766,
+  0.7138,
+  "OK"
+ ],
+ "r from X2 record (5.432e-4) vs stated 5.4e-4": [
+  0.000543,
+  0.00054,
+  "OK"
+ ],
+ "running from X2 record vs stated": [
+  -0.00097,
+  -0.00097,
+  "OK"
+ ],
+ "walls 6 clock + 10 mass/charge": [
+  16.0,
+  16,
+  "OK"
+ ]
+}
