@@ -22010,3 +22010,12 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
   - queues blind re-derivations (Δχ², and w today via weave_wtoday) into calc_queue, so CubeMind derives each one itself and is graded mechanically.
 
   Tested on a mock first, where a duplicate-record bug was found and fixed before install.
+
+## D2152 (CENTRE, B2 step 3a: visible-sector scan on the Weave's own Z6-II = T⁶/Z₆′, lattice ABa at ϱ = ½; PREREG_D2146 addendum 4). **Control 3 PASS: the published SM is found among the survivors. The scan stopped at its 90-minute cap (PARTIAL).**
+- **Bulk configurations:** 6,522 satisfy both bulk tadpoles, with up to 2 hidden stacks.
+- **Pairs passing the doublet and no-exotic filters:** 118,272 (a, b) pairs, with 3 quark doublets and Sym_a = 0.
+- **Survivors at the cap:** **3,701,120** configurations pass every step-3a filter: 3 quark doublets, 6 right-handed quarks with one sign, all 12 tadpoles cancelled (bulk and exceptional). The count includes relabellings (c ↔ d, the hidden orderings, equivalent τ₀ signs). The **first 2,000** are stored in tools/seed/z6p_scan3a.json.
+- **Reading:** on the Weave's own geometry, charge-cancelling brane configurations that carry the Standard Model's quark sector are **plentiful, not rare**. This matches Gmeiner–Honecker's ~10¹⁵ MSSM-like count.
+- **Not yet applied (step 3b):** hypercharge masslessness and the GS rank, lepton counts, K-theory probes, and the dials (hidden massless states / ΔN_eff, Yukawa texture, hidden β-functions).
+  - **Step 3b runs on a locked random sample:** the 2,000 stored survivors.
+  - **Lesson for the next scan:** a full enumeration needs canonical-form deduplication first.
