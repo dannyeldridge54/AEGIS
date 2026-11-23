@@ -22082,3 +22082,13 @@ Compressed CMB + DESI DR2 + DES-Dovekie (referee_indep/fit.py): chi2(L, single 0
 - Control PASS: hypercharge Y = (1/6)Q_a + (1/2)Q_c + (1/2)Q_d = (1/2)Q_c + (1/2)[(1/3)Q_a + Q_d] lies in the massless space.
 - The chiral spectrum has no a-e, b-e, c-e or d-e entries, so U(1)_e couples to the Standard Model only through kinetic mixing: exactly the dark-photon structure the Weave needs (D1685/D2100 dark U(1)).
 - Still owed: (1) its mass, from a dark Higgs, has to land at 0.3-10 GeV; (2) the mixing epsilon is not derived; (3) a massless hidden U(1) and the extra massless B-L direction count as radiation unless broken (the DeltaN_eff check, step 3b); (4) this is the published example model, not yet the scan survivors.
+
+## D2164a (online + independent referee on D2164, NOT NULL, accepted): "A protected to ~1.6%" is WITHDRAWN as stated. D2164 is not edited.
+- Numbers confirmed independently (E(ρ) = 8.892745100397; invariance to 2e-25; instanton part -0.11518).
+- But at ρ the "subleading" term (7.07) is 3.65x the "leading" one (1.94): the weak-coupling ordering is inverted, and A (a ratio of expansion coefficients) is not uniquely defined. A_eff = A(1+δ) was a convention; assigning the instanton part to the leading term instead gives δ = -5.9%, A_eff ≈ 7.76, which is SHIFTED by the lock's own rule. Attribution-free statement: the exact E differs from its two-term form by -1.3% at ρ.
+- Restated verdict: the function is close to its two-term form at the knot; A's meaning at strong coupling stays OPEN (shift between -1.6% and about +6% depending on convention); the mechanism stays OPEN. The paper row and the field map say this.
+
+## D2165a (referee on D2165, NOT NULL, accepted). D2165 is not edited.
+- Q_c and Q_e are massless trivially (Pi_c = Pi_c', Pi_e = Pi_e'); such a stack is U(1) only if displaced from the O6-plane, otherwise it enhances to SO/Sp: owed check. The only non-trivial massless direction is (1/3)Q_a + Q_d, "B-L-like, pending a charge-sign check" (GH 0806.3039 reports massless B-L in some examples; not confirmed for this one).
+- "No e-sector chiral states" means no NET chiral matter; the vector-like spectrum is not computed, and vector-like states plus massive string modes generate kinetic mixing (Abel et al. 0803.1449).
+- "Dark photon HAS A HOME" is WITHDRAWN. Restated: the model has a massless hidden U(1)_e; it is a dark-photon CANDIDATE only if a mass (dark Higgs or Stueckelberg) and a kinetic mixing are supplied; neither is derived. Unbroken, it is dark radiation.
