@@ -21638,3 +21638,34 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 - **CCHP second reading** (69.96 ± 1.53): the baseline is already only **1.7σ** away, so it passes (margin +0.35 at ΔN_eff = 0). Whether "the tension" exists depends on which distance ladder is used. Against SH0ES it does not close.
 - **PS window side test** (0.11 ≤ ΔN_eff < 0.14): it exists only for the vectors-only case. It is closed once the hidden fermions are included (0.50) or all massless states (0.76).
 - **Reading in Danny's picture:** the outer ring (shape A) reaches for SH0ES. The second ring wrapped around it (shape B, negative space: ACT's "no extra radiation") holds it back, and the two meet halfway, both failing by the same amount. **The negative space is exactly what blocks the extra rung.** A Weave route to 73 needs a lever that ACT's negative space does not see. The referee's audit found none within the Weave: u_i and b move H0 the wrong way or too little, α and m_e are ≈ 0, and curvature is 0.
+
+## D2136a (CENTRE, referee pass on D2136: **BALANCED**; "does not solve" confirmed and every number recomputed). Wording corrections; D2136 itself is not edited (2026-11-22 ~19:45 CT)
+- **The "meet halfway" reading is withdrawn.** Both shells reading −1.04 is an artifact of units: a pull margin is being balanced against a log margin. The plain statement is this. Reaching SH0ES at 2σ needs ΔN_eff ≈ 0.51, which is 3.6× the ACT bound (margin −1.29) and also above the BBN bound of 0.3.
+- **Both non-solutions are optimistic, so the verdict is conservative.**
+  - The linear FS map ignores the CMB χ² rise along the degeneracy, so 68.30 at the ACT bound is an upper estimate.
+  - The fluid reading is a ΛCDM+WZDR fit, so it is only a **proxy** for the Weave with fixed n_s plus the thread.
+
+## D2137 (MAP ONLY, not derived; Danny 19:17 "map it, but we don't need to derive it… pulse that way and start connecting it"): the negative-space ladder, one mirror node under each of the 10 layers, plus the first node beyond the shell
+- **Tool:** tools/loom/negspace_ladder.py, with results in field_tests/results/d2137_negspace_map.json.
+- **What each node holds:** what its layer forbids us to see, the Weave's log headroom under today's bound (from the record; nothing new derived), and the number that connects it to its layer.
+
+| node | mirrors | forbidden (no-show) | headroom |
+|---|---|---|---|
+| N1 | torus | extra light rung states | OPEN |
+| N2 | pyramid (ν at i) | Σm_ν < 0.064; m_ββ < 28 meV | +0.09; +2.0 |
+| N3 | turnover (leptons) | Koide slip ≤ 6e-5; lepton-flavour violation | TRUST / OPEN |
+| N4 | cube | domain walls; light moduli | TRUST / OPEN |
+| N5 | fold (m3/2) | sparticles below ~0.2 PeV; gravitino τ < 0.1 s | +4.3 (wino vs LHC still owed) |
+| N6 | dilaton | r < 0.036; isocurvature; f_NL | +4.2 |
+| N7 | forces | proton decay (Super-K); θ̄; EDMs; X17 | +1.9 |
+| N8 | cosmology | ΔN_eff < 0.14 | TRUST (0 exactly) |
+| N9 | thread | phantom crossing; α drift; b; equivalence principle | +6.9 (α) |
+| N10 | outer shell | the D2136 B shell | −1.04 when forced to SH0ES |
+| **N11** | **first node beyond** | string-theory negative space: TCC wants r ≲ 1e-30 (Weave 5.4e-4: **flag**, not veto); no controlled de Sitter (Λ is an input); axion WGC; distance conjecture | FLAG / TRUST |
+
+- **Joints (shared numbers) found by the pulse**, running outer → inner, then beyond:
+  - **N6 ↔ N11 through r.** The same r that passes the CMB bound by e^4.2 is what the TCC forbids.
+  - **N8 ↔ N10 through ΔN_eff.** This is the D2136 spine.
+  - **N2 ↔ L2 through Σm_ν**, which is tight at +0.09: DESI is closing in.
+  - **N5 ↔ N9: no joint yet.** m3/2 does not reach the thread. This is open.
+- **Weakest nodes:** N2's Σm_ν (+0.09) is the closest negative-space wall, then N10. The OPEN nodes (N1, N3's LFV rate, N4's τ_q decay temperature) are where the Weave owes a number. **Map only:** none of these is derived. They are queued, not claimed.

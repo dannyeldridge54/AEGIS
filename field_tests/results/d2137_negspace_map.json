@@ -1,0 +1,118 @@
+{
+ "note": "MAP, not derived (D2137)",
+ "pulse": "outer shell N10 -> N1, then N11",
+ "rows": [
+  {
+   "node": "N1",
+   "mirrors": "L1 torus (rung step u)",
+   "forbids": "no extra light rung states: rungs >= 11 empty in the SM; hidden families above collider reach",
+   "margin": "OPEN",
+   "connecting_number": "u (rung step)"
+  },
+  {
+   "node": "N2",
+   "mirrors": "L2 pyramid (neutrinos at i)",
+   "forbids": "no sterile nu; Sum m_nu < 0.064 eV (DESI DR2+CMB); m_bb 1.6-3.8 meV under KamLAND-Zen ~28 meV",
+   "margin": {
+    "sum_mnu": 0.086,
+    "m_bb": 1.997
+   },
+   "connecting_number": "Sum m_nu, M_N"
+  },
+  {
+   "node": "N3",
+   "mirrors": "L3 turnover (leptons at rho)",
+   "forbids": "Koide slip <= 6e-5; no charged-lepton flavour violation (mu->e gamma)",
+   "margin": "TRUST (slip) / OPEN (LFV rate)",
+   "connecting_number": "Koide Q"
+  },
+  {
+   "node": "N4",
+   "mirrors": "L4 cube (three tori)",
+   "forbids": "no modular domain walls (one inflated patch); no light moduli (T_decay >= 5 MeV)",
+   "margin": "TRUST (walls) / OPEN (tau_q decay T)",
+   "connecting_number": "m_tau_q"
+  },
+  {
+   "node": "N5",
+   "mirrors": "L5 fold (m3/2, volumes)",
+   "forbids": "no superpartners below ~0.2 PeV except the wino; gravitino lifetime < 0.1 s for BBN",
+   "margin": {
+    "gravitino_tau": 4.269
+   },
+   "connecting_number": "m3/2 (also sets the wino 0.67-1.0 TeV: LHC disappearing-track check owed)"
+  },
+  {
+   "node": "N6",
+   "mirrors": "L6 dilaton (inflation)",
+   "forbids": "r < 0.036 (BK18); no isocurvature; f_NL ~ 0; no PBHs or monopoles",
+   "margin": {
+    "r": 4.2
+   },
+   "connecting_number": "r, n_s"
+  },
+  {
+   "node": "N7",
+   "mirrors": "L7 forces (S-T seam)",
+   "forbids": "no proton decay below Super-K (2.4e34 yr); theta-bar < 1e-10; no EDMs above SM; no X17, no 95 GeV scalar",
+   "margin": {
+    "proton": 1.897
+   },
+   "connecting_number": "alpha_s / M_GUT, theta-bar (=0 exact: TRUST)"
+  },
+  {
+   "node": "N8",
+   "mirrors": "L8 cosmology (reheating, genesis)",
+   "forbids": "Delta N_eff < 0.14 (ACT DR6); no gravitino overproduction; BBN Y_p",
+   "margin": "TRUST (UFE v4 Delta N_eff = 0 exactly)",
+   "connecting_number": "T_R, Delta N_eff (= the D2136 spine)"
+  },
+  {
+   "node": "N9",
+   "mirrors": "L9 late universe (thread)",
+   "forbids": "no phantom crossing (w >= -1); no alpha drift (zeta_alpha 3.8e-10); thread-DM coupling not seen (b = 0); no EP violation",
+   "margin": {
+    "alpha_leak": 6.908
+   },
+   "connecting_number": "Delta phi, b"
+  },
+  {
+   "node": "N10",
+   "mirrors": "L10 outer data shell (D2136 A)",
+   "forbids": "the D2136 B shell: ACT forbids the Delta N_eff ~ 0.6 that SH0ES would need",
+   "margin": {
+    "D2136_balance": -1.04
+   },
+   "connecting_number": "Delta N_eff vs H0"
+  },
+  {
+   "node": "N11",
+   "mirrors": "FIRST NODE BEYOND THE SHELL (map only)",
+   "forbids": "string-theory negative space: TCC wants r < ~1e-30 (Weave r = 5.4e-4 violates it: flag, not veto); no controlled de Sitter (Lambda is an input); axion WGC f < M_P; distance conjecture on field ranges",
+   "margin": "FLAG (TCC), TRUST (Lambda input)",
+   "connecting_number": "r (again: the same number as N6, so N11 and N6 are joined)"
+  }
+ ],
+ "joints": [
+  [
+   "N6",
+   "N11",
+   "r"
+  ],
+  [
+   "N8",
+   "N10",
+   "Delta N_eff"
+  ],
+  [
+   "N5",
+   "N9",
+   "none yet: m3/2 does not reach the thread (open)"
+  ],
+  [
+   "N2",
+   "L2",
+   "Sum m_nu: same number on both sides"
+  ]
+ ]
+}
