@@ -23,4 +23,4 @@ Each loop tick takes the next toolkit and does ONE rung. PRIORITY FIRST (Danny, 
 Order: 1 Spindle (quantum simulation / cold atoms) -> 2 Aion (neutrino mass) -> 3 Zurvan (SUSY / naturalness) ->
 4 Hyperion (astrophysics: stars, BBN, neutron stars) -> 5 CERN+1 (collider physics) -> 6 Lattice Lab (lattice QCD) ->
 7 Janus (astro / lt) -> 8 SERAPIS calc (cosmology) -> 9 chem -> 10 golden.
-Done: 0 Chronos / nuclear (map + limb + referee R77, R78, R78b pending).
+Done: 0 Chronos / nuclear: speed rung (4.4x, accuracy 3e-13), field map + research limb, goalposts executed (A2, A3), referee R77, R78, R78b NULL. Open for nuclear: dose branch (needs vetted coefficients).

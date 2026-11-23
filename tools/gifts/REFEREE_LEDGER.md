@@ -14,6 +14,7 @@ the claims; the builder fixes only through a DEVIATIONS note written before any 
 ## Speed record (speed rung, before/after on the locked test set)
 | Tool | Slow path | Before | After | Accuracy kept |
 |---|---|---|---|---|
+| Chronos | chain solve (matrix exponential, 1,995 solves) | 0.016 s | 0.004 s analytic Bateman (4.4x); browser engine instant | 3e-13 (T1) |
 
 ## Next in the rotation (older toolkits, one per loop tick)
 Hyperion (astro / BBN / neutron stars) -> CERN+1 (LHC toolkit) -> Lattice Lab -> Janus (astro, lt) -> SERAPIS calc -> chem -> golden.
