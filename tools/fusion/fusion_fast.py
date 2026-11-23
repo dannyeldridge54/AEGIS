@@ -46,7 +46,7 @@ def plasma_fast(m, n_avg, Te_avg, E_alpha_MeV, f_He=None):
         import adas as AD
         Lfun = AD.Limp_interp if mm.get('line_prb', True) else AD.L_interp   # DEV-1: PLT + PRB - impurity Z_eff bremsstrahlung
         pl = sum(mm.get(f'f_{k}', 0.0) * Lfun(k.lower(), Te) for k in ('Ar', 'Be', 'He', 'W') if mm.get(f'f_{k}', 0.0) > 0) * ne * ne
-        pl = w * pl * V / 1e6; Pline = float(pl.sum()); Pline_core = float(pl[core].sum())
+        pl = w * np.maximum(pl, 0.0) * V / 1e6; Pline = float(pl.sum()); Pline_core = float(pl[core].sum())
     else:
         Pline = mm['P_line']; Pline_core = Pline * (ne2_core / ne2)
     Prad = Pb + Ps + Pline; Prad_core = Pb_core + Ps + Pline_core

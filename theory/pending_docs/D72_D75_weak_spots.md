@@ -22454,3 +22454,15 @@ Danny 12:14: give CubeMind the fusion work, tell it exactly how we got here, hav
 - PC run: A1 PASS 5/8 (caveat: those task texts already gave formulas); S1 FAIL, ~39 s per derive unchanged (time is output generation +
   self-check call, not prompt length). 3 failures had the right formula and wrong hand arithmetic. DEV-4..6 (skip self-check when the formula
   is right; num_predict 600; record calc_ok) written; NOT yet applied: the PC disconnected at 18:33 UTC.
+
+## D2200 (FUSION, 23 Nov 2026 13:15 CT) — PROM-6: the ITER-tuned 0-D engine on SPARC and ARC (held out) — FAIL, kept
+Lock PREREG_PROM6_DEVICES. Inputs LIT (SPARC: Rodriguez-Fernandez et al. JPP 2020; ARC: Sorbom et al. FED 2015); targets are other codes'
+design predictions (code-vs-code). ITER 400 MW regression unchanged (389.5 MW, 3.41 s). H98 multiplier added to IPB98 (ITER default 1).
+- Locked run: SPARC 55 MW vs 140 (D1 FAIL); ARC 267 MW vs 525, tau_E 1.33 vs 0.64 s (D2 FAIL); D3 PASS (H98 1.8 -> 1.0 moves ARC x7).
+- R89 referee: T-root, SPARC dilution proxy, ARC peaking; ARC tau_E 0.64 s inconsistent with its own H98 1.8 and W/P_loss (target dropped, post-hoc).
+- One rerun (DEV-1 n_DT/n_e 0.85 for SPARC; DEV-2 ARC T0/<T> 1.93; DEV-3 clip negative line radiation): SPARC 65 MW, ARC 267 MW: still FAIL.
+  Diagnostic at the published <T>: SPARC 108 MW (-23%), ARC 313 MW (-40%). Flat-profile check at ARC's own averages: ~210 MW, so ARC's
+  525 MW needs strong density peaking + low dilution that are not in the published table.
+Verdict: the engine does NOT yet transfer to compact high-field designs. Two separable gaps: (1) the solved temperature is low (power balance /
+confinement, SPARC below its L-H threshold at the solved point); (2) missing profile data (density peaking). Next: published SPARC/ARC
+profiles (n0/<n>, T0/<T>) as INPUTS before any further claim; JET DTE2 (measured, not a design) as the next held-out.
