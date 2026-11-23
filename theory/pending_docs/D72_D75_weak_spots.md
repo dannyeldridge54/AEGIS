@@ -21747,3 +21747,12 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 ## D2142 (RIGHT, status only). The 12.8 GeV asymmetric DM against LZ
 - The record already used the LZ ceiling to bound the dark-photon mixing (D1688). So the direct-detection rate is **accommodated (a bound sets a knob), not predicted**. No independent test exists until the mixing is derived.
 - **Label:** NO-POWER (cannot fail today). An honest line for the big-questions board.
+
+## D2140 (CENTRE, derived: lock PREREG_D2140). τ_q moduli cosmology, negative-space node N4(a)–(c). Referee review pending
+- **(a) Dilution D = T_R φ0²/(6T_d):** 808 at m = 2e10 GeV and 72 at 1e11. Both are ≤ 1e3, so **PASS**.
+- **(b) Moduli-induced gravitinos → winos:** T_3/2 = 23 MeV.
+  - With the generic Br = 0.01–0.1, re-annihilation caps the wino density at **Ωh² = 3–37**, which overproduces by ×100–1000.
+  - Only the suppressed Br ≈ (m3/2/m)² ≈ 1.7e-10 passes (Ωh² ≈ 7e-4). That requires τ_q to be supersymmetrically stabilised and sequestered.
+  - Alternatively φ0 ≲ 3e-5 M_P passes, but then there is no dilution and r takes the 5.4e-4 branch rather than 5.72e-4.
+  - **Verdict: CONDITIONAL.** This is a new, real constraint, and it joins the quark modulus to the CMB value of r.
+- **(c)** In the case that passes, τ_q makes a negligible share of the winos, so the wino share stays thermal-gravitino (D1687).
