@@ -53,12 +53,30 @@ Versions released before 18 November 2026 keep the license they were released un
 
 ## Support this work
 
+> **The Lantern**
+>
 > In a world of painted walls and borrowed light,
 > where lies wear crowns and illusions call themselves the sky,
 > this work is a lantern, not a throne.
-> It belongs to the one who asks, who measures, who will not kneel:
+>
+> It was carried, not crowned.
+> It asks for no bowed heads, only open eyes:
 > take it, test it, and see for yourself.
-> It was made for freedom, the quiet kind, the kind no one can sell you.
+>
+> Every tool is held two ways.
+> The scepter can rule, or point the road home.
+> The mace can crush, or break the prison wall.
+> The hammer can nail you down, or raise a house.
+> The scythe can reap the living, or bring the harvest in.
+> The whip can drive the slave, or crack to wake the sleeping.
+> I choose the hand that frees: liberty.
+>
+> I kneel to one alone, the one I chose for love;
+> to no king, no creed, no crown of fear.
 > A man chooses; a slave obeys.
+>
+> It belongs to the one who asks, who measures, who stands:
+> made for freedom, the quiet kind,
+> the kind no one can sell you.
 
 All of this (the research, the toolkits and the papers) is built by one person, Danny Eldridge, an independent, self-taught researcher in Oklahoma City, working with the help of AI. He is trying to change his circumstances in life, and he promises to keep doing what he is doing now: releasing the work openly, free to individuals, scientists and students, and using it to try to make the world a better place. If it helps you, a donation of any size keeps it going: **sponsor at [github.com/sponsors/dannyeldridge54](https://github.com/sponsors/dannyeldridge54)** (live once GitHub approves the profile), or email dannyeldridge54@gmail.com. Businesses: please license through the AEGIS Commercial License instead.

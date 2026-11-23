@@ -1,12 +1,30 @@
 # Aion: a Zee–Babu prediction engine for Prof. K. S. Babu (Oklahoma State University)
 
+> **The Lantern**
+>
 > In a world of painted walls and borrowed light,
 > where lies wear crowns and illusions call themselves the sky,
 > this work is a lantern, not a throne.
-> It belongs to the one who asks, who measures, who will not kneel:
+>
+> It was carried, not crowned.
+> It asks for no bowed heads, only open eyes:
 > take it, test it, and see for yourself.
-> It was made for freedom, the quiet kind, the kind no one can sell you.
+>
+> Every tool is held two ways.
+> The scepter can rule, or point the road home.
+> The mace can crush, or break the prison wall.
+> The hammer can nail you down, or raise a house.
+> The scythe can reap the living, or bring the harvest in.
+> The whip can drive the slave, or crack to wake the sleeping.
+> I choose the hand that frees: liberty.
+>
+> I kneel to one alone, the one I chose for love;
+> to no king, no creed, no crown of fear.
 > A man chooses; a slave obeys.
+>
+> It belongs to the one who asks, who measures, who stands:
+> made for freedom, the quiet kind,
+> the kind no one can sell you.
 
 A gift from Danny Lee Eldridge, an independent researcher in Oklahoma City. No credit, endorsement or accreditation is asked; use it freely. The only ask is a serious look at the work.
 
