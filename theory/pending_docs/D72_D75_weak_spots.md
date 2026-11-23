@@ -22176,3 +22176,13 @@ Each node is a prime (8,3,5,7,11[,13]); nesting them (CRT) gives a self-similar 
 - C2 PASS: R1 (period 4620, 960 kept = 20.8%) 3.47× faster than naive (14.73 s → 4.24 s); ceiling 4.8×, the rest is loop overhead.
 - R2 (period 60060, 11520 kept = 19.2%) 3.18×: one more prime node removes only 1.6% more k but costs more per step — the diminishing return predicted from Mertens.
 - Verdict: the fractal string is the right shape for this layer: correct, ascending, early exit. Best ring here is R1. Next gains are compiled code and the GPU (mfaktc-style), not more nodes.
+
+## D2176 (CENTRE, 23 Nov 2026 01:16 CT) — D2151 SPT-3G D1 pair scored: Weave PREFERRED on SPT + low-ℓ Planck + DESI DR2 + Dovekie
+Lock PREREG_D2151 (Addendum 2 likelihoods: SPT-3G D1 T&E lite via candl, Planck LoLLiPoP low-ℓ EE + 2018 low-ℓ TT, DESI DR2, DES-Dovekie; no Planck high-ℓ). Original runs only (see D2151 DEVIATIONS 1).
+- L: chi2_eff 1862.922 (n_s = 0.9704, H0 68.24). W: chi2_eff 1856.348 (thread thaws, u_i = 0.163, H0 67.07).
+- Δχ²_eff (W − L) = −6.57 → PREFERRED by the D2132 rule (< −2), same free-parameter count.
+- Where it comes from: SN −5.50, BAO −1.78, low-ℓ TT −0.19, low-ℓ EE +0.15, SPT +0.73. L's own n_s lands at 0.9704, essentially the Weave's fixed 0.9706, so on SPT the fixed early-universe inputs cost almost nothing, and the thawing thread is free to help BAO and supernovae. On Planck HiLLiPoP the same inputs cost ~2.4–6.7 on the high-ℓ spectrum.
+- Cross-experiment rule (D2151): Planck PR4 HiLLiPoP + Dovekie = mild tension (+2.40), SPT + Dovekie = preferred (−6.57). Preferred and mild tension are not neighbouring classes → NOT CMB-robust; the verdict depends on which high-ℓ CMB data are used. ACT pair still running.
+- Not refereed. Minimiser scatter on these fits not yet measured.
+## D2176a (CORRECTION, 23 Nov 2026 01:16 CT) — the ACT/SPT status in the posted paper was wrong in v1 and v1.1
+At the 00:20 final check I changed "still running" to "set up and smoke-tested, not yet started" for the ACT and SPT fits. That was wrong: they had been running since 21:33 CT (launched_extcmb.txt, which I missed). The original wording was right. Zenodo v1 (24453859) and v1.1 (24457128) both carry the wrong wording; the next version must correct it and report D2176.
