@@ -21708,3 +21708,29 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
   - FLAG: N11 (TCC on r)
   - FAIL: N10 (the H0 shell) and N16 (tadpole)
   - OPEN: N1, N14
+
+## D2139a (CENTRE, referee pass on D2139: NOT BALANCED on R39-1, now restated). Corrections; D2139 itself is not edited (2026-11-22 ~19:55 CT)
+- **R39-1, N13: the lock's bar was mis-specified.** The swampland conditions apply at every field point the thread visits, not only today. Restated as three branches, each recomputed in code:
+
+| branch | path value | bar | verdict |
+|---|---|---|---|
+| slope \|V′\|/V | 0.53 at the start → 1.06 today; the path minimum is 0.53 | ≥ 0.816 | **FAIL** on the past part of the path, **MARGINAL** against c ≥ 0.5 |
+| second derivative V″/V = −8u/(1−u) | −1.49 at the start → −2.99 today | ≤ −c′, c′ ~ O(1) | **PASS** everywhere visited (c′ up to 1.49) |
+| asymptotic / TCC | as φ → ∞, u → 0 and V → V_L > 0, a dS plateau | — | the known limitation, the same plateau as inflation's A = 7.30 (N11 FLAG) |
+
+  The refined conjecture (OPSV) needs only one of the two branches, so **N13 passes the refined conjecture through its second-derivative branch.** It does not pass the TCC/asymptotic form. D2139's "PASS (slope today)" is withdrawn.
+- **R39-2, N4: relabelled "PASS (BBN only)".**
+  - The second reading was mislabelled. With a true 1/(8π)² coupling, T_d = 1.1e4 GeV, which still passes.
+  - **New open nodes:**
+    - (a) τ_q entropy dilution of η_B and of the asymmetric DM;
+    - (b) moduli-induced gravitino production if m3/2 < m/2;
+    - (c) whether the same decay is what makes the non-thermal wino density (Ωh² ≈ 0.02).
+- **R39-3, N3: PASS for any δ₁₂ ≤ 1.** The phrase "δ ≤ 64" is withdrawn, since δ ≤ 1. μ→e conversion (~1e-19) is also below Mu2e/COMET reach.
+- **New node, the electron EDM [E]:** d_e ~ e m_e (α/4π) sinφ / m_s² = 9.4e-32 e·cm at 0.25 PeV with O(1) phases. The JILA 2023 limit is 4.1e-30, so it **PASSES with a margin of about 44**, the thinnest of the flavour/CP walls.
+- **Negative-space scoreboard, updated:**
+  - PASS: N2, N3, N4 (BBN only), N5, N6, N7 (with the eEDM inside), N9, N12, N13 (second-derivative branch), N15
+  - TRUST: N8
+  - FLAG: N11
+  - FAIL: N10 (H0) and N16 (tadpole)
+  - OPEN: N1, N14, and N4's moduli-cosmology items (a)–(c)
+- **Referee verdict after this restatement:** the conditions R39-1…3 are all folded in.
