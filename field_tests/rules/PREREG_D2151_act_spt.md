@@ -39,3 +39,9 @@ No reruns to chase results. Code fixes go in DEVIATIONS written before any rerun
   - **SPT:** `spt_candl_data.SPT3G_D1_TnE_lite` through candl's CandlCobayaLikelihood. Its internal priors are cleared (our LoLLiPoP sets τ). Tcal ~ N(1, 0.0036), taken from the data set's own prior; Ecal is uniform in [0.9, 1.1].
 - **CAMB accuracy:** ACT's settings, without CosmoRec and without `lens_margin`. `lens_margin` is not a CAMB 2.0.5 argument, and the smoke test rejected it. halofit stays 'mead', as in D2132.
 - **First launch:** L and W on Dovekie for each experiment (4 processes). Pantheon+ and Union3 follow when cores free up.
+
+## ADDENDUM 3: smoke test passed; first launch (21:33 CT)
+- **The smoke test** used fresh file names (weave_extcmb2.py, smoke_extcmb2.py) because the PC copy of the first files was stale. Both experiments build and evaluate at a fiducial ΛCDM point:
+  - **ACT lite + ACT lensing:** loglikes [−5002, −7.1]. The large ACT value comes from the reference draw of P_act in the smoke script, which had no reference range; the fit script sets one at 0.99–1.01. About 46 s including setup.
+  - **SPT-3G D1 lite:** loglike −81.9 (about 196 bandpowers). About 12 s.
+- **Launched on the PC:** L and W on Dovekie, for ACT and for SPT (4 processes). The scored script is weave_extcmb2.py, SHA-256 d6d701c442e1….
