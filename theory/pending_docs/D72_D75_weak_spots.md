@@ -21943,3 +21943,8 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
 - **R-B2-10, saturation.** The distinct SUSY non-overshooting bulk cycles on ABa at ϱ = ½ number **18 / 20 / 20 / 20** at |n|, |m| ≤ 3 / 4 / 5 / 6. **The set saturates at 20 from bound 4**, so the planned bound of 3 would have missed 2 cycles. The scan uses the full saturated set.
 - **R-B2-11, representatives.** On 20 random SUSY (odd, odd) orbits, all 4 representatives (θ³ and the two-torus sign flips) give **identical** sets of fractional cycles over all σ and τ, 16 per orbit.
 - **Files:** tools/seed/z6p_checks3.py and z6p_checks3.json.
+
+## D2132 run note (2026-11-22 ~20:05 CT)
+- The first batch job hit its 2-hour background cap. C (w0wa) on Dovekie and L on Pantheon+ were killed mid-fit, so neither produced a result. These are not reruns to chase results: no output exists for them.
+- **Restarted in priority order** (the same script, the same lock): L and W on Pantheon+ and Union3, for the W-vs-L verdict. The C fits and the D2135 CamSpec cross-check come after, in a later job.
+- **The CamSpec waiter was stopped** before it had started any fit, so the cores go to the D2132 verdict first.
