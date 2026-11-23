@@ -45,6 +45,89 @@ def gamow(Z1, Z2, mu_u, T_K=None, kT_keV=None):
     b = math.pi * ALPHA_FS * Z1 * Z2 * math.sqrt(2 * mu_u * U_MEV * 1000.0)     # keV^1/2
     E0 = (b * kT / 2) ** (2 / 3); return dict(E0_keV=E0, width_keV=4 * math.sqrt(E0 * kT / 3), b_keV_half=b, kT_keV=kT)
 
+
+# ------------------------------------------------------------------ S2 ignition (0-D, flat profiles, D-T 50:50, n_e = n)
+C_B = 5.35e-37   # W m^3 keV^-1/2, bremsstrahlung P_br = C_B Z_eff n_e^2 sqrt(T)
+def ignition_ntau(T, E_alpha_MeV, Zeff=1.0):
+    """n tau_E (s m^-3) for ignition: (n^2/4)<sv> E_alpha = 3 n T / tau_E + C_B Zeff n^2 sqrt(T). Returns inf below ideal ignition."""
+    heat = sigmav('DT', T) * 1e-6 * E_alpha_MeV * MEV_J / 4 - C_B * Zeff * math.sqrt(T)
+    return 3 * T * KEV_J / heat if heat > 0 else float('inf')
+def ignition_min(E_alpha_MeV, Zeff=1.0):
+    from scipy.optimize import minimize_scalar
+    r = minimize_scalar(lambda T: T * ignition_ntau(T, E_alpha_MeV, Zeff) if math.isfinite(ignition_ntau(T, E_alpha_MeV, Zeff)) else 1e30, bounds=(5, 40), method='bounded', options=dict(xatol=1e-6))
+    return r.x, r.fun
+def ideal_ignition_T(E_alpha_MeV, Zeff=1.0):
+    from scipy.optimize import brentq
+    return brentq(lambda T: sigmav('DT', T) * 1e-6 * E_alpha_MeV * MEV_J / 4 - C_B * Zeff * math.sqrt(T), 1.0, 20.0, xtol=1e-10)
+
+# ------------------------------------------------------------------ S3 tokamak 0-D with profiles + dials
+MU0 = 4e-7 * math.pi
+ITER = dict(R=6.2, a=2.0, kappa=1.85, B=5.3, Ip=15.0, V=830.0, P_aux=50.0, M=2.5, alpha_n=0.1, alpha_T=1.0, Zeff=1.7, Z_imp=4.0, n_avg=1.0e20)
+def _profiles(m, n_avg, T_avg, N=400):
+    rho2 = [(i + 0.5) / N for i in range(N)]                      # uniform in rho^2 = uniform in volume
+    n0 = n_avg * (1 + m['alpha_n']); T0 = T_avg * (1 + m['alpha_T'])
+    return [(n0 * (1 - x) ** m['alpha_n'], T0 * (1 - x) ** m['alpha_T']) for x in rho2]
+def plasma(m, n_avg, T_avg, E_alpha_MeV):
+    """0-D integrals over parabolic profiles: fusion, alpha, bremsstrahlung powers (MW), stored energy (MJ), beta_N."""
+    f_fuel = (m['Z_imp'] - m['Zeff']) / (m['Z_imp'] - 1)          # fuel ions per electron for one impurity species (quasi-neutral)
+    f_imp = (m['Zeff'] - 1) / (m['Z_imp'] * (m['Z_imp'] - 1))     # impurity ions per electron
+    prof = _profiles(m, n_avg, T_avg); V = m['V']; Pf = Pb = Wth = 0.0
+    Efus = q_value('DT') * MEV_J
+    for ne, T in prof:
+        if T <= 0.2: continue
+        nD = nT = ne * f_fuel / 2
+        Pf += nD * nT * sigmav('DT', min(T, 100.0)) * 1e-6 * Efus
+        Pb += C_B * m['Zeff'] * ne * ne * math.sqrt(T)
+        Wth += 1.5 * (ne + ne * (f_fuel + f_imp)) * T * KEV_J
+    k = V / len(prof); Pf *= k / 1e6; Pb *= k / 1e6; Wth *= k / 1e6
+    P_alpha = Pf * E_alpha_MeV / q_value('DT')
+    beta = 2 * MU0 * (Wth * 1e6 / 1.5 / V) / m['B'] ** 2
+    return dict(P_fus=Pf, P_alpha=P_alpha, P_brems=Pb, W_MJ=Wth, beta_N=100 * beta * m['a'] * m['B'] / m['Ip'], n_G=m['Ip'] / (math.pi * m['a'] ** 2) * 1e20)
+def tau_ipb98(m, P_loss, n_avg):
+    eps = m['a'] / m['R']; ka = m['V'] / (2 * math.pi ** 2 * m['R'] * m['a'] ** 2)
+    return 0.0562 * m['Ip'] ** 0.93 * m['B'] ** 0.15 * P_loss ** -0.69 * (n_avg / 1e19) ** 0.41 * m['M'] ** 0.19 * m['R'] ** 1.97 * eps ** 0.58 * ka ** 0.78
+def p_LH(m, n_avg):   # Martin 2008 H-mode threshold, S = plasma surface
+    S = 4 * math.pi ** 2 * m['R'] * m['a'] * math.sqrt((1 + m['kappa'] ** 2) / 2)
+    return 0.0488 * (n_avg / 1e20) ** 0.717 * m['B'] ** 0.803 * S ** 0.941
+def operating_point(m, E_alpha_MeV, n_avg=None, P_aux=None):
+    """Solve power balance W/tau_E(P_loss) = P_loss with P_loss = P_alpha + P_aux - P_brems for <T>; returns the hottest root."""
+    from scipy.optimize import brentq
+    n_avg = m['n_avg'] if n_avg is None else n_avg; P_aux = m['P_aux'] if P_aux is None else P_aux
+    def f(T):
+        p = plasma(m, n_avg, T, E_alpha_MeV); Pl = p['P_alpha'] + P_aux - p['P_brems']
+        return (p['W_MJ'] / tau_ipb98(m, Pl, n_avg) - Pl) if Pl > 0 else 1e9
+    Ts = [1 + 0.25 * i for i in range(160)]; vals = [f(T) for T in Ts]; roots = []
+    for a, b, fa, fb in zip(Ts, Ts[1:], vals, vals[1:]):
+        if fa * fb < 0 and abs(fa) < 1e8 and abs(fb) < 1e8: roots.append(brentq(f, a, b, xtol=1e-9))
+    if not roots: return None
+    T = max(roots); p = plasma(m, n_avg, T, E_alpha_MeV); Pl = p['P_alpha'] + P_aux - p['P_brems']
+    return dict(p, T_avg=T, n_avg=n_avg, P_aux=P_aux, P_loss=Pl, tau_E=tau_ipb98(m, Pl, n_avg), Q=p['P_fus'] / P_aux if P_aux > 0 else float('inf'),
+                P_LH=p_LH(m, n_avg), roots=roots)
+def dials(m, E_alpha_MeV, betaN_max=2.8):
+    """Self-balancing dials: choose <n> (with P_aux fixed) to maximise Q subject to Greenwald, beta_N and the L-H threshold."""
+    best = None; nG = m['Ip'] / (math.pi * m['a'] ** 2) * 1e20
+    for i in range(41):
+        n = nG * (0.5 + 0.5 * i / 40); op = operating_point(m, E_alpha_MeV, n_avg=n)
+        if op is None or op['beta_N'] > betaN_max or op['P_loss'] < op['P_LH']: continue
+        if best is None or op['Q'] > best['Q']: best = op
+    return best
+
+class Ignition(Engine):
+    name = 'S2 ignition'
+    def run(self, bus):
+        Ea = bus.get('E_alpha_DT_MeV'); T, ntt = ignition_min(Ea); Ti = ideal_ignition_T(Ea)
+        bus.put(self.name, 'ignition_T_keV', T, 'LIVE', 'keV'); bus.put(self.name, 'ignition_nTtau', ntt, 'LIVE', 'keV s m^-3'); bus.put(self.name, 'ideal_ignition_T_keV', Ti, 'LIVE', 'keV')
+        return {}
+
+class Tokamak(Engine):
+    name = 'S3 tokamak (dials)'
+    def run(self, bus):
+        Ea = bus.get('E_alpha_DT_MeV'); op = operating_point(ITER, Ea)
+        for k in ('P_fus', 'Q', 'tau_E', 'T_avg', 'beta_N', 'P_loss', 'P_LH', 'W_MJ'): bus.put(self.name, f'iter_{k}', op[k], 'LIVE')
+        d = dials(ITER, Ea)
+        if d: bus.put(self.name, 'dials_best_n', d['n_avg'], 'LIVE', 'm^-3'); bus.put(self.name, 'dials_best_Q', d['Q'], 'LIVE')
+        return dict(roots=op['roots'])
+
 # ------------------------------------------------------------------ engines
 class Reactions(Engine):
     name = 'S1 reactions'
@@ -67,7 +150,7 @@ class Fusion(Engine):
     name = 'FUSION (goal: net electricity from D-T)'
 
 def build(sections=None):
-    secs = sections or [Reactions(), Stars()]
+    secs = sections or [Reactions(), Ignition(), Tokamak(), Stars()]
     return Fusion(secs)
 
 if __name__ == '__main__':
