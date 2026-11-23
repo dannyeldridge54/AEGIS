@@ -21937,3 +21937,9 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
   2. **d and e:** Appendix D.1's wrapping numbers give the wrong bulk, (0, 0, −1, −1). With one sign corrected, (1, 1; 1, −2; 0, 1), they reproduce Table 13 in full, bulk and exceptional. So **0708.2285 Appendix D.1 has a typo** (m₁ for branes d and e).
 - **Rerun:** **5/5 match and 5/5 SUSY.** Files: tools/seed/z6p_control2_dev1.json, tools/seed/z6p.py (generator).
 - **Next (step 3, after the referee's round-4 review):** the bounded scan on ABa at ϱ = 1/2 in the locked filter order, with ΔN_eff as a dial.
+
+## D2149 (CENTRE, B2 checks for addendum 3: **all PASS**)
+- **End-to-end (the referee's DEV-1 condition).** Wrapping + σ + τ → generated cycles → control 1: all 12 tadpoles are 0 and all 26 chiral numbers match. DEV-1 is accepted.
+- **R-B2-10, saturation.** The distinct SUSY non-overshooting bulk cycles on ABa at ϱ = ½ number **18 / 20 / 20 / 20** at |n|, |m| ≤ 3 / 4 / 5 / 6. **The set saturates at 20 from bound 4**, so the planned bound of 3 would have missed 2 cycles. The scan uses the full saturated set.
+- **R-B2-11, representatives.** On 20 random SUSY (odd, odd) orbits, all 4 representatives (θ³ and the two-torus sign flips) give **identical** sets of fractional cycles over all σ and τ, 16 per orbit.
+- **Files:** tools/seed/z6p_checks3.py and z6p_checks3.json.
