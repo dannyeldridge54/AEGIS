@@ -29,7 +29,10 @@ def read_adf11(path):
 _CACHE = {}
 def _load(el, kind):
     k = (el, kind)
-    if k not in _CACHE: _CACHE[k] = read_adf11(os.path.join(HERE, f'{kind}{FILES[el]}_{el}.dat'))
+    if k not in _CACHE:
+        fn = f'{kind}{FILES.get(el, 89)}_{el}.dat'; p = os.path.join(HERE, fn)
+        if not os.path.exists(p): p = os.path.join(HERE, 'all', fn)   # PROM-8: full OPEN-ADAS set (e.g. oxygen)
+        _CACHE[k] = read_adf11(p)
     return _CACHE[k]
 
 def _coef(d, z1, ne_cm3, Te_eV):
