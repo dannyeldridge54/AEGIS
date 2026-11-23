@@ -18,6 +18,8 @@ the claims; the builder fixes only through a DEVIATIONS note written before any 
 | Spindle | SMA time series | 0.0139 s | 0.0053 s vectorised (2.6x) | 5.6e-16 |
 | Spindle | oscillation period (osc_obs) | ~0.7 s | ~0.01 s analytic quadrature (option) | 2e-8 where it oscillates |
 | Spindle | Bose-Hubbard sparse Lanczos | - | NOT accepted (misses degenerate levels) | fails S4 |
+| Aion | 3-sigma scan (53k points, Python loops) | 0.40 s | 6.4 ms numpy broadcasting (62x) | 4e-16 |
+| Aion | Monte Carlo 1-sigma (20k) | 0.16 s | 14 ms (12x) | 2e-16 |
 | Chronos | chain solve (matrix exponential, 1,995 solves) | 0.016 s | 0.004 s analytic Bateman (4.4x); browser engine instant | 3e-13 (T1) |
 
 ## Next in the rotation (older toolkits, one per loop tick)
