@@ -22197,3 +22197,12 @@ Lock PREREG_D2178 (+DEV-1). Script tools/battery/t4_growth.py: same theory as ea
 - S8 of all 16 L/W best fits: 0.802–0.820. KiDS-Legacy (0.815 +0.016/−0.021): every fit within 0.6σ — no growth tension for either model.
 - DES Y3 3×2pt (0.776 ± 0.017): every fit 1.55–2.58σ high (the familiar mild CMB–lensing S8 offset). The Weave sits lower than ΛCDM on 6 of 8 pairs: Δχ²_growth(W−L) = −0.72 (Dovekie), −1.51 (Dovekie best-of-4), −0.50 (Dovekie CamSpec), −1.17 (SPT), −4.27 (Pantheon+), +1.04 (Pantheon+ CamSpec), −0.13 (Union3), +0.43 (Union3 CamSpec).
 - Verdict: growth does not hurt the Weave; against DES Y3 it slightly helps on most pairs (the thawing thread lowers S8 a little), against KiDS-Legacy it is neutral. Not a strong lever either way (|Δχ²| ≤ 1.5 except Pantheon+). Full weak-lensing likelihoods (not compressed) remain a later test.
+
+## D2181 (CENTRE, 23 Nov 2026 02:04 CT) — D2151 ACT DR6 pair scored (after DEV-2 rescoring): CONSISTENT; three-CMB rule → NOT CMB-robust
+Lock PREREG_D2151 Addendum 2 (ACT DR6 CMB-only lite + ACT DR6 lensing + LoLLiPoP + low-ℓ TT + DESI DR2 + Dovekie). DEV-2: the script dropped chi2__act_dr6_cmbonly from its sum; rescored from stored values, no refit.
+- L: chi2_eff 1876.337 (n_s = 0.9785, H0 68.29). W: chi2_eff 1874.718 (thread thaws, u_i = 0.153, H0 67.32).
+- Δχ²_eff (W − L) = −1.62 → CONSISTENT (D2132 rule). (The un-rescored files would have said −4.63, "preferred" — that number is void.)
+- Pieces: SN −4.67, BAO −1.18, low-ℓ EE −0.90, lensing +0.23, low-ℓ TT +1.31, ACT CMB-only +3.01. ACT prefers a higher n_s (0.9785) than the Weave's fixed 0.9706, so the high-ℓ ACT spectrum pays +3.0, much as Planck HiLLiPoP does, while the thread helps SN and BAO.
+- Three-CMB rule (D2151): Planck PR4 HiLLiPoP = mild tension (+2.40), ACT = consistent (−1.62), SPT = preferred (−6.57). Planck and SPT are two classes apart → NOT CMB-robust. Pattern: the Weave's score tracks how far each experiment's own n_s sits from 0.9706 (SPT 0.9704 → best; ACT 0.9785 and Planck → costs). This is the T2 question (freed inputs) and goes to the negative-space phase.
+## D2182 (RIGHT, 23 Nov 2026 02:04 CT) — w0wa with CamSpec + Union3 (D2135 slot filled)
+C: chi2_eff 10641.65 (w0 = −0.83, wa = −0.50); W (CamSpec+Union3): 10651.88. ΔAIC(W − C) = +6.23 → w0wa better, inside the posted range (+2.2 to +7.4). All six w0wa slots now filled.
