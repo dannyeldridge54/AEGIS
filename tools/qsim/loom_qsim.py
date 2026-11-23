@@ -31,18 +31,23 @@ def sma_rho0(N, c, q, zeta, ts):
         psi = V @ (np.exp(-1j*w*t)*a0); out.append(float(np.sum(n0*abs(psi)**2)))
     return np.array(out), H
 # ---------------- Q2: mean-field spin-1 lattice. psi shape (L,3) for m = +1, 0, -1; sum |psi|^2 = Ntot
-def mf_energy(psi, c, q, J, nbar):
+def _nbrs(L):
+    return [] if L == 1 else ([(0, 1)] if L == 2 else [(i, (i + 1) % L) for i in range(L)])
+def mf_energy(psi, c, q, J, nbar, c0=0.0):
     p1, p0, pm = psi[:, 0], psi[:, 1], psi[:, 2]
     e_int = (c/nbar)*np.sum(abs(p0)**2*(abs(p1)**2 + abs(pm)**2) + 2*np.real(np.conj(p1)*np.conj(pm)*p0**2))
+    e_int += (c/(2*nbar))*np.sum((abs(p1)**2 - abs(pm)**2)**2) + (c0/(2*nbar))*np.sum(np.sum(abs(psi)**2, axis=1)**2)   # D2183 DEV-1
     e_q = -q*np.sum(abs(p0)**2)
-    e_hop = -J*np.sum(2*np.real(np.conj(psi)*np.roll(psi, -1, axis=0))) if psi.shape[0] > 1 else 0.0
+    e_hop = -J*sum(2*np.real(np.sum(np.conj(psi[a])*psi[b])) for a, b in _nbrs(psi.shape[0]))
     return float(e_int + e_q + e_hop)
-def mf_rhs(psi, c, q, J, nbar):
+def mf_rhs(psi, c, q, J, nbar, c0=0.0):
     p1, p0, pm = psi[:, 0], psi[:, 1], psi[:, 2]; d = np.zeros_like(psi)
+    mz = abs(p1)**2 - abs(pm)**2; nt = np.sum(abs(psi)**2, axis=1)
     d[:, 0] = (c/nbar)*(abs(p0)**2*p1 + np.conj(pm)*p0**2)
     d[:, 1] = (c/nbar)*(p0*(abs(p1)**2 + abs(pm)**2) + 2*p1*pm*np.conj(p0)) - q*p0
     d[:, 2] = (c/nbar)*(abs(p0)**2*pm + np.conj(p1)*p0**2)
-    if psi.shape[0] > 1: d += -J*(np.roll(psi, 1, axis=0) + np.roll(psi, -1, axis=0))
+    d[:, 0] += (c/nbar)*mz*p1; d[:, 2] -= (c/nbar)*mz*pm; d += (c0/nbar)*nt[:, None]*psi   # D2183 DEV-1
+    for a, b in _nbrs(psi.shape[0]): d[a] += -J*psi[b]; d[b] += -J*psi[a]
     return -1j*d
 def mf_run(psi, c, q, J, ts, dt=1e-3):
     nbar = float(np.sum(abs(psi)**2))/psi.shape[0]; t = 0.0; out = []; i = 0
@@ -80,8 +85,8 @@ def osc_obs(c, q, rho0=0.5, phi=0.5, T=12.0, n=1200):
 def compass(f, dials, eps=1e-2):
     base = f(**dials); J = {}
     for k, v in dials.items():
-        up = dict(dials); up[k] = v*(1 + eps); dn = dict(dials); dn[k] = v*(1 - eps)
+        h = v*eps if v != 0 else eps; up = dict(dials); up[k] = v + h; dn = dict(dials); dn[k] = v - h   # D2183 DEV-1: additive step at 0
         fu, fd = f(**up), f(**dn)
-        J[k] = {o: (math.log(abs(fu[o])) - math.log(abs(fd[o])))/(2*eps) if fu[o] and fd[o] else float('nan') for o in base}
+        J[k] = {o: ((math.log(abs(fu[o])) - math.log(abs(fd[o])))/(2*eps) if v != 0 else (fu[o] - fd[o])/(2*h)) if fu[o] and fd[o] else float('nan') for o in base}
     balance = {o: max(J, key=lambda k: abs(J[k][o])) for o in base}
     return dict(base=base, log_sensitivity=J, dominant_dial=balance)
