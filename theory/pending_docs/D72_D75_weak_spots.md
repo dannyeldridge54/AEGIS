@@ -22168,3 +22168,11 @@ Lock PREREG_D2174. 200 prime exponents in [1e6, 1e6+2e4), TF to 2^40. Results fi
 - C2 speed: FAIL against the 4–10× prediction. Wheel 162 s vs naive 14.7 s (0.09×, i.e. 11× slower).
 - Why (diagnosis, not a rerun): (1) early exit — the naive loop scans k upward and stops at the first factor; 93 exponents stop very early. Our wheel scans class by class to the full depth before it can know the smallest factor, so it does the whole range on every exponent. GIMPS avoids this by doing one bit level at a time across all classes, so it can stop at the first level holding a factor. (2) Python overhead — the per-chunk loop over ~1,000 sieve primes runs in Python, which costs more than the powmods it saves at 40 bits.
 - Verdict: the factor law and the wheel are correct, but our Python build does not speed up shallow TF. A real gain needs (i) bit-level-major order with early exit, and (ii) the sieve in compiled code (C/numba) or on the GPU, as in mfaktc. Next build gets its own lock; no rerun of this one.
+
+## D2175 (TOOL, 23 Nov 2026 01:16 CT) — prime-node fractal gap string: PASS, 3.5× over the naive loop
+Lock PREREG_D2175 (+DEV-1: R2 cut to R1+{13} after an out-of-memory kill; no result seen before the change). Results field_tests/results/d2175_prime_node_string.json.
+Each node is a prime (8,3,5,7,11[,13]); nesting them (CRT) gives a self-similar tree whose leaves, in order, form one period of a repeating gap string; walking k upward along it touches only surviving k and keeps the early exit that D2174 lost.
+- C1 PASS: identical smallest factor (or none) on all 200 exponents, both rings.
+- C2 PASS: R1 (period 4620, 960 kept = 20.8%) 3.47× faster than naive (14.73 s → 4.24 s); ceiling 4.8×, the rest is loop overhead.
+- R2 (period 60060, 11520 kept = 19.2%) 3.18×: one more prime node removes only 1.6% more k but costs more per step — the diminishing return predicted from Mertens.
+- Verdict: the fractal string is the right shape for this layer: correct, ascending, early exit. Best ring here is R1. Next gains are compiled code and the GPU (mfaktc-style), not more nodes.
