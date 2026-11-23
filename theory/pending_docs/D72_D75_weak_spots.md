@@ -21756,3 +21756,23 @@ Referee R9-1…R9-3 were folded in: 2-loop SM → MSSM running with y_t, DR-bar 
   - Alternatively φ0 ≲ 3e-5 M_P passes, but then there is no dilution and r takes the 5.4e-4 branch rather than 5.72e-4.
   - **Verdict: CONDITIONAL.** This is a new, real constraint, and it joins the quark modulus to the CMB value of r.
 - **(c)** In the case that passes, τ_q makes a negligible share of the winos, so the wino share stays thermal-gravitino (D1687).
+
+## D2140a (CENTRE, referee pass on D2140: NOT BALANCED on R40-1, now restated). Corrections; D2140 itself is not edited (2026-11-22 ~20:10 CT)
+- **R40-1, (b) relabelled: generic FAIL.**
+  - The lock wrongly called Br ≈ (m3/2/m)² "the supersymmetrically stabilised case". For a supersymmetrically stabilised modulus, G_φ ~ m3/2/m, and the goldstino's 1/m3/2² enhancement cancels that suppression. So Br(τ_q → 2ψ) ~ 1e-2 to 1e-1, **unsuppressed** (Endo–Hamaguchi–Takahashi hep-ph/0602061; Nakamura–Yamaguchi hep-ph/0602081).
+  - **Verdict for (b): FAIL generically.** The winos are overproduced ×86 even at the most generous σv.
+  - **Two named conditional escapes, both now OPEN nodes:**
+    1. **N4-seq:** τ_q sequestered from the SUSY-breaking sector, with G_τq ≪ m3/2/m (Dine–Kitano–Morisse–Shirman-type conditions, hep-ph/0604140). The Weave has not shown this.
+    2. **N4-φ0:** τ_q starts with φ0 ≲ 3e-5 M_P. The cost is no dilution, and r moves to the 5.4e-4 branch.
+- **R40-2 and R40-3: confirmed.**
+  - The re-annihilation cap was recomputed by hand: T_3/2 = 22.9 MeV, g* = 10.75, Ωh² = 9.2 at σv = 1e-24.
+  - The min(1, D) factor is correct.
+- **R40-4, added:**
+  - Direct τ_q → gaugino decays at T_d ≈ 2.8e5 GeV re-thermalise and are harmless.
+  - D = 808 also dilutes the thermal gravitinos from T_R, which helps. It preserves the asymmetric-DM-to-η_B ratio, and leptogenesis needs ×800 room, which is within 1e3.
+  - Gravitino decays at 1.4 ms pass BBN.
+  - **(c) is now conditional** on the same escape.
+- **Consequence for the negative-space board:** N4 = **FAIL (generic)**, with two open escapes. This is a real new weak spot, joining N10 (H0) and N16 (tadpole).
+- **Two hubs now tie to it:**
+  - **N4-φ0 ↔ r:** the CMB measurement of r would decide between the branches (5.4e-4 vs 5.7e-4; this needs σ_r ≲ 1e-5, so it is not testable soon).
+  - **N4-seq ↔ N16:** sequestering is exactly what a B2 rebuild of the fold would have to supply.
