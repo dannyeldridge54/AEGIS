@@ -14,3 +14,7 @@ Danny 00:56: "Why not build it and optimize it". Our own fast route, tools/fastc
  (c) next pass: a local Cl emulator that learns along the minimiser path (cache + PCA + local quadratic, CAMB called whenever its leave-one-out error is above 0.1 in χ²).
 fit-script hook: LOOM_WARM / LOOM_SEED env vars only; with them unset the locked fits run exactly as before.
 Same validation V1–V3 as above on the same finished pair; both routes are scored; the faster one that passes is adopted; verdicts still confirmed with plain CAMB.
+
+## Addendum 2 (2026-11-23 ~01:03 CT, before any run) — optimisation pass on loom_fast
+Danny 00:59 "Can u optimize it". Added: (d) each start gets cores/N OpenMP threads for CAMB (was 1); (e) warm starts use BOBYQA rhobeg 0.25 (Cobaya default 1.0, prior-scaled units), rhoend 0.05 unchanged.
+Same validation V1–V3. Also report evaluations-to-converge per start, so the gain from each change is visible.
