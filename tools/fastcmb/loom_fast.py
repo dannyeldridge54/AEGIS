@@ -10,7 +10,7 @@ only the search is organised for speed:
 Usage: python loom_fast.py <L|W|C> <sn> <hillipop|camspec> [N=4] [warm_json ...]
 Writes pr4_<model>_<sn>[_<hl>]_fast.json next to weave_lcdm_pr4.py."""
 import os, sys, json, subprocess, time, glob
-HERE = os.path.dirname(os.path.abspath(__file__)); FIT = os.path.join(HERE, '..', '..', 'field_tests', 'weave_lcdm')
+HERE = os.path.dirname(os.path.abspath(__file__)); FIT = os.environ.get('LOOM_FIT_DIR') or os.path.join(HERE, '..', '..', 'field_tests', 'weave_lcdm')   # on the PC: LOOM_FIT_DIR=C:\Users\Danny\ufe_data\weave_pc
 model, sn, hl = sys.argv[1], sys.argv[2], sys.argv[3]
 N = int(sys.argv[4]) if len(sys.argv) > 4 else 4
 THR = str(max(1, int(os.environ.get('LOOM_CORES', os.cpu_count() or 4)) // N))   # (d) split the machine's threads across the starts

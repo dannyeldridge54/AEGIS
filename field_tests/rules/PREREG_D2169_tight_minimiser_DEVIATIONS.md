@@ -1,0 +1,2 @@
+# D2169 DEVIATIONS
+1. (2026-11-23 01:36 CT) The cloud run of the tight pair (rhoend 0.005, seek_global, best of 4) was still on start 1 of 4 after ~70 min: the cloud box has 2 cores shared with other jobs, and the script's 7000 s timeout would have killed it at ~02:24 with no result. I stopped it at 01:36. No minimum was written or seen. Change: rerun on Danny's PC (no timeout, OMP threads per process as for D2151) once the ACT pair and C_union3_camspec finish. Settings, data, scoring rule unchanged.
