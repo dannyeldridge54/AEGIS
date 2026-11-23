@@ -1,0 +1,14 @@
+LOCK EDITED PREREG_D633_FORWARD_RUNNING.md
+STALE? tools/fusion/test_n3n4.py:29: Mn-55 s-wave resonance ER is 340.7875 eV (N3/N4 DEV-2)
+STALE? tools/fusion/test_prom9_tree.py:17: ITER 500 MW tau window relocked to 3.4 s +-15% (FUSION-1 DEV-7)
+STALE? tools/fusion/test_s1_s7.py:8: neutron share: 14.07 shortcut; relativistic 0.7976 (FUSION-1 DEV-1)
+STALE? field_tests/rules/PREREG_PROM9_TREE.md:8: neutron share: 14.07 shortcut; relativistic 0.7976 (FUSION-1 DEV-1)
+STALE? field_tests/rules/PREREG_PROM9_TREE.md:16: Gamow 5.9 keV is the 15 MK value; 15.7 MK gives 6.07-6.09 keV (FUSION-1 DEV-2)
+STALE? field_tests/rules/PREREG_PROM9_TREE.md:10: ITER 500 MW tau window relocked to 3.4 s +-15% (FUSION-1 DEV-7)
+STALE? field_tests/rules/PREREG_D2189_chronos_decay_A3.md:17: U-238 half-life NUBASE2020 4.463e9 y (CM-CARDS DEV-1)
+STALE? field_tests/rules/PREREG_N3N4_RESONANCE.md:9: Mn-55 s-wave resonance ER is 340.7875 eV (N3/N4 DEV-2)
+STALE? field_tests/rules/PREREG_CM_CARDS.md:23: U-238 half-life NUBASE2020 4.463e9 y (CM-CARDS DEV-1)
+STALE? field_tests/rules/PREREG_D1294_hexagons_inside.md:5: Mn-55 s-wave resonance ER is 340.7875 eV (N3/N4 DEV-2)
+STALE? field_tests/rules/PREREG_FUSION1.md:14: neutron share: 14.07 shortcut; relativistic 0.7976 (FUSION-1 DEV-1)
+STALE? field_tests/rules/PREREG_FUSION1.md:14: neutron energy shortcut; relativistic 14.028 MeV
+STALE? field_tests/rules/PREREG_FUSION1.md:30: tritium burn 55.8 kg was a shortcut; derived 56.08 kg/GW-fpy
