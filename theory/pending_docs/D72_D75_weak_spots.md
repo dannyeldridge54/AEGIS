@@ -22535,3 +22535,15 @@ Lock PREREG_N5_DOPPLER. Solbrig kernel on OUR 0 K reconstruction vs NJOY BROADR 
 Locked run PASS (1 eV-EH). R95: discriminating (1% T error or AWR+1 already fail), normalisation correct; low-energy term untested; edge leak.
 Rerun 1e-5 eV to EH-200 eV: Mn-55 medians 6e-6 to 9e-5, max 0.26%; Zr-90 medians 8e-6 to 5e-5, max 0.45% (at 1e-5 eV). Unbroadened capture
 misses 900 K by 9.8% median (Mn-55). Tool: doppler.py. Resonance chain N3 -> N4 -> N5 now reproduces the evaluated library from raw parameters.
+
+## D2207 (NEUTRON LADDER N6-N10, 23 Nov 2026 ~13:50 CT) — own Monte Carlo transport, computed TBR, energy multiplication, FW damage
+Locks PREREG_N6N8_TRANSPORT, PREREG_N9N10_ENERGY_DAMAGE. Tool mc.py (continuous-energy, ENDF/B-VIII.0 HDF5, 294 K, target at rest).
+- N6: elastic kernel lethargy gain within 0.2% of analytic xi (A = 1, 12, 56, 208).
+- N7/N8: locked run TBR 1.0226+-0.0063 vs OpenMC workshop 1.0266+-0.018. R96: Kalbach-Mann branches swapped (my bug, also in the hint) -
+  TBR-blind; T4 strawman. Rerun (KM fixed, 40k histories): TBR 1.0209+-0.0041, leakage 0.0419+-0.0013 (0.0437+-0.0028), Li-7 0.00374 (0.00378);
+  (n,2n) yield forced to 1 -> TBR 0.69 (R96 scratch had 0.84: open discrepancy). Reported as CONSISTENT WITH, not validated.
+- N9: blanket energy multiplication M = 1.156+-0.002 (heating-local; neutron-only 0.53) -> replaces the PROCESS M 1.24 INPUT (Pb-Li band 1.05-1.35).
+- N10: locked run D2 FAIL (He/dpa 27 appm) - R97: workshop steel is 5 wt% C, C-12 gives 78% of He. Rerun (Fe-only scoring, front cm split):
+  FW 10 cm average 5.5 NRT dpa/fpy per MW/m2, front cm 7.1 (R97 scratch 10.7: open discrepancy); Fe-only He/dpa 7.4 (10 cm) / 9.2 (front),
+  at the low edge of the 7-16 band; front He 67 appm/fpy per MW/m2 vs ~115 Gilbert (different spectrum) - not a clean pass.
+Open: target-at-rest approximation; photon transport; the two scratch-vs-repo discrepancies (yield-1 TBR; front-cm dpa).
