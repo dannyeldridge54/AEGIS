@@ -35,3 +35,10 @@ Stop rule: a full turn of all three wheels returns NULL.
 | 4 | Loom pulse (D2156) | newest scales added: L6 n_s P-ACT +0.93, L8 dark-baryon window +0.59, L9 thread_PR4 -0.46; no inner node fell out (inner_unlocked = []) | none needed in the doc (it already reports mild tension, alpha_s fail, H0 not solved) | L7 locks only via the split dial (fit) - doc reports the no-split value |
 | 5 | W1 all sections + unison | NULL (every number, label and claim matches; cross-section unison holds) | - | - |
 | 5 | W3 engine | 27/27 OK (no numbers changed since R4) | - | - |
+| 5 | W2.credit | quintessential inflation on plateaus uncited | Dimopoulos-Owen 2017 + Akrami et al. two-shoulder credited; DESI prefers alpha ~ 1 noted | - |
+| 5 | W2.limits | "1.1 sigma from ACT DR6" is P-ACT-LB | named the combination and value | - |
+| 5 | W2.status | r testers/timeline: SO and LiteBIRD only set limits ~1e-3; LiteBIRD launch JFY2036 | rewritten; "What next" row -> "a successor to LiteBIRD" | inner spin: What-next row fixed too |
+| 5 | W2.limits | ATLAS 2026: 670 observed / 770 expected; CMS 650 unconfirmed (CMS 474 GeV at 0.2 ns in 2004.05153) | ATLAS observed+expected stated; "passes only because observed fell below expected"; CMS "weaker" | records D2144a N5w cited CMS 650 - flag for a record correction |
+| 5 | W2.limits | JUNO 0.3092 +- 0.0087; TM1 0.3184 is 1.1 sigma above; TM1 vs JUNO already in 2511.15978 | added | - |
+| 5 | W2.credit | shared-asymmetry DM mass idea (Kaplan-Luty-Zurek 2009) | credited | - |
+| 5 | W3 engine | +4 checks (JUNO pull 1.06, n_s pull 1.09, alpha_s pull 4.2, wino 10% below ATLAS expected) | all OK | - |

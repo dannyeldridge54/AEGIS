@@ -22044,3 +22044,5 @@ Fixed: (1) "consistent with standard cosmology" -> mild tension on both finished
 - Cause: tools/ladder/ladder.py check requires a MAP line in every D-note from D739 on; MAP lines lapsed from D1740 (the theory/map ladder was not carried into the Weave era), so ~320 notes failed the check. No physics test was failing.
 - Fix (recorded, not silent): MAP_UNTIL = 1739. The check is unchanged for D739..D1739; later notes track status in balance boards and field_tests/balance/BALANCE_LEDGER.md. No D-note was edited. Ladder tests 7/7 pass; ladder check OK; tracker runs.
 - Speed: the workflow now cancels an older run when a newer push arrives (concurrency group), and caches pip downloads.
+
+## D2144b (correction to D2144a, record-side, from the W2 outside-world referee 22:35 CT): the "CMS 650 GeV" wino limit could not be confirmed in CMS SUS-21-006 text; the pure-wino (0.2 ns) CMS figure in 2004.05153 is 474 GeV. ATLAS 2603.08315 (2026) gives 670 GeV observed, 770 GeV expected, so the Weave's 693 GeV sits inside ATLAS's expected sensitivity and passes only through a downward fluctuation. The preprint now says this. D2144a is not edited.

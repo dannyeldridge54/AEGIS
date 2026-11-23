@@ -37,6 +37,10 @@ ns = 0.9706
 # X2 at n_s 0.9706 -> r 5.432e-4, alpha_s -9.7e-4). The R4 check used the old Twist bridge B1 by mistake (checker error, logged).
 chk('r from X2 record (5.432e-4) vs stated 5.4e-4', 5.432e-4, 5.4e-4, 0.05e-4)
 chk('running from X2 record vs stated', -9.7e-4, -9.7e-4, 1e-6)
+chk('JUNO pull (0.3184-0.3092)/0.0087', (0.3184 - 0.3092) / 0.0087, 1.1, 0.06)
+chk('n_s pull vs P-ACT-LB', (0.9743 - 0.9706) / 0.0034, 1.1, 0.06)
+chk('alpha_s pull (0.1180-0.1142)/0.0009', (0.1180 - 0.1142) / 0.0009, 4.2, 0.06)
+chk('wino 693 below ATLAS expected 770', 693 / 770 - 1, -0.10, 0.005)
 chk('walls 6 clock + 10 mass/charge', 6 + 10, 16, 0)
 for k, v in R.items(): print(f'{v[2]:4s} {k:42s} computed {v[0]:<12} stated {v[1]}')
 print('OFF:', [k for k, v in R.items() if v[2] == 'OFF'])
