@@ -64,3 +64,4 @@ radiation convention). Dials find no admissible point (P_loss < P_LH everywhere)
 R85 (cycle 2): 2 MAJOR (Q2 non-discriminating; 51 MW is the 1999 law) -> cycle 2 NULL; loop stops (D2194a).
 SPEED-fusion: V1 2e-15, V2 1e-14, V3 same best point (P_net rel 2e-14), V4 goal dials 511 s -> 14.7 s (35x). PASS as locked.
 R86 (cycle 3): 1 MAJOR (E3 over Greenwald), 4 MINOR -> fixed (D2195a); SIM-1 PASS.
+R87 (cycle 4 IFE): no MAJOR; I1 relabelled consistency check (published p uses the same 0-D inference), radius proxy, I5 tautological.
