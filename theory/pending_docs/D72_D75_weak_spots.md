@@ -22640,3 +22640,13 @@ Cycle 1: alpha_s -> BLOCKED (visible-sector D7 twisted charges / N=2 b_a not in 
 D/H -> BLOCKED (standard BBN rate systematic: PRIMAT -2.5 sigma vs PArthENoPE +1.5 sigma at the same omega_b; not a Weave lever; not switched).
 Map 2: OUT left = SPARC power balance, JET #99971 (both standard-physics fusion modelling). Next cycles: SPARC code-to-code (run cfspopcon itself
 on the SPARC point); JET fast-ion losses + NBI power-vs-current fractions from a primary source; then EDGE items.
+
+## D2216 (STAGE MAP, 23 Nov 2026 ~16:50 CT) — cycle 2: SPARC and JET; map 3 = done by the locked definition
+SPARC: cfspopcon's own input (areal kappa 1.75, eps 0.3081 -> V 19.8 m3; O 3.1e-3) moves our fixed-heating result only 211 -> 202 MW (9.5 keV).
+At the published point (3.1e20, 7.3 keV) our popcon-convention engine is ignited (P_in needed 23 MW < P_alpha 23.7 MW; P_fus 117 MW; W 20.6 MJ),
+whereas SPARC's balance implies W ~26 MJ at P_in ~41 MW. The full cfspopcon pipeline needs radas atomic data (unreachable) -> BLOCKED with diagnosis.
+Design lesson: compare 0-D codes at a fixed (n, T) point, not by solving T at fixed heating (the steep point amplifies small differences).
+JET #99971: remaining +68% needs measured Te/deposition and fast-ion losses -> BLOCKED; #104522 inside its band.
+Map 3 (37 markers): 30 IN, 2 EDGE (theta12 +1.03 sigma; ITER 500 MW tau_E 0.2% outside), 0 OUT, 5 BLOCKED (alpha_s, Hoyle, D/H, SPARC, JET 99971),
+each with its reason. Done by the STAGEMAP definition (no OUT left that is not BLOCKED). Unblocking needs: the visible-sector D7 assignment (alpha_s,
+Hoyle), resolved BBN nuclear rates (D/H), OpenADAS/radas data (SPARC), JET profile data (JET).
