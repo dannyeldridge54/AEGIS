@@ -22753,3 +22753,11 @@ six rings until a NULL round; Bloom lnL / target with BIC charge k+0 (pair deriv
 - BIC: even charging two chosen integers (k+2), the target improves by ~4.6-4.7 over the baseline (Delta lnL ~ +7.7). By the pre-stated reading
   the pairs "balance under UFE". Status stays CONDITIONAL (D2225 referee): the pair and the T/U identification of the threshold torus at
   tau = i must be derived from the Z2 x Z6' visible N=2 spectrum before the A.alpha_s marker may move on the official map (map 7 unchanged).
+
+## D2226a (correction to D2226, referee round 8, 23 Nov 2026) — the BIC "gain at k+2" overstated: with the honest trial charge it is gone
+D2226 said the Bloom target improves by ~4.7 "even charging two chosen integers". Referee R109 (round 8): the k+2 charge (~3.0) only pays for
+"any of 9 out of 169"; the same target was searched over tau = i and rho (x2) and the D2224 strand (8450 points) - ~8800 trials, ln 8800 ~ 9.1
+> the k+0 gain 7.7. With a look-elsewhere charge the net target is BELOW the baseline. Also: hex.loop accepted no knob moves in any case
+(clean), but each pair's own M12 (7.8e15-2.0e16 GeV) is not fed into the ring (proton mark 16.0 for all) - the proton bound acted only as
+the D2225 filter, so D2226 is not a full ring test of the pairs. Verdict unchanged in kind and now stated plainly: CONDITIONAL, no evidential
+gain until (Db32, Db12) and the T/U identification are DERIVED; the official map stays 27/6/4.
