@@ -22829,3 +22829,23 @@ Side number only (not a test): SU(3)_a at the Weave's tau = i (v = 1): Delta/4pi
 class for the 1% nudge, unlike v ~ 30. The SU(2) side is needed for delta32 and needs the source equations (PDF/TeX) - the arXiv source is not
 reachable from this workspace. Next (locked): with calibrated SU(2), evaluate delta32 at v = 1 for the published model and the rho = 3/2
 near-misses, stretched (sigma, tau != 0) pairs as massive thresholds.
+
+## D2233 (GH THRESHOLDS WITH THE WEAVE'S OWN NUMBERS, breath 2, 23 Nov 2026) — tau = i is INCONSISTENT in GH normalisation; full thresholds at v = 1 are +7..+10, not ~0.3
+Locked PREREG_D2233_GH_AT_WEAVE. Source equations read from the attached PDF (0910.0843v2, eq. 128-129, 133-135, Table 13); calibration
+(tools/strings/gh_thresholds_v2.py) at v = 30: SU(3) -33.5/-33.5/-25.7 vs paper -34/-34/-26; SU(2) -8.6/+6.0/+5.7 vs -9/+6/+7 (<= 1.3).
+theory/tests/d2233_gh_weave.py, field_tests/results/d2233_gh_weave.json:
+- T1: with the Weave's g_s = 2/sqrt3 and alpha^-1 = 28 on the published visible cycle (Vol_a 0.16 / 0.11), M_P/M_s = 175 / 255 and the
+  torus area is v_W = 17.2 / 22.1 - far from v = 1 (tau = i).
+- T2: v = 1 would need a visible colour-cycle volume Vol_a ~ 11.4 (published 0.11-0.16; ~70-100x larger cycle).
+- T3: the COMPLETE one-loop difference delta32 = (Delta_SU3 - Delta_SU2)/4pi at v = 1 is +7.3 / +7.7 / +10.4 (h3 / h1-hat / none),
+  at v_W it is -8.8 / -16.2 / -18.2. Neither is the -0.26 the forces ring needs; the N=1 sector constants (ln 2, ln 3, ln 5 terms) are O(10).
+Verdict (by the lock): the identification "threshold torus area = SERAPIS tau = i" is INCONSISTENT with the Weave's own alpha^-1 = 28 and g_s
+in GH normalisation; and the full GH threshold is not a small nudge at any v. See D2225a.
+
+## D2225a (correction to D2225, 23 Nov 2026) — the tau = i "nudge of the right size" kept only one term
+D2225 modelled the threshold as Db * L(tau)/(4 pi) alone. The complete published computation (D2233, GH 0910.0843) also has N=1-sector
+constants (ln 2, ln 3, ln 5 with coefficients up to ~40) that are O(10) in delta32, and in GH normalisation the torus area is set by g_s and
+M_P/M_s (v ~ 17-22 with the Weave's own numbers), not free to sit at v = 1. So D2225's lead (and D2226's UFE pass that used it) rests on an
+incomplete threshold. Status: tau = i route WITHDRAWN as a lead for the brane (D6/GH) realisation; it survives only if the visible forces
+sit on a construction where the threshold torus is a complex-structure modulus not tied to the gauge-kinetic volume AND the N=1 constants
+cancel - neither shown. D2225/D2226 are not edited. Official map unchanged (27/6/4).
