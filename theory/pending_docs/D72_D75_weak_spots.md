@@ -22815,3 +22815,17 @@ U(1) weight 1 or 3/5; 1132 exact engine runs; field_tests/results/d2224_strand_r
 Verdict: the 4-cycle-modulus D7 strand does not balance the forces ring at its natural point under the primary conventions; the few hits are
 convention-sensitive (L +-10%, U(1) weight) and generic under the referee's look-elsewhere note (R108/R109). Superseded as a route by the
 tau = i threshold (D2225, CONDITIONAL) and the brane-host scans (D2228-D2231, no host on Z6' ABa).
+
+## D2232 (TOOL, Gmeiner-Honecker thresholds on our geometry, calibration breath, 23 Nov 2026) — SU(3) calibrated, SU(2) NOT; Weave evaluation not yet locked
+Source: Gmeiner & Honecker, arXiv 0910.0843 (Z6 and Z6' SMs, ABa lattice, rho = 1/(2 omega)): one-loop annulus + Mobius thresholds; N=2 pairs
+enter via Lambda(sigma, tau, v) (eq. 62/133: Lambda~(0,0,v) = ln(2 pi v eta^4(iv)); displaced / Wilson-line pairs = |e^{-pi s^2 v/4}
+theta1(tau/2 - i s v/2 | iv)/eta(iv)|^2 - Danny's "weakened bond, hooked to a future point"); v = torus Kahler area, set by eq. 135 v =
+(1/2)(g_s M_P/M_s)^{2/3} ~ 30 in their numerics. Their conclusion: thresholds at v ~ 30 shift SU(3) by -26..-34 in 1/alpha; no unification;
+non-chiral (stretched) state masses needed. Tool tools/strings/gh_thresholds.py (coefficients via text extraction; no verbatim source).
+CALIBRATION (done before any Weave evaluation; disclosed): SU(3)_a eq. 128 at v = 30: Delta/4pi = -33.5 (omega 1) / -25.7 (omega 2) vs the
+paper's -34 / -26 -> PASS (~2%). SU(2)_b eq. 129 (two extractions agree except h-hat-1 ln3 6 vs 8): -10.4 / +4.2 / +3.8 vs paper -9 / +6 / +7
+-> FAIL (up to 3.2; one coefficient error in the Lambda~(0,0,v) term moves it ~2). U(1)_Y extraction partly garbled -> not used.
+Side number only (not a test): SU(3)_a at the Weave's tau = i (v = 1): Delta/4pi = +0.47 (omega 1) / +1.13 (omega 2) - O(1), the right SIZE
+class for the 1% nudge, unlike v ~ 30. The SU(2) side is needed for delta32 and needs the source equations (PDF/TeX) - the arXiv source is not
+reachable from this workspace. Next (locked): with calibrated SU(2), evaluate delta32 at v = 1 for the published model and the rho = 3/2
+near-misses, stretched (sigma, tau != 0) pairs as massive thresholds.
