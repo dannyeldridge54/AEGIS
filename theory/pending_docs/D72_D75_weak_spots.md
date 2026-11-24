@@ -22849,3 +22849,10 @@ M_P/M_s (v ~ 17-22 with the Weave's own numbers), not free to sit at v = 1. So D
 incomplete threshold. Status: tau = i route WITHDRAWN as a lead for the brane (D6/GH) realisation; it survives only if the visible forces
 sit on a construction where the threshold torus is a complex-structure modulus not tied to the gauge-kinetic volume AND the N=1 constants
 cancel - neither shown. D2225/D2226 are not edited. Official map unchanged (27/6/4).
+
+## D2234 (REACTOR full run + paper draft, 23 Nov 2026) — map8_reactor: 21 reactor markers 15 IN / 5 EDGE / 1 OUT; draft paper written (not posted)
+Full run (preflight OK; tools/stagemap.py map8_reactor; field_tests/results/stagemap_map8_reactor.json): plasma L1-L9 (7 IN, ITER and SPARC EDGE),
+neutron ladder N1-N12 (6 IN, N10 x2 and N11 EDGE), JET #104522 IN, #99971 OUT (+64%). Whole map unchanged 27/6/4.
+Paper draft "An Open, Pre-Registered D-T Reactor Chain from Plasma to Plant" as a Claude Doc (https://claude.ai/artifact/DvyLdK6UvJBHxWw19WrUWU):
+abstract, method (Prometheus protocol), plasma, neutron ladder, JET, full results table, referee-caught corrections, limitations, data/sources.
+Draft only; no submission or posting (Zenodo/arXiv need Danny's explicit "Publish").
