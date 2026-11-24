@@ -10,3 +10,7 @@ DEV-4 (A4): polish also with the 0.67 and 0.85 keys. DEV-5 (A5): feasible counts
   violations with the sum. DEV-7 (A7): print engine-exception counts.
 Rerun = d2251b: re-score the run-1 samples (no resampling) + polish runs for 0.67 and 0.85 + DEV-2/3 sensitivities on the 5 most-ready
 designs per key. Physics and samples unchanged.
+DEV-8 (found after the d2251b rerun, disclosed): the sensitivity jobs ran in reused pool workers, so each job's kappa/synchrotron
+patch persisted into the next (synch x1.3 even LOWERED f_rad). The d2251b sensitivity lines are INVALID. Correction: the same 16
+sensitivity evaluations re-run with one fresh process per job (maxtasksperchild=1), plus an unpatched baseline per point. Diagnostic
+only: verdicts come from the re-scored samples and polish, which are unaffected.

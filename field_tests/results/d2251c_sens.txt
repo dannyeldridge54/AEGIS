@@ -1,0 +1,15 @@
+base      refl 0.8 {'R': 9.0, 'B': 9.0, 'fAr': 0.005, 'Paux': 10.0} P_fus 2970 P_net 1098 f_rad 0.942 synch/alpha 0.439 burn True viol@0.85 {'f_rad': 0.108}
+kappa1.6  refl 0.8 {'R': 9.0, 'B': 9.0, 'fAr': 0.005, 'Paux': 10.0} P_fus None P_net None f_rad None synch/alpha None burn False viol@0.85 None
+synch1.3  refl 0.8 {'R': 9.0, 'B': 9.0, 'fAr': 0.005, 'Paux': 10.0} P_fus None P_net None f_rad None synch/alpha None burn False viol@0.85 None
+base      refl 0.6 {'R': 9.0, 'B': 9.0, 'fAr': 0.005, 'Paux': 10.0} P_fus None P_net None f_rad None synch/alpha None burn False viol@0.85 None
+kappa1.6  refl 0.6 {'R': 9.0, 'B': 9.0, 'fAr': 0.005, 'Paux': 10.0} P_fus 1465 P_net 480 f_rad 0.957 synch/alpha 0.481 burn True viol@0.85 {'f_rad': 0.126}
+synch1.3  refl 0.6 {'R': 9.0, 'B': 9.0, 'fAr': 0.005, 'Paux': 10.0} P_fus None P_net None f_rad None synch/alpha None burn False viol@0.85 None
+base      refl 0.6 {'R': 8.0, 'B': 4.0, 'fAr': 0.0014, 'Paux': 20.0} P_fus 52 P_net -121 f_rad 0.67 synch/alpha 0.053 burn True viol@0.85 {'P_net': 1.313}
+kappa1.6  refl 0.6 {'R': 8.0, 'B': 4.0, 'fAr': 0.0014, 'Paux': 20.0} P_fus 25 P_net -133 f_rad 0.443 synch/alpha 0.082 burn True viol@0.85 {'core_Ar': 0.535, 'P_net': 1.427}
+synch1.3  refl 0.6 {'R': 8.0, 'B': 4.0, 'fAr': 0.0014, 'Paux': 20.0} P_fus 51 P_net -122 f_rad 0.683 synch/alpha 0.07 burn True viol@0.85 {'P_net': 1.319}
+base      refl 0.6 {'R': 7.0, 'B': 4.5, 'fAr': 0.005, 'Paux': 50.0} P_fus 184 P_net -131 f_rad 0.592 synch/alpha 0.045 burn True viol@0.85 {'P_net': 1.412}
+kappa1.6  refl 0.6 {'R': 7.0, 'B': 4.5, 'fAr': 0.005, 'Paux': 50.0} P_fus 80 P_net -174 f_rad 0.423 synch/alpha 0.067 burn True viol@0.85 {'seeding': 0.638, 'core_Ar': 0.638, 'P_net': 1.838}
+synch1.3  refl 0.6 {'R': 7.0, 'B': 4.5, 'fAr': 0.005, 'Paux': 50.0} P_fus 182 P_net -132 f_rad 0.601 synch/alpha 0.058 burn True viol@0.85 {'P_net': 1.422}
+base      refl 0.6 {'R': 5.0, 'B': 4.0, 'fAr': 0.0005, 'Paux': 10.0} P_fus 3 P_net -120 f_rad 0.797 synch/alpha 0.066 burn True viol@0.85 {'P_net': 1.303}
+kappa1.6  refl 0.6 {'R': 5.0, 'B': 4.0, 'fAr': 0.0005, 'Paux': 10.0} P_fus 2 P_net -121 f_rad 0.425 synch/alpha 0.096 burn True viol@0.85 {'core_Ar': 2.245, 'P_net': 1.306}
+synch1.3  refl 0.6 {'R': 5.0, 'B': 4.0, 'fAr': 0.0005, 'Paux': 10.0} P_fus 3 P_net -120 f_rad 0.798 synch/alpha 0.086 burn True viol@0.85 {'P_net': 1.303}

@@ -23038,3 +23038,24 @@ Tool-error burst 23 Nov 07:32-18:47 UTC (all weave_* tools) came from a temporar
 takes effect at the next learn-loop restart); Desktop CubeMind_Learn_Ladder.bat starts janus.autorun (qwen3:14b + qwen3-coder:30b,
 --allow-code) after the selftest, which activates the D2249 ladder. Not started remotely (Desktop icons ambiguous; Danny launches).
 Open: memory QA should answer from retrieval (0.75) rather than the model (0.20) - needs its own lock.
+
+## D2251 (LONG REACTOR REDESIGN, referee R113, rerun d2251b + DEV-8 correction d2251c, 23 Nov 2026) — CLOSED at every cap; the squeeze quantified
+Lock PREREG_D2251_REACTOR_REDESIGN (+DEVIATIONS DEV-1..8); theory/tests/d2251_redesign.py, d2251b_rescore.py, d2251c_sens.py;
+field_tests/results/d2251_run.txt / _redesign.json, d2251b_run.txt / _rescore.json, d2251c_sens.txt / .json.
+Pre-run audit: synchrotron = Albajar fit with Fidone reflection term, identical to UKAEA PROCESS docs; bremsstrahlung NRL C_B; argon ADAS.
+Budget at the D2244 near-design (R7 B9, Ar 0.8%): brems 265, synch 114, argon 261 MW. Same machine at Ar 0.14%: 4.5 GW, f_rad 0.48, but
+~500 MW crosses the edge (P_sep/R ~ 71).
+Search: 2 x 6000 samples of 113,400 (R 5-9, B 4-9, core Ar 0.05-0.5%, leg 1-5, P_aux 10-50, n_u 0.4-0.6, eta 3/5/10), f_reflect 0.6 / 0.8,
+polish from 15 starts (0.60 key) + 10 starts each for 0.67 and 0.85 (DEV-4). Control 558.8 MW / f_rad 0.990: PASS. Engine errors 0.
+Burning: 187 / 170 of 6000. Feasible: 0 in every (f_reflect, cap 0.60/0.67/0.85, eta) cell.
+Most-ready: (a) f_reflect 0.8: R9 B9 HTS, P_fus 2.97 GW, P_net 1098 MW, wall 1.65, coil 16.5 T, P_sep/R 4.0, fails ONLY f_rad = 0.942
+(over 0.85 by 11%); (b) f_reflect 0.6, caps 0.60-0.85: small low-field machines (R5-8, B4-4.5) meet the radiation caps but make
+3-184 MW fusion and lose 120-131 MW net (house load floor ~120 MW).
+Sensitivities (DEV-8 corrected, fresh process per job; the d2251b sensitivity lines are INVALID): synchrotron x1.3 raises f_rad slightly
+or stops the burn (R9 B9); kappa 1.6 cuts fusion power (small machines lose more; R9 B9 at f_reflect 0.6: 1.47 GW, P_net 480, f_rad 0.957).
+Neither flips the verdict.
+Reading (the squeeze): with P_sep/R <= 17 the plasma may lose at most 17R/(1 - f_rad) MW of heating; net-positive plants need P_fus of
+several hundred MW, and in this engine such high-field plasmas radiate >= 0.94 of their heating, mostly bremsstrahlung, synchrotron
+(0.44 of alpha at B 9 T, f_reflect 0.8) and argon. The levers left are outside this engine: confinement above H98 1 (smaller hotter
+plasmas), a divertor taking more than 17 MW/m (liquid metal, unproven), lower plant house load, or a stellarator.
+Verdict (pre-fixed): CLOSED at caps 0.60, 0.67 and 0.85. ESTIMATE; NT confinement assumed; pedestal profiles (optimistic).
