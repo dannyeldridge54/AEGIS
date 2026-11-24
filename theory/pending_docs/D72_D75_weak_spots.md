@@ -22996,3 +22996,7 @@ the core radiation budget (synchrotron reflectivity, profiles), the single model
 "both also feasible at eta 3" is wrong: only R7 B9 is feasible at eta 3; R8 B8 only at eta 5 and 10. "NT removes the H-mode wall" is an
 assumption of the lock (L-H limit deleted, H98 ~1 extrapolated from carbon-wall DIII-D/TCV), not a result; wording changed to conditional.
 f_rad here = P_rad,core(core region + all synchrotron)/(P_alpha + P_aux), not like-for-like with DIII-D measured fractions.
+
+## D2246 (PUBLISHED on Danny's "referee it, and then publish it too", 23 Nov 2026 21:16) — Reactor Paper 3
+"Reactor Paper 3 — Flipping the Shape: If Negative Triangularity Avoids the H-mode Wall, Core Radiation Is the Next" (D2243, D2243a,
+D2244, D2244a; referee R111/R112 final NULL — BALANCED), with process-records zip: doi:10.5281/zenodo.24488692.
