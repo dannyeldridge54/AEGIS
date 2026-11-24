@@ -23000,3 +23000,9 @@ f_rad here = P_rad,core(core region + all synchrotron)/(P_alpha + P_aux), not li
 ## D2246 (PUBLISHED on Danny's "referee it, and then publish it too", 23 Nov 2026 21:16) — Reactor Paper 3
 "Reactor Paper 3 — Flipping the Shape: If Negative Triangularity Avoids the H-mode Wall, Core Radiation Is the Next" (D2243, D2243a,
 D2244, D2244a; referee R111/R112 final NULL — BALANCED), with process-records zip: doi:10.5281/zenodo.24488692.
+
+## D2247 (PUBLISHED on Danny's "publish them", 23 Nov 2026 21:20)
+- Reactor Paper 2 v2 (adds D2243 + correction D2243a; corrected PDF + updated process zip): doi:10.5281/zenodo.24488731 (new version of
+  24488146).
+- Fusion Reactor Chain — Talk (330-600 MW line corrected before publishing): doi:10.5281/zenodo.24488749.
+Every paper/doc in tonight's set is now published; no known uncorrected claim remains on Zenodo from this series.
