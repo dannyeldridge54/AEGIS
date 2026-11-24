@@ -22861,3 +22861,21 @@ Draft only; no submission or posting (Zenodo/arXiv need Danny's explicit "Publis
 Preprint, CC BY-NC-SA 4.0, creator Eldridge, Danny (Independent researcher, Oklahoma City), 9 pages, PDF exported from the Claude Doc rev 13
 (papers/reactor_chain/Eldridge_reactor_chain_2026.pdf). File verified on Zenodo against local before and after publishing: md5
 d078dd3e1389cbdd36e565930913a2b0. https://zenodo.org/records/24486255. Uploaded from Danny's Chrome (his own Zenodo session).
+
+## D2236 (HELM: raise net power by steering R and B, locked limits, referee x2, one rerun, 23 Nov 2026) — divertor exhaust caps the plant; ~330-600 MW net with today's magnets (labelled), HTS 1.28 GW NOT reportable
+Lock PREREG_D2236_HELM_POWER; DEVIATIONS DEV-1..7 (P_sep bug double-counted 1.6 P_rad_core, control, ADAS variant, P_aux grid floor 10 MW,
+TBR hold check, unverified limit sources, P_other scaling); code theory/tests/d2236_helm.py; field_tests/results/d2236_helm_rerun.json.
+Knobs R 6.2-9 m x B 5.3-9 T (self-similar, fixed q95), dials P_aux 10-100 MW, density 0.6-1.0 n_G; limits f_G 0.94, beta_N 2.8, L-H 1.3,
+wall load <= 2.0 MW/m^2 (UNVERIFIED), P_sep/R <= 17 MW/m (UNVERIFIED, EU-DEMO class), TBR hold.
+- Control: ITER machine, old rules: +4.88 MW (reproduced), but its P_sep/R is 25.5 MW/m -> under the new rules the ITER machine has NO
+  feasible point.
+- Reportable (labels: P_sep/R-limited, limits UNVERIFIED, ignition-class P_aux 10 MW, burn control and start-up not modelled, Q not quoted):
+  Nb3Sn-class R 9 m B 6 T: P_net 328 MW (ADAS) / 399 MW (input radiation), P_fus 1.09-1.27 GW; R 8 m B 8 T: 601 MW. Scaling the house load
+  with surface costs ~110 MW. Radiation-model spread ~20%.
+- NOT reportable: HTS R 9 m B 9 T, 1.28 GW. It passes the divertor limit only because ~490 MW of synchrotron is counted as core radiation
+  with the ITER reflection factor 0.6 extrapolated to ~20 keV (f_reflect 0.4 -> P_sep/R 1; 0.8 -> 29, fails; without synchrotron 51-74).
+- Infeasible holes (7,7), (7,8), (6.2,8), (6.2,9): the locked 0.6 n_G density floor is already over the P_sep/R limit at high B - not
+  physical infeasibility. TBR hold is a weak limit (fails only below ~480 MW fusion).
+Finding: steering size and field raises fusion power, but the divertor exhaust (P_sep/R) is the binding limit almost everywhere; power
+output is bought with exhaust handling, not with confinement. Next (needs a NEW lock): synchrotron reflection sensitivity, density floor
+below 0.6 n_G, P_aux = 0 / burn control, verified wall-load and P_sep/R limits, radiative-divertor (seeded) exhaust as a knob.
