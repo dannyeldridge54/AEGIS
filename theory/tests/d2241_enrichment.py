@@ -55,11 +55,12 @@ import copy
 LAD0 = copy.deepcopy(LAD)
 
 out={}
-for tag,legs,nus,enrs in (('control',[1,2,3,4,5],[0.4,0.5,0.6],[3]),('main',[1,2,3,4,5],[0.4,0.5,0.6],[3,5,10])):
+for tag,legs,nus,enrs in (('eta3',[1,2,3,4,5],[0.4,0.5,0.6],[3]),('eta5',[1,2,3,4,5],[0.4,0.5,0.6],[5]),('eta10',[1,2,3,4,5],[0.4,0.5,0.6],[10])):
+    for st in starts.values(): st['enr']=enrs[0]
     LAD['leg']=legs; LAD['nu']=nus; LAD['enr']=enrs; evaluate.cache_clear(); res={}; print('==',tag)
     for cls, cm in (('Nb3Sn', 12.0), ('HTS', 20.0)):
         for s, p in starts.items():
             end, e, hist = breathe(p, cm); res[f'{cls}|{s}'] = dict(end=end, result=e, rotations=len(hist), history=hist)
             print(cls, s, '->', end, {q: (round(e[q], 3) if isinstance(e.get(q), float) else e.get(q)) for q in ('feasible', 'P_net', 'P_fus', 'c_SOL', 'Psep_R', 'wall', 'TBR', 'violations')}, 'rot', len(hist), flush=True)
     out[tag]=res
-json.dump(out, open('field_tests/results/d2241_enrichment.json','w'), indent=1, default=float)
+json.dump(out, open('field_tests/results/d2241_enrichment_rerun.json','w'), indent=1, default=float)
