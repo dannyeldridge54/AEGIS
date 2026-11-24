@@ -1,0 +1,10 @@
+CONTROL 1004.5 ['LH']
+Nb3Sn|R13 feasible 0 eta3 0 best None
+Nb3Sn|R12 feasible 0 eta3 0 best None
+Nb3Sn|R13E feasible 0 eta3 0 best None
+Nb3Sn|R12E feasible 0 eta3 0 best None
+HTS|R13 feasible 0 eta3 0 best None
+HTS|R12 feasible 0 eta3 0 best None
+HTS|R13E feasible 0 eta3 0 best None
+HTS|R12E feasible 0 eta3 0 best None
+burning samples 169 of 4973
