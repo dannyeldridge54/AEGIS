@@ -22970,3 +22970,8 @@ D2236-D2241 judged H-mode access on P_loss = P_alpha + P_aux - 0.6 P_rad_core (p
 crossing the separatrix. Under the consistent f_LH = Psep/P_LH every point quoted there fails H-mode access, including the D2236
 "reportable" 328-601 MW plants and the D2241 1.0 GW point (f_LH ~0.03). Their exhaust and breeding results stand; their L-H passes do not.
 Reactor Paper 2 (doi:10.5281/zenodo.24488146) states the D2236 numbers without this correction - a new Zenodo version needs "Publish".
+
+## D2245 (PUBLISHED on Danny's "publish the other papers except the reactor", 23 Nov 2026 21:05)
+- Fusion Reactor Field Guide — Who Is Building What, and What We Can Borrow: doi:10.5281/zenodo.24488566
+- Fusion From Zero — A Plain-Words Guide: doi:10.5281/zenodo.24488584
+Not published (per instruction): Reactor Paper 2 v2 (D2243a correction) and the reactor talk. Both guides checked: no D2236-D2241 L-H numbers.
