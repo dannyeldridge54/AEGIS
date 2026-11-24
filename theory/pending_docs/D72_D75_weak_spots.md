@@ -22891,3 +22891,13 @@ Triangulation: E1 alone would pass the two Nb3Sn machines; E2 and E3 both fail t
 radiated (detached, seeded divertor) - the decisive engineering item. TBR 1.021 (1-D) is below the 1.05 design margin for every machine.
 First-wall life 2.3-4.6 full-power years at a 20 dpa limit. Verdict: none "lead-ready at 0-D"; the plan's next locks are exhaust (seeded
 divertor model), 3-D neutronics for TBR margin, and verified limits.
+
+## D2238 A (BLANKET upgrade, locked Monte Carlo, 23 Nov 2026) — Li-6 enrichment clears the 1.05 margin; the thin-first-wall jump is SUSPECT
+tools/fusion/d2238_blanket.py (locked N6-N8 MC, 8 x 2500 histories per case); field_tests/results/d2238_blanket.json. TBR +- sem:
+| Li-6 | FW 10 cm | FW 5 cm |
+| 50% | 1.0193 +- 0.0081 (control: N8 1.0209 +- 0.0041, agrees) | 1.3051 +- 0.0105 |
+| 70% | 1.0649 +- 0.0062 | 1.3515 +- 0.0112 |
+| 90% | 1.0950 +- 0.0029 (margin 1.05 + 2 sem MET) | 1.3692 +- 0.0067 |
+Enrichment: +0.076 from 50% to 90% at 10 cm steel - plausible, and it clears the design margin. The 5 cm first wall adds +0.27-0.29,
+far above the usual ~1-2% per cm of steel - flagged SUSPECT (possible geometry/tally effect in the 1-D sphere); not to be quoted until
+audited. The D2239 breathing engine uses this table; any of its points that need the 5 cm cases inherit the flag.
