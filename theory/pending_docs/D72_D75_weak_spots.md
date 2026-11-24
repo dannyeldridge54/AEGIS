@@ -22948,3 +22948,25 @@ validated threshold), which needs its own lock. Labels ESTIMATE, self-check only
 - How the Elements Are Made — Every Known Route and the Possible Ones (review, not new research): doi:10.5281/zenodo.24488090
 Copies + 00_START_HERE_TOMORROW.md placed in the PC's OU_Fusion_Packet (9_new_papers). Weave map: no new data release found that is not
 already in the map (ACT DR6 / DESI DR2 / CMB-SPA); reactor and elements work is standard physics and does not change the Weave map.
+
+## D2243 (STEADY HELM PASS: global search + consistent H-mode rule, referee R111 x2, one rerun, 23 Nov 2026) — CLOSED; best f_LH 0.38 (3.2x short)
+Lock PREREG_D2243_STEADY_PASS (+DEVIATIONS DEV-1..7); theory/tests/d2243_steady.py; field_tests/results/d2243_rerun.txt, d2243_steady.json.
+Deep dive: EU-DEMO (Siccinio et al.) runs at f_LH = P_sep/P_LH = 1.2 (Martin 2008), divertor P_sep*B/(q95 A R) <= ~9 MW T/m,
+enrichment literature ~3. Referee R111 round 1: NOT BALANCED (BLOCKERS F1 L-H judged on the lenient P_loss = P_alpha+P_aux-0.6 P_rad_core
+while exhaust used Psep; F2 negative Psep passed E2/Psep-R/seeding via the Lengyel clamp; MAJOR F3 Psep/R limit missing; F4 convention
+mislabel; F5 synchrotron up to ~64-88% of alpha power, unverified). Run 1 stopped before results were read; fixes DEV-1..7; one rerun.
+Round 2: NULL - BALANCED (with wording qualifiers below).
+- Control: unpatched engine reproduces D2241 point, 1004.5 MW [LH]. PASS.
+- 4973 unique random points (lock said 5000; dedup cut) = 8.6% of the 57,600-point grid. Only 169 (3.4%) burn; the rest have no
+  operating point.
+- Feasible: 0 in all 8 sets (Nb3Sn/HTS x R13/R12/R13E/R12E). Every burning sample fails H-mode access; best f_LH = 0.38 vs 1.2-1.3
+  needed (3.2x short). Nearest points (HTS): R 9, B 9, eta 10, P_net ~1.0 GW, fail only LH.
+- Synchrotron/alpha 0.08-0.88 across burning samples (F5, unverified).
+Verdict (pre-fixed): CLOSED in this engine under f_LH = Psep/P_LH. The synchrotron budget is unverified and could narrow, but is not
+shown to close, the 3.2x gap; subtracting only core (rho < core) radiation is if anything lenient.
+
+## D2243a (CORRECTION to D2236-D2241, 23 Nov 2026) — their L-H checks were lenient
+D2236-D2241 judged H-mode access on P_loss = P_alpha + P_aux - 0.6 P_rad_core (pedestal confinement convention), not on the power
+crossing the separatrix. Under the consistent f_LH = Psep/P_LH every point quoted there fails H-mode access, including the D2236
+"reportable" 328-601 MW plants and the D2241 1.0 GW point (f_LH ~0.03). Their exhaust and breeding results stand; their L-H passes do not.
+Reactor Paper 2 (doi:10.5281/zenodo.24488146) states the D2236 numbers without this correction - a new Zenodo version needs "Publish".

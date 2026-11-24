@@ -25,3 +25,8 @@
 - R107 (23 Nov 2026, stage map cycle 3 SPARC): radas units OK; reproduction "0.1%" true but not discriminating; 140/Q11 goalpost not cfspopcon's PRD cell (GOALPOST); P_aux compare vs absorbed+ohmic; BUG hollow density from frozen n_ped -> rerun by PROM-8 recipe: 121 MW / 7.99 MW -> EDGE ceiling.
 - R108 (23 Nov 2026, ping-pong leveling, standing referee rounds 1-5): JET model inputs (Ti/Te fixed, D2219, still OUT); alpha_s MS->DR (D2220) + top decoupling (D2221) -> 0.11446 OUT; D/H omega_b error -> -2.07 OUT (prereg EDGE rule overruled by map band); wiring/housekeeping OK (D2222); EDGE sweep all final. Round 5: NULL - BALANCED (no actionable non-tuning finding left); 4 OUTs OBSTRUCTED by named missing inputs.
 - R110 (23 Nov 2026, D2236 helm): run 1 BLOCKER - P_sep double-subtracted core radiation; control incompatible with new limit; missing TBR check; rerun audit: HTS 1.28 GW rests on unvalidated synchrotron reflection (not reportable); Nb3Sn-class 330-600 MW reportable with labels; P_sep/R binds.
+
+## R111 (D2243 steady helm pass, 23 Nov 2026) — round 1 NOT BALANCED (2 BLOCKER, 3 MAJOR, 2 MINOR); round 2 NULL — BALANCED
+F1 L-H on lenient P_loss vs exhaust Psep (BLOCKER, fixed DEV-1); F2 negative Psep passes via Lengyel clamp (BLOCKER, DEV-2); F3 Psep/R
+limit missing (DEV-3); F4 convention label (DEV-4); F5 synchrotron budget unverified (flagged); F6 grid count; F7 impurity iterations.
+Consequence: correction D2243a on D2236-D2241 L-H passes.
