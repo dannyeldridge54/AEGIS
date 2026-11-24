@@ -1,3 +1,4 @@
+# NOTE (DEV-8): the sensitivity lines below ("sens ...") are INVALID (state leak between reused pool workers); corrected values in d2251c_sens.txt.
 f_reflect 0.6 burning 187 of 6000 engine errors 0 {'refl0.6|cap0.6|eta3': 0, 'refl0.6|cap0.6|eta5': 0, 'refl0.6|cap0.6|eta10': 0, 'refl0.6|cap0.67|eta3': 0, 'refl0.6|cap0.67|eta5': 0, 'refl0.6|cap0.67|eta10': 0, 'refl0.6|cap0.85|eta3': 0, 'refl0.6|cap0.85|eta5': 0, 'refl0.6|cap0.85|eta10': 0}
 f_reflect 0.8 burning 170 of 6000 engine errors 0 {'refl0.8|cap0.6|eta3': 0, 'refl0.8|cap0.6|eta5': 0, 'refl0.8|cap0.6|eta10': 0, 'refl0.8|cap0.67|eta3': 0, 'refl0.8|cap0.67|eta5': 0, 'refl0.8|cap0.67|eta10': 0, 'refl0.8|cap0.85|eta3': 0, 'refl0.8|cap0.85|eta5': 0, 'refl0.8|cap0.85|eta10': 0}
 refl 0.6 cap 0.6: most-ready {'R': 7.0, 'B': 4.5, 'fAr': 0.005, 'leg': 4, 'blk': 2, 'Paux': 50.0, 'dens': 0.9, 'nu': 0.6, 'enr': 10} P_net -131 P_fus 184 f_rad 0.592 PsepR 5.1 wall 0.17 coil 8.9 n_viol 1 viol {'P_net': 1.412}

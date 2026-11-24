@@ -41,3 +41,4 @@ R112 final paper round: NULL — BALANCED (P1-P4 resolved).
 A1 DIII-D NT core radiated fraction up to 0.85 reported (cap 0.60 is a margin, not a demonstrated maximum); A2 NT run with ITER kappa 1.85;
 A3 synchrotron profile factors vs pedestal T0 (optimistic); A4-A7 polish keys, per-eta counts, violation scaling, exception counts.
 Source: https://meetings-archive.aps.org/dpp/2023/to07/9/ . Handled by DEVIATIONS before results were read.
+R113 final round (D2251 results): NULL — BALANCED with 3 MINOR wording fixes (thin search/squeeze bound; R9B9 solver-marginal; house-load lever withdrawn).

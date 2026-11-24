@@ -23059,3 +23059,11 @@ several hundred MW, and in this engine such high-field plasmas radiate >= 0.94 o
 (0.44 of alpha at B 9 T, f_reflect 0.8) and argon. The levers left are outside this engine: confinement above H98 1 (smaller hotter
 plasmas), a divertor taking more than 17 MW/m (liquid metal, unproven), lower plant house load, or a stellarator.
 Verdict (pre-fixed): CLOSED at caps 0.60, 0.67 and 0.85. ESTIMATE; NT confinement assumed; pedestal profiles (optimistic).
+
+## D2251a (CORRECTION to D2251, referee R113 final round NULL — BALANCED, 23 Nov 2026)
+1. The search is thin (187 / 170 of 6000 burn); CLOSED rests mainly on the squeeze bound P_alpha + P_aux <= 17R/(1 - f_rad), not on sample count.
+2. The 1098 MW R9 B9 design is solver-marginal: it burns at f_reflect 0.8 but not 0.6; kappa 1.6 burns at 0.6 but not 0.8; synchrotron x1.3
+   stops it in both. "1.47 GW at f_reflect 0.6 (kappa 1.6)" is not a reduced version of a burning base case.
+3. "Lower plant house load" is withdrawn as a lever: the small machines make 3-184 MW of fusion (at most ~80 MW gross electric), so they are
+   sub-reactor at any house load. Remaining levers: confinement above H98 1, a divertor taking more than 17 MW/m, or a stellarator.
+d2251b_run.txt now carries a header pointing to DEV-8.
