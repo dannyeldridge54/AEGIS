@@ -1,0 +1,32 @@
+[
+ {
+  "machine": "ITER control",
+  "q_par_u_GW_m2": 23.500337137662072,
+  "T_u_eV": 455.10991892630176,
+  "c_Ar_SOL": 2.3586472691615428,
+  "Pfus_factor_compression1": 1349.7068241095706,
+  "Pfus_factor_compression3": 134.08371098702577,
+  "workable": false,
+  "n_u_assumed": 4.058451048843332e+19
+ },
+ {
+  "machine": "Nb3Sn R9 B6",
+  "q_par_u_GW_m2": 16.518472719024473,
+  "T_u_eV": 457.7362786034517,
+  "c_Ar_SOL": 1.8941196273182639,
+  "Pfus_factor_compression1": 858.8365975494389,
+  "Pfus_factor_compression3": 82.84588237789667,
+  "workable": false,
+  "n_u_assumed": 3.1650813211105227e+19
+ },
+ {
+  "machine": "Nb3Sn R8 B8",
+  "q_par_u_GW_m2": 24.613690567561466,
+  "T_u_eV": 496.00722017539493,
+  "c_Ar_SOL": 1.5918174111884136,
+  "Pfus_factor_compression1": 598.735806505992,
+  "Pfus_factor_compression3": 56.09549913221484,
+  "workable": false,
+  "n_u_assumed": 4.747621981665784e+19
+ }
+]
