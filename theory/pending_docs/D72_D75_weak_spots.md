@@ -22901,3 +22901,14 @@ tools/fusion/d2238_blanket.py (locked N6-N8 MC, 8 x 2500 histories per case); fi
 Enrichment: +0.076 from 50% to 90% at 10 cm steel - plausible, and it clears the design margin. The 5 cm first wall adds +0.27-0.29,
 far above the usual ~1-2% per cm of steel - flagged SUSPECT (possible geometry/tally effect in the 1-D sphere); not to be quoted until
 audited. The D2239 breathing engine uses this table; any of its points that need the 5 cm cases inherit the flag.
+
+## D2239 (BREATHING DESIGN ENGINE, rerun after DEV-1, 23 Nov 2026) — no design satisfies every limit; the exhaust/H-mode squeeze is the wall (ESTIMATE)
+theory/tests/d2239_breathe.py; field_tests/results/d2239_breathe_rerun.json. Six rotations (3 starts x Nb3Sn/HTS), 3-4 rotations each to NULL.
+- ITER start -> R 6.2, B 5.3, core Ar 0.3%, leg x3: still no burning solution (seeding need 14%).
+- R9B6 start -> R 8, B 5.3, leg x3, density 0.7: no burning solution (seeding need 38%).
+- R8B8 start -> R 9, B 9, core Ar 0.3%, leg x2, Li-6 70%: P_fus 2.44 GW, P_net 839 MW, divertor argon only 0.4% - but the core then radiates
+  more than the heating (P_sep/R -0.5) and the plasma falls below the H-mode threshold (L-H violated; Nb3Sn also violates coil field).
+Reading: the three starts do NOT converge (no triangulated optimum). Every path hits the same squeeze: enough radiation to save the divertor
+pushes the core out of H-mode; too little and the divertor needs impossible seeding. A working design needs a different exhaust solution
+(advanced divertor geometry beyond x3 leg, or a radiative mantle model with H-mode access), which this 0-D engine cannot settle. Labels:
+ESTIMATE (Lengyel, n_u = 0.4 <n>, compression 3, unverified limits); self-check only.
