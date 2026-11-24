@@ -22941,3 +22941,10 @@ Literature: enrichment ~3 measured for N on ASDEX Upgrade (uncertain); no argon 
 Reading: with very good (unmeasured) enrichment the large HTS design fails only on H-mode access, because heavy radiation leaves too
 little power crossing the edge. The last open lever is the H-mode criterion itself (radiative mantle: judged on separatrix power with a
 validated threshold), which needs its own lock. Labels ESTIMATE, self-check only.
+
+## D2242 (PUBLISHED on Danny's "Publish", 23 Nov 2026 20:31) — three records
+- Reactor Paper 2 — Exhaust Is the Wall (D2236-D2241, with process-records zip): doi:10.5281/zenodo.24488146
+- The AEGIS Toolkit — What It Does and How It Was Built: doi:10.5281/zenodo.24488137
+- How the Elements Are Made — Every Known Route and the Possible Ones (review, not new research): doi:10.5281/zenodo.24488090
+Copies + 00_START_HERE_TOMORROW.md placed in the PC's OU_Fusion_Packet (9_new_papers). Weave map: no new data release found that is not
+already in the map (ACT DR6 / DESI DR2 / CMB-SPA); reactor and elements work is standard physics and does not change the Weave map.
