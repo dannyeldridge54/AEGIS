@@ -23013,3 +23013,10 @@ Reads CubeMind's learn_log/memory (read-only, live), NUBASE2020 and OPEN-ADAS ca
 replay of locked runs D2243/D2244; teaching panels (Bosch-Hale, 0-D balance, toy 1-D Monte Carlo — labelled, not the locked engine).
 CubeMind given CUBEMIND_NUCLEAR_BRIEF_2026-11-23.md, 10 memory records (backup cubemind_memory.jsonl.bak_nuclear_23nov) and a new
 REACTOR_LOOP_TASK queue (top: verify core radiation budget).
+
+## D2249 (CUBEMIND LEARNING LADDER, 23 Nov 2026 21:36) — 13 gradable tracks, nuclear -> reactors -> fields -> circuits -> logic -> CPU
+tools/cubemind_ladder/curriculum_ladder.py + CUBEMIND_LESSON_PLAN.md; installed in CubeMind_janus/janus (curriculum.py appended with a
+guarded TRACKS.update; backup curriculum.py.bak_ladder_23nov). 20 tracks total, 160 lessons / 100 exams, no lesson-exam overlap, every
+expected answer self-grades; code items verified with reference solutions. Janus selftest on the PC: 0 failures. Takes effect when the
+Janus loop next starts. Pre-existing bug noticed (not fixed): the original 'logic' track's letter substitution also rewrites 'All' and
+'Answer' (e.g. 'Sll', 'Snswer').
