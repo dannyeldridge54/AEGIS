@@ -1,0 +1,212 @@
+{
+ "Nb3Sn|ITER": {
+  "end": {
+   "R": 6.2,
+   "B": 5.3,
+   "fAr": 0.0014,
+   "leg": 1,
+   "blk": 0,
+   "Paux": 50.0,
+   "dens": 0.85
+  },
+  "result": {
+   "score": -99.0,
+   "feasible": false,
+   "why": "no_solution"
+  },
+  "rotations": 1,
+  "history": [
+   {
+    "rotation": 1,
+    "point": {
+     "R": 6.2,
+     "B": 5.3,
+     "fAr": 0.0014,
+     "leg": 1,
+     "blk": 0,
+     "Paux": 50.0,
+     "dens": 0.85
+    },
+    "score": -99.0,
+    "feasible": false,
+    "P_net": null,
+    "violations": null
+   }
+  ]
+ },
+ "Nb3Sn|R9B6": {
+  "end": {
+   "R": 9.0,
+   "B": 6.0,
+   "fAr": 0.0014,
+   "leg": 1,
+   "blk": 0,
+   "Paux": 10.0,
+   "dens": 0.8
+  },
+  "result": {
+   "score": -99.0,
+   "feasible": false,
+   "why": "no_solution"
+  },
+  "rotations": 1,
+  "history": [
+   {
+    "rotation": 1,
+    "point": {
+     "R": 9.0,
+     "B": 6.0,
+     "fAr": 0.0014,
+     "leg": 1,
+     "blk": 0,
+     "Paux": 10.0,
+     "dens": 0.8
+    },
+    "score": -99.0,
+    "feasible": false,
+    "P_net": null,
+    "violations": null
+   }
+  ]
+ },
+ "Nb3Sn|R8B8": {
+  "end": {
+   "R": 8.0,
+   "B": 8.0,
+   "fAr": 0.0014,
+   "leg": 1,
+   "blk": 0,
+   "Paux": 10.0,
+   "dens": 0.85
+  },
+  "result": {
+   "score": -99.0,
+   "feasible": false,
+   "why": "no_solution"
+  },
+  "rotations": 1,
+  "history": [
+   {
+    "rotation": 1,
+    "point": {
+     "R": 8.0,
+     "B": 8.0,
+     "fAr": 0.0014,
+     "leg": 1,
+     "blk": 0,
+     "Paux": 10.0,
+     "dens": 0.85
+    },
+    "score": -99.0,
+    "feasible": false,
+    "P_net": null,
+    "violations": null
+   }
+  ]
+ },
+ "HTS|ITER": {
+  "end": {
+   "R": 6.2,
+   "B": 5.3,
+   "fAr": 0.0014,
+   "leg": 1,
+   "blk": 0,
+   "Paux": 50.0,
+   "dens": 0.85
+  },
+  "result": {
+   "score": -99.0,
+   "feasible": false,
+   "why": "no_solution"
+  },
+  "rotations": 1,
+  "history": [
+   {
+    "rotation": 1,
+    "point": {
+     "R": 6.2,
+     "B": 5.3,
+     "fAr": 0.0014,
+     "leg": 1,
+     "blk": 0,
+     "Paux": 50.0,
+     "dens": 0.85
+    },
+    "score": -99.0,
+    "feasible": false,
+    "P_net": null,
+    "violations": null
+   }
+  ]
+ },
+ "HTS|R9B6": {
+  "end": {
+   "R": 9.0,
+   "B": 6.0,
+   "fAr": 0.0014,
+   "leg": 1,
+   "blk": 0,
+   "Paux": 10.0,
+   "dens": 0.8
+  },
+  "result": {
+   "score": -99.0,
+   "feasible": false,
+   "why": "no_solution"
+  },
+  "rotations": 1,
+  "history": [
+   {
+    "rotation": 1,
+    "point": {
+     "R": 9.0,
+     "B": 6.0,
+     "fAr": 0.0014,
+     "leg": 1,
+     "blk": 0,
+     "Paux": 10.0,
+     "dens": 0.8
+    },
+    "score": -99.0,
+    "feasible": false,
+    "P_net": null,
+    "violations": null
+   }
+  ]
+ },
+ "HTS|R8B8": {
+  "end": {
+   "R": 8.0,
+   "B": 8.0,
+   "fAr": 0.0014,
+   "leg": 1,
+   "blk": 0,
+   "Paux": 10.0,
+   "dens": 0.85
+  },
+  "result": {
+   "score": -99.0,
+   "feasible": false,
+   "why": "no_solution"
+  },
+  "rotations": 1,
+  "history": [
+   {
+    "rotation": 1,
+    "point": {
+     "R": 8.0,
+     "B": 8.0,
+     "fAr": 0.0014,
+     "leg": 1,
+     "blk": 0,
+     "Paux": 10.0,
+     "dens": 0.85
+    },
+    "score": -99.0,
+    "feasible": false,
+    "P_net": null,
+    "violations": null
+   }
+  ]
+ }
+}
