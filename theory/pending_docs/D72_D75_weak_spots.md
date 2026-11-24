@@ -22912,3 +22912,16 @@ Reading: the three starts do NOT converge (no triangulated optimum). Every path 
 pushes the core out of H-mode; too little and the divertor needs impossible seeding. A working design needs a different exhaust solution
 (advanced divertor geometry beyond x3 leg, or a radiative mantle model with H-mode access), which this 0-D engine cannot settle. Labels:
 ESTIMATE (Lengyel, n_u = 0.4 <n>, compression 3, unverified limits); self-check only.
+
+## D2240 (EXHAUST-SOLUTIONS PASS, reactor paper 2 test, 23 Nov 2026) — WINDOW CLOSED; the wall moves from the divertor to the core
+Lock PREREG_D2240_EXHAUST_PASS; theory/tests/d2240_exhaust.py (D2239 engine + leg ladder to x5 and separatrix density n_u/<n> 0.4-0.6);
+field_tests/results/d2240_exhaust.json. Run once; self-check only (credits). Labels: ESTIMATE (Lengyel, connection length only, no flux
+expansion), limits UNVERIFIED.
+- Control (leg<=3, nu=0.4): all six endpoints reproduce D2239 exactly (ITER start seeding need 13.8%, R9B6 38.1%, R8B8 839 MW with L-H
+  violated). PASS.
+- Main: long leg x5 + n_u 0.6 cuts the divertor seeding need ITER-start 13.8% -> 4.3% (now under the 5% cap) and R9B6 38% -> 12%.
+  But no endpoint is feasible in either coil class: with the locked core-argon floor (core = SOL/3, compression 3) the 1.4% core argon
+  stops the plasma burning (no operating point). R8B8 start unchanged (still L-H violated).
+- Verdict (pre-fixed): WINDOW CLOSED. New reading: an advanced divertor can make seeding enough at the divertor, but impurity leakage into
+  the core then kills the burn. The next lever is divertor enrichment (compression > 3: core argon much lower than divertor argon), which
+  needs a NEW lock and a literature value for achievable enrichment.
