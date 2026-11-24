@@ -19,13 +19,13 @@ def lengyel(Psep, m, nav, leg):
 @functools.lru_cache(maxsize=None)
 def evaluate(R, B, fAr, leg, blk, Paux, dens, coil_max):
     m = machine(R, B); m['line_model'] = 'adas'; nG = m['Ip'] / (math.pi * m['a'] ** 2) * 1e20; nav = dens * nG
-    fcore = fAr; c = None
-    for _ in range(2):
+    fcore = fAr; c = None; c0 = None
+    for it in range(2):
         mm = dict(m, f_Ar=fcore)
         try: op = X.operating_point_fast(mm, EA, n_avg=nav, P_aux=Paux)
         except Exception: op = None
-        if op is None: return dict(score=-99.0, feasible=False, why='no_solution')
-        Psep = op['P_alpha'] + Paux - op['P_rad_core']; c = lengyel(Psep, m, nav, leg); fcore = max(fAr, c / 3)
+        if op is None: return dict(score=(-(c0 / 0.05) - 10.0) if c0 else -99.0, feasible=False, why='no_solution', c_SOL=c0)   # DEV-1
+        Psep = op['P_alpha'] + Paux - op['P_rad_core']; c = lengyel(Psep, m, nav, leg); c0 = c if c0 is None else c0; fcore = max(fAr, c / 3)
     b = BL[BLK[blk][0]]; tbr, tsem = b['TBR'], b['TBR_sem']
     wl = op['P_fus'] * SHARE / m['S']; coil = B * R / (R - m['a'] - 1.2)
     v = dict(greenwald=op['f_G'] / 0.94 - 1, betaN=op['beta_N'] / 2.8 - 1, LH=1.3 * op['P_LH'] / op['P_loss'] - 1, wall=wl / 2.0 - 1, coil=coil / coil_max - 1,
@@ -55,4 +55,4 @@ for cls, cm in (('Nb3Sn', 12.0), ('HTS', 20.0)):
     for s, p in starts.items():
         end, e, hist = breathe(p, cm); res[f'{cls}|{s}'] = dict(end=end, result=e, rotations=len(hist), history=hist)
         print(cls, s, '->', end, {q: (round(e[q], 3) if isinstance(e.get(q), float) else e.get(q)) for q in ('feasible', 'P_net', 'P_fus', 'c_SOL', 'Psep_R', 'wall', 'TBR', 'violations')}, 'rot', len(hist), flush=True)
-json.dump(res, open('field_tests/results/d2239_breathe.json', 'w'), indent=1, default=float)
+json.dump(res, open('field_tests/results/d2239_breathe_rerun.json', 'w'), indent=1, default=float)
