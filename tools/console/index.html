@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CubeMind Nuclear Console</title>
+<style>
+:root{--bg:#faf9f5;--panel:#ffffff;--side:#f2f0e8;--fg:#1f1e1b;--muted:#6b6a64;--line:#e6e3d8;--accent:#c96442;--accent2:#d97757;--good:#3f8a5a;--warn:#b7791f;--bad:#b3453b;--chip:#efece3;--grid:#ebe8de;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#1f1e1c;--panel:#262624;--side:#1a1917;--fg:#ecebe6;--muted:#a3a19a;--line:#3a3935;--accent:#d97757;--accent2:#e08a6c;--good:#6bbf87;--warn:#e0ad4f;--bad:#e07a6f;--chip:#302f2c;--grid:#33322e;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 "Segoe UI",system-ui,-apple-system,sans-serif;display:flex;height:100vh;overflow:hidden}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.01em;margin:0 0 .4em}
+h1{font-size:26px}h2{font-size:21px}h3{font-size:16px}
+nav{width:250px;flex:0 0 250px;background:var(--side);border-right:1px solid var(--line);padding:18px 12px;overflow:auto;display:flex;flex-direction:column;gap:2px}
+.brand{display:flex;align-items:center;gap:10px;padding:4px 10px 16px}
+.brand svg{flex:0 0 26px}.brand b{font-family:Georgia,serif;font-size:17px;font-weight:500}
+.brand small{display:block;color:var(--muted);font-size:11.5px}
+nav .grp{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:14px 10px 4px}
+nav a{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:8px;color:var(--fg);text-decoration:none;cursor:pointer;font-size:13.5px}
+nav a:hover{background:var(--chip)}nav a.on{background:var(--panel);box-shadow:0 0 0 1px var(--line)}
+nav a .lv{font-size:11px;color:var(--muted);width:18px}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--muted);display:inline-block}
+.pulse.live{background:var(--good);box-shadow:0 0 0 0 rgba(63,138,90,.6);animation:p 1.6s infinite}
+@keyframes p{70%{box-shadow:0 0 0 7px rgba(63,138,90,0)}100%{box-shadow:0 0 0 0 rgba(63,138,90,0)}}
+main{flex:1;overflow:auto;padding:28px 36px 60px}
+section{display:none;max-width:1180px}section.on{display:block}
+.lead{color:var(--muted);max-width:760px;margin:0 0 20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:14px 0 22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.card .k{font-size:12px;color:var(--muted)}.card .v{font-size:26px;font-family:Georgia,serif;margin-top:2px}.card .s{font-size:12px;color:var(--muted)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:1000px){.row{grid-template-columns:1fr}}
+canvas{width:100%;display:block;border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{font-weight:600;color:var(--muted);font-size:12px}
+.chip{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:600;background:var(--chip)}
+.g{color:var(--good)}.a{color:var(--warn)}.r{color:var(--bad)}
+.chip.g{background:color-mix(in srgb,var(--good) 14%,transparent)}.chip.a{background:color-mix(in srgb,var(--warn) 16%,transparent)}.chip.r{background:color-mix(in srgb,var(--bad) 14%,transparent)}
+label{font-size:12.5px;color:var(--muted);display:block;margin:8px 0 2px}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.ctl{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:4px 18px}
+.out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.out div{background:var(--chip);border-radius:8px;padding:8px 10px}.out b{display:block;font-family:Georgia,serif;font-size:19px;font-weight:500}
+.out span{font-size:11.5px;color:var(--muted)}
+.note{font-size:12px;color:var(--muted);margin-top:8px}
+.feed{font-family:Consolas,ui-monospace,monospace;font-size:12px;max-height:420px;overflow:auto}
+.feed div{padding:6px 8px;border-bottom:1px solid var(--line)}
+button{font:inherit;border:1px solid var(--line);background:var(--panel);color:var(--fg);border-radius:8px;padding:6px 12px;cursor:pointer}
+button.pri{background:var(--accent);border-color:var(--accent);color:#fff}
+.tip{position:fixed;pointer-events:none;background:var(--fg);color:var(--bg);font-size:12px;padding:6px 9px;border-radius:6px;display:none;z-index:9;max-width:320px}
+.ladder{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:10px 0 20px}@media(max-width:1000px){.ladder{grid-template-columns:repeat(3,1fr)}}
+.ladder a{display:block;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px;color:var(--fg);text-decoration:none;cursor:pointer}
+.ladder a:hover{border-color:var(--accent)}.ladder a small{color:var(--muted);display:block;font-size:11.5px}
+a.ext{color:var(--accent)}
+</style>
+</head>
+<body>
+<nav>
+  <div class="brand"><svg viewBox="0 0 26 26" width="26" height="26"><g fill="none" stroke="var(--accent)" stroke-width="1.6"><ellipse cx="13" cy="13" rx="11" ry="4.5"/><ellipse cx="13" cy="13" rx="11" ry="4.5" transform="rotate(60 13 13)"/><ellipse cx="13" cy="13" rx="11" ry="4.5" transform="rotate(120 13 13)"/></g><circle cx="13" cy="13" r="2.2" fill="var(--accent)"/></svg><div><b>CubeMind</b><small>Nuclear Console</small></div></div>
+  <a data-s="home" class="on"><span class="pulse" id="navpulse"></span> Overview</a>
+  <div class="grp">Nuclear levels</div>
+  <a data-s="l1"><span class="lv">1</span>Nuclides &amp; binding</a>
+  <a data-s="l2"><span class="lv">2</span>Reactions</a>
+  <a data-s="l3"><span class="lv">3</span>Plasma</a>
+  <a data-s="l4"><span class="lv">4</span>Neutrons &amp; blanket</a>
+  <a data-s="l5"><span class="lv">5</span>Exhaust &amp; radiation</a>
+  <a data-s="l6"><span class="lv">6</span>Plant</a>
+  <div class="grp">For reviewers</div>
+  <a data-s="check">What they look for</a>
+  <a data-s="search">Design search (live replay)</a>
+  <div class="grp">CubeMind</div>
+  <a data-s="feed">Live activity</a>
+  <a data-s="papers">Published papers</a>
+</nav>
+<main>
+<section id="home" class="on">
+  <h1>CubeMind Nuclear Console</h1>
+  <p class="lead">One place to see CubeMind working and the nuclear chain from the nucleus to the power plant. Live panels read CubeMind's own files on this computer; the teaching panels compute in front of you; the design-search panel replays the locked runs exactly as recorded.</p>
+  <div class="cards">
+    <div class="card"><div class="k">CubeMind status</div><div class="v" id="c_status">…</div><div class="s" id="c_status_s"></div></div>
+    <div class="card"><div class="k">Memory records</div><div class="v" id="c_mem">…</div><div class="s" id="c_mem_s"></div></div>
+    <div class="card"><div class="k">Last derivation</div><div class="v" id="c_der">…</div><div class="s" id="c_der_s"></div></div>
+    <div class="card"><div class="k">Published records</div><div class="v">9</div><div class="s">Zenodo, CC-BY 4.0, 23 Nov 2026</div></div>
+  </div>
+  <h2>The nuclear ladder</h2>
+  <div class="ladder">
+    <a data-go="l1"><b>1 · Nuclides</b><small>5,800 nuclei, binding curve</small></a>
+    <a data-go="l2"><b>2 · Reactions</b><small>D-T, D-D, D-He3 rates</small></a>
+    <a data-go="l3"><b>3 · Plasma</b><small>fusion power balance</small></a>
+    <a data-go="l4"><b>4 · Neutrons</b><small>breeding tritium, live</small></a>
+    <a data-go="l5"><b>5 · Exhaust</b><small>radiation, divertor</small></a>
+    <a data-go="l6"><b>6 · Plant</b><small>heat to electricity</small></a>
+  </div>
+  <div class="panel"><h3>Where the work stands</h3>
+  <p style="margin:0">The reactor chain matches professional codes on 15 of 21 checks. Pushing it to a power plant, every standard tokamak design fails the same squeeze between protecting the divertor and staying in high-confinement mode. A flipped-shape (negative-triangularity) tokamak would avoid that, and the next wall is core radiation, which is now the single thing to verify. Every step was locked first, refereed, and kept on the record, including the mistakes.</p></div>
+</section>
+
+<section id="l1"><h1>Level 1 · Nuclides and binding</h1>
+  <p class="lead">Every known nucleus from the NUBASE2020 table, by protons and neutrons. Colour shows how long it lives. The curve on the right is why fusion of light nuclei and fission of heavy ones both release energy: iron and nickel are the most tightly bound.</p>
+  <div class="row"><div class="panel"><h3>Chart of nuclides</h3><canvas id="cv_seg" height="440"></canvas><div class="note">Dark = stable. Warm to cool = longer to shorter half-life. Hover a square. Source: NUBASE2020 (CubeMind's catalog).</div></div>
+  <div class="panel"><h3>Binding energy per nucleon</h3><canvas id="cv_ba" height="440"></canvas><div class="note">Computed live from each nucleus's mass excess. Peak near iron-56 and nickel-62.</div></div></div>
+</section>
+
+<section id="l2"><h1>Level 2 · Reactions</h1>
+  <p class="lead">How often two nuclei fuse at a given temperature (the reactivity ⟨σv⟩), from the Bosch–Hale fits used in our engine. D-T is far easier than any other fuel, which is why every near-term reactor burns it.</p>
+  <div class="panel"><canvas id="cv_sv" height="380"></canvas>
+  <label>Temperature: <b id="t_sv">15</b> keV</label><input type="range" id="r_sv" min="1" max="100" value="15">
+  <div class="out" id="o_sv"></div><div class="note">1 keV ≈ 11.6 million °C. Computed in this window.</div></div>
+</section>
+
+<section id="l3"><h1>Level 3 · Plasma power balance</h1>
+  <p class="lead">A teaching version of the plasma calculation: choose the machine and the plasma, and see fusion power, heating from alpha particles and the radiation that fights it. The locked engine adds profiles, impurities and confinement scaling; this panel shows the core idea.</p>
+  <div class="panel"><div class="ctl">
+    <div><label>Major radius R: <b id="v_R">7</b> m</label><input type="range" id="R" min="3" max="10" step="0.1" value="7"></div>
+    <div><label>Field B: <b id="v_B">9</b> T</label><input type="range" id="B" min="3" max="12" step="0.1" value="9"></div>
+    <div><label>Density: <b id="v_n">1.3</b> ×10²⁰ m⁻³</label><input type="range" id="n" min="0.3" max="3" step="0.05" value="1.3"></div>
+    <div><label>Temperature: <b id="v_T">14</b> keV</label><input type="range" id="T" min="3" max="40" step="0.5" value="14"></div>
+  </div><div class="out" id="o_pl"></div><canvas id="cv_pl" height="150" style="margin-top:12px"></canvas>
+  <div class="note">Teaching estimate (flat profiles, a = R/3.1, elongation 1.8, Z_eff 1.6). Not the locked engine.</div></div>
+</section>
+
+<section id="l4"><h1>Level 4 · Neutrons and the blanket</h1>
+  <p class="lead">Each fusion makes one 14 MeV neutron. The blanket must catch it and turn lithium into new tritium, more than one tritium per neutron. Watch neutrons wander through the wall and blanket, multiply, and get captured, live.</p>
+  <div class="panel"><div class="ctl">
+    <div><label>Lithium-6 enrichment: <b id="v_e">90</b>%</label><input type="range" id="enr" min="7.5" max="95" step="0.5" value="90"></div>
+    <div><label>Steel first wall: <b id="v_fw">10</b> cm</label><input type="range" id="fw" min="2" max="20" step="1" value="10"></div>
+    <div style="display:flex;align-items:end;gap:8px"><button class="pri" id="mc_go">Run</button><button id="mc_reset">Reset</button></div>
+  </div><canvas id="cv_mc" height="260" style="margin-top:12px"></canvas><div class="out" id="o_mc"></div>
+  <div class="note">Teaching Monte Carlo (one dimension, energy groups) running in this window. The locked engine's full Monte Carlo gives TBR 1.095 ± 0.003 at 90% Li-6 and a 10 cm wall (paper 2); the design target is 1.05 with margin.</div></div>
+</section>
+
+<section id="l5"><h1>Level 5 · Exhaust and radiation</h1>
+  <p class="lead">Impurities radiate heat away before it reaches the divertor. That protects the divertor, but radiation from the core also starves the plasma edge. These are the real atomic-physics curves CubeMind holds (OPEN-ADAS), the same ones our engine uses.</p>
+  <div class="row"><div class="panel"><h3>Radiation per ion (L_z) vs temperature</h3><canvas id="cv_lz" height="380"></canvas><div class="note">Coronal line + recombination radiation at n_e = 10²⁰ m⁻³. Source: OPEN-ADAS ADF11 via CubeMind's element catalog.</div></div>
+  <div class="panel"><h3>The squeeze, in numbers</h3><table id="t_squeeze"></table><div class="note">From locked studies D2239–D2244 (ESTIMATES).</div></div></div>
+</section>
+
+<section id="l6"><h1>Level 6 · The plant</h1>
+  <p class="lead">Fusion heat becomes electricity, and the plant spends part of it running itself (magnets, pumps, heating). Below: the nearest design found (negative-triangularity mode, R 7 m, B 9 T, HTS magnets), as locked, before the core-radiation cap removed it.</p>
+  <div class="panel"><canvas id="cv_pp" height="300"></canvas><div class="note">D2244 as-locked design. With the radiation cap (≤ 0.6, demonstrated in experiments) no design passes yet. ESTIMATE.</div></div>
+</section>
+
+<section id="check"><h1>What a nuclear project lead looks for</h1>
+  <p class="lead">The checks a project lead or reviewer applies to a power-plant design, with our current best values and an honest status. Green = met, amber = met only with stated assumptions, red = not met.</p>
+  <div class="panel"><table id="t_check"></table></div>
+</section>
+
+<section id="search"><h1>Design search · live replay</h1>
+  <p class="lead">The locked searches, replayed sample by sample exactly as recorded. Each dot is one design: grey = plasma does not burn, red = fails a limit, amber = passes every locked limit but radiates over 60% from the core, green = passes everything.</p>
+  <div class="panel"><div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+    <button class="pri" id="rp_go">Replay</button><button id="rp_stop">Pause</button>
+    <select id="rp_set" style="font:inherit;padding:5px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--fg)"><option value="d2244">D2244 · negative triangularity (5,000 designs)</option><option value="d2243">D2243 · standard tokamak, H-mode rule (4,973)</option></select>
+    <span class="note" id="rp_stat" style="margin:0"></span></div>
+  <canvas id="cv_rp" height="460" style="margin-top:12px"></canvas><div class="out" id="o_rp"></div></div>
+</section>
+
+<section id="feed"><h1>CubeMind · live activity</h1>
+  <p class="lead">Read directly from CubeMind's learning log and memory on this computer, refreshed every few seconds. Nothing here is simulated.</p>
+  <div class="row"><div class="panel"><h3>Learning loop</h3><div class="feed" id="f_learn">Waiting for CubeMind…</div></div>
+  <div class="panel"><h3>Newest memory</h3><div class="feed" id="f_mem"></div><h3 style="margin-top:14px">Files</h3><div class="feed" id="f_files"></div></div></div>
+</section>
+
+<section id="papers"><h1>Published papers</h1><p class="lead">All open on Zenodo (CC-BY 4.0), each with its full process record where it applies.</p>
+  <div class="panel"><table id="t_pap"></table></div></section>
+</main>
+<div class="tip" id="tip"></div>
+<script>
+const $=id=>document.getElementById(id), css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const tip=$('tip'); function showTip(e,h){tip.innerHTML=h;tip.style.display='block';tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+14)+'px'} function hideTip(){tip.style.display='none'}
+function fit(c){const r=c.getBoundingClientRect(),d=devicePixelRatio||1;c.width=r.width*d;c.height=(+c.getAttribute('height'))*d;c.style.height=c.getAttribute('height')+'px';const x=c.getContext('2d');x.setTransform(d,0,0,d,0,0);return [x,r.width,+c.getAttribute('height')]}
+const shown={}; function go(s){document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',a.dataset.s===s));document.querySelectorAll('section').forEach(x=>x.classList.toggle('on',x.id===s));if(!shown[s]){shown[s]=1;init[s]&&init[s]()}else redraw[s]&&redraw[s]()}
+document.querySelectorAll('nav a[data-s]').forEach(a=>a.onclick=()=>go(a.dataset.s));document.querySelectorAll('[data-go]').forEach(a=>a.onclick=()=>go(a.dataset.go));
+const init={},redraw={};
+function axes(x,W,H,m,xl,yl,xr,yr,logx,logy){x.strokeStyle=css('--line');x.fillStyle=css('--muted');x.font='11px Segoe UI,sans-serif';x.lineWidth=1;
+ const X=v=>m.l+(W-m.l-m.r)*((logx?Math.log10(v):v)-(logx?Math.log10(xr[0]):xr[0]))/((logx?Math.log10(xr[1]):xr[1])-(logx?Math.log10(xr[0]):xr[0]));
+ const Y=v=>H-m.b-(H-m.t-m.b)*((logy?Math.log10(v):v)-(logy?Math.log10(yr[0]):yr[0]))/((logy?Math.log10(yr[1]):yr[1])-(logy?Math.log10(yr[0]):yr[0]));
+ x.beginPath();x.moveTo(m.l,m.t);x.lineTo(m.l,H-m.b);x.lineTo(W-m.r,H-m.b);x.stroke();x.fillText(xl,(W-m.r+m.l)/2-20,H-6);x.save();x.translate(12,(H)/2+30);x.rotate(-Math.PI/2);x.fillText(yl,0,0);x.restore();return [X,Y]}
+function ticks(x,X,Y,xs,ys,W,H,m,fx,fy){x.fillStyle=css('--muted');x.strokeStyle=css('--grid');for(const v of xs){x.beginPath();x.moveTo(X(v),m.t);x.lineTo(X(v),H-m.b);x.stroke();x.fillText(fx?fx(v):v,X(v)-8,H-m.b+14)}for(const v of ys){x.beginPath();x.moveTo(m.l,Y(v));x.lineTo(W-m.r,Y(v));x.stroke();x.fillText(fy?fy(v):v,4,Y(v)+4)}}
+
+/* ---------- live CubeMind ---------- */
+let liveData=null;
+function ago(t){const s=(Date.now()-Date.parse(t))/1000;return s<90?Math.round(s)+' s ago':s<5400?Math.round(s/60)+' min ago':Math.round(s/3600)+' h ago'}
+async function poll(){try{const d=await (await fetch('/api/live')).json();liveData=d;
+ if(!d.found){$('c_status').textContent='Not found';$('c_status_s').textContent='Start the console from the CubeMind folder or pass its path';return}
+ const L=d.learn||[],last=L[L.length-1]||{},age=last.t?(Date.now()-Date.parse(last.t))/1000:1e9,alive=age<3600;
+ $('navpulse').classList.toggle('live',alive);$('c_status').innerHTML=alive?'<span class="g">Working</span>':'<span class="a">Idle</span>';$('c_status_s').textContent=last.t?'last loop '+ago(last.t)+(last.model?' · '+last.model:''):'';
+ $('c_mem').textContent=(d.memory_records||0).toLocaleString();$('c_mem_s').textContent=d.memory_mtime?'updated '+ago(d.memory_mtime):'';
+ $('c_der').textContent=last.derive||'—';$('c_der_s').textContent=last.derive_score?'score '+last.derive_score+(last.derive_ok?' · ok':''):'';
+ $('f_learn').innerHTML=L.slice().reverse().map(e=>`<div><b>${(e.t||'').replace('T',' ').slice(0,19)}</b> · ${e.derive||'loop'} ${e.derive_score?'('+e.derive_score+')':''} · ingest ${e.ingest??'–'} · records ${(e.records??'–').toLocaleString?.()??e.records}${e.weave_error?'<br><span class="a">'+String(e.weave_error).slice(0,140)+'</span>':''}</div>`).join('')||'No entries yet';
+ $('f_mem').innerHTML=(d.memory_tail||[]).slice().reverse().map(t=>`<div>${t.replace(/</g,'&lt;')}</div>`).join('');
+ $('f_files').innerHTML=Object.entries(d.files||{}).map(([k,v])=>`<div>${k} · ${ago(v)}</div>`).join('');
+}catch(e){$('c_status').textContent='Offline'}}
+poll();setInterval(poll,4000);
+
+/* ---------- Level 1 ---------- */
+let NUC=null;
+init.l1=async()=>{if(!NUC){const d=await (await fetch('/api/nuclides')).json();NUC=d.rows}drawSeg();drawBA()};redraw.l1=()=>{drawSeg();drawBA()};
+function hl(t){if(t==null)return null;return Math.log10(t)}
+function colT(r){if(r[5])return css('--fg');const l=hl(r[4]);if(l==null)return css('--muted');const f=Math.max(0,Math.min(1,(l+6)/16));return `hsl(${200-170*f} 65% ${62-14*f}%)`}
+function drawSeg(){const c=$('cv_seg'),[x,W,H]=fit(c);x.clearRect(0,0,W,H);if(!NUC||!NUC.length){x.fillStyle=css('--muted');x.fillText('Nuclide catalog not found in the CubeMind folder.',20,30);return}
+ const m={l:34,r:10,t:10,b:28},nm=180,zm=120,sx=(W-m.l-m.r)/nm,sy=(H-m.t-m.b)/zm;const [X,Y]=axes(x,W,H,m,'neutrons N','protons Z',[0,nm],[0,zm]);
+ for(const r of NUC){const N=r[1]-r[0];x.fillStyle=colT(r);x.fillRect(m.l+N*sx,H-m.b-(r[0]+1)*sy,Math.max(1,sx),Math.max(1,sy))}
+ c.onmousemove=e=>{const b=c.getBoundingClientRect(),N=Math.floor((e.clientX-b.left-m.l)/sx),Z=Math.floor((H-m.b-(e.clientY-b.top))/sy);const r=NUC.find(q=>q[0]===Z&&q[1]-q[0]===N);if(r)showTip(e,`<b>${r[2]}</b> · Z ${r[0]}, N ${N}<br>${r[5]?'stable':r[4]!=null?'half-life '+fmtT(r[4]):'half-life unknown'}<br>${r[6]||''}`);else hideTip()};c.onmouseleave=hideTip}
+function fmtT(s){const u=[[3.156e7,'years'],[86400,'days'],[3600,'h'],[60,'min'],[1,'s'],[1e-3,'ms'],[1e-6,'µs'],[1e-9,'ns']];for(const[k,n]of u)if(s>=k)return (s/k).toPrecision(3)+' '+n;return s.toExponential(2)+' s'}
+function drawBA(){const c=$('cv_ba'),[x,W,H]=fit(c);x.clearRect(0,0,W,H);if(!NUC)return;const m={l:40,r:12,t:12,b:30};const [X,Y]=axes(x,W,H,m,'mass number A','MeV per nucleon',[1,260],[0,9.2]);ticks(x,X,Y,[50,100,150,200,250],[2,4,6,8],W,H,m);
+ const best={};for(const r of NUC){if(r[0]<1||r[1]<2)continue;const B=(r[0]*7288.971064+(r[1]-r[0])*8071.3181-r[3])/1000/r[1];if(!best[r[1]]||B>best[r[1]].B)best[r[1]]={B,n:r[2],s:r[5]}}
+ x.fillStyle=css('--accent');for(const A in best){const b=best[A];if(b.B>0){x.globalAlpha=b.s?1:.35;x.beginPath();x.arc(X(+A),Y(b.B),b.s?2.2:1.6,0,7);x.fill()}}x.globalAlpha=1;
+ x.fillStyle=css('--fg');x.fillText('⁵⁶Fe / ⁶²Ni peak',X(62)+6,Y(8.79)-8);x.fillText('fusion →',X(4)+4,Y(2.5));x.fillText('← fission',X(220),Y(7.2))}
+
+/* ---------- Level 2 ---------- */
+const BH={DT:[34.3827,1124656,1.17302e-9,1.51361e-2,7.51886e-2,4.60643e-3,1.35e-2,-1.0675e-4,1.366e-5],DD:[31.397,937814,5.4336e-12,5.85778e-3,7.68222e-3,0,-2.964e-6,0,0],DHe3:[68.7508,1124572,5.51036e-10,6.41918e-3,-2.02896e-3,-1.9108e-5,1.35776e-4,0,0]};
+function sv(k,T){const[BG,mc,C1,C2,C3,C4,C5,C6,C7]=BH[k];const th=T/(1-T*(C2+T*(C4+T*C6))/(1+T*(C3+T*(C5+T*C7))));const xi=Math.cbrt(BG*BG/(4*th));return C1*th*Math.sqrt(xi/(mc*T*T*T))*Math.exp(-3*xi)*1e-6}
+init.l2=()=>{$('r_sv').oninput=drawSV;drawSV()};redraw.l2=drawSV;
+function drawSV(){const T=+$('r_sv').value;$('t_sv').textContent=T;const c=$('cv_sv'),[x,W,H]=fit(c);x.clearRect(0,0,W,H);const m={l:56,r:14,t:12,b:30};const [X,Y]=axes(x,W,H,m,'temperature (keV)','⟨σv⟩ (m³/s)',[1,100],[1e-27,1e-21],true,true);
+ ticks(x,X,Y,[1,2,5,10,20,50,100],[1e-27,1e-25,1e-23,1e-21],W,H,m,null,v=>'1e'+Math.log10(v));
+ const S=[['DT',css('--accent'),'D–T'],['DD',css('--muted'),'D–D (n branch)'],['DHe3',css('--warn'),'D–He3']];
+ for(const[k,col,nm]of S){x.strokeStyle=col;x.lineWidth=2;x.beginPath();for(let t=1;t<=100;t*=1.03){const v=Math.max(sv(k,t),1e-27);t===1?x.moveTo(X(t),Y(v)):x.lineTo(X(t),Y(v))}x.stroke();x.fillStyle=col;const t0=60;x.fillText(nm,X(t0)+4,Y(Math.max(sv(k,t0),1e-27))-6)}
+ x.strokeStyle=css('--fg');x.setLineDash([4,3]);x.beginPath();x.moveTo(X(T),m.t);x.lineTo(X(T),H-m.b);x.stroke();x.setLineDash([]);
+ $('o_sv').innerHTML=S.map(([k,,nm])=>`<div><span>${nm}</span><b>${sv(k,T).toExponential(2)}</b><span>m³/s</span></div>`).join('')+`<div><span>D–T vs D–D</span><b>${(sv('DT',T)/sv('DD',T)).toFixed(0)}×</b><span>easier</span></div>`}
+
+/* ---------- Level 3 ---------- */
+init.l3=()=>{['R','B','n','T'].forEach(i=>$(i).oninput=calcPl);calcPl()};redraw.l3=calcPl;
+function calcPl(){const R=+$('R').value,B=+$('B').value,n=+$('n').value*1e20,T=+$('T').value;['R','B','n','T'].forEach(i=>$('v_'+i).textContent=$(i).value);
+ const a=R/3.1,k=1.8,V=2*Math.PI*Math.PI*R*a*a*k,E=17.59*1.602e-13;const Pf=0.25*n*n*sv('DT',T)*E*V/1e6,Pa=Pf*3.52/17.59,Pb=5.35e-37*1.6*n*n/1e40*1e40*Math.sqrt(T)*V/1e6;
+ const beta=2*4e-7*Math.PI*(2*n*T*1.602e-16)/(B*B)*100,W=3*n*T*1.602e-16*V/1e6,tau=W/Math.max(Pa-Pb,1e-3),Ip=5*a*a*B*(1+k*k)/2/(R*3.0),nG=Ip/(Math.PI*a*a);
+ $('o_pl').innerHTML=[['Fusion power',Pf.toFixed(0)+' MW'],['Alpha heating',Pa.toFixed(0)+' MW'],['Bremsstrahlung',Pb.toFixed(0)+' MW'],['Plasma volume',V.toFixed(0)+' m³'],['Toroidal beta',beta.toFixed(1)+' %'],['Greenwald fraction',(n/1e20/nG).toFixed(2)],['Confinement needed',isFinite(tau)&&tau>0?tau.toFixed(2)+' s':'—'],['Triple product',(n*T*Math.max(tau,0)/1e21).toFixed(2)+' ×10²¹']].map(([a,b])=>`<div><span>${a}</span><b>${b}</b></div>`).join('');
+ const c=$('cv_pl'),[x,Wd,H]=fit(c);x.clearRect(0,0,Wd,H);const mx=Math.max(Pf,1);const bars=[['fusion',Pf,css('--accent')],['alpha heat',Pa,css('--accent2')],['radiation',Pb,css('--muted')]];bars.forEach(([nm,v,col],i)=>{x.fillStyle=col;x.fillRect(110,14+i*42,(Wd-200)*v/mx,28);x.fillStyle=css('--fg');x.font='12px Segoe UI';x.fillText(nm,8,32+i*42);x.fillText(v.toFixed(0)+' MW',116+(Wd-200)*v/mx,32+i*42)})}
+
+/* ---------- Level 4: teaching Monte Carlo ---------- */
+let mc={on:false,N:0,T:0,tracks:[],raf:0};
+init.l4=()=>{['enr','fw'].forEach(i=>$(i).oninput=()=>{$('v_e').textContent=$('enr').value;$('v_fw').textContent=$('fw').value;mcReset()});$('mc_go').onclick=()=>{mc.on=!mc.on;$('mc_go').textContent=mc.on?'Pause':'Run';if(mc.on)mcLoop()};$('mc_reset').onclick=mcReset;mcReset();mc.on=true;$('mc_go').textContent='Pause';mcLoop()};redraw.l4=()=>mcDraw();
+function mcReset(){mc.N=0;mc.T=0;mc.hist=[];mc.tracks=[];mcDraw()}
+function oneNeutron(enr,fw){const L=70;let T=0,stack=[[0.01,6]],path=[];while(stack.length){let[x,E]=stack.pop(),dir=1,steps=0;while(steps++<400){const lam=E>=4?12:5;const x0=x;x+=dir*(-Math.log(Math.random())*lam);if(x<0){x=-x;dir=1}path.push([x0,Math.min(Math.max(x,0),fw+L),E]);
+ if(x<fw){if(Math.random()<0.035){path.push(['abs',x]);break}dir=Math.random()<.5?1:-1;E=Math.max(0,E-1);continue}
+ if(x>fw+L){if(Math.random()<.5){path.push(['leak',fw+L]);break}x=2*(fw+L)-x;dir=-1;continue}
+ if(E>=5&&Math.random()<0.135){stack.push([x,E-2]);E-=2;dir=Math.random()<.5?1:-1;path.push(['n2n',x]);continue}
+ if(E>=4&&Math.random()<0.05){T++;E-=2;dir=Math.random()<.5?1:-1;path.push(['T',x]);continue}
+ if(E<=2){const s6=0.5*enr,sp=0.02;if(Math.random()<s6+sp){if(Math.random()<s6/(s6+sp)){T++;path.push(['T',x])}else path.push(['abs',x]);break}}
+ E=Math.max(0,E-1);dir=Math.random()<.5?1:-1}}return[T,path]}
+function mcLoop(){if(!mc.on||!$('l4').classList.contains('on')){mc.on=false;$('mc_go').textContent='Run';return}const enr=+$('enr').value/100,fw=+$('fw').value;for(let i=0;i<60;i++){const[t,p]=oneNeutron(enr,fw);mc.N++;mc.T+=t;if(i<2)mc.tracks.push(p)}mc.tracks=mc.tracks.slice(-14);if(mc.N%600<60)mc.hist.push(mc.T/mc.N);mcDraw();mc.raf=requestAnimationFrame(mcLoop)}
+function mcDraw(){const c=$('cv_mc'),[x,W,H]=fit(c);x.clearRect(0,0,W,H);const fw=+$('fw').value,L=70,tot=fw+L,s=(W-40)/tot,ox=20;
+ x.fillStyle=css('--chip');x.fillRect(ox,20,fw*s,H-40);x.fillStyle=color(css('--accent'),.10);x.fillRect(ox+fw*s,20,L*s,H-40);x.fillStyle=css('--muted');x.font='11px Segoe UI';x.fillText('steel wall',ox+3,14);x.fillText('lithium breeding blanket',ox+fw*s+6,14);x.fillText('← plasma',2,H-4);
+ mc.tracks.forEach((p,j)=>{let y=30+(j%14)*((H-60)/14);x.globalAlpha=.25+.75*(j+1)/mc.tracks.length;for(const q of p){if(typeof q[0]==='number'){x.strokeStyle=q[2]>=4?css('--accent'):css('--muted');x.beginPath();x.moveTo(ox+q[0]*s,y);x.lineTo(ox+q[1]*s,y+3);x.stroke();y+=3;if(y>H-24)y=30}else{x.fillStyle=q[0]==='T'?css('--good'):q[0]==='n2n'?css('--warn'):css('--bad');x.beginPath();x.arc(ox+q[1]*s,y,3,0,7);x.fill()}}});x.globalAlpha=1;
+ const tbr=mc.N?mc.T/mc.N:0,se=mc.N?Math.sqrt(tbr/mc.N):0;$('o_mc').innerHTML=[['Neutrons followed',mc.N.toLocaleString()],['Tritium made',mc.T.toLocaleString()],['Breeding ratio (live)',tbr.toFixed(3)+' ± '+se.toFixed(3)],['Target',  '≥ 1.05 with margin']].map(([a,b])=>`<div><span>${a}</span><b>${b}</b></div>`).join('')+`<div><span>Legend</span><b style="font-size:12px"><span class="g">● tritium</span> <span class="a">● multiplication</span> <span class="r">● lost</span></b></div>`}
+function color(c,a){return `color-mix(in srgb, ${c} ${a*100}%, transparent)`}
+
+/* ---------- Level 5 ---------- */
+let ELS=null;init.l5=async()=>{if(!ELS)ELS=await (await fetch('/api/elements')).json();drawLz();squeeze()};redraw.l5=drawLz;
+function drawLz(){const c=$('cv_lz'),[x,W,H]=fit(c);x.clearRect(0,0,W,H);const m={l:56,r:60,t:12,b:30};const [X,Y]=axes(x,W,H,m,'electron temperature (keV)','L_z (W m³)',[0.001,20],[1e-36,1e-30],true,true);ticks(x,X,Y,[0.001,0.01,0.1,1,10],[1e-36,1e-34,1e-32,1e-30],W,H,m,v=>v>=1?v:v,v=>'1e'+Math.log10(v));
+ const pick=[['ar','Ar',css('--accent')],['ne','Ne',css('--warn')],['n','N',css('--good')],['w','W',css('--bad')],['kr','Kr',css('--muted')],['xe','Xe',css('--fg')],['he','He',css('--grid')]];
+ if(!ELS||!Object.keys(ELS).length){x.fillStyle=css('--muted');x.fillText('Element catalog not found in the CubeMind folder.',70,40);return}
+ for(const[k,nm,col]of pick){const e=ELS[k];if(!e)continue;x.strokeStyle=col;x.lineWidth=2;x.beginPath();let first=true,lp=null;for(const[t,L]of e.L){if(L<=0)continue;const v=Math.max(L,1e-36);first?x.moveTo(X(t),Y(v)):x.lineTo(X(t),Y(v));first=false;lp=[t,v]}x.stroke();if(lp){x.fillStyle=col;x.fillText(nm,X(lp[0])+4,Y(lp[1])+4)}}}
+function squeeze(){const rows=[['Standard tokamak, long-leg divertor (D2240)','divertor argon 4.3% (under 5% cap)','core argon then stops the burn','r'],['Standard tokamak, any design (D2243, 4,973 designs)','best H-mode access 0.38','need ≥ 1.2','r'],['Negative triangularity, as locked (D2244)','559 MW net, all locked limits met','core radiates 99% of heating','a'],['Negative triangularity, radiation cap 0.6','no design passes','every net-positive design ≥ 83% radiated','r']];
+ $('t_squeeze').innerHTML='<tr><th>Case</th><th>Result</th><th>What stops it</th></tr>'+rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td><span class="chip ${r[3]}">${r[2]}</span></td></tr>`).join('')}
+
+/* ---------- Level 6 ---------- */
+init.l6=drawPlant;redraw.l6=drawPlant;
+function drawPlant(){const c=$('cv_pp'),[x,W,H]=fit(c);x.clearRect(0,0,W,H);const Pf=1865,Pt=Pf*1.161*1.0,gross=559*3.33/2.33,rec=gross-559;
+ const st=[['Fusion power',Pf,css('--accent')],['Thermal (with blanket gain)',Pf*1.161,css('--accent2')],['Gross electric',gross,css('--warn')],['Plant uses itself',-rec,css('--bad')],['Net electric',559,css('--good')]];const mx=Pf*1.2,bw=(W-80)/st.length;
+ st.forEach(([nm,v,col],i)=>{const h=(H-70)*Math.abs(v)/mx,x0=40+i*bw+10;x.fillStyle=col;x.globalAlpha=.85;x.fillRect(x0,H-34-h,bw-24,h);x.globalAlpha=1;x.fillStyle=css('--fg');x.font='13px Georgia';x.fillText(Math.round(v)+' MW',x0,H-40-h);x.font='11.5px Segoe UI';x.fillStyle=css('--muted');x.fillText(nm,x0,H-16)})}
+
+/* ---------- Reviewer checklist ---------- */
+init.check=()=>{const R=[['Code validated against professional codes','15 of 21 reactor checks match (cfspopcon, OpenMC, ITER)','g','Paper 1'],
+ ['Plasma burns and heats itself','Steady burning points found; ITER Q = 10 reproduced','g','Paper 1, D2244'],
+ ['Net electricity > 0','559 MW only if 99% core radiation were survivable; none with the cap','r','D2244'],
+ ['Tritium breeding ≥ 1.05 with margin','1.095 ± 0.003 at 90% lithium-6','g','D2238'],
+ ['Divertor heat P_sep/R ≤ 17 MW/m','0.6–3.4 MW/m in the near designs','g','D2244'],
+ ['Divertor seeding ≤ 5% argon','4.3% with a long-leg divertor','a','D2240'],
+ ['H-mode access (standard tokamak) ≥ 1.2 × threshold','best 0.38 of 4,973 designs','r','D2243'],
+ ['H-mode access (negative triangularity)','not needed, by assumption from DIII-D/TCV results','a','D2244'],
+ ['Core radiation ≤ 60% (demonstrated)','every net-positive design ≥ 83%','r','D2244'],
+ ['Wall load ≤ 2 MW/m²','1.28–1.71 MW/m²','g','D2244'],
+ ['First-wall life (20 dpa)','2.3–4.6 full-power years','a','D2237'],
+ ['Magnet field at coil','HTS 15–18 T (≤ 20 T ok); Nb₃Sn fails','a','D2244'],
+ ['Plasma pressure β_N ≤ 2.8','1.47–1.49','g','D2244'],
+ ['Independent review','AI referee, every study; human experts next','a','Ledger R107–R112']];
+ $('t_check').innerHTML='<tr><th>What they check</th><th>Our best value</th><th>Status</th><th>Record</th></tr>'+R.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td><span class="chip ${r[2]}">${r[2]==='g'?'met':r[2]==='a'?'with assumptions':'not met'}</span></td><td class="note" style="margin:0">${r[3]}</td></tr>`).join('')};
+
+/* ---------- Design search replay ---------- */
+let RES=null,rp={i:0,on:false,set:'d2244'};
+init.search=async()=>{if(!RES)RES=await (await fetch('/api/results')).json();$('rp_go').onclick=()=>{if(rp.i>=RES[rp.set].length)rp.i=0;rp.on=true;rpLoop()};$('rp_stop').onclick=()=>rp.on=false;$('rp_set').onchange=()=>{rp.set=$('rp_set').value;rp.i=0;rpDraw()};rp.on=true;rpLoop()};redraw.search=()=>rpDraw();
+function rpClass(r){if(rp.set==='d2244'){if(r[4]==null)return 0;const v=r[7];if(!v.length)return 3;if(v.length===1&&v[0]==='f_rad>0.6')return 2;return 1}else{if(r[3]==null)return 0;return r[5].length?1:3}}
+function rpLoop(){if(!rp.on||!$('search').classList.contains('on'))return;rp.i=Math.min(rp.i+25,RES[rp.set].length);rpDraw();if(rp.i<RES[rp.set].length)requestAnimationFrame(rpLoop);else rp.on=false}
+function rpDraw(){if(!RES)return;const c=$('cv_rp'),[x,W,H]=fit(c);x.clearRect(0,0,W,H);const Rs=[6.2,7,8,9],Bs=[5.3,6,7,8,9],m={l:70,r:20,t:24,b:40},cw=(W-m.l-m.r)/Rs.length,ch=(H-m.t-m.b)/Bs.length;
+ x.font='12px Segoe UI';x.fillStyle=css('--muted');Rs.forEach((R,i)=>x.fillText('R '+R+' m',m.l+i*cw+cw/2-20,H-14));Bs.forEach((B,j)=>x.fillText('B '+B+' T',8,m.t+(Bs.length-1-j)*ch+ch/2+4));
+ x.strokeStyle=css('--line');for(let i=0;i<=Rs.length;i++){x.beginPath();x.moveTo(m.l+i*cw,m.t);x.lineTo(m.l+i*cw,H-m.b);x.stroke()}for(let j=0;j<=Bs.length;j++){x.beginPath();x.moveTo(m.l,m.t+j*ch);x.lineTo(W-m.r,m.t+j*ch);x.stroke()}
+ const cols=[css('--muted'),css('--bad'),css('--warn'),css('--good')],cnt=[0,0,0,0],cellN={},rows=RES[rp.set];
+ for(let k=0;k<rp.i;k++){const r=rows[k],R=rp.set==='d2244'?r[1]:r[0],B=rp.set==='d2244'?r[2]:r[1],cl=rpClass(r);cnt[cl]++;const i=Rs.indexOf(R),j=Bs.indexOf(B);if(i<0||j<0)continue;const key=i+'_'+j,n=cellN[key]=(cellN[key]||0)+1;const per=Math.floor((cw-10)/4),px=m.l+i*cw+5+((n-1)%per)*4,py=m.t+(Bs.length-1-j)*ch+5+Math.floor((n-1)/per)*4;if(py>m.t+(Bs.length-j)*ch-4)continue;x.fillStyle=cols[cl];x.globalAlpha=cl===0?.3:.95;x.fillRect(px,py,cl?3.5:3,cl?3.5:3)}x.globalAlpha=1;
+ $('rp_stat').textContent=`${rp.i.toLocaleString()} of ${rows.length.toLocaleString()} designs`;
+ $('o_rp').innerHTML=[['Does not burn',cnt[0],'--muted'],['Fails a limit',cnt[1],'--bad'],['Passes locked limits, >60% core radiation',cnt[2],'--warn'],['Passes everything',cnt[3],'--good']].map(([a,b,v])=>`<div><span>${a}</span><b style="color:var(${v})">${b.toLocaleString()}</b></div>`).join('')}
+
+/* ---------- Papers ---------- */
+init.papers=()=>{const P=[['An Open, Pre-Registered D-T Reactor Chain from Plasma to Plant','24486255'],['Reactor Paper 2 — Exhaust Is the Wall (v2, corrected)','24488731'],['Reactor Paper 3 — Flipping the Shape (negative triangularity)','24488692'],['The AEGIS Toolkit — What It Does and How It Was Built','24488137'],['How the Elements Are Made','24488090'],['Fusion Reactor Field Guide','24488566'],['Fusion From Zero — A Plain-Words Guide','24488584'],['Fusion Reactor Chain — Talk','24488749']];
+ $('t_pap').innerHTML='<tr><th>Title</th><th>DOI</th></tr>'+P.map(p=>`<tr><td>${p[0]}</td><td><a class="ext" href="https://doi.org/10.5281/zenodo.${p[1]}" target="_blank">10.5281/zenodo.${p[1]}</a></td></tr>`).join('')};
+addEventListener('resize',()=>{const s=document.querySelector('section.on').id;redraw[s]&&redraw[s]()});
+</script>
+</body>
+</html>

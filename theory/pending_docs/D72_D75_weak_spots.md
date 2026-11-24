@@ -23006,3 +23006,10 @@ D2244, D2244a; referee R111/R112 final NULL — BALANCED), with process-records 
   24488146).
 - Fusion Reactor Chain — Talk (330-600 MW line corrected before publishing): doi:10.5281/zenodo.24488749.
 Every paper/doc in tonight's set is now published; no known uncorrected claim remains on Zenodo from this series.
+
+## D2248 (TOOL + HANDOFF, 23 Nov 2026 21:30) — CubeMind Nuclear Console (.exe) and CubeMind nuclear brief
+tools/console (Go, stdlib only; cross-compiled CubeMind_Nuclear_Console.exe, 6.5 MB) placed on the PC Desktop and in CubeMind_janus.
+Reads CubeMind's learn_log/memory (read-only, live), NUBASE2020 and OPEN-ADAS catalogs; six nuclear levels; reviewer checklist;
+replay of locked runs D2243/D2244; teaching panels (Bosch-Hale, 0-D balance, toy 1-D Monte Carlo — labelled, not the locked engine).
+CubeMind given CUBEMIND_NUCLEAR_BRIEF_2026-11-23.md, 10 memory records (backup cubemind_memory.jsonl.bak_nuclear_23nov) and a new
+REACTOR_LOOP_TASK queue (top: verify core radiation budget).
