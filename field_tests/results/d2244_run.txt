@@ -1,1 +1,15 @@
 CONTROL (D2243 rule fails L-H): True 0.025
+== H98 1.0: burning 32 of 2500
+Nb3Sn|main feasible 0 eta3 0 best None | nearest (['coil'], 558.8)
+Nb3Sn|beta25 feasible 0 eta3 0 best None | nearest (['coil'], 558.8)
+Nb3Sn|E2 feasible 0 eta3 0 best None | nearest (['coil'], 558.8)
+HTS|main feasible 13 eta3 2 best ({'R': 7.0, 'B': 9.0, 'fAr': 0.008, 'leg': 3, 'blk': 2, 'Paux': 50.0, 'dens': 0.9, 'nu': 0.6, 'enr': 10}, 558.8, 1865.4, 3.33, 1.47, 0.3) | nearest ([], 558.8)
+HTS|beta25 feasible 13 eta3 2 best ({'R': 7.0, 'B': 9.0, 'fAr': 0.008, 'leg': 3, 'blk': 2, 'Paux': 50.0, 'dens': 0.9, 'nu': 0.6, 'enr': 10}, 558.8, 1865.4, 3.33, 1.47, 0.3) | nearest ([], 558.8)
+HTS|E2 feasible 13 eta3 2 best ({'R': 7.0, 'B': 9.0, 'fAr': 0.008, 'leg': 3, 'blk': 2, 'Paux': 50.0, 'dens': 0.9, 'nu': 0.6, 'enr': 10}, 558.8, 1865.4, 3.33, 1.47, 0.3) | nearest ([], 558.8)
+== H98 0.8: burning 12 of 2500
+Nb3Sn|main feasible 3 eta3 0 best ({'R': 7.0, 'B': 5.3, 'fAr': 0.0014, 'leg': 3, 'blk': 2, 'Paux': 30.0, 'dens': 0.9, 'nu': 0.6, 'enr': 10}, -143.2, 50.8, 0.18, 0.8, 0.07) | nearest ([], -143.2)
+Nb3Sn|beta25 feasible 3 eta3 0 best ({'R': 7.0, 'B': 5.3, 'fAr': 0.0014, 'leg': 3, 'blk': 2, 'Paux': 30.0, 'dens': 0.9, 'nu': 0.6, 'enr': 10}, -143.2, 50.8, 0.18, 0.8, 0.07) | nearest ([], -143.2)
+Nb3Sn|E2 feasible 3 eta3 0 best ({'R': 7.0, 'B': 5.3, 'fAr': 0.0014, 'leg': 3, 'blk': 2, 'Paux': 30.0, 'dens': 0.9, 'nu': 0.6, 'enr': 10}, -143.2, 50.8, 0.18, 0.8, 0.07) | nearest ([], -143.2)
+HTS|main feasible 3 eta3 0 best ({'R': 7.0, 'B': 5.3, 'fAr': 0.0014, 'leg': 3, 'blk': 2, 'Paux': 30.0, 'dens': 0.9, 'nu': 0.6, 'enr': 10}, -143.2, 50.8, 0.18, 0.8, 0.07) | nearest ([], -143.2)
+HTS|beta25 feasible 3 eta3 0 best ({'R': 7.0, 'B': 5.3, 'fAr': 0.0014, 'leg': 3, 'blk': 2, 'Paux': 30.0, 'dens': 0.9, 'nu': 0.6, 'enr': 10}, -143.2, 50.8, 0.18, 0.8, 0.07) | nearest ([], -143.2)
+HTS|E2 feasible 3 eta3 0 best ({'R': 7.0, 'B': 5.3, 'fAr': 0.0014, 'leg': 3, 'blk': 2, 'Paux': 30.0, 'dens': 0.9, 'nu': 0.6, 'enr': 10}, -143.2, 50.8, 0.18, 0.8, 0.07) | nearest ([], -143.2)
