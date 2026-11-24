@@ -4,7 +4,10 @@ from multiprocessing import Pool
 SRC = open('theory/tests/d2241_enrichment.py').read().split("import copy\nLAD0")[0]
 OLD = "return dict(score=pl['P_net'] if not viol else -sum(viol.values()) - 1, feasible=not viol,"
 assert OLD in SRC and "LH=1.3 * op['P_LH'] / op['P_loss'] - 1" in SRC
-SRC = SRC.replace(OLD, "return dict(lh_ratio=op['P_loss'] / op['P_LH'], Psep=Psep, A=m['R'] / m['a'], raw=v, " + OLD[len('return dict('):])
+SRC = SRC.replace(OLD, "return dict(lh_ratio=Psep / op['P_LH'], P_LH=op['P_LH'], P_synch=op['P_synch'], P_alpha=op['P_alpha'], Psep=Psep, A=m['R'] / m['a'], raw=v, " + OLD[len('return dict('):])
+G0 = {'__name__': 'd2243c'}; exec(SRC, G0)
+assert SRC.count('for it in range(2):') == 1
+SRC = SRC.replace('for it in range(2):', 'for it in range(5):')
 G = {'__name__': 'd2243'}; exec(SRC, G)
 LAD = dict(R=[6.2, 7.0, 8.0, 9.0], B=[5.3, 6.0, 7.0, 8.0, 9.0], fAr=[0.0014, 0.003, 0.005, 0.008], leg=[1, 2, 3, 4, 5],
            blk=[2], Paux=[10.0, 20.0, 30.0, 50.0], dens=[0.7, 0.8, 0.85, 0.9], nu=[0.4, 0.5, 0.6], enr=[3, 5, 10])
@@ -16,6 +19,9 @@ def ev(p):
     raw = dict(e['raw']); lhr = e['lh_ratio']; B, R = p[1], p[0]
     E2 = e['Psep'] * B / (3.0 * e['A'] * R); out.update(burn=True, lh_ratio=lhr, E2=E2, coil=e['coil'], Psep_R=e['Psep_R'])
     base = {k: x for k, x in raw.items() if k not in ('LH', 'coil') and x > 0}
+    if e['Psep_R'] > 17.0: base['PsepR'] = e['Psep_R'] / 17.0 - 1
+    if e['Psep'] < 1.0: base['Psep_low'] = 1.0
+    out.update(synch_frac=e['P_synch'] / e['P_alpha'], Psep=e['Psep'])
     for cls, cm in (('Nb3Sn', 12.0), ('HTS', 20.0)):
         b = dict(base); 
         if e['coil'] > cm: b['coil'] = e['coil'] / cm - 1
@@ -24,7 +30,7 @@ def ev(p):
             out[f'{cls}|{rs}'] = v
     return out
 if __name__ == '__main__':
-    ctl = G['evaluate'](9.0, 9.0, 0.003, 2, 1, 10.0, 0.85, 0.4, 10, 20.0)
+    ctl = G0['evaluate'](9.0, 9.0, 0.003, 2, 1, 10.0, 0.85, 0.4, 10, 20.0)
     print('CONTROL', round(ctl['P_net'], 1), ctl['violations'], flush=True)
     rng = random.Random(2243); pts = list({tuple(rng.choice(LAD[k]) for k in KEYS) for _ in range(5200)})[:5000]
     pts.sort()
