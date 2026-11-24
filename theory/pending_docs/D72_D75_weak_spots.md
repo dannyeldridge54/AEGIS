@@ -22975,3 +22975,19 @@ Reactor Paper 2 (doi:10.5281/zenodo.24488146) states the D2236 numbers without t
 - Fusion Reactor Field Guide — Who Is Building What, and What We Can Borrow: doi:10.5281/zenodo.24488566
 - Fusion From Zero — A Plain-Words Guide: doi:10.5281/zenodo.24488584
 Not published (per instruction): Reactor Paper 2 v2 (D2243a correction) and the reactor talk. Both guides checked: no D2236-D2241 L-H numbers.
+
+## D2244 (NEGATIVE-TRIANGULARITY MODE, full reactor redo, referee R112, rescore after DEV-1..5, 23 Nov 2026) — H-mode wall removed; CLOSED on core radiation (every net-positive design radiates >= 83% in the core vs <= 0.6 demonstrated)
+Lock PREREG_D2244_NT_MODE (+DEVIATIONS, written after run-1 results were seen, disclosed); theory/tests/d2244_nt.py, d2244b_rescore.py;
+field_tests/results/d2244_run.txt, d2244_nt.json, d2244b_rescore.txt/json. NT rules: no L-H limit; IPB98 x H98 1.0 / 0.8; density 0.9 n_G
+(detachment); beta_N 2.8 (2.5 variant); D2243 consistent Psep. Control: D2243 rule fails L-H at the D2241 point (f_LH 0.025). PASS.
+- Run 1 (as locked): H98 1.0 - 32/2500 samples burn; 13 HTS-feasible (2 distinct designs, both also feasible at eta 3):
+  R 7 B 9: P_net 559 MW, P_fus 1.87 GW, Q_e 3.3, beta_N 1.47, wall 1.71 MW/m2, coil 17.8 T, synch/alpha 0.30, Psep 4 MW;
+  R 8 B 8: P_net 542 MW, Psep 28 MW. Nb3Sn fails coil field. H98 0.8 - 12/2500 burn; the 3 "feasible" points are net-negative.
+- Referee R112: NOT BALANCED. N1 BLOCKER: these designs radiate 93-99% of heating in the core; the cited NT evidence shows 0.45-0.55;
+  no cap or stability check. N2 MAJOR: feasibility did not require P_net > 0. N3 MAJOR: pedestal profiles for an L-mode plasma +
+  unverified synchrotron. N4/N5 minor (burn share, dedupe).
+- Rescore (DEV-1 cap f_rad,core <= 0.6 fixed from the review, DEV-2 P_net > 0): ZERO feasible in every pass/class. Every net-positive
+  burning sample radiates >= 83% of its heating in the core (feasible-but-uncapped designs >= 93%).
+Verdict: NT removes the H-mode wall but exposes the next one: in this engine a burning plant radiates most of its heat in the core
+(bremsstrahlung + synchrotron + argon floor). CONDITIONAL only if ~93-99% core radiation were survivable (not demonstrated). Next: verify
+the core radiation budget (synchrotron reflectivity, profiles), the single model item now behind every wall. Labels ESTIMATE.

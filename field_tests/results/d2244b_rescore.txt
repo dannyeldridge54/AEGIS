@@ -1,0 +1,10 @@
+H98=1.0|Nb3Sn|uncapped 32/2500 feasible 0 distinct 0 eta3 0 best None min f_rad (net+, other limits ok) None
+H98=1.0|Nb3Sn|capped 32/2500 feasible 0 distinct 0 eta3 0 best None min f_rad (net+, other limits ok) None
+H98=1.0|HTS|uncapped 32/2500 feasible 13 distinct 2 eta3 2 best (7.0, 9.0, 559, 0.99) min f_rad (net+, other limits ok) 0.934
+H98=1.0|HTS|capped 32/2500 feasible 0 distinct 0 eta3 0 best None min f_rad (net+, other limits ok) 0.934
+  H98 1.0 net-positive burning samples: 32 min f_rad among them 0.8269706080577259
+H98=0.8|Nb3Sn|uncapped 12/2500 feasible 0 distinct 0 eta3 0 best None min f_rad (net+, other limits ok) None
+H98=0.8|Nb3Sn|capped 12/2500 feasible 0 distinct 0 eta3 0 best None min f_rad (net+, other limits ok) None
+H98=0.8|HTS|uncapped 12/2500 feasible 0 distinct 0 eta3 0 best None min f_rad (net+, other limits ok) None
+H98=0.8|HTS|capped 12/2500 feasible 0 distinct 0 eta3 0 best None min f_rad (net+, other limits ok) None
+  H98 0.8 net-positive burning samples: 0 min f_rad among them None

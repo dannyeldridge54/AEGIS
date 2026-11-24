@@ -30,3 +30,6 @@
 F1 L-H on lenient P_loss vs exhaust Psep (BLOCKER, fixed DEV-1); F2 negative Psep passes via Lengyel clamp (BLOCKER, DEV-2); F3 Psep/R
 limit missing (DEV-3); F4 convention label (DEV-4); F5 synchrotron budget unverified (flagged); F6 grid count; F7 impurity iterations.
 Consequence: correction D2243a on D2236-D2241 L-H passes.
+
+## R112 (D2244 NT mode, 23 Nov 2026) — NOT BALANCED (N1 BLOCKER core radiation ~99% uncapped; N2 MAJOR P_net>0; N3 MAJOR profiles/synchrotron)
+Fixed by DEVIATIONS (post-results, disclosed) and rescore; capped verdict CLOSED.

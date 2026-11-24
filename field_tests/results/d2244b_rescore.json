@@ -1,0 +1,81 @@
+{
+ "H98=1.0|Nb3Sn|uncapped": {
+  "burning": "32/2500",
+  "n_feasible": 0,
+  "n_distinct": 0,
+  "eta3": 0,
+  "best": null,
+  "min_frad_among_netpositive": null
+ },
+ "H98=1.0|Nb3Sn|capped": {
+  "burning": "32/2500",
+  "n_feasible": 0,
+  "n_distinct": 0,
+  "eta3": 0,
+  "best": null,
+  "min_frad_among_netpositive": null
+ },
+ "H98=1.0|HTS|uncapped": {
+  "burning": "32/2500",
+  "n_feasible": 13,
+  "n_distinct": 2,
+  "eta3": 2,
+  "best": {
+   "point": {
+    "R": 7.0,
+    "B": 9.0,
+    "fAr": 0.008,
+    "leg": 3,
+    "blk": 2,
+    "Paux": 50.0,
+    "dens": 0.9,
+    "nu": 0.6,
+    "enr": 10
+   },
+   "P_net": 558.7554852184115,
+   "P_fus": 1865.4152387549882,
+   "f_rad_core": 0.9902966473495305
+  },
+  "min_frad_among_netpositive": 0.9337117505886197
+ },
+ "H98=1.0|HTS|capped": {
+  "burning": "32/2500",
+  "n_feasible": 0,
+  "n_distinct": 0,
+  "eta3": 0,
+  "best": null,
+  "min_frad_among_netpositive": 0.9337117505886197
+ },
+ "H98=0.8|Nb3Sn|uncapped": {
+  "burning": "12/2500",
+  "n_feasible": 0,
+  "n_distinct": 0,
+  "eta3": 0,
+  "best": null,
+  "min_frad_among_netpositive": null
+ },
+ "H98=0.8|Nb3Sn|capped": {
+  "burning": "12/2500",
+  "n_feasible": 0,
+  "n_distinct": 0,
+  "eta3": 0,
+  "best": null,
+  "min_frad_among_netpositive": null
+ },
+ "H98=0.8|HTS|uncapped": {
+  "burning": "12/2500",
+  "n_feasible": 0,
+  "n_distinct": 0,
+  "eta3": 0,
+  "best": null,
+  "min_frad_among_netpositive": null
+ },
+ "H98=0.8|HTS|capped": {
+  "burning": "12/2500",
+  "n_feasible": 0,
+  "n_distinct": 0,
+  "eta3": 0,
+  "best": null,
+  "min_frad_among_netpositive": null
+ }
+}
