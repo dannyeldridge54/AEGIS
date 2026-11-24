@@ -1,1 +1,9 @@
 CONTROL P_net 558.8 f_rad 0.990
+== f_reflect 0.6: burning 187 of 6000
+  viol60: feasible 0 best []
+  viol67: feasible 0 best []
+  polish -> {'R': 7.0, 'B': 4.5, 'fAr': 0.005, 'leg': 4, 'blk': 2, 'Paux': 50.0, 'dens': 0.9, 'nu': 0.6, 'enr': 10} score -1.412 P_net -131 f_rad 0.592 PsepR 5.1 viol60 {'P_net': 1.412}
+  polish -> {'R': 8.0, 'B': 4.0, 'fAr': 0.0014, 'leg': 5, 'blk': 2, 'Paux': 20.0, 'dens': 0.9, 'nu': 0.6, 'enr': 10} score -1.430 P_net -121 f_rad 0.67 PsepR 1.3 viol60 {'P_net': 1.313, 'f_rad': 0.117}
+  polish -> {'R': 8.0, 'B': 4.0, 'fAr': 0.0014, 'leg': 5, 'blk': 2, 'Paux': 20.0, 'dens': 0.9, 'nu': 0.6, 'enr': 10} score -1.430 P_net -121 f_rad 0.67 PsepR 1.3 viol60 {'P_net': 1.313, 'f_rad': 0.117}
+  polish -> {'R': 5.0, 'B': 4.5, 'fAr': 0.001, 'leg': 4, 'blk': 2, 'Paux': 20.0, 'dens': 0.9, 'nu': 0.6, 'enr': 10} score -1.487 P_net -137 f_rad 0.612 PsepR 1.8 viol60 {'P_net': 1.467, 'f_rad': 0.02}
+  polish -> {'R': 6.0, 'B': 4.5, 'fAr': 0.002, 'leg': 5, 'blk': 2, 'Paux': 30.0, 'dens': 0.9, 'nu': 0.6, 'enr': 10} score -1.498 P_net -140 f_rad 0.572 PsepR 3.0 viol60 {'P_net': 1.498}
