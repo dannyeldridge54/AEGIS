@@ -23029,3 +23029,12 @@ Console rebuilt (.exe on PC); Sarah's Sky web 1.3.1 zip on Desktop (APK needs th
 CORRECTION to the chat answer at 21:58: exact Celtic counts from Samonios 2026 (14 Nov) are 349 / 412 / 570 elapsed Celtic years
 (Fagan-Bradley / Lahiri / IAU), positions Age 12 cycle 4 year 5 / Age 14 cycle 5 year 3 / Age 20 cycle 1 year 1, lunations 4,324 /
 5,105 / 7,052 (the chat gave 351/414/571 from whole calendar years). The star-border date still opens Age 20.
+
+## D2252 (CUBEMIND GRADE + LEARNING FIXES, 23 Nov 2026 22:35) — grade C+; fixes applied
+Grade from the PC logs: 11,944 loops since 18 Nov; real derivations ~65% correct (flat 20-23 Nov, 0.67 on 23 Nov); held-out suite best
+qwen3-coder:30b 0.760; agreement gate 97.7% correct when both faces agree; memory QA: model 0.20 vs similarity-only 0.75.
+Tool-error burst 23 Nov 07:32-18:47 UTC (all weave_* tools) came from a temporary registry change, since rolled back (registry.py dated
+21 Nov; tools verified working). Fixes: mindmem/learn_loop.py guards the missing weave_sweep.merge (backup learn_loop.py.bak_mergefix_23nov;
+takes effect at the next learn-loop restart); Desktop CubeMind_Learn_Ladder.bat starts janus.autorun (qwen3:14b + qwen3-coder:30b,
+--allow-code) after the selftest, which activates the D2249 ladder. Not started remotely (Desktop icons ambiguous; Danny launches).
+Open: memory QA should answer from retrieval (0.75) rather than the model (0.20) - needs its own lock.
