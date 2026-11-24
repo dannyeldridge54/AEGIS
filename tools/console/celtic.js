@@ -14,7 +14,20 @@
       try { const r = A.SearchMoonPhase(0, new Date(t - 16 * DAY), 32); if (r) { const t1 = r.date.getTime(); if (Math.abs(t1 - t) <= 16 * DAY) return t1;
         const r2 = A.SearchMoonPhase(0, new Date(t1 + DAY), 32); return Math.abs(r2.date.getTime() - t) < Math.abs(t1 - t) ? r2.date.getTime() : t1; } } catch (e) {}
     }
-    const k = Math.round((t - NM0) / DAY / SYN); return NM0 + k * SYN * DAY;
+    const k = Math.round((t - NM0) / DAY / SYN); return meeusNewMoon(k);
+  }
+  function meeusNewMoon(k) {                      // true new moon, Meeus ch. 49 (accuracy ~ minutes), returns ms UTC
+    const T = k / 1236.85, r = Math.PI / 180, sin = Math.sin;
+    let jde = 2451550.09766 + 29.530588861 * k + 0.00015437 * T * T - 1.5e-7 * T ** 3 + 7.3e-10 * T ** 4;
+    const E = 1 - 0.002516 * T - 0.0000074 * T * T, M = (2.5534 + 29.1053567 * k - 0.0000014 * T * T) * r,
+      Mp = (201.5643 + 385.81693528 * k + 0.0107582 * T * T + 0.00001238 * T ** 3) * r, F = (160.7108 + 390.67050284 * k - 0.0016118 * T * T) * r,
+      O = (124.7746 - 1.56375588 * k + 0.0020672 * T * T) * r;
+    jde += -0.4072 * sin(Mp) + 0.17241 * E * sin(M) + 0.01608 * sin(2 * Mp) + 0.01039 * sin(2 * F) + 0.00739 * E * sin(Mp - M) - 0.00514 * E * sin(Mp + M)
+      + 0.00208 * E * E * sin(2 * M) - 0.00111 * sin(Mp - 2 * F) - 0.00057 * sin(Mp + 2 * F) + 0.00056 * E * sin(2 * Mp + M) - 0.00042 * sin(3 * Mp)
+      + 0.00042 * E * sin(M + 2 * F) + 0.00038 * E * sin(M - 2 * F) - 0.00024 * E * sin(2 * Mp - M) - 0.00017 * sin(O) - 0.00007 * sin(Mp + 2 * M)
+      + 0.00004 * sin(2 * Mp - 2 * F) + 0.00004 * sin(3 * M) + 0.00003 * sin(Mp + M - 2 * F) + 0.00003 * sin(2 * Mp + 2 * F) - 0.00003 * sin(Mp + M + 2 * F)
+      + 0.00003 * sin(Mp - M + 2 * F) - 0.00002 * sin(Mp - M - 2 * F) - 0.00002 * sin(3 * Mp + M) + 0.00002 * sin(4 * Mp);
+    return (jde - 69 / 86400 - 2440587.5) * DAY;
   }
   function monthStart(nm) { const d = new Date(nm + 5 * DAY); return Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()); }   // 6th day of the moon
   function samonios(y) {                          // Samonios 1 of the Celtic year that starts near 1 Nov of year y
@@ -80,5 +93,5 @@
       ['Today', 13.715 * 3.156e16, 's', 'Weave calibrated age 13.715 Gyr'],
       ['Age of Aquarius begins (2377 / 2440 / 2597 CE)', 13.715 * 3.156e16 + 351 * 3.156e7, 's', '+351 to +571 years; standard astronomy']];
   }
-  G.Celtic = { coligny, treeSign, festivals, aquarius, cosmicClock, samonios };
+  G.Celtic = { coligny, treeSign, festivals, aquarius, cosmicClock, samonios, sunReachesExported: sunReaches, newMoonExported: newMoonNear, sunLon };
 })(typeof window !== 'undefined' ? window : globalThis);
