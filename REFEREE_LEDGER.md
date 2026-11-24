@@ -35,3 +35,4 @@ Consequence: correction D2243a on D2236-D2241 L-H passes.
 Fixed by DEVIATIONS (post-results, disclosed) and rescore; capped verdict CLOSED.
 R112 paper round (Reactor Paper 3): NOT BALANCED - P1 eta-3 claim false (fixed), P2 'removes H-mode wall' overstated (made conditional),
 P3 f_rad definition (added), P4 profile/synchrotron caveats moved to limits. All numbers otherwise verified against result files.
+R112 final paper round: NULL — BALANCED (P1-P4 resolved).
