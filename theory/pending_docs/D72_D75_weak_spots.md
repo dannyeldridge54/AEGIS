@@ -22925,3 +22925,19 @@ expansion), limits UNVERIFIED.
 - Verdict (pre-fixed): WINDOW CLOSED. New reading: an advanced divertor can make seeding enough at the divertor, but impurity leakage into
   the core then kills the burn. The next lever is divertor enrichment (compression > 3: core argon much lower than divertor argon), which
   needs a NEW lock and a literature value for achievable enrichment.
+
+## D2241 (DIVERTOR ENRICHMENT PASS, reactor paper 2 final test, rerun after DEV-1, 23 Nov 2026) — CLOSED at eta 3, 5 and 10; HTS large machine fails only on H-mode access at eta 10
+Lock PREREG_D2241_ENRICHMENT_PASS (+DEVIATIONS DEV-1: run-1 score blind to eta, main = control, uninformative; rerun with eta fixed
+3/5/10); theory/tests/d2241_enrichment.py; field_tests/results/d2241_run1.txt, d2241_rerun.txt, d2241_enrichment_rerun.json.
+Literature: enrichment ~3 measured for N on ASDEX Upgrade (uncertain); no argon value (Kallenbach et al.). eta 5/10 UNVERIFIED.
+- eta 3 (literature): reproduces D2240 main (all infeasible). CONTROL PASS.
+- eta 5: endpoints unchanged, all infeasible.
+- eta 10: ITER-size and R9B6 starts still no burning solution (core argon 0.43% / 1.2% at their endpoints). R8B8 start (R 9 m, B 9 T,
+  P_aux 10 MW, density 0.85 n_G): P_fus 2.74 GW, P_net 1004 MW, divertor argon 2.0% (under cap), P_sep/R 0.7 MW/m, wall 1.52 MW/m2,
+  TBR 1.065 - violates ONLY the L-H (H-mode access) limit for HTS (plus coil field for Nb3Sn).
+- Verdict (pre-fixed): CLOSED. Not triangulated (starts do not converge).
+- Limitation: the no-burn score is flat, so coordinate descent cannot climb out of the no-burn region; a feasible point the optimiser
+  cannot reach is not excluded. Verdict is "closed within this engine's reach".
+Reading: with very good (unmeasured) enrichment the large HTS design fails only on H-mode access, because heavy radiation leaves too
+little power crossing the edge. The last open lever is the H-mode criterion itself (radiative mantle: judged on separatrix power with a
+validated threshold), which needs its own lock. Labels ESTIMATE, self-check only.

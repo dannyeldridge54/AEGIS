@@ -1,0 +1,1953 @@
+{
+ "eta3": {
+  "Nb3Sn|ITER": {
+   "end": {
+    "R": 6.2,
+    "B": 5.3,
+    "fAr": 0.003,
+    "leg": 5,
+    "blk": 0,
+    "Paux": 30.0,
+    "dens": 0.85,
+    "nu": 0.6,
+    "enr": 3
+   },
+   "result": {
+    "score": -10.855413705061897,
+    "feasible": false,
+    "why": "no_solution",
+    "c_SOL": 0.04277068525309486
+   },
+   "rotations": 5,
+   "history": [
+    {
+     "rotation": 1,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.5,
+      "enr": 3
+     },
+     "score": -12.413819712395151,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 2,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 3,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 3
+     },
+     "score": -11.225455133834538,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 3,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 4,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 3
+     },
+     "score": -10.997531521742816,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 4,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 3
+     },
+     "score": -10.855413705061897,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 5,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 3
+     },
+     "score": -10.855413705061897,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    }
+   ]
+  },
+  "Nb3Sn|R9B6": {
+   "end": {
+    "R": 8.0,
+    "B": 5.3,
+    "fAr": 0.003,
+    "leg": 5,
+    "blk": 0,
+    "Paux": 10.0,
+    "dens": 0.7,
+    "nu": 0.6,
+    "enr": 3
+   },
+   "result": {
+    "score": -12.396607572332544,
+    "feasible": false,
+    "why": "no_solution",
+    "c_SOL": 0.11983037861662717
+   },
+   "rotations": 5,
+   "history": [
+    {
+     "rotation": 1,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.5,
+      "enr": 3
+     },
+     "score": -16.4727475056444,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 2,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 3,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 3
+     },
+     "score": -13.383501690044406,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 3,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 4,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 3
+     },
+     "score": -12.77539064247518,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 4,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 3
+     },
+     "score": -12.396607572332544,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 5,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 3
+     },
+     "score": -12.396607572332544,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    }
+   ]
+  },
+  "Nb3Sn|R8B8": {
+   "end": {
+    "R": 9.0,
+    "B": 9.0,
+    "fAr": 0.003,
+    "leg": 2,
+    "blk": 1,
+    "Paux": 30.0,
+    "dens": 0.8,
+    "nu": 0.4,
+    "enr": 3
+   },
+   "result": {
+    "score": -1.8629207141121098,
+    "feasible": false,
+    "P_net": 838.5735273632253,
+    "P_fus": 2443.1218797156603,
+    "Q_e": 5.323478709408952,
+    "c_SOL": 0.004021093705538281,
+    "Psep_R": -0.5162926579256464,
+    "wall": 1.35389031320729,
+    "coil": 16.541501976284586,
+    "TBR": 1.0648937292536762,
+    "violations": [
+     "LH",
+     "coil"
+    ]
+   },
+   "rotations": 4,
+   "history": [
+    {
+     "rotation": 1,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.8,
+      "nu": 0.4,
+      "enr": 3
+     },
+     "score": -2.192324699410646,
+     "feasible": false,
+     "P_net": 791.4868180062722,
+     "violations": [
+      "LH",
+      "TBR",
+      "coil"
+     ]
+    },
+    {
+     "rotation": 2,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 1,
+      "Paux": 20.0,
+      "dens": 0.8,
+      "nu": 0.4,
+      "enr": 3
+     },
+     "score": -1.9857309277851045,
+     "feasible": false,
+     "P_net": 818.3070057078069,
+     "violations": [
+      "LH",
+      "coil"
+     ]
+    },
+    {
+     "rotation": 3,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 1,
+      "Paux": 30.0,
+      "dens": 0.8,
+      "nu": 0.4,
+      "enr": 3
+     },
+     "score": -1.8629207141121098,
+     "feasible": false,
+     "P_net": 838.5735273632253,
+     "violations": [
+      "LH",
+      "coil"
+     ]
+    },
+    {
+     "rotation": 4,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 1,
+      "Paux": 30.0,
+      "dens": 0.8,
+      "nu": 0.4,
+      "enr": 3
+     },
+     "score": -1.8629207141121098,
+     "feasible": false,
+     "P_net": 838.5735273632253,
+     "violations": [
+      "LH",
+      "coil"
+     ]
+    }
+   ]
+  },
+  "HTS|ITER": {
+   "end": {
+    "R": 6.2,
+    "B": 5.3,
+    "fAr": 0.003,
+    "leg": 5,
+    "blk": 0,
+    "Paux": 30.0,
+    "dens": 0.85,
+    "nu": 0.6,
+    "enr": 3
+   },
+   "result": {
+    "score": -10.855413705061897,
+    "feasible": false,
+    "why": "no_solution",
+    "c_SOL": 0.04277068525309486
+   },
+   "rotations": 5,
+   "history": [
+    {
+     "rotation": 1,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.5,
+      "enr": 3
+     },
+     "score": -12.413819712395151,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 2,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 3,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 3
+     },
+     "score": -11.225455133834538,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 3,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 4,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 3
+     },
+     "score": -10.997531521742816,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 4,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 3
+     },
+     "score": -10.855413705061897,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 5,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 3
+     },
+     "score": -10.855413705061897,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    }
+   ]
+  },
+  "HTS|R9B6": {
+   "end": {
+    "R": 8.0,
+    "B": 5.3,
+    "fAr": 0.003,
+    "leg": 5,
+    "blk": 0,
+    "Paux": 10.0,
+    "dens": 0.7,
+    "nu": 0.6,
+    "enr": 3
+   },
+   "result": {
+    "score": -12.396607572332544,
+    "feasible": false,
+    "why": "no_solution",
+    "c_SOL": 0.11983037861662717
+   },
+   "rotations": 5,
+   "history": [
+    {
+     "rotation": 1,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.5,
+      "enr": 3
+     },
+     "score": -16.4727475056444,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 2,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 3,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 3
+     },
+     "score": -13.383501690044406,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 3,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 4,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 3
+     },
+     "score": -12.77539064247518,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 4,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 3
+     },
+     "score": -12.396607572332544,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 5,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 3
+     },
+     "score": -12.396607572332544,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    }
+   ]
+  },
+  "HTS|R8B8": {
+   "end": {
+    "R": 9.0,
+    "B": 9.0,
+    "fAr": 0.003,
+    "leg": 2,
+    "blk": 1,
+    "Paux": 30.0,
+    "dens": 0.8,
+    "nu": 0.4,
+    "enr": 3
+   },
+   "result": {
+    "score": -1.4844622160883942,
+    "feasible": false,
+    "P_net": 838.5735273632253,
+    "P_fus": 2443.1218797156603,
+    "Q_e": 5.323478709408952,
+    "c_SOL": 0.004021093705538281,
+    "Psep_R": -0.5162926579256464,
+    "wall": 1.35389031320729,
+    "coil": 16.541501976284586,
+    "TBR": 1.0648937292536762,
+    "violations": [
+     "LH"
+    ]
+   },
+   "rotations": 4,
+   "history": [
+    {
+     "rotation": 1,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.8,
+      "nu": 0.4,
+      "enr": 3
+     },
+     "score": -1.8138662013869302,
+     "feasible": false,
+     "P_net": 791.4868180062722,
+     "violations": [
+      "LH",
+      "TBR"
+     ]
+    },
+    {
+     "rotation": 2,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 1,
+      "Paux": 20.0,
+      "dens": 0.8,
+      "nu": 0.4,
+      "enr": 3
+     },
+     "score": -1.607272429761389,
+     "feasible": false,
+     "P_net": 818.3070057078069,
+     "violations": [
+      "LH"
+     ]
+    },
+    {
+     "rotation": 3,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 1,
+      "Paux": 30.0,
+      "dens": 0.8,
+      "nu": 0.4,
+      "enr": 3
+     },
+     "score": -1.4844622160883942,
+     "feasible": false,
+     "P_net": 838.5735273632253,
+     "violations": [
+      "LH"
+     ]
+    },
+    {
+     "rotation": 4,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 1,
+      "Paux": 30.0,
+      "dens": 0.8,
+      "nu": 0.4,
+      "enr": 3
+     },
+     "score": -1.4844622160883942,
+     "feasible": false,
+     "P_net": 838.5735273632253,
+     "violations": [
+      "LH"
+     ]
+    }
+   ]
+  }
+ },
+ "eta5": {
+  "Nb3Sn|ITER": {
+   "end": {
+    "R": 6.2,
+    "B": 5.3,
+    "fAr": 0.003,
+    "leg": 5,
+    "blk": 0,
+    "Paux": 30.0,
+    "dens": 0.85,
+    "nu": 0.6,
+    "enr": 5
+   },
+   "result": {
+    "score": -10.855413705061897,
+    "feasible": false,
+    "why": "no_solution",
+    "c_SOL": 0.04277068525309486
+   },
+   "rotations": 5,
+   "history": [
+    {
+     "rotation": 1,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.5,
+      "enr": 5
+     },
+     "score": -12.413819712395151,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 2,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 3,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 5
+     },
+     "score": -11.225455133834538,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 3,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 4,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 5
+     },
+     "score": -10.997531521742816,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 4,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 5
+     },
+     "score": -10.855413705061897,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 5,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 5
+     },
+     "score": -10.855413705061897,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    }
+   ]
+  },
+  "Nb3Sn|R9B6": {
+   "end": {
+    "R": 8.0,
+    "B": 5.3,
+    "fAr": 0.003,
+    "leg": 5,
+    "blk": 0,
+    "Paux": 10.0,
+    "dens": 0.7,
+    "nu": 0.6,
+    "enr": 5
+   },
+   "result": {
+    "score": -12.396607572332544,
+    "feasible": false,
+    "why": "no_solution",
+    "c_SOL": 0.11983037861662717
+   },
+   "rotations": 5,
+   "history": [
+    {
+     "rotation": 1,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.5,
+      "enr": 5
+     },
+     "score": -16.4727475056444,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 2,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 3,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 5
+     },
+     "score": -13.383501690044406,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 3,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 4,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 5
+     },
+     "score": -12.77539064247518,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 4,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 5
+     },
+     "score": -12.396607572332544,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 5,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 5
+     },
+     "score": -12.396607572332544,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    }
+   ]
+  },
+  "Nb3Sn|R8B8": {
+   "end": {
+    "R": 9.0,
+    "B": 9.0,
+    "fAr": 0.003,
+    "leg": 2,
+    "blk": 1,
+    "Paux": 30.0,
+    "dens": 0.8,
+    "nu": 0.4,
+    "enr": 5
+   },
+   "result": {
+    "score": -1.8629207141121098,
+    "feasible": false,
+    "P_net": 838.5735273632253,
+    "P_fus": 2443.1218797156603,
+    "Q_e": 5.323478709408952,
+    "c_SOL": 0.004021093705538281,
+    "Psep_R": -0.5162926579256464,
+    "wall": 1.35389031320729,
+    "coil": 16.541501976284586,
+    "TBR": 1.0648937292536762,
+    "violations": [
+     "LH",
+     "coil"
+    ]
+   },
+   "rotations": 4,
+   "history": [
+    {
+     "rotation": 1,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 1,
+      "Paux": 10.0,
+      "dens": 0.8,
+      "nu": 0.4,
+      "enr": 5
+     },
+     "score": -2.1463101304129406,
+     "feasible": false,
+     "P_net": 791.4868180062722,
+     "violations": [
+      "LH",
+      "coil"
+     ]
+    },
+    {
+     "rotation": 2,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 1,
+      "Paux": 20.0,
+      "dens": 0.8,
+      "nu": 0.4,
+      "enr": 5
+     },
+     "score": -1.9857309277851045,
+     "feasible": false,
+     "P_net": 818.3070057078069,
+     "violations": [
+      "LH",
+      "coil"
+     ]
+    },
+    {
+     "rotation": 3,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 1,
+      "Paux": 30.0,
+      "dens": 0.8,
+      "nu": 0.4,
+      "enr": 5
+     },
+     "score": -1.8629207141121098,
+     "feasible": false,
+     "P_net": 838.5735273632253,
+     "violations": [
+      "LH",
+      "coil"
+     ]
+    },
+    {
+     "rotation": 4,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 1,
+      "Paux": 30.0,
+      "dens": 0.8,
+      "nu": 0.4,
+      "enr": 5
+     },
+     "score": -1.8629207141121098,
+     "feasible": false,
+     "P_net": 838.5735273632253,
+     "violations": [
+      "LH",
+      "coil"
+     ]
+    }
+   ]
+  },
+  "HTS|ITER": {
+   "end": {
+    "R": 6.2,
+    "B": 5.3,
+    "fAr": 0.003,
+    "leg": 5,
+    "blk": 0,
+    "Paux": 30.0,
+    "dens": 0.85,
+    "nu": 0.6,
+    "enr": 5
+   },
+   "result": {
+    "score": -10.855413705061897,
+    "feasible": false,
+    "why": "no_solution",
+    "c_SOL": 0.04277068525309486
+   },
+   "rotations": 5,
+   "history": [
+    {
+     "rotation": 1,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.5,
+      "enr": 5
+     },
+     "score": -12.413819712395151,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 2,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 3,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 5
+     },
+     "score": -11.225455133834538,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 3,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 4,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 5
+     },
+     "score": -10.997531521742816,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 4,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 5
+     },
+     "score": -10.855413705061897,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 5,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 5
+     },
+     "score": -10.855413705061897,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    }
+   ]
+  },
+  "HTS|R9B6": {
+   "end": {
+    "R": 8.0,
+    "B": 5.3,
+    "fAr": 0.003,
+    "leg": 5,
+    "blk": 0,
+    "Paux": 10.0,
+    "dens": 0.7,
+    "nu": 0.6,
+    "enr": 5
+   },
+   "result": {
+    "score": -12.396607572332544,
+    "feasible": false,
+    "why": "no_solution",
+    "c_SOL": 0.11983037861662717
+   },
+   "rotations": 5,
+   "history": [
+    {
+     "rotation": 1,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.5,
+      "enr": 5
+     },
+     "score": -16.4727475056444,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 2,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 3,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 5
+     },
+     "score": -13.383501690044406,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 3,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 4,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 5
+     },
+     "score": -12.77539064247518,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 4,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 5
+     },
+     "score": -12.396607572332544,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 5,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 5
+     },
+     "score": -12.396607572332544,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    }
+   ]
+  },
+  "HTS|R8B8": {
+   "end": {
+    "R": 9.0,
+    "B": 9.0,
+    "fAr": 0.003,
+    "leg": 2,
+    "blk": 1,
+    "Paux": 30.0,
+    "dens": 0.8,
+    "nu": 0.4,
+    "enr": 5
+   },
+   "result": {
+    "score": -1.4844622160883942,
+    "feasible": false,
+    "P_net": 838.5735273632253,
+    "P_fus": 2443.1218797156603,
+    "Q_e": 5.323478709408952,
+    "c_SOL": 0.004021093705538281,
+    "Psep_R": -0.5162926579256464,
+    "wall": 1.35389031320729,
+    "coil": 16.541501976284586,
+    "TBR": 1.0648937292536762,
+    "violations": [
+     "LH"
+    ]
+   },
+   "rotations": 4,
+   "history": [
+    {
+     "rotation": 1,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 1,
+      "Paux": 10.0,
+      "dens": 0.8,
+      "nu": 0.4,
+      "enr": 5
+     },
+     "score": -1.7678516323892253,
+     "feasible": false,
+     "P_net": 791.4868180062722,
+     "violations": [
+      "LH"
+     ]
+    },
+    {
+     "rotation": 2,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 1,
+      "Paux": 20.0,
+      "dens": 0.8,
+      "nu": 0.4,
+      "enr": 5
+     },
+     "score": -1.607272429761389,
+     "feasible": false,
+     "P_net": 818.3070057078069,
+     "violations": [
+      "LH"
+     ]
+    },
+    {
+     "rotation": 3,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 1,
+      "Paux": 30.0,
+      "dens": 0.8,
+      "nu": 0.4,
+      "enr": 5
+     },
+     "score": -1.4844622160883942,
+     "feasible": false,
+     "P_net": 838.5735273632253,
+     "violations": [
+      "LH"
+     ]
+    },
+    {
+     "rotation": 4,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 1,
+      "Paux": 30.0,
+      "dens": 0.8,
+      "nu": 0.4,
+      "enr": 5
+     },
+     "score": -1.4844622160883942,
+     "feasible": false,
+     "P_net": 838.5735273632253,
+     "violations": [
+      "LH"
+     ]
+    }
+   ]
+  }
+ },
+ "eta10": {
+  "Nb3Sn|ITER": {
+   "end": {
+    "R": 6.2,
+    "B": 5.3,
+    "fAr": 0.003,
+    "leg": 5,
+    "blk": 0,
+    "Paux": 30.0,
+    "dens": 0.85,
+    "nu": 0.6,
+    "enr": 10
+   },
+   "result": {
+    "score": -10.855413705061897,
+    "feasible": false,
+    "why": "no_solution",
+    "c_SOL": 0.04277068525309486
+   },
+   "rotations": 5,
+   "history": [
+    {
+     "rotation": 1,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.5,
+      "enr": 10
+     },
+     "score": -12.413819712395151,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 2,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 3,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 10
+     },
+     "score": -11.225455133834538,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 3,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 4,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 10
+     },
+     "score": -10.997531521742816,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 4,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 10
+     },
+     "score": -10.855413705061897,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 5,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 10
+     },
+     "score": -10.855413705061897,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    }
+   ]
+  },
+  "Nb3Sn|R9B6": {
+   "end": {
+    "R": 8.0,
+    "B": 5.3,
+    "fAr": 0.003,
+    "leg": 5,
+    "blk": 0,
+    "Paux": 10.0,
+    "dens": 0.7,
+    "nu": 0.6,
+    "enr": 10
+   },
+   "result": {
+    "score": -12.396607572332544,
+    "feasible": false,
+    "why": "no_solution",
+    "c_SOL": 0.11983037861662717
+   },
+   "rotations": 5,
+   "history": [
+    {
+     "rotation": 1,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.5,
+      "enr": 10
+     },
+     "score": -16.4727475056444,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 2,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 3,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 10
+     },
+     "score": -13.383501690044406,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 3,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 4,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 10
+     },
+     "score": -12.77539064247518,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 4,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 10
+     },
+     "score": -12.396607572332544,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 5,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 10
+     },
+     "score": -12.396607572332544,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    }
+   ]
+  },
+  "Nb3Sn|R8B8": {
+   "end": {
+    "R": 9.0,
+    "B": 9.0,
+    "fAr": 0.003,
+    "leg": 2,
+    "blk": 1,
+    "Paux": 10.0,
+    "dens": 0.85,
+    "nu": 0.4,
+    "enr": 10
+   },
+   "result": {
+    "score": -1.7788923054945898,
+    "feasible": false,
+    "P_net": 1004.5219921822454,
+    "P_fus": 2743.370000118438,
+    "Q_e": 7.87431841392233,
+    "c_SOL": 0.020080233106036526,
+    "Psep_R": 0.6949358180992881,
+    "wall": 1.5202770273319766,
+    "coil": 16.541501976284586,
+    "TBR": 1.0648937292536762,
+    "violations": [
+     "LH",
+     "coil"
+    ]
+   },
+   "rotations": 2,
+   "history": [
+    {
+     "rotation": 1,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 1,
+      "Paux": 10.0,
+      "dens": 0.85,
+      "nu": 0.4,
+      "enr": 10
+     },
+     "score": -1.7788923054945898,
+     "feasible": false,
+     "P_net": 1004.5219921822454,
+     "violations": [
+      "LH",
+      "coil"
+     ]
+    },
+    {
+     "rotation": 2,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 1,
+      "Paux": 10.0,
+      "dens": 0.85,
+      "nu": 0.4,
+      "enr": 10
+     },
+     "score": -1.7788923054945898,
+     "feasible": false,
+     "P_net": 1004.5219921822454,
+     "violations": [
+      "LH",
+      "coil"
+     ]
+    }
+   ]
+  },
+  "HTS|ITER": {
+   "end": {
+    "R": 6.2,
+    "B": 5.3,
+    "fAr": 0.003,
+    "leg": 5,
+    "blk": 0,
+    "Paux": 30.0,
+    "dens": 0.85,
+    "nu": 0.6,
+    "enr": 10
+   },
+   "result": {
+    "score": -10.855413705061897,
+    "feasible": false,
+    "why": "no_solution",
+    "c_SOL": 0.04277068525309486
+   },
+   "rotations": 5,
+   "history": [
+    {
+     "rotation": 1,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.5,
+      "enr": 10
+     },
+     "score": -12.413819712395151,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 2,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 3,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 10
+     },
+     "score": -11.225455133834538,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 3,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 4,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 10
+     },
+     "score": -10.997531521742816,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 4,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 10
+     },
+     "score": -10.855413705061897,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 5,
+     "point": {
+      "R": 6.2,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 30.0,
+      "dens": 0.85,
+      "nu": 0.6,
+      "enr": 10
+     },
+     "score": -10.855413705061897,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    }
+   ]
+  },
+  "HTS|R9B6": {
+   "end": {
+    "R": 8.0,
+    "B": 5.3,
+    "fAr": 0.003,
+    "leg": 5,
+    "blk": 0,
+    "Paux": 10.0,
+    "dens": 0.7,
+    "nu": 0.6,
+    "enr": 10
+   },
+   "result": {
+    "score": -12.396607572332544,
+    "feasible": false,
+    "why": "no_solution",
+    "c_SOL": 0.11983037861662717
+   },
+   "rotations": 5,
+   "history": [
+    {
+     "rotation": 1,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.5,
+      "enr": 10
+     },
+     "score": -16.4727475056444,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 2,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 3,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 10
+     },
+     "score": -13.383501690044406,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 3,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 4,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 10
+     },
+     "score": -12.77539064247518,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 4,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 10
+     },
+     "score": -12.396607572332544,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    },
+    {
+     "rotation": 5,
+     "point": {
+      "R": 8.0,
+      "B": 5.3,
+      "fAr": 0.003,
+      "leg": 5,
+      "blk": 0,
+      "Paux": 10.0,
+      "dens": 0.7,
+      "nu": 0.6,
+      "enr": 10
+     },
+     "score": -12.396607572332544,
+     "feasible": false,
+     "P_net": null,
+     "violations": null
+    }
+   ]
+  },
+  "HTS|R8B8": {
+   "end": {
+    "R": 9.0,
+    "B": 9.0,
+    "fAr": 0.003,
+    "leg": 2,
+    "blk": 1,
+    "Paux": 10.0,
+    "dens": 0.85,
+    "nu": 0.4,
+    "enr": 10
+   },
+   "result": {
+    "score": -1.4004338074708742,
+    "feasible": false,
+    "P_net": 1004.5219921822454,
+    "P_fus": 2743.370000118438,
+    "Q_e": 7.87431841392233,
+    "c_SOL": 0.020080233106036526,
+    "Psep_R": 0.6949358180992881,
+    "wall": 1.5202770273319766,
+    "coil": 16.541501976284586,
+    "TBR": 1.0648937292536762,
+    "violations": [
+     "LH"
+    ]
+   },
+   "rotations": 2,
+   "history": [
+    {
+     "rotation": 1,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 1,
+      "Paux": 10.0,
+      "dens": 0.85,
+      "nu": 0.4,
+      "enr": 10
+     },
+     "score": -1.4004338074708742,
+     "feasible": false,
+     "P_net": 1004.5219921822454,
+     "violations": [
+      "LH"
+     ]
+    },
+    {
+     "rotation": 2,
+     "point": {
+      "R": 9.0,
+      "B": 9.0,
+      "fAr": 0.003,
+      "leg": 2,
+      "blk": 1,
+      "Paux": 10.0,
+      "dens": 0.85,
+      "nu": 0.4,
+      "enr": 10
+     },
+     "score": -1.4004338074708742,
+     "feasible": false,
+     "P_net": 1004.5219921822454,
+     "violations": [
+      "LH"
+     ]
+    }
+   ]
+  }
+ }
+}
