@@ -23067,3 +23067,4 @@ Verdict (pre-fixed): CLOSED at caps 0.60, 0.67 and 0.85. ESTIMATE; NT confinemen
 3. "Lower plant house load" is withdrawn as a lever: the small machines make 3-184 MW of fusion (at most ~80 MW gross electric), so they are
    sub-reactor at any house load. Remaining levers: confinement above H98 1, a divertor taking more than 17 MW/m, or a stellarator.
 d2251b_run.txt now carries a header pointing to DEV-8.
+D2253 (23 Nov 2026 23:00): Reactor Paper 4 DRAFT written (Claude Doc GYksffwh9o8WSAFyBxMu1q), PDF + process zip placed in the PC OU packet (9_new_papers), START_HERE updated. Not published (no 'Publish' for this paper).
