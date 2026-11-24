@@ -22793,3 +22793,15 @@ wrappings to |w| <= 6; rerun (field_tests/results/d2229_filtered_scan_rerun.json
 Verdict: on T6/Z6' ABa at rho = 1/2, a three-generation visible sector cannot have tree-level colour/weak unification (the chiral doublet
 count and V_b = V_a exclude each other). So the forces ring cannot be balanced by the tau = i threshold on this lattice: the derivation needs
 another rho (steering knob, next breath, own lock) or another geometry. tau = i stays CONDITIONAL with no host at rho = 1/2.
+
+## D2231 (HOLE = DARK SECTOR at rho = 3/2, 23 Nov 2026) — the hole cannot be filled: 0 of 9216 tree-unified 3-generation visible sectors close with <= 3 hidden stacks, N <= 6
+Locked PREREG_D2231_DARK_HOLE (Danny 17:59-18:02: a tiny hole in the right place; consider it the dark-matter equivalent; model it; run).
+Input triangulated by builder diagnostic + referee round 10: at rho = 3/2, 36,864 visible choices (9216 distinct quadruples) pass F1, three
+chiral doublets and the right-handed quark filters; every one misses the tadpole only on exceptional charges (closest +-2 on four, doubled
+convention), with the bulk budget already saturated. tools/seed/z6p_dark_hole_d2231.py: every hidden sector of 1, 2 or 3 stacks (206 distinct
+orientifold-even fractional blocks of all rho = 3/2 bulk classes, |w| <= 6), ranks 1..6, exact 12-component tadpole: 0 closures (70 s, not
+partial) -> no dark candidates to score. Positive control (tools/seed/z6p_dark_hole_d2231_control.py): the same block/sum machinery at
+rho = 1/2 closes the published Z6-II model's tadpole exactly with its hidden stack e. Verdict: at rho = 3/2 the tree-unified three-generation
+sector leaves an exceptional-charge hole that no <= 3-stack, N <= 6 hidden (dark) sector can fill. Open levers (not run): >= 4 hidden stacks,
+N > 6, O6-invariant stacks, other lattices (AAa/ABb) or other rho values. Forces-ring brane route: closed on ABa for rho in {1/4,1/3,1/2,2/3,
+1,3/2,2} within these limits; tau = i stays CONDITIONAL with no host found.
