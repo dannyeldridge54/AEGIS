@@ -23020,3 +23020,12 @@ guarded TRACKS.update; backup curriculum.py.bak_ladder_23nov). 20 tracks total, 
 expected answer self-grades; code items verified with reference solutions. Janus selftest on the PC: 0 failures. Takes effect when the
 Janus loop next starts. Pre-existing bug noticed (not fixed): the original 'logic' track's letter substitution also rewrites 'All' and
 'Answer' (e.g. 'Sll', 'Snswer').
+
+## D2250 (TIME TOOLS, 23 Nov 2026 22:03) — Celtic calendar + Aquarius + Weave cosmic clock (console panel and Sarah's Sky 1.3.1 web)
+tools/console/celtic.js (shared engine): Coligny reconstruction (month = 6th day of the moon, Samonios nearest Samhain, 13th month
+intercalary), tree months (Graves, modern), fire festivals (traditional + astronomical cross-quarter), Aquarius by IAU 2006 precession,
+Weave cosmic clock (t0 13.715 Gyr calibrated; inflation/reheating times ESTIMATE from r 4.8e-4, N* 68, T_R 8.94e8 GeV).
+Console rebuilt (.exe on PC); Sarah's Sky web 1.3.1 zip on Desktop (APK needs the repo's GitHub Actions build; no Android SDK here).
+CORRECTION to the chat answer at 21:58: exact Celtic counts from Samonios 2026 (14 Nov) are 349 / 412 / 570 elapsed Celtic years
+(Fagan-Bradley / Lahiri / IAU), positions Age 12 cycle 4 year 5 / Age 14 cycle 5 year 3 / Age 20 cycle 1 year 1, lunations 4,324 /
+5,105 / 7,052 (the chat gave 351/414/571 from whole calendar years). The star-border date still opens Age 20.

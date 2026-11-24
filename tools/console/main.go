@@ -23,6 +23,9 @@ var indexHTML []byte
 //go:embed results.json
 var resultsJSON []byte
 
+//go:embed celtic.js
+var celticJS []byte
+
 var cmDir string
 
 func findCubeMind() string {
@@ -235,6 +238,10 @@ func main() {
 	mux.HandleFunc("/api/results", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
 		w.Write(resultsJSON)
+	})
+	mux.HandleFunc("/celtic.js", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/javascript")
+		w.Write(celticJS)
 	})
 	mux.HandleFunc("/api/live", live)
 	mux.HandleFunc("/api/nuclides", nuclides)

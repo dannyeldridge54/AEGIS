@@ -70,6 +70,8 @@ a.ext{color:var(--accent)}
   <div class="grp">CubeMind</div>
   <a data-s="feed">Live activity</a>
   <a data-s="papers">Published papers</a>
+  <div class="grp">Time</div>
+  <a data-s="celtic">Celtic calendar &amp; cosmic clock</a>
 </nav>
 <main>
 <section id="home" class="on">
@@ -159,10 +161,20 @@ a.ext{color:var(--accent)}
   <div class="panel"><h3>Newest memory</h3><div class="feed" id="f_mem"></div><h3 style="margin-top:14px">Files</h3><div class="feed" id="f_files"></div></div></div>
 </section>
 
+<section id="celtic"><h1>Celtic calendar · Aquarius · cosmic clock</h1>
+  <p class="lead">Today in the Gaulish Coligny calendar, the fire festivals, the Age of Aquarius counted in Celtic ages, and where it all sits on the Weave's cosmic clock from inflation to now. Calendar and Aquarius dates are standard astronomy; the cosmic timeline uses our model's calibrated age and inflation parameters.</p>
+  <div class="cards" id="cc_cards"></div>
+  <div class="row"><div class="panel"><h3>Fire festivals</h3><table id="cc_fest"></table><div class="note">Traditional dates, and the astronomical cross-quarter moment when the Sun is exactly halfway between solstice and equinox.</div></div>
+  <div class="panel"><h3>Tree month (Celtic tree astrology)</h3><label>Birthday</label><input type="date" id="cc_bd" style="font:inherit;padding:6px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--fg)"><div class="out" id="cc_tree"></div><div class="note">Tree months are a modern system (Robert Graves, 1948), not ancient Druid lore. The Coligny calendar is the genuine ancient one.</div></div></div>
+  <div class="panel"><h3>The Age of Aquarius in Celtic reckoning</h3><table id="cc_aq"></table><div class="note">Precession: IAU 2006. Celtic count from Samonios 2026 (14 Nov), 30-year ages of 5-year cycles. The starting year is our choice; the tablet's own epoch is unknown.</div></div>
+  <div class="panel"><h3>Cosmic clock (the Weave)</h3><canvas id="cv_cc" height="360"></canvas><div class="note">Log scale of time since the start of the hot universe. Inflation and reheating times are ESTIMATES from the Weave's adopted point (r = 4.8e-4, N* = 68, T_R = 8.9e8 GeV); the age 13.715 Gyr is the calibrated engine. The Weave does not move the Aquarius date by more than hours.</div></div>
+</section>
+
 <section id="papers"><h1>Published papers</h1><p class="lead">All open on Zenodo (CC-BY 4.0), each with its full process record where it applies.</p>
   <div class="panel"><table id="t_pap"></table></div></section>
 </main>
 <div class="tip" id="tip"></div>
+<script src="/celtic.js"></script>
 <script>
 const $=id=>document.getElementById(id), css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 const tip=$('tip'); function showTip(e,h){tip.innerHTML=h;tip.style.display='block';tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+14)+'px'} function hideTip(){tip.style.display='none'}
@@ -291,6 +303,20 @@ function rpDraw(){if(!RES)return;const c=$('cv_rp'),[x,W,H]=fit(c);x.clearRect(0
 /* ---------- Papers ---------- */
 init.papers=()=>{const P=[['An Open, Pre-Registered D-T Reactor Chain from Plasma to Plant','24486255'],['Reactor Paper 2 — Exhaust Is the Wall (v2, corrected)','24488731'],['Reactor Paper 3 — Flipping the Shape (negative triangularity)','24488692'],['The AEGIS Toolkit — What It Does and How It Was Built','24488137'],['How the Elements Are Made','24488090'],['Fusion Reactor Field Guide','24488566'],['Fusion From Zero — A Plain-Words Guide','24488584'],['Fusion Reactor Chain — Talk','24488749']];
  $('t_pap').innerHTML='<tr><th>Title</th><th>DOI</th></tr>'+P.map(p=>`<tr><td>${p[0]}</td><td><a class="ext" href="https://doi.org/10.5281/zenodo.${p[1]}" target="_blank">10.5281/zenodo.${p[1]}</a></td></tr>`).join('')};
+/* ---------- Celtic + cosmic clock ---------- */
+init.celtic=()=>{const C=window.Celtic,now=new Date(),c=C.coligny(now),f=C.festivals(now)[0],fd=d=>d.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'}),fl=d=>d.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});
+ $('cc_cards').innerHTML=[['Coligny date',`${c.month} ${c.day}`,`${c.status==='MAT'?'MAT (good)':'ANM (not good)'} month · ${c.half}`],['Celtic year',`from Samonios ${fd(c.samonios)}`,c.longYear?'long year (13 months)':'12 months'],['Next fire festival',f.name,`${f.days} days · ${fd(f.traditional)}`],['Tree month now',C.treeSign(now.getMonth()+1,now.getDate()),'Celtic tree astrology (modern)']].map(([k,v,s])=>`<div class="card"><div class="k">${k}</div><div class="v" style="font-size:22px">${v}</div><div class="s">${s}</div></div>`).join('');
+ $('cc_fest').innerHTML='<tr><th>Festival</th><th>Traditional</th><th>Astronomical</th><th>In</th></tr>'+C.festivals(now).map(x=>`<tr><td>${x.name}</td><td>${fd(x.traditional)}</td><td>${fl(x.astronomical)}</td><td>${x.days} days</td></tr>`).join('');
+ const tr=()=>{const v=$('cc_bd').value;if(!v){$('cc_tree').innerHTML='';return}const [y,m,d]=v.split('-').map(Number),cg=C.coligny(new Date(y,m-1,d));$('cc_tree').innerHTML=[['Tree month',C.treeSign(m,d)],['Coligny month',cg.month+' '+cg.day],['Month status',cg.status]].map(([a,b])=>`<div><span>${a}</span><b>${b}</b></div>`).join('')};$('cc_bd').oninput=tr;
+ $('cc_aq').innerHTML='<tr><th>Pisces/Aquarius line</th><th>Our year</th><th>Celtic years from Samonios 2026</th><th>Celtic position</th><th>Lunar months</th></tr>'+C.aquarius().map(a=>`<tr><td>${a.boundary}</td><td>${Math.floor(a.year)}</td><td>${a.celticYears}</td><td>Age ${a.age}, cycle ${a.cycle}, year ${a.yearInCycle}</td><td>${a.lunations.toLocaleString()}</td></tr>`).join('');
+ drawCC()};redraw.celtic=drawCC;
+function drawCC(){const c=$('cv_cc'),[x,W,H]=fit(c),rows=window.Celtic.cosmicClock();x.clearRect(0,0,W,H);const lo=-38,hi=18.2,X=v=>40+(W-80)*(Math.log10(v)-lo)/(hi-lo);
+ x.strokeStyle=css('--line');x.beginPath();x.moveTo(40,70);x.lineTo(W-40,70);x.stroke();x.font='11px Segoe UI';x.fillStyle=css('--muted');
+ for(let e=-36;e<=18;e+=6){x.fillText('1e'+e+' s',X(Math.pow(10,e))-14,90)}
+ const marks=[[1,'1 second'],[3.156e7,'1 year'],[3.156e16,'1 billion years']];marks.forEach(([v,l])=>{x.strokeStyle=css('--grid');x.beginPath();x.moveTo(X(v),60);x.lineTo(X(v),80);x.stroke();x.fillText(l,X(v)-20,52)});
+ rows.forEach((r,i)=>{const px=X(r[1]),py=120+i*29;x.strokeStyle=css('--accent');x.globalAlpha=.4;x.beginPath();x.moveTo(px,70);x.lineTo(px,py-6);x.stroke();x.globalAlpha=1;x.fillStyle=i===rows.length-1?css('--good'):css('--accent');x.beginPath();x.arc(px,70,4,0,7);x.fill();
+  x.fillStyle=css('--fg');x.font='12.5px Segoe UI';const lbl=r[0]+'  ·  t ≈ '+fmtS(r[1]);const tw=x.measureText(lbl).width;x.fillText(lbl,Math.min(px,W-tw-10),py)})}
+function fmtS(s){if(s<1)return s.toExponential(1)+' s';if(s<3.156e7)return Math.round(s)+' s';if(s<3.156e13)return (s/3.156e7).toPrecision(3)+' years';return (s/3.156e16).toFixed(3)+' billion years'}
 addEventListener('resize',()=>{const s=document.querySelector('section.on').id;redraw[s]&&redraw[s]()});
 </script>
 </body>
