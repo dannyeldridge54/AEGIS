@@ -22805,3 +22805,13 @@ rho = 1/2 closes the published Z6-II model's tadpole exactly with its hidden sta
 sector leaves an exceptional-charge hole that no <= 3-stack, N <= 6 hidden (dark) sector can fill. Open levers (not run): >= 4 hidden stacks,
 N > 6, O6-invariant stacks, other lattices (AAa/ABb) or other rho values. Forces-ring brane route: closed on ABa for rho in {1/4,1/3,1/2,2/3,
 1,3/2,2} within these limits; tau = i stays CONDITIONAL with no host found.
+
+## D2224 (D7 STRAND, rerun after DEVIATIONS DEV-1..4, 23 Nov 2026) — primary: 1 stable point, off the natural point; convention-sensitive
+Run 1: 8450 strand points, 3 stable (0.035%), none natural. Rerun (1/alpha prefilter, clamp rejection, M12 <= M_s variants, DKL L x 0.9/1.0/1.1,
+U(1) weight 1 or 3/5; 1132 exact engine runs; field_tests/results/d2224_strand_rerun.json):
+- PRIMARY (L x 1.0, U(1) weight 1, M_s = 0.1 M_P): 1 stable = (c 1/2pi, m1 1, m3 4, Db32 -1, Db12 +1): alpha_s 0.11762, M12 7.8e15 GeV.
+  The two run-1 points at M12 5.2e17 are removed by M12 <= M_s. Reading by the lock: "stable only off the natural point".
+- Variants: stable counts 1-7 (M_s 0.1 M_P) / 5-12 (M_P); natural point (m1 = m3 = 3) stable only in the L x 0.9 variants (2 each).
+Verdict: the 4-cycle-modulus D7 strand does not balance the forces ring at its natural point under the primary conventions; the few hits are
+convention-sensitive (L +-10%, U(1) weight) and generic under the referee's look-elsewhere note (R108/R109). Superseded as a route by the
+tau = i threshold (D2225, CONDITIONAL) and the brane-host scans (D2228-D2231, no host on Z6' ABa).
