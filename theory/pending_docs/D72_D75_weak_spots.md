@@ -22991,3 +22991,8 @@ field_tests/results/d2244_run.txt, d2244_nt.json, d2244b_rescore.txt/json. NT ru
 Verdict: NT removes the H-mode wall but exposes the next one: in this engine a burning plant radiates most of its heat in the core
 (bremsstrahlung + synchrotron + argon floor). CONDITIONAL only if ~93-99% core radiation were survivable (not demonstrated). Next: verify
 the core radiation budget (synchrotron reflectivity, profiles), the single model item now behind every wall. Labels ESTIMATE.
+
+## D2244a (CORRECTION to D2244, referee R112 paper round, 23 Nov 2026)
+"both also feasible at eta 3" is wrong: only R7 B9 is feasible at eta 3; R8 B8 only at eta 5 and 10. "NT removes the H-mode wall" is an
+assumption of the lock (L-H limit deleted, H98 ~1 extrapolated from carbon-wall DIII-D/TCV), not a result; wording changed to conditional.
+f_rad here = P_rad,core(core region + all synchrotron)/(P_alpha + P_aux), not like-for-like with DIII-D measured fractions.
