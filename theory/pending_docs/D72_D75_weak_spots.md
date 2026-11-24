@@ -22879,3 +22879,15 @@ wall load <= 2.0 MW/m^2 (UNVERIFIED), P_sep/R <= 17 MW/m (UNVERIFIED, EU-DEMO cl
 Finding: steering size and field raises fusion power, but the divertor exhaust (P_sep/R) is the binding limit almost everywhere; power
 output is bought with exhaust handling, not with confinement. Next (needs a NEW lock): synchrotron reflection sensitivity, density floor
 below 0.6 n_G, P_aux = 0 / burn control, verified wall-load and P_sep/R limits, radiative-divertor (seeded) exhaust as a knob.
+
+## D2237 (ONE-PASS PROJECT-LEAD TRIANGULATION, 23 Nov 2026) — no machine is lead-ready: exhaust fails by all three metrics, TBR below design margin
+Locked PREREG_D2237_LEAD_PASS; theory/tests/d2237_lead.py; field_tests/results/d2237_lead.json. Self-check only (credits); formulas from memory = ESTIMATE.
+| machine | P_fus MW | P_net MW | E1 P_sep/R (<=17) | E2 P_sep B/(q95 A R) (<=9.2) | lambda_q mm | seeding for 10 MW/m2 | wall MW/m2 | FW life fpy |
+| ITER control* | 669 | 18.8 | 26.3 | 15.0 | 0.62 | 0.99 | 0.78 | 3.6 |
+| Nb3Sn R9 B6 | 1094 | 328 | 15.9 | 10.3 | 0.54 | 0.98 | 0.61 | 4.6 |
+| Nb3Sn R8 B8 | 1759 | 601 | 16.9 | 14.5 | 0.38 | 0.99 | 1.23 | 2.3 |
+*ITER row recomputed at 0.936 n_G / 73 MW; differs from the +4.88 MW control (density grid point) - approximate.
+Triangulation: E1 alone would pass the two Nb3Sn machines; E2 and E3 both fail them; all three agree that 98-99% of the exhaust must be
+radiated (detached, seeded divertor) - the decisive engineering item. TBR 1.021 (1-D) is below the 1.05 design margin for every machine.
+First-wall life 2.3-4.6 full-power years at a 20 dpa limit. Verdict: none "lead-ready at 0-D"; the plan's next locks are exhaust (seeded
+divertor model), 3-D neutronics for TBR margin, and verified limits.
