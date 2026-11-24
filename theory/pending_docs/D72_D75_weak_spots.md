@@ -22856,3 +22856,8 @@ neutron ladder N1-N12 (6 IN, N10 x2 and N11 EDGE), JET #104522 IN, #99971 OUT (+
 Paper draft "An Open, Pre-Registered D-T Reactor Chain from Plasma to Plant" as a Claude Doc (https://claude.ai/artifact/DvyLdK6UvJBHxWw19WrUWU):
 abstract, method (Prometheus protocol), plasma, neutron ladder, JET, full results table, referee-caught corrections, limitations, data/sources.
 Draft only; no submission or posting (Zenodo/arXiv need Danny's explicit "Publish").
+
+## D2235 — PUBLISHED (Danny 18:31 "Publish"): "An Open, Pre-Registered D-T Reactor Chain from Plasma to Plant", doi:10.5281/zenodo.24486255 (23 Nov 2026)
+Preprint, CC BY-NC-SA 4.0, creator Eldridge, Danny (Independent researcher, Oklahoma City), 9 pages, PDF exported from the Claude Doc rev 13
+(papers/reactor_chain/Eldridge_reactor_chain_2026.pdf). File verified on Zenodo against local before and after publishing: md5
+d078dd3e1389cbdd36e565930913a2b0. https://zenodo.org/records/24486255. Uploaded from Danny's Chrome (his own Zenodo session).
