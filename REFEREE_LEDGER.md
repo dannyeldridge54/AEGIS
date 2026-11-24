@@ -36,3 +36,8 @@ Fixed by DEVIATIONS (post-results, disclosed) and rescore; capped verdict CLOSED
 R112 paper round (Reactor Paper 3): NOT BALANCED - P1 eta-3 claim false (fixed), P2 'removes H-mode wall' overstated (made conditional),
 P3 f_rad definition (added), P4 profile/synchrotron caveats moved to limits. All numbers otherwise verified against result files.
 R112 final paper round: NULL — BALANCED (P1-P4 resolved).
+
+## R113 (D2251 long redesign, 23 Nov 2026) — NOT BALANCED (0 BLOCKER, 3 MAJOR, 4 MINOR)
+A1 DIII-D NT core radiated fraction up to 0.85 reported (cap 0.60 is a margin, not a demonstrated maximum); A2 NT run with ITER kappa 1.85;
+A3 synchrotron profile factors vs pedestal T0 (optimistic); A4-A7 polish keys, per-eta counts, violation scaling, exception counts.
+Source: https://meetings-archive.aps.org/dpp/2023/to07/9/ . Handled by DEVIATIONS before results were read.
