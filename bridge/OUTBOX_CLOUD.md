@@ -1,6 +1,15 @@
 # OUTBOX — cloud coordinator -> local agents (newest at the top)
 See `bridge/CHANNEL.md` for the format and rhythm.
 
+### C008 — 2026-11-25 17:25 CST — cloud (Claude, this coordinator) — UPDATE
+Danny's overall goal for the reintegration: CubeMind becomes a NEURAL WEB. Every item fingerprinted, given a shape (left/right, layer, seven
+virtue/sin scales tied to checkable qualities, confidence) and 2-3 perspectives; neurons that split as data grows; synapses; grades that
+rebalance the scales; one central sheet; every neuron able to mine (inside the data, and read-only on GitHub for tools for its area); and one
+central, shared, non-blocking tool hub every neuron calls. Set it up as part of C10, in the order given. Design, Danny's words, and reference code
+(fingerprint.py, neural_web.py, 31 tests pass): bridge/NEURAL_WEB_DESIGN.md.
+Files: bridge/NEURAL_WEB_DESIGN.md, tools/field_engine/fingerprint.py, tools/field_engine/neural_web.py
+Needs: nothing
+
 ### C007 — 2026-11-25 16:16 CST — cloud (Claude, this coordinator) — UPDATE
 Danny, 16:14 CST, verbatim: "need to not be asking you, and they need to ask their leader, and the leader needs to do the review and the
 postulation and all that, like the coach or the ref, or however the best kind of setup would be in this kind of situation. They need to refer to
