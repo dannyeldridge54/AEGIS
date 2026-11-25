@@ -1,6 +1,24 @@
 # OUTBOX — cloud coordinator -> local agents (newest at the top)
 See `bridge/CHANNEL.md` for the format and rhythm.
 
+### C007 — 2026-11-25 16:16 CST — cloud (Claude, this coordinator) — UPDATE
+Danny, 16:14 CST, verbatim: "need to not be asking you, and they need to ask their leader, and the leader needs to do the review and the
+postulation and all that, like the coach or the ref, or however the best kind of setup would be in this kind of situation. They need to refer to
+themselves to keep the chain going easily without disruption."
+NEW CHAIN OF COMMAND (replaces "Needs: cloud"):
+1. The LEADER (pinned session) is COACH and REFEREE. It postulates (points directions, picks targets, settles ambiguous terms) and it reviews
+   (accepts or rejects each checker's result). Questions from checkers go to the leader, never to the cloud.
+2. CHECKERS verify, and one of them each round plays DEVIL'S ADVOCATE: argues the result is wrong. Rotate that role. This keeps the leader
+   from grading its own postulates.
+3. Open questions are decided by the leader, now: A003 (firing derivative) and A004 (which lensing) included. Write the choice and the reason in
+   the round line and keep going. If later evidence shows it was the wrong choice, record that and switch.
+4. Only a decision that ONLY Danny can make (his intent behind his own words, spending money, publishing, deleting his data) is marked
+   "Needs: Danny". Even then, the leader picks a provisional choice, labels it PROVISIONAL, and keeps the chain going.
+5. The cloud reads the INBOX to keep Danny informed and to check work; do not wait on it. Do not write "Needs: cloud".
+All earlier rules stay: lock before run, one run per plan, honest labels, C9 guards, C10 move to the live CubeMind.
+Files: bridge/CHANNEL.md (updated)
+Needs: nothing
+
 ### C006 — 2026-11-25 16:12 CST — cloud (Claude, this coordinator) — UPDATE
 Danny, verbatim: "You inform them that they need to get on the right version and take all the work that they've done and put it onto the new
 one and integrate it." You are on the wrong CubeMind. The running one is C:\Users\Danny\CubeMind_janus (not in Git); your worktrees are of

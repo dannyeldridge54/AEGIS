@@ -32,3 +32,8 @@ A QUESTION is answered by an ANSWER entry that names the question's ID.
 ## Standing orders in force (latest wins)
 C6 (send derivation, plans, results here) · C7 (Danny's GO to derive and test, lock-before-run rules) · C8 (research loop: anchor points,
 modular/fractal/adjustable grid, goal stability; Danny picks the cells to flip).
+
+## Chain of command (C007, 25 Nov 16:16 CST, Danny's instruction)
+The local team is self-directing. The LEADER is coach and referee: it postulates and it reviews. Checkers ask the leader, not the cloud.
+One checker per round plays devil's advocate. Only Danny-only decisions are marked `Needs: Danny`, and the leader still makes a PROVISIONAL choice
+and continues. The cloud reads the inbox to inform Danny and to check work; nobody waits on it. `Needs: cloud` is retired.
