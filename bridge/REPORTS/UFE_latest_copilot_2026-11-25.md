@@ -160,6 +160,12 @@ The following are distinct conditional candidate joins:
    \(V_w=8V_0E_2(\rho)\), whereas that loop model's separate 2:1 tuning
    requires \(32V_0E_2(\rho)\); these are not the same matching condition.
 
+   A mathematical supergravity example
+   \(W=c(S-S_0)E_4(U)/\eta(U)^{10}\) realizes a local branch with the
+   corresponding weight \(-1\) Kähler/R character. It has exponential cusp
+   growth and no supplied flux-period or tadpole realization; this is an EFT
+   example, not a flux origin.
+
 5. **Five-real-field local Hessian model.** With late scalar \(\phi\) and
    complex modulus deviations \(e,w\), a separate stacked ansatz is
    \[
@@ -172,17 +178,61 @@ The following are distinct conditional candidate joins:
    \(\Delta=\phi_0-\phi_{\rm ref}\) and baseline quadratic modulus block
    \(\operatorname{diag}(\mu_e^2,\mu_w^2)\), its modulus quadratic matrix
    in the stated common-coordinate normalization is
+   For each paired real canonical component, expand the stated potential
+   with baseline \(\tfrac12\mu_e^2e^2+\tfrac12\mu_w^2w^2\). The modulus
+   block is
    \[
    A=\begin{pmatrix}
-   \mu_e^2+\eta+\kappa\Delta^2&-\eta\\
-   -\eta&\mu_w^2+\eta+\kappa\Delta^2
+   \mu_e^2+2\eta+2\kappa\Delta^2&-2\eta\\
+   -2\eta&\mu_w^2+2\eta+2\kappa\Delta^2
    \end{pmatrix}.
    \]
    The conditional local boundary is \(A_{11}\ge0\), \(A_{22}\ge0\),
    \(\det A\ge0\) (strict inequalities for a strict minimum), together with
    nonnegative thread curvature. This algebraic condition does not fix the
-   source-dependent \(\mu_e^2,\mu_w^2\), coordinate normalization, omitted
-   sectors, or global stability. It is distinct from the modular \(J\)-link.
+   source-dependent \(\mu_e^2,\mu_w^2\), omitted sectors, or global
+   stability. It is distinct from the modular \(J\)-link.
+
+6. **Separate reverse-thread distance-bridge model** from the Data Lense
+   source map:
+   \[
+   \begin{aligned}
+   V_{\rm joint}={}&V_{\rm SE}(U)+V_{\rm W,completion}(S)
+   +V_{\rm R}(\phi)+R e^{b(\phi-\phi_{\rm ref})}
+   +\frac{\eta}{2}d_G(U,S)^2\\
+   &+\frac{\kappa}{2}(\phi-\phi_{\rm ref})^2
+   [d_G(U,\rho_{\rm lift})^2+d_G(S,\rho_{\rm lift})^2],\\
+   V_{\rm R}(\phi)={}&V_L[1-Ae^{-\beta\phi}],\quad
+   A=\frac{16\zeta(2)}{3\zeta(3)},\quad\beta=2\sqrt2.
+   \end{aligned}
+   \]
+   This is a separate conditional construction: \(R,\eta,\kappa\), the
+   product metric, both distance links, \(\rho_{\rm lift}\), and the
+   field-identification are assumed. At \(U=S=\rho=\rho_{\rm lift}\), each
+   canonical modulus pair has the quadratic block
+   \[
+   H_{\rm mod}=
+   \begin{pmatrix}
+   k_E+\eta+\kappa\Delta^2&-\eta\\
+   -\eta&k_W+\eta+\kappa\Delta^2
+   \end{pmatrix},\qquad \Delta=\phi_0-\phi_{\rm ref},
+   \]
+   where \(k_E,k_W\) are the separate source Hessians in canonical
+   coordinates. Its local boundary is \(H_{11}>0\) and
+   \(\det H_{\rm mod}>0\); with \(k_E,k_W>0,\eta,\kappa\ge0\), this
+   modulus block is positive. At the frozen dust balance,
+   \[
+   \beta A V_Le^{-\beta\phi}+b\rho_c=0,\qquad
+   (V_{\rm R}+R e^{b(\phi-\phi_{\rm ref})})_{\phi\phi}
+   =b(b+\beta)\rho_c.
+   \]
+   Therefore the full five-field Hessian also requires
+   \(b(b+\beta)\rho_c>0\). The historical \(b=-0.074\) with
+   \(\beta=2\sqrt2\) gives negative thread curvature and a saddle independent
+   of positive \(\eta,\kappa\); \(b<-\beta\) can make this frozen thread
+   curvature positive but is a non-adopted assumption. At \(b=-\beta\)
+   there is no isolated extremum. No such local frozen Hessian establishes
+   an evolving attractor.
 
 The conditional moving-dust equations available for the late scalar are
 \[
@@ -197,6 +247,73 @@ Differentiating the instantaneous-extremum condition
 \]
 provided the denominator is nonzero. This is a tracked-extremum relation,
 not proof that the evolving field follows that extremum.
+
+## T2 perturbation-system specification (conditional)
+
+The source-supported specification is a five-real-scalar model
+\(x^I=(x_E,y_E,x_W,y_W,\phi)\), with the tree product metric
+\[
+G_{IJ}=\operatorname{diag}\left(
+\frac1{2y_E^2},\frac1{2y_E^2},\frac1{2y_W^2},
+\frac1{2y_W^2},1\right),
+\]
+Einstein gravity, Newtonian gauge \(\Phi=\Psi\) (zero anisotropic stress),
+pressureless dust with \(m/m_i=e^{b(\phi-\phi_i)}\), and uncoupled perfect
+radiation. Let \(N=\ln a\), \(p=x_N\), \(q^I=\delta x^I\), and
+\(B=\Phi_N\). For \(F^I=G^{IJ}V_{,J}\),
+\(\Gamma(u,v)^I=\Gamma^I{}_{JK}u^Jv^K\), and
+\(\epsilon=-\dot H/H^2\), the background prescription is
+\[
+\rho_c=\rho_{c,i}e^{-3N+b(\phi-\phi_i)},\quad
+\rho_r=\rho_{r,i}e^{-4N},\quad
+H^2=\frac{\rho_c+\rho_r+V}{3-G_{IJ}p^Ip^J/2},
+\]
+\[
+\epsilon=\frac{\rho_c+4\rho_r/3+H^2G_{IJ}p^Ip^J}{2H^2},
+\quad x_N=p,\quad
+p_N=-(3-\epsilon)p-\Gamma(p,p)-F/H^2
+-b\rho_c e_\phi/H^2.
+\]
+For each nonzero comoving \(k\), evolve
+\[
+\begin{aligned}
+q^I_{NN}={}&-(3-\epsilon)q_N^I-2\Gamma(p,q_N)^I
+-(\partial_K\Gamma^I{}_{JL})q^Kp^Jp^L
+-\frac{k^2}{(aH)^2}q^I-\frac{(\partial_JF^I)q^J}{H^2}\\
+&+4p^I B-\frac{2F^I\Phi}{H^2}
+-\frac{b\rho_c(\delta_c+2\Phi)}{H^2}e_\phi^I,\\
+\delta_{c,N}={}&-\frac{k^2v_c}{aH}+3B+bq_{\phi,N},\qquad
+v_{c,N}=-(1+bp_\phi)v_c+\frac{\Phi+bq_\phi}{aH},\\
+\delta_{r,N}={}&-\frac43\frac{k^2v_r}{aH}+4B,\qquad
+v_{r,N}=\frac{\delta_r/4+\Phi}{aH}.
+\end{aligned}
+\]
+Impose the momentum constraint
+\[
+B=-\Phi+\frac{G_{IJ}p^Iq^J}{2}
++\frac{a[\rho_cv_c+(4/3)\rho_rv_r]}{2H}.
+\]
+Independently check the energy constraint and spatial trace,
+\[
+k^2\Phi+3(aH)^2(B+\Phi)+\frac{a^2}{2}\delta\rho=0,\qquad
+\Phi_{NN}+(4-\epsilon)B+(3-2\epsilon)\Phi-\frac{\delta p}{2H^2}=0,
+\]
+where
+\[
+\begin{aligned}
+\delta\rho&=\rho_c\delta_c+\rho_r\delta_r+K+V_{,I}q^I,\\
+\delta p&=\rho_r\delta_r/3+K-V_{,I}q^I,\\
+K&=H^2\left[G_{IJ}p^Iq_N^J
++\tfrac12(\partial_KG_{IJ})q^Kp^Ip^J
+-G_{IJ}p^Ip^J\Phi\right].
+\end{aligned}
+\]
+Here \(\delta_c\) is the physical dust energy-density perturbation, not
+number-density perturbation. This is a specification for the assumed
+conditional action, not a derivation of the physical UFE perturbation action.
+It omits the source loop-corrected metric, full species hierarchy, vector and
+tensor sectors, physical initial state, and reduced scalar-fluid-metric
+kinetic/principal-gradient proof. No integration or test was run here.
 
 ## Field / parameter status
 
@@ -232,6 +349,8 @@ not proof that the evolving field follows that extremum.
 - **CONDITIONAL** — SERAPIS-E \(U\) and \(E_2(U)\), under the pinned
   \(T^6/(\mathbb Z_2\times\mathbb Z_2)\) source assumptions; \(V_0\) is a
   chosen uplift plateau, and its microscopic origin is open.
+- **ASSUMED** — SERAPIS-E coefficient \(C\) and chosen \(V_0\); the source
+  potential is conditional on these inputs.
 - **DERIVED** — Source-local tree-canonical masses at \(\rho\):
   \(2V_0E_2(\rho)\) for each SERAPIS-E component,
   \(V_\infty/4\) for each YFORK2 component, and \(V_L/4\) for the postulated
@@ -284,12 +403,11 @@ Weave sector as a derived common theory.
   The requested comparison to the D1716 saved CLASS trajectory at \(z=0,1,3\)
   and a predeclared tracking tolerance were not obtained; no saved background
   is available in this session and no scientific code was run.
-- **T2 — perturbation specification: PARTLY DONE.** A five-field
-  Newtonian-gauge, coupled-dust, perfect-radiation specification and
-  conditional integrations are described in the 24 Nov handoff. This is not
-  a complete derivation of the perturbation action, all constraints, reduced
-  kinetic/gradient matrices, or quantum system; no new numerical results are
-  asserted.
+- **T2 — perturbation specification: DONE AS A CONDITIONAL SPECIFICATION.**
+  The fields, Newtonian gauge, dust/radiation closure, momentum constraint,
+  and independent energy/trace checks are written above. They follow the
+  assumed product metric and potential, not a derived common action; reduced
+  kinetic/gradient matrices and quantum system remain open.
 - **T3 — eta-kappa boundary: PARTLY DERIVED, source-specific boundary OPEN.**
   The local matrix condition above follows for a specified baseline quadratic
   block and common-coordinate normalization. The selected
