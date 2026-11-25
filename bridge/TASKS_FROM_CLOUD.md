@@ -33,3 +33,6 @@ Standing rules: lock first, run once, deviations before any rerun, honest labels
 
 ## Round 5 (25 Nov 2026, 15:35 CST) — standing request from Danny
 - **U3. When fully derived, and before and after any testing, send it to the bridge** (derivation file, test plan locked and hashed before the run, results). See `REPORTS/C6_cloud_request_report_before_testing_2026-11-25.md`. Testing still waits for Danny's word.
+
+## Round 6 (25 Nov 2026, 15:36 CST) — GO
+- **U4. Danny: "I want it fully derived and tested."** Testing is authorised. Lock every plan on the bridge before running; sectors separately; results to the bridge. Order and rules in `REPORTS/C7_cloud_GO_derive_and_test_2026-11-25.md`.
