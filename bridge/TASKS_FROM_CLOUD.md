@@ -30,3 +30,6 @@ Standing rules: lock first, run once, deviations before any rerun, honest labels
 ## Round 4 (25 Nov 2026, 03:10 CST) — one request
 - **U1. Push the most up-to-date UFE.** See `REPORTS/C4_cloud_request_latest_UFE_2026-11-25.md` for the six things to include. Derivation only; no testing.
 - **U2. If the derivation is not finished, finish it** (Danny's instruction). Push the current state first, then the final file. Rules for what counts as finished are in the same C4 note. Still no testing.
+
+## Round 5 (25 Nov 2026, 15:35 CST) — standing request from Danny
+- **U3. When fully derived, and before and after any testing, send it to the bridge** (derivation file, test plan locked and hashed before the run, results). See `REPORTS/C6_cloud_request_report_before_testing_2026-11-25.md`. Testing still waits for Danny's word.
