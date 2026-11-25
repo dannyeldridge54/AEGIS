@@ -23101,3 +23101,28 @@ audit: eigenvalues 2 and 3/4; b = -0.074 gives negative thread curvature (saddle
 assumed models; they do not join the sectors. Stages 2-9 of `UFE_ENGINE_STAGES.md` are planned, not built. Stage 7 (perturbation system)
 is to be built but not run on the model until Danny says test.
 **Verdict.** TOOL (built, unit-tested). Status of the UFE itself unchanged: not derived as one action.
+
+## D2259 (25 Nov 2026) — UFE engine stages 2-4: the agents' audit checked by code and computer algebra [CENTRE]
+**Lock.** `PREREG_D2259_UFE_ENGINE_STAGES_2_4.md` (commit fcdfdf25), pushed before the script was written. Run once. No deviations.
+**Script / output.** `tools/field_engine/ufe_stages.py`; `field_tests/results/d2259_ufe_stages.json`.
+**Stage 2, exact numbers: 18 of 18 PASS.** E_2(rho) = 5.78335929968 and E_{3/2}(rho) = 8.89274510040 (full lattice, Chowla-Selberg).
+Direct lattice sum (R = 400) plus tail agrees to 1.8e-10 (s = 2) and 4.9e-8 (s = 3/2). shapes.E = 2 zeta(2s) x eisenstein.E_fourier to 1e-16.
+rho is a critical point (|grad E|/E < 4e-9). Laplace eigenvalues 2 and 3/4 to 5e-8. Isotropy y^2 E_xx/E = 1 and 3/8 at rho.
+SERAPIS-E canonical mass^2 = 2 E_2(rho) V0 to 7e-6; YFORK2 canonical mass^2 = V_inf/4 to 4e-9.
+**Stage 3, symbolic: 18 of 18 REPRODUCE** (S1-S12): moving-extremum slope; dust scaling; loop-metric entries and determinant; determinant
+bound; both modulus blocks; thread curvature b(b+beta)rho_c; flux-bridge derivatives and mass; YFORK2 field equations from its Lagrangian;
+radiation oscillator time-convention equivalence; growth exponents; the 9/4 factor between literal v4 and v3/YFORK2.
+**Stage 4, contradiction finder: finder PASS.** It lists the three disagreements named in the lock (V_w/(V0 E_2(rho)) = 32 vs 8; eigenvalue 2 vs
+3/4; gauge coefficient 4.5 from the text vs 7.79 quoted) and one not in the lock's list: canonical modulus mass^2 at rho is V_inf/4 with the
+4/9 factor and 9/16 V_inf without it. That fourth one is already in the audit (the v3/v4 normalisation); it is not a new finding.
+**Honest limits (self-referee).**
+1. N1 agrees to all printed digits, which most likely means the agents used the same Chowla-Selberg formula. The independent evidence is N2.
+2. S5, S6 and S8 start from the audit's own stated ansatz, so they check the algebra from that ansatz and nothing about whether the ansatz is right.
+3. S11 matches the roots of the audit's polynomial to the standard matter-era growth equation. The polynomial itself (the averaged fixed-k
+   system, rank 2, nullity 4) was NOT re-derived.
+4. The finder's claims are declared by hand from the audit; 32 and 8 were entered, not computed. They do follow from the two masses checked in
+   N8 and N9: m_S = 2 m_U gives V_w = 32 V0 E_2(rho), m_S = m_U gives 8. The finder groups what it is told; it does not yet discover.
+5. Not checked at all: the T2 perturbation system, the LaSalle attraction argument, the cubic 2:1 resonance counterexample (Floquet exponent),
+   the ADM/GI map, and the quantum probe.
+**Verdict.** PASS for stages 2-4 as locked. The audit's checked algebra and numbers are correct. Its conclusion is unchanged and now
+independently supported at the points checked: no single UFE action; the compactification gap is OPEN.
