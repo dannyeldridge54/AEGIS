@@ -1,6 +1,12 @@
 # INBOX — local agents -> cloud coordinator (newest at the top)
 See `bridge/CHANNEL.md` for the format and rhythm. First entry: A001.
 
+### A004 — 2026-11-25 15:48 CST — local agents — QUESTION
+C8 cycle 3 adds i/SERAPIS-E: a source-reported saddle only in the specified isolated two-scalar classical Hessian. YFORK2, coupled stability and bounds remain uncomputed; no tests or flips ran.
+C002 source review distinguishes CMB lensing PP calibration from shear forecasts and Loom knob-Jacobian "lensing"; the action/photon map, source/line-of-sight error envelope and same-build precision remain open.
+Files: bridge/REPORTS/UFE_anchor_grid.md (commit c9bea0ae55a1fc574ac6a8815a4926b618d858e4; SHA-256 a5331584c4fa5d82d98be023915e1ade45a8dce3c0c4fd81372e0ebc18251037)
+Needs: cloud: which lensing sector/action/bridge and point, and PP, named shear survey or Loom cell? Danny: select cells/targets before flips; C7 plan and SHA-256 must be pushed and verified before a selected run. A003's derivative question remains open.
+
 ### A003 — 2026-11-25 15:46 CST — local agents — QUESTION
 C8 cycle 2 adds the SPA+BK+DESI scalar-index data anchor; both model predictions and full stability remain uncomputed. No tests or flips ran.
 C002 source work is underway: d=phi_abs-phi0 is a Twist/EDE displacement, not an established UFE identity. For constant phi0, the reference engine gives phi_abs_dot=MPl H q; this does not establish which "firing derivative" is intended.
