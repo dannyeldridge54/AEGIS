@@ -81,6 +81,7 @@ TOOLS = {
                    lambda r, k: {'hit': r.randint(1, 4), 'miss': r.choice([1, 2, 5, 10, 20]), 'pen': r.choice([20, 50, 100, 200]) * (1 + k)}),
 }
 
+META = {}        # optional per-tool record: status, model, source, not_a (filled by packs such as ufe_pack); logged with every lock
 # ----------------------------------------------------------------------------- backends (the axes)
 class Ollama:
     SCHEMA = {'type': 'object', 'properties': {'steps': {'type': 'array', 'items': {'type': 'string'}}, 'result': {'type': 'number'}}, 'required': ['steps', 'result']}
@@ -181,7 +182,7 @@ class Engine:
         for _ in range(n):                                                                          # PLAN + LENS + LOCK for every point first
             self.state['cycle'] += 1
             tool, ring, why = self.plan(used); used.add(tool); fr = self.frame(tool, ring)
-            lock = self.log('lock', tool=tool, ring=ring, why=why, args=fr['args'], tol=fr['tol'], rule=fr['rule'],
+            lock = self.log('lock', tool=tool, ring=ring, why=why, args=fr['args'], tol=fr['tol'], rule=fr['rule'], meta=META.get(tool),
                             prompt_sha=hashlib.sha256(fr['prompt'].encode()).hexdigest()[:16])      # LOCK before any model call
             pts.append(dict(tool=tool, ring=ring, why=why, fr=fr, lock=lock, cycle=self.state['cycle']))
         ans = await self._per_model({i: [(lambda d=d, p=p: self._sample(d, p['fr']['prompt'], p['fr']['tol'])) for p in pts]
@@ -242,7 +243,8 @@ class Engine:
     def report(self):
         rows = []
         for t, st in self.state['tools'].items():
-            m = self.mastery(t); rows.append(dict(tool=t, area=TOOLS[t][0], ring=st['ring'], attempts=len(st['hist']), mastery=None if m is None else round(m, 2), void=st['void']))
+            if t not in TOOLS: continue
+            m = self.mastery(t); rows.append(dict(tool=t, area=TOOLS[t][0], ring=st['ring'], attempts=len(st['hist']), mastery=None if m is None else round(m, 2), void=st['void'], status=(META.get(t) or {}).get('status')))
         return rows
 
 def verify_ledger(path):
@@ -255,7 +257,10 @@ def verify_ledger(path):
             prev, n = h, n + 1
     return n, True
 
-async def run(home, models, cycles, seed=0, samples=3, batch=4, serial=True):
+async def run(home, models, cycles, seed=0, samples=3, batch=4, serial=True, pack=None):
+    if pack == 'ufe':
+        import sys, ufe_pack; names = ufe_pack.register(sys.modules[__name__])
+        print('UFE pack:', len(names), 'tools. Open and blocked gates (never learned, reported every run):'); print(ufe_pack.gates_report(), flush=True)
     eng = Engine(home, [Ollama(m, temperature=0.3 if samples > 1 else 0.2) for m in models], seed=seed, samples=samples, serial=serial)
     t0 = time.time(); agree_n = agree_ok = done = 0
     while done < cycles:
@@ -276,4 +281,5 @@ if __name__ == '__main__':
     a.add_argument('--samples', type=int, default=3, help='independent answers per model per point')
     a.add_argument('--batch', type=int, default=4, help='points locked and answered together')
     a.add_argument('--parallel-models', action='store_true', help='run the models at the same time (only if both fit on the graphics card together)')
-    g = a.parse_args(); asyncio.run(run(g.home, g.models, g.cycles, g.seed, g.samples, g.batch, not g.parallel_models))
+    a.add_argument('--pack', choices=['ufe'], help='add a tool pack (ufe = the 25 Nov UFE derivation audit)')
+    g = a.parse_args(); asyncio.run(run(g.home, g.models, g.cycles, g.seed, g.samples, g.batch, not g.parallel_models, g.pack))

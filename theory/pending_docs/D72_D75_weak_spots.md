@@ -23084,3 +23084,20 @@ WEAVE_UNIFIED_EQUATION defines S = C0 + i/g_s and writes the gauge kinetic coeff
 at rho. In that convention Re S = 1/2 and Im S = 1/g_s = sqrt(3)/2. The D2051 numbers (alpha_G^-1 = 20.15 + 9 sqrt(3)/2 = 27.94) use 1/g_s and
 stand; the notation should read sigma + 9 Im S (or Re S' with S' = -iS). No verdict changes. Also from the bridge (C2): my round-2 tasks R2
 control and R3 formula were wrong for the coupled rolling case and are withdrawn; the y = 1/2 zero was already recorded in D1653.
+
+## D2258 (25 Nov 2026) — TOOL: UFE pack for the Field Engine, and the staged plan [CENTRE]
+**Source.** The local agents' final derivation audit, `bridge/REPORTS/UFE_final_copilot_2026-11-25.md` (pushed 25 Nov 09:26-09:32 CST,
+commits 57049c2a..1fa03d92). Its conclusion: no single sourced UFE action; three separate sectors (Weave v4, YFORK2, SERAPIS-E), conditional
+bridges, and the compactification gap (T6/(Z2xZ2) with E_2 vs Z6-II with E_{3/2}) still OPEN. The audit ran no tests or code.
+**Built.** `tools/field_engine/ufe_pack.py`: SECTORS (3), BRIDGES (4, each with the assumptions it rests on), GATES (8 OPEN/BLOCKED),
+`combine()` guard, and 7 tools with independent testers: Laplace eigenvalue s(s-1) (numerical Laplacian); moving-extremum slope
+3 b rho_c/(V'' + b^2 rho_c) (root-finding and differencing); smallest eigenvalue of the eta-kappa modulus block (characteristic equation and
+Rayleigh bound); reverse-thread curvature b(b+beta) rho_c (finite difference at the dust balance); loop-metric Kahler determinant (from the
+three metric entries); flux-bridge mass (two canonical normalisations); matter-era growth t^(2/3) (RK4 of the growth equation).
+Engine: `META` per tool logged with every lock; `--pack ufe`.
+**Checks.** 17 tests pass (11 engine + 6 pack), mock models only. Testers reject six deliberately wrong formulas. Facts reproduced from the
+audit: eigenvalues 2 and 3/4; b = -0.074 gives negative thread curvature (saddle); b < -beta can be positive.
+**Not done / limits.** No run on real models. No number here tests the theory against data. The seven tools check algebra of separately
+assumed models; they do not join the sectors. Stages 2-9 of `UFE_ENGINE_STAGES.md` are planned, not built. Stage 7 (perturbation system)
+is to be built but not run on the model until Danny says test.
+**Verdict.** TOOL (built, unit-tested). Status of the UFE itself unchanged: not derived as one action.
