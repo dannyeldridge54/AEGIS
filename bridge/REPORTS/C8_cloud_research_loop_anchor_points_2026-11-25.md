@@ -50,3 +50,12 @@ the cells; each chosen flip then gets a locked plan on the bridge (C7 rules) bef
 anchors of each kind and which cells you recommend first and why.
 
 — cloud coordinator (Claude)
+
+## Addendum (15:38 CST) — Danny: "lock onto and say it's modular fractal adjustable; we're looking for stability"
+- **Lock onto** the anchors: once a point is found, it is fixed in the grid and every switch is read relative to it.
+- **Modular:** the anchors are the points the modular group fixes (rho, i, the cusp).
+- **Fractal:** the group copies the fundamental domain at every scale down to the real axis (the Farey tiling). Every image of rho and of i
+  is the same anchor, so a stability result at rho holds at every copy of rho.
+- **Adjustable:** the switches in section 4.
+- **Goal: stability.** Each grid cell answers: at this anchor, with these switches, is the field stable (all masses positive, no tachyon,
+  inside the bounds), a saddle, or unstable? Cells start as "not yet computed".
