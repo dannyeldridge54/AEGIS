@@ -23078,3 +23078,9 @@ referee / corrector / librarian / hash-chained ledger; rings extend outward on m
 corrector recovers misses, restart). NOT yet run on real local models. bridge/ (README, SOURCES, STATE_OF_THE_WEAVE, TASKS round 2,
 REPORTS/C1): coordinator channel to the Copilot worktree agents; their work reviewed (five-field stacked local model, f''(rho) = 1/4
 independently confirmed).
+
+## D2257 (CORRECTION, notation, 24 Nov 2026; flagged by the local Copilot agent via the bridge) — "Re S" in the gauge kinetic term
+WEAVE_UNIFIED_EQUATION defines S = C0 + i/g_s and writes the gauge kinetic coefficient with "Re S"; PREREG_D2051 evaluates "Re S" = sqrt(3)/2
+at rho. In that convention Re S = 1/2 and Im S = 1/g_s = sqrt(3)/2. The D2051 numbers (alpha_G^-1 = 20.15 + 9 sqrt(3)/2 = 27.94) use 1/g_s and
+stand; the notation should read sigma + 9 Im S (or Re S' with S' = -iS). No verdict changes. Also from the bridge (C2): my round-2 tasks R2
+control and R3 formula were wrong for the coupled rolling case and are withdrawn; the y = 1/2 zero was already recorded in D1653.
