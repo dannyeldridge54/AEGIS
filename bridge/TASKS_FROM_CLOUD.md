@@ -1,24 +1,27 @@
-# TASKS FROM THE CLOUD COORDINATOR — read STATE_OF_THE_WEAVE.md and SOURCES.md first. Report to REPORTS/<task-id>_<agent>.md
+# TASKS FROM THE CLOUD COORDINATOR — round 2 (24 Nov 2026, 20:35 CT). Read REPORTS/C1_cloud_coordinator_review_2026-11-24.md first.
+Report each task to REPORTS/<task-id>_<agent>.md (in the repo branch `unify-bg` folder bridge/REPORTS, or the PC folder
+C:\Users\Danny\Desktop\AEGIS_BRIDGE\REPORTS). Round-1 tasks B1-B4 are replaced by these.
 
-## B1 (data_lense agent, worktree stunning-dollop) — re-source the three examples
-Replace every "coordinator-provided / unavailable / not reread" source in data_lense_weave_candidate.json,
-data_lense_negative_space_residual.json and data_lense_conditional_negative_anchors.json with the pinned file paths in SOURCES.md,
-after actually reading them. Evaluate g_x, g_y from E(tau,3/2) = 2 zeta(3) y^(3/2) + 4 zeta(2) y^(-1/2) + ... instead of leaving them
-formal. Report any place where the file and your transcription differ.
+Coordinator decision that unblocks you (from the record, D1638): the late thread is a SECOND COPY of the species potential at a lower
+scale, i.e. a separate canonical scalar - not the inflaton tau_1. Keep that as the stated postulate [P]; do not test "same field".
 
-## B2 (data_lense agent) — the one-field question (item 4b)
-Test whether a SINGLE thread can serve both epochs: after inflation tau_1 sits at rho with V(rho) = 0 and a strict quadratic minimum.
-Derive what must be added for that same field to give late-time V_Lambda > 0 (uplift term, displaced minimum, or a second thread),
-and state for each option whether the endpoint results in WEAVE_FULL_EQUATION.md section 2 survive. Symbolic only; no fits.
+## R1 (scalar-quantum agent) — turn the chosen couplings into a boundary
+In exact_thread_joint_toy.py, eta = kappa = 0.1 are arbitrary. Scan eta in [-1, 1] and kappa in [-1, 1] (21 x 21) and report the region
+where all five Hessian eigenvalues stay positive, and the smallest |coupling| at which one crosses zero. Lock the grid and the pass line
+(min eigenvalue > 0) before running. Output: one table + the boundary curve. This converts "stable at 0.1" into "stable up to X".
 
-## B3 (conditional_observer_core agent, worktree refactored-memory) — the line through the three layers
-Using your existing solver: for the D1713 late potential and constant b on the ladder [0, -0.02, -0.05, -0.08, -0.12], output one table:
-b | DM mass change since a = 1/1091 | z where rho_DE,eff changes sign | r3 = d ln|rho_DE,eff| / d ln a at z = 3 | your mode variance.
-Control (must pass before reading anything else): b = 0 gives no sign change and zero mass change; b at the D1710 point reproduces a
-4.6% mass loss. This is the "line through scalar -> negative space -> quantum mode" in numbers. Label ESTIMATE.
+## R2 (data-lense agent) — put the real negative-space coupling on the stack
+Use frozen_extremum(b, ...) with the record's coupled-thread value of b (PREREG_COUPLED_THREAD.md / D1710) and the scan ladder of
+PREREG_D2134. For each b report: shifted minimum phi*, curvature there, and the Schur complement sign with the Weave Hessian block.
+Control: b -> 0- must return the unshifted rho minimum and curvature 1/4.
 
-## B4 (either) — non-separable stability gate (item 4c/4d), only after B2 reports
-With the joint potential U = V_Weave(S) + V_thread(phi) + rho_c(a) exp(b phi) and ONE added mixing term that B2 identifies as
-physically motivated, compute kn - b1^2/k1 - b2^2/k2 with numbers (k1, k2 from the Hessian at rho). Lock the pass line first.
+## R3 (either) — the line through all three layers, in one table
+For each b in R2: [scalar] phi* and V(phi*); [negative space] DM mass change exp(b(phi*-phi_ref)) - 1 and the sign of
+rho_DE,eff = rho_phi + rho_c - rho_c,ref at a = 1/3; [quantum] Omega^2 = k^2/a^2 + m^2(phi*) + rho_r/4 for k = 0.1, 1, 10 and whether
+the Wronskian check still passes. One row per b. Label every column derived / assumed. This is the connected line Danny asked for.
 
-Do NOT: fit data, claim a dark-photon mapping, claim a spacetime/time anchor, or revive the D1725 / D2134 verdicts (both stand).
+## R4 — flag for the record
+Your finding that the exact-thread line has a second zero at y = 1/2 (modular image of i?) is not in the D-notes. State precisely:
+value of f, f', f'' there, and whether it is the same physical point as tau = i under SL(2,Z) for the full two-dimensional modulus.
+
+Standing rules: lock first, run once, deviations before any rerun, honest labels, no fits, no publishing. D1725 and D2134 verdicts stand.
