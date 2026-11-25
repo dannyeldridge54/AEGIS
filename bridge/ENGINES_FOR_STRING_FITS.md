@@ -4,6 +4,37 @@ Danny asked the cloud coordinator to tell you where the engines are that were bu
 AEGIS repo, branch `unify-bg` (this list was written at commit 1fa03d92). Read the code at a pinned commit and cite it; these
 are tools with their own validation notes, not established physics. Each tool's docstring names the D-notes that validated it.
 
+## 0. START HERE: the multi-knob resonating / pulsing engines (the ones you were looking for)
+Your sessions reported that the "pulsing displays" you inspected could not be verified as the Claude engines and that you
+needed an original filename. These are the original files. They are all in `tools/loom/` unless a path is given.
+| File | What it is |
+|---|---|
+| `pulse.py` | The pulsing Loom: mark every tension point, triangulate them all at once, test, re-read the compass, repeat. Coupled knobs ln m3/2 (K_T) and ln T_R |
+| `resonance.py` | Layered resonance: the equation built from the centre outward through 9 layers (torus, pyramid, turnover, cube, fold, dilaton, forces, cosmology, late universe) (D1972) |
+| `resonance10.py`, `resonance_d2156.py` | The same with a 10th rung: outer data shell, negative-space shell, spine (D2136, D2156) |
+| `loom_rt.py` ... `loom_rt5.py` | Real-time layered pulsing engines v1-v5 (D1983, D1986, D1987, D1989, D1993). v5 is the current one; `test_rt_equivalence.py` shows it reproduces v4 bit for bit |
+| `weave_core.py` | One engine = margins + Jacobian fingerprint + compass + lenses + per-node optimisation (D2168) |
+| `loomcore.py` (also `tools/cubemind_ufe/loomcore.py`) | Loom core: a fractal of knob agents with a balancing centre; each agent owns <= 9 knobs and tunes them octave-then-fifth |
+| `loomd.py`, `planner.py`, `centre_brief.py` | The Loom as a daemon; the planner; the brief for the centre referee |
+| `lens_core.py`, `lensing.py` | Layer lensing: lenses = right-singular directions of each layer's margin Jacobian in knob space (D1981, D1982) |
+| `still_point.py`, `method_tests.py`, `method_tests_3axis.py` | The still point of the three tandem axes S, T, U; the tests OF the method (injection-recovery etc.) |
+| `compass.py`, `field_map.py`, `review.py`, `triangulate.py` | Direction and pull of each measurement; historical knob moves; pattern review; bracketing |
+| `check.py`, `online_fdr.py`, `pass_label_check.py`, `test_loom_battery.py` | The Loom's own checks, false-alarm control and battery. Run these before trusting any verdict |
+| `negspace_ladder.py`, `negspace_outward.py`, `node_equations.py`, `open_node_equations.py`, `wall_pull.py` | The negative-space ladder and its node equations (D2137-D2145). The first two are labelled MAP, not derivation |
+| `tools/weave_knobs.py` | Central-equation engine: three knob equations K_S (g_s), K_T (sigma_vis, Vol, A), K_U (\|u\|) feeding one central map (UFE v4 section 8) |
+| `tools/weave_control/engine.py`, `server.py` | Weave Control: ONE parameter set drives every toolkit, level by level; local control panel on port 8790 |
+
+**String-geometry / SUSY engines: `tools/seed/`** (105 files; read `SEED.md` and `SEED_SHORTCUTS.md` first)
+| File | What it is |
+|---|---|
+| `z6p.py` | IIA T6/Z6' fractional D6-brane builder (= the Weave's Z6-II twist (1,2,-3)/6), from Gmeiner-Honecker 0708.2285 (D2146) |
+| `seed_v3.py` | Seed engine v3: exact consistency landscape on T6/(Z2xZ2), exact integer-chi SUSY conditions, 3-family visible pair (D2082) |
+| `tsusy.py`, `joint4.py`, `kl_gaugino.py`, `z2z6p_k7_robust.py` | SUSY threshold -> two-loop alpha_s; four-goalpost joint test (alpha_s, wino, gluino, m_h); gaugino mass scan; robustness (D2085-D2123) |
+Note the two orbifolds both appear here: `z6p.py` is Z6', `seed_v3.py` is Z2xZ2. That is the same split as the open
+compactification gap; having a builder for each does not join them.
+
+Status words in those docstrings are the authors' own (MAP, PREREG, D-number). Quote them as written.
+
 ## 1. The reference: `tools/serapis_calc/` (SERAPIS calculator)
 The base toolkit and the one everything else is checked against. Run `python -m tools.serapis_calc.selftest` from the repo root
 before using it; it exits 0 only if every cross-check passes.
