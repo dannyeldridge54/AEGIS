@@ -1,0 +1,40 @@
+{
+  "case": "R1",
+  "protocol": "C9-v2",
+  "coordinates": ["delta_Ux", "delta_Uy", "delta_Sc", "delta_Ss"],
+  "anchor": {"U": ["1/2", "sqrt(3)/2"], "S": ["1/2", "sqrt(3)/2"]},
+  "model": {
+    "scope": "exact local quadratic only",
+    "K0": "-ln(3)",
+    "KUUinv": 3.0,
+    "KSSinv": 3.0,
+    "real_metric_diagonal": [0.6666666666666666, 0.6666666666666666, 0.6666666666666666, 0.6666666666666666],
+    "a": 0.0,
+    "W": 0.0,
+    "DW": 0.0,
+    "omitted_sector_or_uplift": false,
+    "symmetry": "assumed unbroken U-only order-three symmetry"
+  },
+  "matching": {
+    "m0_squared": 11.566718599357344,
+    "reference": "R0 predeclared analytic 2 E2(rho), not an FD estimate",
+    "b_f": "positive sqrt(m0_squared/3)",
+    "matching_conditions_spent": 1
+  },
+  "variants": ["candidate", "null_b_f_0"],
+  "step_sizes": [0.001, 0.0003, 0.0001],
+  "limits": {
+    "candidate_relative_error": 0.000001,
+    "candidate_inter_h_spread_relative": 0.000001,
+    "gradient_scale": 0.0000000001,
+    "positive_margin_scale": 0.000001,
+    "null_eigenvalue_scale": 0.000000000001,
+    "engine_reference_scale": 0.000000000001
+  },
+  "fit_budget": {
+    "inherited_baseline_V0_C": 2,
+    "new_flux_coupling": 1,
+    "total_free_couplings": 3,
+    "numerically_optimized": 0
+  }
+}
