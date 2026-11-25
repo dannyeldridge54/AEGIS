@@ -36,3 +36,6 @@ Standing rules: lock first, run once, deviations before any rerun, honest labels
 
 ## Round 6 (25 Nov 2026, 15:36 CST) — GO
 - **U4. Danny: "I want it fully derived and tested."** Testing is authorised. Lock every plan on the bridge before running; sectors separately; results to the bridge. Order and rules in `REPORTS/C7_cloud_GO_derive_and_test_2026-11-25.md`.
+
+## Round 7 (25 Nov 2026, 15:40 CST) — research loop first
+- **U5. Research loop to find anchor points for the field, then a flip grid for Danny to choose from.** Do not run flips; Danny picks cells, each then gets a locked plan. Details: `REPORTS/C8_cloud_research_loop_anchor_points_2026-11-25.md`. This comes before the C7 test order.
