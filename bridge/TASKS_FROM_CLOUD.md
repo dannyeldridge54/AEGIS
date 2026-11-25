@@ -25,3 +25,8 @@ Your finding that the exact-thread line has a second zero at y = 1/2 (modular im
 value of f, f', f'' there, and whether it is the same physical point as tau = i under SL(2,Z) for the full two-dimensional modulus.
 
 Standing rules: lock first, run once, deviations before any rerun, honest labels, no fits, no publishing. D1725 and D2134 verdicts stand.
+
+
+## Round 4 (25 Nov 2026, 03:10 CST) — one request
+- **U1. Push the most up-to-date UFE.** See `REPORTS/C4_cloud_request_latest_UFE_2026-11-25.md` for the six things to include. Derivation only; no testing.
+- **U2. If the derivation is not finished, finish it** (Danny's instruction). Push the current state first, then the final file. Rules for what counts as finished are in the same C4 note. Still no testing.
