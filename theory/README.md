@@ -4,6 +4,57 @@ Theory note: doi:[10.5281/zenodo.23898708](https://doi.org/10.5281/zenodo.238987
 [../papers/theory_note/](../papers/theory_note/).
 
 Step-by-step derivation and assumption ledger: [`DERIVATION_CHAIN.md`](DERIVATION_CHAIN.md).
+Reverse-thread source and model distinctions:
+[`REVERSE_THREAD_SOURCE_TRACE.md`](REVERSE_THREAD_SOURCE_TRACE.md).
+
+## Explicit canonical-scalar potential
+
+`effective_baseline.CanonicalPotential(value, gradient, curvature)` and
+`CanonicalScalar(model, matter_today, radiation_today, initial_N, final_N,
+initial_field, initial_field_prime)` let the existing background and
+`coupled_perturbations` functions evaluate a caller-supplied single-field
+potential without changing the separate n=3 `Baseline` defaults.
+Callbacks must be deterministic and remain unchanged for the lifetime of a
+solution; callers are responsible for checking their derivatives and provenance.
+Fields use reduced Planck units, densities and the potential use
+`M_Pl**2 H_ref**2`, and `N=ln(a)` with `a_today=1`. For `H_ref=H0`,
+present fluid densities are `3*Omega`; normalization to `H0` is not automatic.
+
+`coupled_perturbations.integrate(config, initial_state, k_over_Href)` requires
+an explicit constraint-compatible seven-component state in the order documented
+in its `equations` function. It rejects an invalid initial 00 constraint.
+`equations` returns the derivatives and dimensionless 00 residual; the momentum
+constraint determines the potential derivative rather than providing an
+independent residual. `validate` reports numerical checks but does not serialize
+the potential callbacks: the caller must retain their definition and parameters.
+The existing adiabatic initializers do not support this general potential.
+This is an uncoupled scalar/dust/perfect-radiation approximation, with no
+anisotropic stress; it is not a five-field, detector, Boltzmann, fitting or
+full-stability solver.
+
+For a JSON-only standalone component, `python -m theory.canonical_solver`
+reads one request from standard input and writes a JSON response. It accepts
+only the explicitly named `reverse_exponential` model, never executable code:
+
+```json
+{
+  "model": {"type": "reverse_exponential", "amplitude": 1.0, "coefficient": 0.1, "slope": 1.0},
+  "background": {"matter_today": 0.9, "radiation_today": 0.00027, "initial_N": -1.0,
+    "final_N": 0.0, "initial_field": 0.0, "initial_field_prime": 0.0},
+  "perturbations": {"initial_state": [0, 0, 0, 0, 0, 0, 0], "k_over_Href": 1.0,
+    "sample_N": [-1.0, 0.0]}
+}
+```
+
+The potential is `amplitude * (1 - coefficient * exp(-slope * field))`.
+Requests must specify all values, positive potential parameters,
+`-10 <= initial_N < final_N <= 0`, `0 < k_over_Href <= 200`, and at most
+128 strictly increasing sample epochs within the interval. These are component
+limits, not physical bounds. The state order and units are those above. A
+successful response includes the request, sampled background, perturbations,
+00 residuals, assumptions and limitations. Invalid inputs raise an error; they
+are not treated as successful results. The fixed integration tolerances are
+`rtol=1e-12`, `atol=1e-18`; sampled residuals are not a full stability test.
 
 ## Repeatable ten-area numerical review
 

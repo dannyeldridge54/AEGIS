@@ -9,7 +9,7 @@ import math
 import numpy as np
 from scipy.integrate import solve_ivp
 
-from theory.effective_baseline import evolve
+from theory.effective_baseline import CanonicalScalar, _report_inputs, evolve
 
 
 def radiation_adiabatic_initial_state(config, k_over_Href, *, primordial_phi=1e-5):
@@ -20,6 +20,8 @@ def radiation_adiabatic_initial_state(config, k_over_Href, *, primordial_phi=1e-
     Dust variables are passive test-fluid limits since its background is zero.
     See DERIVATION_CHAIN.md for the series and its restricted domain.
     """
+    if isinstance(config, CanonicalScalar):
+        raise ValueError("General canonical potentials require explicit initial perturbations")
     if not math.isfinite(k_over_Href) or k_over_Href <= 0:
         raise ValueError("Adiabatic initialization requires finite positive comoving k/Href")
     if not math.isfinite(primordial_phi) or not 0 < abs(primordial_phi) <= 1e-3:
@@ -64,6 +66,8 @@ def mixed_adiabatic_initial_state(config, k_over_Href, *, primordial_phi=1e-5):
     x=k*exp(N)/sqrt(radiation_today). Phi0 is the asymptotic radiation-era
     Newtonian potential, not a power spectrum. No density projection is used.
     """
+    if isinstance(config, CanonicalScalar):
+        raise ValueError("General canonical potentials require explicit initial perturbations")
     if not math.isfinite(k_over_Href) or k_over_Href <= 0:
         raise ValueError("Mixed adiabatic initialization requires finite positive comoving k/Href")
     if not math.isfinite(primordial_phi) or not 0 < abs(primordial_phi) <= 1e-3:
@@ -138,6 +142,8 @@ def subdominant_field_adiabatic_initial_state(config, k_over_Href, *, primordial
     radiation equation. Nonzero vacuum enters only through f. The 00
     constraint is verified by the caller/integrate, never projected away.
     """
+    if isinstance(config, CanonicalScalar):
+        raise ValueError("General canonical potentials require explicit initial perturbations")
     if not math.isfinite(max_field_fraction) or not 0 < max_field_fraction <= 1e-6:
         raise ValueError("Subdominant-field fraction bound must lie in (0, 1e-6]")
     if config.radiation_today <= 0:
@@ -317,7 +323,7 @@ def validate(config, initial_state, k_over_Href):
     if equation_samples == 0:
         raise ValueError("Coupled validation lacks interior derivative evidence")
     return {
-        "inputs": vars(config).copy(), "initial_state": np.asarray(initial_state).tolist(),
+        "inputs": _report_inputs(config), "initial_state": np.asarray(initial_state).tolist(),
         "k_over_Href": k_over_Href, "sample_count": int(grid.size),
         "max_scaled_state_shift": shift, "max_scaled_initial_shift": initial_shift,
         "max_absolute_density_constraint": constraint,

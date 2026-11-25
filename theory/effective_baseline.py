@@ -4,9 +4,101 @@ Reduced Planck units; densities in M_Pl**2 H_ref**2, N=ln(a), a_today=1.
 """
 from dataclasses import dataclass
 import math
+from typing import Callable
 
 import numpy as np
 from scipy.integrate import solve_ivp
+
+
+def _canonical_background(config, N, field, field_prime):
+    if not all(math.isfinite(v) for v in (N, field, field_prime)):
+        raise ValueError("Background state must be finite")
+    potential, _ = config.potential(field)
+    matter = config.matter_today * math.exp(-3 * N) if config.matter_today else 0.0
+    radiation = config.radiation_today * math.exp(-4 * N) if config.radiation_today else 0.0
+    denominator = 3 - field_prime**2 / 2
+    if denominator <= 0:
+        raise ValueError("Invalid Friedmann kinetic denominator")
+    h2 = (matter + radiation + potential) / denominator
+    if not math.isfinite(h2) or h2 <= 0:
+        raise ValueError("Expansion squared must be finite and positive")
+    epsilon = (matter + 4 * radiation / 3 + h2 * field_prime**2) / (2 * h2)
+    if not math.isfinite(epsilon):
+        raise ValueError("Expansion derivative must remain finite")
+    return h2, epsilon
+
+
+@dataclass(frozen=True)
+class CanonicalPotential:
+    """Potential and field derivatives in reduced-Planck and H_ref units."""
+
+    value: Callable[[float], float]
+    gradient: Callable[[float], float]
+    curvature: Callable[[float], float]
+
+    def __post_init__(self):
+        if not all(callable(f) for f in (self.value, self.gradient, self.curvature)):
+            raise ValueError("Potential value, gradient and curvature must be callable")
+
+    def evaluate(self, field):
+        if not math.isfinite(field):
+            raise ValueError("Field must be finite")
+        value, gradient = self.value(field), self.gradient(field)
+        if not all(math.isfinite(v) for v in (value, gradient)):
+            raise ValueError("Potential and gradient must remain finite")
+        return value, gradient
+
+    def second_derivative(self, field):
+        if not math.isfinite(field):
+            raise ValueError("Field must be finite")
+        curvature = self.curvature(field)
+        if not math.isfinite(curvature):
+            raise ValueError("Potential curvature must remain finite")
+        return curvature
+
+
+@dataclass(frozen=True)
+class CanonicalScalar:
+    """Canonical scalar with uncoupled dust and perfect radiation, not a UFE."""
+
+    model: CanonicalPotential
+    matter_today: float
+    radiation_today: float
+    initial_N: float
+    final_N: float
+    initial_field: float
+    initial_field_prime: float
+
+    def __post_init__(self):
+        if not isinstance(self.model, CanonicalPotential):
+            raise ValueError("A CanonicalPotential is required")
+        values = (self.matter_today, self.radiation_today, self.initial_N,
+                  self.final_N, self.initial_field, self.initial_field_prime)
+        if not all(math.isfinite(value) for value in values):
+            raise ValueError("Canonical scalar inputs must be finite")
+        if min(self.matter_today, self.radiation_today) < 0:
+            raise ValueError("Background densities must be nonnegative")
+        if self.final_N <= self.initial_N:
+            raise ValueError("Final epoch must follow the initial epoch")
+        if self.initial_field_prime**2 >= 6:
+            raise ValueError("Initial Friedmann kinetic denominator must be positive")
+
+    def potential(self, field):
+        return self.model.evaluate(field)
+
+    def potential_curvature(self, field):
+        return self.model.second_derivative(field)
+
+    def background(self, N, field, field_prime):
+        return _canonical_background(self, N, field, field_prime)
+
+
+def _report_inputs(config):
+    inputs = vars(config).copy()
+    if isinstance(config, CanonicalScalar):
+        inputs.pop("model")
+        inputs["potential"] = "caller-supplied callbacks; not serialized"
+    return inputs
 
 
 @dataclass(frozen=True)
@@ -51,21 +143,7 @@ class Baseline:
         return value, gradient
 
     def background(self, N, field, field_prime):
-        if not all(math.isfinite(v) for v in (N, field, field_prime)):
-            raise ValueError("Background state must be finite")
-        potential, _ = self.potential(field)
-        matter = self.matter_today * math.exp(-3 * N) if self.matter_today else 0.0
-        radiation = self.radiation_today * math.exp(-4 * N) if self.radiation_today else 0.0
-        denominator = 3 - field_prime**2 / 2
-        if denominator <= 0:
-            raise ValueError("Invalid Friedmann kinetic denominator")
-        h2 = (matter + radiation + potential) / denominator
-        if not math.isfinite(h2) or h2 <= 0:
-            raise ValueError("Expansion squared must be finite and positive")
-        epsilon = (matter + 4 * radiation / 3 + h2 * field_prime**2) / (2 * h2)
-        if not math.isfinite(epsilon):
-            raise ValueError("Expansion derivative must remain finite")
-        return h2, epsilon
+        return _canonical_background(self, N, field, field_prime)
 
     def potential_curvature(self, field):
         """Second canonical-field derivative, including independent corrections."""
@@ -210,7 +288,7 @@ def validate(config):
     if continuity_sample_count == 0:
         raise ValueError("No continuity samples were evaluated; epoch interval is not numerically resolved")
     return {
-        "inputs": vars(config).copy(),
+        "inputs": _report_inputs(config),
         "scope": "Separate assumed canonical EFT background, not fitted data or torsion derivation",
         "sample_count": len(grid),
         "continuity_sample_count": continuity_sample_count,

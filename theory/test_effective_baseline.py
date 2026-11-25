@@ -3,7 +3,7 @@ import math
 
 import pytest
 
-from theory.effective_baseline import Baseline, validate
+from theory.effective_baseline import Baseline, CanonicalPotential, CanonicalScalar, validate
 
 
 @pytest.mark.parametrize("first,second", [(0, 0), (1e-4, 0), (0, 1e-4), (-1e-4, 2e-4)])
@@ -27,6 +27,16 @@ def test_constant_field_limit_recovers_lambda_background():
     config = Baseline(initial_field=0)
     h2, _ = config.background(0, 0, 0)
     assert h2 == pytest.approx((config.matter_today + config.radiation_today + config.vacuum) / 3)
+
+
+def test_explicit_canonical_potential_validation_reports_are_json_serializable():
+    from theory.effective_modes import validate_mode
+
+    model = CanonicalPotential(lambda x: 2.1, lambda x: 0., lambda x: 0.)
+    config = CanonicalScalar(model, .9, .00027, -1., 0., 0., 0.)
+    for report in (validate(config), validate_mode(config, 1.)):
+        assert report["inputs"]["potential"] == "caller-supplied callbacks; not serialized"
+        json.dumps(report, allow_nan=False)
 
 
 def test_absent_fluids_do_not_overflow_at_early_epochs():

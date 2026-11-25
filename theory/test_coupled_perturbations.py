@@ -1,7 +1,9 @@
+import math
+
 import numpy as np
 import pytest
 
-from theory.effective_baseline import Baseline, evolve
+from theory.effective_baseline import Baseline, CanonicalPotential, CanonicalScalar, evolve
 from theory.coupled_perturbations import equations
 
 
@@ -100,6 +102,99 @@ def test_integrated_constraint_compatible_state_preserves_constraint():
     assert report["equation_sample_count"] > 0
     assert report["scientific_baseline_ready"] is False
     json.dumps(report, allow_nan=False)
+
+
+@pytest.mark.parametrize("k,delta_m,theta,expected_m,expected_field", [
+    (1., 1.8620155071027177e-7, -3.1007751964874071e-9,
+     4.2057715137788714e-7, 6.9693874197423731e-9),
+    (10., 2.0155038791957407e-7, -3.1007751964874072e-7,
+     1.6005050951968309e-5, 3.7308145236516819e-10),
+])
+def test_explicit_canonical_potential_matches_rolling_fluid_benchmark(
+        k, delta_m, theta, expected_m, expected_field):
+    import json
+    from theory.coupled_perturbations import integrate, validate
+
+    scale, beta, amplitude = 2.3125028312995846, math.sqrt(2), .1
+    model = CanonicalPotential(
+        lambda field: scale * (1 - amplitude * math.exp(-beta * field)),
+        lambda field: scale * amplitude * beta * math.exp(-beta * field),
+        lambda field: -scale * amplitude * beta**2 * math.exp(-beta * field),
+    )
+    config = CanonicalScalar(model, .93, .00027, math.log(.001), 0., 0., 0.)
+    h2, _ = config.background(config.initial_N, 0., 0.)
+    velocity = theta / (.001 * math.sqrt(h2))
+    initial = np.array([0., 0., delta_m, velocity, 4 * delta_m / 3, velocity, -1e-7])
+    solution = integrate(config, initial, k, rtol=1e-11, atol=1e-19, max_step=.05)
+    field, prime = solution.background.sol(0.)
+    assert field == pytest.approx(-.04648626780189577, rel=1e-8)
+    assert prime == pytest.approx(-.09155384909696013, rel=1e-8)
+    assert solution.sol(0.)[2] == pytest.approx(expected_m, rel=2e-6)
+    assert solution.sol(0.)[0] == pytest.approx(expected_field, rel=2e-6)
+    _, constraint = equations(config, solution.background, 0., solution.sol(0.), k)
+    assert abs(constraint) < 1e-10
+    if k == 1.:
+        report = validate(config, initial, k)
+        assert report["numerical_gate_passed"]
+        assert report["inputs"]["potential"] == "caller-supplied callbacks; not serialized"
+        json.dumps(report, allow_nan=False)
+
+
+def test_explicit_canonical_potential_rejects_invalid_values_and_initializers():
+    from theory.coupled_perturbations import (
+        mixed_adiabatic_initial_state,
+        radiation_adiabatic_initial_state,
+        subdominant_field_adiabatic_initial_state,
+    )
+
+    with pytest.raises(ValueError, match="callable"):
+        CanonicalPotential(None, lambda x: x, lambda x: x)
+    model = CanonicalPotential(lambda x: float("nan"), lambda x: 0., lambda x: 0.)
+    config = CanonicalScalar(model, .9, .00027, -2., 0., 0., 0.)
+    with pytest.raises(ValueError, match="finite"):
+        config.potential(0.)
+    bad_curvature = CanonicalPotential(lambda x: 1., lambda x: 0., lambda x: float("inf"))
+    with pytest.raises(ValueError, match="curvature"):
+        bad_curvature.second_derivative(0.)
+    for initializer in (mixed_adiabatic_initial_state, radiation_adiabatic_initial_state,
+                        subdominant_field_adiabatic_initial_state):
+        with pytest.raises(ValueError, match="explicit initial perturbations"):
+            initializer(config, 1.)
+
+
+def test_reverse_exponential_component_json_contract():
+    import json
+    from theory.canonical_solver import run
+
+    request = {
+        "model": {"type": "reverse_exponential", "amplitude": 2.3125028312995846,
+                  "coefficient": .1, "slope": math.sqrt(2)},
+        "background": {"matter_today": .93, "radiation_today": .00027,
+                       "initial_N": math.log(.001), "final_N": 0.,
+                       "initial_field": 0., "initial_field_prime": 0.},
+        "perturbations": {
+            "initial_state": [0., 0., 1.8620155071027177e-7,
+                              -3.1007751964874071e-9 / (.001 * 20000.000017343766),
+                              2.4826873428036235e-7,
+                              -3.1007751964874071e-9 / (.001 * 20000.000017343766),
+                              -1e-7],
+            "k_over_Href": 1., "sample_N": [0.],
+        },
+    }
+    response = run(request)
+    assert response["status"] == "ok"
+    assert response["results"][0]["field"] == pytest.approx(-.04648626780189577, rel=1e-8)
+    assert response["results"][0]["state"][2] == pytest.approx(4.2057715137788714e-7, rel=2e-6)
+    assert abs(response["results"][0]["density_constraint"]) < 1e-10
+    json.dumps(response, allow_nan=False)
+    request["model"]["type"] = "arbitrary_python"
+    assert response["inputs"]["model"]["type"] == "reverse_exponential"
+    with pytest.raises(ValueError, match="reverse_exponential"):
+        run(request)
+    request["model"]["type"] = "reverse_exponential"
+    request["perturbations"]["sample_N"] = [0., 0.]
+    with pytest.raises(ValueError, match="strictly increasing"):
+        run(request)
 
 
 def test_constraint_preserving_stalled_scalar_cannot_pass(monkeypatch):

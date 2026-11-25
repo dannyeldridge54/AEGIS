@@ -4,7 +4,7 @@ import math
 import numpy as np
 from scipy.integrate import solve_ivp
 
-from theory.effective_baseline import evolve
+from theory.effective_baseline import _report_inputs, evolve
 
 
 def evolve_mode(config, k_over_Href, initial_mode=1.0, initial_mode_prime=0.0,
@@ -118,7 +118,7 @@ def validate_mode(config, k_over_Href, initial_mode=1.0, initial_mode_prime=0.0)
     if not math.isfinite(initial_shift) or equation_samples == 0:
         raise ValueError("Mode validation lacks finite initial or interior derivative evidence")
     return {
-        "inputs": vars(config).copy(),
+        "inputs": _report_inputs(config),
         "k_over_Href": k_over_Href,
         "initial_mode": initial_mode,
         "initial_mode_prime": initial_mode_prime,
