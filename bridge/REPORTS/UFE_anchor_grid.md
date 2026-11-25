@@ -74,3 +74,14 @@ process self-check, native solver or new scientific test was executed for
 cycle 1. Before an authorized selected-cell run, publish and verify its
 specific model/source/data/null/threshold plan and SHA-256 sidecar; preserve
 failure and record any deviation before a rerun.
+
+### Cycle 1 normalization clarification
+
+Source review establishes that `eisenstein.E_paper` equals
+`2 zeta(2s) * E_fourier`, the full-lattice normalization. Thus `L` at
+`lam=1`, multiplied by explicit `V0`, matches the A01 potential above;
+do not silently substitute primitive `E_fourier` or another `lam`. This
+resolves the normalization cross-check mentioned above, not the untested
+runtime or full-physics gates. Source:
+[`eisenstein.py`](https://github.com/dannyeldridge54/AEGIS/blob/8830b27251545838141001bbaf5d80685dadb1bd/tools/serapis_calc/eisenstein.py),
+[`landscape.py`](https://github.com/dannyeldridge54/AEGIS/blob/8830b27251545838141001bbaf5d80685dadb1bd/tools/serapis_calc/landscape.py).
