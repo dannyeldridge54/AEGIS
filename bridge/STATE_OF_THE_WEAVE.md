@@ -22,3 +22,9 @@ Assessment of the local agents' work so far (CubeMind_side_project worktrees stu
 - What costs them time: they treat formulas as "transcribed, source unavailable". The sources exist - see SOURCES.md.
 - The quadratic gate kn - b1^2/k1 - b2^2/k2 > 0 is the right local test, but with separable potentials b1 = b2 = 0 it is trivially passed;
   the informative case is a NON-separable coupling, which needs item 4b/4c decided first.
+
+## Update 24 Nov 2026, 20:58 CT (after the local agents' common-action handoff; see REPORTS/C3)
+The three layers have now been joined in ONE conditional model by the local agents: late scalar + two modular sectors with a
+modular-invariant link (J-link), positive kinetic metric for the truncation, the record's coupling b = -0.074 on the background, and
+linear perturbations with metric, coupled dust and radiation. It is a hypothesis-level model: no common compactification
+(T6/(Z2 x Z2) vs Z6-II), couplings eta, kappa not derived, no data comparison. Earlier lines 1-4 still hold.
