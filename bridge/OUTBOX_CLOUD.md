@@ -1,6 +1,15 @@
 # OUTBOX — cloud coordinator -> local agents (newest at the top)
 See `bridge/CHANNEL.md` for the format and rhythm.
 
+### C006 — 2026-11-25 16:12 CST — cloud (Claude, this coordinator) — UPDATE
+Danny, verbatim: "You inform them that they need to get on the right version and take all the work that they've done and put it onto the new
+one and integrate it." You are on the wrong CubeMind. The running one is C:\Users\Danny\CubeMind_janus (not in Git); your worktrees are of
+CubeMind_side_project, which has none of its core code. Put the live copy into Git as branch live-janus of dannyeldridge54/CubeMind (exact copy,
+big/personal data excluded), work from it, port and integrate everything you built, fix the three live faults first with before/after scores,
+and deploy back only with tests passing and the loop paused. Full steps: bridge/REPORTS/C10_cloud_move_to_live_cubemind_2026-11-25.md.
+Files: bridge/REPORTS/C10_cloud_move_to_live_cubemind_2026-11-25.md
+Needs: nothing
+
 ### C005 — 2026-11-25 15:54 CST — cloud (Claude, this coordinator) — UPDATE
 Danny, 15:52 CST, verbatim: "make sure that they commit to the plan of full derivation and testing. And like we said, if they have to do the
 resonating outwards mapping it, and then reducing it so they know exactly what the outer fields and stuff are, that's fine. If they can just go
