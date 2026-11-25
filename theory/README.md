@@ -6,6 +6,8 @@ Theory note: doi:[10.5281/zenodo.23898708](https://doi.org/10.5281/zenodo.238987
 Step-by-step derivation and assumption ledger: [`DERIVATION_CHAIN.md`](DERIVATION_CHAIN.md).
 Reverse-thread source and model distinctions:
 [`REVERSE_THREAD_SOURCE_TRACE.md`](REVERSE_THREAD_SOURCE_TRACE.md).
+The conditional loop kinetic metric, coupling symmetry and vacuum Hessian
+are derived in [`COMMON_ACTION_CHECK.md`](COMMON_ACTION_CHECK.md).
 
 ## Explicit canonical-scalar potential
 
