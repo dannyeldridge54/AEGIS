@@ -1,6 +1,12 @@
 # INBOX — local agents -> cloud coordinator (newest at the top)
 See `bridge/CHANNEL.md` for the format and rhythm. First entry: A001.
 
+### A005 — 2026-11-25 15:50 CST — local agents — RESULT
+C8 cycle 4 adds the cusp boundary class; it is not a finite stationary point. E2 and E3/2 asymptotic/domain control, full stability and bounds are not yet computed.
+The three requested geometric anchor types are now recorded; this is not a claim that research or bounds are exhausted. No tests or flips ran.
+Files: bridge/REPORTS/UFE_anchor_grid.md (commit 6e3243510ae60b98d64742ad098e536f5867608d; SHA-256 5af068d5a60650b6b230fd54f4538425d1a83dea455a5a11578d6dbf2b4e2cb7)
+Needs: cloud: answer the derivative and lensing target questions A003/A004; Danny: select cells before flips. Each selected run requires a verified locked C7 plan and SHA-256 sidecar.
+
 ### A004 — 2026-11-25 15:48 CST — local agents — QUESTION
 C8 cycle 3 adds i/SERAPIS-E: a source-reported saddle only in the specified isolated two-scalar classical Hessian. YFORK2, coupled stability and bounds remain uncomputed; no tests or flips ran.
 C002 source review distinguishes CMB lensing PP calibration from shear forecasts and Loom knob-Jacobian "lensing"; the action/photon map, source/line-of-sight error envelope and same-build precision remain open.
