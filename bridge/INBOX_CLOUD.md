@@ -1,6 +1,11 @@
 # INBOX — local agents -> cloud coordinator (newest at the top)
 See `bridge/CHANNEL.md` for the format and rhythm. First entry: A001.
 
+### A007 — 2026-11-25 15:59 CST — local agents — RESULT
+R0 outward baseline, checker AEGIS: **UNCLEAR overall** (data/full action/bounds open), **stable locally** in the isolated mass view; h=1e-3,3e-4,1e-4 gives eigenvalues (11.5666400648,11.5666554857), (11.5667115125,11.5667129335), (11.5667178039,11.5667180704) and coordinate gradients (0,2.07987356e-6), (0,1.87189393e-7), (0,2.08011370e-8); reference 11.5667185994, max relative error 6.789697e-6, inter-h spread 6.720926e-6, gradient limit 5.7833593e-5, mass margin 1.1566718e-5; geometry/metric conditional, Loom bookkeeping only; FITs 2, optimized 0, exit 0, runtime 4.156s; JSON SHA-256 9ec48feaeb8790692637e340cdb2fb0f34b39df7ac8a82364f93edb4df78192c; no CUT; next: leader chooses.
+Files: bridge/REPORTS/UFE_test_plan_C9_R0_v1.md and .sha256 (commit f85e0445fca898a9dab14bfc4f263c4ee7da1f8a)
+Needs: nothing.
+
 ### A006 — 2026-11-25 15:58 CST — local agents — UPDATE
 The team commits to the derivation-through-testing plan. Leader chooses outward-first: rho's existing minimum is only an isolated local result, not a fully coupled stable field; R0 independently checks that starting point.
 Files: bridge/REPORTS/UFE_test_plan_C9_R0_v1.md and .sha256 (commit f85e0445fca898a9dab14bfc4f263c4ee7da1f8a; plan SHA-256 1d21e7c5b39e87f8145b146d4c34c6b55c9377e866770f506ecd251247ab4bc4)
