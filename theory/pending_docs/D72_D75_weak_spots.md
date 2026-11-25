@@ -23069,3 +23069,12 @@ Verdict (pre-fixed): CLOSED at caps 0.60, 0.67 and 0.85. ESTIMATE; NT confinemen
 d2251b_run.txt now carries a header pointing to DEV-8.
 D2253 (23 Nov 2026 23:00): Reactor Paper 4 DRAFT written (Claude Doc GYksffwh9o8WSAFyBxMu1q), PDF + process zip placed in the PC OU packet (9_new_papers), START_HERE updated. Not published (no 'Publish' for this paper).
 D2254 (PUBLISHED on Danny's 'Write publish', 24 Nov 2026 00:05): Reactor Paper 4 — The Long Redesign, doi:10.5281/zenodo.24491255 (PDF + process zip).
+
+## D2256 (TOOL, 24 Nov 2026 20:50) — AEGIS Field Engine + bridge to the local Copilot agents
+tools/field_engine/engine.py (+ test_engine.py, README.md): planner / lenser / lock / parallel derivers / fitter / independent tester /
+referee / corrector / librarian / hash-chained ledger; rings extend outward on mastery >= 0.8, fall back below 0.4. 8 starter tools
+(weave, negative space, nuclear, reactor, fields, circuits, CPU), each with an independent tester. 8 unit tests pass with mock models
+(lock-before-result, tamper detection, strong extend / weak do not, agreement gate beats single model, lessons raise accuracy,
+corrector recovers misses, restart). NOT yet run on real local models. bridge/ (README, SOURCES, STATE_OF_THE_WEAVE, TASKS round 2,
+REPORTS/C1): coordinator channel to the Copilot worktree agents; their work reviewed (five-field stacked local model, f''(rho) = 1/4
+independently confirmed).
