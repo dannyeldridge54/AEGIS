@@ -119,6 +119,9 @@ class Engine:
         self.state = json.loads(self.state_f.read_text()) if self.state_f.exists() else {'cycle': 0, 'tools': {}, 'lessons': {}, 'prev': '0' * 16}
         self.cache = json.loads(self.cache_f.read_text()) if self.cache_f.exists() else {}
         self.sem, self._loop = {}, None
+        self.index = None
+        if os.environ.get('ENGINE_INDEX'):
+            import fingerprint; self.index = fingerprint.Index(os.environ['ENGINE_INDEX'], os.environ.get('AEGIS_OWNER', 'Danny Eldridge'))
         for t in TOOLS: self.state['tools'].setdefault(t, {'ring': 0, 'hist': [], 'void': 0})
         self.state.setdefault('models', {}); self.state.setdefault('select', [0, 0])
         for d in derivers: self.state['models'].setdefault(d.name, [0, 0])                      # [right first time, points]
@@ -127,7 +130,15 @@ class Engine:
         rec = dict(kind=kind, cycle=self.state['cycle'] if cycle is None else cycle, t=round(time.time(), 2), prev=self.state['prev'], **rec)
         h = hashlib.sha256(json.dumps(rec, sort_keys=True, default=str).encode()).hexdigest()[:16]; rec['hash'] = h; self.state['prev'] = h
         with open(self.ledger, 'a', encoding='utf-8') as f: f.write(json.dumps(rec, default=str) + '\n')
+        if self.index is not None and kind in ('result', 'void'):                                # fingerprint index: hashed, tagged, linked, owner-signed
+            m = META.get(rec.get('tool')) or {}
+            tags = {'tool': rec.get('tool'), 'area': TOOLS.get(rec.get('tool'), ('?',))[0], 'ring': rec.get('ring'), 'kind': kind}
+            tags.update({k: m[k] for k in ('status', 'model') if k in m})
+            if kind == 'result': tags.update(point_ok=rec.get('point_ok'), agree=rec.get('agree'), selected=rec.get('selected'))
+            self.index.stamp('engine_' + kind, inputs={'lock': rec.get('lock'), 'args': rec.get('args')}, outputs={k: rec.get(k) for k in ('reference', 'derivers', 'point_ok')},
+                             tags=tags, links=[(f"tool:{rec.get('tool')}", 1, 'tests'), (f"area:{tags['area']}", 2, 'belongs_to')] + ([(f"model:{m['model']}", 3, 'conditional_on')] if m.get('model') else []))
         return h
+
     def mastery(self, tool):
         h = self.state['tools'][tool]['hist'][-8:]; return (sum(h) / len(h)) if len(h) >= 6 else None
     # --- PLANNER: learn where weak, extend where solid; a small exploration share keeps coverage up (diversity)

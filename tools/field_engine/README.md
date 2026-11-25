@@ -49,3 +49,10 @@ A tool without an independent tester should not be added.
 The points are numeric derivations with a known reference; open-ended theory building still needs the lock-referee process with a
 human or cloud reviewer. The eight starter tools are small; the CubeMind registry tools can be added the same way.
 Tested with mock models only as of 24 Nov 2026 (11 tests); first run on real local models is still to do.
+
+## Fingerprint index (25 Nov 2026)
+`fingerprint.py`: every computation becomes one record in a local SQLite file, with the SHA-256 of its inputs, code and outputs, its tags
+(sector, layer, anchor, status, tool, model...), its links per level (to other records or named streams), and the owner's name plus an HMAC
+signature from the owner's private key file (`~/.aegis_owner.key`, created on first use; keep it private, back it up). Records are append-only;
+a correction is a new record that links to the old one. Turn it on for the engine with `set ENGINE_INDEX=fingerprints.sqlite` (Windows) and
+`set AEGIS_OWNER=Danny Eldridge`. Query: `python fingerprint.py --db fingerprints.sqlite stats | find sector=serapis_e | links <id> | stream stream:ufe | verify-all`.
