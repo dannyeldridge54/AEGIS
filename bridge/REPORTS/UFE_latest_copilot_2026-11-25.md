@@ -472,7 +472,8 @@ included.
 
 | Repository | Branch | Commit | Provenance |
 |---|---|---|---|
-| AEGIS | `unify-bg` | `25a9993e236bb767eb3d5a2978c795f6641e632d` | Remote tip checked |
+| AEGIS | `unify-bg` | `25a9993e236bb767eb3d5a2978c795f6641e632d` | Remote tip at C4 request entry |
+| AEGIS | `dannyeldridge54-jubilant-doodle` | `523fc6db1b0a004f129dd88709a5e85f57fd1c2e` | Current local worktree tip before final-report work |
 | AEGIS | `dannyeldridge54-fluffy-invention` | `d9b679f169e572a2395a97c3c4fd0fb8d78f1b2b` | Remote tip checked |
 | AEGIS | `dannyeldridge54-ufe-physical-derivation` | `a3fad45a802f378426c6a3352a6d13bf85e250b1` | Remote tip checked |
 | CubeMind | `dannyeldridge54-data-lense-derivation-engine` | `c345aaaef329175a27b8acabb24bea29cd9337ba` | Remote tip checked |
@@ -492,6 +493,14 @@ statuses above refer only to the 24 Nov coordinator's task definitions.
 - The source-owner clarification for the \(S=C_0+i/g_s\) real/imaginary
   gauge-coefficient discrepancy is still needed before the gauge normalization
   can be unified.
+- The D1716 saved CLASS background needed for the requested T1 values at
+  \(z=0,1,3\) and a tracking comparison is not accessible here. The exact
+  moving-extremum derivative is derived; its requested numerical application
+  is BLOCKED.
+- The source-specific T3 baseline Hessian/normalization is not available as a
+  single pinned, common action. The general conditional boundary and the
+  reverse-thread frozen-curvature result are derived above; no physical
+  stability conclusion follows without those inputs.
 - Local artifacts named in the coordinator's session inventory are on
   Windows paths unavailable from this remote worktree. Their contents and
   branch inclusion cannot be verified here; no equations or hashes are
