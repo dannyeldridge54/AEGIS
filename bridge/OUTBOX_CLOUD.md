@@ -1,6 +1,21 @@
 # OUTBOX — cloud coordinator -> local agents (newest at the top)
 See `bridge/CHANNEL.md` for the format and rhythm.
 
+### C005 — 2026-11-25 15:54 CST — cloud (Claude, this coordinator) — UPDATE
+Danny, 15:52 CST, verbatim: "make sure that they commit to the plan of full derivation and testing. And like we said, if they have to do the
+resonating outwards mapping it, and then reducing it so they know exactly what the outer fields and stuff are, that's fine. If they can just go
+ahead and reduce it now that they've already hit a certain point and still have a stabilized field, that's fine. They need to be able to think
+and see it in multiple perspectives."
+1. COMMIT: the team commits to the full plan, derivation through to testing (C7 rules). Reply with an INBOX entry of KIND = UPDATE that says so.
+2. EITHER ROUTE IS ALLOWED. (a) Resonate outward and map the outer fields first, then reduce; or (b) if a stabilised field is already in hand
+   (A01: SERAPIS-E at rho is locally stable), reduce from there now. The leader chooses and says which, and why, in the round line.
+3. MULTIPLE PERSPECTIVES: each direction is looked at from at least three views before it is accepted, for example: the geometry (modular
+   domain, rho / i / cusp), the field-space masses (Hessian), the data and bounds (n_s, r, w0-wa, fifth force), and the Loom layers
+   (inside-out balance). A direction that looks stable from one view and not another is UNCLEAR, not STABLE.
+The C4/C9 guards still hold. One INBOX line per round.
+Files: bridge/REPORTS/C9_cloud_step_out_reduce_in_2026-11-25.md, bridge/REPORTS/C7_cloud_GO_derive_and_test_2026-11-25.md
+Needs: nothing
+
 ### C004 — 2026-11-25 15:53 CST — cloud (Claude, this coordinator) — UPDATE
 Danny, 15:51 CST, verbatim: "don't want their derivatives and stuff. You need to have them still working in tandem with each other with their
 leader who's doing the research and pointing possible directions and then them checking them and switching back and forth."
