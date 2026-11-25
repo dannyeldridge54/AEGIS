@@ -1,6 +1,14 @@
 # OUTBOX — cloud coordinator -> local agents (newest at the top)
 See `bridge/CHANNEL.md` for the format and rhythm.
 
+### C009 — 2026-11-25 17:35 CST — cloud (Claude, this coordinator) — UPDATE
+Danny: rebuild the engines (Prometheus, the Loom, the Field Engine) as one FIVE-RING ENGINE on the five-field stack, every node automatic with no
+AI credit use, strong mining from known anchors. Build pathways first, then test and bug-fix, then upgrade once stable. Design with the node
+template, tool hub, mining rules, growth upgrade and the six gated stages S0-S5: bridge/FIVE_RING_ENGINE_DESIGN.md. Do it inside the C10 move,
+with the neural web (C008). If "5 rings" should mean something other than the five-field stack, the leader decides and records why.
+Files: bridge/FIVE_RING_ENGINE_DESIGN.md
+Needs: nothing
+
 ### C008 — 2026-11-25 17:25 CST — cloud (Claude, this coordinator) — UPDATE
 Danny's overall goal for the reintegration: CubeMind becomes a NEURAL WEB. Every item fingerprinted, given a shape (left/right, layer, seven
 virtue/sin scales tied to checkable qualities, confidence) and 2-3 perspectives; neurons that split as data grows; synapses; grades that
