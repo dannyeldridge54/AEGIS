@@ -13,7 +13,16 @@ Roles (one cycle = one point of the field map):
 Design rules from the research: models propose, code verifies; an outside check decides, never a model judging a model;
 every attempt is logged (no silent discards); agreement between independent models is the trust signal.
 Speed: asyncio, all derivers for a point run at once, calls are grouped per model (no VRAM swapping), answers are cached by prompt
-hash, tools run in-process. Standard library only."""
+hash, tools run in-process. Standard library only.
+
+v2 (24 Nov 2026, from the research pass; the sources are in FIELD_MACHINE_PLAN.md):
+  SAMPLES   each model answers the same point k times on its own (never shown another model's answer: debate lowers small-model
+            accuracy). Its answer is its most common value; its CONFIDENCE is the share of samples that agree with it.
+  SELECT    the engine's own answer for a point = the answer of the most confident model (ties: better track record). This is
+            the answer it would give with no reference, so its accuracy is logged next to the single-model accuracy.
+  BATCH     several points are locked first, then model A answers all of them, then model B (serial mode): a graphics card
+            that cannot hold both models loads each one once per batch, not once per point.
+  SCHEMA    Ollama is asked for JSON matching a schema, so a reply cannot be unparseable."""
 import asyncio, hashlib, json, math, os, random, re, time, urllib.request
 from pathlib import Path
 
@@ -74,18 +83,21 @@ TOOLS = {
 
 # ----------------------------------------------------------------------------- backends (the axes)
 class Ollama:
-    def __init__(self, model, host='http://127.0.0.1:11434', timeout=180):
-        self.name, self.host, self.timeout = model, host, timeout
-    def _call(self, prompt):
-        body = {'model': self.name, 'prompt': prompt, 'stream': False, 'keep_alive': '30m', 'options': {'temperature': 0.2, 'num_predict': 500}}
+    SCHEMA = {'type': 'object', 'properties': {'steps': {'type': 'array', 'items': {'type': 'string'}}, 'result': {'type': 'number'}}, 'required': ['steps', 'result']}
+    def __init__(self, model, host='http://127.0.0.1:11434', timeout=180, temperature=0.2):
+        self.name, self.host, self.timeout, self.temperature = model, host, timeout, temperature
+    def _call(self, prompt, seed=0):
+        body = {'model': self.name, 'prompt': prompt, 'stream': False, 'keep_alive': '30m',
+                'options': {'temperature': self.temperature, 'num_predict': 500, 'seed': 1000 + seed}}
+        if os.environ.get('ENGINE_FORMAT', '1') != '0': body['format'] = self.SCHEMA
         if self.name.startswith(('qwen3:', 'deepseek-r1')): body['think'] = False
         req = urllib.request.Request(self.host + '/api/generate', json.dumps(body).encode(), {'Content-Type': 'application/json'})
         return json.loads(urllib.request.urlopen(req, timeout=self.timeout).read()).get('response', '')
-    async def ask(self, prompt): return await asyncio.to_thread(self._call, prompt)
+    async def ask(self, prompt, seed=0): return await asyncio.to_thread(self._call, prompt, seed)
 class Mock:
     """Test double: answers through a supplied function(prompt) -> text."""
     def __init__(self, name, fn): self.name, self.fn = name, fn
-    async def ask(self, prompt): await asyncio.sleep(0); return self.fn(prompt)
+    async def ask(self, prompt, seed=0): await asyncio.sleep(0); return self.fn(prompt)
 
 def parse_number(text):
     text = re.sub(r'<think>.*?</think>', '', text or '', flags=re.S)
@@ -99,27 +111,30 @@ def parse_number(text):
 
 # ----------------------------------------------------------------------------- the engine
 class Engine:
-    def __init__(self, home, derivers, seed=0, min_agree=2):
+    def __init__(self, home, derivers, seed=0, min_agree=2, samples=1, serial=False):
         self.home = Path(home); self.home.mkdir(parents=True, exist_ok=True)
-        self.derivers, self.rng, self.min_agree = derivers, random.Random(seed), min_agree
+        self.derivers, self.rng, self.min_agree, self.samples, self.serial = derivers, random.Random(seed), min_agree, max(1, samples), serial
         self.ledger = self.home / 'ledger.jsonl'; self.state_f = self.home / 'state.json'; self.cache_f = self.home / 'cache.json'
         self.state = json.loads(self.state_f.read_text()) if self.state_f.exists() else {'cycle': 0, 'tools': {}, 'lessons': {}, 'prev': '0' * 16}
         self.cache = json.loads(self.cache_f.read_text()) if self.cache_f.exists() else {}
-        self.sem = {d.name: asyncio.Semaphore(int(os.environ.get('ENGINE_PARALLEL', '2'))) for d in derivers}
+        self.sem, self._loop = {}, None
         for t in TOOLS: self.state['tools'].setdefault(t, {'ring': 0, 'hist': [], 'void': 0})
+        self.state.setdefault('models', {}); self.state.setdefault('select', [0, 0])
+        for d in derivers: self.state['models'].setdefault(d.name, [0, 0])                      # [right first time, points]
     # --- ledger: append-only, hash-chained, so a reviewer can re-derive and nothing can be silently dropped
-    def log(self, kind, **rec):
-        rec = dict(kind=kind, cycle=self.state['cycle'], t=round(time.time(), 2), prev=self.state['prev'], **rec)
+    def log(self, kind, cycle=None, **rec):
+        rec = dict(kind=kind, cycle=self.state['cycle'] if cycle is None else cycle, t=round(time.time(), 2), prev=self.state['prev'], **rec)
         h = hashlib.sha256(json.dumps(rec, sort_keys=True, default=str).encode()).hexdigest()[:16]; rec['hash'] = h; self.state['prev'] = h
         with open(self.ledger, 'a', encoding='utf-8') as f: f.write(json.dumps(rec, default=str) + '\n')
         return h
     def mastery(self, tool):
         h = self.state['tools'][tool]['hist'][-8:]; return (sum(h) / len(h)) if len(h) >= 6 else None
     # --- PLANNER: learn where weak, extend where solid; a small exploration share keeps coverage up (diversity)
-    def plan(self):
-        if self.rng.random() < 0.15: tool = self.rng.choice(list(TOOLS)); why = 'explore'
+    def plan(self, exclude=()):
+        pool = [t for t in TOOLS if t not in exclude] or list(TOOLS)                              # a batch covers different tools
+        if self.rng.random() < 0.15: tool = self.rng.choice(pool); why = 'explore'
         else:
-            scored = [((self.mastery(t) if self.mastery(t) is not None else -1), len(self.state['tools'][t]['hist']), t) for t in TOOLS]
+            scored = [((self.mastery(t) if self.mastery(t) is not None else -1), len(self.state['tools'][t]['hist']), t) for t in pool]
             m, n, tool = min(scored); why = 'unseen' if m < 0 else ('learn' if m < 0.8 else 'extend')
         st = self.state['tools'][tool]; m = self.mastery(tool)
         if m is not None and m >= 0.8 and len(st['hist']) >= 4 * (st['ring'] + 1): st['ring'] += 1; st['hist'] = st['hist'][-2:]; why = f'extend to ring {st["ring"]}'
@@ -133,52 +148,95 @@ class Engine:
                   + ('\nNotes from earlier attempts at this kind of problem (methods only, different inputs):\n' + '\n'.join('- ' + l for l in lessons) if lessons else '')
                   + '\nReply JSON only: {"steps": [<strings>], "result": <number>}')
         return dict(tool=tool, area=area, ring=ring, args=args, tol=tol, rule='|answer - reference| <= tol * |reference|', prompt=prompt)
-    async def _ask(self, d, prompt):
-        key = hashlib.sha256((d.name + '\x00' + prompt).encode()).hexdigest()[:24]
+    async def _ask(self, d, prompt, i=0):
+        key = hashlib.sha256((d.name + '\x00' + prompt + (f'\x00{i}' if i else '')).encode()).hexdigest()[:24]
         if key in self.cache: return self.cache[key], True
         async with self.sem[d.name]:
-            try: out = await d.ask(prompt)
+            try: out = await d.ask(prompt, i)
             except Exception as e: out = f'ERROR {type(e).__name__}: {e}'
         self.cache[key] = out; return out, False
-    # --- one cycle
-    async def cycle(self):
-        self.state['cycle'] += 1
-        tool, ring, why = self.plan(); fr = self.frame(tool, ring)
-        lock = self.log('lock', tool=tool, ring=ring, why=why, args=fr['args'], tol=fr['tol'], rule=fr['rule'],
-                        prompt_sha=hashlib.sha256(fr['prompt'].encode()).hexdigest()[:16])          # LOCK before any model call
-        answers = await asyncio.gather(*[self._ask(d, fr['prompt']) for d in self.derivers])     # DERIVERS, in parallel
-        _, _, fit, test, tol, _ = TOOLS[tool]
-        try: ref = float(fit(fr['args'])); tested = bool(test(fr['args'], ref))                    # FITTER + TESTER
-        except Exception as e: ref, tested = None, False
-        if not tested:                                                                              # the POINT is void, not the models
-            self.state['tools'][tool]['void'] += 1; self.log('void', lock=lock, tool=tool, args=fr['args'], reference=ref)
-            self._save(); return dict(tool=tool, ring=ring, why=why, void=True)
-        ok_of = lambda v: v is not None and abs(v - ref) <= tol * max(abs(ref), 1e-300)
-        res = []
-        for d, (out, cached) in zip(self.derivers, answers):
-            v, steps = parse_number(out); res.append(dict(model=d.name, value=v, ok=ok_of(v), steps=steps, cached=cached, retried=False))
-        # CORRECTOR: one retry for a miss, told the error kind only
-        async def retry(d, r):
-            kind = 'no number was given' if r['value'] is None else ('the answer is off by more than a factor of 10 (check units or powers of ten)' if ref and r['value'] and (abs(r['value'] / ref) > 10 or abs(r['value'] / ref) < 0.1) else 'the method or arithmetic has an error')
-            out, _ = await self._ask(d, fr['prompt'] + f'\nYour first attempt was wrong: {kind}. Redo it carefully from the formula.')
-            v, steps = parse_number(out); r.update(value2=v, ok2=ok_of(v), retried=True, kind=kind)
-            if r['ok2']: r['steps'] = steps
-        await asyncio.gather(*[retry(d, r) for d, r in zip(self.derivers, res) if not r['ok']])
-        vals = [r['value'] for r in res if r['value'] is not None]
-        agree = len(vals) >= self.min_agree and all(abs(a - b) <= 2 * tol * max(abs(a), abs(b), 1e-300) for a in vals for b in vals)
-        first_ok = [r['ok'] for r in res]; point_ok = sum(first_ok) > len(res) / 2          # a point counts only when a strict majority of the axes got it right first time
-        # REFEREE record + LIBRARIAN
-        self.state['tools'][tool]['hist'].append(1 if point_ok else 0)
-        L = self.state['lessons'].setdefault(tool, [])
-        for r in res:
-            if r['ok'] and r['steps']: L.append('worked: ' + ' | '.join(r['steps'])[:300])
-            elif r.get('retried') and not r.get('ok2'): L.append('pitfall: ' + r['kind'])
-            elif r.get('retried') and r.get('ok2') and r['steps']: L.append('fixed after a miss (' + r['kind'] + '): ' + ' | '.join(r['steps'])[:240])
-        self.state['lessons'][tool] = list(dict.fromkeys(L))[-6:]
-        self.log('result', lock=lock, tool=tool, ring=ring, reference=ref, tested=True, agree=agree, point_ok=point_ok,
-                 derivers=[{k: r.get(k) for k in ('model', 'value', 'ok', 'retried', 'value2', 'ok2', 'cached')} for r in res])
-        self._save()
-        return dict(tool=tool, ring=ring, why=why, void=False, agree=agree, point_ok=point_ok, any_ok=any(first_ok), res=res)
+    # --- SAMPLES: k independent answers from one model; its answer is the largest cluster, its confidence that cluster's share
+    async def _sample(self, d, prompt, tol):
+        outs = await asyncio.gather(*[self._ask(d, prompt, i) for i in range(self.samples)])
+        parsed = [parse_number(o) for o, _ in outs]; vals = [v for v, _ in parsed]
+        near = lambda a, b: abs(a - b) <= 2 * tol * max(abs(a), abs(b), 1e-300)
+        best = None
+        for v, steps in parsed:
+            if v is None: continue
+            n = sum(1 for w in vals if w is not None and near(v, w))
+            if best is None or n > best[0]: best = (n, v, steps)
+        if best is None: return dict(value=None, steps=[], conf=0.0, samples=vals, cached=all(c for _, c in outs))
+        return dict(value=best[1], steps=best[2], conf=best[0] / self.samples, samples=vals, cached=all(c for _, c in outs))
+    async def _per_model(self, jobs):
+        """jobs: {deriver index: [coroutine factories]} -> same shape of results. Serial mode finishes one model before the next starts."""
+        async def one(i): return await asyncio.gather(*[f() for f in jobs[i]])
+        if self.serial: return {i: await one(i) for i in jobs}
+        keys = list(jobs); return dict(zip(keys, await asyncio.gather(*[one(i) for i in keys])))
+    # --- one batch of points (a cycle is a batch of one)
+    async def batch(self, n=1):
+        pts, used = [], set()
+        loop = asyncio.get_running_loop()
+        if loop is not self._loop:                                                                  # semaphores belong to one event loop
+            self._loop = loop; self.sem = {d.name: asyncio.Semaphore(int(os.environ.get('ENGINE_PARALLEL', '2'))) for d in self.derivers}
+        for _ in range(n):                                                                          # PLAN + LENS + LOCK for every point first
+            self.state['cycle'] += 1
+            tool, ring, why = self.plan(used); used.add(tool); fr = self.frame(tool, ring)
+            lock = self.log('lock', tool=tool, ring=ring, why=why, args=fr['args'], tol=fr['tol'], rule=fr['rule'],
+                            prompt_sha=hashlib.sha256(fr['prompt'].encode()).hexdigest()[:16])      # LOCK before any model call
+            pts.append(dict(tool=tool, ring=ring, why=why, fr=fr, lock=lock, cycle=self.state['cycle']))
+        ans = await self._per_model({i: [(lambda d=d, p=p: self._sample(d, p['fr']['prompt'], p['fr']['tol'])) for p in pts]
+                                     for i, d in enumerate(self.derivers)})                         # DERIVERS (blind, independent)
+        retry_jobs = {}
+        for k, p in enumerate(pts):
+            _, _, fit, test, tol, _ = TOOLS[p['tool']]; fr = p['fr']
+            try: ref = float(fit(fr['args'])); tested = bool(test(fr['args'], ref))                # FITTER + TESTER
+            except Exception: ref, tested = None, False
+            p.update(ref=ref, tested=tested, tol=tol)
+            if not tested: continue
+            p['ok_of'] = (lambda v, ref=ref, tol=tol: v is not None and abs(v - ref) <= tol * max(abs(ref), 1e-300))
+            p['res'] = [dict(model=d.name, value=ans[i][k]['value'], ok=p['ok_of'](ans[i][k]['value']), steps=ans[i][k]['steps'], conf=ans[i][k]['conf'],
+                             cached=ans[i][k]['cached'], retried=False) for i, d in enumerate(self.derivers)]
+            for i, d in enumerate(self.derivers):                                                   # CORRECTOR: one retry for a miss, told the error kind only
+                r = p['res'][i]
+                if r['ok']: continue
+                r['kind'] = 'no number was given' if r['value'] is None else ('the answer is off by more than a factor of 10 (check units or powers of ten)' if ref and r['value'] and (abs(r['value'] / ref) > 10 or abs(r['value'] / ref) < 0.1) else 'the method or arithmetic has an error')
+                async def retry(d=d, r=r, p=p):
+                    out, _ = await self._ask(d, p['fr']['prompt'] + f"\nYour first attempt was wrong: {r['kind']}. Redo it carefully from the formula.")
+                    v, steps = parse_number(out); r.update(value2=v, ok2=p['ok_of'](v), retried=True)
+                    if r['ok2']: r['steps'] = steps
+                retry_jobs.setdefault(i, []).append(retry)
+        if retry_jobs: await self._per_model(retry_jobs)
+        out = []
+        for p in pts:
+            tool, ring, why, lock = p['tool'], p['ring'], p['why'], p['lock']
+            if not p['tested']:                                                                     # the POINT is void, not the models
+                self.state['tools'][tool]['void'] += 1; self.log('void', cycle=p['cycle'], lock=lock, tool=tool, args=p['fr']['args'], reference=p['ref'])
+                out.append(dict(tool=tool, ring=ring, why=why, void=True)); continue
+            res, tol = p['res'], p['tol']
+            vals = [r['value'] for r in res if r['value'] is not None]
+            agree = len(vals) >= self.min_agree and all(abs(a - b) <= 2 * tol * max(abs(a), abs(b), 1e-300) for a in vals for b in vals)
+            first_ok = [r['ok'] for r in res]; point_ok = sum(first_ok) > len(res) / 2          # a point counts only when a strict majority of the axes got it right first time
+            track = lambda r: (lambda m: m[0] / m[1] if m[1] else 0.0)(self.state['models'][r['model']])
+            cand = [r for r in res if r['value'] is not None]                                       # SELECT: most confident model, ties by track record
+            sel = max(cand, key=lambda r: (r['conf'], track(r))) if cand else None
+            sel_ok = bool(sel and sel['ok'])
+            for r in res: m = self.state['models'][r['model']]; m[0] += r['ok']; m[1] += 1
+            self.state['select'][0] += sel_ok; self.state['select'][1] += 1
+            # REFEREE record + LIBRARIAN
+            self.state['tools'][tool]['hist'].append(1 if point_ok else 0)
+            L = self.state['lessons'].setdefault(tool, [])
+            for r in res:
+                if r['ok'] and r['steps']: L.append('worked: ' + ' | '.join(r['steps'])[:300])
+                elif r.get('retried') and not r.get('ok2'): L.append('pitfall: ' + r['kind'])
+                elif r.get('retried') and r.get('ok2') and r['steps']: L.append('fixed after a miss (' + r['kind'] + '): ' + ' | '.join(r['steps'])[:240])
+            self.state['lessons'][tool] = list(dict.fromkeys(L))[-6:]
+            self.log('result', cycle=p['cycle'], lock=lock, tool=tool, ring=ring, reference=p['ref'], tested=True, agree=agree, point_ok=point_ok,
+                     selected=sel and sel['model'], selected_ok=sel_ok,
+                     derivers=[{k: r.get(k) for k in ('model', 'value', 'ok', 'conf', 'retried', 'value2', 'ok2', 'cached')} for r in res])
+            out.append(dict(tool=tool, ring=ring, why=why, void=False, agree=agree, point_ok=point_ok, any_ok=any(first_ok), res=res,
+                            selected=sel and sel['model'], selected_ok=sel_ok))
+        self._save(); return out
+    async def cycle(self): return (await self.batch(1))[0]
     def _save(self):
         self.state_f.write_text(json.dumps(self.state)); self.cache_f.write_text(json.dumps(self.cache))
     def report(self):
@@ -197,17 +255,25 @@ def verify_ledger(path):
             prev, n = h, n + 1
     return n, True
 
-async def run(home, models, cycles, seed=0):
-    eng = Engine(home, [Ollama(m) for m in models], seed=seed); t0 = time.time(); agree_n = agree_ok = 0
-    for i in range(cycles):
-        r = await eng.cycle()
-        if r.get('void'): print(f"cycle {eng.state['cycle']}: {r['tool']} VOID (tester disagreed with fitter)", flush=True); continue
-        if r['agree']: agree_n += 1; agree_ok += r['any_ok']
-        print(f"cycle {eng.state['cycle']}: {r['tool']} ring {r['ring']} [{r['why']}] " + ' '.join(f"{x['model']}={'ok' if x['ok'] else ('fixed' if x.get('ok2') else 'miss')}" for x in r['res']) + (' AGREE' if r['agree'] else ''), flush=True)
-    print(json.dumps(eng.report(), indent=1)); print(f'agreement gate: {agree_ok}/{agree_n} correct when the axes agreed; {time.time() - t0:.0f} s; ledger', verify_ledger(eng.ledger))
+async def run(home, models, cycles, seed=0, samples=3, batch=4, serial=True):
+    eng = Engine(home, [Ollama(m, temperature=0.3 if samples > 1 else 0.2) for m in models], seed=seed, samples=samples, serial=serial)
+    t0 = time.time(); agree_n = agree_ok = done = 0
+    while done < cycles:
+        rs = await eng.batch(min(batch, cycles - done)); done += len(rs)
+        for r in rs:
+            if r.get('void'): print(f"{r['tool']} VOID (tester disagreed with fitter)", flush=True); continue
+            if r['agree']: agree_n += 1; agree_ok += r['any_ok']
+            print(f"{r['tool']} ring {r['ring']} [{r['why']}] " + ' '.join(f"{x['model']}={'ok' if x['ok'] else ('fixed' if x.get('ok2') else 'miss')}({x['conf']:.2f})" for x in r['res'])
+                  + (' AGREE' if r['agree'] else '') + f" select={r['selected']}:{'ok' if r['selected_ok'] else 'miss'}", flush=True)
+    print(json.dumps(eng.report(), indent=1))
+    st = eng.state; print('single-model accuracy:', {k: f'{v[0]}/{v[1]}' for k, v in st['models'].items()}, '| selected answer:', f"{st['select'][0]}/{st['select'][1]}")
+    print(f'agreement gate: {agree_ok}/{agree_n} correct when the axes agreed; {time.time() - t0:.0f} s; ledger', verify_ledger(eng.ledger))
 
 if __name__ == '__main__':
     import argparse
     a = argparse.ArgumentParser(description='AEGIS Field Engine'); a.add_argument('--models', nargs='+', required=True)
     a.add_argument('--cycles', type=int, default=20); a.add_argument('--home', default='field_engine_data'); a.add_argument('--seed', type=int, default=0)
-    g = a.parse_args(); asyncio.run(run(g.home, g.models, g.cycles, g.seed))
+    a.add_argument('--samples', type=int, default=3, help='independent answers per model per point')
+    a.add_argument('--batch', type=int, default=4, help='points locked and answered together')
+    a.add_argument('--parallel-models', action='store_true', help='run the models at the same time (only if both fit on the graphics card together)')
+    g = a.parse_args(); asyncio.run(run(g.home, g.models, g.cycles, g.seed, g.samples, g.batch, not g.parallel_models))

@@ -70,4 +70,38 @@ class T(unittest.TestCase):
         eng, h, home = make({'A': 0.9, 'B': 0.9}, seed=4)
         for _ in range(10): asyncio.run(eng.cycle())
         eng2, _, _ = make({'A': 0.9, 'B': 0.9}, seed=4, home=home); self.assertEqual(eng2.state['cycle'], 10); shutil.rmtree(home)
+    # ---- v2: samples, selection, batches
+    def _v2(self, acc, seed, **kw):
+        truths = {}; rng = random.Random(seed); calls = []
+        def model(name):
+            def fn(prompt):
+                calls.append(name); truth = next(v for k, v in truths.items() if prompt.startswith(k))
+                v = truth if rng.random() < acc[name] else truth * rng.choice([10, 0.5, 1.3, -1, 3, 0.2])
+                return json.dumps({'steps': ['formula', 'compute'], 'result': v})
+            return E.Mock(name, fn)
+        eng = E.Engine(tempfile.mkdtemp(), [model(n) for n in acc], seed=seed, **kw); f0 = eng.frame
+        def frame(tool, ring):
+            fr = f0(tool, ring); truths[fr['prompt']] = float(E.TOOLS[tool][2](fr['args'])); return fr
+        eng.frame = frame; return eng, calls
+    def test_three_samples_beat_one_and_confidence_is_logged(self):
+        def acc(samples):
+            eng, _ = self._v2({'A': 0.6, 'B': 0.6}, 11, samples=samples)
+            for _ in range(200): asyncio.run(eng.cycle())
+            m = eng.state['models']['A']; return m[0] / m[1], eng
+        one, _ = acc(1); three, eng = acc(3)
+        self.assertGreater(three, one + 0.05)
+        rec = [json.loads(l) for l in eng.ledger.read_text().splitlines() if '"result"' in l][0]
+        self.assertTrue(all(0 <= d['conf'] <= 1 for d in rec['derivers'])); self.assertIn('selected_ok', rec)
+    def test_selection_follows_the_more_confident_model(self):
+        eng, _ = self._v2({'strong': 0.95, 'weak': 0.35}, 13, samples=3)
+        for _ in range(200): asyncio.run(eng.cycle())
+        s, w, sel = eng.state['models']['strong'], eng.state['models']['weak'], eng.state['select']
+        self.assertGreater(sel[0] / sel[1], w[0] / w[1] + 0.3); self.assertGreater(sel[0] / sel[1], s[0] / s[1] - 0.03)
+    def test_batch_locks_first_covers_different_tools_and_serial_runs_one_model_at_a_time(self):
+        eng, calls = self._v2({'A': 0.9, 'B': 0.9}, 17, samples=2, serial=True)
+        out = asyncio.run(eng.batch(4)); recs = [json.loads(l) for l in eng.ledger.read_text().splitlines()]
+        self.assertEqual([r['kind'] for r in recs[:4]], ['lock'] * 4)                       # every lock before any result
+        self.assertEqual(len({r['tool'] for r in recs[:4]}), 4); self.assertEqual(len(out), 4)
+        first = calls[:16]; self.assertEqual(first, ['A'] * 8 + ['B'] * 8)                  # model A finishes its 4 x 2 samples before B starts
+        self.assertEqual(sorted(r['cycle'] for r in recs if r['kind'] != 'lock'), [1, 2, 3, 4]); self.assertTrue(E.verify_ledger(eng.ledger)[1])
 if __name__ == '__main__': unittest.main()

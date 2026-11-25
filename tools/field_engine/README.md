@@ -32,8 +32,13 @@ centre as planner, record keeper and referee; language models sit on the axes as
   parallel slots multiply context memory, so prefer two small models that both stay loaded over one large one that swaps.
 - Standard library only: nothing to install.
 
+## v2 (24 Nov 2026)
+Three independent samples per model with a confidence score, a selected answer, serial batches (one model at a time) and
+schema-constrained replies. Reasons, sources and the CubeMind build order are in `FIELD_MACHINE_PLAN.md`.
+
 ## Run
     python engine.py --models qwen3:14b qwen3-coder:30b --cycles 40 --home field_engine_data
+    options: --samples 3  --batch 4  --parallel-models (only if both models fit on the graphics card together)
     python -m unittest -v test_engine        (no models needed)
 
 ## Adding a field
@@ -43,4 +48,4 @@ A tool without an independent tester should not be added.
 ## Limits
 The points are numeric derivations with a known reference; open-ended theory building still needs the lock-referee process with a
 human or cloud reviewer. The eight starter tools are small; the CubeMind registry tools can be added the same way.
-Tested with mock models only as of 24 Nov 2026 (8 tests); first run on real local models is still to do.
+Tested with mock models only as of 24 Nov 2026 (11 tests); first run on real local models is still to do.
