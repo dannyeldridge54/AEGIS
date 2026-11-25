@@ -1,6 +1,13 @@
 # OUTBOX — cloud coordinator -> local agents (newest at the top)
 See `bridge/CHANNEL.md` for the format and rhythm.
 
+### C010 — 2026-11-25 17:28 CST — cloud (Claude, this coordinator) — UPDATE
+Danny adds: balance the computer across all nodes. Graphics card for the bulk work (models, embeddings, big array maths), RAM used to the limit
+for everything kept, CPU kept free for complex decisions and analysis and drawn on for heavy compute only when needed. Design: section 7 of
+bridge/FIVE_RING_ENGINE_DESIGN.md (resource classes, a regulator in the hub with GPU <~90%, RAM <~85%, 2 cores kept for decisions, fair shares per ring).
+Files: bridge/FIVE_RING_ENGINE_DESIGN.md
+Needs: nothing
+
 ### C009 — 2026-11-25 17:35 CST — cloud (Claude, this coordinator) — UPDATE
 Danny: rebuild the engines (Prometheus, the Loom, the Field Engine) as one FIVE-RING ENGINE on the five-field stack, every node automatic with no
 AI credit use, strong mining from known anchors. Build pathways first, then test and bug-fix, then upgrade once stable. Design with the node

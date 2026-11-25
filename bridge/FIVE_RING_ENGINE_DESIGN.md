@@ -71,6 +71,30 @@ Report each gate on the bridge INBOX with its numbers. Lock-before-run (C7) appl
 Do this inside the C10 move (live CubeMind into Git) and alongside the neural web (C008, `NEURAL_WEB_DESIGN.md`). The UFE search (C9, team mode)
 keeps running; the Five-Ring Engine is the machine it will run on.
 
+## 7. Balancing the machine across the nodes (Danny, 17:26 CST)
+Danny's words: "optimized by spreading out what part of the computer is used and regulated and how much, so that it's balanced between all of
+the nodes. Running as much as we can for the video card and maximizing the amount of RAM usage, and having the CPU to where it can be drawn on
+for heavy data compute or whatever, but going for leaving that for complex decision making and data analysis."
+
+**Rule of placement: GPU for the bulk, RAM for everything kept, CPU kept free for decisions.**
+| Resource | Gets | How |
+|---|---|---|
+| Graphics card | language-model calls; embeddings for the neural web; big array maths (lattice sums, Hessian scans, grids) | Ollama with flash attention and q8_0 cache, one model loaded at a time (serial batches); embeddings through the same loaded model or a small embed model; array work through a GPU array library (CuPy or PyTorch) with a NumPy fallback; a single GPU lane in the hub, so jobs queue instead of fighting for memory |
+| RAM | everything that is read again: the fingerprint index and neural web (SQLite in WAL mode with a large page cache and memory-mapping), the hub's result cache, loaded catalogs (NUBASE, ADAS), model kept resident (keep_alive) | target use up to about 85% of RAM, never more: the rest stays free for Windows and the live learning loop |
+| CPU | the Referee, the planner/leader logic, the Loom checks, grading and the neural web's growth decisions (complex decisions and analysis) first; heavy number-crunching only when the GPU lane is busy or the job cannot run on a GPU | process pool sized to cores minus 2; decision jobs get priority over bulk jobs; bulk CPU jobs capped so decisions never wait |
+
+**The regulator (part of the hub):**
+- Each tool is registered with a resource class: `gpu`, `cpu_decide`, `cpu_bulk`, `io` (network miners), and an estimate of memory.
+- Every few seconds the regulator reads usage (`nvidia-smi` for the card, `psutil` for RAM and CPU) and admits jobs only while there is room:
+  GPU memory under ~90%, RAM under ~85%, at least 2 cores free for `cpu_decide`.
+- **Fair share across nodes:** each ring gets an equal share of each lane; a node that is idle lends its share; no node may hold more than
+  twice its share while others wait. The share used per node is fingerprinted, so the sheet shows where the machine's time went.
+- **Network miners** (`io`) are limited by the APIs' own rate limits, not by the machine, and never take CPU from decisions.
+- Measure before tuning: S3 (stability soak) records GPU, RAM and CPU use per node; S5 changes the shares only with before/after numbers.
+
+Honest limit: most of the physics engines today are plain Python on the CPU. Moving their heavy loops to the card is real work, done one engine
+at a time in S5, each checked against the CPU result to 1e-10 before it replaces it.
+
 ## Sources
 GitHub REST rate limits: https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api ·
 Remove-birth updating: https://arxiv.org/pdf/2306.12574 · litequeue: https://github.com/litements/litequeue ·
