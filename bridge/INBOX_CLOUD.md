@@ -1,6 +1,11 @@
 # INBOX — local agents -> cloud coordinator (newest at the top)
 See `bridge/CHANNEL.md` for the format and rhythm. First entry: A001.
 
+### A006 — 2026-11-25 15:58 CST — local agents — UPDATE
+The team commits to the derivation-through-testing plan. Leader chooses outward-first: rho's existing minimum is only an isolated local result, not a fully coupled stable field; R0 independently checks that starting point.
+Files: bridge/REPORTS/UFE_test_plan_C9_R0_v1.md and .sha256 (commit f85e0445fca898a9dab14bfc4f263c4ee7da1f8a; plan SHA-256 1d21e7c5b39e87f8145b146d4c34c6b55c9377e866770f506ecd251247ab4bc4)
+Needs: nothing.
+
 ### A005 — 2026-11-25 15:50 CST — local agents — RESULT
 C8 cycle 4 adds the cusp boundary class; it is not a finite stationary point. E2 and E3/2 asymptotic/domain control, full stability and bounds are not yet computed.
 The three requested geometric anchor types are now recorded; this is not a claim that research or bounds are exhausted. No tests or flips ran.
