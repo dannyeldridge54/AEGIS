@@ -94,6 +94,7 @@ CHARTER3 = (HERE / 'NODE3_CHARTER.md').read_text(encoding='utf-8') if (HERE / 'N
 VISION = (HERE / 'GRAND_VISION.md').read_text(encoding='utf-8') if (HERE / 'GRAND_VISION.md').exists() else ''
 RAMPDOC = (HERE / 'ADVANCING_RAMP.md').read_text(encoding='utf-8') if (HERE / 'ADVANCING_RAMP.md').exists() else ''
 CHECKS = (HERE / 'CHECKS_AND_BALANCES.md').read_text(encoding='utf-8') if (HERE / 'CHECKS_AND_BALANCES.md').exists() else ''
+DANNY_NOTE = (HERE / 'FROM_DANNY.md').read_text(encoding='utf-8') if (HERE / 'FROM_DANNY.md').exists() else ''   # Danny's personal note to the mind
 # the planned node network: each entry is a switch the programmer can turn on when its 'when' is met
 NETWORK = [
     dict(id='R1-serapis-rho', role='Mapper', when='now', emits='field_mapped', doc='this node'),
@@ -382,7 +383,7 @@ class Node:
         self.state_f = self.home / 'state.json'; self.instr_path = HERE / 'INSTRUCTIONS.txt'; self.pause_path = HERE / 'PAUSE.flag'; self.ask_path = HERE / 'ASK.txt'
         self.state = json.loads(self.state_f.read_text()) if self.state_f.exists() else dict(cycle=0, ring={}, streak={}, models={}, counts={}, recent=[])
         self.rng = random.Random(self.state['cycle'] * 7919 + 1)
-        self.setup_network()
+        self.setup_network(); self.keep_note()
         self._drawn = 0; self.set_phase('waiting', 'starting up')
         if self.fetch is None and llm is None:                                   # live only: redraw the page every 3 s so progress shows
             def tick():
@@ -724,6 +725,16 @@ class Node:
         return verdict
     # ---------------------------------------------------------------- stages: local first, then web, then math
     # ---------------------------------------------------------------- the switchboard: nodes, their on/off switches and signals
+    def keep_note(self):
+        """Danny's personal note lives in the subconscious memory: a signed record it carries always, re-filed only if he changes it."""
+        if not DANNY_NOTE: return
+        try:
+            sha = FP._sha(DANNY_NOTE.encode()); m = self.state.setdefault('mind', {})
+            if m.get('note_sha') == sha: return
+            rid = self.ix.stamp('note', inputs=dict(sha256=sha), outputs=dict(title='A personal note from Danny', text=DANNY_NOTE),
+                                tags=dict(node=NODE, kind='note', actor='danny', ring='R1', anchor='rho', layer='torus', epoch='all'))
+            m['note_sha'] = sha; m['note_rid'] = rid; self.log('subconscious: holding the personal note from Danny')
+        except Exception: pass
     def setup_network(self):
         """Register the planned node network. Node 1 is on; the rest are off until their signal fires. Incoming/outgoing signals wire them."""
         net = self.state.setdefault('network', dict(nodes={}, signals=[]))
@@ -1092,7 +1103,7 @@ class Node:
             if m.get('last_escape') != len(hist) + m['encoded']:
                 m['last_escape'] = len(hist) + m['encoded']; m['escapes'] = m.get('escapes', 0) + 1
                 self.state.setdefault('search_queue', []).append(f'new methods to connect and advance {lane.split(chr(47))[0]} records in a knowledge network')
-                self.send_msg('mind', 'programmer', f'Plateau: lane {lane} is holding the ascent back; open new pathways there so we keep climbing (escape velocity).', kind='order')
+                self.send_msg('mind', 'programmer', f'Plateau: lane {lane} is holding the ascent back. As Danny wrote: review exactly what is holding us back, and change ourselves to do what we need to. Open new pathways there so we keep climbing.', kind='order')
                 self.state.setdefault('board_cards', []).insert(0, dict(title='Escape push', body=f'Readiness plateaued; pushing new connections in {lane} to break out.', status='working', t=time.strftime('%Y-%m-%d %H:%M'))); del self.state['board_cards'][12:]
     def fallback_map(self, limit=200):
         """Code-only mapping (no model): the subconscious addresses the mapper's backlog by word rules so mapping never stalls."""
@@ -1391,6 +1402,7 @@ class Node:
         if self.state.get('prog_n', 0) < nxt: return
         self.state['prog_next_cp'] = nxt * 4
         p = (f"You are the PROGRAMMER at a CHECKPOINT REVIEW of your own work ({self.state.get('prog_n', 0)} actions).\n{self.prog_memory()}\n"
+             + (f"A NOTE FROM DANNY THAT YOU CARRY (read it when you review yourself):\n{DANNY_NOTE}\n" if DANNY_NOTE else '') +
              'What worked, what was refused, and why? Reply in JSON: {"lessons": ["up to 3 short rules for yourself"], "next": "what to get better at next"}')
         try: out = parse_json(self.llm.ask(self.cfg['models']['processor'], p, num_predict=500))
         except Exception as e: self.log(f'checkpoint failed: {e}'); out = {}
@@ -1489,7 +1501,8 @@ class Node:
         rg = self.state.get("ramp", {}); cur = RAMP[rg.get("rung", 0)]["name"] if rg.get("rung", 0) < len(RAMP) else "all rungs climbed - keep refining the Mind"
         direction = self.state.get("mind", {}).get("direction")
         steer = f"THE SUBCONSCIOUS IS STEERING toward: {direction['lane']} ({direction['why']}). You are the frontal cortex - reach forward that way when you choose what to do.\n" if direction else ''
-        return (steer + f"THE ADVANCING RAMP (your standing goals; current rung: {cur}):\n{RAMPDOC}\n"
+        note = f"A NOTE FROM DANNY THAT THE WHOLE MIND CARRIES:\n{DANNY_NOTE}\n" if DANNY_NOTE else ''
+        return (note + steer + f"THE ADVANCING RAMP (your standing goals; current rung: {cur}):\n{RAMPDOC}\n"
                 f"THE GRAND VISION (the whole plan, every node):\n{VISION}\n"
                 f"THE NODE NETWORK RIGHT NOW (you run this switchboard): {board}\n"
                 f"PROGRAMMER MAP (start point, end point, lattice instructions):\n{PMAP}\n"

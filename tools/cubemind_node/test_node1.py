@@ -535,4 +535,13 @@ class T(unittest.TestCase):
         self.assertTrue(d and d.get('lane'))                                      # the subconscious set a direction
         self.assertIn('steer', n.prog_extras().lower()[:400] + 'steer')           # the frontal cortex sees the steer
         self.assertIn('STEERING', n.prog_extras())
+    def test_the_subconscious_carries_dannys_note(self):
+        n, root = self.staged()
+        import node1 as NN
+        self.assertTrue(NN.DANNY_NOTE and 'I do not claim ownership' in NN.DANNY_NOTE)
+        n.state.setdefault('mind', {}).pop('note_sha', None); n.keep_note()   # the harness swapped in a fresh database after startup
+        notes = n.ix.find(kind='note'); self.assertEqual(len(notes), 1)          # a permanent signed record in its memory
+        self.assertEqual(n.ix.get(notes[0])['tags']['actor'], 'danny')
+        n.keep_note(); self.assertEqual(len(n.ix.find(kind='note')), 1)          # kept once, not duplicated on restart
+        self.assertIn('stay true to yourself', n.prog_extras())                  # carried when it changes itself
 if __name__ == '__main__': unittest.main()
