@@ -93,6 +93,7 @@ CHARTER = (HERE / 'NODE2_CHARTER.md').read_text(encoding='utf-8') if (HERE / 'NO
 CHARTER3 = (HERE / 'NODE3_CHARTER.md').read_text(encoding='utf-8') if (HERE / 'NODE3_CHARTER.md').exists() else ''
 VISION = (HERE / 'GRAND_VISION.md').read_text(encoding='utf-8') if (HERE / 'GRAND_VISION.md').exists() else ''
 RAMPDOC = (HERE / 'ADVANCING_RAMP.md').read_text(encoding='utf-8') if (HERE / 'ADVANCING_RAMP.md').exists() else ''
+CHECKS = (HERE / 'CHECKS_AND_BALANCES.md').read_text(encoding='utf-8') if (HERE / 'CHECKS_AND_BALANCES.md').exists() else ''
 # the planned node network: each entry is a switch the programmer can turn on when its 'when' is met
 NETWORK = [
     dict(id='R1-serapis-rho', role='Mapper', when='now', emits='field_mapped', doc='this node'),
@@ -193,7 +194,22 @@ PLAYBOOK = """PLAYBOOK - NOBODY STOPS. Each role's job and how to get past a blo
 - Isolated record: ask the programmer to wire a pathway; keep it in its lane until then.
 - Repeating error: the maintenance man applies the known fix (ALERTS); an unknown error becomes a search so a fix is learned.
 - The loop never stops: every batch and every tick is wrapped. An error is logged, filed, and the next batch runs regardless."""
-def brief(role): return f"YOUR BRIEF: {BRIEFS[role]}\nHOW THE SYSTEM IS WIRED:\n{WIRING}\n{PLAYBOOK}\n"
+SYSTEM_MAP = [
+    dict(part='Retriever/Lens', job='search the sources and frame a subject', goal='keep useful results, ask one calculable question', reads='web + local finds', writes='a framing', check='the mapper and referee read it'),
+    dict(part='Mapper', job='give every find a geometric address and judge proposed links', goal='address >=90% of finds, clean markers', reads='finds + proposed links', writes='catalog + accepted links', check='bad markers rejected; links need code AND mapper'),
+    dict(part='Programmer (consciousness)', job='map code, open pathways, run the switchboard, maintain, learn, upgrade', goal='nothing stops; the machine keeps improving', reads='code, help, alerts, the web', writes='pathways, doorways, proposals, fixes', check='code proposed not run; humans review the workbench'),
+    dict(part='Processor', job='compute each locked calculation', goal='>=80% right on tested calculations', reads='one locked task', writes='steps + a number', check='code fitter AND an independent tester, then the referee'),
+    dict(part='Referee (null mirror)', job='argue the result is wrong, then judge', goal='object 5-40% of the time, never a rubber stamp', reads='the result + framing', writes='NULL or FINDING', check='separate from the one that computed; findings go on the board'),
+    dict(part='Subconscious (the Mind)', job='encode every record, retrieve, wire associations, research AI, be the safety net', goal='learn continuously; keep everything on track; grow toward the centre', reads='all records + the web', writes='codes, associations, AI knowledge, upgrade asks', check='the self-audit + readiness gauge'),
+    dict(part='Ledger (fingerprint)', job='hash and sign every record and link', goal='the whole chain always verifies', reads='every record', writes='a signed id', check='verify against the owner signature'),
+    dict(part='Neural web', job='place records as neurons, strengthen synapses on the 7 scales', goal='balanced growth, meaning-links', reads='records', writes='neurons + synapses', check='the balance of the seven scales'),
+    dict(part='Switchboard', job='turn nodes on/off by signals as the field fills', goal='effort only where there is work', reads='node signals', writes='on/off + routing', check='only a real signal flips a node'),
+    dict(part='Advancing ramp', job='hold the current goal and climb to the next when its gate is met', goal='always climbing, never stops', reads='the whole state', writes='the current rung + next task', check='a rung climbs only when its gate is truly met'),
+]
+def system_map_text():
+    return 'HOW THE WHOLE WORKS (every part, its job, its goal, and its check - you are one part of this):\n' + '\n'.join(
+        f"- {p['part']}: {p['job']}. Goal: {p['goal']}. In: {p['reads']} -> Out: {p['writes']}. Check: {p['check']}." for p in SYSTEM_MAP) + '\n'
+def brief(role): return f"YOUR BRIEF: {BRIEFS[role]}\n{system_map_text()}HOW THE SYSTEM IS WIRED:\n{WIRING}\n{PLAYBOOK}\n"
 
 
 class Ollama:
@@ -1101,7 +1117,10 @@ class Node:
         subconscious's upgrade queue, and the advancing ramp."""
         mods = self.modules(); self.prime_context([dict(NODE_ADDRESS)])
         self.set_phase('processing', f'programmer ({source}): {task[:56]}')
-        p = (f"You are the PROGRAMMER. TASK ({source}): {task}\n{brief('coder')}{self.prog_extras()}NAVIGATION MAP:\n{TOOLMAP}\n"
+        p = (f"You are the PROGRAMMER. TASK ({source}): {task}\n{brief('coder')}{self.prog_extras()}"
+             f"CHECKS AND BALANCES (reference for audit/self-check tasks):\n{CHECKS}\n" if ('audit' in task.lower() or 'check' in task.lower() or 'balance' in task.lower()) else
+             f"You are the PROGRAMMER. TASK ({source}): {task}\n{brief('coder')}{self.prog_extras()}")
+        p += (f"NAVIGATION MAP:\n{TOOLMAP}\n"
              f"Modules that exist: {', '.join(sorted(mods)[:150])}\nStart from the smallest working piece.\n"
              'Reply in JSON: {"plan": ["short steps"], "files": [{"name": "file.py", "code": "the full file"}], "test": "how to check it works", ' + self.PROG_FIELDS + '}')
         try: out = parse_json(self.llm.ask(self.cfg['models']['processor'], p, num_predict=2500))
