@@ -89,6 +89,7 @@ def code_facts(path, data):
     return dict(module=Path(path).stem, doc=doc[0][:200] if doc else '', functions=funcs[:60], classes=classes[:30], imports=sorted(imports)[:60],
                 calls=[k for k, _ in sorted(calls.items(), key=lambda kv: -kv[1])[:30]], lines=data.count(b'\n') + 1)
 PMAP = (HERE / 'PROGRAMMER_MAP.md').read_text(encoding='utf-8') if (HERE / 'PROGRAMMER_MAP.md').exists() else ''
+CHARTER = (HERE / 'NODE2_CHARTER.md').read_text(encoding='utf-8') if (HERE / 'NODE2_CHARTER.md').exists() else ''
 TOOLMAP = (HERE / 'TOOL_MAP.md').read_text(encoding='utf-8') if (HERE / 'TOOL_MAP.md').exists() else ''
 
 GUIDE = (HERE / 'GEOMETRY_GUIDE.md').read_text(encoding='utf-8') if (HERE / 'GEOMETRY_GUIDE.md').exists() else ''
@@ -386,7 +387,7 @@ class Node:
          ('Programmer: opens doorways', 'answers help requests with links to real modules, data sets or tools (at least half)',
           s.get('doorways', {}).get('asked', 0) >= 5 and s['doorways']['opened'] >= 0.5 * s['doorways']['asked'],
           f"{s.get('doorways', {}).get('opened', 0)} opened for {s.get('doorways', {}).get('asked', 0)} requests, {s.get('doorways', {}).get('placed', 0)} data sets placed"),
-         ('Programmer: Node 2 route', 'a route for the first technology sphere, built only from things that exist (NODE2_ROUTE.md)', s.get('prog', {}).get('routes', 0) >= 1,
+         ('Programmer: Node 2 Builder route', 'a route for the Builder sphere \u2014 take a vision and implement it \u2014 built only from things that exist (NODE2_ROUTE.md)', s.get('prog', {}).get('routes', 0) >= 1,
           f"{s.get('prog', {}).get('routes', 0)} versions, {s.get('prog', {}).get('hints', 0)} hints from {s.get('prog', {}).get('searches', 0)} searches, {s.get('prog', {}).get('ideas', 0)} improvement ideas"),
          ('Referee: honest', 'objects between 5% and 40% of the time (never a rubber stamp, never noise)', ref[1] >= 20 and 0.05 <= ref[0] / ref[1] <= 0.40, f'{ref[0]}/{ref[1]}'),
          ('Ledger: intact', 'every recent record verifies against its fingerprint and your signature', verify_ok, 'checked last 50'),
@@ -834,11 +835,14 @@ class Node:
         rows = [f"- {'/'.join(l[k] for k in self.LANE_KEYS)}: {l['total']} records, layers {l['layers']}, results {verdicts.get('/'.join(l[k] for k in self.LANE_KEYS), {})}" for l in lanes]
         prev = self.state.get('route_last', {})
         self.prime_context([dict(NODE_ADDRESS)])
-        p = (f"You are the PROGRAMMER as ROUTE PLANNER. Goal: the implementation route for Node 2, the first technology sphere.\n{brief('coder')}{self.prog_extras()}"
+        p = (f"You are the PROGRAMMER as ROUTE PLANNER. Goal: the implementation route for Node 2, the BUILDER sphere.\n"
+             f"NODE 2 CHARTER (what Node 2 must become \u2014 follow it):\n{CHARTER}\n{brief('coder')}{self.prog_extras()}"
              f"{self.team_context(dict(NODE_ADDRESS))}\nLANES (best supported first):\n" + '\n'.join(rows) +
              f"\nYour last route (improve it, keep what still holds): {json.dumps(prev)[:800] or 'none'}\n"
              f"Things that exist (ONLY these may go in uses): {', '.join(sorted(names)[:250])}\n"
-             'Reply in JSON: {"sphere": "name of the technology sphere", "lane": "ring/anchor/shape/weight exactly as listed", "why": "two sentences", '
+             'The sphere is the Builder: it takes a plain-language vision and implements it (create data, retrieve data, write code, test, explain). '
+             'Plan the smallest first capability (A understand a vision, or B create data) and the lane whose code best supports it.\n'
+             'Reply in JSON: {"sphere": "Builder", "capability": "A/B/C/D/E/F from the charter to build first", "lane": "ring/anchor/shape/weight exactly as listed", "why": "two sentences", '
              '"uses": ["names from the list"], "steps": ["testable build steps, in order"], "missing": ["search questions for what is missing"], ' + self.PROG_FIELDS + '}')
         try: out = parse_json(self.llm.ask(self.cfg['models']['processor'], p, num_predict=900))
         except Exception as e: self.log(f'route planner failed: {e}'); return
@@ -846,7 +850,7 @@ class Node:
         lane_ok = str(out.get('lane', '')) in {'/'.join(l[k] for k in self.LANE_KEYS) for l in lanes}
         uses = [u for u in out.get('uses', []) or [] if u in names]; ps['refused'] += len(out.get('uses', []) or []) - len(uses) + (not lane_ok)
         if not lane_ok or not out.get('steps'): self.prog_action('route', str(out.get('lane', ''))[:80], 'refused', 'lane not real or no steps'); return
-        route = dict(sphere=str(out.get('sphere', ''))[:80], lane=out['lane'], why=str(out.get('why', ''))[:400], uses=uses,
+        route = dict(sphere=str(out.get('sphere', 'Builder'))[:80], capability=str(out.get('capability', ''))[:120], lane=out['lane'], why=str(out.get('why', ''))[:400], uses=uses,
                      steps=[str(x)[:200] for x in out['steps']][:12], missing=[str(x)[:160] for x in out.get('missing', []) or []][:6])
         self.ix.stamp('route', inputs=dict(prev=prev.get('rid', '')), outputs=route, tags=dict(node=NODE, kind='route', lane=route['lane'], status='PROPOSED', proposed_by='programmer'),
                       links=[('module:' + u, 1, 'uses') for u in uses if u in mods])
@@ -854,7 +858,7 @@ class Node:
         self.handle_prog(out, mods); ps['routes'] += 1; self.state['route_last'] = route; self.prog_action('route', route['lane'], 'accepted', route['sphere'])
         (self.home / 'NODE2_ROUTE.md').write_text(
             f"# Node 2 route (proposed by the programmer, {time.strftime('%Y-%m-%d %H:%M')}; version {ps['routes']})\n\n"
-            f"**Sphere:** {route['sphere']}\n\n**Start lane:** {route['lane']}\n\n**Why:** {route['why']}\n\n**Uses (all exist):** {', '.join(uses) or 'none'}\n\n"
+            f"**Sphere:** {route['sphere']} (the Builder)\n\n**First capability:** {route.get('capability', '')}\n\n**Start lane:** {route['lane']}\n\n**Why:** {route['why']}\n\n**Uses (all exist):** {', '.join(uses) or 'none'}\n\n"
             "**Steps:**\n" + '\n'.join(f"{k + 1}. {x}" for k, x in enumerate(route['steps'])) + "\n\n**Still missing (being searched):**\n" +
             '\n'.join(f"- {x}" for x in route['missing']) + "\n\nStatus: PROPOSED. A human or the agents decide before anything is built.\n", encoding='utf-8')
     def doorway(self, req, names):
