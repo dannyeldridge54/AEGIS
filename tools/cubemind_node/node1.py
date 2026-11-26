@@ -14,14 +14,14 @@ never touches the live CubeMind; it backs its database up daily, caps its disk u
 
 Run:  python node1.py            (forever)      python node1.py --once      python node1.py --offline (no web)
 Settings: node1_config.json beside this file (created on first run). Output: node1_data/ (status.html, status.json, database, backups, log)."""
-import json, os, random, shutil, sqlite3, sys, time, traceback, urllib.parse, urllib.request, xml.etree.ElementTree as ET
+import json, os, random, shutil, sqlite3, sys, time, traceback, urllib.error, urllib.parse, urllib.request, xml.etree.ElementTree as ET
 from pathlib import Path
 HERE = Path(__file__).resolve().parent; sys.path.insert(0, str(HERE))
 import fingerprint as FP, neural_web as NW, ufe_pack as U, display as DISPLAY
 
 DEFAULT = dict(
     owner='Danny Eldridge', home='node1_data', cycle_seconds=0, batch=8, parallel=2, search_every_hours=6, online=True,
-    ollama='http://127.0.0.1:11434', keep_alive='3m', timeout=300,
+    ollama='http://127.0.0.1:11434', keep_alive='3m', timeout=600,
     models=dict(retriever='qwen3:14b', mapper='qwen3:8b', processor='qwen3-coder:30b', referee='gpt-oss:20b'),
     local_folders=['~/CubeMind_janus', '~/ufe_data', '~/ufe lifes work', '~/Desktop/AEGIS_vault', '~/.copilot/repos'],
     github_token_env='GITHUB_TOKEN', max_db_mb=2000, backups_kept=7, cpu_ceiling=85, ram_ceiling=85, gpu_ceiling=92,
@@ -83,9 +83,27 @@ class Ollama:
                     options=dict(temperature=0.2, num_predict=num_predict))
         if model.startswith(('qwen3:', 'deepseek-r1')): body['think'] = False                   # thinking ate the answers in the eval (blank replies)
         req = urllib.request.Request(self.cfg['ollama'] + '/api/generate', json.dumps(body).encode(), {'Content-Type': 'application/json'})
-        with urllib.request.urlopen(req, timeout=self.cfg['timeout']) as r: return json.loads(r.read())['response']
+        for attempt in (1, 2):
+            try:
+                with urllib.request.urlopen(req, timeout=self.cfg['timeout']) as r: return json.loads(r.read())['response']
+            except Exception as e:
+                if attempt == 2 or 'timed out' not in str(e): raise
+                self.timeouts = getattr(self, 'timeouts', 0) + 1                  # the card is busy (another program using Ollama): wait and retry once
+                time.sleep(20)
 
+_LAST, _BACKOFF, _PACE = {}, {}, {'api.github.com': 7.0, 'export.arxiv.org': 3.5, 'api.semanticscholar.org': 4.0, 'api.openalex.org': 1.0}
+class RateLimited(Exception): pass
 def _get(url, headers=None, timeout=30):
+    host = urllib.parse.urlparse(url).netloc
+    if time.time() < _BACKOFF.get(host, 0): raise RateLimited(f'{host} is resting after a rate limit')
+    wait = _PACE.get(host, 1.0) - (time.time() - _LAST.get(host, 0))
+    if wait > 0: time.sleep(wait)                                            # polite: never faster than each site allows
+    _LAST[host] = time.time()
+    try: return _get_raw(url, headers, timeout)
+    except urllib.error.HTTPError as e:
+        if e.code in (403, 429): _BACKOFF[host] = time.time() + 900          # told to slow down: rest that source for 15 minutes
+        raise
+def _get_raw(url, headers=None, timeout=30):
     req = urllib.request.Request(url, headers=dict({'User-Agent': 'CubeMind-Node1 (research, read-only)'}, **(headers or {})))
     with urllib.request.urlopen(req, timeout=timeout) as r: return r.read()
 def github_search(q, token=None, n=5):
@@ -160,6 +178,7 @@ class Node:
         self.state_f = self.home / 'state.json'
         self.state = json.loads(self.state_f.read_text()) if self.state_f.exists() else dict(cycle=0, ring={}, streak={}, models={}, counts={}, recent=[])
         self.rng = random.Random(self.state['cycle'] * 7919 + 1)
+        self._drawn = 0; self.set_phase('waiting', 'starting up')
     def set_phase(self, name, detail=''):
         """What the node is doing right now; the display shows it live (page refreshes every 8 s)."""
         self.state['phase'] = dict(name=name, detail=detail, since=time.time())
@@ -244,8 +263,12 @@ class Node:
             if self.fetch: finds = self.fetch(subj)
             else:
                 tok = os.environ.get(self.cfg['github_token_env']) or None
-                if pair: finds = github_search(subj['github'], tok) + arxiv_search(subj['arxiv'])
-                else: finds = semantic_scholar_search(subj['arxiv']) + openalex_search(subj['arxiv'])
+                calls = [lambda: github_search(subj['github'], tok), lambda: arxiv_search(subj['arxiv'])] if pair else \
+                        [lambda: semantic_scholar_search(subj['arxiv']), lambda: openalex_search(subj['arxiv'])]
+                for c in calls:
+                    try: finds += c()
+                    except RateLimited as e: self.log(str(e))
+                    except Exception as e: self.log(f'one source failed ({type(e).__name__}: {e}); the others continue')
         except Exception as e: self.log(f'retrieve failed ({type(e).__name__}: {e}); continuing offline this cycle')
         finds = finds + local
         return self._file_finds(subj, finds)
@@ -373,6 +396,8 @@ class Node:
         self.set_phase('refereeing', f"{self.cfg['models']['referee']} arguing against {k} results")
         refs = self._par(lambda x: self.referee(x[0]['subj'], x[1], x[2]), list(zip(items, results, lenses)))
         self.set_phase('filing', 'hashing, signing, placing in the web, grading')
+        if getattr(self.llm, 'timeouts', 0) >= 2 and self.cfg.get('parallel', 1) > 1:
+            self.cfg['parallel'] = 1; self.llm.timeouts = 0; self.log('model timeouts: the card is shared, so questions now go one at a time')
         verdicts = [self.file(it['subj'], it['finds'], ln, res, rf) for it, ln, res, rf in zip(items, lenses, results, refs)]
         d = self.state['day']; d['busy'] = d.get('busy', 0.0) + (time.time() - t0)
         self._drawn = 0; self.set_phase('waiting', 'batch done: ' + ' '.join(verdicts))
