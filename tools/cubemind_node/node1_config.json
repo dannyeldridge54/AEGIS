@@ -1,6 +1,6 @@
 {
  "owner": "Danny Eldridge",
- "home": "/tmp/tmp3tzua8f4/data",
+ "home": "/tmp/tmp_yq5ihjv/data",
  "cycle_seconds": 0,
  "batch": 8,
  "parallel": 2,
@@ -25,10 +25,12 @@
  "hints_per_batch": 4,
  "checkpoint_first": 25,
  "study_every": 6,
+ "mind_per_batch": 60,
+ "mind_ready_at": 5000,
  "repos_per_day": 20,
  "allow_install": false,
  "local_folders": [
-  "/tmp/tmp3tzua8f4/research"
+  "/tmp/tmp_yq5ihjv/research"
  ],
  "github_token_env": "GITHUB_TOKEN",
  "max_db_mb": 2000,

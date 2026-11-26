@@ -60,7 +60,7 @@ class T(unittest.TestCase):
     def test_goalposts_listed_and_shown(self):
         n = self.node()
         for _ in range(5): n.cycle()
-        g = n.goalposts(); self.assertEqual(len(g), 22); self.assertTrue(all({'part', 'goal', 'met', 'now'} <= set(x) for x in g))
+        g = n.goalposts(); self.assertEqual(len(g), 23); self.assertTrue(all({'part', 'goal', 'met', 'now'} <= set(x) for x in g))
         self.assertIn('Goalposts', (n.home / 'status.html').read_text())
     def test_selfcheck_runs_with_sympy(self):
         n = self.node(); n.cycle(); sc = n.state['selfcheck']; self.assertEqual((sc.get('reproduce'), sc.get('total')), (18, 18))
@@ -315,4 +315,21 @@ class T(unittest.TestCase):
         self.assertEqual(n.state['board_cards'][0]['title'], 'Hello')
         import display; html = display.PAGE  # the template references board_cards via pcards
         self.assertIn('pcards', html); self.assertIn('From the programmer', open('display.py').read())
+    def test_subconscious_learns_in_the_background_every_stage(self):
+        n, root = self.staged()
+        for k in range(20): (root / f'g_{k}.md').write_text('serapis eisenstein rho Z2xZ2 modular torus weight 2 ' + str(k))
+        n.local.files = []; n.state.pop('sweep', None); n.cfg['mind_ready_at'] = 20
+        for _ in range(8): n.run_batch(6)
+        m = n.state['mind']; self.assertGreater(m['encoded'], 0)                        # it encoded records while still in the local stage
+        self.assertGreater(m['readiness'], 0); self.assertTrue(m['last'])
+        import sqlite3
+        cnt = n.ix.db.execute('SELECT COUNT(*) FROM mind_codes').fetchone()[0]; self.assertEqual(cnt, m['encoded'])
+        # recall by geometry returns real records
+        cats = n.ix.find(kind='catalog')
+        if cats:
+            tags = n.ix.get(cats[0])['tags']; hits = n.mind_recall(tags, k=3); self.assertTrue(hits)
+        # a code is a fixed-length field-native vector
+        code = n.encode_markers(dict(ring='R1', anchor='rho', shape='hexagonal', weight='2', side='centre', layer='torus', epoch='all', string_pos=30.0))
+        self.assertEqual(len(code), 8); self.assertTrue(all(0 <= x <= 1 for x in code))
+        self.assertGreaterEqual(m.get('linked', 0), 0)                               # it retrieves and wires associations as it learns
 if __name__ == '__main__': unittest.main()

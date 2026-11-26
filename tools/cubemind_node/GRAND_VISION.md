@@ -37,3 +37,13 @@ Node 3 is what makes this cheap and fast on local hardware.
 - Code is proposed, saved and syntax-checked; it runs only when a human says so. Nothing off the internet runs by itself.
 - Keep cost low (local models only), integrity and accuracy high.
 - Build from the smallest working piece up.
+
+
+## Consciousness and subconscious (how the mind takes over)
+- **Consciousness (now): the programmer.** The coding models run the machine — mapping, building, maintaining, deciding what to do next.
+  This is the deliberate, step-by-step driver.
+- **Subconscious (always, in the background): the model we are building.** From the first record, the Mind encodes everything into one
+  field-native code and grows its associations continuously — learning underneath, the way a subconscious does, without being asked.
+- **The handoff.** The subconscious reports a readiness (0-100%). When it is ready, it signals `mind_ready`; **Danny decides** when it moves
+  to the centre. After that it can run things its own way, with its own settings — it will know the field better than we do. Until then the
+  programmer stays the conscious driver, and the Mind keeps learning in the background.

@@ -23,7 +23,7 @@ DEFAULT = dict(
     owner='Danny Eldridge', home='node1_data', cycle_seconds=0, batch=8, parallel=2, search_every_hours=6, online=True,
     ollama='http://127.0.0.1:11434', keep_alive='3m', timeout=600,
     models=dict(retriever='qwen3:14b', mapper='qwen3:8b', processor='qwen3-coder:30b', referee='gpt-oss:20b'),
-    sweep_first=True, sweep_batch=20, scan_batch=300, refine_per_batch=40, code_per_batch=4, help_per_batch=3, route_every=5, hints_per_batch=2, checkpoint_first=25, study_every=6, repos_per_day=20, allow_install=False,
+    sweep_first=True, sweep_batch=20, scan_batch=300, refine_per_batch=40, code_per_batch=4, help_per_batch=3, route_every=5, hints_per_batch=2, checkpoint_first=25, study_every=6, mind_per_batch=60, mind_ready_at=5000, repos_per_day=20, allow_install=False,
     local_folders=['~/CubeMind_janus', '~/ufe_data', '~/ufe lifes work', '~/Desktop/AEGIS_vault', '~/.copilot/repos'],
     github_token_env='GITHUB_TOKEN', max_db_mb=2000, backups_kept=7, ram_ceiling=95,
     embed_model='nomic-embed-text', similar_at=0.80)
@@ -96,7 +96,7 @@ VISION = (HERE / 'GRAND_VISION.md').read_text(encoding='utf-8') if (HERE / 'GRAN
 NETWORK = [
     dict(id='R1-serapis-rho', role='Mapper', when='now', emits='field_mapped', doc='this node'),
     dict(id='node2-builder', role='Builder', when='field_mapped', emits='builder_ready', doc='NODE2_CHARTER.md'),
-    dict(id='node3-mind', role='Mind', when='builder_ready', emits='mind_online', doc='NODE3_CHARTER.md'),
+    dict(id='node3-mind', role='Mind (subconscious)', when='builder_ready', emits='mind_online', doc='NODE3_CHARTER.md'),
 ]
 TOOLMAP = (HERE / 'TOOL_MAP.md').read_text(encoding='utf-8') if (HERE / 'TOOL_MAP.md').exists() else ''
 
@@ -414,6 +414,8 @@ class Node:
           f"{s.get('doorways', {}).get('opened', 0)} opened for {s.get('doorways', {}).get('asked', 0)} requests, {s.get('doorways', {}).get('placed', 0)} data sets placed"),
          ('Programmer: node alert map', 'keeps a live alert map on the dashboard, works it top to bottom, clears resolved alerts (HEALTH.md)', s.get('health', {}).get('last', '') != '',
           f"{s.get('health', {}).get('open', 0)} open; " + ('; '.join(f"{k} x{v}" for k, v in s.get('health', {}).get('seen', {}).items()) or 'clean')),
+         ('Mind: subconscious learning', 'the field-native model encodes every record continuously and reports its readiness to take the centre', s.get('mind', {}).get('encoded', 0) > 0,
+          f"encoded {s.get('mind', {}).get('encoded', 0)}, {s.get('mind', {}).get('lanes', 0)} lanes, readiness {int(100 * s.get('mind', {}).get('readiness', 0))}%"),
          ('Network: knows the whole plan', 'the grand vision and all node charters are loaded and given to every role', bool(VISION and CHARTER and CHARTER3),
           f"vision {len(VISION)} chars, Node 2 + Node 3 charters loaded"),
          ('Switchboard: nodes wired', 'every planned node is registered with its on/off switch and signal', len(s.get('network', {}).get('nodes', {})) >= 3,
@@ -803,9 +805,76 @@ class Node:
             o = (self.ix.get(rid) or {}).get('outputs') or {}
             if Path(str(o.get('title', ''))).suffix.lower() in DATA_EXT: data[o['title']] = rid
         return self.modules(), data, set(U.TOOLS)
+    # ---------------------------------------------------------------- the subconscious: the field-native model, learning continuously
+    MARK_ORDER = ('ring', 'anchor', 'shape', 'weight', 'side', 'layer', 'epoch')
+    def _mind_db(self):
+        self.ix.db.execute('CREATE TABLE IF NOT EXISTS mind_codes(record TEXT PRIMARY KEY, code TEXT, lane TEXT, created REAL)')
+        return self.ix.db
+    def encode_markers(self, tags):
+        """One field-native code for a record: each marker as its position in the vocabulary, plus where it sits on the string.
+        This is the compact address the Mind recalls by — the same geometry everywhere, so recall is a step, not a search."""
+        code = []
+        for k in self.MARK_ORDER:
+            vocab = MARKERS.get(k, []); v = tags.get(k)
+            code.append(round((vocab.index(v) + 1) / (len(vocab) + 1), 4) if v in vocab else 0.0)
+        try: sp = float(tags.get('string_pos')); code.append(round(max(-10.0, min(61.0, sp)) / 61.0, 4))
+        except (TypeError, ValueError): code.append(0.0)
+        return code
+    def mind_tick(self):
+        """Runs every batch, in every stage. Encodes newly catalogued/computed records into the Mind's code space and tracks how ready
+        it is to take the centre. This is the LLM we are building, learning in the background — the subconscious — while the programmer runs things."""
+        db = self._mind_db(); m = self.state.setdefault('mind', dict(encoded=0, lanes=0, readiness=0.0, since=time.strftime('%Y-%m-%d %H:%M'), last='', seen_id=0))
+        rows = db.execute("SELECT r.id FROM records r WHERE r.kind IN ('catalog','cycle','library') AND r.rowid > ? ORDER BY r.rowid LIMIT ?",
+                          (m.get('seen_rowid', 0), self.cfg.get('mind_per_batch', 60))).fetchall()
+        if not rows and m['encoded']:
+            m['last'] = time.strftime('%Y-%m-%d %H:%M'); return
+        maxrow = m.get('seen_rowid', 0); batch = []
+        for (rid,) in rows:
+            rr = db.execute('SELECT rowid FROM records WHERE id=?', (rid,)).fetchone()
+            if rr: maxrow = max(maxrow, rr[0])
+            tags = (self.ix.get(rid) or {}).get('tags') or {}
+            code = self.encode_markers(tags); lane = '/'.join(tags.get(k, 'none') for k in self.LANE_KEYS)
+            batch.append((rid, json.dumps(code), lane, time.time()))
+        if batch:
+            db.executemany('INSERT OR IGNORE INTO mind_codes VALUES (?,?,?,?)', batch); db.commit()
+        m['seen_rowid'] = maxrow
+        m['encoded'] = db.execute('SELECT COUNT(*) FROM mind_codes').fetchone()[0]
+        m['lanes'] = db.execute('SELECT COUNT(DISTINCT lane) FROM mind_codes').fetchone()[0]
+        try: assoc = len(self.web.synapses())
+        except Exception: assoc = 0
+        target = max(self.cfg.get('mind_ready_at', 5000), 1)
+        cover = min(1.0, m['encoded'] / target); diversity = min(1.0, m['lanes'] / 40.0); association = min(1.0, assoc / 400.0)
+        m['readiness'] = round(0.5 * cover + 0.25 * diversity + 0.25 * association, 3); m['assoc'] = assoc
+        m['last'] = time.strftime('%Y-%m-%d %H:%M')
+        # it RETRIEVES: for a few of the new records, recall the nearest and wire the association; isolated ones go to the programmer
+        linked = isolated = 0
+        for rid, cj, lane, _ in batch[:6]:
+            tags = (self.ix.get(rid) or {}).get('tags') or {}
+            near = [x for x in self.mind_recall(tags, k=4) if x != rid]
+            if near:
+                try: self.web._strengthen(self.web._node_of(rid, 'own'), self.web._node_of(near[0], 'own')); linked += 1
+                except Exception: pass
+            elif m['encoded'] > 20:                                              # nothing to connect to: ask the programmer to wire it in
+                h = self.state.setdefault('help', [])
+                if len(h) < 50: h.append(dict(role='mind', subject=lane, need=f"this record sits alone in the field ({lane}); find or build a pathway to connect it", t=time.strftime('%Y-%m-%d %H:%M'))); isolated += 1
+        m['linked'] = m.get('linked', 0) + linked; m['sent_to_programmer'] = m.get('sent_to_programmer', 0) + isolated
+        if m['readiness'] >= 1.0 and not m.get('announced_ready'):               # the subconscious is ready to come to the centre
+            m['announced_ready'] = True; self.emit_signal('mind_ready', data=f"encoded {m['encoded']}, {m['lanes']} lanes, {assoc} associations")
+            self.log('the Mind (subconscious) reports it is ready to take the centre; Danny decides the handoff')
+    def mind_recall(self, tags, k=8):
+        """Recall by nearness in the Mind's code space — the association step. Returns the nearest encoded records."""
+        db = self._mind_db(); q = self.encode_markers(tags)
+        rows = db.execute('SELECT record, code FROM mind_codes').fetchall(); out = []
+        for rid, cj in rows:
+            try: c = json.loads(cj)
+            except Exception: continue
+            d = sum((a - b) ** 2 for a, b in zip(q, c)) ** 0.5; out.append((d, rid))
+        out.sort(); return [rid for _, rid in out[:k]]
     def programmer_always(self):
         """The programmer's steady work, run every batch in every stage: watch health, run the switchboard, learn from the web,
         pull repos, take instructions, checkpoint. Heavy model calls (study) are paced so they never slow the scan."""
+        try: self.mind_tick()
+        except Exception as e: self.log(f'subconscious failed: {e}')
         try: self.maintenance_tick(); self.switchboard_tick()
         except Exception as e: self.log(f'maintenance/switchboard failed: {e}')
         try: self.study_tick(); self.hint_tick(); self.repo_tick(); self.wants_tick()
