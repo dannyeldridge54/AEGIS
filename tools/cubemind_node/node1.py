@@ -23,7 +23,7 @@ DEFAULT = dict(
     owner='Danny Eldridge', home='node1_data', cycle_seconds=0, batch=8, parallel=2, search_every_hours=6, online=True,
     ollama='http://127.0.0.1:11434', keep_alive='3m', timeout=600,
     models=dict(retriever='qwen3:14b', mapper='qwen3:8b', processor='qwen3-coder:30b', referee='gpt-oss:20b'),
-    sweep_first=True, sweep_batch=20, scan_batch=300, refine_per_batch=40, code_per_batch=4, help_per_batch=3, route_every=5, hints_per_batch=2, checkpoint_first=25, study_every=6, mind_per_batch=60, mind_ready_at=5000, ai_every=4, upgrade_at=25, focus_at=4, focus_per_batch=5, repos_per_day=20, allow_install=False,
+    sweep_first=True, sweep_batch=20, scan_batch=400, refine_per_batch=40, code_per_batch=4, help_per_batch=3, route_every=5, hints_per_batch=2, checkpoint_first=25, study_every=6, mind_per_batch=60, mind_ready_at=5000, ai_every=4, upgrade_at=25, focus_at=4, focus_per_batch=5, repos_per_day=20, allow_install=False,
     local_folders=['~/CubeMind_janus', '~/ufe_data', '~/ufe lifes work', '~/Desktop/AEGIS_vault', '~/.copilot/repos'],
     github_token_env='GITHUB_TOKEN', max_db_mb=2000, backups_kept=7, ram_ceiling=95,
     embed_model='nomic-embed-text', similar_at=0.80)
@@ -787,7 +787,9 @@ class Node:
             ('No errors in the recent log.\n' if not diagnoses else '\n'.join(
                 f"- **{d['alert']}** x{d['count']} - {d['diagnosis']} -> {d['resolution']}" for d in diagnoses)) +
             "\n\nThe programmer also keeps the dashboard, file sequencing (local -> web -> math) and the node network wiring current.\n", encoding='utf-8')
-        if diagnoses and not healthy: self.prog_action('maintenance', 'health check', 'diagnosed', '; '.join(f"{d['alert']} x{d['count']}" for d in diagnoses))
+        sig = '|'.join(sorted(f"{d['alert']}:{d['count']}" for d in diagnoses))   # only log when the alert picture actually changes
+        if diagnoses and not healthy and sig != hm.get('last_sig'):
+            hm['last_sig'] = sig; self.prog_action('maintenance', 'health check', 'diagnosed', '; '.join(f"{d['alert']} x{d['count']}" for d in diagnoses))
     def switchboard_tick(self):
         """The programmer runs the board: when a node sends its 'done' signal, the node it unblocks is switched on and told to start.
         Nodes with no work are switched off. This is how new nodes and engines come on automatically as the machine grows."""
@@ -1166,6 +1168,12 @@ class Node:
         self.state['prog_n'] = self.state.get('prog_n', 0) + 1
         k = self.state.setdefault('prog_kinds', {}).setdefault(kind, dict(done=0, good=0)); k['done'] += 1; k['good'] += outcome in ('accepted', 'opened', 'addressed', 'compiles', 'filed', 'answered', 'placed')
         log = self.state.setdefault('prog_log', []); log.insert(0, a); del log[200:]
+        try:                                                                     # a running log of everything the programmer does, appended live
+            lf = self.home / 'PROGRAMMER_LOG.md'
+            if lf.exists() and lf.stat().st_size > 2_000_000:                    # keep the last ~1MB so it never grows without bound
+                tail = lf.read_text(encoding='utf-8', errors='ignore')[-1_000_000:]; lf.write_text('# Programmer running log (trimmed)\n' + tail, encoding='utf-8')
+            with open(lf, 'a', encoding='utf-8') as f: f.write(f"{a['t']}  {a['kind']:14} {a['target'][:60]:60}  {a['outcome']}  {a['detail'][:80]}\n")
+        except OSError: pass
     def prog_memory(self, target=None):
         """Its own past work: success rate per kind of action, lessons from checkpoints, and the most relevant recent actions."""
         kinds = self.state.get('prog_kinds', {}); log = self.state.get('prog_log', [])
@@ -1594,27 +1602,36 @@ class Node:
             self._pending = [p for p in files if str(p) not in done]; sw['total'] = len(files); sw['scanned'] = time.time()
             if not self._pending: sw['idle_until'] = time.time() + 6 * 3600
         return self._pending
-    def _read_fast(self, p, seconds=6):
-        """Read a file, but never block the scan on one file (a cloud 'online-only' placeholder or a special file can hang forever).
-        If it does not read within a few seconds, skip it. The hung reader thread dies with the process; the scan goes on."""
-        from concurrent.futures import ThreadPoolExecutor, TimeoutError as _FTO
-        ex = ThreadPoolExecutor(1); fut = ex.submit(p.read_bytes)
-        try: data = fut.result(timeout=seconds); ex.shutdown(wait=False); return data
-        except _FTO: ex.shutdown(wait=False); raise TimeoutError(f'read timed out after {seconds}s')
+    def _read_batch(self, paths, seconds=8, workers=24):
+        """Read a whole batch of files AT ONCE, concurrently. The files live on slow/cloud storage and read ~1-2s each; reading them
+        in parallel makes a batch take seconds instead of minutes. A file that will not read within the timeout is marked unreadable."""
+        from concurrent.futures import ThreadPoolExecutor
+        def one(p):
+            try:
+                if p.stat().st_size > self.local.max_b: return (p, None, 'skipped')
+                return (p, p.read_bytes(), 'ok')
+            except OSError: return (p, None, 'skipped')
+        ex = ThreadPoolExecutor(min(workers, max(1, len(paths)))); out = {}
+        futs = {ex.submit(one, p): p for p in paths}
+        import concurrent.futures as _cf
+        done, notdone = _cf.wait(futs, timeout=seconds + 4)
+        for fu in done:
+            p, data, status = fu.result(); out[str(p)] = (data, status)
+        for fu in notdone:                                                       # a file still reading after the timeout: skip it, don't wait
+            p = futs[fu]; out[str(p)] = (None, 'unreadable')
+        ex.shutdown(wait=False); return out
     def sweep_batch(self, n=20):
         """Hash each file; a copy of something already catalogued is marked 'duplicate' (same as the first) and costs no model call;
         a new file is filed as a find and given a geometric address by the mapper. Nothing on disk is ever changed or deleted."""
         db = self._sweep_db(); sw = self.state['sweep']; take, self._pending = self._pending[:n], self._pending[n:]
         new = []; t_batch = time.time()
+        reads = self._read_batch(take)                                           # read the whole batch concurrently first
         for p in take:
-            sw['current'] = str(p)
-            try:
-                if p.stat().st_size > self.local.max_b: raise ValueError('too big')   # only small files are scanned; skip the rest fast
-                data = self._read_fast(p)
-            except TimeoutError as e:                                              # (subclass of OSError, so it must come first) a file that will not read
-                self.log(f'sweep skipped a file that would not read: {p} ({e})')
+            sw['current'] = str(p); data, status = reads.get(str(p), (None, 'skipped'))
+            if status == 'unreadable':
                 db.execute('INSERT OR REPLACE INTO sweep_paths VALUES (?,?,?,?)', (str(p), '', 'unreadable', time.time())); sw['skipped'] += 1; sw['unreadable'] = sw.get('unreadable', 0) + 1; continue
-            except (OSError, ValueError): db.execute('INSERT OR REPLACE INTO sweep_paths VALUES (?,?,?,?)', (str(p), '', 'skipped', time.time())); sw['skipped'] += 1; continue
+            if status != 'ok' or data is None:
+                db.execute('INSERT OR REPLACE INTO sweep_paths VALUES (?,?,?,?)', (str(p), '', 'skipped', time.time())); sw['skipped'] += 1; continue
             sha = FP._sha(data); first = db.execute('SELECT first_path, find_id FROM sweep_files WHERE sha=?', (sha,)).fetchone()
             if first:
                 db.execute('INSERT OR REPLACE INTO sweep_paths VALUES (?,?,?,?)', (str(p), sha, 'duplicate', time.time())); sw['duplicates'] += 1; continue

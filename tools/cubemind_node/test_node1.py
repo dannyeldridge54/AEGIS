@@ -400,13 +400,14 @@ class T(unittest.TestCase):
         n, root = self.staged(); n.cfg['sweep_first'] = True
         for k in range(5): (root / f'ok_{k}.md').write_text('serapis rho note ' + str(k))
         n.local.files = []; n.state.pop('sweep', None)
-        # make one file hang on read; the scan must skip it, not freeze
-        import time as _t
-        real = n._read_fast
-        def slow(p, seconds=6):
-            if 'ok_2' in str(p): raise TimeoutError('read timed out after 6s')   # simulate a cloud placeholder
-            return real(p, seconds)
-        n._read_fast = slow
+        # make one file unreadable (a cloud placeholder that never returns); the scan must skip it, not freeze
+        real = n._read_batch
+        def slow(paths, seconds=8, workers=24):
+            out = real(paths, seconds, workers)
+            for k in list(out):
+                if 'ok_2' in k: out[k] = (None, 'unreadable')
+            return out
+        n._read_batch = slow
         for _ in range(4): n.run_batch(8)
         sw = n.state['sweep']; self.assertGreater(sw.get('unreadable', 0), 0)        # the bad file was skipped
         self.assertFalse(n.sweep_pending())                                          # the scan finished anyway
