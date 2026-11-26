@@ -18,14 +18,15 @@ class FakeLLM:
 
 class T(unittest.TestCase):
     def node(self, **kw):
-        d = Path(tempfile.mkdtemp()); cfg = dict(N.DEFAULT, home=str(d / 'data'))
+        d = Path(tempfile.mkdtemp()); cfg = dict(N.DEFAULT, home=str(d / 'data'), local_folders=[str(d / 'research')])
+        (d / 'research').mkdir(); (d / 'research' / 'eisenstein_fit_notes.md').write_text('Eisenstein series fit at rho. modular invariant Eisenstein series string effective action.')
         n = N.Node(cfg, llm=FakeLLM(**kw), fetch=lambda s: [dict(source='github', title='a/b', url='https://github.com/a/' + s['id'], text='t')])
         n.ix = N.FP.Index(d / 'data' / 'n.sqlite', 'Danny Eldridge', key='ab' * 32); n.web = N.NW.Web(n.ix); return n
     def test_cycles_pass_index_and_write_status(self):
         n = self.node(); vs = [n.cycle() for _ in range(8)]
         self.assertEqual(set(vs), {'PASS'}); self.assertTrue((n.home / 'status.html').exists())
         st = json.loads((n.home / 'status.json').read_text()); self.assertEqual(st['cycles'], 8); self.assertGreater(st['records'], 8)
-        self.assertTrue(all(n.ix.verify(r) for r in n.ix.find(kind='cycle'))); self.assertEqual(len(n.ix.find(kind='find')), 4)  # same finds dedupe
+        self.assertTrue(all(n.ix.verify(r) for r in n.ix.find(kind='cycle'))); self.assertEqual(len(n.ix.find(kind='find')), 5)  # 4 web (dedupe) + 1 local file
     def test_three_roles_use_three_models_in_order(self):
         n = self.node(); n.cycle(); m = N.DEFAULT['models']
         self.assertEqual(n.llm.calls, [m['retriever'], m['mapper'], m['processor'], m['referee']])
@@ -56,7 +57,7 @@ class T(unittest.TestCase):
         node1.arxiv_search = lambda q, n=5: [dict(source='arxiv', title='a', url='u4', text='')]
         n = self.node(); n.fetch = None
         for _ in range(8): n.cycle()
-        self.assertEqual(set(n.state['day']['sources']), {'github', 'arxiv', 'semanticscholar', 'openalex'})
+        self.assertEqual(set(n.state['day']['sources']), {'github', 'arxiv', 'semanticscholar', 'openalex', 'local'})
     def test_batch_loads_each_model_once_and_files_all(self):
         n = self.node(); n.cfg['parallel'] = 1; vs = n.run_batch(8); m = N.DEFAULT['models']
         self.assertEqual(len(vs), 8); self.assertEqual(set(vs), {'PASS'})
@@ -67,7 +68,7 @@ class T(unittest.TestCase):
         calls = []
         n = self.node(); n.fetch = lambda s: calls.append(s['id']) or []
         for _ in range(16): n.cycle()
-        self.assertEqual(len(calls), 8)                     # 4 subjects x 2 source pairs, then cached for 6 hours
+        self.assertEqual(len(calls), 8)                     # 4 subjects x 2 source pairs, then cached for 6 hours (local search is separate)
     def test_mapper_files_addresses_rejects_bad_markers_and_files_two_sided_links(self):
         n = self.node()
         for _ in range(6): n.cycle()
@@ -87,4 +88,15 @@ class T(unittest.TestCase):
         self.assertEqual(len(r['results']), 3); self.assertTrue(all(x['markers']['anchor'] == 'rho' and x['markers']['ring'] == 'R1' for x in r['results']))
         self.assertTrue(r['relaxed'])                               # only 5 exact matches < 2k=6: it stepped out
         self.assertEqual(len(n.ix.find(kind='retrieval')), 1)
+    def test_string_places_records_by_epoch_and_wraps_the_limits(self):
+        n = self.node()
+        for _ in range(4): n.cycle()
+        si = n.string_index(); q = next(x for x in si['string'] if x['epoch'] == 'quantum'); inf = next(x for x in si['string'] if x['epoch'] == 'inflation')
+        self.assertGreater(q['records'], 0); self.assertGreater(inf['records'], 0); self.assertGreater(si['wrapper'], 0)   # eisenstein = 'all' wraps
+        self.assertEqual(N.string_position('late'), 60.72); self.assertIsNone(N.string_position('all'))
+        self.assertIn('The string', (n.home / 'status.html').read_text())
+    def test_local_folder_search_finds_own_fits_once(self):
+        n = self.node(); n.cycle(); loc = [r for r in n.ix.find(kind='find') if n.ix.get(r)['outputs'].get('source') == 'local']
+        self.assertEqual(len(loc), 1); n.cycle(); n.cycle(); n.cycle(); n.cycle()
+        self.assertEqual(len([r for r in n.ix.find(kind='find') if n.ix.get(r)['outputs'].get('source') == 'local']), 1)
 if __name__ == '__main__': unittest.main()
