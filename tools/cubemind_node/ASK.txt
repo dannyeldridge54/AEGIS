@@ -1,0 +1,2 @@
+# Ask the programmer anything (one per line). It answers in ANSWERS.md and on the dashboard.
+# A line starting with "do:" or "build:" becomes a prioritized task.

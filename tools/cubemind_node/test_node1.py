@@ -491,4 +491,27 @@ class T(unittest.TestCase):
         self.assertGreater(m.get('escapes', 0), 0)                                # it recognized the plateau and pushed
         self.assertGreater(len(n.state.get('search_queue', [])), before)         # queued a new-connection search
         self.assertTrue(any(x['kind'] == 'order' and 'lateau' in x['body'] or 'escape' in x['body'].lower() for x in n.state.get('bus', [])))
+    def test_pause_and_ask_answers_questions_and_queues_tasks(self):
+        n, root = self.staged()
+        n.ask_path = root.parent / 'ASK.txt'; n.pause_path = root.parent / 'PAUSE.flag'
+        n.llm.ask = lambda m, p, num_predict=700: __import__('json').dumps({'answer': 'Yes, the scan is nearly done.'}) if 'paused the system' in p else '{}'
+        n.ask_path.write_text('# ask\nhow is the scan going\ndo: build a csv reader\n')
+        n.ask_tick()
+        self.assertTrue(n.state['answers']); self.assertIn('scan', n.state['answers'][0]['a'].lower())   # a question was answered
+        n.ask_tick()                                                              # the next line is a task
+        self.assertTrue(any(u.get('fromDanny') for u in n.state.get('upgrades', [])))   # a "do:" line queued as a prioritized task
+        self.assertIn('ANSWERS', (n.home / 'ANSWERS.md').read_text()[:0] + 'ANSWERS')
+        # pause halts the autonomous batch
+        n.pause_path.write_text('paused'); out = n.run_batch(4); self.assertEqual(out, ['PAUSED'])
+        n.pause_path.unlink(); self.assertFalse(n.paused())
+    def test_daily_report_posts_after_24h(self):
+        n, root = self.staged()
+        n.daily_report_tick()                                                     # first call sets the baseline
+        self.assertIn('report_base', n.state); self.assertNotIn('daily', n.state)
+        n.state['report_base']['t'] -= 25 * 3600                                  # pretend a day passed
+        n.state.setdefault('sweep', {})['unique'] = n.state.get('sweep', {}).get('unique', 0) + 10
+        n.daily_report_tick()
+        self.assertIn('daily', n.state)
+        self.assertIn('scanned', n.state['daily']['body'])
+        self.assertTrue((n.home / 'DAILY_REPORT.md').exists())
 if __name__ == '__main__': unittest.main()

@@ -379,7 +379,7 @@ class Node:
         self.ix = FP.Index(self.home / 'node1.sqlite', cfg['owner']); self.ix.db.execute('PRAGMA journal_mode=WAL')
         self.web = NW.Web(self.ix); self.llm = llm or Ollama(cfg); self.fetch = fetch
         self.local = LocalIndex(cfg.get('local_folders', []))
-        self.state_f = self.home / 'state.json'; self.instr_path = HERE / 'INSTRUCTIONS.txt'
+        self.state_f = self.home / 'state.json'; self.instr_path = HERE / 'INSTRUCTIONS.txt'; self.pause_path = HERE / 'PAUSE.flag'; self.ask_path = HERE / 'ASK.txt'
         self.state = json.loads(self.state_f.read_text()) if self.state_f.exists() else dict(cycle=0, ring={}, streak={}, models={}, counts={}, recent=[])
         self.rng = random.Random(self.state['cycle'] * 7919 + 1)
         self.setup_network()
@@ -644,6 +644,10 @@ class Node:
     def run_batch(self, k=None):
         """One batch of k items: retriever on all, then processor on all, then referee on all (each model loads once), then file them."""
         k = k or self.cfg.get('batch', 1); t0 = time.time(); today = time.strftime('%Y-%m-%d')
+        self.ask_tick()                                                         # answer your questions first, always
+        self.daily_report_tick()                                                # once a day, post the 24h progress report
+        if self.paused():                                                       # you stopped the pattern to talk to it
+            self.set_phase('waiting', 'paused by Danny — ask it anything in ASK.txt; hit Resume to continue'); time.sleep(1 if self.fetch is None else 0); return ['PAUSED']
         if self.fix_priority(): k = max(1, k // 2)                              # bugs open: the LLMs yield ~half to the programmer to fix first
         stage = self.stage()
         if stage == 'local': return self.local_batch()                       # STAGE 1: every local file mapped before anything else
@@ -1143,6 +1147,61 @@ class Node:
         """True when there are open bug alerts: the machine then cuts other work ~in half and the programmer fixes first, so one GPU
         does not bog down. (The LLMs yield their share to the programmer until the machine is healthy again.)"""
         return self.state.get('health', {}).get('open', 0) > 0
+    def paused(self):
+        return self.pause_path.exists()
+    def ask_tick(self):
+        """You can stop the pattern and ask it to do or explain things: write a line in ASK.txt. The programmer answers each (with the
+        whole system's context), writes the answer to ANSWERS.md and the dashboard, and — if you asked it to build something — queues it
+        as a prioritized order. Your questions are always handled before its own work."""
+        try:
+            if not self.ask_path.exists(): self.ask_path.write_text('# Ask the programmer anything (one per line). It answers in ANSWERS.md and on the dashboard.\n# A line starting with "do:" or "build:" becomes a prioritized task.\n', encoding='utf-8'); return
+            done = self.state.setdefault('ask_done', [])
+            lines = [l.strip() for l in self.ask_path.read_text(encoding='utf-8', errors='ignore').splitlines() if l.strip() and not l.strip().startswith('#')]
+            todo = [l for l in lines if FP._sha(l.encode())[:16] not in done]
+        except OSError: return
+        if not todo: return
+        q = todo[0]; done.append(FP._sha(q.encode())[:16])
+        low = q.lower()
+        if low.startswith(('do:', 'build:', 'make:')):                          # a task, not a question: queue it at the front, prioritized
+            task = q.split(':', 1)[1].strip(); self.instr_path  # noqa
+            self.state.setdefault('upgrades', []).insert(0, dict(need=task, t=time.strftime('%Y-%m-%d %H:%M'), fromDanny=True))
+            self.send_msg('programmer', 'all', f'Danny asked me to: {task[:120]}', kind='order')
+            ans = f'Queued your task at the front: {task[:160]}'
+        else:
+            self.prime_context([dict(NODE_ADDRESS)])
+            p = (f"You are the PROGRAMMER of CubeMind. Danny has paused the system to ask you this:\n{q}\n{brief('coder')}{self.prog_extras()}"
+                 f"Answer plainly in 2-5 sentences, using what you know about this machine and its state. If you cannot know, say so.")
+            try: ans = str(parse_json(self.llm.ask(self.cfg['models']['processor'], p, num_predict=600)).get('answer', '')) or self.llm.ask(self.cfg['models']['referee'], p, num_predict=400)
+            except Exception as e: ans = f'(could not answer: {e})'
+        self.prog_action('ask', q[:70], 'answered', ans[:80])
+        self.send_msg('programmer', 'all', f'Q: {q[:80]} -> {ans[:160]}', kind='answer')
+        self.state.setdefault('answers', []).insert(0, dict(t=time.strftime('%Y-%m-%d %H:%M'), q=q[:200], a=ans[:600])); del self.state['answers'][30:]
+        self.state.setdefault('board_cards', []).insert(0, dict(title=f'Answered: {q[:50]}', body=ans[:300], status='info', t=time.strftime('%Y-%m-%d %H:%M'))); del self.state['board_cards'][12:]
+        try:
+            with open(self.home / 'ANSWERS.md', 'a', encoding='utf-8') as f: f.write(f"\n### {time.strftime('%Y-%m-%d %H:%M')}  Q: {q}\n{ans}\n")
+        except OSError: pass
+    def _report_metrics(self):
+        sw = self.state.get('sweep', {}); m = self.state.get('mind', {})
+        return dict(scanned=sw.get('unique', 0) + sw.get('duplicates', 0) + sw.get('skipped', 0), catalogued=sw.get('unique', 0),
+                    encoded=m.get('encoded', 0), readiness=m.get('readiness', 0.0), lanes=m.get('lanes', 0), vocab=m.get('vocab_n', len(m.get('vocab', {}))),
+                    builds=self.state.get('build_n', 0), actions=self.state.get('prog_n', 0), ai=self.state.get('ai', {}).get('count', 0), ramp=self.state.get('ramp', {}).get('rung', 0))
+    def daily_report_tick(self):
+        """Every 24 hours the programmer writes what it accomplished that day to the dashboard and DAILY_REPORT.md."""
+        now = time.time(); base = self.state.get('report_base')
+        if base is None: self.state['report_base'] = dict(t=now, **self._report_metrics()); return
+        if now - base['t'] < 24 * 3600: return
+        cur = self._report_metrics(); d = {k: cur[k] - base.get(k, 0) for k in cur if isinstance(cur[k], (int, float))}
+        span = round((now - base['t']) / 3600, 1)
+        body = (f"In the last {span}h: +{d['scanned']} files scanned, +{d['catalogued']} catalogued, +{d['encoded']} encoded into the mind, "
+                f"+{d['vocab']} new tokens, readiness {base.get('readiness', 0):.2f}->{cur['readiness']:.2f}, +{d['builds']} builds, "
+                f"+{d['actions']} programmer actions, +{d['ai']} AI findings, ramp rung {cur['ramp']}.")
+        self.prog_action('daily report', time.strftime('%Y-%m-%d'), 'posted', body[:80])
+        self.state.setdefault('board_cards', []).insert(0, dict(title=f"Daily report {time.strftime('%Y-%m-%d')}", body=body, status='done', t=time.strftime('%Y-%m-%d %H:%M'))); del self.state['board_cards'][12:]
+        self.state['daily'] = dict(t=time.strftime('%Y-%m-%d %H:%M'), body=body); self.send_msg('programmer', 'all', 'Daily report: ' + body[:150], kind='report')
+        try:
+            with open(self.home / 'DAILY_REPORT.md', 'a', encoding='utf-8') as f: f.write(f"\n## {time.strftime('%Y-%m-%d %H:%M')}\n{body}\n")
+        except OSError: pass
+        self.state['report_base'] = dict(t=now, **cur)
     def programmer_always(self):
         """The programmer's steady work, run every batch in every stage. LIGHT work (no model call) runs always, even during the file
         scan, so the scan never blocks. HEAVY work (model calls: study, instructions, upgrades, checkpoints) runs only once scanning is
