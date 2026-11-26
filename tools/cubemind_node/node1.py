@@ -890,18 +890,41 @@ class Node:
         return self.modules(), data, set(U.TOOLS)
     # ---------------------------------------------------------------- the subconscious: the field-native model, learning continuously
     MARK_ORDER = ('ring', 'anchor', 'shape', 'weight', 'side', 'layer', 'epoch')
+    STOP = set('the a an and or of to in on for with is are be as by at it its this that from into over under not no we our you your i he she they them his her their one two use using used make made get got can will would could should'.split())
     def _mind_db(self):
-        self.ix.db.execute('CREATE TABLE IF NOT EXISTS mind_codes(record TEXT PRIMARY KEY, code TEXT, lane TEXT, created REAL)')
-        return self.ix.db
+        db = self.ix.db
+        db.execute('CREATE TABLE IF NOT EXISTS mind_codes(record TEXT PRIMARY KEY, code TEXT, lane TEXT, created REAL)')
+        try: db.execute('ALTER TABLE mind_codes ADD COLUMN tokens TEXT')          # token signature of each record (added once)
+        except Exception: pass
+        return db
+    def tokenize(self, text):
+        """The main pattern: break text into field tokens. Lowercase words of 3+ chars, drop stopwords. Growing a shared vocabulary
+        of the field's own language is what the catalog is built on."""
+        import re as _re
+        toks = [w for w in _re.findall(r'[a-zA-Z][a-zA-Z0-9_]{2,}', (text or '').lower())
+                if w not in self.STOP and not (len(w) >= 16 and all(c in '0123456789abcdef' for c in w))]   # drop hashes/ids
+        vocab = self.state.setdefault('mind', {}).setdefault('vocab', {})
+        for w in toks:
+            if w not in vocab and len(vocab) < 20000: vocab[w] = len(vocab) + 1
+        return toks
+    def token_sig(self, text, cap=16):
+        """A compact signature: the ids of a record's most telling tokens (by rarity in the vocabulary — later = rarer = more telling)."""
+        vocab = self.state.setdefault('mind', {}).setdefault('vocab', {})
+        ids = sorted({vocab[w] for w in self.tokenize(text) if w in vocab}, reverse=True)[:cap]
+        return ids
+    COSMOS = {'quantum': -5.0, 'inflation': 8.0, 'reheating': 12.0, 'bbn': 23.0, 'recombination': 55.0, 'structure': 58.0, 'late': 60.9, 'all': 30.0}
     def encode_markers(self, tags):
-        """One field-native code for a record: each marker as its position in the vocabulary, plus where it sits on the string.
-        This is the compact address the Mind recalls by — the same geometry everywhere, so recall is a step, not a search."""
+        """One field-native code for a record built on the UFE map: the modular geometry (ring, anchor, shape, weight, orbifold),
+        the Loom layer and side, and the COSMOS axis — where it sits on the one string from before the Big Bang (quantum, negative)
+        through inflation and BBN to today (late, ~60.9). The same geometry everywhere, so recall is a step, not a search."""
         code = []
         for k in self.MARK_ORDER:
             vocab = MARKERS.get(k, []); v = tags.get(k)
             code.append(round((vocab.index(v) + 1) / (len(vocab) + 1), 4) if v in vocab else 0.0)
-        try: sp = float(tags.get('string_pos')); code.append(round(max(-10.0, min(61.0, sp)) / 61.0, 4))
-        except (TypeError, ValueError): code.append(0.0)
+        # the cosmos axis: explicit, so the whole timeline is one dimension the mind organises along
+        try: sp = float(tags.get('string_pos'))
+        except (TypeError, ValueError): sp = self.COSMOS.get(tags.get('epoch'), 30.0)
+        code.append(round((max(-10.0, min(61.0, sp)) + 10.0) / 71.0, 4))
         return code
     def mind_tick(self):
         """Runs every batch, in every stage. Encodes newly catalogued/computed records into the Mind's code space and tracks how ready
@@ -915,11 +938,13 @@ class Node:
         for (rid,) in rows:
             rr = db.execute('SELECT rowid FROM records WHERE id=?', (rid,)).fetchone()
             if rr: maxrow = max(maxrow, rr[0])
-            tags = (self.ix.get(rid) or {}).get('tags') or {}
+            rec = self.ix.get(rid) or {}; tags = rec.get('tags') or {}; o = rec.get('outputs') or {}
+            src = (self.ix.get((rec.get('inputs') or {}).get('find') or (rec.get('inputs') or {}).get('code') or '') or {}).get('outputs') or {}
+            txt = ' '.join(str(d.get(x, '')) for d in (o, src) for x in ('title', 'text', 'purpose', 'module', 'doc'))
             code = self.encode_markers(tags); lane = '/'.join(tags.get(k, 'none') for k in self.LANE_KEYS)
-            batch.append((rid, json.dumps(code), lane, time.time()))
+            batch.append((rid, json.dumps(code), lane, time.time(), json.dumps(self.token_sig(txt))))
         if batch:
-            db.executemany('INSERT OR IGNORE INTO mind_codes VALUES (?,?,?,?)', batch); db.commit()
+            db.executemany('INSERT OR IGNORE INTO mind_codes(record,code,lane,created,tokens) VALUES (?,?,?,?,?)', batch); db.commit()
         m['seen_rowid'] = maxrow
         m['encoded'] = db.execute('SELECT COUNT(*) FROM mind_codes').fetchone()[0]
         m['lanes'] = db.execute('SELECT COUNT(DISTINCT lane) FROM mind_codes').fetchone()[0]
@@ -927,13 +952,15 @@ class Node:
         except Exception: assoc = 0
         target = max(self.cfg.get('mind_ready_at', 5000), 1)
         cover = min(1.0, m['encoded'] / target); diversity = min(1.0, m['lanes'] / 40.0); association = min(1.0, assoc / 400.0)
-        m['readiness'] = round(0.5 * cover + 0.25 * diversity + 0.25 * association, 3); m['assoc'] = assoc
+        vocabn = len(m.get('vocab', {})); language = min(1.0, vocabn / 4000.0)
+        m['readiness'] = round(0.4 * cover + 0.2 * diversity + 0.2 * association + 0.2 * language, 3); m['assoc'] = assoc; m['vocab_n'] = vocabn
         m['last'] = time.strftime('%Y-%m-%d %H:%M')
+        self.escape_check(m)                                                     # keep climbing: no section may stall the whole ascent
         # it RETRIEVES: for a few of the new records, recall the nearest and wire the association; isolated ones go to the programmer
         linked = isolated = 0
-        for rid, cj, lane, _ in batch[:6]:
-            tags = (self.ix.get(rid) or {}).get('tags') or {}
-            near = [x for x in self.mind_recall(tags, k=4) if x != rid]
+        for rid, cj, lane, _, _tj in batch[:6]:
+            rec = self.ix.get(rid) or {}; tags = rec.get('tags') or {}; o = rec.get('outputs') or {}
+            near = [x for x in self.mind_recall(tags, k=4, text=' '.join(str(o.get(z, '')) for z in ('title', 'text', 'purpose'))) if x != rid]
             if near:
                 try: self.web._strengthen(self.web._node_of(rid, 'own'), self.web._node_of(near[0], 'own')); linked += 1
                 except Exception: pass
@@ -946,15 +973,39 @@ class Node:
         if m['readiness'] >= 1.0 and not m.get('announced_ready'):               # the subconscious is ready to come to the centre
             m['announced_ready'] = True; self.emit_signal('mind_ready', data=f"encoded {m['encoded']}, {m['lanes']} lanes, {assoc} associations")
             self.log('the Mind (subconscious) reports it is ready to take the centre; Danny decides the handoff')
-    def mind_recall(self, tags, k=8):
-        """Recall by nearness in the Mind's code space — the association step. Returns the nearest encoded records."""
-        db = self._mind_db(); q = self.encode_markers(tags)
-        rows = db.execute('SELECT record, code FROM mind_codes').fetchall(); out = []
-        for rid, cj in rows:
+    def mind_recall(self, tags, k=8, text=''):
+        """Recall by nearness in the Mind's code space: geometric distance (the UFE map + cosmos axis) blended with token overlap
+        (the tokenized catalog). The association step — a short move, not a search."""
+        db = self._mind_db(); q = self.encode_markers(tags); qsig = set(self.token_sig(text)) if text else set()
+        try: rows = db.execute('SELECT record, code, tokens FROM mind_codes').fetchall()
+        except Exception: rows = [(r, c, None) for r, c in db.execute('SELECT record, code FROM mind_codes').fetchall()]
+        out = []
+        for rid, cj, tj in rows:
             try: c = json.loads(cj)
             except Exception: continue
-            d = sum((a - b) ** 2 for a, b in zip(q, c)) ** 0.5; out.append((d, rid))
+            d = sum((a - b) ** 2 for a, b in zip(q, c)) ** 0.5
+            if qsig and tj:
+                try:
+                    sig = set(json.loads(tj)); inter = len(qsig & sig)
+                    if inter: d *= max(0.3, 1.0 - 0.6 * inter / len(qsig | sig))   # shared tokens pull records closer
+                except Exception: pass
+            out.append((d, rid))
         out.sort(); return [rid for _, rid in out[:k]]
+    def escape_check(self, m):
+        """Escape velocity: watch readiness climb. If it plateaus (stops gaining) while work remains, a section is holding the ascent
+        back (loss of plasticity). The subconscious then pushes new connections and tells the programmer, so no section stalls the climb."""
+        hist = m.setdefault('climb', []); hist.append(round(m['readiness'], 3)); del hist[:-12]
+        if len(hist) >= 8 and max(hist[-8:]) - min(hist[-8:]) < 0.002 and m['readiness'] < 1.0:
+            # which lane is most crowded (stalling) -> push there
+            try:
+                db = self._mind_db(); row = db.execute('SELECT lane, COUNT(*) c FROM mind_codes GROUP BY lane ORDER BY c DESC LIMIT 1').fetchone()
+                lane = row[0] if row else '?'
+            except Exception: lane = '?'
+            if m.get('last_escape') != len(hist) + m['encoded']:
+                m['last_escape'] = len(hist) + m['encoded']; m['escapes'] = m.get('escapes', 0) + 1
+                self.state.setdefault('search_queue', []).append(f'new methods to connect and advance {lane.split(chr(47))[0]} records in a knowledge network')
+                self.send_msg('mind', 'programmer', f'Plateau: lane {lane} is holding the ascent back; open new pathways there so we keep climbing (escape velocity).', kind='order')
+                self.state.setdefault('board_cards', []).insert(0, dict(title='Escape push', body=f'Readiness plateaued; pushing new connections in {lane} to break out.', status='working', t=time.strftime('%Y-%m-%d %H:%M'))); del self.state['board_cards'][12:]
     def fallback_map(self, limit=200):
         """Code-only mapping (no model): the subconscious addresses the mapper's backlog by word rules so mapping never stalls."""
         q = self.state.setdefault('refine', []); take, self.state['refine'] = q[:limit], q[limit:]; done = 0

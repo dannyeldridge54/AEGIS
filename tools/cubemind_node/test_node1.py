@@ -462,4 +462,33 @@ class T(unittest.TestCase):
         n, root = self.staged(); stopf = n.home / 'STOP.flag'; stopf.write_text('stop')
         self.assertTrue(stopf.exists())
         stopf.unlink(); self.assertFalse(stopf.exists())                          # start clears it
+    def test_mind_tokenizes_catalogs_and_recalls_by_tokens_and_geometry(self):
+        n, root = self.staged()
+        for k in range(12): (root / f'serapis_{k}.md').write_text(f'SERAPIS eisenstein rho modular torus orbifold Z2xZ2 weight two note {k}')
+        n.local.files = []; n.state.pop('sweep', None)
+        for _ in range(8): n.run_batch(8)
+        m = n.state['mind']
+        self.assertGreater(m.get('vocab_n', 0), 0)                                # it built a vocabulary (tokenization)
+        self.assertIn('eisenstein', m['vocab'])                                   # a field token was learned
+        # token signatures are stored and recall is token-aware
+        row = n.ix.db.execute("SELECT tokens FROM mind_codes WHERE tokens IS NOT NULL LIMIT 1").fetchone()
+        self.assertTrue(row and row[0] and __import__('json').loads(row[0]))
+        cats = n.ix.find(kind='catalog')
+        if cats:
+            tags = n.ix.get(cats[0])['tags']; hits = n.mind_recall(tags, k=3, text='eisenstein rho modular'); self.assertTrue(hits)
+        # the cosmos axis is in the code: a late-universe record sits far from a quantum one
+        q = n.encode_markers(dict(ring='R1', epoch='quantum')); late = n.encode_markers(dict(ring='R1', epoch='late'))
+        self.assertGreater(abs(q[-1] - late[-1]), 0.5)
+    def test_escape_guard_pushes_when_readiness_plateaus(self):
+        n, root = self.staged()
+        m = n.state.setdefault('mind', {}); m['encoded'] = 100; m['readiness'] = 0.5
+        m['climb'] = [0.5] * 8                                                    # a flat climb = plateau
+        import node1 as NN
+        # seed one mind_code so the lane query works
+        n._mind_db(); n.ix.db.execute("INSERT OR IGNORE INTO mind_codes(record,code,lane,created,tokens) VALUES ('x','[0.1]','R1/rho/hex/2',0,'[]')"); n.ix.db.commit()
+        before = len(n.state.get('search_queue', []))
+        n.escape_check(m)
+        self.assertGreater(m.get('escapes', 0), 0)                                # it recognized the plateau and pushed
+        self.assertGreater(len(n.state.get('search_queue', [])), before)         # queued a new-connection search
+        self.assertTrue(any(x['kind'] == 'order' and 'lateau' in x['body'] or 'escape' in x['body'].lower() for x in n.state.get('bus', [])))
 if __name__ == '__main__': unittest.main()
