@@ -4,9 +4,12 @@ from pathlib import Path
 import node1 as N, ufe_pack as U
 
 class FakeLLM:
-    def __init__(self, right=True, objection=False): self.right, self.objection, self.calls = right, objection, []
+    def __init__(self, right=True, objection=False, stuck=False): self.right, self.objection, self.stuck, self.calls = right, objection, stuck, []
     def ask(self, model, prompt, num_predict=700):
         self.calls.append(model)
+        if 'DOORWAY' in prompt:
+            names = prompt.split('(ONLY these): ')[1].split('\n')[0].split(', ')
+            return json.dumps({'answer': 'use the data set', 'doorways': [{'to': names[0], 'relation': 'checks', 'why': 'w'}, {'to': 'imaginary.csv', 'relation': 'checks'}], 'epoch': 'late'})
         if 'CODE CARTOGRAPHER' in prompt:
             mods = prompt.split('(ONLY these): ')[1].split('\n')[0].split(', ')
             return json.dumps({'purpose': 'p', 'ring': 'R1', 'anchor': 'rho', 'shape': 'hexagonal', 'weight': '2', 'side': 'centre', 'layer': 'torus', 'epoch': 'all',
@@ -15,7 +18,7 @@ class FakeLLM:
             n = prompt.count('. [')
             return json.dumps({'finds': [{'i': k, 'ring': 'R1', 'anchor': 'rho', 'shape': 'hexagonal', 'orbifold': 'Z2xZ2', 'weight': '2', 'side': 'centre', 'layer': 'torus', 'why': 'w'} for k in range(n)] + [{'i': 0, 'ring': 'R9'}],
                                'links': [{'proposal': 0, 'accept': True, 'relation': 'similar', 'why': 'w'}, {'proposal': 1, 'accept': True, 'relation': 'made_up'}]})
-        if 'RETRIEVER' in prompt: return json.dumps({'lens': 'frame', 'useful': [], 'question': 'q'})
+        if 'RETRIEVER' in prompt: return json.dumps({'lens': 'frame', 'useful': [], 'question': 'q', 'stuck': 'need the DESI data set' if self.stuck else ''})
         if 'REFEREE' in prompt: return json.dumps({'mirror': 'could be wrong', 'verdict': 'FINDING' if self.objection else 'NULL', 'finding': 'x' if self.objection else ''})
         args = json.loads(re.search(r'for (\{.*?\})', prompt).group(1)); tool = next(t for t, v in U.TOOLS.items() if v[1].split('{x}')[0][:40] in prompt)
         v = float(U.TOOLS[tool][2](args)); return json.dumps({'steps': ['s'], 'result': v if self.right else v * 3 + 1})
@@ -49,7 +52,7 @@ class T(unittest.TestCase):
     def test_goalposts_listed_and_shown(self):
         n = self.node()
         for _ in range(5): n.cycle()
-        g = n.goalposts(); self.assertEqual(len(g), 16); self.assertTrue(all({'part', 'goal', 'met', 'now'} <= set(x) for x in g))
+        g = n.goalposts(); self.assertEqual(len(g), 18); self.assertTrue(all({'part', 'goal', 'met', 'now'} <= set(x) for x in g))
         self.assertIn('Goalposts', (n.home / 'status.html').read_text())
     def test_selfcheck_runs_with_sympy(self):
         n = self.node(); n.cycle(); sc = n.state['selfcheck']; self.assertEqual((sc.get('reproduce'), sc.get('total')), (18, 18))
@@ -140,4 +143,45 @@ class T(unittest.TestCase):
         n.run_batch(2); n.run_batch(2)
         roles = [p for p in prompts if any(r in p for r in ('RETRIEVER', 'MAPPER', 'REFEREE'))]
         self.assertTrue(roles and all('SHARED BOARD' in p and 'NEAREST REFERENCE POINTS' in p for p in roles))
+    def staged(self, **kw):
+        n = self.node(**kw); n.cfg['sweep_first'] = True; root = Path(n.cfg['local_folders'][0])
+        (root / 'serapis_eisenstein_rho.md').write_text('SERAPIS: the Eisenstein series E2 at rho, Z2xZ2 orbifold, modular torus. Eisenstein weight 2.')
+        (root / 'notes_potential.md').write_text('A potential with a vacuum; stability checked.')           # field words but no ring: goes to the mapper
+        (root / 'shopping.txt').write_text('milk eggs bread')                                         # no field words: unrelated
+        (root / 'fit_points.csv').write_text('z,w,potential\n0.5,-0.9,1\n')                         # a data set with no epoch words: the programmer places it
+        (root / 'fit_points_copy.csv').write_text('z,w,potential\n0.5,-0.9,1\n')                                      # identical copy
+        n.local.files = []; n.state.pop('sweep', None); return n, root
+    def test_stages_run_local_then_web_then_math(self):
+        n, root = self.staged(); web = []; f0 = n.fetch; n.fetch = lambda s: web.append(s['id']) or f0(s)
+        out = [n.run_batch(8)[0] for _ in range(6)]; m = N.DEFAULT['models']
+        self.assertEqual(out[0], 'SCAN'); self.assertEqual(out[:3], ['SCAN', 'MAP', 'WEB']); self.assertEqual(out[3], 'PASS')
+        self.assertEqual([x[1] for x in n.state['stage_log']], ['local', 'web', 'math'])
+        sw = n.state['sweep']; self.assertEqual((sw['duplicates'], sw['auto'], sw['unrelated']), (1, 2, 1))   # serapis notes + the eisenstein notes
+        cat = [n.ix.get(c) for c in n.ix.find(kind='catalog', limit=500)]
+        auto = [c for c in cat if c['tags'].get('proposed_by') == 'auto' and c['tags'].get('orbifold') == 'Z2xZ2']; self.assertEqual(len(auto), 1)
+        self.assertEqual((auto[0]['tags']['ring'], auto[0]['tags']['anchor'], auto[0]['tags']['shape']), ('R1', 'rho', 'hexagonal'))
+        self.assertTrue(all(p.exists() for p in root.iterdir()))                                     # nothing deleted
+    def test_no_web_or_math_before_local_is_done(self):
+        n, root = self.staged(); web = []; n.fetch = lambda s: web.append(1) or []
+        for k in range(40): (root / f'note_{k}.md').write_text(f'potential {k} vacuum')
+        n.local.files = []; n.state.pop('sweep', None); n.cfg['refine_per_batch'] = 10
+        n.run_batch(8); self.assertEqual(web, []); self.assertNotIn(N.DEFAULT['models']['processor'], n.llm.calls)
+        while n.stage() == 'local': n.run_batch(8); self.assertEqual(web, [])
+        self.assertEqual(n.state['refine'], [])
+    def test_stuck_roles_get_doorways_to_real_things_only(self):
+        n, root = self.staged(stuck=True)
+        for _ in range(6): n.run_batch(4)
+        st = n.state['doorways']; self.assertGreater(st['asked'], 0); self.assertGreater(st['opened'], 0); self.assertGreater(st['refused'], 0)   # 'imaginary.csv' refused
+        self.assertGreater(st['placed'], 0)                                                          # the csv placed on the string
+        mods, data, tools = n.targets(); names = set(mods) | set(data) | set(tools)
+        for l in n.ix.find(kind='link', limit=1000):
+            r = n.ix.get(l)
+            if r['tags'].get('kind') == 'doorway':
+                d = r['inputs']['dst']; self.assertTrue(d.startswith(('module:', 'tool:')) or d in data.values())
+        self.assertIn('Programmer opened for', n.shared_board())
+    def test_every_prompt_carries_its_brief(self):
+        n, root = self.staged(); prompts = []; orig = n.llm.ask
+        n.llm.ask = lambda m, p, num_predict=700: (prompts.append(p), orig(m, p, num_predict))[1]
+        for _ in range(5): n.run_batch(4)
+        self.assertTrue(prompts and all('YOUR BRIEF' in p and 'CALL THE PROGRAMMER' in p for p in prompts))
 if __name__ == '__main__': unittest.main()

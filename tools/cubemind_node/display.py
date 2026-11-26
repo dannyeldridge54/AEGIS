@@ -19,7 +19,8 @@ def snapshot(node):
         neurons=[dict(id=r['neuron'], side=r['side'], layer=r['layer'], records=r['records'], engine=r['engine'], acc=r['accuracy'], balance=r['balance']) for r in leaves],
         synapses=syn, goalposts=node.goalposts(), recent=s['recent'][:20], resources=node.resources(),
         sweep=s.get('sweep', {}), dup_web=s.get('dup_web', 0),
-        coder=s.get('coder', {}), code_queue=len(s.get('code_queue', [])), board=node.shared_board(),
+        coder=s.get('coder', {}), code_queue=len(s.get('code_queue', [])), board=node.shared_board(), stage=s.get('stage', 'start'),
+        refine=len(s.get('refine', [])), doorways={k: v for k, v in s.get('doorways', {}).items() if k != 'recent'}, help=len(s.get('help', [])),
         models=node.cfg['models'], log=_tail(node.home / 'node1.log', 8))
 
 def quick(node, snap):
@@ -29,7 +30,8 @@ def quick(node, snap):
                 today=dict(cycles=day.get('cycles', 0), per_hour=round(3600 * day.get('cycles', 0) / busy) if busy else 0, sources=dict(day.get('sources', {})),
                            similar_links=day.get('similar_links', 0)),
                 recent=list(s['recent'][:20]), resources=node.resources(), sweep=dict(s.get('sweep', {})), coder=dict(s.get('coder', {})),
-                code_queue=len(s.get('code_queue', [])), log=_tail(node.home / 'node1.log', 8))
+                code_queue=len(s.get('code_queue', [])), stage=s.get('stage', 'start'), refine=len(s.get('refine', [])), help=len(s.get('help', [])),
+                doorways={k: v for k, v in s.get('doorways', {}).items() if k != 'recent'}, log=_tail(node.home / 'node1.log', 8))
 
 def _tail(p, n):
     try: return p.read_text(encoding='utf-8', errors='ignore').splitlines()[-n:]
@@ -74,7 +76,7 @@ function draw(){
  // NOW
  const steps = ['retrieving','mapping','processing','refereeing','filing','waiting'], ph = D.phase || {};
  const ago = ph.since ? Math.round(Date.now()/1000 - ph.since) : null;
- document.getElementById('now').innerHTML = `<div class="phase">${steps.map(s => `<span class="ph ${s===ph.name?'on':''}">${s}</span>`).join('')}</div>
+ document.getElementById('now').innerHTML = `<div class="phase">${['local','web','math'].map((x,k) => `<span class="ph ${x===D.stage?'on':''}">Stage ${k+1}: ${x}</span>`).join('')}</div><div class="phase">${steps.map(s => `<span class="ph ${s===ph.name?'on':''}">${s}</span>`).join('')}</div>
   <p>${esc(ph.detail || 'starting')} ${ago!==null ? `<span class="muted">(${ago} s)</span>` : ''}</p>
   <div class="kpis">${[['Cycles', D.cycles],['Today', D.today.cycles],['Per hour', D.today.per_hour],['Pass', D.counts.PASS||0],['Unclear', D.counts.UNCLEAR||0],['Miss', D.counts.MISS||0],
    ['Processor right', D.processor.tested ? D.processor.right + '/' + D.processor.tested : '-'],['Records', D.records],['Neurons', D.neurons.length],['Links by meaning', D.today.similar_links]]
@@ -82,6 +84,7 @@ function draw(){
   <p class="muted">Sources today: ${Object.entries(D.today.sources).map(([k,v]) => esc(k)+' '+v).join(' · ') || 'none yet'}</p>
   ${D.sweep && D.sweep.total ? `<div class="kpis" style="margin-top:8px">${[['Files found', D.sweep.total],['Handled', D.sweep.unique + D.sweep.duplicates + D.sweep.skipped],['New, catalogued', D.sweep.catalogued],['Copies marked done', D.sweep.duplicates],['Web repeats skipped', D.dup_web]].map(([k,v]) => `<div class="kpi"><span class="muted">${k}</span><b class="mono">${v}</b></div>`).join('')}</div><p class="muted mono" style="overflow-wrap:anywhere">${esc(D.sweep.current)}</p>` : ''}
   ${D.coder && D.coder.seen != null ? `<p class="muted">Code cartographer: ${D.coder.addressed}/${D.coder.seen} modules addressed · ${D.coder.pathways} pathways · ${D.code_queue} waiting</p>` : (D.code_queue ? `<p class="muted">Code cartographer: ${D.code_queue} modules waiting</p>` : '')}
+  <p class="muted">Mapper queue: ${D.refine||0} files · help requests waiting: ${D.help||0} · programmer doorways: ${(D.doorways||{}).opened||0} opened, ${(D.doorways||{}).placed||0} data sets placed on the string${D.sweep && D.sweep.auto != null ? ` · placed by code: ${D.sweep.auto}, unrelated: ${D.sweep.unrelated||0}` : ''}</p>
   <details><summary class="muted">Shared board (what every model sees)</summary><pre class="mono" style="white-space:pre-wrap;font-size:12px">${esc(D.board)}</pre></details>
   <p class="muted">Machine: ${['cpu','ram','gpu_busy','gpu_mem'].filter(k => D.resources[k] != null).map(k => ({cpu:'CPU',ram:'RAM',gpu_busy:'GPU working',gpu_mem:'GPU memory (full is normal)'})[k] + ' ' + Math.round(D.resources[k]) + '%').join(' · ') || 'install tools to see load'}</p>
   <p class="muted">Models: ${Object.entries(D.models).map(([k,v]) => esc(k) + ' ' + esc(v)).join(' · ')}</p>
