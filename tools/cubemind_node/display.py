@@ -19,6 +19,7 @@ def snapshot(node):
         neurons=[dict(id=r['neuron'], side=r['side'], layer=r['layer'], records=r['records'], engine=r['engine'], acc=r['accuracy'], balance=r['balance']) for r in leaves],
         synapses=syn, goalposts=node.goalposts(), recent=s['recent'][:20], resources=node.resources(),
         sweep=s.get('sweep', {}), dup_web=s.get('dup_web', 0),
+        coder=s.get('coder', {}), code_queue=len(s.get('code_queue', [])), board=node.shared_board(),
         models=node.cfg['models'], log=_tail(node.home / 'node1.log', 8))
 
 def _tail(p, n):
@@ -71,6 +72,8 @@ function draw(){
    .map(([k,v]) => `<div class="kpi"><span class="muted">${k}</span><b class="mono">${esc(v)}</b></div>`).join('')}</div>
   <p class="muted">Sources today: ${Object.entries(D.today.sources).map(([k,v]) => esc(k)+' '+v).join(' · ') || 'none yet'}</p>
   ${D.sweep && D.sweep.total ? `<div class="kpis" style="margin-top:8px">${[['Files found', D.sweep.total],['Handled', D.sweep.unique + D.sweep.duplicates + D.sweep.skipped],['New, catalogued', D.sweep.catalogued],['Copies marked done', D.sweep.duplicates],['Web repeats skipped', D.dup_web]].map(([k,v]) => `<div class="kpi"><span class="muted">${k}</span><b class="mono">${v}</b></div>`).join('')}</div><p class="muted mono" style="overflow-wrap:anywhere">${esc(D.sweep.current)}</p>` : ''}
+  ${D.coder && D.coder.seen != null ? `<p class="muted">Code cartographer: ${D.coder.addressed}/${D.coder.seen} modules addressed · ${D.coder.pathways} pathways · ${D.code_queue} waiting</p>` : (D.code_queue ? `<p class="muted">Code cartographer: ${D.code_queue} modules waiting</p>` : '')}
+  <details><summary class="muted">Shared board (what every model sees)</summary><pre class="mono" style="white-space:pre-wrap;font-size:12px">${esc(D.board)}</pre></details>
   <p class="muted">Machine: ${['cpu','ram','gpu_busy','gpu_mem'].filter(k => D.resources[k] != null).map(k => ({cpu:'CPU',ram:'RAM',gpu_busy:'GPU working',gpu_mem:'GPU memory (full is normal)'})[k] + ' ' + Math.round(D.resources[k]) + '%').join(' · ') || 'install tools to see load'}</p>
   <p class="muted">Models: ${Object.entries(D.models).map(([k,v]) => esc(k) + ' ' + esc(v)).join(' · ')}</p>
   <details ${D.log.length ? 'open' : ''}><summary class="muted">Latest log lines</summary><pre class="mono" style="white-space:pre-wrap;font-size:12px">${D.log.map(esc).join('\n') || '(empty)'}</pre></details>`;

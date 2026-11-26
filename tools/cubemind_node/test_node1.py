@@ -7,6 +7,10 @@ class FakeLLM:
     def __init__(self, right=True, objection=False): self.right, self.objection, self.calls = right, objection, []
     def ask(self, model, prompt, num_predict=700):
         self.calls.append(model)
+        if 'CODE CARTOGRAPHER' in prompt:
+            mods = prompt.split('(ONLY these): ')[1].split('\n')[0].split(', ')
+            return json.dumps({'purpose': 'p', 'ring': 'R1', 'anchor': 'rho', 'shape': 'hexagonal', 'weight': '2', 'side': 'centre', 'layer': 'torus', 'epoch': 'all',
+                               'pathways': [{'to': mods[0], 'relation': 'derived_from', 'why': 'w'}, {'to': 'invented_module', 'relation': 'similar', 'why': 'w'}]})
         if 'MAPPER' in prompt:
             n = prompt.count('. [')
             return json.dumps({'finds': [{'i': k, 'ring': 'R1', 'anchor': 'rho', 'shape': 'hexagonal', 'orbifold': 'Z2xZ2', 'weight': '2', 'side': 'centre', 'layer': 'torus', 'why': 'w'} for k in range(n)] + [{'i': 0, 'ring': 'R9'}],
@@ -45,7 +49,7 @@ class T(unittest.TestCase):
     def test_goalposts_listed_and_shown(self):
         n = self.node()
         for _ in range(5): n.cycle()
-        g = n.goalposts(); self.assertEqual(len(g), 15); self.assertTrue(all({'part', 'goal', 'met', 'now'} <= set(x) for x in g))
+        g = n.goalposts(); self.assertEqual(len(g), 16); self.assertTrue(all({'part', 'goal', 'met', 'now'} <= set(x) for x in g))
         self.assertIn('Goalposts', (n.home / 'status.html').read_text())
     def test_selfcheck_runs_with_sympy(self):
         n = self.node(); n.cycle(); sc = n.state['selfcheck']; self.assertEqual((sc.get('reproduce'), sc.get('total')), (18, 18))
@@ -118,4 +122,22 @@ class T(unittest.TestCase):
         self.assertTrue(all(p.exists() for p in root.iterdir()))                       # nothing on disk deleted
         self.assertEqual(out[-1], ['PASS'] * 8)                                           # sweep done: calculations resume
         before = sw['unique']; n.state['sweep']['scanned'] = 0; n.run_batch(8); self.assertEqual(n.state['sweep']['unique'], before)   # never redone
+    def test_code_cartographer_maps_wiring_and_only_real_pathways(self):
+        n = self.node(); n.cfg['sweep_first'] = True; root = Path(n.cfg['local_folders'][0])
+        (root / 'alpha.py').write_text('"""Eisenstein at rho."""\nimport beta\ndef e2(t):\n    return beta.lattice(t)\n')
+        (root / 'beta.py').write_text('"""Lattice sums."""\nimport math\ndef lattice(t):\n    return math.pi\n')
+        n.local.files = []; n.state.pop('sweep', None)
+        for _ in range(4): n.run_batch(4)
+        codes = n.ix.find(kind='code'); self.assertEqual(len(codes), 2); self.assertEqual(n.modules(), {'alpha', 'beta'})
+        a = next(n.ix.get(c) for c in codes if n.ix.get(c)['outputs']['module'] == 'alpha'); self.assertIn('beta', a['outputs']['imports'])
+        st = n.state['coder']; self.assertEqual(st['seen'], 2); self.assertGreater(st['refused'], 0)          # 'invented_module' refused
+        for l in n.ix.find(kind='link', limit=500):
+            r = n.ix.get(l)
+            if r['tags'].get('proposed_by') == 'coder': self.assertIn(r['inputs']['dst'][len('module:'):], {'alpha', 'beta'})
+    def test_every_role_sees_the_shared_board(self):
+        n = self.node(); prompts = []; orig = n.llm.ask
+        n.llm.ask = lambda m, p, num_predict=700: (prompts.append(p), orig(m, p, num_predict))[1]
+        n.run_batch(2); n.run_batch(2)
+        roles = [p for p in prompts if any(r in p for r in ('RETRIEVER', 'MAPPER', 'REFEREE'))]
+        self.assertTrue(roles and all('SHARED BOARD' in p and 'NEAREST REFERENCE POINTS' in p for p in roles))
 if __name__ == '__main__': unittest.main()
