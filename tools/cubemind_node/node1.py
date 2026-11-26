@@ -158,7 +158,20 @@ BRIEFS = dict(
               'Checked by: the fitter code AND an independent tester; then the referee.',
     referee='REFEREE (null mirror). Reads: the result, the framing, the code check. Writes: the strongest reason it could be wrong, and NULL or FINDING. '
             'Your findings go on the shared board for every role.')
-def brief(role): return f"YOUR BRIEF: {BRIEFS[role]}\nHOW THE SYSTEM IS WIRED:\n{WIRING}\n"
+PLAYBOOK = """PLAYBOOK - NOBODY STOPS. Each role's job and how to get past a block. Everyone can help everyone.
+- If you are blocked, write it in your "stuck" field. BOTH the programmer and the subconscious read it and open a pathway for you.
+- RETRIEVER/LENS blocked (no results, model slow): use the finds as they are, skip framing, continue.
+- MAPPER blocked (model timeout): the code engine addresses files by word rules instead; the subconscious does this automatically so mapping never waits.
+- PROCESSOR blocked (model timeout): mark the calculation VOID, move on, it retries later; drop to one model at a time.
+- REFEREE blocked: mark UNCLEAR and continue.
+- PROGRAMMER blocked: fall back to code facts (imports and calls) with no model; propose fixes, never run them.
+- MIND (subconscious): never blocks. It is the SAFETY NET - it keeps progress, does any node's code-only work when that node is down,
+  answers help requests, and auto-applies the known fix for any repeating error. Its first priority is that nothing stops.
+- Web 429/403: rest that source 15 minutes; use local files and the other sources meanwhile.
+- Isolated record: ask the programmer to wire a pathway; keep it in its lane until then.
+- Repeating error: the maintenance man applies the known fix (ALERTS); an unknown error becomes a search so a fix is learned.
+- The loop never stops: every batch and every tick is wrapped. An error is logged, filed, and the next batch runs regardless."""
+def brief(role): return f"YOUR BRIEF: {BRIEFS[role]}\nHOW THE SYSTEM IS WIRED:\n{WIRING}\n{PLAYBOOK}\n"
 
 
 class Ollama:
@@ -414,6 +427,8 @@ class Node:
           f"{s.get('doorways', {}).get('opened', 0)} opened for {s.get('doorways', {}).get('asked', 0)} requests, {s.get('doorways', {}).get('placed', 0)} data sets placed"),
          ('Programmer: node alert map', 'keeps a live alert map on the dashboard, works it top to bottom, clears resolved alerts (HEALTH.md)', s.get('health', {}).get('last', '') != '',
           f"{s.get('health', {}).get('open', 0)} open; " + ('; '.join(f"{k} x{v}" for k, v in s.get('health', {}).get('seen', {}).items()) or 'clean')),
+         ('Safety net: nothing stops', 'the subconscious watchdog keeps progress; when stuck it does code-only work and self-heals (saves count)', True,
+          f"{s.get('watch', {}).get('saves', 0)} saves; {'stuck ' + str(s.get('watch', {}).get('stuck', 0)) if s.get('watch', {}).get('stuck', 0) else 'flowing'}"),
          ('Mind: subconscious learning', 'the field-native model encodes every record continuously and reports its readiness to take the centre', s.get('mind', {}).get('encoded', 0) > 0,
           f"encoded {s.get('mind', {}).get('encoded', 0)}, {s.get('mind', {}).get('lanes', 0)} lanes, readiness {int(100 * s.get('mind', {}).get('readiness', 0))}%"),
          ('Network: knows the whole plan', 'the grand vision and all node charters are loaded and given to every role', bool(VISION and CHARTER and CHARTER3),
@@ -858,6 +873,7 @@ class Node:
                 h = self.state.setdefault('help', [])
                 if len(h) < 50: h.append(dict(role='mind', subject=lane, need=f"this record sits alone in the field ({lane}); find or build a pathway to connect it", t=time.strftime('%Y-%m-%d %H:%M'))); isolated += 1
         m['linked'] = m.get('linked', 0) + linked; m['sent_to_programmer'] = m.get('sent_to_programmer', 0) + isolated
+        self.state['mind']['playbook_loaded'] = bool(PLAYBOOK)
         if m['readiness'] >= 1.0 and not m.get('announced_ready'):               # the subconscious is ready to come to the centre
             m['announced_ready'] = True; self.emit_signal('mind_ready', data=f"encoded {m['encoded']}, {m['lanes']} lanes, {assoc} associations")
             self.log('the Mind (subconscious) reports it is ready to take the centre; Danny decides the handoff')
@@ -870,11 +886,58 @@ class Node:
             except Exception: continue
             d = sum((a - b) ** 2 for a, b in zip(q, c)) ** 0.5; out.append((d, rid))
         out.sort(); return [rid for _, rid in out[:k]]
+    def fallback_map(self, limit=200):
+        """Code-only mapping (no model): the subconscious addresses the mapper's backlog by word rules so mapping never stalls."""
+        q = self.state.setdefault('refine', []); take, self.state['refine'] = q[:limit], q[limit:]; done = 0
+        for rid in take:
+            r = self.ix.get(rid)
+            if not r: continue
+            o = r.get('outputs') or {}; mk, rh, tot = auto_address(str(o.get('title', '')), str(o.get('text', '')), Path(str(o.get('title', ''))).suffix.lower())
+            if mk.get('ring', 'unsure') == 'unsure': continue
+            if mk.get('epoch'): mk['string_pos'] = string_position(mk['epoch'])
+            cat = self.ix.stamp('catalog', inputs={'find': rid}, outputs=dict(markers=mk, why='subconscious code fallback (mapper was blocked)'),
+                                tags=dict(mk, node=NODE, subject='local-sweep', status='AUTO', proposed_by='subconscious'), links=[(rid, 1, 'catalogues')])
+            self.web.place(cat, views={'own': {k: v for k, v in mk.items() if k in ('side', 'layer')}}); done += 1
+        return done
+    def watchdog_tick(self):
+        """The safety net, run every batch in every stage. Measures progress; if the machine is stuck, the subconscious steps in with
+        code-only work and the known fix, so nothing ever stops. Keeps everything on track."""
+        w = self.state.setdefault('watch', dict(mark=None, stuck=0, saves=0, last=''))
+        sw = self.state.get('sweep', {}); mark = (sw.get('unique', 0) + sw.get('duplicates', 0) + sw.get('skipped', 0)) + self.state.get('cycle', 0) + self.state.get('mind', {}).get('encoded', 0) + self.ix.stats()['records']
+        pending = bool(self.state.get('refine') or self.state.get('code_queue') or self.sweep_pending())
+        if w['mark'] is None: w['mark'] = mark; w['last'] = time.strftime('%Y-%m-%d %H:%M'); return   # first look: baseline only
+        if mark > w['mark']: w['stuck'] = 0                                      # progress was made
+        elif pending: w['stuck'] += 1                                            # pending work but no progress
+        w['mark'] = mark; w['last'] = time.strftime('%Y-%m-%d %H:%M')
+        if w['stuck'] >= 2:                                                      # stuck for two batches with work waiting: the subconscious takes over
+            acted = []
+            if getattr(self.llm, 'timeouts', 0) >= 1 and self.cfg.get('parallel', 1) > 1: self.cfg['parallel'] = 1; acted.append('one model at a time')
+            if self.state.get('refine'):
+                n = self.fallback_map(); acted.append(f'mapped {n} files by code')
+            # drain help with code-only doorways if the programmer is behind
+            if self.state.get('help'):
+                self._drain_help_code(); acted.append('answered help by code')
+            if acted:
+                w['saves'] += 1; w['stuck'] = 0; self.prog_action('safety-net', 'stuck', 'resolved', '; '.join(acted))
+                self.state.setdefault('board_cards', []).insert(0, dict(title='Safety net stepped in', body='The subconscious kept things moving: ' + '; '.join(acted), status='working', t=time.strftime('%Y-%m-%d %H:%M'))); del self.state['board_cards'][12:]
+                self.log('SAFETY NET: subconscious resolved a stall - ' + '; '.join(acted))
+    def _drain_help_code(self, n=5):
+        """Answer help requests with code-only pathways (name match) when the programmer has not gotten to them."""
+        help_q = self.state.setdefault('help', []); mods, data, tools = self.targets(); names = set(mods) | set(data) | set(tools)
+        for h in help_q[:n]:
+            word = next((w for w in str(h.get('need', '')).replace('/', ' ').split() if w in names), None)
+            if word:
+                dst = 'module:' + word if word in mods else data.get(word) or 'tool:' + word
+                self.ix.stamp('link', inputs=dict(src=f"help:{h.get('role')}:{h.get('subject')}", dst=dst), outputs=dict(relation='similar', why='subconscious code pathway'),
+                              tags=dict(node=NODE, relation='similar', status='ASSUMED', proposed_by='subconscious', kind='doorway'), links=[(dst, 1, 'similar')])
+        del help_q[:n]
     def programmer_always(self):
         """The programmer's steady work, run every batch in every stage: watch health, run the switchboard, learn from the web,
         pull repos, take instructions, checkpoint. Heavy model calls (study) are paced so they never slow the scan."""
         try: self.mind_tick()
         except Exception as e: self.log(f'subconscious failed: {e}')
+        try: self.watchdog_tick()
+        except Exception as e: self.log(f'watchdog failed: {e}')
         try: self.maintenance_tick(); self.switchboard_tick()
         except Exception as e: self.log(f'maintenance/switchboard failed: {e}')
         try: self.study_tick(); self.hint_tick(); self.repo_tick(); self.wants_tick()
@@ -1473,7 +1536,10 @@ def main(argv):
             node.breathe(); vs = node.run_batch(); node.backup()
             print(time.strftime('%H:%M'), 'cycles to', node.state['cycle'], ' '.join(vs), flush=True)
         except Exception:
-            node.log('cycle error:\n' + traceback.format_exc()); print('cycle error (logged); continuing', flush=True); time.sleep(2)
+            node.log('cycle error:\n' + traceback.format_exc()); print('cycle error (logged); auto-diagnosing and continuing', flush=True)
+            try: node.maintenance_tick()                                        # read the error, apply the known fix, keep going
+            except Exception: pass
+            time.sleep(2)
         if '--once' in argv: return 0
         if cfg['cycle_seconds']: time.sleep(cfg['cycle_seconds'])
 

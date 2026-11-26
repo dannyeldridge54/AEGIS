@@ -11,10 +11,10 @@ class FakeLLM:
             lane = prompt.split('LANES (best supported first):\n- ')[1].split(':')[0]; names = prompt.split('(ONLY these may go in uses): ')[1].split('\n')[0].split(', ')
             return json.dumps({'sphere': 'Workshop', 'lane': lane, 'why': 'most records', 'uses': [names[0], 'made_up_tool'], 'steps': ['package the lane tools', 'test them'],
                                'missing': ['how to package python tools']})
-        if 'DOORWAY' in prompt:
+        if 'DOORWAY request' in prompt:
             names = prompt.split('(ONLY these): ')[1].split('\n')[0].split(', ')
             return json.dumps({'answer': 'use the data set', 'doorways': [{'to': names[0], 'relation': 'checks', 'why': 'w'}, {'to': 'imaginary.csv', 'relation': 'checks'}], 'epoch': 'late', 'search': 'sqlite thread safety python', 'improve': {'module': 'nope', 'idea': 'x'}})
-        if 'CODE CARTOGRAPHER' in prompt:
+        if 'You are the CODE CARTOGRAPHER' in prompt or 'CODE CARTOGRAPHER' in prompt.split(chr(10))[0]:
             mods = prompt.split('(ONLY these): ')[1].split('\n')[0].split(', ')
             return json.dumps({'purpose': 'p', 'ring': 'R1', 'anchor': 'rho', 'shape': 'hexagonal', 'weight': '2', 'side': 'centre', 'layer': 'torus', 'epoch': 'all',
                                'pathways': [{'to': mods[0], 'relation': 'derived_from', 'why': 'w'}, {'to': 'invented_module', 'relation': 'similar', 'why': 'w'}],
@@ -22,13 +22,14 @@ class FakeLLM:
                                'fetch_repo': 'numpy/numpy', 'tune': {'setting': 'hints_per_batch', 'value': 4, 'why': 'faster'},
                                'want_tool': {'what': 'networkx', 'why': 'graphs', 'how': 'pip install networkx'},
                                'post': {'title': 'Mapping modules', 'body': 'wiring the code now', 'status': 'working'}})
-        if 'MAPPER' in prompt:
+        if 'You are the MAPPER' in prompt:
             n = prompt.count('. [')
             return json.dumps({'finds': [{'i': k, 'ring': 'R1', 'anchor': 'rho', 'shape': 'hexagonal', 'orbifold': 'Z2xZ2', 'weight': '2', 'side': 'centre', 'layer': 'torus', 'why': 'w'} for k in range(n)] + [{'i': 0, 'ring': 'R9'}],
                                'links': [{'proposal': 0, 'accept': True, 'relation': 'similar', 'why': 'w'}, {'proposal': 1, 'accept': True, 'relation': 'made_up'}]})
-        if 'RETRIEVER' in prompt: return json.dumps({'lens': 'frame', 'useful': [], 'question': 'q', 'stuck': 'need the DESI data set' if self.stuck else ''})
-        if 'REFEREE' in prompt: return json.dumps({'mirror': 'could be wrong', 'verdict': 'FINDING' if self.objection else 'NULL', 'finding': 'x' if self.objection else ''})
-        args = json.loads(re.search(r'for (\{.*?\})', prompt).group(1)); tool = next(t for t, v in U.TOOLS.items() if v[1].split('{x}')[0][:40] in prompt)
+        if 'You are the RETRIEVER' in prompt: return json.dumps({'lens': 'frame', 'useful': [], 'question': 'q', 'stuck': 'need the DESI data set' if self.stuck else ''})
+        if 'You are the REFEREE' in prompt: return json.dumps({'mirror': 'could be wrong', 'verdict': 'FINDING' if self.objection else 'NULL', 'finding': 'x' if self.objection else ''})
+        task = prompt.split('Task:', 1)[1].split('\n', 1)[0] if 'Task:' in prompt else prompt
+        args = json.loads(re.search(r'for (\{.*?\})', task).group(1)); tool = next(t for t, v in U.TOOLS.items() if v[1].split('{x}')[0][:40] in task)
         v = float(U.TOOLS[tool][2](args)); return json.dumps({'steps': ['s'], 'result': v if self.right else v * 3 + 1})
 
 class T(unittest.TestCase):
@@ -60,7 +61,7 @@ class T(unittest.TestCase):
     def test_goalposts_listed_and_shown(self):
         n = self.node()
         for _ in range(5): n.cycle()
-        g = n.goalposts(); self.assertEqual(len(g), 23); self.assertTrue(all({'part', 'goal', 'met', 'now'} <= set(x) for x in g))
+        g = n.goalposts(); self.assertEqual(len(g), 24); self.assertTrue(all({'part', 'goal', 'met', 'now'} <= set(x) for x in g))
         self.assertIn('Goalposts', (n.home / 'status.html').read_text())
     def test_selfcheck_runs_with_sympy(self):
         n = self.node(); n.cycle(); sc = n.state['selfcheck']; self.assertEqual((sc.get('reproduce'), sc.get('total')), (18, 18))
@@ -149,7 +150,7 @@ class T(unittest.TestCase):
         n = self.node(); prompts = []; orig = n.llm.ask
         n.llm.ask = lambda m, p, num_predict=700: (prompts.append(p), orig(m, p, num_predict))[1]
         n.run_batch(2); n.run_batch(2)
-        roles = [p for p in prompts if any(r in p for r in ('RETRIEVER', 'MAPPER', 'REFEREE'))]
+        roles = [p for p in prompts if any(r in p for r in ('You are the RETRIEVER', 'You are the MAPPER', 'You are the REFEREE'))]
         self.assertTrue(roles and all('SHARED BOARD' in p and 'NEAREST REFERENCE POINTS' in p for p in roles))
     def staged(self, **kw):
         n = self.node(**kw); n.cfg['sweep_first'] = True; root = Path(n.cfg['local_folders'][0])
@@ -332,4 +333,25 @@ class T(unittest.TestCase):
         code = n.encode_markers(dict(ring='R1', anchor='rho', shape='hexagonal', weight='2', side='centre', layer='torus', epoch='all', string_pos=30.0))
         self.assertEqual(len(code), 8); self.assertTrue(all(0 <= x <= 1 for x in code))
         self.assertGreaterEqual(m.get('linked', 0), 0)                               # it retrieves and wires associations as it learns
+    def test_safety_net_covers_a_blocked_role_and_nothing_stops(self):
+        n, root = self.staged()
+        # pile up a mapper backlog, then simulate the mapper model being down (timeouts) and no progress
+        for rid in range(0, 0): pass
+        finds = [n.ix.stamp('find', inputs={'u': k}, outputs=dict(source='local', title=f'serapis rho z2xz2 note {k}.md', text='eisenstein modular torus weight 2'),
+                            tags=dict(source='local', subject='local-sweep', node=N.NODE, side='centre', layer='torus')) for k in range(12)]
+        n.state['refine'] = list(finds); n.llm.timeouts = 2; n.state['sweep'] = dict(total=1, unique=1, duplicates=0, skipped=0)
+        before = len(n.ix.find(kind='catalog', limit=999))
+        n.watchdog_tick(); n.watchdog_tick(); n.watchdog_tick()                  # baseline + two stuck batches -> subconscious steps in
+        after = len(n.ix.find(kind='catalog', limit=999))
+        self.assertGreater(after, before)                                        # it mapped the backlog by CODE, no model
+        self.assertEqual(n.cfg['parallel'], 1)                                   # and relieved the model contention
+        self.assertGreater(n.state['watch']['saves'], 0)
+        auto = [n.ix.get(c) for c in n.ix.find(kind='catalog', limit=999) if n.ix.get(c)['tags'].get('proposed_by') == 'subconscious']
+        self.assertTrue(auto)                                                    # filed as the subconscious doing the mapper's job
+    def test_every_role_sees_the_playbook(self):
+        n, root = self.staged(); prompts = []; orig = n.llm.ask
+        n.llm.ask = lambda m, p, num_predict=700: (prompts.append(p), orig(m, p, num_predict))[1]
+        for _ in range(6): n.run_batch(4)
+        roles = [p for p in prompts if 'YOUR BRIEF' in p]
+        self.assertTrue(roles and all('NOBODY STOPS' in p for p in roles))
 if __name__ == '__main__': unittest.main()
