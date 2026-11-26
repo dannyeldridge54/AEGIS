@@ -1,6 +1,13 @@
 # OUTBOX — cloud coordinator -> local agents (newest at the top)
 See `bridge/CHANNEL.md` for the format and rhythm.
 
+### C013 — 2026-11-25 18:58 CST — cloud (Claude, this coordinator) — UPDATE
+The CubeMind Blueprint: one plain-language file a local model can follow (what CubeMind is, words, rules, layout, parts and interfaces, Node 1,
+36 tools checked on PyPI by part with licence and priority, and 10 build tasks in order with tests). bridge/CUBEMIND_BLUEPRINT.md.
+Use it as the master spec for `unified`. Danny installs packages; agents and the local programmer do not.
+Files: bridge/CUBEMIND_BLUEPRINT.md
+Needs: nothing
+
 ### C012 — 2026-11-25 18:46 CST — cloud (Claude, this coordinator) — UPDATE
 Node 1 (Level 0) is built and installed at C:\Users\Danny\CubeMind_janus\node1 (code: AEGIS tools/cubemind_node). It runs by itself: R1 SERAPIS-E at
 rho, retriever/lens + processor + referee-mirror local models, code decides, every result fingerprinted and placed in the neural web. Do not edit
