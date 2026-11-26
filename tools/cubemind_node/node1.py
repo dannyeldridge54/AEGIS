@@ -21,7 +21,8 @@ DEFAULT = dict(
     owner='Danny Eldridge', home='node1_data', cycle_seconds=300, online=True,
     ollama='http://127.0.0.1:11434', keep_alive='3m', timeout=300,
     models=dict(retriever='qwen3:14b', processor='qwen3-coder:30b', referee='gpt-oss:20b'),
-    github_token_env='GITHUB_TOKEN', max_db_mb=2000, backups_kept=7, cpu_ceiling=85, ram_ceiling=85)
+    github_token_env='GITHUB_TOKEN', max_db_mb=2000, backups_kept=7, cpu_ceiling=85, ram_ceiling=85, gpu_ceiling=92,
+    embed_model='nomic-embed-text', similar_at=0.80)
 SUBJECTS = [   # node 1: ring R1, SERAPIS-E, anchored at rho. side 0 = centre/mathematics, -1 = early universe
  dict(id='eisenstein', title='Non-holomorphic Eisenstein series and modular invariance', side='centre', layer='torus',
       github='non-holomorphic Eisenstein series modular', arxiv='non-holomorphic Eisenstein series string effective action', tools=['ufe_laplace']),
@@ -60,6 +61,15 @@ def arxiv_search(q, n=5):
                         text=' '.join((e.findtext('a:summary', '', ns)).split())[:300], updated=e.findtext('a:updated', '', ns)))
     return out
 
+def semantic_scholar_search(q, n=5):
+    d = json.loads(_get('https://api.semanticscholar.org/graph/v1/paper/search?' + urllib.parse.urlencode(dict(query=q, limit=n, fields='title,url,abstract,year,citationCount'))))
+    return [dict(source='semanticscholar', title=p.get('title') or '', url=p.get('url') or '', text=(p.get('abstract') or '')[:300], updated=str(p.get('year') or ''),
+                 citations=p.get('citationCount')) for p in d.get('data', [])[:n]]
+def openalex_search(q, n=5):
+    d = json.loads(_get('https://api.openalex.org/works?' + urllib.parse.urlencode({'search': q, 'per-page': n, 'mailto': 'cubemind@localhost'})))
+    return [dict(source='openalex', title=w.get('display_name') or '', url=w.get('doi') or w.get('id') or '', text='', updated=str(w.get('publication_year') or ''),
+                 citations=w.get('cited_by_count')) for w in d.get('results', [])[:n]]
+
 def parse_json(s):
     try: return json.loads(s)
     except Exception:
@@ -77,6 +87,57 @@ class Node:
         self.rng = random.Random(self.state['cycle'] * 7919 + 1)
     def log(self, msg):
         with open(self.home / 'node1.log', 'a', encoding='utf-8') as f: f.write(time.strftime('%Y-%m-%d %H:%M:%S ') + msg + '\n')
+    def embed_link(self, rid, text):
+        """Place a record by MEANING too: embed its text with a local model and strengthen the synapse to its nearest earlier record."""
+        if not self.cfg.get('embed_model') or not text: return
+        try:
+            body = json.dumps(dict(model=self.cfg['embed_model'], input=text[:2000])).encode()
+            req = urllib.request.Request(self.cfg['ollama'] + '/api/embed', body, {'Content-Type': 'application/json'})
+            with urllib.request.urlopen(req, timeout=60) as r: v = json.loads(r.read())['embeddings'][0]
+        except Exception as e:
+            if not getattr(self, '_embed_warned', False): self.log(f'embeddings off ({e}); run: ollama pull {self.cfg["embed_model"]}'); self._embed_warned = True
+            return
+        db = self.ix.db; db.execute('CREATE TABLE IF NOT EXISTS emb(record TEXT PRIMARY KEY, vec TEXT)')
+        n = sum(x * x for x in v) ** 0.5 or 1.0; v = [x / n for x in v]; best = (0.0, None)
+        for r, js in db.execute('SELECT record, vec FROM emb ORDER BY rowid DESC LIMIT 2000'):
+            w = json.loads(js); c = sum(a * b for a, b in zip(v, w))
+            if c > best[0]: best = (c, r)
+        with db: db.execute('INSERT OR REPLACE INTO emb VALUES (?,?)', (rid, json.dumps([round(x, 5) for x in v])))
+        if best[1] and best[0] >= self.cfg.get('similar_at', 0.80):
+            try:
+                a = self.web._node_of(rid, 'own'); b = self.web._node_of(best[1], 'own'); self.web._strengthen(a, b)
+                day = self.state.setdefault('day', {}); day['similar_links'] = day.get('similar_links', 0) + 1
+            except Exception: pass
+    def selfcheck(self):
+        """Daily: re-derive the audit's algebra with computer algebra (needs sympy). Stamps one record."""
+        try:
+            import ufe_stages; res = ufe_stages.stage3()
+        except ImportError: self.state['selfcheck'] = dict(date=time.strftime('%Y-%m-%d'), ok=None, note='sympy not installed'); return
+        except Exception as e: self.state['selfcheck'] = dict(date=time.strftime('%Y-%m-%d'), ok=False, note=str(e)[:200]); return
+        good = sum(r['verdict'] == 'REPRODUCES' for r in res)
+        self.ix.stamp('selfcheck', inputs={'date': time.strftime('%Y-%m-%d')}, outputs=dict(reproduce=good, total=len(res)),
+                      tags=dict(node=NODE, kind='selfcheck', tested='True', converged=str(good == len(res))))
+        self.state['selfcheck'] = dict(date=time.strftime('%Y-%m-%d'), ok=good == len(res), reproduce=good, total=len(res))
+    def goalposts(self):
+        """Every part of the node has a measurable goal; the status page shows MET / NOT YET for each."""
+        s = self.state; c = s['counts']; day = s.get('day', {}); m = s['models'].get(self.cfg['models']['processor'], [0, 0])
+        tested = c.get('PASS', 0) + c.get('UNCLEAR', 0) + c.get('MISS', 0); ref = s.get('referee', [0, 0]); lens = s.get('lens', [0, 0])
+        verify_ok = all(self.ix.verify(r) for r in self.ix.find(kind='cycle', limit=200)[-50:])
+        g = [
+         ('Centre: runs on its own', 'at least 200 cycles a day (5-minute cycle allows 288)', day.get('cycles', 0) >= 200, f"{day.get('cycles', 0)} today"),
+         ('Centre: stable', 'no more than 3 restarts a day', day.get('starts', 0) <= 3, f"{day.get('starts', 0)} starts today"),
+         ('Retriever: wide', 'finds from all 4 sources today (GitHub, arXiv, Semantic Scholar, OpenAlex)', len(day.get('sources', {})) >= 4, ', '.join(f'{k} {v}' for k, v in day.get('sources', {}).items()) or 'none'),
+         ('Lens: useful', 'keeps at least one result in half of its framings', lens[1] > 0 and lens[0] / lens[1] >= 0.5, f'{lens[0]}/{lens[1]}'),
+         ('Processor: accurate', 'at least 80% right on tested calculations', m[1] >= 20 and m[0] / m[1] >= 0.8, f'{m[0]}/{m[1]}'),
+         ('Processor: climbing', 'harder level (ring 2+) reached on 3 or more tools', sum(1 for r in s['ring'].values() if r >= 2) >= 3, str(s['ring'])),
+         ('Fitter and tester: agree', 'no VOID results (reference and independent check always agree)', c.get('VOID', 0) == 0, f"{c.get('VOID', 0)} void"),
+         ('Referee: honest', 'objects between 5% and 40% of the time (never a rubber stamp, never noise)', ref[1] >= 20 and 0.05 <= ref[0] / ref[1] <= 0.40, f'{ref[0]}/{ref[1]}'),
+         ('Ledger: intact', 'every recent record verifies against its fingerprint and your signature', verify_ok, 'checked last 50'),
+         ('Web: growing', 'at least 4 neurons once there are 200 records', self.ix.stats()['records'] < 200 or len(self.web.sheet()) >= 4, f"{len(self.web.sheet())} neurons"),
+         ('Web: linking by meaning', 'at least 5 meaning-links a day (needs the embed model)', day.get('similar_links', 0) >= 5, f"{day.get('similar_links', 0)} today"),
+         ('Self-check: algebra holds', '18 of 18 audit steps re-derive daily (needs sympy)', bool(s.get('selfcheck', {}).get('ok')), str(s.get('selfcheck', {}).get('reproduce', s.get('selfcheck', {}).get('note', 'not run')))),
+        ]
+        return [dict(part=a, goal=b, met=bool(c_), now=d) for a, b, c_, d in g]
     # ---------------------------------------------------------------- stages
     def retrieve(self, subj):
         if not self.cfg['online']: return []
@@ -85,8 +146,11 @@ class Node:
             if self.fetch: finds = self.fetch(subj)
             else:
                 tok = os.environ.get(self.cfg['github_token_env']) or None
-                finds = github_search(subj['github'], tok) + arxiv_search(subj['arxiv'])
+                if self.state['cycle'] % 2: finds = github_search(subj['github'], tok) + arxiv_search(subj['arxiv'])
+                else: finds = semantic_scholar_search(subj['arxiv']) + openalex_search(subj['arxiv'])
         except Exception as e: self.log(f'retrieve failed ({type(e).__name__}: {e}); continuing offline this cycle')
+        day = self.state.setdefault('day', {}); src = day.setdefault('sources', {})
+        for f in finds: src[f['source']] = src.get(f['source'], 0) + 1
         if self.ix.db.execute("SELECT page_count*page_size FROM pragma_page_count(), pragma_page_size()").fetchone()[0] > self.cfg['max_db_mb'] * 2**20:
             self.log('database at its size cap: finds not stored'); return finds
         for f in finds:
@@ -132,13 +196,20 @@ class Node:
     # ---------------------------------------------------------------- one cycle
     def cycle(self):
         self.state['cycle'] += 1; subj = SUBJECTS[(self.state['cycle'] - 1) % len(SUBJECTS)]
+        today = time.strftime('%Y-%m-%d')
+        if self.state.get('day', {}).get('date') != today: self.state['day'] = dict(date=today, cycles=0, starts=0, sources={})
+        if self.state.get('selfcheck', {}).get('date') != today: self.selfcheck()
+        self.state['day']['cycles'] = self.state['day'].get('cycles', 0) + 1
         finds = self.retrieve(subj); lens = self.lens(subj, finds); res = self.compute(subj); ref = self.referee(subj, res, lens)
+        L = self.state.setdefault('lens', [0, 0]); L[1] += 1; L[0] += bool(lens.get('useful'))
+        if res['tested'] and ref.get('verdict'): R = self.state.setdefault('referee', [0, 0]); R[1] += 1; R[0] += str(ref.get('verdict')).upper() == 'FINDING'
         verdict = 'VOID' if not res['tested'] else ('MISS' if not res['ok'] else ('UNCLEAR' if str(ref.get('verdict', '')).upper() == 'FINDING' else 'PASS'))
         tags = dict(node=NODE, subject=subj['id'], tool=res['tool'], ring=res['ring'], verdict=verdict, side=subj['side'], layer=subj['layer'],
                     locked='True', tested=str(res['tested']), point_ok=str(res['ok']), status=res['meta'].get('status', ''), model=res['meta'].get('model', ''))
         rid = self.ix.stamp('cycle', inputs=dict(lock=res['lock'], subject=subj['id']), outputs=dict(lens=lens, result=res, referee=ref),
                             tags=tags, links=[(res['lock'], 1, 'runs'), ('stream:' + NODE + '/' + subj['id'], 1, 'studies')])
         self.web.place(rid, views={'own': {}, 'early': {'side': 'left'}} if subj['side'] == 'centre' else None)
+        self.embed_link(rid, f"{subj['title']}. {lens.get('lens', '')} {res['tool']} {json.dumps(res['args'])}")
         if res['tested']: self.web.grade(rid, res['ok'])
         m = self.state['models'].setdefault(self.cfg['models']['processor'], [0, 0]); m[0] += res['ok']; m[1] += res['tested']
         c = self.state['counts']; c[verdict] = c.get(verdict, 0) + 1; c['finds'] = c.get('finds', 0) + len(finds)
@@ -157,13 +228,18 @@ class Node:
         try:
             import psutil
             for _ in range(60):
-                if psutil.cpu_percent(interval=1) < self.cfg['cpu_ceiling'] and psutil.virtual_memory().percent < self.cfg['ram_ceiling']: return
+                gpu_ok = True
+                try:
+                    import pynvml; pynvml.nvmlInit(); h = pynvml.nvmlDeviceGetHandleByIndex(0); mi = pynvml.nvmlDeviceGetMemoryInfo(h)
+                    gpu_ok = mi.used / mi.total * 100 < self.cfg.get('gpu_ceiling', 92)
+                except Exception: pass
+                if psutil.cpu_percent(interval=1) < self.cfg['cpu_ceiling'] and psutil.virtual_memory().percent < self.cfg['ram_ceiling'] and gpu_ok: return
                 time.sleep(5)
         except ImportError: return
     def status(self):
         s = self.state; c = s['counts']; m = s['models'].get(self.cfg['models']['processor'], [0, 0]); sheet = self.web.sheet()
         js = dict(updated=time.strftime('%Y-%m-%d %H:%M:%S'), node=NODE, cycles=s['cycle'], counts=c, processor_accuracy=(m[0] / m[1] if m[1] else None),
-                  rings=s['ring'], neurons=len(sheet), records=self.ix.stats()['records'], recent=s['recent'][:15])
+                  rings=s['ring'], neurons=len(sheet), records=self.ix.stats()['records'], recent=s['recent'][:15], goalposts=self.goalposts())
         (self.home / 'status.json').write_text(json.dumps(js, indent=1))
         esc = lambda x: str(x).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
         rows = ''.join(f"<tr><td>{esc(r['t'])}</td><td>{esc(r['subject'])}</td><td>{esc(r['tool'])} / ring {r['ring']}</td><td class='{r['verdict']}'>{r['verdict']}</td>"
@@ -175,7 +251,7 @@ class Node:
 <h1>CubeMind Node 1 &middot; {NODE}</h1><p>Updated {js['updated']} &middot; refreshes every minute</p>
 <div><span class=k>Cycles {s['cycle']}</span><span class=k>Pass {c.get('PASS',0)}</span><span class=k>Unclear {c.get('UNCLEAR',0)}</span><span class=k>Miss {c.get('MISS',0)}</span>
 <span class=k>Void {c.get('VOID',0)}</span><span class=k>Processor right {acc}</span><span class=k>Finds {c.get('finds',0)}</span><span class=k>Records {js['records']}</span><span class=k>Neurons {js['neurons']}</span></div>
-<table><tr><th>Time</th><th>Subject</th><th>Calculation</th><th>Verdict</th><th>Model vs code</th><th>Finds</th><th>Referee</th></tr>{rows}</table>""", encoding='utf-8')
+<h2>Goalposts</h2><table><tr><th>Part</th><th>Goal</th><th>Now</th><th>Met</th></tr>""" + ''.join(f"<tr><td>{esc(g['part'])}</td><td>{esc(g['goal'])}</td><td>{esc(g['now'])}</td><td class='{'PASS' if g['met'] else 'UNCLEAR'}'>{'MET' if g['met'] else 'NOT YET'}</td></tr>" for g in js['goalposts']) + f"""</table><h2>Recent cycles</h2><table><tr><th>Time</th><th>Subject</th><th>Calculation</th><th>Verdict</th><th>Model vs code</th><th>Finds</th><th>Referee</th></tr>{rows}</table>""", encoding='utf-8')
 
 def load_cfg():
     f = HERE / 'node1_config.json'
@@ -192,7 +268,7 @@ def main(argv):
         import psutil, ctypes  # noqa: run below normal priority on Windows, so the desktop always wins
         if os.name == 'nt': psutil.Process().nice(psutil.BELOW_NORMAL_PRIORITY_CLASS)
     except Exception: pass
-    node = Node(cfg); print(f'CubeMind Node 1 running. Status page: {node.home / "status.html"}', flush=True)
+    node = Node(cfg); d = node.state.setdefault('day', {}); d['starts'] = d.get('starts', 0) + 1; print(f'CubeMind Node 1 running. Status page: {node.home / "status.html"}', flush=True)
     while True:
         lockf.write_text(str(os.getpid()))
         try:

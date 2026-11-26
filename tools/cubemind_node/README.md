@@ -12,3 +12,9 @@ a GitHub token in the environment variable GITHUB_TOKEN raises the search limit 
 **Safe to leave:** it never deletes anything but its own old backups (keeps 7), never installs, never changes code, never touches the live CubeMind;
 one model loaded at a time; database size cap 2 GB; every result fingerprinted and signed with your key (`%USERPROFILE%\.aegis_owner.key`, back it up).
 Tests: `python -m unittest test_node1` (stand-in models, no network).
+
+## Tools and goalposts (25 Nov 2026, v2)
+Install the tools once: double-click `Install_CubeMind_Tools.bat`, then restart Node 1. Browse everything it has filed: `Browse_CubeMind.bat`.
+New in v2: four research sources (GitHub, arXiv, Semantic Scholar, OpenAlex; plain web requests, no keys); links by meaning (Ollama
+`nomic-embed-text`); a daily self-check that re-derives the audit's 18 algebra steps (sympy); GPU memory in the resource check (nvidia-ml-py);
+and 12 goalposts on the status page, one per part, each MET or NOT YET.

@@ -37,4 +37,20 @@ class T(unittest.TestCase):
         n = self.node(); n.llm = Dead(); self.assertEqual(n.cycle(), 'MISS')
     def test_backup_keeps_only_its_own_recent_copies(self):
         n = self.node(); n.cycle(); n.backup(); self.assertEqual(len(list((n.home / 'backups').glob('node1_*.sqlite'))), 1)
+    def test_goalposts_listed_and_shown(self):
+        n = self.node()
+        for _ in range(5): n.cycle()
+        g = n.goalposts(); self.assertEqual(len(g), 12); self.assertTrue(all({'part', 'goal', 'met', 'now'} <= set(x) for x in g))
+        self.assertIn('Goalposts', (n.home / 'status.html').read_text())
+    def test_selfcheck_runs_with_sympy(self):
+        n = self.node(); n.cycle(); sc = n.state['selfcheck']; self.assertEqual((sc.get('reproduce'), sc.get('total')), (18, 18))
+    def test_new_miners_alternate_sources(self):
+        import node1
+        node1.semantic_scholar_search = lambda q, n=5: [dict(source='semanticscholar', title='p', url='u1', text='')]
+        node1.openalex_search = lambda q, n=5: [dict(source='openalex', title='w', url='u2', text='')]
+        node1.github_search = lambda q, t=None, n=5: [dict(source='github', title='r', url='u3', text='')]
+        node1.arxiv_search = lambda q, n=5: [dict(source='arxiv', title='a', url='u4', text='')]
+        n = self.node(); n.fetch = None
+        for _ in range(4): n.cycle()
+        self.assertEqual(set(n.state['day']['sources']), {'github', 'arxiv', 'semanticscholar', 'openalex'})
 if __name__ == '__main__': unittest.main()
