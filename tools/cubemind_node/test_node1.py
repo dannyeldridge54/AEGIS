@@ -20,7 +20,8 @@ class FakeLLM:
                                'pathways': [{'to': mods[0], 'relation': 'derived_from', 'why': 'w'}, {'to': 'invented_module', 'relation': 'similar', 'why': 'w'}],
                                'search': 'python ast call graph', 'improve': {'module': mods[0], 'idea': 'cache the lattice sums', 'why': 'speed'},
                                'fetch_repo': 'numpy/numpy', 'tune': {'setting': 'hints_per_batch', 'value': 4, 'why': 'faster'},
-                               'want_tool': {'what': 'networkx', 'why': 'graphs', 'how': 'pip install networkx'}})
+                               'want_tool': {'what': 'networkx', 'why': 'graphs', 'how': 'pip install networkx'},
+                               'post': {'title': 'Mapping modules', 'body': 'wiring the code now', 'status': 'working'}})
         if 'MAPPER' in prompt:
             n = prompt.count('. [')
             return json.dumps({'finds': [{'i': k, 'ring': 'R1', 'anchor': 'rho', 'shape': 'hexagonal', 'orbifold': 'Z2xZ2', 'weight': '2', 'side': 'centre', 'layer': 'torus', 'why': 'w'} for k in range(n)] + [{'i': 0, 'ring': 'R9'}],
@@ -35,7 +36,7 @@ class T(unittest.TestCase):
         d = Path(tempfile.mkdtemp()); cfg = dict(N.DEFAULT, home=str(d / 'data'), local_folders=[str(d / 'research')], sweep_first=False)
         (d / 'research').mkdir(); (d / 'research' / 'eisenstein_fit_notes.md').write_text('Eisenstein series fit at rho. modular invariant Eisenstein series string effective action.')
         n = N.Node(cfg, llm=FakeLLM(**kw), fetch=lambda s: [dict(source='github', title='repo ' + s['id'], url='https://github.com/a/' + s['id'], text='t')])
-        n.ix = N.FP.Index(d / 'data' / 'n.sqlite', 'Danny Eldridge', key='ab' * 32); n.web = N.NW.Web(n.ix); return n
+        n.ix = N.FP.Index(d / 'data' / 'n.sqlite', 'Danny Eldridge', key='ab' * 32); n.web = N.NW.Web(n.ix); n.instr_path = d / 'INSTRUCTIONS.txt'; return n
     def test_cycles_pass_index_and_write_status(self):
         n = self.node(); vs = [n.cycle() for _ in range(8)]
         self.assertEqual(set(vs), {'PASS'}); self.assertTrue((n.home / 'status.html').exists())
@@ -222,15 +223,15 @@ class T(unittest.TestCase):
             if 'CHECKPOINT REVIEW' in p: return json.dumps({'lessons': ['only link real modules'], 'next': 'fewer refusals'})
             return orig(m, p, num_predict)
         n.llm.ask = ask
-        (N.HERE / 'INSTRUCTIONS.txt').unlink(missing_ok=True)
+        n.instr_path.unlink(missing_ok=True)
         try:
-            n.run_batch(4); (N.HERE / 'INSTRUCTIONS.txt').write_text(n.INBOX_HEAD + 'write a function that adds two numbers\n')
+            n.run_batch(4); n.instr_path.write_text(n.INBOX_HEAD + 'write a function that adds two numbers\n')
             for _ in range(6): n.run_batch(4)
             ins = n.state['instructions'][0]; self.assertEqual(ins['outcome'], 'syntax error')                      # bad.py caught by code
             wb = n.home / 'workbench' / ins['folder']; self.assertTrue((wb / 'add.py').exists()); self.assertTrue((wb / 'evil.py').exists())   # name stripped to the folder
             self.assertFalse((n.home / 'evil.py').exists()); self.assertIn('PROPOSED (not run)', (wb / 'PLAN.md').read_text())
             n.run_batch(4); self.assertEqual(len(n.state['instructions']), 1)                                       # each instruction once
-        finally: (N.HERE / 'INSTRUCTIONS.txt').unlink(missing_ok=True)
+        finally: n.instr_path.unlink(missing_ok=True)
         acts = [n.ix.get(a) for a in n.ix.find(kind='action', limit=1000)]; self.assertTrue(acts)
         self.assertTrue(all(a['tags']['actor'] == 'programmer' for a in acts)); self.assertIn('instruction', {a['tags']['action'] for a in acts})
         self.assertTrue(n.ix.find(kind='checkpoint')); self.assertIn('only link real modules', n.state['prog_lessons'])
@@ -297,4 +298,21 @@ class T(unittest.TestCase):
         n.state.setdefault('search_queue', [])
         (n.home / 'node1.log').write_text('weird KaboomError: the flux capacitor melted')
         n.maintenance_tick(); self.assertTrue(any('how to fix' in q for q in n.state['search_queue']))  # unknown error -> learns
+    def test_programmer_works_and_learns_during_the_scan(self):
+        n, root = self.staged(); asked = []
+        n.hint_fetch = lambda q: asked.append(q) or [dict(source='stackoverflow', title='t', url='u'+str(len(asked)), text='x')]
+        for k in range(60): (root / f'f_{k}.md').write_text('potential vacuum notes ' + str(k))   # enough files that it stays scanning
+        n.local.files = []; n.state.pop('sweep', None); n.cfg['scan_batch'] = 10
+        outs = [n.run_batch(8)[0] for _ in range(4)]
+        self.assertEqual(outs[0], 'SCAN')                                         # still scanning
+        self.assertTrue(n.sweep_pending())                                        # not done yet
+        self.assertTrue(n.state.get('study_seeded'))                              # yet it already started learning
+        self.assertTrue(asked)                                                    # web questions went out DURING the scan
+        self.assertTrue(n.state.get('health', {}).get('last'))                    # maintenance ran during the scan
+    def test_programmer_posts_live_cards_to_the_dashboard(self):
+        n, root = self.staged()
+        n.handle_prog({'post': {'title': 'Hello', 'body': 'I am working', 'status': 'working'}})
+        self.assertEqual(n.state['board_cards'][0]['title'], 'Hello')
+        import display; html = display.PAGE  # the template references board_cards via pcards
+        self.assertIn('pcards', html); self.assertIn('From the programmer', open('display.py').read())
 if __name__ == '__main__': unittest.main()

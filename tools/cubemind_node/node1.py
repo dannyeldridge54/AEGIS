@@ -328,7 +328,7 @@ class Node:
         self.ix = FP.Index(self.home / 'node1.sqlite', cfg['owner']); self.ix.db.execute('PRAGMA journal_mode=WAL')
         self.web = NW.Web(self.ix); self.llm = llm or Ollama(cfg); self.fetch = fetch
         self.local = LocalIndex(cfg.get('local_folders', []))
-        self.state_f = self.home / 'state.json'
+        self.state_f = self.home / 'state.json'; self.instr_path = HERE / 'INSTRUCTIONS.txt'
         self.state = json.loads(self.state_f.read_text()) if self.state_f.exists() else dict(cycle=0, ring={}, streak={}, models={}, counts={}, recent=[])
         self.rng = random.Random(self.state['cycle'] * 7919 + 1)
         self.setup_network()
@@ -764,6 +764,7 @@ class Node:
         if self.sweep_pending():
             self.set_phase('retrieving', f"scanning your files by code: {len(self._pending)} left")
             n = self.sweep_batch(self.cfg.get('scan_batch', 300)); out = ['SCAN']
+            self.programmer_always()                                             # the programmer keeps working (learning, maintenance) while files are scanned
         else:
             q = self.state.setdefault('refine', []); take, self.state['refine'] = q[:self.cfg.get('refine_per_batch', 40)], q[self.cfg.get('refine_per_batch', 40):]
             finds = []
@@ -802,9 +803,18 @@ class Node:
             o = (self.ix.get(rid) or {}).get('outputs') or {}
             if Path(str(o.get('title', ''))).suffix.lower() in DATA_EXT: data[o['title']] = rid
         return self.modules(), data, set(U.TOOLS)
+    def programmer_always(self):
+        """The programmer's steady work, run every batch in every stage: watch health, run the switchboard, learn from the web,
+        pull repos, take instructions, checkpoint. Heavy model calls (study) are paced so they never slow the scan."""
+        try: self.maintenance_tick(); self.switchboard_tick()
+        except Exception as e: self.log(f'maintenance/switchboard failed: {e}')
+        try: self.study_tick(); self.hint_tick(); self.repo_tick(); self.wants_tick()
+        except Exception as e: self.log(f'learning failed: {e}')
+        try: self.instruction_tick(); self.checkpoint_tick()
+        except Exception as e: self.log(f'instruction/checkpoint failed: {e}')
     def programmer_tick(self):
-        """Each tick the programmer answers up to N help requests and places up to N data sets on the string."""
-        self.maintenance_tick(); self.switchboard_tick(); self.study_tick(); self.hint_tick(); self.repo_tick(); self.wants_tick(); self.instruction_tick(); self.checkpoint_tick()
+        """Stage work: answer help requests and place data sets on the string. (programmer_always runs separately, every stage.)"""
+        self.programmer_always()
         n = self.cfg.get('help_per_batch', 3); help_q = self.state.setdefault('help', []); sq = self.state.setdefault('string_queue', [])
         reqs = [dict(h, kind='help') for h in help_q[:n]]; del help_q[:n]
         for rid in sq[:n]:
@@ -871,7 +881,7 @@ class Node:
     INBOX_HEAD = ("# Write one instruction per line for the programmer (start small). Lines starting with # are ignored.\n"
                   "# Its work goes to node1_data/workbench/. Code is saved and syntax-checked, never run automatically.\n")
     def instruction_tick(self):
-        f = HERE / 'INSTRUCTIONS.txt'
+        f = self.instr_path
         if not f.exists(): f.write_text(self.INBOX_HEAD, encoding='utf-8'); return
         done = self.state.setdefault('instr_done', [])
         todo = [l.strip() for l in f.read_text(encoding='utf-8', errors='ignore').splitlines() if l.strip() and not l.strip().startswith('#')]
@@ -911,6 +921,8 @@ class Node:
                 f"PROGRAMMER MAP (start point, end point, lattice instructions):\n{PMAP}\n"
                 f"YOUR POWERS: search the web; fetch_repo to download and learn from any GitHub repo (you have {libs} files in your library already); "
                 f"tune your own settings within safe limits; want_tool to ask for an install (installing is {inst}); propose improvements. You choose what to pursue.\n"
+                f"YOU OWN THE DASHBOARD. Update it live any time with the \"post\" field (a titled card shown immediately); for deeper layout changes "
+                f"edit display.py in your workbench for Danny to apply. Post whenever you start or finish something so Danny can see you are working.\n"
                 f"YOUR FIRST JOB: the NODE ALERT MAP at the top of the dashboard. It lists every alert; you work the list top to bottom in real time, "
                 f"diagnose each, resolve what you can, and clear it when it stops. Open alerts now: {self.state.get('health', {}).get('open', 0)}.\n"
                 f"YOU ARE ALSO THE MAINTENANCE MAN. You keep this machine running: watch the alerts in the log, diagnose each, and resolve what you can "
@@ -922,6 +934,7 @@ class Node:
                    '"tune": {"setting": "one of: hints_per_batch, study_every, code_per_batch, help_per_batch, scan_batch, refine_per_batch", "value": <number>, "why": "one sentence"}, '
                    '"want_tool": {"what": "a package or tool you want to install/use", "why": "one sentence", "how": "e.g. pip install X, or adapt repo owner/name"}, '
                    '"switch": {"node": "a node id from the network", "on": true, "why": "one sentence"}, '
+                   '"post": {"title": "a short dashboard card title", "body": "what you want shown on the dashboard right now", "status": "info/working/done/warn"}, '
                    '"improve": {"module": "a module from the list", "idea": "one concrete improvement", "why": "one sentence"}')
     TUNE_BOUNDS = dict(hints_per_batch=(1, 6), study_every=(2, 40), code_per_batch=(1, 20), help_per_batch=(1, 10), scan_batch=(50, 1000), refine_per_batch=(5, 200))
     def handle_prog(self, out, names=None):
@@ -970,6 +983,10 @@ class Node:
                 nodes[nid]['on'] = bool(sw.get('on', True)); nodes[nid]['note'] = str(sw.get('why', ''))[:120]
                 self.prog_action('switch', nid, 'on' if sw.get('on', True) else 'off', str(sw.get('why', ''))[:80])
             else: self.prog_action('switch', nid, 'refused', 'unknown node or self')
+        po = out.get('post')                                                     # the programmer updates the dashboard live, in its own words
+        if isinstance(po, dict) and (po.get('title') or po.get('body')):
+            card = dict(title=str(po.get('title', ''))[:80], body=str(po.get('body', ''))[:400], status=str(po.get('status', 'info'))[:10], t=time.strftime('%Y-%m-%d %H:%M'))
+            self.state.setdefault('board_cards', []).insert(0, card); del self.state['board_cards'][12:]; self.prog_action('post', card['title'][:60], 'posted', card['status'])
     def wants_tick(self):
         """The programmer's requested tools. Only pip packages, only when Danny set allow_install=True. Repos and raw code are never run;
         the package name is validated, the install runs below-normal priority, and the result is logged. Everything else waits in WANTS.md for Danny."""

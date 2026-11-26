@@ -66,7 +66,8 @@ th{color:var(--muted);font-weight:500}.PASS,.MET{color:var(--ok)}.UNCLEAR,.NOT{c
 </style>
 <header><h1>CubeMind <span class="muted" id="who"></span></h1><span class="muted mono" id="upd"></span><nav id="nodes"></nav></header>
 <main>
- <section class="wide"><h2>Now</h2><div id="now"></div></section>
+ <section class="wide"><h2>Now</h2><div id="now"></div>
+   <div id="pcards"></div></section>
  <section class="wide"><h2>Timeline: the single string</h2><div class="scroll" id="tl"></div><p class="muted" id="tlnote"></p></section>
  <section><h2>Memory map: neurons and connections</h2><div id="map"></div><p class="muted">Left to right: early universe, mathematics, late universe. Top to bottom: centre outward through the nine layers. Size = records; lines = links.</p></section>
  <section><h2>Categories: lanes by geometric address</h2><div class="scroll" id="lanes"></div></section>
@@ -83,7 +84,8 @@ function draw(){
  // NOW
  const steps = ['retrieving','mapping','processing','refereeing','filing','waiting'], ph = D.phase || {};
  const ago = ph.since ? Math.round(Date.now()/1000 - ph.since) : null;
- document.getElementById('now').innerHTML = `<div class="phase">${['local','web','math'].map((x,k) => `<span class="ph ${x===D.stage?'on':''}">Stage ${k+1}: ${x}</span>`).join('')}</div><div class="phase">${steps.map(s => `<span class="ph ${s===ph.name?'on':''}">${s}</span>`).join('')}</div>
+ const _pc = (D.board_cards||[]); document.getElementById('pcards').innerHTML = _pc.length ? '<h2 style="margin-top:12px">From the programmer</h2>' + _pc.map(c => `<div class="kpi" style="display:block;margin:4px 0;border-left:3px solid var(--accent)"><b>${esc(c.title)}</b> <span class="muted mono">${esc(c.t)} · ${esc(c.status)}</span><div>${esc(c.body)}</div></div>`).join('') : '';
+  document.getElementById('now').innerHTML = `<div class="phase">${['local','web','math'].map((x,k) => `<span class="ph ${x===D.stage?'on':''}">Stage ${k+1}: ${x}</span>`).join('')}</div><div class="phase">${steps.map(s => `<span class="ph ${s===ph.name?'on':''}">${s}</span>`).join('')}</div>
   <p>${esc(ph.detail || 'starting')} ${ago!==null ? `<span class="muted">(${ago} s)</span>` : ''}</p>
   <div class="kpis">${[['Cycles', D.cycles],['Today', D.today.cycles],['Per hour', D.today.per_hour],['Pass', D.counts.PASS||0],['Unclear', D.counts.UNCLEAR||0],['Miss', D.counts.MISS||0],
    ['Processor right', D.processor.tested ? D.processor.right + '/' + D.processor.tested : '-'],['Records', D.records],['Neurons', D.neurons.length],['Links by meaning', D.today.similar_links]]
