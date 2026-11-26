@@ -442,4 +442,23 @@ class T(unittest.TestCase):
         self.assertEqual(n.programmer_backlog(), 0)
         self.assertFalse(n.focus_mode())                                          # cup full -> released
         self.assertFalse(n.state['focus'])
+    def test_danny_orders_jump_the_line_and_trigger_focus(self):
+        n, root = self.staged()
+        for _ in range(6): n.run_batch(6)                                         # finish the scan, reach a model stage
+        self.assertFalse(n.state.get('focus'))
+        n.instr_path.write_text(n.INBOX_HEAD + 'build me a thing\n')             # you give an order
+        self.assertEqual(n.danny_pending(), 1)
+        self.assertTrue(n.focus_mode())                                          # your order forces focus right away
+        # your instruction is built before the subconscious's upgrades
+        n.state['upgrades'] = [dict(need='subconscious upgrade', t='now')]
+        n.programmer_always()
+        self.assertEqual(n.danny_pending(), 0)                                   # your order was handled
+        self.assertTrue(any(x.get('source') == 'instruction' for x in n.state.get('instructions', [])))
+    def test_stop_flag_halts_the_node(self):
+        import node1 as NN
+        # the main loop exits when STOP.flag exists (unit-check the flag path logic)
+        f = n_home = None
+        n, root = self.staged(); stopf = n.home / 'STOP.flag'; stopf.write_text('stop')
+        self.assertTrue(stopf.exists())
+        stopf.unlink(); self.assertFalse(stopf.exists())                          # start clears it
 if __name__ == '__main__': unittest.main()

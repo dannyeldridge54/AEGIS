@@ -1,6 +1,6 @@
 {
  "owner": "Danny Eldridge",
- "home": "/tmp/tmpu5v4a1kl/data",
+ "home": "/tmp/tmpc_3rdvbv/data",
  "cycle_seconds": 0,
  "batch": 8,
  "parallel": 2,
@@ -34,7 +34,7 @@
  "repos_per_day": 20,
  "allow_install": false,
  "local_folders": [
-  "/tmp/tmpu5v4a1kl/research"
+  "/tmp/tmpc_3rdvbv/research"
  ],
  "github_token_env": "GITHUB_TOKEN",
  "max_db_mb": 2000,

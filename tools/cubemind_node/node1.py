@@ -1051,11 +1051,19 @@ class Node:
                             if l.strip() and not l.strip().startswith('#') and FP._sha(l.strip().encode())[:16] not in done)
         except Exception: pass
         return instr + len(self.state.get('upgrades', [])) + len(self.state.get('help', [])) + sum(1 for w in self.state.get('wants', []) if not w.get('done'))
+    def danny_pending(self):
+        """How many of YOUR instructions are waiting (from the chat box / INSTRUCTIONS.txt). These are prioritized."""
+        try:
+            if not self.instr_path.exists(): return 0
+            done = self.state.get('instr_done', [])
+            return sum(1 for l in self.instr_path.read_text(encoding='utf-8', errors='ignore').splitlines()
+                       if l.strip() and not l.strip().startswith('#') and FP._sha(l.strip().encode())[:16] not in done)
+        except Exception: return 0
     def focus_mode(self):
-        """The cup: when the programmer's list fills to focus_at, the other roles pause and it works through the WHOLE list to empty,
-        then everyone resumes. Hysteresis so it does not flicker."""
+        """The cup: when the programmer's list fills to focus_at - OR you give an order - the other roles pause and it works through the
+        WHOLE list to empty, then everyone resumes. Your orders trigger focus right away."""
         b = self.programmer_backlog(); f = self.state.get('focus', False)
-        if not f and b >= self.cfg.get('focus_at', 4):
+        if not f and (b >= self.cfg.get('focus_at', 4) or self.danny_pending() > 0):
             self.state['focus'] = True; self.state['cup'] = dict(total=b, done=0)
             self.send_msg('programmer', 'all', f'Focus mode: I have {b} things to build; the rest pause while I clear my list.', kind='focus')
             self.state.setdefault('board_cards', []).insert(0, dict(title='Programmer focus mode', body=f'Clearing a backlog of {b}; other roles paused until the cup is full.', status='working', t=time.strftime('%Y-%m-%d %H:%M'))); del self.state['board_cards'][12:]
@@ -1107,13 +1115,15 @@ class Node:
         fixing = self.fix_priority()
         if scanning: return                                                     # STAGE 1 priority: do not let any model call block the file scan
         # --- heavy, model-calling work: only once the scan is done ---
+        try: self.instruction_tick()                                            # YOUR orders first, always
+        except Exception as e: self.log(f'instruction failed: {e}')
         if not fixing:
+            try: self.upgrade_tick()                                            # then the subconscious's upgrades
+            except Exception as e: self.log(f'upgrade failed: {e}')
             try: self.repo_tick(); self.wants_tick()
             except Exception as e: self.log(f'learning failed: {e}')
-            try: self.upgrade_tick()
-            except Exception as e: self.log(f'upgrade failed: {e}')
-        try: self.instruction_tick(); self.checkpoint_tick()
-        except Exception as e: self.log(f'instruction/checkpoint failed: {e}')
+        try: self.checkpoint_tick()
+        except Exception as e: self.log(f'checkpoint failed: {e}')
     def programmer_tick(self):
         """Stage work: answer help requests and place data sets on the string. (programmer_always runs separately, every stage.)"""
         self.programmer_always()
@@ -1766,8 +1776,16 @@ def main(argv):
         import psutil, ctypes  # noqa: run below normal priority on Windows, so the desktop always wins
         if os.name == 'nt': psutil.Process().nice(psutil.BELOW_NORMAL_PRIORITY_CLASS)
     except Exception: pass
+    stopf = HERE / cfg['home'] / 'STOP.flag'
+    try: stopf.unlink()                                                          # a fresh start clears any old stop
+    except OSError: pass
     node = Node(cfg); d = node.state.setdefault('day', {}); d['starts'] = d.get('starts', 0) + 1; print(f'CubeMind Node 1 running. Status page: {node.home / "status.html"}', flush=True)
     while True:
+        if stopf.exists():                                                       # the Stop button
+            node.log('stopped by Danny (STOP.flag)'); print('Stopped by Danny. Delete node1_data\\STOP.flag or hit Start to run again.', flush=True)
+            try: lockf.unlink()
+            except OSError: pass
+            return 0
         lockf.write_text(str(os.getpid()))
         try:
             node.breathe(); vs = node.run_batch(); node.backup()
