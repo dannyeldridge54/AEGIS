@@ -19,7 +19,7 @@ def snapshot(node):
         neurons=[dict(id=r['neuron'], side=r['side'], layer=r['layer'], records=r['records'], engine=r['engine'], acc=r['accuracy'], balance=r['balance']) for r in leaves],
         synapses=syn, goalposts=node.goalposts(), recent=s['recent'][:20], resources=node.resources(),
         sweep=s.get('sweep', {}), dup_web=s.get('dup_web', 0),
-        coder=s.get('coder', {}), code_queue=len(s.get('code_queue', [])), board=node.shared_board(), stage=s.get('stage', 'start'),
+        coder=s.get('coder', {}), code_queue=len(s.get('code_queue', [])), board=node.shared_board(), stage=s.get('stage', 'start'), route=s.get('route_last', {}), prog=s.get('prog', {}), **_prog(s),
         refine=len(s.get('refine', [])), doorways={k: v for k, v in s.get('doorways', {}).items() if k != 'recent'}, help=len(s.get('help', [])),
         models=node.cfg['models'], log=_tail(node.home / 'node1.log', 8))
 
@@ -31,7 +31,13 @@ def quick(node, snap):
                            similar_links=day.get('similar_links', 0)),
                 recent=list(s['recent'][:20]), resources=node.resources(), sweep=dict(s.get('sweep', {})), coder=dict(s.get('coder', {})),
                 code_queue=len(s.get('code_queue', [])), stage=s.get('stage', 'start'), refine=len(s.get('refine', [])), help=len(s.get('help', [])),
-                doorways={k: v for k, v in s.get('doorways', {}).items() if k != 'recent'}, log=_tail(node.home / 'node1.log', 8))
+                doorways={k: v for k, v in s.get('doorways', {}).items() if k != 'recent'}, route=s.get('route_last', {}), prog=dict(s.get('prog', {})), **_prog(s), log=_tail(node.home / 'node1.log', 8))
+
+def _prog(s):
+    """The programmer's own space: its actions, success per kind, lessons, checkpoints and your instructions."""
+    return dict(prog_n=s.get('prog_n', 0), prog_kinds=s.get('prog_kinds', {}), prog_log=list(s.get('prog_log', [])[:12]), prog_lessons=list(s.get('prog_lessons', [])[:6]),
+                prog_cp=[dict(at=c['at'], t=c['t'], next=c.get('next', '')) for c in s.get('prog_checkpoints', [])[:4]], prog_next_cp=s.get('prog_next_cp', 25),
+                instructions=list(s.get('instructions', [])[:8]))
 
 def _tail(p, n):
     try: return p.read_text(encoding='utf-8', errors='ignore').splitlines()[-n:]
@@ -85,6 +91,16 @@ function draw(){
   ${D.sweep && D.sweep.total ? `<div class="kpis" style="margin-top:8px">${[['Files found', D.sweep.total],['Handled', D.sweep.unique + D.sweep.duplicates + D.sweep.skipped],['New, catalogued', D.sweep.catalogued],['Copies marked done', D.sweep.duplicates],['Web repeats skipped', D.dup_web]].map(([k,v]) => `<div class="kpi"><span class="muted">${k}</span><b class="mono">${v}</b></div>`).join('')}</div><p class="muted mono" style="overflow-wrap:anywhere">${esc(D.sweep.current)}</p>` : ''}
   ${D.coder && D.coder.seen != null ? `<p class="muted">Code cartographer: ${D.coder.addressed}/${D.coder.seen} modules addressed · ${D.coder.pathways} pathways · ${D.code_queue} waiting</p>` : (D.code_queue ? `<p class="muted">Code cartographer: ${D.code_queue} modules waiting</p>` : '')}
   <p class="muted">Mapper queue: ${D.refine||0} files · help requests waiting: ${D.help||0} · programmer doorways: ${(D.doorways||{}).opened||0} opened, ${(D.doorways||{}).placed||0} data sets placed on the string${D.sweep && D.sweep.auto != null ? ` · placed by code: ${D.sweep.auto}, unrelated: ${D.sweep.unrelated||0}` : ''}</p>
+  ${D.prog ? `<p class="muted">Programmer: ${D.prog.hints||0} hints from ${D.prog.searches||0} searches · ${D.prog.ideas||0} improvement ideas (in IMPROVEMENTS.md, not applied) · ${D.prog.routes||0} Node 2 route versions</p>` : ''}
+  ${D.route && D.route.lane ? `<details open><summary><b>Node 2 route (proposed):</b> ${esc(D.route.sphere)} from lane ${esc(D.route.lane)}</summary><p>${esc(D.route.why)}</p><ol>${(D.route.steps||[]).map(x => `<li>${esc(x)}</li>`).join('')}</ol><p class="muted">Uses: ${esc((D.route.uses||[]).join(', '))}</p></details>` : ''}
+  <details open><summary><b>Programmer's own space</b> · ${D.prog_n||0} actions filed · next checkpoint at ${D.prog_next_cp||25}</summary>
+   <p class="muted">${Object.entries(D.prog_kinds||{}).map(([k,v]) => `${esc(k)} ${v.good}/${v.done}`).join(' · ') || 'no actions yet'}</p>
+   ${(D.prog_lessons||[]).length ? `<p><b>Lessons it wrote for itself</b></p><ul>${D.prog_lessons.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
+   ${(D.prog_cp||[]).length ? `<p class="muted">Checkpoints: ${D.prog_cp.map(c => `${c.at} actions (${esc(c.t)})`).join(' · ')}</p>` : ''}
+   <p><b>Your instructions</b> <span class="muted">(write one per line in node1\\INSTRUCTIONS.txt; work lands in node1_data\\workbench, saved and syntax-checked, never run)</span></p>
+   ${(D.instructions||[]).length ? `<ul>${D.instructions.map(x => `<li>${esc(x.t)} · ${esc(x.task)} → <b>${esc(x.outcome)}</b> <span class="muted mono">${esc(x.folder)}</span></li>`).join('')}</ul>` : '<p class="muted">none yet</p>'}
+   <p><b>Recent actions</b></p><ul class="mono" style="font-size:12px">${(D.prog_log||[]).map(a => `<li>${esc(a.t)} ${esc(a.kind)} · ${esc(a.target)} → ${esc(a.outcome)}</li>`).join('')}</ul>
+  </details>
   <details><summary class="muted">Shared board (what every model sees)</summary><pre class="mono" style="white-space:pre-wrap;font-size:12px">${esc(D.board)}</pre></details>
   <p class="muted">Machine: ${['cpu','ram','gpu_busy','gpu_mem'].filter(k => D.resources[k] != null).map(k => ({cpu:'CPU',ram:'RAM',gpu_busy:'GPU working',gpu_mem:'GPU memory (full is normal)'})[k] + ' ' + Math.round(D.resources[k]) + '%').join(' · ') || 'install tools to see load'}</p>
   <p class="muted">Models: ${Object.entries(D.models).map(([k,v]) => esc(k) + ' ' + esc(v)).join(' · ')}</p>

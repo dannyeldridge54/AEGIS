@@ -1,0 +1,2 @@
+# Write one instruction per line for the programmer (start small). Lines starting with # are ignored.
+# Its work goes to node1_data/workbench/. Code is saved and syntax-checked, never run automatically.

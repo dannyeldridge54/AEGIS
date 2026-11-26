@@ -7,13 +7,18 @@ class FakeLLM:
     def __init__(self, right=True, objection=False, stuck=False): self.right, self.objection, self.stuck, self.calls = right, objection, stuck, []
     def ask(self, model, prompt, num_predict=700):
         self.calls.append(model)
+        if 'ROUTE PLANNER' in prompt:
+            lane = prompt.split('LANES (best supported first):\n- ')[1].split(':')[0]; names = prompt.split('(ONLY these may go in uses): ')[1].split('\n')[0].split(', ')
+            return json.dumps({'sphere': 'Workshop', 'lane': lane, 'why': 'most records', 'uses': [names[0], 'made_up_tool'], 'steps': ['package the lane tools', 'test them'],
+                               'missing': ['how to package python tools']})
         if 'DOORWAY' in prompt:
             names = prompt.split('(ONLY these): ')[1].split('\n')[0].split(', ')
-            return json.dumps({'answer': 'use the data set', 'doorways': [{'to': names[0], 'relation': 'checks', 'why': 'w'}, {'to': 'imaginary.csv', 'relation': 'checks'}], 'epoch': 'late'})
+            return json.dumps({'answer': 'use the data set', 'doorways': [{'to': names[0], 'relation': 'checks', 'why': 'w'}, {'to': 'imaginary.csv', 'relation': 'checks'}], 'epoch': 'late', 'search': 'sqlite thread safety python', 'improve': {'module': 'nope', 'idea': 'x'}})
         if 'CODE CARTOGRAPHER' in prompt:
             mods = prompt.split('(ONLY these): ')[1].split('\n')[0].split(', ')
             return json.dumps({'purpose': 'p', 'ring': 'R1', 'anchor': 'rho', 'shape': 'hexagonal', 'weight': '2', 'side': 'centre', 'layer': 'torus', 'epoch': 'all',
-                               'pathways': [{'to': mods[0], 'relation': 'derived_from', 'why': 'w'}, {'to': 'invented_module', 'relation': 'similar', 'why': 'w'}]})
+                               'pathways': [{'to': mods[0], 'relation': 'derived_from', 'why': 'w'}, {'to': 'invented_module', 'relation': 'similar', 'why': 'w'}],
+                               'search': 'python ast call graph', 'improve': {'module': mods[0], 'idea': 'cache the lattice sums', 'why': 'speed'}})
         if 'MAPPER' in prompt:
             n = prompt.count('. [')
             return json.dumps({'finds': [{'i': k, 'ring': 'R1', 'anchor': 'rho', 'shape': 'hexagonal', 'orbifold': 'Z2xZ2', 'weight': '2', 'side': 'centre', 'layer': 'torus', 'why': 'w'} for k in range(n)] + [{'i': 0, 'ring': 'R9'}],
@@ -52,7 +57,7 @@ class T(unittest.TestCase):
     def test_goalposts_listed_and_shown(self):
         n = self.node()
         for _ in range(5): n.cycle()
-        g = n.goalposts(); self.assertEqual(len(g), 18); self.assertTrue(all({'part', 'goal', 'met', 'now'} <= set(x) for x in g))
+        g = n.goalposts(); self.assertEqual(len(g), 19); self.assertTrue(all({'part', 'goal', 'met', 'now'} <= set(x) for x in g))
         self.assertIn('Goalposts', (n.home / 'status.html').read_text())
     def test_selfcheck_runs_with_sympy(self):
         n = self.node(); n.cycle(); sc = n.state['selfcheck']; self.assertEqual((sc.get('reproduce'), sc.get('total')), (18, 18))
@@ -184,4 +189,49 @@ class T(unittest.TestCase):
         n.llm.ask = lambda m, p, num_predict=700: (prompts.append(p), orig(m, p, num_predict))[1]
         for _ in range(5): n.run_batch(4)
         self.assertTrue(prompts and all('YOUR BRIEF' in p and 'CALL THE PROGRAMMER' in p for p in prompts))
+    def test_programmer_searches_files_hints_and_proposes_never_applies(self):
+        n, root = self.staged(); asked = []
+        n.hint_fetch = lambda q: asked.append(q) or [dict(source='stackoverflow', title='answer to ' + q, url='https://so/' + q.replace(' ', '-'), text='python')]
+        (root / 'alpha.py').write_text('"""Eisenstein at rho."""\nimport beta\ndef e2(t):\n    return beta.lattice(t)\n')
+        (root / 'beta.py').write_text('"""Lattice sums."""\nimport math\ndef lattice(t):\n    return math.pi\n')
+        before = {p.name: p.read_text() for p in root.iterdir()}
+        n.local.files = []; n.state.pop('sweep', None)
+        for _ in range(6): n.run_batch(4)
+        ps = n.state['prog']; self.assertIn('python ast call graph', asked); self.assertGreater(ps['hints'], 0); self.assertGreater(ps['ideas'], 0)
+        self.assertTrue(n.ix.find(kind='hint')); self.assertTrue(n.ix.find(kind='proposal'))
+        self.assertIn('PROPOSED, not applied', (n.home / 'IMPROVEMENTS.md').read_text())
+        self.assertEqual({p.name: p.read_text() for p in root.iterdir() if p.name in before}, before)      # no file changed
+        prompts = []; orig = n.llm.ask; n.llm.ask = lambda m, p, num_predict=700: (prompts.append(p), orig(m, p, num_predict))[1]
+        n.state['code_queue'] = n.ix.find(kind='code')[:1]; n.run_batch(4)
+        self.assertTrue(any('PROGRAMMER MAP' in p and 'LATTICE INSTRUCTIONS' in p and 'answer to python ast call graph' in p for p in prompts))
+    def test_first_goal_after_mapping_is_the_node2_route(self):
+        n, root = self.staged(); asked = []; n.hint_fetch = lambda q: asked.append(q) or []
+        out = [n.run_batch(8)[0] for _ in range(5)]; self.assertIn('PASS', out)
+        f = n.home / 'NODE2_ROUTE.md'; self.assertTrue(f.exists()); txt = f.read_text()
+        self.assertIn('Workshop', txt); self.assertNotIn('made_up_tool', txt); self.assertIn('PROPOSED', txt)
+        r = n.state['route_last']; mods, data, tools = n.targets(); self.assertTrue(set(r['uses']) <= set(mods) | set(data) | set(tools))
+        self.assertIn('how to package python tools', n.state['search_queue'] + asked)
+    def test_programmer_files_its_own_actions_checkpoints_and_takes_instructions(self):
+        n, root = self.staged(); n.cfg['checkpoint_first'] = 5; orig = n.llm.ask
+        def ask(m, p, num_predict=700):
+            if 'INSTRUCTION from Danny' in p:
+                return json.dumps({'plan': ['write add()'], 'files': [{'name': 'add.py', 'code': 'def add(a, b):\n    return a + b\n'}, {'name': '../../evil.py', 'code': 'x'},
+                                   {'name': 'bad.py', 'code': 'def ('}], 'test': 'add(1, 2) == 3'})
+            if 'CHECKPOINT REVIEW' in p: return json.dumps({'lessons': ['only link real modules'], 'next': 'fewer refusals'})
+            return orig(m, p, num_predict)
+        n.llm.ask = ask
+        (N.HERE / 'INSTRUCTIONS.txt').unlink(missing_ok=True)
+        try:
+            n.run_batch(4); (N.HERE / 'INSTRUCTIONS.txt').write_text(n.INBOX_HEAD + 'write a function that adds two numbers\n')
+            for _ in range(6): n.run_batch(4)
+            ins = n.state['instructions'][0]; self.assertEqual(ins['outcome'], 'syntax error')                      # bad.py caught by code
+            wb = n.home / 'workbench' / ins['folder']; self.assertTrue((wb / 'add.py').exists()); self.assertTrue((wb / 'evil.py').exists())   # name stripped to the folder
+            self.assertFalse((n.home / 'evil.py').exists()); self.assertIn('PROPOSED (not run)', (wb / 'PLAN.md').read_text())
+            n.run_batch(4); self.assertEqual(len(n.state['instructions']), 1)                                       # each instruction once
+        finally: (N.HERE / 'INSTRUCTIONS.txt').unlink(missing_ok=True)
+        acts = [n.ix.get(a) for a in n.ix.find(kind='action', limit=1000)]; self.assertTrue(acts)
+        self.assertTrue(all(a['tags']['actor'] == 'programmer' for a in acts)); self.assertIn('instruction', {a['tags']['action'] for a in acts})
+        self.assertTrue(n.ix.find(kind='checkpoint')); self.assertIn('only link real modules', n.state['prog_lessons'])
+        self.assertIn('YOUR OWN PAST WORK', n.prog_extras()); self.assertIn('only link real modules', n.prog_extras())
+        html = (n.home / 'dashboard.html').read_text(); self.assertIn("Programmer's own space", html)
 if __name__ == '__main__': unittest.main()
