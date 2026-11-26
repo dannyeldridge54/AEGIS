@@ -18,9 +18,9 @@ class FakeLLM:
 
 class T(unittest.TestCase):
     def node(self, **kw):
-        d = Path(tempfile.mkdtemp()); cfg = dict(N.DEFAULT, home=str(d / 'data'), local_folders=[str(d / 'research')])
+        d = Path(tempfile.mkdtemp()); cfg = dict(N.DEFAULT, home=str(d / 'data'), local_folders=[str(d / 'research')], sweep_first=False)
         (d / 'research').mkdir(); (d / 'research' / 'eisenstein_fit_notes.md').write_text('Eisenstein series fit at rho. modular invariant Eisenstein series string effective action.')
-        n = N.Node(cfg, llm=FakeLLM(**kw), fetch=lambda s: [dict(source='github', title='a/b', url='https://github.com/a/' + s['id'], text='t')])
+        n = N.Node(cfg, llm=FakeLLM(**kw), fetch=lambda s: [dict(source='github', title='repo ' + s['id'], url='https://github.com/a/' + s['id'], text='t')])
         n.ix = N.FP.Index(d / 'data' / 'n.sqlite', 'Danny Eldridge', key='ab' * 32); n.web = N.NW.Web(n.ix); return n
     def test_cycles_pass_index_and_write_status(self):
         n = self.node(); vs = [n.cycle() for _ in range(8)]
@@ -63,7 +63,8 @@ class T(unittest.TestCase):
     def test_batch_loads_each_model_once_and_files_all(self):
         n = self.node(); n.cfg['parallel'] = 1; vs = n.run_batch(8); m = N.DEFAULT['models']
         self.assertEqual(len(vs), 8); self.assertEqual(set(vs), {'PASS'})
-        self.assertEqual(n.llm.calls, [m['retriever']] * 8 + [m['mapper']] * 8 + [m['processor']] * 8 + [m['referee']] * 8)
+        c = n.llm.calls.count(m['mapper']); self.assertGreaterEqual(c, 1)        # the mapper is only called when there is something new to map
+        self.assertEqual(n.llm.calls, [m['retriever']] * 8 + [m['mapper']] * c + [m['processor']] * 8 + [m['referee']] * 8)
     def test_parallel_batch_gives_same_verdicts(self):
         n = self.node(); n.cfg['parallel'] = 3; self.assertEqual(set(n.run_batch(6)), {'PASS'}); self.assertEqual(n.state['cycle'], 6)
     def test_same_search_is_not_repeated(self):
@@ -106,4 +107,15 @@ class T(unittest.TestCase):
         for part in ('Timeline: the single string', 'Memory map', 'Categories: lanes', 'Now', 'R1-serapis-rho'): self.assertIn(part, html)
         data = json.loads(html.split('const NODES = ')[1].split(';\n')[0].replace('<\\/', '</'))
         snap = data['R1-serapis-rho']; self.assertEqual(snap['phase']['name'], 'waiting'); self.assertEqual(snap['cycles'], 4); self.assertTrue(snap['neurons'])
+    def test_sweep_maps_every_file_once_and_marks_copies(self):
+        n = self.node(); n.cfg['sweep_first'] = True; root = Path(n.cfg['local_folders'][0])
+        for k in range(12): (root / f'data_{k}.json').write_text(json.dumps({'fit': k, 'rho': 0.866}))
+        for k in range(6): (root / f'copy_of_data_{k}.json').write_text(json.dumps({'fit': k, 'rho': 0.866}))     # identical content
+        n.local.files = []; n.state.pop('sweep', None)
+        out = [n.run_batch(8) for _ in range(5)]
+        sw = n.state['sweep']; self.assertEqual(sw['total'], 19); self.assertEqual(sw['unique'], 13); self.assertEqual(sw['duplicates'], 6)
+        self.assertEqual(len([r for r in n.ix.find(kind='find', limit=1000) if n.ix.get(r)['tags'].get('subject') == 'local-sweep']), 13)
+        self.assertTrue(all(p.exists() for p in root.iterdir()))                       # nothing on disk deleted
+        self.assertEqual(out[-1], ['PASS'] * 8)                                           # sweep done: calculations resume
+        before = sw['unique']; n.state['sweep']['scanned'] = 0; n.run_batch(8); self.assertEqual(n.state['sweep']['unique'], before)   # never redone
 if __name__ == '__main__': unittest.main()

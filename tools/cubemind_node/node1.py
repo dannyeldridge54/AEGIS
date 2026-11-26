@@ -23,8 +23,9 @@ DEFAULT = dict(
     owner='Danny Eldridge', home='node1_data', cycle_seconds=0, batch=8, parallel=2, search_every_hours=6, online=True,
     ollama='http://127.0.0.1:11434', keep_alive='3m', timeout=600,
     models=dict(retriever='qwen3:14b', mapper='qwen3:8b', processor='qwen3-coder:30b', referee='gpt-oss:20b'),
+    sweep_first=True, sweep_batch=20,
     local_folders=['~/CubeMind_janus', '~/ufe_data', '~/ufe lifes work', '~/Desktop/AEGIS_vault', '~/.copilot/repos'],
-    github_token_env='GITHUB_TOKEN', max_db_mb=2000, backups_kept=7, cpu_ceiling=85, ram_ceiling=85, gpu_ceiling=92,
+    github_token_env='GITHUB_TOKEN', max_db_mb=2000, backups_kept=7, ram_ceiling=95,
     embed_model='nomic-embed-text', similar_at=0.80)
 SUBJECTS = [   # node 1: ring R1, SERAPIS-E, anchored at rho. side 0 = centre/mathematics, -1 = early universe
  dict(id='eisenstein', title='Non-holomorphic Eisenstein series and modular invariance', side='centre', layer='torus',
@@ -130,9 +131,10 @@ def openalex_search(q, n=5):
                  citations=w.get('cited_by_count')) for w in d.get('results', [])[:n]]
 
 TEXT_EXT = {'.md', '.txt', '.json', '.jsonl', '.py', '.tex', '.csv'}
+SWEEP_ORDER = {'.csv': 0, '.json': 0, '.jsonl': 0, '.md': 1, '.tex': 1, '.txt': 2, '.py': 3}   # data sets first
 class LocalIndex:
     """Read-only search of the owner's own research folders for past fits and results. Rebuilt once a day; skips big files."""
-    def __init__(self, folders, max_mb=2, max_files=20000):
+    def __init__(self, folders, max_mb=2, max_files=200000):
         self.folders, self.max_b, self.max_files, self.files, self.built = [Path(os.path.expandvars(os.path.expanduser(f))) for f in folders], max_mb * 2**20, max_files, [], 0
     def build(self):
         out = []
@@ -205,9 +207,17 @@ class Node:
         self.state = json.loads(self.state_f.read_text()) if self.state_f.exists() else dict(cycle=0, ring={}, streak={}, models={}, counts={}, recent=[])
         self.rng = random.Random(self.state['cycle'] * 7919 + 1)
         self._drawn = 0; self.set_phase('waiting', 'starting up')
+        if self.fetch is None and llm is None:                                   # live only: redraw the page every 3 s so progress shows
+            def tick():
+                while True:
+                    time.sleep(3)
+                    try: self._drawn = 0; self.set_phase(**{k: v for k, v in self.state.get('phase', {}).items() if k in ('name', 'detail')})
+                    except Exception: pass
+            threading.Thread(target=tick, daemon=True).start()
     def set_phase(self, name, detail=''):
         """What the node is doing right now; the display shows it live (page refreshes every 8 s)."""
-        self.state['phase'] = dict(name=name, detail=detail, since=time.time())
+        old = self.state.get('phase', {})
+        self.state['phase'] = dict(name=name, detail=detail, since=old.get('since') if old.get('name') == name else time.time())
         if time.time() - getattr(self, '_drawn', 0) >= 2:
             self._drawn = time.time()
             try: DISPLAY.render(self.home / 'dashboard.html', {NODE: DISPLAY.snapshot(self)})
@@ -301,6 +311,13 @@ class Node:
         del local_ids[:-5000]
         return self._file_finds(subj, keep)
     def _file_finds(self, subj, finds):
+        titles = self.state.setdefault('titles_seen', {}); kept = []
+        for f in finds:
+            t = ''.join(ch for ch in f.get('title', '').lower() if ch.isalnum())[:120]
+            if f['source'] != 'local' and t and t in titles: self.state.setdefault('dup_web', 0); self.state['dup_web'] += 1; continue
+            if t: titles[t] = f['source']
+            kept.append(f)
+        finds = kept
         day = self.state.setdefault('day', {}); src = day.setdefault('sources', {})
         for f in finds: src[f['source']] = src.get(f['source'], 0) + 1
         if self.ix.db.execute("SELECT page_count*page_size FROM pragma_page_count(), pragma_page_size()").fetchone()[0] > self.cfg['max_db_mb'] * 2**20:
@@ -400,11 +417,22 @@ class Node:
     # ---------------------------------------------------------------- one cycle
     def _par(self, fn, items):
         from concurrent.futures import ThreadPoolExecutor
-        if self.cfg.get('parallel', 1) <= 1 or len(items) <= 1: return [fn(x) for x in items]
-        with ThreadPoolExecutor(self.cfg['parallel']) as ex: return list(ex.map(fn, items))
+        ph = dict(self.state.get('phase', {})); done = [0]; lock = threading.Lock()
+        def step(x):
+            out = fn(x)
+            with lock:
+                done[0] += 1; self.state['phase'] = dict(ph, detail=f"{ph.get('detail', '')} - {done[0]}/{len(items)} done", since=ph.get('since'))
+            return out
+        if self.cfg.get('parallel', 1) <= 1 or len(items) <= 1: out = [step(x) for x in items]
+        else:
+            with ThreadPoolExecutor(self.cfg['parallel']) as ex: out = list(ex.map(step, items))
+        return out
     def run_batch(self, k=None):
         """One batch of k items: retriever on all, then processor on all, then referee on all (each model loads once), then file them."""
         k = k or self.cfg.get('batch', 1); t0 = time.time(); today = time.strftime('%Y-%m-%d')
+        if self.cfg.get('sweep_first', True) and self.sweep_pending():           # TOP PRIORITY: map every local file first
+            self.set_phase('retrieving', f"sweeping your files: {len(self._pending)} left")
+            n = self.sweep_batch(self.cfg.get('sweep_batch', 20)); return ['SWEEP'] * min(n, 1)
         if self.state.get('day', {}).get('date') != today: self.state['day'] = dict(date=today, cycles=0, starts=0, sources={}, busy=0.0, idle=0.0)
         if self.state.get('selfcheck', {}).get('date') != today: self.selfcheck()
         items = []
@@ -450,6 +478,52 @@ class Node:
                                        verdict=verdict, model=res['model_value'], reference=res['reference'], finds=len(finds),
                                        lens=str(lens.get('lens', ''))[:240], referee=str(ref.get('finding') or ref.get('mirror') or '')[:240])] + self.state['recent'])[:40]
         return verdict
+    # ---------------------------------------------------------------- the local sweep (top priority until every file is mapped)
+    SWEEP_SUBJ = dict(id='local-sweep', title='Danny\'s own research files and data sets', side='centre', layer='torus', github='', arxiv='', tools=['ufe_laplace'])
+    def _sweep_db(self):
+        db = self.ix.db
+        db.execute('CREATE TABLE IF NOT EXISTS sweep_files(sha TEXT PRIMARY KEY, first_path TEXT, find_id TEXT)')
+        db.execute('CREATE TABLE IF NOT EXISTS sweep_paths(path TEXT PRIMARY KEY, sha TEXT, status TEXT, t REAL)')
+        return db
+    def sweep_pending(self):
+        """Files not yet handled. The list is rebuilt every 6 hours, so new files are picked up; handled files are never redone."""
+        sw = self.state.setdefault('sweep', dict(total=0, unique=0, duplicates=0, catalogued=0, skipped=0, scanned=0, current=''))
+        if time.time() - sw.get('scanned', 0) > 6 * 3600 or not getattr(self, '_pending', None) and not sw.get('idle_until', 0) > time.time():
+            self.local.build(); db = self._sweep_db(); done = {p for (p,) in db.execute('SELECT path FROM sweep_paths')}
+            files = sorted(self.local.files, key=lambda p: (SWEEP_ORDER.get(p.suffix.lower(), 9), str(p)))
+            self._pending = [p for p in files if str(p) not in done]; sw['total'] = len(files); sw['scanned'] = time.time()
+            if not self._pending: sw['idle_until'] = time.time() + 6 * 3600
+        return self._pending
+    def sweep_batch(self, n=20):
+        """Hash each file; a copy of something already catalogued is marked 'duplicate' (same as the first) and costs no model call;
+        a new file is filed as a find and given a geometric address by the mapper. Nothing on disk is ever changed or deleted."""
+        db = self._sweep_db(); sw = self.state['sweep']; take, self._pending = self._pending[:n], self._pending[n:]
+        new = []
+        for p in take:
+            sw['current'] = str(p)
+            try: data = p.read_bytes()
+            except OSError: db.execute('INSERT OR REPLACE INTO sweep_paths VALUES (?,?,?,?)', (str(p), '', 'skipped', time.time())); sw['skipped'] += 1; continue
+            sha = FP._sha(data); first = db.execute('SELECT first_path, find_id FROM sweep_files WHERE sha=?', (sha,)).fetchone()
+            if first:
+                db.execute('INSERT OR REPLACE INTO sweep_paths VALUES (?,?,?,?)', (str(p), sha, 'duplicate', time.time())); sw['duplicates'] += 1; continue
+            text = ' '.join(data[:4000].decode('utf-8', 'ignore').split())
+            f = dict(source='local', title=p.name, url=str(p), text=text[:300], size=len(data), sha256=sha,
+                     updated=time.strftime('%Y-%m-%d', time.localtime(p.stat().st_mtime)))
+            rid = self.ix.stamp('find', inputs={'sha256': sha}, outputs=f, tags=dict(source='local', subject='local-sweep', node=NODE, side='centre', layer='torus', sha256=sha))
+            self.web.place(rid); f['_rid'] = rid
+            db.execute('INSERT OR REPLACE INTO sweep_files VALUES (?,?,?)', (sha, str(p), rid))
+            db.execute('INSERT OR REPLACE INTO sweep_paths VALUES (?,?,?,?)', (str(p), sha, 'catalogued', time.time()))
+            sw['unique'] += 1; new.append(f)
+        db.commit()
+        if new:
+            chunks = [new[k:k + 10] for k in range(0, len(new), 10)]
+            self.set_phase('mapping', f"giving {len(new)} new files a geometric address ({sw['duplicates']} copies skipped so far)")
+            maps = self._par(lambda ch: self.mapper(self.SWEEP_SUBJ, ch), chunks)
+            for ch, mp in zip(chunks, maps): self.catalogue(self.SWEEP_SUBJ, ch, mp)
+            sw['catalogued'] += len(new)
+        self.state_f.write_text(json.dumps(self.state, indent=1)); self._drawn = 0
+        self.set_phase('waiting', f"sweep: {sw['unique'] + sw['duplicates'] + sw['skipped']}/{sw['total']} files handled")
+        return len(take)
     # ---------------------------------------------------------------- lanes and geometric retrieval
     LANE_KEYS = ('ring', 'anchor', 'shape', 'weight')                    # a lane = one geometric address; it runs through the nine layers
     RELAX = [(), ('weight',), ('weight', 'shape'), ('weight', 'shape', 'anchor'), ('weight', 'shape', 'anchor', 'ring')]
@@ -512,22 +586,27 @@ class Node:
         if not name.exists():
             dst = sqlite3.connect(str(name)); self.ix.db.backup(dst); dst.close()
             for old in sorted(b.glob('node1_*.sqlite'))[:-self.cfg['backups_kept']]: old.unlink()   # only its OWN old backups
-    def breathe(self):
-        """Yield to the rest of the machine: wait while CPU or RAM is above the ceiling (needs psutil; without it, no-op)."""
+    def resources(self):
+        """Current machine load, for the display. GPU memory is FULL on purpose while a model is loaded: that is not a problem."""
+        r = {}
         try:
-            import psutil
-            t0 = time.time()
-            for _ in range(60):
-                if _ == 1: self.set_phase('waiting', 'the machine is busy (CPU, RAM or GPU over its ceiling); yielding')
-                gpu_ok = True
-                try:
-                    import pynvml; pynvml.nvmlInit(); h = pynvml.nvmlDeviceGetHandleByIndex(0); mi = pynvml.nvmlDeviceGetMemoryInfo(h)
-                    gpu_ok = mi.used / mi.total * 100 < self.cfg.get('gpu_ceiling', 92)
-                except Exception: pass
-                if psutil.cpu_percent(interval=None if _ == 0 else 1) < self.cfg['cpu_ceiling'] and psutil.virtual_memory().percent < self.cfg['ram_ceiling'] and gpu_ok:
-                    d = self.state.setdefault('day', {}); d['idle'] = d.get('idle', 0.0) + (time.time() - t0); return
-                time.sleep(5)
-        except ImportError: return
+            import psutil; r['cpu'] = psutil.cpu_percent(interval=None); r['ram'] = psutil.virtual_memory().percent
+        except ImportError: pass
+        try:
+            import pynvml; pynvml.nvmlInit(); h = pynvml.nvmlDeviceGetHandleByIndex(0); mi = pynvml.nvmlDeviceGetMemoryInfo(h)
+            r['gpu_mem'] = round(mi.used / mi.total * 100, 1); r['gpu_busy'] = pynvml.nvmlDeviceGetUtilizationRates(h).gpu
+        except Exception: pass
+        return r
+    def breathe(self):
+        """Wait ONLY if RAM is nearly full (the PC would start swapping to disk), and never longer than 60 s."""
+        t0 = time.time()
+        while True:
+            r = self.resources(); ram = r.get('ram', 0)
+            if ram < self.cfg['ram_ceiling'] or time.time() - t0 > 60:
+                if time.time() - t0 > 1: d = self.state.setdefault('day', {}); d['idle'] = d.get('idle', 0.0) + (time.time() - t0)
+                return
+            self.set_phase('waiting', f'RAM is {ram:.0f}% full; letting it settle before the next batch')
+            time.sleep(3)
     def status(self):
         s = self.state; c = s['counts']; m = s['models'].get(self.cfg['models']['processor'], [0, 0]); sheet = self.web.sheet()
         js = dict(updated=time.strftime('%Y-%m-%d %H:%M:%S'), node=NODE, cycles=s['cycle'], counts=c, processor_accuracy=(m[0] / m[1] if m[1] else None),
@@ -548,7 +627,11 @@ class Node:
 def load_cfg():
     f = HERE / 'node1_config.json'
     if not f.exists(): f.write_text(json.dumps(DEFAULT, indent=1))
-    cfg = dict(DEFAULT); cfg.update(json.loads(f.read_text())); return cfg
+    cfg = dict(DEFAULT); cfg.update(json.loads(f.read_text())); cfg['ram_ceiling'] = max(cfg.get('ram_ceiling', 95), 95)
+    for k in DEFAULT:
+        if k not in cfg: cfg[k] = DEFAULT[k]
+    cfg['models'] = dict(DEFAULT['models'], **cfg.get('models', {}))
+    return cfg
 
 def main(argv):
     cfg = load_cfg()

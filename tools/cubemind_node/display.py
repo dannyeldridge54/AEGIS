@@ -17,10 +17,16 @@ def snapshot(node):
         records=node.ix.stats()['records'], kinds=node.ix.stats()['kinds'],
         string=node.string_index(), lanes=node.lanes()[:14],
         neurons=[dict(id=r['neuron'], side=r['side'], layer=r['layer'], records=r['records'], engine=r['engine'], acc=r['accuracy'], balance=r['balance']) for r in leaves],
-        synapses=syn, goalposts=node.goalposts(), recent=s['recent'][:20])
+        synapses=syn, goalposts=node.goalposts(), recent=s['recent'][:20], resources=node.resources(),
+        sweep=s.get('sweep', {}), dup_web=s.get('dup_web', 0),
+        models=node.cfg['models'], log=_tail(node.home / 'node1.log', 8))
+
+def _tail(p, n):
+    try: return p.read_text(encoding='utf-8', errors='ignore').splitlines()[-n:]
+    except OSError: return []
 
 PAGE = r"""<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="refresh" content="8"><title>CubeMind</title>
+<meta http-equiv="refresh" content="4"><title>CubeMind</title>
 <style>
 :root{--bg:#0f141a;--panel:#161d25;--ink:#e3e9ef;--muted:#8d9aa7;--line:#26313d;--accent:#5fb0d8;--ok:#62c08a;--warn:#e2b257;--bad:#e27d7d;--q:#a68be0;
 --mono:ui-monospace,"Cascadia Mono",Consolas,monospace;--sans:"Segoe UI",system-ui,sans-serif}
@@ -53,7 +59,7 @@ const NODES = __DATA__;
 const esc = s => String(s ?? '').replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 let pick = (location.hash || '').slice(1); if (!NODES[pick]) pick = Object.keys(NODES)[0];
 function draw(){
- const D = NODES[pick]; document.getElementById('who').textContent = '· ' + D.node; document.getElementById('upd').textContent = 'updated ' + D.updated + ' · refreshes every 8 s';
+ const D = NODES[pick]; document.getElementById('who').textContent = '· ' + D.node; document.getElementById('upd').textContent = 'updated ' + D.updated + ' · refreshes every 4 s';
  document.getElementById('nodes').innerHTML = Object.keys(NODES).map(k => `<button class="${k===pick?'on':''}" onclick="location.hash='${k}';pick='${k}';draw()">${esc(k)}</button>`).join('');
  // NOW
  const steps = ['retrieving','mapping','processing','refereeing','filing','waiting'], ph = D.phase || {};
@@ -63,7 +69,11 @@ function draw(){
   <div class="kpis">${[['Cycles', D.cycles],['Today', D.today.cycles],['Per hour', D.today.per_hour],['Pass', D.counts.PASS||0],['Unclear', D.counts.UNCLEAR||0],['Miss', D.counts.MISS||0],
    ['Processor right', D.processor.tested ? D.processor.right + '/' + D.processor.tested : '-'],['Records', D.records],['Neurons', D.neurons.length],['Links by meaning', D.today.similar_links]]
    .map(([k,v]) => `<div class="kpi"><span class="muted">${k}</span><b class="mono">${esc(v)}</b></div>`).join('')}</div>
-  <p class="muted">Sources today: ${Object.entries(D.today.sources).map(([k,v]) => esc(k)+' '+v).join(' · ') || 'none yet'}</p>`;
+  <p class="muted">Sources today: ${Object.entries(D.today.sources).map(([k,v]) => esc(k)+' '+v).join(' · ') || 'none yet'}</p>
+  ${D.sweep && D.sweep.total ? `<div class="kpis" style="margin-top:8px">${[['Files found', D.sweep.total],['Handled', D.sweep.unique + D.sweep.duplicates + D.sweep.skipped],['New, catalogued', D.sweep.catalogued],['Copies marked done', D.sweep.duplicates],['Web repeats skipped', D.dup_web]].map(([k,v]) => `<div class="kpi"><span class="muted">${k}</span><b class="mono">${v}</b></div>`).join('')}</div><p class="muted mono" style="overflow-wrap:anywhere">${esc(D.sweep.current)}</p>` : ''}
+  <p class="muted">Machine: ${['cpu','ram','gpu_busy','gpu_mem'].filter(k => D.resources[k] != null).map(k => ({cpu:'CPU',ram:'RAM',gpu_busy:'GPU working',gpu_mem:'GPU memory (full is normal)'})[k] + ' ' + Math.round(D.resources[k]) + '%').join(' · ') || 'install tools to see load'}</p>
+  <p class="muted">Models: ${Object.entries(D.models).map(([k,v]) => esc(k) + ' ' + esc(v)).join(' · ')}</p>
+  <details ${D.log.length ? 'open' : ''}><summary class="muted">Latest log lines</summary><pre class="mono" style="white-space:pre-wrap;font-size:12px">${D.log.map(esc).join('\n') || '(empty)'}</pre></details>`;
  // TIMELINE
  const W = 1000, H = 150, x0 = 40, x1 = 980, lo = -10, hi = 61, X = v => x0 + (v - lo) / (hi - lo) * (x1 - x0);
  const maxr = Math.max(1, ...D.string.string.map(e => e.records));
