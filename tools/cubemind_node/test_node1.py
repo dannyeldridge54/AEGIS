@@ -419,4 +419,27 @@ class T(unittest.TestCase):
         self.assertIn('BUILD_LOG', (n.home / 'BUILD_LOG.md').read_text()[:0] + 'BUILD_LOG')  # file exists
         self.assertIn('add a helper', (n.home / 'BUILD_LOG.md').read_text())
         self.assertIn('YOUR BUILD LOG', n.prog_extras())                              # the programmer sees its history
+    def test_cup_fills_and_other_roles_pause_until_the_list_is_clear(self):
+        n, root = self.staged()
+        # finish the local scan so we are in a model stage
+        for _ in range(6): n.run_batch(6)
+        # pile up a backlog for the programmer; it should enter focus
+        n.state['upgrades'] = [dict(need=f'upgrade {k}', t='now') for k in range(5)]
+        self.assertTrue(n.focus_mode()); self.assertTrue(n.state['focus'])
+        calls_before = list(n.llm.calls)
+        out = n.run_batch(6)
+        self.assertEqual(out, ['FOCUS'])                                          # the batch was the programmer clearing its list, not the pipeline
+        # the research pipeline models were NOT run this batch (others paused)
+        new = n.llm.calls[len(calls_before):]
+        self.assertNotIn(N.DEFAULT['models']['retriever'], new); self.assertNotIn(N.DEFAULT['models']['referee'], new)
+        self.assertLess(len(n.state['upgrades']), 5)                              # it worked through its list
+        self.assertGreater(n.state['cup']['done'], 0)                            # the cup filled
+    def test_focus_releases_when_the_list_is_empty(self):
+        n, root = self.staged()
+        n.state['focus'] = True; n.state['cup'] = dict(total=2, done=1); n.state['upgrades'] = []; n.state['help'] = []
+        try: n.instr_path.write_text(n.INBOX_HEAD)      # no pending instructions
+        except Exception: pass
+        self.assertEqual(n.programmer_backlog(), 0)
+        self.assertFalse(n.focus_mode())                                          # cup full -> released
+        self.assertFalse(n.state['focus'])
 if __name__ == '__main__': unittest.main()

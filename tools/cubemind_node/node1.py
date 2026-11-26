@@ -23,7 +23,7 @@ DEFAULT = dict(
     owner='Danny Eldridge', home='node1_data', cycle_seconds=0, batch=8, parallel=2, search_every_hours=6, online=True,
     ollama='http://127.0.0.1:11434', keep_alive='3m', timeout=600,
     models=dict(retriever='qwen3:14b', mapper='qwen3:8b', processor='qwen3-coder:30b', referee='gpt-oss:20b'),
-    sweep_first=True, sweep_batch=20, scan_batch=300, refine_per_batch=40, code_per_batch=4, help_per_batch=3, route_every=5, hints_per_batch=2, checkpoint_first=25, study_every=6, mind_per_batch=60, mind_ready_at=5000, ai_every=4, upgrade_at=25, repos_per_day=20, allow_install=False,
+    sweep_first=True, sweep_batch=20, scan_batch=300, refine_per_batch=40, code_per_batch=4, help_per_batch=3, route_every=5, hints_per_batch=2, checkpoint_first=25, study_every=6, mind_per_batch=60, mind_ready_at=5000, ai_every=4, upgrade_at=25, focus_at=4, focus_per_batch=5, repos_per_day=20, allow_install=False,
     local_folders=['~/CubeMind_janus', '~/ufe_data', '~/ufe lifes work', '~/Desktop/AEGIS_vault', '~/.copilot/repos'],
     github_token_env='GITHUB_TOKEN', max_db_mb=2000, backups_kept=7, ram_ceiling=95,
     embed_model='nomic-embed-text', similar_at=0.80)
@@ -647,6 +647,7 @@ class Node:
         if self.fix_priority(): k = max(1, k // 2)                              # bugs open: the LLMs yield ~half to the programmer to fix first
         stage = self.stage()
         if stage == 'local': return self.local_batch()                       # STAGE 1: every local file mapped before anything else
+        if self.focus_mode(): return self.focus_batch()                      # the programmer's cup is filling: others pause, it clears its list
         if self.state.get('day', {}).get('date') != today: self.state['day'] = dict(date=today, cycles=0, starts=0, sources={}, busy=0.0, idle=0.0)
         if self.state.get('selfcheck', {}).get('date') != today: self.selfcheck()
         items = []
@@ -1040,6 +1041,43 @@ class Node:
             self.state.setdefault('upgrades', []).append(dict(need=need, t=time.strftime('%Y-%m-%d %H:%M')))
             self.prog_action('ai-upgrade', f"round {ai['upgrades']}", 'queued', '; '.join(f'{c}:{n}' for c, n in top)); self.send_msg('mind', 'programmer', 'Order: ' + need[:160], kind='order')
             self.state.setdefault('board_cards', []).insert(0, dict(title='Subconscious queued an upgrade', body=need[:180], status='info', t=time.strftime('%Y-%m-%d %H:%M'))); del self.state['board_cards'][12:]
+    def programmer_backlog(self):
+        """How many things the programmer still has to build: your instructions, the subconscious's upgrades, help requests, and tool wants."""
+        instr = 0
+        try:
+            if self.instr_path.exists():
+                done = self.state.get('instr_done', [])
+                instr = sum(1 for l in self.instr_path.read_text(encoding='utf-8', errors='ignore').splitlines()
+                            if l.strip() and not l.strip().startswith('#') and FP._sha(l.strip().encode())[:16] not in done)
+        except Exception: pass
+        return instr + len(self.state.get('upgrades', [])) + len(self.state.get('help', [])) + sum(1 for w in self.state.get('wants', []) if not w.get('done'))
+    def focus_mode(self):
+        """The cup: when the programmer's list fills to focus_at, the other roles pause and it works through the WHOLE list to empty,
+        then everyone resumes. Hysteresis so it does not flicker."""
+        b = self.programmer_backlog(); f = self.state.get('focus', False)
+        if not f and b >= self.cfg.get('focus_at', 4):
+            self.state['focus'] = True; self.state['cup'] = dict(total=b, done=0)
+            self.send_msg('programmer', 'all', f'Focus mode: I have {b} things to build; the rest pause while I clear my list.', kind='focus')
+            self.state.setdefault('board_cards', []).insert(0, dict(title='Programmer focus mode', body=f'Clearing a backlog of {b}; other roles paused until the cup is full.', status='working', t=time.strftime('%Y-%m-%d %H:%M'))); del self.state['board_cards'][12:]
+        elif f and b == 0:
+            self.state['focus'] = False
+            if self.state.get('cup'): self.state['cup']['done'] = self.state['cup'].get('total', 0)
+            self.send_msg('programmer', 'all', 'Cup full: my list is clear. Resuming normal work.', kind='focus')
+            self.state.setdefault('board_cards', []).insert(0, dict(title='Cup full — list cleared', body='The programmer finished its backlog; all roles resume.', status='done', t=time.strftime('%Y-%m-%d %H:%M'))); del self.state['board_cards'][12:]
+        return self.state.get('focus', False)
+    def focus_batch(self):
+        """Others off: the programmer powers through its list, several items per batch, filling the cup until the list is empty."""
+        t0 = time.time(); cup = self.state.setdefault('cup', dict(total=0, done=0)); self.set_phase('processing', f"focus: clearing the programmer's list ({self.programmer_backlog()} left)")
+        for _ in range(self.cfg.get('focus_per_batch', 5)):
+            if self.programmer_backlog() == 0 or time.time() - t0 > 160: break
+            before = self.programmer_backlog(); self.programmer_always()
+            after = self.programmer_backlog()
+            if after < before: cup['done'] = cup.get('done', 0) + (before - after)
+            else: break                                                          # no progress this pass: stop so it never spins
+        cup['total'] = max(cup.get('total', 0), cup.get('done', 0) + self.programmer_backlog())
+        self.focus_mode()                                                        # may release the cup
+        d = self.state.setdefault('day', {}); d['busy'] = d.get('busy', 0.0) + (time.time() - t0); self._drawn = 0
+        self.state_f.write_text(json.dumps(self.state, indent=1)); self.status(); return ['FOCUS']
     def fix_priority(self):
         """True when there are open bug alerts: the machine then cuts other work ~in half and the programmer fixes first, so one GPU
         does not bog down. (The LLMs yield their share to the programmer until the machine is healthy again.)"""
