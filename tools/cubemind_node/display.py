@@ -22,6 +22,15 @@ def snapshot(node):
         coder=s.get('coder', {}), code_queue=len(s.get('code_queue', [])), board=node.shared_board(),
         models=node.cfg['models'], log=_tail(node.home / 'node1.log', 8))
 
+def quick(node, snap):
+    """Refresh the live parts (phase, today, counts, recent, log, resources) without touching the database; safe from any thread."""
+    s = node.state; day = s.get('day', {}); busy = day.get('busy', 0.0) + day.get('idle', 0.0)
+    return dict(snap, updated=time.strftime('%Y-%m-%d %H:%M:%S'), phase=dict(s.get('phase', {})), cycles=s['cycle'], counts=dict(s['counts']),
+                today=dict(cycles=day.get('cycles', 0), per_hour=round(3600 * day.get('cycles', 0) / busy) if busy else 0, sources=dict(day.get('sources', {})),
+                           similar_links=day.get('similar_links', 0)),
+                recent=list(s['recent'][:20]), resources=node.resources(), sweep=dict(s.get('sweep', {})), coder=dict(s.get('coder', {})),
+                code_queue=len(s.get('code_queue', [])), log=_tail(node.home / 'node1.log', 8))
+
 def _tail(p, n):
     try: return p.read_text(encoding='utf-8', errors='ignore').splitlines()[-n:]
     except OSError: return []

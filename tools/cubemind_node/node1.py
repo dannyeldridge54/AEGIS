@@ -236,7 +236,11 @@ class Node:
         self.state['phase'] = dict(name=name, detail=detail, since=old.get('since') if old.get('name') == name else time.time())
         if time.time() - getattr(self, '_drawn', 0) >= 2:
             self._drawn = time.time()
-            try: DISPLAY.render(self.home / 'dashboard.html', {NODE: DISPLAY.snapshot(self)})
+            try:
+                if threading.current_thread() is threading.main_thread(): self._snap = DISPLAY.snapshot(self)      # the database belongs to the main thread
+                elif getattr(self, '_snap', None): self._snap = DISPLAY.quick(self, self._snap)                  # other threads refresh only the live parts
+                else: return
+                DISPLAY.render(self.home / 'dashboard.html', {NODE: self._snap})
             except Exception as e: self.log(f'display failed: {e}')
     def log(self, msg):
         with open(self.home / 'node1.log', 'a', encoding='utf-8') as f: f.write(time.strftime('%Y-%m-%d %H:%M:%S ') + msg + '\n')
