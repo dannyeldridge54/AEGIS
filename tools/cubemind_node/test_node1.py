@@ -28,8 +28,10 @@ class FakeLLM:
                                'links': [{'proposal': 0, 'accept': True, 'relation': 'similar', 'why': 'w'}, {'proposal': 1, 'accept': True, 'relation': 'made_up'}]})
         if 'You are the RETRIEVER' in prompt: return json.dumps({'lens': 'frame', 'useful': [], 'question': 'q', 'stuck': 'need the DESI data set' if self.stuck else ''})
         if 'You are the REFEREE' in prompt: return json.dumps({'mirror': 'could be wrong', 'verdict': 'FINDING' if self.objection else 'NULL', 'finding': 'x' if self.objection else ''})
-        task = prompt.split('Task:', 1)[1].split('\n', 1)[0] if 'Task:' in prompt else prompt
-        args = json.loads(re.search(r'for (\{.*?\})', task).group(1)); tool = next(t for t, v in U.TOOLS.items() if v[1].split('{x}')[0][:40] in task)
+        task = prompt.split('Task:', 1)[1].split('\n', 1)[0] if 'Task:' in prompt else ''
+        mm = re.search(r'for (\{.*?\})', task)
+        if not mm: return json.dumps({'plan': ['step'], 'files': [], 'test': 't'})     # a build/upgrade/instruction prompt, not a calculation
+        args = json.loads(mm.group(1)); tool = next(t for t, v in U.TOOLS.items() if v[1].split('{x}')[0][:40] in task)
         v = float(U.TOOLS[tool][2](args)); return json.dumps({'steps': ['s'], 'result': v if self.right else v * 3 + 1})
 
 class T(unittest.TestCase):
@@ -45,7 +47,7 @@ class T(unittest.TestCase):
         self.assertTrue(all(n.ix.verify(r) for r in n.ix.find(kind='cycle'))); self.assertEqual(len(n.ix.find(kind='find')), 5)  # 4 web (dedupe) + 1 local file
     def test_three_roles_use_three_models_in_order(self):
         n = self.node(); n.cycle(); m = N.DEFAULT['models']
-        self.assertEqual(n.llm.calls, [m['retriever'], m['mapper'], m['processor'], m['referee']])
+        self.assertEqual(n.llm.calls[:4], [m['retriever'], m['mapper'], m['processor'], m['referee']])   # pipeline first; programmer acts after
     def test_wrong_answers_are_misses_and_objections_are_unclear(self):
         self.assertEqual(self.node(right=False).cycle(), 'MISS'); self.assertEqual(self.node(objection=True).cycle(), 'UNCLEAR')
     def test_rings_get_harder_after_three_in_a_row(self):
@@ -61,7 +63,7 @@ class T(unittest.TestCase):
     def test_goalposts_listed_and_shown(self):
         n = self.node()
         for _ in range(5): n.cycle()
-        g = n.goalposts(); self.assertEqual(len(g), 24); self.assertTrue(all({'part', 'goal', 'met', 'now'} <= set(x) for x in g))
+        g = n.goalposts(); self.assertEqual(len(g), 25); self.assertTrue(all({'part', 'goal', 'met', 'now'} <= set(x) for x in g))
         self.assertIn('Goalposts', (n.home / 'status.html').read_text())
     def test_selfcheck_runs_with_sympy(self):
         n = self.node(); n.cycle(); sc = n.state['selfcheck']; self.assertEqual((sc.get('reproduce'), sc.get('total')), (18, 18))
@@ -80,7 +82,8 @@ class T(unittest.TestCase):
         n = self.node(); n.cfg['parallel'] = 1; vs = n.run_batch(8); m = N.DEFAULT['models']
         self.assertEqual(len(vs), 8); self.assertEqual(set(vs), {'PASS'})
         c = n.llm.calls.count(m['mapper']); self.assertGreaterEqual(c, 1)        # the mapper is only called when there is something new to map
-        self.assertEqual(n.llm.calls, [m['retriever']] * 8 + [m['mapper']] * c + [m['processor']] * 8 + [m['referee']] * 8)
+        pipe = [m['retriever']] * 8 + [m['mapper']] * c + [m['processor']] * 8 + [m['referee']] * 8
+        self.assertEqual(n.llm.calls[:len(pipe)], pipe)   # pipeline first; the programmer's own calls may follow
     def test_parallel_batch_gives_same_verdicts(self):
         n = self.node(); n.cfg['parallel'] = 3; self.assertEqual(set(n.run_batch(6)), {'PASS'}); self.assertEqual(n.state['cycle'], 6)
     def test_same_search_is_not_repeated(self):
@@ -218,7 +221,7 @@ class T(unittest.TestCase):
     def test_programmer_files_its_own_actions_checkpoints_and_takes_instructions(self):
         n, root = self.staged(); n.cfg['checkpoint_first'] = 5; orig = n.llm.ask
         def ask(m, p, num_predict=700):
-            if 'INSTRUCTION from Danny' in p:
+            if 'TASK (instruction)' in p:
                 return json.dumps({'plan': ['write add()'], 'files': [{'name': 'add.py', 'code': 'def add(a, b):\n    return a + b\n'}, {'name': '../../evil.py', 'code': 'x'},
                                    {'name': 'bad.py', 'code': 'def ('}], 'test': 'add(1, 2) == 3'})
             if 'CHECKPOINT REVIEW' in p: return json.dumps({'lessons': ['only link real modules'], 'next': 'fewer refusals'})
@@ -228,10 +231,10 @@ class T(unittest.TestCase):
         try:
             n.run_batch(4); n.instr_path.write_text(n.INBOX_HEAD + 'write a function that adds two numbers\n')
             for _ in range(6): n.run_batch(4)
-            ins = n.state['instructions'][0]; self.assertEqual(ins['outcome'], 'syntax error')                      # bad.py caught by code
+            ins = next(x for x in n.state['instructions'] if x.get('source') == 'instruction'); self.assertEqual(ins['outcome'], 'syntax error')   # bad.py caught by code
             wb = n.home / 'workbench' / ins['folder']; self.assertTrue((wb / 'add.py').exists()); self.assertTrue((wb / 'evil.py').exists())   # name stripped to the folder
             self.assertFalse((n.home / 'evil.py').exists()); self.assertIn('PROPOSED (not run)', (wb / 'PLAN.md').read_text())
-            n.run_batch(4); self.assertEqual(len(n.state['instructions']), 1)                                       # each instruction once
+            n.run_batch(4); self.assertEqual(sum(1 for x in n.state['instructions'] if x.get('source') == 'instruction'), 1)   # Danny's instruction runs exactly once
         finally: n.instr_path.unlink(missing_ok=True)
         acts = [n.ix.get(a) for a in n.ix.find(kind='action', limit=1000)]; self.assertTrue(acts)
         self.assertTrue(all(a['tags']['actor'] == 'programmer' for a in acts)); self.assertIn('instruction', {a['tags']['action'] for a in acts})
@@ -354,4 +357,29 @@ class T(unittest.TestCase):
         for _ in range(6): n.run_batch(4)
         roles = [p for p in prompts if 'YOUR BRIEF' in p]
         self.assertTrue(roles and all('NOBODY STOPS' in p for p in roles))
+    def test_subconscious_researches_ai_and_climbs_the_ramp(self):
+        n, root = self.staged(); asked = []
+        n.hint_fetch = lambda q: asked.append(q) or [dict(source='stackoverflow', title='local LLM agent framework ' + q[:12], url='u'+str(len(asked)), text='llm agent rag embedding model')]
+        for _ in range(10): n.run_batch(4)
+        self.assertTrue(n.state.get('ai', {}).get('seeded'))                     # it started AI research on its own
+        self.assertTrue(any('local' in a or 'agent' in a or 'LLM' in a for a in asked))
+        self.assertGreater(n.state['ai']['count'], 0)                           # categorized AI knowledge into its network
+        self.assertTrue(n.ix.find(kind='ai_knowledge'))
+        self.assertGreaterEqual(n.state['ramp']['rung'], 1)                     # climbed off rung 0 once local mapping finished
+    def test_fix_priority_yields_to_the_programmer_when_bugs_are_open(self):
+        n, root = self.staged()
+        self.assertFalse(n.fix_priority())
+        n.state['health'] = dict(open=2, last='now', alerts=[])
+        self.assertTrue(n.fix_priority())
+        before = n.state.get('cycle', 0); n.state['stage'] = 'all'; n.cfg['sweep_first'] = False
+        n.run_batch(8)                                                          # k is halved under fix priority
+        self.assertLessEqual(n.state['cycle'] - before, 4)
+    def test_upgrade_instructions_build_into_the_workbench(self):
+        n, root = self.staged()
+        n.state['upgrades'] = [dict(need='add a faster recall', t='now')]
+        n.llm.ask = lambda m, p, num_predict=700: json.dumps({'plan': ['x'], 'files': [{'name': 'u.py', 'code': 'def f():\n    return 1\n'}], 'test': 't'}) if 'ai-upgrade' in p else '{}'
+        n.upgrade_tick()
+        self.assertEqual(n.state['upgrades'], [])                               # consumed
+        self.assertTrue(any(x.get('source') == 'ai-upgrade' for x in n.state['instructions']))
+        folder = n.state['instructions'][0]['folder']; self.assertTrue((n.home / 'workbench' / folder / 'u.py').exists())
 if __name__ == '__main__': unittest.main()

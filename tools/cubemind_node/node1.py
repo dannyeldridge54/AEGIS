@@ -23,7 +23,7 @@ DEFAULT = dict(
     owner='Danny Eldridge', home='node1_data', cycle_seconds=0, batch=8, parallel=2, search_every_hours=6, online=True,
     ollama='http://127.0.0.1:11434', keep_alive='3m', timeout=600,
     models=dict(retriever='qwen3:14b', mapper='qwen3:8b', processor='qwen3-coder:30b', referee='gpt-oss:20b'),
-    sweep_first=True, sweep_batch=20, scan_batch=300, refine_per_batch=40, code_per_batch=4, help_per_batch=3, route_every=5, hints_per_batch=2, checkpoint_first=25, study_every=6, mind_per_batch=60, mind_ready_at=5000, repos_per_day=20, allow_install=False,
+    sweep_first=True, sweep_batch=20, scan_batch=300, refine_per_batch=40, code_per_batch=4, help_per_batch=3, route_every=5, hints_per_batch=2, checkpoint_first=25, study_every=6, mind_per_batch=60, mind_ready_at=5000, ai_every=4, upgrade_at=25, repos_per_day=20, allow_install=False,
     local_folders=['~/CubeMind_janus', '~/ufe_data', '~/ufe lifes work', '~/Desktop/AEGIS_vault', '~/.copilot/repos'],
     github_token_env='GITHUB_TOKEN', max_db_mb=2000, backups_kept=7, ram_ceiling=95,
     embed_model='nomic-embed-text', similar_at=0.80)
@@ -92,11 +92,33 @@ PMAP = (HERE / 'PROGRAMMER_MAP.md').read_text(encoding='utf-8') if (HERE / 'PROG
 CHARTER = (HERE / 'NODE2_CHARTER.md').read_text(encoding='utf-8') if (HERE / 'NODE2_CHARTER.md').exists() else ''
 CHARTER3 = (HERE / 'NODE3_CHARTER.md').read_text(encoding='utf-8') if (HERE / 'NODE3_CHARTER.md').exists() else ''
 VISION = (HERE / 'GRAND_VISION.md').read_text(encoding='utf-8') if (HERE / 'GRAND_VISION.md').exists() else ''
+RAMPDOC = (HERE / 'ADVANCING_RAMP.md').read_text(encoding='utf-8') if (HERE / 'ADVANCING_RAMP.md').exists() else ''
 # the planned node network: each entry is a switch the programmer can turn on when its 'when' is met
 NETWORK = [
     dict(id='R1-serapis-rho', role='Mapper', when='now', emits='field_mapped', doc='this node'),
     dict(id='node2-builder', role='Builder', when='field_mapped', emits='builder_ready', doc='NODE2_CHARTER.md'),
     dict(id='node3-mind', role='Mind (subconscious)', when='builder_ready', emits='mind_online', doc='NODE3_CHARTER.md'),
+]
+# THE ADVANCING RAMP: the subconscious always has a current goal; each rung's gate, when met, climbs to the next and seeds the next task.
+# Each rung builds on the one below, so the machine keeps creating its own next step and never stops learning. See ADVANCING_RAMP.md.
+RAMP = [
+    dict(name='Map the field', goal='give every local file, then the web, then the math a geometric address',
+         gate=lambda n: n.state.get('stage') in ('web', 'math', 'all'), task=''),
+    dict(name='Learn AI', goal='research AI tools, models, agents and programming online and categorize them into the knowledge network',
+         gate=lambda n: n.state.get('ai', {}).get('count', 0) >= 20,
+         task='Study the newest AI tools and techniques you have gathered and write a short map of how they fit together, saved to your workbench.'),
+    dict(name='Upgrade itself', goal='turn what it learned into real upgrades to this machine (proposed as code)',
+         gate=lambda n: n.state.get('ai', {}).get('upgrades', 0) >= 2,
+         task='Propose your first concrete capability upgrade to this machine from the ai_knowledge you gathered, as code in your workbench.'),
+    dict(name='Build a toolkit', goal='assemble a tested tool package (the Workshop) from the strongest lane',
+         gate=lambda n: sum(1 for x in n.state.get('instructions', []) if x.get('outcome') == 'compiles') >= 3,
+         task='Assemble a small, tested tool package from the strongest lane so later work calls working code, not notes.'),
+    dict(name='Create', goal='combine the tools to propose a first creation: a simulation, a technology blueprint, or a game prototype (like the reactor)',
+         gate=lambda n: n.state.get('prog_kinds', {}).get('ai-upgrade', {}).get('good', 0) >= 4,
+         task='Using your toolkit and knowledge, propose one first creation (a simulation, a blueprint, or a small game) as code in your workbench.'),
+    dict(name='Grow the Mind', goal='prepare the field-native model to take the centre and keep improving its own design',
+         gate=lambda n: n.state.get('mind', {}).get('readiness', 0) >= 1.0,
+         task='Propose improvements to your own model (the Mind): a better encoding, faster recall, or a new sense. Never stop refining it.'),
 ]
 TOOLMAP = (HERE / 'TOOL_MAP.md').read_text(encoding='utf-8') if (HERE / 'TOOL_MAP.md').exists() else ''
 
@@ -375,7 +397,7 @@ class Node:
             req = urllib.request.Request(self.cfg['ollama'] + '/api/embed', body, {'Content-Type': 'application/json'})
             with urllib.request.urlopen(req, timeout=60) as r: v = json.loads(r.read())['embeddings'][0]
         except Exception as e:
-            if not getattr(self, '_embed_warned', False): self.log(f'embeddings off ({e}); run: ollama pull {self.cfg["embed_model"]}'); self._embed_warned = True
+            if not getattr(self, '_embed_warned', False): self.log(f'embeddings unavailable; optional ({e}); run: ollama pull {self.cfg["embed_model"]}'); self._embed_warned = True
             return
         db = self.ix.db; db.execute('CREATE TABLE IF NOT EXISTS emb(record TEXT PRIMARY KEY, vec TEXT)')
         n = sum(x * x for x in v) ** 0.5 or 1.0; v = [x / n for x in v]; best = (0.0, None)
@@ -427,6 +449,8 @@ class Node:
           f"{s.get('doorways', {}).get('opened', 0)} opened for {s.get('doorways', {}).get('asked', 0)} requests, {s.get('doorways', {}).get('placed', 0)} data sets placed"),
          ('Programmer: node alert map', 'keeps a live alert map on the dashboard, works it top to bottom, clears resolved alerts (HEALTH.md)', s.get('health', {}).get('last', '') != '',
           f"{s.get('health', {}).get('open', 0)} open; " + ('; '.join(f"{k} x{v}" for k, v in s.get('health', {}).get('seen', {}).items()) or 'clean')),
+         ('Advancing ramp: always climbing', 'the subconscious has a current goal and climbs to the next as each gate is met (never stops)', True,
+          f"rung {min(s.get('ramp', {}).get('rung', 0) + 1, len(RAMP))}/{len(RAMP)}: {RAMP[min(s.get('ramp', {}).get('rung', 0), len(RAMP) - 1)]['name']}; climbed {len(s.get('ramp', {}).get('climbed', []))}"),
          ('Safety net: nothing stops', 'the subconscious watchdog keeps progress; when stuck it does code-only work and self-heals (saves count)', True,
           f"{s.get('watch', {}).get('saves', 0)} saves; {'stuck ' + str(s.get('watch', {}).get('stuck', 0)) if s.get('watch', {}).get('stuck', 0) else 'flowing'}"),
          ('Mind: subconscious learning', 'the field-native model encodes every record continuously and reports its readiness to take the centre', s.get('mind', {}).get('encoded', 0) > 0,
@@ -604,6 +628,7 @@ class Node:
     def run_batch(self, k=None):
         """One batch of k items: retriever on all, then processor on all, then referee on all (each model loads once), then file them."""
         k = k or self.cfg.get('batch', 1); t0 = time.time(); today = time.strftime('%Y-%m-%d')
+        if self.fix_priority(): k = max(1, k // 2)                              # bugs open: the LLMs yield ~half to the programmer to fix first
         stage = self.stage()
         if stage == 'local': return self.local_batch()                       # STAGE 1: every local file mapped before anything else
         if self.state.get('day', {}).get('date') != today: self.state['day'] = dict(date=today, cycles=0, starts=0, sources={}, busy=0.0, idle=0.0)
@@ -631,8 +656,8 @@ class Node:
             self.set_phase('processing', f"code cartographer mapping {len(todo)} modules with {self.cfg['models']['processor']}")
             recs = {c: self.ix.get(c) or {} for c in todo}; self.prime_context(addrs)
             for cid, out in zip(todo, self._par(lambda c: self.coder(c, mods, recs[c]), todo)): self.file_code(cid, out, mods); self.handle_prog(out, mods)
-        self.programmer_tick()
         if stage == 'web':                                                     # STAGE 2: searching and mapping only; no calculations yet
+            self.programmer_tick()
             d = self.state['day']; d['busy'] = d.get('busy', 0.0) + (time.time() - t0); self._drawn = 0
             self.set_phase('waiting', f"web stage: {len(set(self.state.get('web_asked', [])))}/{2 * len(SUBJECTS)} searches asked")
             self.state_f.write_text(json.dumps(self.state, indent=1)); self.status(); return ['WEB'] * k
@@ -652,6 +677,7 @@ class Node:
         if getattr(self.llm, 'timeouts', 0) >= 2 and self.cfg.get('parallel', 1) > 1:
             self.cfg['parallel'] = 1; self.llm.timeouts = 0; self.log('model timeouts: the card is shared, so questions now go one at a time')
         verdicts = [self.file(it['subj'], it['finds'], ln, res, rf) for it, ln, res, rf in zip(items, lenses, results, refs)]
+        self.programmer_tick()                                                 # the programmer takes its turn after the batch's research pipeline
         d = self.state['day']; d['busy'] = d.get('busy', 0.0) + (time.time() - t0)
         self._drawn = 0; self.set_phase('waiting', 'batch done: ' + ' '.join(verdicts))
         self.state_f.write_text(json.dumps(self.state, indent=1)); self.status(); return verdicts
@@ -704,7 +730,8 @@ class Node:
         so it learns to fix them. Code fixes are proposed to IMPROVEMENTS.md, never applied on their own. Keeps HEALTH.md current."""
         try: lines = (self.home / 'node1.log').read_text(encoding='utf-8', errors='ignore').splitlines()[-250:]
         except OSError: lines = []
-        errs = [l for l in lines if any(w in l for w in ('failed', 'error', 'Error', 'timed out', 'same thread'))]
+        benign = ('embeddings off', 'embeddings unavailable', 'continuing offline', 'one source failed')
+        errs = [l for l in lines if any(w in l for w in ('failed', 'error', 'Error', 'timed out', 'same thread')) and not any(b in l for b in benign)]
         hm = self.state.setdefault('health', dict(seen={}, acted=[], last=''))
         buckets = {}
         for l in errs:
@@ -780,7 +807,7 @@ class Node:
         t0 = time.time()
         if self.sweep_pending():
             self.set_phase('retrieving', f"scanning your files by code: {len(self._pending)} left")
-            n = self.sweep_batch(self.cfg.get('scan_batch', 300)); out = ['SCAN']
+            sb = self.cfg.get('scan_batch', 300); n = self.sweep_batch(sb // 2 if self.fix_priority() else sb); out = ['SCAN']
             self.programmer_always()                                             # the programmer keeps working (learning, maintenance) while files are scanned
         else:
             q = self.state.setdefault('refine', []); take, self.state['refine'] = q[:self.cfg.get('refine_per_batch', 40)], q[self.cfg.get('refine_per_batch', 40):]
@@ -931,6 +958,53 @@ class Node:
                 self.ix.stamp('link', inputs=dict(src=f"help:{h.get('role')}:{h.get('subject')}", dst=dst), outputs=dict(relation='similar', why='subconscious code pathway'),
                               tags=dict(node=NODE, relation='similar', status='ASSUMED', proposed_by='subconscious', kind='doorway'), links=[(dst, 1, 'similar')])
         del help_q[:n]
+    # ---------------------------------------------------------------- the subconscious studies AI itself and upgrades the machine
+    AI_SEEDS = [
+        'state of the art open-weight local large language models 2026 benchmarks',
+        'best local AI agent frameworks and orchestration libraries 2026',
+        'retrieval augmented generation vector database techniques 2026',
+        'how modern code agents plan write and test code automatically',
+        'efficient quantization and fast local LLM inference on consumer GPUs',
+        'embedding models for semantic search open source 2026',
+        'how to build a knowledge graph of tools and capabilities for an AI agent',
+        'procedural generation and simulation techniques for games and engineering blueprints',
+    ]
+    AI_CATS = {'model': ['llm', 'model', 'gpt', 'llama', 'qwen', 'mistral', 'weights', 'inference', 'quantiz'],
+               'agent': ['agent', 'orchestrat', 'autogen', 'plan', 'tool use', 'framework'],
+               'retrieval': ['rag', 'retrieval', 'embed', 'vector', 'index', 'knowledge graph'],
+               'coding': ['code', 'program', 'compiler', 'ast', 'refactor', 'test'],
+               'generation': ['procedural', 'simulation', 'game', 'blueprint', 'synthesis', 'diffusion']}
+    def ai_tick(self):
+        """The subconscious researches AI online and categorizes it into its own knowledge network. As that network grows, it files
+        upgrade instructions for the programmer. This is how the Mind learns the newest technology and makes the machine improve itself."""
+        if not self.cfg['online']: return
+        ai = self.state.setdefault('ai', dict(seeded=False, count=0, cats={}, seen_rowid=0, upgrades=0))
+        if not ai['seeded']:
+            self.state.setdefault('search_queue', [])[:0] = self.AI_SEEDS; ai['seeded'] = True
+            self.log('subconscious: started AI research (seeded ' + str(len(self.AI_SEEDS)) + ' topics on AI tools and technology)')
+        self.state['ai_n'] = self.state.get('ai_n', 0) + 1
+        # categorize new hint records into the AI knowledge network
+        db = self.ix.db
+        rows = db.execute("SELECT r.rowid, r.id FROM records r WHERE r.kind='hint' AND r.rowid > ? ORDER BY r.rowid LIMIT 40", (ai.get('seen_rowid', 0),)).fetchall()
+        for rowid, rid in rows:
+            ai['seen_rowid'] = max(ai.get('seen_rowid', 0), rowid)
+            o = (self.ix.get(rid) or {}).get('outputs') or {}; text = (str(o.get('title', '')) + ' ' + str(o.get('text', ''))).lower()
+            cat = next((c for c, ws in self.AI_CATS.items() if any(w in text for w in ws)), None)
+            if not cat: continue
+            ai['cats'][cat] = ai['cats'].get(cat, 0) + 1; ai['count'] += 1
+            self.ix.stamp('ai_knowledge', inputs=dict(hint=rid), outputs=dict(category=cat, title=str(o.get('title', ''))[:120], url=o.get('url', '')),
+                          tags=dict(node=NODE, kind='ai_knowledge', category=cat, actor='subconscious', ring='R1', anchor='data', layer='torus'))
+        # when the AI network grows, ask the programmer to upgrade the machine with what was learned
+        if ai['count'] >= (ai['upgrades'] + 1) * self.cfg.get('upgrade_at', 25):
+            ai['upgrades'] += 1; top = sorted(ai['cats'].items(), key=lambda kv: -kv[1])[:3]
+            need = f"Using what the subconscious has learned about AI ({', '.join(f'{c}:{n}' for c, n in top)}), propose one concrete upgrade to this machine (a new capability or a faster/cleaner way to do an existing job), as code in your workbench. Draw on the ai_knowledge records."
+            self.state.setdefault('upgrades', []).append(dict(need=need, t=time.strftime('%Y-%m-%d %H:%M')))
+            self.prog_action('ai-upgrade', f"round {ai['upgrades']}", 'queued', '; '.join(f'{c}:{n}' for c, n in top))
+            self.state.setdefault('board_cards', []).insert(0, dict(title='Subconscious queued an upgrade', body=need[:180], status='info', t=time.strftime('%Y-%m-%d %H:%M'))); del self.state['board_cards'][12:]
+    def fix_priority(self):
+        """True when there are open bug alerts: the machine then cuts other work ~in half and the programmer fixes first, so one GPU
+        does not bog down. (The LLMs yield their share to the programmer until the machine is healthy again.)"""
+        return self.state.get('health', {}).get('open', 0) > 0
     def programmer_always(self):
         """The programmer's steady work, run every batch in every stage: watch health, run the switchboard, learn from the web,
         pull repos, take instructions, checkpoint. Heavy model calls (study) are paced so they never slow the scan."""
@@ -940,9 +1014,19 @@ class Node:
         except Exception as e: self.log(f'watchdog failed: {e}')
         try: self.maintenance_tick(); self.switchboard_tick()
         except Exception as e: self.log(f'maintenance/switchboard failed: {e}')
-        try: self.study_tick(); self.hint_tick(); self.repo_tick(); self.wants_tick()
-        except Exception as e: self.log(f'learning failed: {e}')
-        try: self.instruction_tick(); self.checkpoint_tick()
+        fixing = self.fix_priority()
+        try: self.hint_tick()                                                   # always drain search answers (cheap)
+        except Exception as e: self.log(f'hints failed: {e}')
+        try: self.ai_tick()                                                    # cheap: seed AI topics + categorize hints (no model call), always
+        except Exception as e: self.log(f'ai research failed: {e}')
+        if not fixing:                                                          # when bugs are open, the others yield: skip heavy research so the programmer gets the cycles
+            try: self.study_tick(); self.repo_tick(); self.wants_tick()
+            except Exception as e: self.log(f'learning failed: {e}')
+        try: self.ramp_tick()
+        except Exception as e: self.log(f'ramp failed: {e}')
+        try:
+            if not fixing: self.upgrade_tick()                                  # defer new upgrades while fixing; fixes come first
+            self.instruction_tick(); self.checkpoint_tick()
         except Exception as e: self.log(f'instruction/checkpoint failed: {e}')
     def programmer_tick(self):
         """Stage work: answer help requests and place data sets on the string. (programmer_always runs separately, every stage.)"""
@@ -1012,22 +1096,18 @@ class Node:
     # ---- the instruction inbox: Danny writes one instruction per line; the programmer works on one per tick
     INBOX_HEAD = ("# Write one instruction per line for the programmer (start small). Lines starting with # are ignored.\n"
                   "# Its work goes to node1_data/workbench/. Code is saved and syntax-checked, never run automatically.\n")
-    def instruction_tick(self):
-        f = self.instr_path
-        if not f.exists(): f.write_text(self.INBOX_HEAD, encoding='utf-8'); return
-        done = self.state.setdefault('instr_done', [])
-        todo = [l.strip() for l in f.read_text(encoding='utf-8', errors='ignore').splitlines() if l.strip() and not l.strip().startswith('#')]
-        todo = [l for l in todo if FP._sha(l.encode())[:16] not in done]
-        if not todo: return
-        task = todo[0]; done.append(FP._sha(task.encode())[:16]); mods = self.modules(); self.prime_context([dict(NODE_ADDRESS)])
-        self.set_phase('processing', f'programmer working on your instruction: {task[:60]}')
-        p = (f"You are the PROGRAMMER. INSTRUCTION from Danny: {task}\n{brief('coder')}{self.prog_extras()}NAVIGATION MAP:\n{TOOLMAP}\n"
+    def _build_task(self, task, source):
+        """The programmer builds one task into its workbench (proposed, syntax-checked, never run). Shared by Danny's inbox, the
+        subconscious's upgrade queue, and the advancing ramp."""
+        mods = self.modules(); self.prime_context([dict(NODE_ADDRESS)])
+        self.set_phase('processing', f'programmer ({source}): {task[:56]}')
+        p = (f"You are the PROGRAMMER. TASK ({source}): {task}\n{brief('coder')}{self.prog_extras()}NAVIGATION MAP:\n{TOOLMAP}\n"
              f"Modules that exist: {', '.join(sorted(mods)[:150])}\nStart from the smallest working piece.\n"
              'Reply in JSON: {"plan": ["short steps"], "files": [{"name": "file.py", "code": "the full file"}], "test": "how to check it works", ' + self.PROG_FIELDS + '}')
         try: out = parse_json(self.llm.ask(self.cfg['models']['processor'], p, num_predict=2500))
-        except Exception as e: self.log(f'instruction failed: {e}'); out = {}
-        n = len(done); slug = ''.join(c if c.isalnum() else '_' for c in task.lower())[:40].strip('_') or 'task'
-        wb = self.home / 'workbench' / f'{n:03d}_{slug}'; wb.mkdir(parents=True, exist_ok=True); results = []
+        except Exception as e: self.log(f'{source} task failed: {e}'); out = {}
+        n = self.state.get('prog_n', 0); slug = ''.join(c if c.isalnum() else '_' for c in task.lower())[:40].strip('_') or 'task'
+        wb = self.home / 'workbench' / f'{n:03d}_{source}_{slug}'; wb.mkdir(parents=True, exist_ok=True); results = []
         for fd in out.get('files', []) or []:
             name = Path(str(fd.get('name', ''))).name
             if Path(name).suffix.lower() not in ('.py', '.md', '.txt', '.json') or not name: continue
@@ -1036,11 +1116,41 @@ class Node:
                 try: ast.parse(code); ok = 'compiles'
                 except SyntaxError as e: ok = f'syntax error line {e.lineno}'
             results.append(f'{name}: {ok}')
-        (wb / 'PLAN.md').write_text(f"# {task}\n\n" + '\n'.join(f"{k + 1}. {x}" for k, x in enumerate(out.get('plan', []) or [])) +
+        (wb / 'PLAN.md').write_text(f"# {task}\n\n_source: {source}_\n\n" + '\n'.join(f"{k + 1}. {x}" for k, x in enumerate(out.get('plan', []) or [])) +
                                     f"\n\n**How to check:** {out.get('test', '')}\n\n**Files:** {', '.join(results) or 'none'}\n\nStatus: PROPOSED (not run).\n", encoding='utf-8')
         outcome = 'compiles' if results and all(r.endswith(('compiles', 'saved')) for r in results) else ('no files' if not results else 'syntax error')
-        self.prog_action('instruction', task[:80], outcome, '; '.join(results)); self.handle_prog(out, mods)
-        self.state.setdefault('instructions', []).insert(0, dict(t=time.strftime('%Y-%m-%d %H:%M'), task=task[:200], outcome=outcome, folder=str(wb.name), files=results))
+        self.prog_action(source, task[:80], outcome, '; '.join(results)); self.handle_prog(out, mods)
+        self.state.setdefault('instructions', []).insert(0, dict(t=time.strftime('%Y-%m-%d %H:%M'), task=task[:200], outcome=outcome, folder=str(wb.name), files=results, source=source))
+    def instruction_tick(self):
+        f = self.instr_path
+        if not f.exists(): f.write_text(self.INBOX_HEAD, encoding='utf-8'); return
+        done = self.state.setdefault('instr_done', [])
+        todo = [l.strip() for l in f.read_text(encoding='utf-8', errors='ignore').splitlines() if l.strip() and not l.strip().startswith('#')]
+        todo = [l for l in todo if FP._sha(l.encode())[:16] not in done]
+        if not todo: return
+        task = todo[0]; done.append(FP._sha(task.encode())[:16]); self._build_task(task, 'instruction')
+    def upgrade_tick(self):
+        """Build the subconscious's queued upgrade instructions (one per batch), after Danny's own instructions."""
+        q = self.state.setdefault('upgrades', [])
+        if not q: return
+        u = q.pop(0); self._build_task(u['need'], 'ai-upgrade')
+    def ramp_tick(self):
+        """The advancing ramp: the subconscious always has a current goal; when its gate is met it climbs to the next rung and takes
+        the next goal. Each rung builds on the one below, so the machine keeps creating its own next step and never stops."""
+        ramp = self.state.setdefault('ramp', dict(rung=0, climbed=[], last=''))
+        i = ramp['rung']
+        if i >= len(RAMP): return
+        rung = RAMP[i]
+        try: met = rung['gate'](self)
+        except Exception: met = False
+        ramp['last'] = time.strftime('%Y-%m-%d %H:%M')
+        if met:
+            ramp['climbed'].append(dict(rung=i, name=rung['name'], t=ramp['last'])); ramp['rung'] = i + 1
+            self.prog_action('ramp', rung['name'], 'climbed', rung['goal'][:80])
+            self.state.setdefault('board_cards', []).insert(0, dict(title=f"Ramp: climbed to {rung['name']}", body=rung['goal'], status='done', t=ramp['last'])); del self.state['board_cards'][12:]
+            self.log(f"ADVANCING RAMP: reached rung {i + 1} - {rung['name']}")
+            nxt = RAMP[i + 1] if i + 1 < len(RAMP) else None
+            if nxt and nxt.get('task'): self.state.setdefault('upgrades', []).append(dict(need=nxt['task'], t=ramp['last']))
     def prog_extras(self):
         """What every programmer prompt carries: the map, the hints it asked for, and its two tools (search, improve)."""
         hints = self.state.get('hints_recent', [])[:6]
@@ -1048,7 +1158,9 @@ class Node:
         libs = getattr(self, '_libs', 0) if threading.current_thread() is not threading.main_thread() else len(self.ix.find(kind='library', limit=5000)); inst = 'ON (you may ask to install; Danny approved)' if self.cfg.get('allow_install') else 'OFF (Danny must switch it on; put wants in want_tool)'
         net = self.state.get('network', {}).get('nodes', {})
         board = '; '.join(f"{nid} ({nd['role']}) {'ON' if nd['on'] else 'off'}" for nid, nd in net.items()) or 'just this node'
-        return (f"THE GRAND VISION (the whole plan, every node):\n{VISION}\n"
+        rg = self.state.get("ramp", {}); cur = RAMP[rg.get("rung", 0)]["name"] if rg.get("rung", 0) < len(RAMP) else "all rungs climbed - keep refining the Mind"
+        return (f"THE ADVANCING RAMP (your standing goals; current rung: {cur}):\n{RAMPDOC}\n"
+                f"THE GRAND VISION (the whole plan, every node):\n{VISION}\n"
                 f"THE NODE NETWORK RIGHT NOW (you run this switchboard): {board}\n"
                 f"PROGRAMMER MAP (start point, end point, lattice instructions):\n{PMAP}\n"
                 f"YOUR POWERS: search the web; fetch_repo to download and learn from any GitHub repo (you have {libs} files in your library already); "
