@@ -1,0 +1,39 @@
+{
+ "owner": "Danny Eldridge",
+ "home": "/tmp/tmpj1hu9gkc/data",
+ "cycle_seconds": 0,
+ "batch": 8,
+ "parallel": 2,
+ "search_every_hours": 6,
+ "online": true,
+ "ollama": "http://127.0.0.1:11434",
+ "keep_alive": "3m",
+ "timeout": 600,
+ "models": {
+  "retriever": "qwen3:14b",
+  "mapper": "qwen3:8b",
+  "processor": "qwen3-coder:30b",
+  "referee": "gpt-oss:20b"
+ },
+ "sweep_first": true,
+ "sweep_batch": 20,
+ "scan_batch": 300,
+ "refine_per_batch": 40,
+ "code_per_batch": 4,
+ "help_per_batch": 3,
+ "route_every": 5,
+ "hints_per_batch": 4,
+ "checkpoint_first": 25,
+ "study_every": 6,
+ "repos_per_day": 20,
+ "allow_install": false,
+ "local_folders": [
+  "/tmp/tmpj1hu9gkc/research"
+ ],
+ "github_token_env": "GITHUB_TOKEN",
+ "max_db_mb": 2000,
+ "backups_kept": 7,
+ "ram_ceiling": 95,
+ "embed_model": "nomic-embed-text",
+ "similar_at": 0.8
+}

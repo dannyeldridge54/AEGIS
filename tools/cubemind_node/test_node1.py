@@ -18,7 +18,9 @@ class FakeLLM:
             mods = prompt.split('(ONLY these): ')[1].split('\n')[0].split(', ')
             return json.dumps({'purpose': 'p', 'ring': 'R1', 'anchor': 'rho', 'shape': 'hexagonal', 'weight': '2', 'side': 'centre', 'layer': 'torus', 'epoch': 'all',
                                'pathways': [{'to': mods[0], 'relation': 'derived_from', 'why': 'w'}, {'to': 'invented_module', 'relation': 'similar', 'why': 'w'}],
-                               'search': 'python ast call graph', 'improve': {'module': mods[0], 'idea': 'cache the lattice sums', 'why': 'speed'}})
+                               'search': 'python ast call graph', 'improve': {'module': mods[0], 'idea': 'cache the lattice sums', 'why': 'speed'},
+                               'fetch_repo': 'numpy/numpy', 'tune': {'setting': 'hints_per_batch', 'value': 4, 'why': 'faster'},
+                               'want_tool': {'what': 'networkx', 'why': 'graphs', 'how': 'pip install networkx'}})
         if 'MAPPER' in prompt:
             n = prompt.count('. [')
             return json.dumps({'finds': [{'i': k, 'ring': 'R1', 'anchor': 'rho', 'shape': 'hexagonal', 'orbifold': 'Z2xZ2', 'weight': '2', 'side': 'centre', 'layer': 'torus', 'why': 'w'} for k in range(n)] + [{'i': 0, 'ring': 'R9'}],
@@ -234,4 +236,43 @@ class T(unittest.TestCase):
         self.assertTrue(n.ix.find(kind='checkpoint')); self.assertIn('only link real modules', n.state['prog_lessons'])
         self.assertIn('YOUR OWN PAST WORK', n.prog_extras()); self.assertIn('only link real modules', n.prog_extras())
         html = (n.home / 'dashboard.html').read_text(); self.assertIn("Programmer's own space", html)
+    def test_programmer_studies_its_job_on_the_web_without_being_stuck(self):
+        n, root = self.staged(); asked = []
+        n.hint_fetch = lambda q: asked.append(q) or [dict(source='stackoverflow', title='how-to for ' + q[:20], url='https://so/' + str(len(asked)), text='python')]
+        n.cfg['study_every'] = 1
+        for _ in range(4): n.run_batch(4)
+        self.assertTrue(n.state.get('study_seeded'))                                     # it started learning on its own
+        self.assertTrue(any('ast' in a or 'retrieval' in a or 'CSV' in a for a in asked))  # the starter job questions went out
+        self.assertGreater(n.state['prog']['hints'], 0)                                  # answers came back as hints
+        studies = [n.ix.get(a) for a in n.ix.find(kind='action', limit=2000) if n.ix.get(a)['tags'].get('action') == 'study']
+        self.assertTrue(studies)                                                         # studying is filed in its own space
+        self.assertIn('HINTS YOU ASKED FOR', n.prog_extras())
+    def test_programmer_downloads_repos_tunes_itself_and_gates_installs(self):
+        n, root = self.staged(); n.hint_fetch = lambda q: []
+        n.repo_fetch = lambda full: dict(full_name=full, branch='main', licence='MIT', stars=9,
+                                         files=[dict(path='README.md', text='how to', size=10), dict(path='lib/util.py', text='def helper(x):\n    return x\n', size=20)])
+        (root / 'alpha.py').write_text('"""Eisenstein at rho."""\nimport beta\ndef e2(t):\n    return beta.lattice(t)\n')
+        (root / 'beta.py').write_text('"""Lattice."""\nimport math\ndef lattice(t):\n    return math.pi\n')
+        n.local.files = []; n.state.pop('sweep', None)
+        for _ in range(8): n.run_batch(4)
+        # it chose to fetch a repo; files went into its read-only library and were catalogued
+        self.assertIn('numpy/numpy', n.state['repos_seen']); self.assertTrue(n.ix.find(kind='library'))
+        self.assertTrue((n.home / 'library' / 'numpy__numpy' / 'README.md').exists())
+        self.assertTrue(any(n.ix.get(c)['outputs'].get('external') for c in n.ix.find(kind='code', limit=500)))   # fetched code's wiring learned
+        # it tuned its own setting within bounds
+        self.assertEqual(n.cfg['hints_per_batch'], 4)
+        self.assertIn('tune', {n.ix.get(a)['tags']['action'] for a in n.ix.find(kind='action', limit=2000)})
+        # it wants a tool; with install OFF nothing is installed, it only queues to WANTS.md
+        self.assertTrue(n.state['wants']); self.assertIn('networkx', (n.home / 'WANTS.md').read_text())
+        self.assertFalse(any(w.get('done') for w in n.state['wants']))
+    def test_installs_only_run_when_danny_turns_them_on(self):
+        n, root = self.staged(); ran = []
+        class R: returncode = 0; stderr = ''
+        n.install_run = lambda pkg: ran.append(pkg) or R()
+        n.state['wants'] = [dict(what='networkx', why='graphs', how='pip install networkx', t='now')]
+        n.cfg['allow_install'] = False; n.wants_tick(); self.assertEqual(ran, [])          # off: nothing runs
+        n.cfg['allow_install'] = True; n.wants_tick(); self.assertEqual(ran, ['networkx'])  # on: it installs
+        self.assertTrue(n.state['wants'][0].get('done'))
+        n.state['wants'] = [dict(what='mystery', why='x', how='git clone http://evil', t='now')]; ran.clear()
+        n.cfg['allow_install'] = True; n.wants_tick(); self.assertEqual(ran, [])            # only plain pip installs, never arbitrary commands
 if __name__ == '__main__': unittest.main()
