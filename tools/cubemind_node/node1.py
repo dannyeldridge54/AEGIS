@@ -1045,27 +1045,36 @@ class Node:
         does not bog down. (The LLMs yield their share to the programmer until the machine is healthy again.)"""
         return self.state.get('health', {}).get('open', 0) > 0
     def programmer_always(self):
-        """The programmer's steady work, run every batch in every stage: watch health, run the switchboard, learn from the web,
-        pull repos, take instructions, checkpoint. Heavy model calls (study) are paced so they never slow the scan."""
-        try: self.mind_tick()
+        """The programmer's steady work, run every batch in every stage. LIGHT work (no model call) runs always, even during the file
+        scan, so the scan never blocks. HEAVY work (model calls: study, instructions, upgrades, checkpoints) runs only once scanning is
+        done and no bug is being fixed, so a slow model can never freeze the scan."""
+        # --- light, non-blocking work: always (keeps the scan flying and the programmer visibly moving) ---
+        try: self.mind_tick()                                                   # encode records (DB only)
         except Exception as e: self.log(f'subconscious failed: {e}')
         try: self.watchdog_tick()
         except Exception as e: self.log(f'watchdog failed: {e}')
         try: self.maintenance_tick(); self.switchboard_tick()
         except Exception as e: self.log(f'maintenance/switchboard failed: {e}')
-        fixing = self.fix_priority()
-        try: self.hint_tick()                                                   # always drain search answers (cheap)
+        try: self.hint_tick()                                                   # drain the background search helper (non-blocking)
         except Exception as e: self.log(f'hints failed: {e}')
-        try: self.ai_tick()                                                    # cheap: seed AI topics + categorize hints (no model call), always
+        try: self.ai_tick()                                                     # seed AI topics + categorize hints (no model call)
         except Exception as e: self.log(f'ai research failed: {e}')
-        if not fixing:                                                          # when bugs are open, the others yield: skip heavy research so the programmer gets the cycles
-            try: self.study_tick(); self.repo_tick(); self.wants_tick()
-            except Exception as e: self.log(f'learning failed: {e}')
-        try: self.ramp_tick()
+        try: self.study_tick()                                                  # seeds its study questions (its model call is skipped while scanning)
+        except Exception as e: self.log(f'study failed: {e}')
+        try: self.ramp_tick()                                                   # climb the ramp (no model call)
         except Exception as e: self.log(f'ramp failed: {e}')
-        try:
-            if not fixing: self.upgrade_tick()                                  # defer new upgrades while fixing; fixes come first
-            self.instruction_tick(); self.checkpoint_tick()
+        scanning = False
+        try: scanning = bool(self.sweep_pending())
+        except Exception: pass
+        fixing = self.fix_priority()
+        if scanning: return                                                     # STAGE 1 priority: do not let any model call block the file scan
+        # --- heavy, model-calling work: only once the scan is done ---
+        if not fixing:
+            try: self.repo_tick(); self.wants_tick()
+            except Exception as e: self.log(f'learning failed: {e}')
+            try: self.upgrade_tick()
+            except Exception as e: self.log(f'upgrade failed: {e}')
+        try: self.instruction_tick(); self.checkpoint_tick()
         except Exception as e: self.log(f'instruction/checkpoint failed: {e}')
     def programmer_tick(self):
         """Stage work: answer help requests and place data sets on the string. (programmer_always runs separately, every stage.)"""
@@ -1343,6 +1352,9 @@ class Node:
             self.prog_action('study', 'startup', 'filed', f'{len(self.STUDY_SEEDS)} starter questions')
         self.state['study_n'] = self.state.get('study_n', 0) + 1
         if self.state['study_n'] % self.cfg.get('study_every', 6) or len(q) > 6: return
+        try:
+            if self.sweep_pending(): return                                     # during the file scan: seed only, no blocking model call
+        except Exception: pass
         kinds = self.state.get('prog_kinds', {})                               # the job it is worst at, by success rate
         weak = min(kinds.items(), key=lambda kv: kv[1]['good'] / max(kv[1]['done'], 1)) if kinds else None
         focus = weak[0] if weak and weak[1]['good'] < weak[1]['done'] else (self.state.get('route_last', {}).get('capability') or 'writing and testing code from a plain-language vision')
