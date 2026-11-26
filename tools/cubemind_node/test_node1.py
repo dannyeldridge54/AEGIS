@@ -21,7 +21,7 @@ class FakeLLM:
                                'search': 'python ast call graph', 'improve': {'module': mods[0], 'idea': 'cache the lattice sums', 'why': 'speed'},
                                'fetch_repo': 'numpy/numpy', 'tune': {'setting': 'hints_per_batch', 'value': 4, 'why': 'faster'},
                                'want_tool': {'what': 'networkx', 'why': 'graphs', 'how': 'pip install networkx'},
-                               'post': {'title': 'Mapping modules', 'body': 'wiring the code now', 'status': 'working'}})
+                               'post': {'title': 'Mapping modules', 'body': 'wiring the code now', 'status': 'working'}, 'message': {'to': 'referee', 'body': 'please double-check module alpha'}})
         if 'You are the MAPPER' in prompt:
             n = prompt.count('. [')
             return json.dumps({'finds': [{'i': k, 'ring': 'R1', 'anchor': 'rho', 'shape': 'hexagonal', 'orbifold': 'Z2xZ2', 'weight': '2', 'side': 'centre', 'layer': 'torus', 'why': 'w'} for k in range(n)] + [{'i': 0, 'ring': 'R9'}],
@@ -382,4 +382,18 @@ class T(unittest.TestCase):
         self.assertEqual(n.state['upgrades'], [])                               # consumed
         self.assertTrue(any(x.get('source') == 'ai-upgrade' for x in n.state['instructions']))
         folder = n.state['instructions'][0]['folder']; self.assertTrue((n.home / 'workbench' / folder / 'u.py').exists())
+    def test_roles_send_messages_to_each_other_on_the_bus(self):
+        n, root = self.staged()
+        n.send_msg('lens', 'mapper', 'please prioritize the rho lane')
+        self.assertEqual(n.state['bus'][0]['to'], 'mapper'); self.assertIn('rho', n.state['bus'][0]['body'])
+        self.assertTrue(n.ix.find(kind='message'))                               # filed as a signed record
+        self.assertIn('MESSAGES TO YOU', n.inbox_text('mapper'))                  # the receiver sees it in its prompt
+        self.assertEqual(n.inbox_text('processor'), '')                          # not addressed to processor
+        # a role that writes a "message" in its reply gets it routed
+        n.route_messages('mapper', {'message': {'to': 'programmer', 'body': 'alpha needs a pathway'}})
+        self.assertTrue(any(m['frm'] == 'mapper' and m['to'] == 'programmer' for m in n.state['bus']))
+        # the subconscious gives orders to the programmer on the bus
+        n.state['ai'] = dict(seeded=True, count=999, cats={'model': 999}, seen_rowid=0, upgrades=0)
+        n.ai_tick()
+        self.assertTrue(any(m['frm'] == 'mind' and m['kind'] == 'order' for m in n.state['bus']))
 if __name__ == '__main__': unittest.main()

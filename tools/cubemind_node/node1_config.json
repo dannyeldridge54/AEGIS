@@ -1,6 +1,6 @@
 {
  "owner": "Danny Eldridge",
- "home": "/tmp/tmpoispr9e6/data",
+ "home": "/tmp/tmpdaqg520u/data",
  "cycle_seconds": 0,
  "batch": 8,
  "parallel": 2,
@@ -32,7 +32,7 @@
  "repos_per_day": 20,
  "allow_install": false,
  "local_folders": [
-  "/tmp/tmpoispr9e6/research"
+  "/tmp/tmpdaqg520u/research"
  ],
  "github_token_env": "GITHUB_TOKEN",
  "max_db_mb": 2000,
