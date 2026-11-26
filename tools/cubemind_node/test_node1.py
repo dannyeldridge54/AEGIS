@@ -57,6 +57,8 @@ class T(unittest.TestCase):
         node1.arxiv_search = lambda q, n=5: [dict(source='arxiv', title='a', url='u4', text='')]
         n = self.node(); n.fetch = None
         for _ in range(8): n.cycle()
+        import time; time.sleep(1.5)
+        for _ in range(4): n.cycle()                          # take what the background helper found
         self.assertEqual(set(n.state['day']['sources']), {'github', 'arxiv', 'semanticscholar', 'openalex', 'local'})
     def test_batch_loads_each_model_once_and_files_all(self):
         n = self.node(); n.cfg['parallel'] = 1; vs = n.run_batch(8); m = N.DEFAULT['models']

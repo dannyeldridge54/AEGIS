@@ -14,7 +14,7 @@ never touches the live CubeMind; it backs its database up daily, caps its disk u
 
 Run:  python node1.py            (forever)      python node1.py --once      python node1.py --offline (no web)
 Settings: node1_config.json beside this file (created on first run). Output: node1_data/ (status.html, status.json, database, backups, log)."""
-import json, os, random, shutil, sqlite3, sys, time, traceback, urllib.error, urllib.parse, urllib.request, xml.etree.ElementTree as ET
+import json, os, random, threading, shutil, sqlite3, sys, time, traceback, urllib.error, urllib.parse, urllib.request, xml.etree.ElementTree as ET
 from pathlib import Path
 HERE = Path(__file__).resolve().parent; sys.path.insert(0, str(HERE))
 import fingerprint as FP, neural_web as NW, ufe_pack as U, display as DISPLAY
@@ -89,7 +89,7 @@ class Ollama:
             except Exception as e:
                 if attempt == 2 or 'timed out' not in str(e): raise
                 self.timeouts = getattr(self, 'timeouts', 0) + 1                  # the card is busy (another program using Ollama): wait and retry once
-                time.sleep(20)
+                time.sleep(2)
 
 _LAST, _BACKOFF, _PACE = {}, {}, {'api.github.com': 7.0, 'export.arxiv.org': 3.5, 'api.semanticscholar.org': 4.0, 'api.openalex.org': 1.0}
 class RateLimited(Exception): pass
@@ -160,6 +160,32 @@ class LocalIndex:
         scored.sort(key=lambda x: -x[0])
         return [dict(source='local', title=p.name, url=str(p), text=' '.join(t[:300].split()), updated=time.strftime('%Y-%m-%d', time.localtime(p.stat().st_mtime)))
                 for _, p, t in scored[:n]]
+
+class Fetcher(threading.Thread):
+    """Background helper: does the web and folder searches at each site's polite pace, so the main loop never waits for them."""
+    def __init__(self, node):
+        super().__init__(daemon=True); self.node, self.want, self.ready, self.lock = node, [], {}, threading.Lock()
+    def ask(self, subj, pair):
+        with self.lock:
+            if (subj['id'], pair) not in [(w[0]['id'], w[1]) for w in self.want]: self.want.append((subj, pair))
+    def take(self, subj):
+        with self.lock: return self.ready.pop(subj['id'], [])
+    def run(self):
+        while True:
+            with self.lock: job = self.want.pop(0) if self.want else None
+            if not job: time.sleep(0.5); continue
+            subj, pair = job; got = []
+            try: got += self.node.local.search(subj['arxiv'].split() + subj['title'].split())
+            except Exception as e: self.node.log(f'local search failed: {e}')
+            if pair is not None:
+                tok = os.environ.get(self.node.cfg['github_token_env']) or None
+                calls = [lambda: github_search(subj['github'], tok), lambda: arxiv_search(subj['arxiv'])] if pair else \
+                        [lambda: semantic_scholar_search(subj['arxiv']), lambda: openalex_search(subj['arxiv'])]
+                for c in calls:
+                    try: got += c()
+                    except RateLimited as e: self.node.log(str(e))
+                    except Exception as e: self.node.log(f'one source failed ({type(e).__name__}: {e}); the others continue')
+            with self.lock: self.ready.setdefault(subj['id'], []).extend(got)
 
 def parse_json(s):
     try: return json.loads(s)
@@ -248,30 +274,32 @@ class Node:
         return [dict(part=a, goal=b, met=bool(c_), now=d) for a, b, c_, d in g]
     # ---------------------------------------------------------------- stages
     def retrieve(self, subj):
-        local = []
-        try: local = self.local.search(subj['arxiv'].split() + subj['title'].split())
-        except Exception as e: self.log(f'local search failed: {e}')
-        local_ids = self.state.setdefault('local_seen', [])
-        local = [f for f in local if f['url'] not in local_ids]; local_ids.extend(f['url'] for f in local); del local_ids[:-5000]
-        if not self.cfg['online']: return self._file_finds(subj, local)
         pair = ((self.state['cycle'] - 1) // len(SUBJECTS)) % 2                                  # alternate source pairs per round, so every subject meets all four
         key = subj['id'] + ('-a' if pair else '-b'); seen = self.state.setdefault('searched', {})
-        if time.time() - seen.get(key, 0) < self.cfg['search_every_hours'] * 3600: return self._file_finds(subj, local)   # same query, same answers: skip
-        seen[key] = time.time()
-        finds = []
-        try:
-            if self.fetch: finds = self.fetch(subj)
-            else:
-                tok = os.environ.get(self.cfg['github_token_env']) or None
-                calls = [lambda: github_search(subj['github'], tok), lambda: arxiv_search(subj['arxiv'])] if pair else \
-                        [lambda: semantic_scholar_search(subj['arxiv']), lambda: openalex_search(subj['arxiv'])]
-                for c in calls:
-                    try: finds += c()
-                    except RateLimited as e: self.log(str(e))
-                    except Exception as e: self.log(f'one source failed ({type(e).__name__}: {e}); the others continue')
-        except Exception as e: self.log(f'retrieve failed ({type(e).__name__}: {e}); continuing offline this cycle')
-        finds = finds + local
-        return self._file_finds(subj, finds)
+        due = self.cfg['online'] and time.time() - seen.get(key, 0) >= self.cfg['search_every_hours'] * 3600
+        if due: seen[key] = time.time()
+        local_due = time.time() - seen.get(subj['id'] + '-local', 0) >= 3600
+        if local_due: seen[subj['id'] + '-local'] = time.time()
+        if self.fetch is None:                                                   # live: background helper, never wait
+            if not hasattr(self, 'fetcher'): self.fetcher = Fetcher(self); self.fetcher.start()
+            if due or local_due: self.fetcher.ask(subj, pair if due else None)
+            finds = self.fetcher.take(subj)
+        else:                                                                     # tests: same work, done in line
+            finds = []
+            try: finds += self.local.search(subj['arxiv'].split() + subj['title'].split()) if local_due else []
+            except Exception as e: self.log(f'local search failed: {e}')
+            if due:
+                try: finds += self.fetch(subj)
+                except Exception as e: self.log(f'retrieve failed ({type(e).__name__}: {e})')
+        local_ids = self.state.setdefault('local_seen', [])
+        keep = []
+        for f in finds:
+            if f['source'] == 'local':
+                if f['url'] in local_ids: continue
+                local_ids.append(f['url'])
+            keep.append(f)
+        del local_ids[:-5000]
+        return self._file_finds(subj, keep)
     def _file_finds(self, subj, finds):
         day = self.state.setdefault('day', {}); src = day.setdefault('sources', {})
         for f in finds: src[f['source']] = src.get(f['source'], 0) + 1
@@ -496,8 +524,8 @@ class Node:
                     import pynvml; pynvml.nvmlInit(); h = pynvml.nvmlDeviceGetHandleByIndex(0); mi = pynvml.nvmlDeviceGetMemoryInfo(h)
                     gpu_ok = mi.used / mi.total * 100 < self.cfg.get('gpu_ceiling', 92)
                 except Exception: pass
-                if psutil.cpu_percent(interval=1) < self.cfg['cpu_ceiling'] and psutil.virtual_memory().percent < self.cfg['ram_ceiling'] and gpu_ok:
-                    d = self.state.setdefault('day', {}); d['idle'] = d.get('idle', 0.0) + max(0.0, time.time() - t0 - 1); return
+                if psutil.cpu_percent(interval=None if _ == 0 else 1) < self.cfg['cpu_ceiling'] and psutil.virtual_memory().percent < self.cfg['ram_ceiling'] and gpu_ok:
+                    d = self.state.setdefault('day', {}); d['idle'] = d.get('idle', 0.0) + (time.time() - t0); return
                 time.sleep(5)
         except ImportError: return
     def status(self):
@@ -543,7 +571,7 @@ def main(argv):
             node.breathe(); vs = node.run_batch(); node.backup()
             print(time.strftime('%H:%M'), 'cycles to', node.state['cycle'], ' '.join(vs), flush=True)
         except Exception:
-            node.log('cycle error:\n' + traceback.format_exc()); print('cycle error (logged); continuing', flush=True); time.sleep(60)
+            node.log('cycle error:\n' + traceback.format_exc()); print('cycle error (logged); continuing', flush=True); time.sleep(2)
         if '--once' in argv: return 0
         if cfg['cycle_seconds']: time.sleep(cfg['cycle_seconds'])
 
