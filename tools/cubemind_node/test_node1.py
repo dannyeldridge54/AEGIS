@@ -59,7 +59,7 @@ class T(unittest.TestCase):
     def test_goalposts_listed_and_shown(self):
         n = self.node()
         for _ in range(5): n.cycle()
-        g = n.goalposts(); self.assertEqual(len(g), 19); self.assertTrue(all({'part', 'goal', 'met', 'now'} <= set(x) for x in g))
+        g = n.goalposts(); self.assertEqual(len(g), 22); self.assertTrue(all({'part', 'goal', 'met', 'now'} <= set(x) for x in g))
         self.assertIn('Goalposts', (n.home / 'status.html').read_text())
     def test_selfcheck_runs_with_sympy(self):
         n = self.node(); n.cycle(); sc = n.state['selfcheck']; self.assertEqual((sc.get('reproduce'), sc.get('total')), (18, 18))
@@ -275,4 +275,26 @@ class T(unittest.TestCase):
         self.assertTrue(n.state['wants'][0].get('done'))
         n.state['wants'] = [dict(what='mystery', why='x', how='git clone http://evil', t='now')]; ran.clear()
         n.cfg['allow_install'] = True; n.wants_tick(); self.assertEqual(ran, [])            # only plain pip installs, never arbitrary commands
+    def test_network_switchboard_and_vision(self):
+        n, root = self.staged()
+        net = n.state['network']['nodes']; self.assertIn('node2-builder', net); self.assertIn('node3-mind', net)
+        self.assertTrue(net['R1-serapis-rho']['on']); self.assertFalse(net['node2-builder']['on'])     # Node 1 on, Node 2 waiting
+        out = [n.run_batch(8)[0] for _ in range(6)]
+        self.assertTrue(n.state.get('announced_mapped'))                                               # field_mapped emitted when local done
+        self.assertTrue(n.state['network']['nodes']['node2-builder']['on'])                            # Builder switched on automatically
+        sigs = [x['kind'] for x in n.state['network']['signals']]; self.assertIn('field_mapped', sigs)
+        self.assertIn('switch', {n.ix.get(a)['tags']['action'] for a in n.ix.find(kind='action', limit=3000)})
+        self.assertIn('THE GRAND VISION', n.prog_extras())                                             # programmer sees the whole plan
+    def test_programmer_is_the_maintenance_man(self):
+        n, root = self.staged()
+        (n.home / 'node1.log').write_text('\n'.join(['x processor failed: timed out'] * 8 + ['y cycle error:', 'z mapper failed: timed out']))
+        n.cfg['parallel'] = 2; n.maintenance_tick()
+        self.assertEqual(n.cfg['parallel'], 1)                                                         # it resolved the contention itself
+        self.assertEqual(n.cfg['timeout'], 900)                                                        # and gave the model more time
+        h = (n.home / 'HEALTH.md').read_text(); self.assertIn('ISSUES FOUND', h); self.assertIn('timed out', h)
+        acts = {n.ix.get(a)['tags']['action'] for a in n.ix.find(kind='action', limit=2000)}; self.assertIn('maintenance', acts)
+        self.assertIn('MAINTENANCE MAN', n.prog_extras())
+        n.state.setdefault('search_queue', [])
+        (n.home / 'node1.log').write_text('weird KaboomError: the flux capacitor melted')
+        n.maintenance_tick(); self.assertTrue(any('how to fix' in q for q in n.state['search_queue']))  # unknown error -> learns
 if __name__ == '__main__': unittest.main()

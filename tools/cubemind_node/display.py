@@ -94,6 +94,11 @@ function draw(){
   <p class="muted">Mapper queue: ${D.refine||0} files · help requests waiting: ${D.help||0} · programmer doorways: ${(D.doorways||{}).opened||0} opened, ${(D.doorways||{}).placed||0} data sets placed on the string${D.sweep && D.sweep.auto != null ? ` · placed by code: ${D.sweep.auto}, unrelated: ${D.sweep.unrelated||0}` : ''}</p>
   ${D.prog ? `<p class="muted">Programmer: learning its job — ${D.prog.hints||0} hints from ${D.prog.searches||0} searches · ${D.prog.ideas||0} improvement ideas (in IMPROVEMENTS.md, not applied) · ${D.prog.routes||0} Node 2 route versions</p>` : ''}
   ${D.route && D.route.lane ? `<details open><summary><b>Node 2 route (proposed):</b> ${esc(D.route.sphere)} from lane ${esc(D.route.lane)}</summary><p>${esc(D.route.why)}</p><ol>${(D.route.steps||[]).map(x => `<li>${esc(x)}</li>`).join('')}</ol><p class="muted">Uses: ${esc((D.route.uses||[]).join(', '))}</p></details>` : ''}
+  <details open><summary><b>The node network</b> <span class="muted">(switchboard — the programmer turns nodes on as the field fills)</span></summary>
+   <div class="kpis">${Object.entries((D.network||{}).nodes||{}).map(([id,n]) => `<div class="kpi"><span class="muted">${esc(n.role)}</span><b>${n.on?'<span style="color:#2f7a4b">ON</span>':'off'}</b><span class="muted mono" style="font-size:11px">${esc(n.note||'')}</span></div>`).join('') || '<span class="muted">registering…</span>'}</div>
+   ${D.health && D.health.last ? `<p class="muted">Maintenance: ${(D.health.diagnoses||[]).length ? '⚠ ' + D.health.diagnoses.map(x => esc(x.alert)+' x'+x.count).join(', ') : '✓ healthy'} <span class="mono">(checked ${esc(D.health.last)})</span></p>` : ''}
+   ${((D.network||{}).signals||[]).length ? `<p class="muted">Recent signals: ${(D.network.signals||[]).slice(0,5).map(x => `${esc(x.frm)}→${esc(x.to||'all')}: <b>${esc(x.kind)}</b>`).join(' · ')}</p>` : ''}
+  </details>
   <details open><summary><b>Programmer's own space</b> · ${D.prog_n||0} actions filed · next checkpoint at ${D.prog_next_cp||25}</summary>
    <p class="muted">${Object.entries(D.prog_kinds||{}).map(([k,v]) => `${esc(k)} ${v.good}/${v.done}`).join(' · ') || 'no actions yet'}</p>
    ${(D.prog_lessons||[]).length ? `<p><b>Lessons it wrote for itself</b></p><ul>${D.prog_lessons.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
