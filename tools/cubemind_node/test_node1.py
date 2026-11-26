@@ -51,6 +51,17 @@ class T(unittest.TestCase):
         node1.github_search = lambda q, t=None, n=5: [dict(source='github', title='r', url='u3', text='')]
         node1.arxiv_search = lambda q, n=5: [dict(source='arxiv', title='a', url='u4', text='')]
         n = self.node(); n.fetch = None
-        for _ in range(4): n.cycle()
+        for _ in range(8): n.cycle()
         self.assertEqual(set(n.state['day']['sources']), {'github', 'arxiv', 'semanticscholar', 'openalex'})
+    def test_batch_loads_each_model_once_and_files_all(self):
+        n = self.node(); n.cfg['parallel'] = 1; vs = n.run_batch(8); m = N.DEFAULT['models']
+        self.assertEqual(len(vs), 8); self.assertEqual(set(vs), {'PASS'})
+        self.assertEqual(n.llm.calls, [m['retriever']] * 8 + [m['processor']] * 8 + [m['referee']] * 8)
+    def test_parallel_batch_gives_same_verdicts(self):
+        n = self.node(); n.cfg['parallel'] = 3; self.assertEqual(set(n.run_batch(6)), {'PASS'}); self.assertEqual(n.state['cycle'], 6)
+    def test_same_search_is_not_repeated(self):
+        calls = []
+        n = self.node(); n.fetch = lambda s: calls.append(s['id']) or []
+        for _ in range(16): n.cycle()
+        self.assertEqual(len(calls), 8)                     # 4 subjects x 2 source pairs, then cached for 6 hours
 if __name__ == '__main__': unittest.main()

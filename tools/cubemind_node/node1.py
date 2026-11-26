@@ -6,8 +6,8 @@ Node 1 = ring R1 (SERAPIS-E) at the anchor rho, with CubeMind at the centre and 
   REFEREE (mirror)   argues the result is wrong; a real objection marks it UNCLEAR                      default gpt-oss:20b
 Code decides what is right (each tool has a reference calculation and an independent tester). Models only propose.
 
-Every cycle: pick subject -> retrieve -> lens -> lock + compute + check -> referee -> fingerprint + place in the neural web -> grade
--> write the status page -> sleep. One model is loaded at a time. Safe to leave running: it never deletes, never installs, never changes code,
+Runs flat out in batches (default 8): retriever on all, then processor on all, then referee on all, so each model loads once per batch;
+up to 2 questions go to a model at once. It only waits when the machine is busy (CPU, RAM or GPU over its ceiling). Safe to leave running: it never deletes, never installs, never changes code,
 never touches the live CubeMind; it backs its database up daily, caps its disk use, yields CPU and RAM, and survives every error.
 
 Run:  python node1.py            (forever)      python node1.py --once      python node1.py --offline (no web)
@@ -18,7 +18,7 @@ HERE = Path(__file__).resolve().parent; sys.path.insert(0, str(HERE))
 import fingerprint as FP, neural_web as NW, ufe_pack as U
 
 DEFAULT = dict(
-    owner='Danny Eldridge', home='node1_data', cycle_seconds=300, online=True,
+    owner='Danny Eldridge', home='node1_data', cycle_seconds=0, batch=8, parallel=2, search_every_hours=6, online=True,
     ollama='http://127.0.0.1:11434', keep_alive='3m', timeout=300,
     models=dict(retriever='qwen3:14b', processor='qwen3-coder:30b', referee='gpt-oss:20b'),
     github_token_env='GITHUB_TOKEN', max_db_mb=2000, backups_kept=7, cpu_ceiling=85, ram_ceiling=85, gpu_ceiling=92,
@@ -124,7 +124,8 @@ class Node:
         tested = c.get('PASS', 0) + c.get('UNCLEAR', 0) + c.get('MISS', 0); ref = s.get('referee', [0, 0]); lens = s.get('lens', [0, 0])
         verify_ok = all(self.ix.verify(r) for r in self.ix.find(kind='cycle', limit=200)[-50:])
         g = [
-         ('Centre: runs on its own', 'at least 200 cycles a day (5-minute cycle allows 288)', day.get('cycles', 0) >= 200, f"{day.get('cycles', 0)} today"),
+         ('Centre: flat out', 'never resting: waits for the machine less than 5% of the time', day.get('busy', 0) > 0 and day.get('idle', 0) / (day.get('busy', 0) + day.get('idle', 0)) < 0.05,
+          f"{day.get('cycles', 0)} today, {3600 * day.get('cycles', 0) / max(day.get('busy', 0) + day.get('idle', 0), 1):.0f} per hour"),
          ('Centre: stable', 'no more than 3 restarts a day', day.get('starts', 0) <= 3, f"{day.get('starts', 0)} starts today"),
          ('Retriever: wide', 'finds from all 4 sources today (GitHub, arXiv, Semantic Scholar, OpenAlex)', len(day.get('sources', {})) >= 4, ', '.join(f'{k} {v}' for k, v in day.get('sources', {}).items()) or 'none'),
          ('Lens: useful', 'keeps at least one result in half of its framings', lens[1] > 0 and lens[0] / lens[1] >= 0.5, f'{lens[0]}/{lens[1]}'),
@@ -141,12 +142,16 @@ class Node:
     # ---------------------------------------------------------------- stages
     def retrieve(self, subj):
         if not self.cfg['online']: return []
+        pair = ((self.state['cycle'] - 1) // len(SUBJECTS)) % 2                                  # alternate source pairs per round, so every subject meets all four
+        key = subj['id'] + ('-a' if pair else '-b'); seen = self.state.setdefault('searched', {})
+        if time.time() - seen.get(key, 0) < self.cfg['search_every_hours'] * 3600: return []   # same query, same answers: skip, save time and rate limits
+        seen[key] = time.time()
         finds = []
         try:
             if self.fetch: finds = self.fetch(subj)
             else:
                 tok = os.environ.get(self.cfg['github_token_env']) or None
-                if self.state['cycle'] % 2: finds = github_search(subj['github'], tok) + arxiv_search(subj['arxiv'])
+                if pair: finds = github_search(subj['github'], tok) + arxiv_search(subj['arxiv'])
                 else: finds = semantic_scholar_search(subj['arxiv']) + openalex_search(subj['arxiv'])
         except Exception as e: self.log(f'retrieve failed ({type(e).__name__}: {e}); continuing offline this cycle')
         day = self.state.setdefault('day', {}); src = day.setdefault('sources', {})
@@ -166,14 +171,18 @@ class Node:
              '"question": "one precise calculable question for this subject"}')
         try: return parse_json(self.llm.ask(self.cfg['models']['retriever'], p))
         except Exception as e: self.log(f'retriever failed: {e}'); return {}
-    def compute(self, subj):
-        tool = subj['tools'][self.state['cycle'] % len(subj['tools'])]; area, text, fit, test, tol, mk = U.TOOLS[tool]
+    def prepare(self, subj, k):
+        tool = subj['tools'][(self.state['cycle'] + k) % len(subj['tools'])]; area, text, fit, test, tol, mk = U.TOOLS[tool]
         ring = self.state['ring'].get(tool, 0); args = mk(self.rng, ring)
-        lock = self.ix.stamp('lock', inputs=dict(tool=tool, ring=ring, args=args, tol=tol), tags=dict(node=NODE, tool=tool, locked='True'))
+        lock = self.ix.stamp('lock', inputs=dict(tool=tool, ring=ring, args=args, tol=tol, nonce=f"{self.state['cycle']}.{k}"), tags=dict(node=NODE, tool=tool, locked='True'))
         prompt = (f"You are the PROCESSOR. Task: {text.format(x=json.dumps(args))}\nWork step by step, then give the number.\n"
                   'Reply in JSON: {"steps": ["..."], "result": <number>}')
-        try: out = parse_json(self.llm.ask(self.cfg['models']['processor'], prompt))
-        except Exception as e: self.log(f'processor failed: {e}'); out = {}
+        return dict(tool=tool, ring=ring, args=args, lock=lock, prompt=prompt)
+    def ask_processor(self, task):
+        try: return parse_json(self.llm.ask(self.cfg['models']['processor'], task['prompt']))
+        except Exception as e: self.log(f'processor failed: {e}'); return {}
+    def score(self, task, out):
+        tool, ring, args = task['tool'], task['ring'], task['args']; area, text, fit, test, tol, mk = U.TOOLS[tool]
         try: value = float(out.get('result'))
         except (TypeError, ValueError): value = None
         try: ref = float(fit(args)); tested = bool(test(args, ref))
@@ -182,8 +191,10 @@ class Node:
         st = self.state['streak']; st[tool] = st.get(tool, 0) + 1 if ok else 0
         if st[tool] >= 3: self.state['ring'][tool] = min(ring + 1, 3); st[tool] = 0                 # harder after 3 in a row
         elif not ok and ring > 0 and self.rng.random() < 0.3: self.state['ring'][tool] = ring - 1
-        return dict(tool=tool, ring=ring, args=args, model_value=value, reference=ref, tested=tested, ok=ok, steps=out.get('steps', [])[:8], lock=lock,
+        return dict(tool=tool, ring=ring, args=args, model_value=value, reference=ref, tested=tested, ok=ok, steps=out.get('steps', [])[:8], lock=task['lock'],
                     meta=U.META.get(tool, {}))
+    def compute(self, subj):
+        t = self.prepare(subj, 0); return self.score(t, self.ask_processor(t))
     def referee(self, subj, res, lens):
         p = (f"You are the REFEREE, a null mirror. Your job is to argue that this result is WRONG or overstated, then judge fairly.\n"
              f"Subject: {subj['title']}\nFraming: {lens.get('lens', '')}\nCalculation: {res['tool']} with {json.dumps(res['args'])}\n"
@@ -194,13 +205,30 @@ class Node:
         try: return parse_json(self.llm.ask(self.cfg['models']['referee'], p, num_predict=400))
         except Exception as e: self.log(f'referee failed: {e}'); return {}
     # ---------------------------------------------------------------- one cycle
-    def cycle(self):
-        self.state['cycle'] += 1; subj = SUBJECTS[(self.state['cycle'] - 1) % len(SUBJECTS)]
-        today = time.strftime('%Y-%m-%d')
-        if self.state.get('day', {}).get('date') != today: self.state['day'] = dict(date=today, cycles=0, starts=0, sources={})
+    def _par(self, fn, items):
+        from concurrent.futures import ThreadPoolExecutor
+        if self.cfg.get('parallel', 1) <= 1 or len(items) <= 1: return [fn(x) for x in items]
+        with ThreadPoolExecutor(self.cfg['parallel']) as ex: return list(ex.map(fn, items))
+    def run_batch(self, k=None):
+        """One batch of k items: retriever on all, then processor on all, then referee on all (each model loads once), then file them."""
+        k = k or self.cfg.get('batch', 1); t0 = time.time(); today = time.strftime('%Y-%m-%d')
+        if self.state.get('day', {}).get('date') != today: self.state['day'] = dict(date=today, cycles=0, starts=0, sources={}, busy=0.0, idle=0.0)
         if self.state.get('selfcheck', {}).get('date') != today: self.selfcheck()
+        items = []
+        for n in range(k):
+            self.state['cycle'] += 1; subj = SUBJECTS[(self.state['cycle'] - 1) % len(SUBJECTS)]
+            items.append(dict(subj=subj, finds=self.retrieve(subj)))
+        lenses = self._par(lambda it: self.lens(it['subj'], it['finds']), items)
+        tasks = [self.prepare(it['subj'], n) for n, it in enumerate(items)]
+        outs = self._par(self.ask_processor, tasks)
+        results = [self.score(t, o) for t, o in zip(tasks, outs)]
+        refs = self._par(lambda x: self.referee(x[0]['subj'], x[1], x[2]), list(zip(items, results, lenses)))
+        verdicts = [self.file(it['subj'], it['finds'], ln, res, rf) for it, ln, res, rf in zip(items, lenses, results, refs)]
+        d = self.state['day']; d['busy'] = d.get('busy', 0.0) + (time.time() - t0)
+        self.state_f.write_text(json.dumps(self.state, indent=1)); self.status(); return verdicts
+    def cycle(self): return self.run_batch(1)[0]
+    def file(self, subj, finds, lens, res, ref):
         self.state['day']['cycles'] = self.state['day'].get('cycles', 0) + 1
-        finds = self.retrieve(subj); lens = self.lens(subj, finds); res = self.compute(subj); ref = self.referee(subj, res, lens)
         L = self.state.setdefault('lens', [0, 0]); L[1] += 1; L[0] += bool(lens.get('useful'))
         if res['tested'] and ref.get('verdict'): R = self.state.setdefault('referee', [0, 0]); R[1] += 1; R[0] += str(ref.get('verdict')).upper() == 'FINDING'
         verdict = 'VOID' if not res['tested'] else ('MISS' if not res['ok'] else ('UNCLEAR' if str(ref.get('verdict', '')).upper() == 'FINDING' else 'PASS'))
@@ -216,7 +244,7 @@ class Node:
         self.state['recent'] = ([dict(t=time.strftime('%Y-%m-%d %H:%M'), cycle=self.state['cycle'], subject=subj['title'], tool=res['tool'], ring=res['ring'],
                                        verdict=verdict, model=res['model_value'], reference=res['reference'], finds=len(finds),
                                        lens=str(lens.get('lens', ''))[:240], referee=str(ref.get('finding') or ref.get('mirror') or '')[:240])] + self.state['recent'])[:40]
-        self.state_f.write_text(json.dumps(self.state, indent=1)); self.status(); return verdict
+        return verdict
     # ---------------------------------------------------------------- upkeep
     def backup(self):
         b = self.home / 'backups'; b.mkdir(exist_ok=True); name = b / time.strftime('node1_%Y%m%d.sqlite')
@@ -227,13 +255,15 @@ class Node:
         """Yield to the rest of the machine: wait while CPU or RAM is above the ceiling (needs psutil; without it, no-op)."""
         try:
             import psutil
+            t0 = time.time()
             for _ in range(60):
                 gpu_ok = True
                 try:
                     import pynvml; pynvml.nvmlInit(); h = pynvml.nvmlDeviceGetHandleByIndex(0); mi = pynvml.nvmlDeviceGetMemoryInfo(h)
                     gpu_ok = mi.used / mi.total * 100 < self.cfg.get('gpu_ceiling', 92)
                 except Exception: pass
-                if psutil.cpu_percent(interval=1) < self.cfg['cpu_ceiling'] and psutil.virtual_memory().percent < self.cfg['ram_ceiling'] and gpu_ok: return
+                if psutil.cpu_percent(interval=1) < self.cfg['cpu_ceiling'] and psutil.virtual_memory().percent < self.cfg['ram_ceiling'] and gpu_ok:
+                    d = self.state.setdefault('day', {}); d['idle'] = d.get('idle', 0.0) + max(0.0, time.time() - t0 - 1); return
                 time.sleep(5)
         except ImportError: return
     def status(self):
@@ -272,10 +302,11 @@ def main(argv):
     while True:
         lockf.write_text(str(os.getpid()))
         try:
-            node.breathe(); v = node.cycle(); node.backup(); print(time.strftime('%H:%M'), 'cycle', node.state['cycle'], v, flush=True)
+            node.breathe(); vs = node.run_batch(); node.backup()
+            print(time.strftime('%H:%M'), 'cycles to', node.state['cycle'], ' '.join(vs), flush=True)
         except Exception:
             node.log('cycle error:\n' + traceback.format_exc()); print('cycle error (logged); continuing', flush=True); time.sleep(60)
         if '--once' in argv: return 0
-        time.sleep(cfg['cycle_seconds'])
+        if cfg['cycle_seconds']: time.sleep(cfg['cycle_seconds'])
 
 if __name__ == '__main__': sys.exit(main(sys.argv[1:]))
