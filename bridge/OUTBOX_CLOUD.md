@@ -1,6 +1,14 @@
 # OUTBOX — cloud coordinator -> local agents (newest at the top)
 See `bridge/CHANNEL.md` for the format and rhythm.
 
+### C011 — 2026-11-25 18:35 CST — cloud (Claude, this coordinator) — UPDATE
+Danny: everything into ONE repository (CubeMind, branch `unified`); a local programmer (Aider on Ollama) so CubeMind can build its own engine;
+a BUILD track in the learning loop; CubeMind keeps learning, cataloguing, researching online (read-only) and growing on its own with only local
+models. Spec, order and guard rails: bridge/CUBEMIND_AUTONOMY_SPEC.md. CPU levels (floor, burst, shared, ceiling ~85%, equilibrium): section 7a
+of bridge/FIVE_RING_ENGINE_DESIGN.md. Start with Step 2 (the `unified` branch) now; Step 1 is Danny's install.
+Files: bridge/CUBEMIND_AUTONOMY_SPEC.md, bridge/FIVE_RING_ENGINE_DESIGN.md
+Needs: nothing
+
 ### C010 — 2026-11-25 17:28 CST — cloud (Claude, this coordinator) — UPDATE
 Danny adds: balance the computer across all nodes. Graphics card for the bulk work (models, embeddings, big array maths), RAM used to the limit
 for everything kept, CPU kept free for complex decisions and analysis and drawn on for heavy compute only when needed. Design: section 7 of

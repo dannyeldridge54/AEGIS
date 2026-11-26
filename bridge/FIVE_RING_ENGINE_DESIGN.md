@@ -95,6 +95,20 @@ for heavy data compute or whatever, but going for leaving that for complex decis
 Honest limit: most of the physics engines today are plain Python on the CPU. Moving their heavy loops to the card is real work, done one engine
 at a time in S5, each checked against the CPU result to 1e-10 before it replaces it.
 
+### 7a. CPU levels, not isolation (Danny, 18:23 CST)
+"not isolate the CPU, but have like levels to it, to where if anyone needs to, they can draw on a certain amount. But if multiple agents at the
+same time need to use it, it will limit, it can increase, but ... the CPU won't get so bogged down that it slows down the entire machine.
+Like it stays in equilibrium."
+| Level | Who | Share of CPU |
+|---|---|---|
+| Floor (always guaranteed) | each active node | 1 core's worth, so every node can always make progress |
+| Burst | a node that needs more | may grow to all free cores while no one else is asking |
+| Shared | when several nodes ask at once | free cores split evenly among the askers; a bursting node shrinks back to its fair share |
+| Ceiling (whole engine) | all nodes together | about 85% of the CPU; the rest is never taken, so Windows, the mouse and the learning loop stay smooth |
+The regulator re-balances every few seconds: it measures load, and moves shares toward even (equilibrium) rather than jumping. Decision jobs
+(referee, leader, grading) are served first inside each node's share. On Windows, worker processes run at "below normal" priority so the
+desktop always wins a tie.
+
 ## Sources
 GitHub REST rate limits: https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api ·
 Remove-birth updating: https://arxiv.org/pdf/2306.12574 · litequeue: https://github.com/litements/litequeue ·
