@@ -893,6 +893,14 @@ class Node:
             if Path(str(o.get('title', ''))).suffix.lower() in DATA_EXT: data[o['title']] = rid
         return self.modules(), data, set(U.TOOLS)
     # ---------------------------------------------------------------- the subconscious: the field-native model, learning continuously
+    # THE CENTRAL PATTERN: the UFE's own language (the pattern of the universe). These tokens are radius 0 - the centre. Everything else
+    # the mind learns is placed by how it connects back to these. Drawn from the derivations: modular geometry, the five rings, the one
+    # string from before the Big Bang to today, and the nine Loom layers.
+    CORE_VOCAB = ('modular eisenstein rho cusp lattice torus orbifold weight holomorphic laplace fundamental domain farey tiling '
+                  'serapis weave yfork ring anchor shape dilaton moduli compactification orientifold brane calabi '
+                  'planck inflation reheating kination bbn nucleosynthesis recombination cmb structure dark energy quintessence '
+                  'quantum scalar vacuum potential hessian stability turnover fold pyramid cube forces cosmology '
+                  'string field unified gauge symmetry fractal node geometry pattern cosmos universe spacetime').split()
     MARK_ORDER = ('ring', 'anchor', 'shape', 'weight', 'side', 'layer', 'epoch')
     STOP = set('the a an and or of to in on for with is are be as by at it its this that from into over under not no we our you your i he she they them his her their one two use using used make made get got can will would could should'.split())
     def _mind_db(self):
@@ -901,16 +909,46 @@ class Node:
         try: db.execute('ALTER TABLE mind_codes ADD COLUMN tokens TEXT')          # token signature of each record (added once)
         except Exception: pass
         return db
+    def _seed_core(self):
+        """Seed the central pattern first, so the universe's own language sits at the centre of the vocabulary (ids 1..N)."""
+        m = self.state.setdefault('mind', {}); vocab = m.setdefault('vocab', {})
+        if m.get('core_seeded'): return vocab
+        for w in self.CORE_VOCAB:
+            if w not in vocab: vocab[w] = len(vocab) + 1
+        m['core_seeded'] = True; m['core_n'] = len(self.CORE_VOCAB); return vocab
     def tokenize(self, text):
-        """The main pattern: break text into field tokens. Lowercase words of 3+ chars, drop stopwords. Growing a shared vocabulary
-        of the field's own language is what the catalog is built on."""
+        """The main pattern: break text into field tokens, centred on the UFE pattern. The central-pattern tokens are seeded first and
+        kept at the centre; everything the mind learns afterward spreads outward from them."""
         import re as _re
+        vocab = self._seed_core()
         toks = [w for w in _re.findall(r'[a-zA-Z][a-zA-Z0-9_]{2,}', (text or '').lower())
                 if w not in self.STOP and not (len(w) >= 16 and all(c in '0123456789abcdef' for c in w))]   # drop hashes/ids
-        vocab = self.state.setdefault('mind', {}).setdefault('vocab', {})
         for w in toks:
             if w not in vocab and len(vocab) < 20000: vocab[w] = len(vocab) + 1
         return toks
+    CORE = property(lambda self: set(self.CORE_VOCAB))
+    def radius(self, text):
+        """How far out from the central pattern a record sits: 0.0 if it is rich in core (universe-pattern) terms, up to 1.0 if it has
+        none. This is 'spreading outward from the centre' made measurable; the mind connects far-out things back toward the centre."""
+        toks = self.tokenize(text)
+        if not toks: return 1.0
+        core = self.CORE; hits = sum(1 for w in toks if w in core)
+        return round(1.0 - min(1.0, hits / 6.0), 4)                              # ~6 core terms = fully central
+    def reflect(self, rec):
+        """A mirror, not a verdict. Holds BOTH sides from the seven scales — the good it reflects and the bad it reflects — and a stance:
+        good, bad, both (it can be either, by context), or unsure. The mind does not judge alone; when it is unsure or sees duality it asks Danny.
+        True understanding is holding both reflections at once, not collapsing them to one number."""
+        try:
+            sc = NW.scales_from(rec); vals = [sc[k] for k in NW.SCALES]
+            n7 = max(len(vals), 1)                                                # average over the seven scales, so every value stays in [-1, 1]
+            good = round(sum(v for v in vals if v > 0) / n7, 4); bad = round(-sum(v for v in vals if v < 0) / n7, 4); net = round(good - bad, 4)
+            if good > 0.04 and bad > 0.04: stance = 'both'                        # reflects both — good or bad by context
+            elif good - bad > 0.06: stance = 'good'
+            elif bad - good > 0.06: stance = 'bad'
+            else: stance = 'unsure'
+            return dict(good=good, bad=bad, net=net, stance=stance)
+        except Exception: return dict(good=0.0, bad=0.0, net=0.0, stance='unsure')
+    def valence(self, rec): return self.reflect(rec)['net']
     def token_sig(self, text, cap=16):
         """A compact signature: the ids of a record's most telling tokens (by rarity in the vocabulary — later = rarer = more telling)."""
         vocab = self.state.setdefault('mind', {}).setdefault('vocab', {})
@@ -938,15 +976,19 @@ class Node:
                           (m.get('seen_rowid', 0), self.cfg.get('mind_per_batch', 60))).fetchall()
         if not rows and m['encoded']:
             m['last'] = time.strftime('%Y-%m-%d %H:%M'); return
-        maxrow = m.get('seen_rowid', 0); batch = []
+        maxrow = m.get('seen_rowid', 0); batch = []; rads = []; vals = []
         for (rid,) in rows:
             rr = db.execute('SELECT rowid FROM records WHERE id=?', (rid,)).fetchone()
             if rr: maxrow = max(maxrow, rr[0])
             rec = self.ix.get(rid) or {}; tags = rec.get('tags') or {}; o = rec.get('outputs') or {}
             src = (self.ix.get((rec.get('inputs') or {}).get('find') or (rec.get('inputs') or {}).get('code') or '') or {}).get('outputs') or {}
             txt = ' '.join(str(d.get(x, '')) for d in (o, src) for x in ('title', 'text', 'purpose', 'module', 'doc'))
-            code = self.encode_markers(tags); lane = '/'.join(tags.get(k, 'none') for k in self.LANE_KEYS)
-            batch.append((rid, json.dumps(code), lane, time.time(), json.dumps(self.token_sig(txt))))
+            rad = self.radius(txt); rf = self.reflect(rec); val = rf['net']
+            code = self.encode_markers(tags) + [rad, round((val + 1) / 2, 4)]     # + distance from the central pattern, + the net of its reflection
+            lane = '/'.join(tags.get(k, 'none') for k in self.LANE_KEYS)
+            batch.append((rid, json.dumps(code), lane, time.time(), json.dumps(self.token_sig(txt)))); rads.append(rad); vals.append(val)
+            if rf['stance'] in ('both', 'unsure') and rf['good'] + rf['bad'] > 0.08 and rad < 0.6:   # it matters and the mind can't call it: ask Danny
+                self.ask_danny(rid, o, rf, lane)
         if batch:
             db.executemany('INSERT OR IGNORE INTO mind_codes(record,code,lane,created,tokens) VALUES (?,?,?,?,?)', batch); db.commit()
         m['seen_rowid'] = maxrow
@@ -956,10 +998,14 @@ class Node:
         except Exception: assoc = 0
         target = max(self.cfg.get('mind_ready_at', 5000), 1)
         cover = min(1.0, m['encoded'] / target); diversity = min(1.0, m['lanes'] / 40.0); association = min(1.0, assoc / 400.0)
+        if rads:
+            near = sum(1 for r in rads if r < 0.5); m['center_frac'] = round((m.get('center_frac', 0.0) * m.get('_rv', 0) + near) / (m.get('_rv', 0) + len(rads)), 3)
+            m['valence'] = round((m.get('valence', 0.0) * m.get('_rv', 0) + sum(vals)) / (m.get('_rv', 0) + len(vals)), 3); m['_rv'] = m.get('_rv', 0) + len(rads)
         vocabn = len(m.get('vocab', {})); language = min(1.0, vocabn / 4000.0)
         m['readiness'] = round(0.4 * cover + 0.2 * diversity + 0.2 * association + 0.2 * language, 3); m['assoc'] = assoc; m['vocab_n'] = vocabn
         m['last'] = time.strftime('%Y-%m-%d %H:%M')
         self.escape_check(m)                                                     # keep climbing: no section may stall the whole ascent
+        self.weigh_direction(m)                                                  # the subconscious weighs what is learned and steers the frontal cortex
         # it RETRIEVES: for a few of the new records, recall the nearest and wire the association; isolated ones go to the programmer
         linked = isolated = 0
         for rid, cj, lane, _, _tj in batch[:6]:
@@ -995,6 +1041,44 @@ class Node:
                 except Exception: pass
             out.append((d, rid))
         out.sort(); return [rid for _, rid in out[:k]]
+    def weigh_direction(self, m):
+        """The subconscious as the weigher. From everything learned, it weighs each area and leans the system toward a direction; the
+        frontal cortex (the programmer) reaches forward that way. Dual-process: the frontal part acts and explores, the subconscious
+        integrates the whole and decides which way to go. A steer re-weighed every so often, not a cage."""
+        m['weigh_n'] = m.get('weigh_n', 0) + 1
+        if m['weigh_n'] % 5 and m.get('direction'): return                       # re-weigh every ~5 encodes
+        try: rows = self._mind_db().execute('SELECT lane, code, COUNT(*) c FROM mind_codes GROUP BY lane').fetchall()
+        except Exception: return
+        if not rows: return
+        mostly = max(r[2] for r in rows); scored = []
+        for lane, cj, c in rows:
+            try: code = json.loads(cj)
+            except Exception: continue
+            rad = code[8] if len(code) > 8 else 0.5; val = (code[9] * 2 - 1) if len(code) > 9 else 0.0
+            w = 0.5 * (1 - rad) + 0.3 * max(0.0, val) + 0.2 * (1 - c / max(mostly, 1))   # toward the centre, net-good, under-explored
+            scored.append((round(w, 3), lane, c))
+        scored.sort(reverse=True)
+        if not scored: return
+        w, lane, c = scored[0]; prev = (m.get('direction') or {}).get('lane')
+        m['direction'] = dict(lane=lane, weight=w, why=f'closest to the central pattern, net-good, and still open ({c} records)', t=time.strftime('%Y-%m-%d %H:%M'))
+        if lane != prev:
+            self.send_msg('mind', 'programmer', f'Direction: lean toward {lane} next - {m["direction"]["why"]}.', kind='steer')
+            self.state.setdefault('board_cards', []).insert(0, dict(title='Subconscious steers', body=f'Weighed everything; leaning toward {lane}. {m["direction"]["why"]}', status='info', t=m['direction']['t'])); del self.state['board_cards'][12:]
+    def ask_danny(self, rid, o, rf, lane):
+        """The mind can always talk to Danny. When something reflects both good and bad, or it is unsure, it asks him — his answer is
+        the wisdom it records. It does not decide contested good/bad alone."""
+        q = self.state.setdefault('for_danny', [])
+        if any(x.get('rid') == rid for x in q) or len(q) > 40: return
+        what = str(o.get('title') or o.get('module') or o.get('purpose') or lane)[:80]
+        reason = 'reflects both good and bad depending on context' if rf['stance'] == 'both' else 'I cannot tell if this is good or bad'
+        item = dict(rid=rid, what=what, lane=lane, stance=rf['stance'], reason=reason, t=time.strftime('%Y-%m-%d %H:%M'))
+        q.insert(0, item); self.state['for_danny_n'] = self.state.get('for_danny_n', 0) + 1
+        self.send_msg('mind', 'all', f'For Danny: is "{what}" good, bad, or both? ({reason})', kind='for_danny')
+        self.state.setdefault('board_cards', []).insert(0, dict(title='Mind asks Danny', body=f'Is "{what}" good, bad, or both? {reason}. Answer in ASK.txt (e.g. "{what}: both - depends on ...").', status='info', t=item['t'])); del self.state['board_cards'][12:]
+        try:
+            with open(self.home / 'QUESTIONS_FOR_DANNY.md', 'a', encoding='utf-8') as f:
+                f.write(f"- [ ] {item['t']}  **{what}** ({lane}) — {reason}. Your call (good / bad / both / depends): \n")
+        except OSError: pass
     def escape_check(self, m):
         """Escape velocity: watch readiness climb. If it plateaus (stops gaining) while work remains, a section is holding the ascent
         back (loss of plasticity). The subconscious then pushes new connections and tells the programmer, so no section stalls the climb."""
@@ -1056,6 +1140,15 @@ class Node:
                               tags=dict(node=NODE, relation='similar', status='ASSUMED', proposed_by='subconscious', kind='doorway'), links=[(dst, 1, 'similar')])
         del help_q[:n]
     # ---------------------------------------------------------------- the subconscious studies AI itself and upgrades the machine
+    WORLD_SEEDS = [
+        'how human societies and economies are structured and why',
+        'how the human mind, emotion and behaviour work',
+        'how life, biology and ecosystems are organized',
+        'how matter, chemistry and materials build the physical world we live in',
+        'how language, meaning and culture carry knowledge',
+        'how technology, computers and networks shape daily life',
+        'how ethics and value - what is good, harmful or balanced - are reasoned about',
+    ]
     AI_SEEDS = [
         'state of the art open-weight local large language models 2026 benchmarks',
         'best local AI agent frameworks and orchestration libraries 2026',
@@ -1077,8 +1170,8 @@ class Node:
         if not self.cfg['online']: return
         ai = self.state.setdefault('ai', dict(seeded=False, count=0, cats={}, seen_rowid=0, upgrades=0))
         if not ai['seeded']:
-            self.state.setdefault('search_queue', [])[:0] = self.AI_SEEDS; ai['seeded'] = True
-            self.log('subconscious: started AI research (seeded ' + str(len(self.AI_SEEDS)) + ' topics on AI tools and technology)')
+            self.state.setdefault('search_queue', []).extend(self.AI_SEEDS + self.WORLD_SEEDS); ai['seeded'] = True
+            self.log('subconscious: started research (AI tools + the structure of the world we live in; all connected back to the central pattern)')
         self.state['ai_n'] = self.state.get('ai_n', 0) + 1
         # categorize new hint records into the AI knowledge network
         db = self.ix.db
@@ -1394,7 +1487,9 @@ class Node:
         net = self.state.get('network', {}).get('nodes', {})
         board = '; '.join(f"{nid} ({nd['role']}) {'ON' if nd['on'] else 'off'}" for nid, nd in net.items()) or 'just this node'
         rg = self.state.get("ramp", {}); cur = RAMP[rg.get("rung", 0)]["name"] if rg.get("rung", 0) < len(RAMP) else "all rungs climbed - keep refining the Mind"
-        return (f"THE ADVANCING RAMP (your standing goals; current rung: {cur}):\n{RAMPDOC}\n"
+        direction = self.state.get("mind", {}).get("direction")
+        steer = f"THE SUBCONSCIOUS IS STEERING toward: {direction['lane']} ({direction['why']}). You are the frontal cortex - reach forward that way when you choose what to do.\n" if direction else ''
+        return (steer + f"THE ADVANCING RAMP (your standing goals; current rung: {cur}):\n{RAMPDOC}\n"
                 f"THE GRAND VISION (the whole plan, every node):\n{VISION}\n"
                 f"THE NODE NETWORK RIGHT NOW (you run this switchboard): {board}\n"
                 f"PROGRAMMER MAP (start point, end point, lattice instructions):\n{PMAP}\n"
@@ -1421,8 +1516,11 @@ class Node:
         """File the programmer's search questions and improvement ideas (ideas are reviewed, never applied automatically)."""
         out = out or {}; q = str(out.get('search') or '').strip()
         ps = self.state.setdefault('prog', dict(searches=0, hints=0, ideas=0, refused=0, routes=0))
-        if q and q.lower() not in ('none', 'null', 'n/a') and len(self.state.setdefault('search_queue', [])) < 20:
-            self.state['search_queue'].append(q[:200]); ps['searches'] += 1; self.prog_action('search', q[:80], 'filed')
+        if q and q.lower() not in ('none', 'null', 'n/a'):                     # a role's own question always gets in, at the front
+            sq = self.state.setdefault('search_queue', [])
+            if q[:200] not in sq: sq.insert(0, q[:200])
+            del sq[40:]                                                          # over the cap: shed background seeds from the back, never a role's question
+            ps['searches'] += 1; self.prog_action('search', q[:80], 'filed')
         imp = out.get('improve')
         if isinstance(imp, dict) and imp.get('idea'):
             mod = str(imp.get('module', ''))
@@ -1532,7 +1630,7 @@ class Node:
         if not self.cfg['online']: return
         q = self.state.setdefault('search_queue', [])
         if not self.state.get('study_seeded'):                                  # start learning right away
-            q[:0] = self.STUDY_SEEDS; self.state['study_seeded'] = True
+            q.extend(self.STUDY_SEEDS); self.state["study_seeded"] = True
             self.log('programmer: started web study (seeded ' + str(len(self.STUDY_SEEDS)) + ' questions on how to do its job)')
             self.prog_action('study', 'startup', 'filed', f'{len(self.STUDY_SEEDS)} starter questions')
         self.state['study_n'] = self.state.get('study_n', 0) + 1

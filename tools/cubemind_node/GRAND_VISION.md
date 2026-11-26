@@ -47,3 +47,16 @@ Node 3 is what makes this cheap and fast on local hardware.
 - **The handoff.** The subconscious reports a readiness (0-100%). When it is ready, it signals `mind_ready`; **Danny decides** when it moves
   to the centre. After that it can run things its own way, with its own settings — it will know the field better than we do. Until then the
   programmer stays the conscious driver, and the Mind keeps learning in the background.
+
+
+## The weigher and the mirror (how the mind decides, Danny 26 Nov)
+- **Frontal cortex = the programmer.** It reaches forward: explores, builds, acts.
+- **Subconscious = the Mind, the weigher.** It holds everything learned and weighs which way to go, especially under the
+  uncertainties of life. Every few encodes it re-weighs all areas (toward the central pattern, toward net-good, toward what is
+  still open) and sets a DIRECTION; the programmer reaches forward that way. A steer, not a cage.
+- **The central pattern first.** The UFE's own language (modular geometry, the five rings, the one string from before the Big
+  Bang to today, the nine Loom layers) is seeded at the centre of the vocabulary. Everything else - the world Danny lives in -
+  spreads outward from it, and each record knows how far out it sits (its radius) and connects back toward the centre.
+- **A mirror, not a verdict.** Good and bad are held as reflections: each record carries the good it reflects AND the bad it
+  reflects, and a stance - good, bad, both (either, by context), or unsure. The mind does not judge contested things alone:
+  when it sees duality or is unsure about something that matters, it asks Danny. His answers are the wisdom it records.

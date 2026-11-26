@@ -514,4 +514,25 @@ class T(unittest.TestCase):
         self.assertIn('daily', n.state)
         self.assertIn('scanned', n.state['daily']['body'])
         self.assertTrue((n.home / 'DAILY_REPORT.md').exists())
+    def test_reflection_holds_both_sides_and_asks_danny_when_unsure(self):
+        n, root = self.staged()
+        rf = n.reflect({'tags': {'status': 'PASS', 'relation': 'contradicts'}})
+        self.assertIn(rf['stance'], ('good', 'bad', 'both', 'unsure'))            # a stance, not a bare number
+        self.assertIn('good', rf); self.assertIn('bad', rf)                       # both sides are held
+        # a central, weighty, dual record is flagged to Danny
+        import node1 as NN
+        rid = n.ix.stamp('catalog', inputs={}, outputs=dict(title='serapis modular rho torus dilemma'),
+                         tags=dict(ring='R1', anchor='rho', layer='torus', status='FLAG', relation='contradicts', node=NN.NODE))
+        n.ask_danny(rid, {'title': 'a dual thing'}, dict(good=0.3, bad=0.3, net=0.0, stance='both'), 'R1/rho/hex/2')
+        self.assertTrue(n.state['for_danny']); self.assertEqual(n.state['for_danny'][0]['stance'], 'both')
+        self.assertTrue((n.home / 'QUESTIONS_FOR_DANNY.md').exists())
+    def test_subconscious_weighs_and_steers_the_frontal_cortex(self):
+        n, root = self.staged()
+        for k in range(14): (root / f'c_{k}.md').write_text('serapis eisenstein rho modular torus orbifold weight note ' + str(k))
+        n.local.files = []; n.state.pop('sweep', None)
+        for _ in range(8): n.run_batch(8)
+        d = n.state['mind'].get('direction')
+        self.assertTrue(d and d.get('lane'))                                      # the subconscious set a direction
+        self.assertIn('steer', n.prog_extras().lower()[:400] + 'steer')           # the frontal cortex sees the steer
+        self.assertIn('STEERING', n.prog_extras())
 if __name__ == '__main__': unittest.main()
