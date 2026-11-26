@@ -99,4 +99,9 @@ class T(unittest.TestCase):
         n = self.node(); n.cycle(); loc = [r for r in n.ix.find(kind='find') if n.ix.get(r)['outputs'].get('source') == 'local']
         self.assertEqual(len(loc), 1); n.cycle(); n.cycle(); n.cycle(); n.cycle()
         self.assertEqual(len([r for r in n.ix.find(kind='find') if n.ix.get(r)['outputs'].get('source') == 'local']), 1)
+    def test_display_draws_three_views_and_live_phase(self):
+        n = self.node(); n.run_batch(4); html = (n.home / 'dashboard.html').read_text()
+        for part in ('Timeline: the single string', 'Memory map', 'Categories: lanes', 'Now', 'R1-serapis-rho'): self.assertIn(part, html)
+        data = json.loads(html.split('const NODES = ')[1].split(';\n')[0].replace('<\\/', '</'))
+        snap = data['R1-serapis-rho']; self.assertEqual(snap['phase']['name'], 'waiting'); self.assertEqual(snap['cycles'], 4); self.assertTrue(snap['neurons'])
 if __name__ == '__main__': unittest.main()

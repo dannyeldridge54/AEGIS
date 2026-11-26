@@ -17,7 +17,7 @@ Settings: node1_config.json beside this file (created on first run). Output: nod
 import json, os, random, shutil, sqlite3, sys, time, traceback, urllib.parse, urllib.request, xml.etree.ElementTree as ET
 from pathlib import Path
 HERE = Path(__file__).resolve().parent; sys.path.insert(0, str(HERE))
-import fingerprint as FP, neural_web as NW, ufe_pack as U
+import fingerprint as FP, neural_web as NW, ufe_pack as U, display as DISPLAY
 
 DEFAULT = dict(
     owner='Danny Eldridge', home='node1_data', cycle_seconds=0, batch=8, parallel=2, search_every_hours=6, online=True,
@@ -151,6 +151,7 @@ def parse_json(s):
         except Exception: return {}
 
 class Node:
+    NODE_NAME = NODE
     def __init__(self, cfg, llm=None, fetch=None):
         self.cfg = cfg; self.home = HERE / cfg['home']; self.home.mkdir(parents=True, exist_ok=True)
         self.ix = FP.Index(self.home / 'node1.sqlite', cfg['owner']); self.ix.db.execute('PRAGMA journal_mode=WAL')
@@ -159,6 +160,13 @@ class Node:
         self.state_f = self.home / 'state.json'
         self.state = json.loads(self.state_f.read_text()) if self.state_f.exists() else dict(cycle=0, ring={}, streak={}, models={}, counts={}, recent=[])
         self.rng = random.Random(self.state['cycle'] * 7919 + 1)
+    def set_phase(self, name, detail=''):
+        """What the node is doing right now; the display shows it live (page refreshes every 8 s)."""
+        self.state['phase'] = dict(name=name, detail=detail, since=time.time())
+        if time.time() - getattr(self, '_drawn', 0) >= 2:
+            self._drawn = time.time()
+            try: DISPLAY.render(self.home / 'dashboard.html', {NODE: DISPLAY.snapshot(self)})
+            except Exception as e: self.log(f'display failed: {e}')
     def log(self, msg):
         with open(self.home / 'node1.log', 'a', encoding='utf-8') as f: f.write(time.strftime('%Y-%m-%d %H:%M:%S ') + msg + '\n')
     def embed_link(self, rid, text):
@@ -349,18 +357,25 @@ class Node:
         if self.state.get('day', {}).get('date') != today: self.state['day'] = dict(date=today, cycles=0, starts=0, sources={}, busy=0.0, idle=0.0)
         if self.state.get('selfcheck', {}).get('date') != today: self.selfcheck()
         items = []
+        self.set_phase('retrieving', f'searching 5 sources for {k} subjects')
         for n in range(k):
             self.state['cycle'] += 1; subj = SUBJECTS[(self.state['cycle'] - 1) % len(SUBJECTS)]
             items.append(dict(subj=subj, finds=self.retrieve(subj)))
+        self.set_phase('retrieving', f"framing {k} subjects with {self.cfg['models']['retriever']}")
         lenses = self._par(lambda it: self.lens(it['subj'], it['finds']), items)
+        self.set_phase('mapping', f"giving {sum(len(it['finds']) for it in items)} finds a geometric address with {self.cfg['models']['mapper']}")
         maps = self._par(lambda it: self.mapper(it['subj'], it['finds']), items)
         for it, mp in zip(items, maps): self.catalogue(it['subj'], it['finds'], mp)
         tasks = [self.prepare(it['subj'], n) for n, it in enumerate(items)]
+        self.set_phase('processing', f"{k} locked calculations with {self.cfg['models']['processor']}: " + ', '.join(sorted({t['tool'] for t in tasks})))
         outs = self._par(self.ask_processor, tasks)
         results = [self.score(t, o) for t, o in zip(tasks, outs)]
+        self.set_phase('refereeing', f"{self.cfg['models']['referee']} arguing against {k} results")
         refs = self._par(lambda x: self.referee(x[0]['subj'], x[1], x[2]), list(zip(items, results, lenses)))
+        self.set_phase('filing', 'hashing, signing, placing in the web, grading')
         verdicts = [self.file(it['subj'], it['finds'], ln, res, rf) for it, ln, res, rf in zip(items, lenses, results, refs)]
         d = self.state['day']; d['busy'] = d.get('busy', 0.0) + (time.time() - t0)
+        self._drawn = 0; self.set_phase('waiting', 'batch done: ' + ' '.join(verdicts))
         self.state_f.write_text(json.dumps(self.state, indent=1)); self.status(); return verdicts
     def cycle(self): return self.run_batch(1)[0]
     def file(self, subj, finds, lens, res, ref):
@@ -450,6 +465,7 @@ class Node:
             import psutil
             t0 = time.time()
             for _ in range(60):
+                if _ == 1: self.set_phase('waiting', 'the machine is busy (CPU, RAM or GPU over its ceiling); yielding')
                 gpu_ok = True
                 try:
                     import pynvml; pynvml.nvmlInit(); h = pynvml.nvmlDeviceGetHandleByIndex(0); mi = pynvml.nvmlDeviceGetMemoryInfo(h)
