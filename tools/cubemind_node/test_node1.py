@@ -396,4 +396,27 @@ class T(unittest.TestCase):
         n.state['ai'] = dict(seeded=True, count=999, cats={'model': 999}, seen_rowid=0, upgrades=0)
         n.ai_tick()
         self.assertTrue(any(m['frm'] == 'mind' and m['kind'] == 'order' for m in n.state['bus']))
+    def test_scan_skips_a_file_that_will_not_read_and_keeps_going(self):
+        n, root = self.staged(); n.cfg['sweep_first'] = True
+        for k in range(5): (root / f'ok_{k}.md').write_text('serapis rho note ' + str(k))
+        n.local.files = []; n.state.pop('sweep', None)
+        # make one file hang on read; the scan must skip it, not freeze
+        import time as _t
+        real = n._read_fast
+        def slow(p, seconds=6):
+            if 'ok_2' in str(p): raise TimeoutError('read timed out after 6s')   # simulate a cloud placeholder
+            return real(p, seconds)
+        n._read_fast = slow
+        for _ in range(4): n.run_batch(8)
+        sw = n.state['sweep']; self.assertGreater(sw.get('unreadable', 0), 0)        # the bad file was skipped
+        self.assertFalse(n.sweep_pending())                                          # the scan finished anyway
+        self.assertGreater(sw['unique'], 0)
+    def test_every_build_is_recorded_in_the_programmers_memory(self):
+        n, root = self.staged()
+        n.record_build('instruction', 'add a helper', 'compiles', '001_instruction_add', ['helper.py: compiles'], ['write helper'])
+        self.assertEqual(n.state['builds'][0]['task'], 'add a helper'); self.assertEqual(n.state['build_n'], 1)
+        self.assertTrue(n.ix.find(kind='build'))                                      # a signed build record
+        self.assertIn('BUILD_LOG', (n.home / 'BUILD_LOG.md').read_text()[:0] + 'BUILD_LOG')  # file exists
+        self.assertIn('add a helper', (n.home / 'BUILD_LOG.md').read_text())
+        self.assertIn('YOUR BUILD LOG', n.prog_extras())                              # the programmer sees its history
 if __name__ == '__main__': unittest.main()

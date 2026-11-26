@@ -110,6 +110,8 @@ function draw(){
    ${(D.prog_cp||[]).length ? `<p class="muted">Checkpoints: ${D.prog_cp.map(c => `${c.at} actions (${esc(c.t)})`).join(' · ')}</p>` : ''}
    <p><b>Your instructions</b> <span class="muted">(write one per line in node1\\INSTRUCTIONS.txt; work lands in node1_data\\workbench, saved and syntax-checked, never run)</span></p>
    ${(D.instructions||[]).length ? `<ul>${D.instructions.map(x => `<li>${esc(x.t)} · ${esc(x.task)} → <b>${esc(x.outcome)}</b> <span class="muted mono">${esc(x.folder)}</span></li>`).join('')}</ul>` : '<p class="muted">none yet</p>'}
+   <p><b>Build log</b> <span class="muted">(${D.build_n||0} total, in BUILD_LOG.md and signed records — every change kept for review)</span></p>
+   <ul class="mono" style="font-size:12px">${(D.builds||[]).map(b => `<li>${esc(b.t)} ${esc(b.source)}: ${esc(b.task)} → <b>${esc(b.outcome)}</b></li>`).join('') || '<li class="muted">nothing built yet</li>'}</ul>
    <p><b>Recent actions</b></p><ul class="mono" style="font-size:12px">${(D.prog_log||[]).map(a => `<li>${esc(a.t)} ${esc(a.kind)} · ${esc(a.target)} → ${esc(a.outcome)}</li>`).join('')}</ul>
    <p class="muted">Learning from GitHub: ${D.library||0} library files · repos: ${(D.repos||[]).map(esc).join(', ')||'none yet'}</p>
    ${(D.wants||[]).length ? `<p><b>Tools it wants</b> <span class="muted">(installs are ${D.allow_install?'<b>ON</b> — you approved':'<b>OFF</b> — set allow_install:true in node1_config.json to let it install; listed in WANTS.md)'}</span></p><ul>${D.wants.map(w => `<li>${esc(w.what)} — ${esc(w.why)} ${w.done?'<b>'+esc(w.result||'done')+'</b>':'<span class="muted">waiting</span>'}</li>`).join('')}</ul>` : ''}

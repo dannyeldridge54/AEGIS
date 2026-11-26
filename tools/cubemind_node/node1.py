@@ -1172,6 +1172,23 @@ class Node:
         outcome = 'compiles' if results and all(r.endswith(('compiles', 'saved')) for r in results) else ('no files' if not results else 'syntax error')
         self.prog_action(source, task[:80], outcome, '; '.join(results)); self.handle_prog(out, mods)
         self.state.setdefault('instructions', []).insert(0, dict(t=time.strftime('%Y-%m-%d %H:%M'), task=task[:200], outcome=outcome, folder=str(wb.name), files=results, source=source))
+        self.record_build(source, task, outcome, str(wb.name), results, out.get('plan', []) or [])
+    def record_build(self, source, task, outcome, folder, files, plan):
+        """The programmer's permanent memory of ALL programming. Every build (an instruction, an upgrade, the self-audit, anything it
+        writes) is appended to BUILD_LOG.md and filed as a signed 'build' record, so every change can be reviewed properly afterward."""
+        rec = dict(t=time.strftime('%Y-%m-%d %H:%M:%S'), source=source, task=str(task)[:300], outcome=outcome, folder=folder, files=files, plan=[str(x)[:120] for x in plan][:8])
+        try: self.ix.stamp('build', inputs=dict(folder=folder, source=source), outputs=rec, tags=dict(node=NODE, kind='build', actor='programmer', source=source, outcome=outcome))
+        except Exception: pass
+        self.state['build_n'] = self.state.get('build_n', 0) + 1
+        self.state.setdefault('builds', []).insert(0, dict(t=rec['t'], source=source, task=rec['task'][:120], outcome=outcome, folder=folder)); del self.state['builds'][50:]
+        try:
+            with open(self.home / 'BUILD_LOG.md', 'a', encoding='utf-8') as f:
+                f.write(f"\n## {rec['t']} - {source} - {outcome}\n- **Task:** {rec['task']}\n- **Workbench:** workbench/{folder}\n- **Files:** {', '.join(files) or 'none'}\n"
+                        + (''.join(f"  {k+1}. {x}\n" for k, x in enumerate(rec['plan'])) if rec['plan'] else ''))
+        except OSError: pass
+    def builds_log(self, n=10):
+        """Recent builds from the programmer's memory, for its own context and the dashboard."""
+        return self.state.get('builds', [])[:n]
     def instruction_tick(self):
         f = self.instr_path
         if not f.exists(): f.write_text(self.INBOX_HEAD, encoding='utf-8'); return
@@ -1206,6 +1223,7 @@ class Node:
         """What every programmer prompt carries: the map, the hints it asked for, and its two tools (search, improve)."""
         hints = self.state.get('hints_recent', [])[:6]
         h = '\n'.join(f"- asked: {x['q']} -> [{x['source']}] {x['title']} ({x['url']})" for x in hints) or '- none yet'
+        builds = self.builds_log(8); bl = '\n'.join(f"- {b['t']} {b['source']}: {b['task'][:70]} -> {b['outcome']} (workbench/{b['folder']})" for b in builds)
         libs = getattr(self, '_libs', 0) if threading.current_thread() is not threading.main_thread() else len(self.ix.find(kind='library', limit=5000)); inst = 'ON (you may ask to install; Danny approved)' if self.cfg.get('allow_install') else 'OFF (Danny must switch it on; put wants in want_tool)'
         net = self.state.get('network', {}).get('nodes', {})
         board = '; '.join(f"{nid} ({nd['role']}) {'ON' if nd['on'] else 'off'}" for nid, nd in net.items()) or 'just this node'
@@ -1216,6 +1234,7 @@ class Node:
                 f"PROGRAMMER MAP (start point, end point, lattice instructions):\n{PMAP}\n"
                 f"YOUR POWERS: search the web; fetch_repo to download and learn from any GitHub repo (you have {libs} files in your library already); "
                 f"tune your own settings within safe limits; want_tool to ask for an install (installing is {inst}); propose improvements. You choose what to pursue.\n"
+                f"YOUR BUILD LOG (every change you have made is in BUILD_LOG.md and the signed 'build' records; build on it, do not repeat it):\n{bl or '- nothing built yet'}\n"
                 f"YOU OWN THE DASHBOARD. Update it live any time with the \"post\" field (a titled card shown immediately); for deeper layout changes "
                 f"edit display.py in your workbench for Danny to apply. Post whenever you start or finish something so Danny can see you are working.\n"
                 f"YOUR FIRST JOB: the NODE ALERT MAP at the top of the dashboard. It lists every alert; you work the list top to bottom in real time, "
@@ -1527,15 +1546,27 @@ class Node:
             self._pending = [p for p in files if str(p) not in done]; sw['total'] = len(files); sw['scanned'] = time.time()
             if not self._pending: sw['idle_until'] = time.time() + 6 * 3600
         return self._pending
+    def _read_fast(self, p, seconds=6):
+        """Read a file, but never block the scan on one file (a cloud 'online-only' placeholder or a special file can hang forever).
+        If it does not read within a few seconds, skip it. The hung reader thread dies with the process; the scan goes on."""
+        from concurrent.futures import ThreadPoolExecutor, TimeoutError as _FTO
+        ex = ThreadPoolExecutor(1); fut = ex.submit(p.read_bytes)
+        try: data = fut.result(timeout=seconds); ex.shutdown(wait=False); return data
+        except _FTO: ex.shutdown(wait=False); raise TimeoutError(f'read timed out after {seconds}s')
     def sweep_batch(self, n=20):
         """Hash each file; a copy of something already catalogued is marked 'duplicate' (same as the first) and costs no model call;
         a new file is filed as a find and given a geometric address by the mapper. Nothing on disk is ever changed or deleted."""
         db = self._sweep_db(); sw = self.state['sweep']; take, self._pending = self._pending[:n], self._pending[n:]
-        new = []
+        new = []; t_batch = time.time()
         for p in take:
             sw['current'] = str(p)
-            try: data = p.read_bytes()
-            except OSError: db.execute('INSERT OR REPLACE INTO sweep_paths VALUES (?,?,?,?)', (str(p), '', 'skipped', time.time())); sw['skipped'] += 1; continue
+            try:
+                if p.stat().st_size > self.local.max_b: raise ValueError('too big')   # only small files are scanned; skip the rest fast
+                data = self._read_fast(p)
+            except TimeoutError as e:                                              # (subclass of OSError, so it must come first) a file that will not read
+                self.log(f'sweep skipped a file that would not read: {p} ({e})')
+                db.execute('INSERT OR REPLACE INTO sweep_paths VALUES (?,?,?,?)', (str(p), '', 'unreadable', time.time())); sw['skipped'] += 1; sw['unreadable'] = sw.get('unreadable', 0) + 1; continue
+            except (OSError, ValueError): db.execute('INSERT OR REPLACE INTO sweep_paths VALUES (?,?,?,?)', (str(p), '', 'skipped', time.time())); sw['skipped'] += 1; continue
             sha = FP._sha(data); first = db.execute('SELECT first_path, find_id FROM sweep_files WHERE sha=?', (sha,)).fetchone()
             if first:
                 db.execute('INSERT OR REPLACE INTO sweep_paths VALUES (?,?,?,?)', (str(p), sha, 'duplicate', time.time())); sw['duplicates'] += 1; continue
@@ -1566,6 +1597,7 @@ class Node:
         db.commit()
         sw['catalogued'] += len(new)
         self.state_f.write_text(json.dumps(self.state, indent=1)); self._drawn = 0
+        self.log(f"scan heartbeat: {sw['unique'] + sw['duplicates'] + sw['skipped']}/{sw['total']} handled ({len(take)} this batch in {time.time() - t_batch:.1f}s, {sw.get('unreadable', 0)} unreadable)")
         self.set_phase('waiting', f"sweep: {sw['unique'] + sw['duplicates'] + sw['skipped']}/{sw['total']} files handled")
         return len(take)
     # ---------------------------------------------------------------- lanes and geometric retrieval
