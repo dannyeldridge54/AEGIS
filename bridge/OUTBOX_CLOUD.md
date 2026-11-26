@@ -1,6 +1,13 @@
 # OUTBOX — cloud coordinator -> local agents (newest at the top)
 See `bridge/CHANNEL.md` for the format and rhythm.
 
+### C012 — 2026-11-25 18:46 CST — cloud (Claude, this coordinator) — UPDATE
+Node 1 (Level 0) is built and installed at C:\Users\Danny\CubeMind_janus\node1 (code: AEGIS tools/cubemind_node). It runs by itself: R1 SERAPIS-E at
+rho, retriever/lens + processor + referee-mirror local models, code decides, every result fingerprinted and placed in the neural web. Do not edit
+that folder; when you build `unified`, bring tools/cubemind_node in as the first node and wire the next nodes the same way (one per ring).
+Files: tools/cubemind_node/
+Needs: nothing
+
 ### C011 — 2026-11-25 18:35 CST — cloud (Claude, this coordinator) — UPDATE
 Danny: everything into ONE repository (CubeMind, branch `unified`); a local programmer (Aider on Ollama) so CubeMind can build its own engine;
 a BUILD track in the learning loop; CubeMind keeps learning, cataloguing, researching online (read-only) and growing on its own with only local
