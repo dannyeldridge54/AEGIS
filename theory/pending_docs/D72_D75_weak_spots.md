@@ -23420,3 +23420,16 @@ plateau (true if Zhinu is both, D2270); (2) Kahler weight n = 1 (n = 3 lowers ma
 **Side note.** During inflation the field sits far from i (large Im tau), so m/H = 0.51 at i says nothing about isocurvature; the F4 check stays with
 the inflation track at x = 1/2.
 **Verdict.** CLOSED (estimate): the soft direction at the neutrino vacuum is heavy in absolute terms.
+
+## D2281 (27 Nov 2026) — The species-scale exponent: our E^(-1/3) is a convention; the physics of D2271 stands with the standard E^(-1/6) [CORRECTION to D2271 wording]
+**Literature.** van de Heisteeg, Vafa, Wiesner, Wu (arXiv:2310.07213, eq. 2.4): Lambda_s/M_pl = (a_n0/a_hat)^(1/(2-2 n0)), set by the leading higher-
+derivative operator R^n0, independent of d. E_{3/2} multiplies t8t8R^4 (n0 = 4), so Lambda_s ∝ E_{3/2}^(-1/6) in any d; an R^2/F1 term (n0 = 2) gives
+Lambda_s ∝ F1^(-1/2).
+**Check against D2271.** The Zhinu founding rule V0 = V_inf |grad ln Lambda|^2 / lambda^2 depends only on the ratio a^2/lambda^2 (Lambda = E^(-a)); lambda
+is a free constant. D2271's potential V0 = (4/9) V_inf |grad ln E_{3/2}|^2 is reproduced by the standard a = 1/6 with lambda^2 = 1/16. Only the written
+identity changes: with the standard species scale it reads V0/V_inf = 1/3 + (8/3) Lap ln Lambda_sp (not 4/3). The "1/3" constant and all masses of
+D2271 and D2280 (V_inf/4 at rho; 0.0857 and 1.671 V_inf at i) are unchanged.
+**Correction (D2271, not edited).** "The identity needs Lambda = E_{3/2}^(-1/3)" holds only with the identity's 4/3 coefficient as written in
+WEAVE_FULL_EQUATION.md; with the literature's species scale the coefficient is 8/3. The D1603 pattern "1/3 = (s-1)/s" is unaffected (it is the
+constant term). Follow-up: update WEAVE_FULL_EQUATION.md's identity to the standard convention (doc edit, not physics).
+**Verdict.** CLOSED: no physics conflict with the quantum-gravity literature; one coefficient to restate.
