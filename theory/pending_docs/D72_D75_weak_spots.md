@@ -23179,3 +23179,18 @@ three-lobed r^3 cos 3theta (the triangle of D2262); at i the first shape is a pu
 The order of the flip IS the number of lobes, and the power of r is the order of the flip. These are symmetry facts, guaranteed once the
 coordinate is right; the test confirms the code and corrects D2262's design, but adds no new physics.
 **Verdict.** PASS (H1-H3), H4 measured. Closes the D2262 H1 FAIL as a design error. UFE status unchanged.
+
+## D2264 (27 Nov 2026) — No potential built from E alone can hold the vacuum at i [CENTRE, analytic]
+**Claim.** If V = f(E(tau,s)) for any smooth f (our SERAPIS landscape V_tau = e/(e+1)(1+C e/lam) with e = lam(E - E(rho)),
+tools/serapis_calc/landscape.py, is of this form), then tau = i is never a minimum.
+**Proof (two lines).** At i, grad E = 0 (D2261, forced by the order-2 flip and the CP mirror). Hessian of V = f'(E) Hess E + f''(E) grad E grad E^T
+= f'(E_i) Hess E. Hess E at i has eigenvalues of opposite sign (D2261: y^2 E_xx/E = -0.569, y^2 E_yy/E = +2.569 for s = 2), so V's Hessian at i
+also has opposite signs whatever f'(E_i) is (f' = 0 makes it degenerate, not a minimum). i stays a saddle for every C and lam.
+**No computation** (pure consequence of D2261); no lock needed, no new model.
+**Literature.** Flavour fits prefer tau near i (Feruglio 2211.00659, 2302.11580). Knapp-Perez, Liu, Nilles, Ramos-Sanchez, Ratz (arXiv:2304.14437)
+get tau = i dynamically from a gaugino-condensate superpotential plus hidden matter X with eta(tau)-dependent couplings; the matter term also
+lifts the AdS vacuum to about zero (slightly dS, metastable). That works because it brings in a second modular function (eta powers), not just E.
+**Bearing on our model.** SERAPIS's tau sector, as written, puts the vacuum at rho and makes i a saddle. If the theory is to sit at i (where the
+flavour fits are), it needs a second independent modular piece, eta- or j-type, as in 2304.14437. If it sits at rho, it must explain why flavour
+data prefers i. This is a new, sharp fork for the open list. OPEN.
+**Verdict.** THEOREM-level hint (analytic, from checked inputs). UFE status unchanged; new fork recorded: rho-vacuum (E-only) vs i-vacuum (needs a second function).
