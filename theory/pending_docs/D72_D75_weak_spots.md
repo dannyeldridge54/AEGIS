@@ -23271,3 +23271,16 @@ own vacuum potential already is the "second piece".
 **Remaining question.** Which potential governs the late vacuum in the full model: SERAPIS V_tau = f(E) (vacuum at rho only) or Zhinu (i and rho
 both)? They must be the same object or one must be the inflation stage and the other the vacuum stage. OPEN, now well posed.
 **Verdict.** RESOLVED (D2268a item 3): no contradiction; i is a true minimum of the Zhinu potential.
+
+## D2270 (27 Nov 2026) — SERAPIS f(E) vs Zhinu: two generations of the vacuum potential; the current one is the species-scale gradient [CENTRE]
+**Record.** tools/weave_cm/weave_paths.py (E27): Zhinu V0 ~ |grad ln Lambda_sp|^2, with Lambda_sp = E_{3/2}^{-1/6} the species scale (the same
+candidate van de Heisteeg-Vafa-Wiesner-Wu give, arXiv:2310.07708). D1598: V0 vanishes at both i and rho, both minima (computed), and the inflation
+line x = 1/2 passes through rho. The older SERAPIS landscape tools/serapis_calc/landscape.py uses V = f(E) (vacuum at rho only, D2264).
+**Answer to D2269's open question.** They are two generations, not two stages: SERAPIS v3's f(E) landscape vs the Weave/v4 Zhinu potential.
+The current model's vacuum potential is Zhinu, and it is literally the squared slope of the quantum-gravity cutoff: the vacua sit where the
+species scale is flat (i and rho), and the desert point rho is one of them. This joins three threads of today: the flip geometry (D2261), the
+saddle-to-bowl reversal (D2269), and the quantum-gravity link (connections map, pass 4).
+**Consequence for the open list.** The D2259 disagreements that separate "literal v4" from "v3/YFORK2" (the 4/9 = (2/3)^2 factor, 32 vs 8) are
+likely the same generation split: masses computed in the f(E) landscape vs in the Zhinu landscape. Test next: recompute the modulus masses at rho
+and i in the Zhinu potential and see which write-up numbers they reproduce. (HYPOTHESIS until computed.)
+**Verdict.** Fork recast: not rho-vs-i for the model (Zhinu holds both) but v3-vs-v4 bookkeeping. SERAPIS f(E) is superseded for the vacuum.
