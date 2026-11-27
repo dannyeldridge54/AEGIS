@@ -23384,3 +23384,16 @@ both hold unless the leptonic phase is fed from tau_q (the one modulus off the C
 (c) Keep P1 and drop the axion-free strong-CP route (use the axion we already carry for birefringence/dark sector instead).
 **Effect on the locked predictions.** P12 (delta_CP = 286/262 deg, D2268b) is conditional on P1; recorded here, not changed in the lock.
 **Verdict.** TENSION found (P1 vs CP-as-symmetry). OPEN; (a) is the cleanest unifying option.
+
+## D2278 (27 Nov 2026) — Option (a) for the CP tension has a working precedent: generalised CP + one modulus gives both CP phases [CENTRE, literature]
+- Okada-Tanimoto-type A4 models with generalised CP (arXiv:2012.13390): all couplings real; the modulus VEV is the ONLY source of CP violation for
+  quarks AND leptons. One common tau fits both: L8-Q10 at tau = -0.305 + 1.773 i gives delta_CP(lepton) = 1.478 pi (266 deg) and delta_CKM = 0.386 pi
+  (measured 0.3845 +- 0.0173 pi); L7-Q11 at tau = -0.175 + 1.136 i gives 0.985 pi and 0.389 pi. No general analytic lepton-quark phase relation; the
+  lepton phase depends on the model pairing. Related: common-modulus quark-lepton fits (arXiv:2005.00775), S4 + gCP (arXiv:2106.11659).
+- **What this does for D2277.** It shows CP-as-symmetry broken only by a modulus can give a lepton phase near ours (266 deg vs our 262/286 deg) while
+  getting the CKM phase right. In our model the leptons sit at CP-conserving fixed points and only tau_q (arg ~ 50 deg) is off the locus, so we need
+  either a lepton-sector coupling to tau_q (option a) or one shared off-locus modulus (which would move the leptons off rho/i, giving up exact TM1).
+  Consistent with the strong-CP route (gCP + moduli-only breaking is exactly its premise).
+- **Next test (well posed).** Write the minimal tau_q -> neutrino coupling allowed by the S4 weights and check whether one tau_q reproduces both the
+  CKM phase and delta_CP ~ 270-286 deg. Locked before computing when attempted.
+**Verdict.** HINT: option (a) is viable in principle and keeps the axion-free strong-CP route; P1 becomes unnecessary if the coupling works. OPEN.
