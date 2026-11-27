@@ -23482,3 +23482,16 @@ exotics and the hypercharge normalisation k_Y must still be checked per model be
 **Next (step B, to be locked).** For each model: sub-orbifolds for the three N = 2 stabiliser subgroups (Orbifolder "create suborbifold with factor"),
 their massless spectra -> b^{N=2,j}_a for SU(3)_c, SU(2)_L, U(1)_Y -> b'^j_a = b^{N=2,j}_a |G_j|/|G| -> Delta(1/alpha_s) relative, against the target
 re-derived with the D2282a F2 formula.
+
+## D2283a (27 Nov 2026) — Step B, first sub-orbifold: the Z3-plane N = 2 sector of Model_SM1 is SO(14) x SO(14) x U(1)^2; the threshold computation is larger than a cycle [LEFT/builder, progress]
+- Orbifolder sub-orbifolds: "factor(i,j)" divides the order (3,6); factor(1,6) gives the Z3 subgroup <theta> (fixes the Z3-free torus), factor(3,1) the
+  Z6 subgroup <omega> (did not finish in 170 s; needs a background run), factor(0,x) crashes (division by zero). The third stabiliser <theta omega^4>
+  is not a product subgroup and cannot be made with "factor"; it needs a hand-built space group.
+- Model_SM1, Z3 sub-orbifold (N = 2): gauge group SO(14) x SO(14) x U(1)^2; hypermultiplets in 64, 14 and singlets of each SO(14) (log saved:
+  field_tests/results/orbifolder/model1_z3_suborbifold.log). The N = 1 model's gauge group is SO(10) x SU(3) x SU(2)^3 x U(1)^6 with b_SU(3) = 31 (large
+  exotic content), so the SM factors sit inside the SO(14)s and b^{N=2} for SU(3)_c, SU(2)_L, U(1)_Y needs the branching of each N = 2 state into the
+  N = 1 group plus the model's hypercharge combination. Not done yet.
+- Also flagged: b_SU(3) = 31 in the N = 1 spectrum means many coloured exotics; whether they decouple (vector-like, D-flat vevs) decides whether this
+  model's SM is the real low-energy SM. The Orbifolder's vev-config tools (find D-flat, analyze config) are the route.
+**Status.** Step B in progress; no b' yet. Estimated effort: several hours of scripted Orbifolder work per model (branching, hypercharge, exotics,
+three subgroups). Item stays OPEN.
