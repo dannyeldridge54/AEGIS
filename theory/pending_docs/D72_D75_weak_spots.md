@@ -23194,3 +23194,15 @@ lifts the AdS vacuum to about zero (slightly dS, metastable). That works because
 flavour fits are), it needs a second independent modular piece, eta- or j-type, as in 2304.14437. If it sits at rho, it must explain why flavour
 data prefers i. This is a new, sharp fork for the open list. OPEN.
 **Verdict.** THEOREM-level hint (analytic, from checked inputs). UFE status unchanged; new fork recorded: rho-vacuum (E-only) vs i-vacuum (needs a second function).
+
+## D2265 (27 Nov 2026) — The fractal honeycomb is the Big Bang's mixmaster billiard; nothing new to test for our model [CENTRE, NULL]
+**Search.** The repeated mirror flips of the (2,3,inf) triangle toward the real axis (Farey tessellation, continued fractions) have one known
+physical home: Bianchi IX / BKL mixmaster oscillations near a spacelike singularity. Manin-Marcolli (arXiv:1504.04005): mixmaster chaos is the
+shift on two-sided continued fractions, the same shift that codes geodesics crossing the Farey tessellation; geodesic segments near a vertex
+are Kasner eras. So the "reverse-flipping fractal" at the axis angles is, physically, the bouncing of the earliest universe between mirror walls.
+**Check against our notes.** Already recorded at the qualitative level: D1582 (E10 is the BKL billiard; the dimension ladder ends there) and
+OPEN_PROBLEMS_MAP item 15 (initial singularity, QUALITATIVE). Standard result (not re-derived here): a massless scalar or stiff fluid makes the
+approach to the singularity quiescent (no infinite oscillations). This bears on the pre-inflation end of the string only; our kination epoch is
+post-inflation, so no new constraint follows.
+**No computation.** No new prediction or observable for our model found.
+**Verdict.** NULL: the link is real but already in our notes and gives nothing testable. Loop ends (D2261-D2265).
