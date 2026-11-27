@@ -23147,3 +23147,21 @@ exponent between write-ups, not an error inside one. To settle it, each write-up
 **Tension found.** Flavour fits cluster at tau = i (Feruglio 2302.11580; "The irresistible call of tau = i", 2211.00659), while an E-only
 potential makes i a saddle. Holding the vacuum at i needs extra terms (matter or non-E pieces; cf. 2304.14437). OPEN.
 **Verdict.** PASS (H1, H2); H3 measured: i is a saddle for s = 2 and 3/2. UFE status unchanged: no single action; compactification gap OPEN.
+
+## D2262 (27 Nov 2026) — The bowl at rho is a triangle whose valleys point at the three saddles [CENTRE]
+**Lock.** `PREREG_D2262_RHO_TRIANGLE.md` (commit 46f14dec), pushed first. Run once. Wording slip in the lock (a stray "toward the cusps 0? no:"
+in H2) does not change any criterion. The script was made self-contained (copied D2261's E function) before its single run.
+**Script / output.** `tools/field_engine/rho_triangle.py`; `field_tests/results/d2262_rho_triangle.json`.
+**Results.** E on Euclidean circles tau = rho + r e^{i theta}, 72 points, r = 0.02 and 0.01, s = 2 and 3/2.
+- H2 PASS: the three shallowest directions are 30.0000, 150.0000, 270.0000 deg for both s and both r. They lie exactly along the three mirror
+  geodesics from rho to the neighbouring saddles i, -1+i, (-1+i)/2. The bowl is a rounded triangle with its valleys aimed at the saddles.
+- H1 FAIL as locked: the cos(2 theta) part falls as r halves (c2/c3 = 0.0079 -> 0.0039), but the cos(theta) part does not
+  (c1/c3 = 0.682 -> 0.682 for s = 2; 0.692 -> 0.692 for s = 3/2): it is also r^3.
+**Reading of the FAIL.** The order-3 flip is a rotation in the disk coordinate u = (tau - rho)/(tau - conj rho), not a Euclidean rotation in tau,
+so a Euclidean circle in tau picks up an r^3 cos(theta) piece from the varying metric (y changes across the circle). The lock should have used
+circles in u. This is a test-design error, not a failure of the symmetry. A u-circle test needs its own lock (next cycle); no rerun here.
+**Hint for the theory.** From rho the field has three equal escape routes, along the three mirrors, each ending at a saddle (an image of i),
+and from each saddle one uphill direction leads to the cusp. The network of minima (images of rho), saddles (images of i) and mirror valleys
+repeats under every flip and shrinks toward each rational point on the real axis: the fractal is the honeycomb of these valleys.
+Mohseni-Vafa (arXiv:2510.19927) leave the Hessian sign at i and omega open for N=1 potentials; D2261-D2262 settle it for E-only potentials.
+**Verdict.** H2 PASS; H1 FAIL (test-design: wrong coordinate). UFE status unchanged.
