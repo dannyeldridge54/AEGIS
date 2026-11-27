@@ -1,0 +1,46 @@
+{
+ "rho_s2.0": {
+  "grad_rel": 2.0485484861943134e-32,
+  "Exy_rel": 0.0,
+  "lap_over_s_sminus1": 1.0,
+  "yyExx_over_E": 1.0,
+  "yyEyy_over_E": 1.0,
+  "A": 1.0,
+  "A_fd": 1.0000000460724514,
+  "Exy_fd_rel": 0.0,
+  "half_s_sminus1": 1.0
+ },
+ "rho_s1.5": {
+  "grad_rel": 7.682056886127904e-33,
+  "Exy_rel": 0.0,
+  "lap_over_s_sminus1": 1.0,
+  "yyExx_over_E": 0.375,
+  "yyEyy_over_E": 0.375,
+  "A": 1.0,
+  "A_fd": 0.9999999600493039,
+  "Exy_fd_rel": 0.0,
+  "half_s_sminus1": 0.375
+ },
+ "i_s2.0": {
+  "grad_rel": 0.0,
+  "Exy_rel": 0.0,
+  "lap_over_s_sminus1": 1.0,
+  "yyExx_over_E": -0.5685964560037804,
+  "yyEyy_over_E": 2.5685964560037804,
+  "A": -0.2213646502060515,
+  "A_fd": -0.22136465123510887,
+  "Exy_fd_rel": 0.0,
+  "half_s_sminus1": 1.0
+ },
+ "i_s1.5": {
+  "grad_rel": 4.888028123573397e-41,
+  "Exy_rel": 0.0,
+  "lap_over_s_sminus1": 1.0,
+  "yyExx_over_E": -0.21961195468791414,
+  "yyEyy_over_E": 0.9696119546879142,
+  "A": -0.22649468545238793,
+  "A_fd": -0.22649465130315738,
+  "Exy_fd_rel": 0.0,
+  "half_s_sminus1": 0.375
+ }
+}

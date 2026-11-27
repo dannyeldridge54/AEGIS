@@ -23126,3 +23126,24 @@ radiation oscillator time-convention equivalence; growth exponents; the 9/4 fact
    the ADM/GI map, and the quantum probe.
 **Verdict.** PASS for stages 2-4 as locked. The audit's checked algebra and numbers are correct. Its conclusion is unchanged and now
 independently supported at the points checked: no single UFE action; the compactification gap is OPEN.
+
+## D2261 (27 Nov 2026) — Axis-angle flips: the mirror geometry forces a bowl at rho and a saddle at i [CENTRE]
+**Lock.** `PREREG_D2261_AXIS_FLIP_HESSIAN.md` (commit 137ec6b9), pushed before the script was written. Run once. No deviations.
+**Script / output.** `tools/field_engine/axis_flip.py`; `field_tests/results/d2261_axis_flip.json`.
+**Frame.** The half fundamental domain is the (2,3,inf) reflection triangle: mirrors meet at pi/2 at i, pi/3 at rho, 0 at the cusp.
+Near a fixed point use u = (tau - tau0)/(tau - conj tau0) (Feruglio, arXiv:2302.11580): the residual flip is u -> -u at i and u -> omega^2 u at rho.
+**Results (mpmath dps 30; finite-difference check on shapes.E agrees to < 5e-8).**
+- H1 PASS (forced): at rho, grad = 0, E_xy = 0, y^2 E_xx/E = y^2 E_yy/E = s(s-1)/2 exactly: 1 (s=2) and 0.375 (s=3/2). The D2259 isotropy
+  numbers are therefore forced by the order-3 flip and carry no extra information.
+- H2 PASS (forced): at i, grad = 0, E_xy = 0, trace y^2(E_xx+E_yy)/E = s(s-1).
+- H3 (measured): at i the Hessian is NOT isotropic, and the point is a SADDLE: y^2 E_xx/E = -0.5686, y^2 E_yy/E = +2.5686 (s=2);
+  -0.2196 and +0.9696 (s=3/2). A = E_xx/E_yy = -0.2214 (s=2), -0.2265 (s=3/2).
+**Reading.** The order-3 flip at rho forces a round bowl (a minimum); the order-2 flip at i only forbids the cross term, so it allows a saddle,
+and E has one: downhill along the mirror arc |tau| = 1 toward rho, uphill along the imaginary axis. This is the known lattice result
+(the hexagonal lattice minimises the Epstein zeta, the square lattice is a saddle), now tied to the flip orders. Any modulus potential built
+from E alone sits at rho and rolls off i along the arc.
+**Bearing on the open list.** The D2259 "eigenvalue 2 vs 3/4" is s(s-1) for s = 2 vs s = 3/2 (both ratios exactly 1 here): it is a choice of
+exponent between write-ups, not an error inside one. To settle it, each write-up must state which s it uses. (Hint, not a closure.)
+**Tension found.** Flavour fits cluster at tau = i (Feruglio 2302.11580; "The irresistible call of tau = i", 2211.00659), while an E-only
+potential makes i a saddle. Holding the vacuum at i needs extra terms (matter or non-E pieces; cf. 2304.14437). OPEN.
+**Verdict.** PASS (H1, H2); H3 measured: i is a saddle for s = 2 and 3/2. UFE status unchanged: no single action; compactification gap OPEN.
