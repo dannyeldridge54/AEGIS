@@ -23284,3 +23284,19 @@ saddle-to-bowl reversal (D2269), and the quantum-gravity link (connections map, 
 likely the same generation split: masses computed in the f(E) landscape vs in the Zhinu landscape. Test next: recompute the modulus masses at rho
 and i in the Zhinu potential and see which write-up numbers they reproduce. (HYPOTHESIS until computed.)
 **Verdict.** Fork recast: not rho-vs-i for the model (Zhinu holds both) but v3-vs-v4 bookkeeping. SERAPIS f(E) is superseded for the vacuum.
+
+## D2271 (27 Nov 2026) — Zhinu masses settle the 4/9 disagreement: m^2(rho) = V_inf/4, and the "literal v4" 9/16 dropped the (2/3)^2 [CENTRE]
+**Lock.** `PREREG_D2271_ZHINU_MASSES.md`, pushed before the script. Run once. No deviations.
+**Script / output.** `tools/field_engine/zhinu_masses.py`; `field_tests/results/d2271_zhinu_masses.json`.
+**Derivation.** The Zhinu identity V0/V_inf = 1/3 + (4/3) Lap ln Lambda holds for V0 = V_inf |grad ln Lambda|^2/lambda^2 with Lambda = E_{3/2}^(-a)
+only if a = 1/3 and lambda^2 = 1/4; then V0 = (4/9) V_inf |grad ln E_{3/2}|^2.
+**Results (n = 1, mpmath dps 30).** Identity residual at 5 random points: 1.9e-17 (holds exactly). V0(rho) = 3e-65, V0(i) = 4e-81 (both zero).
+Canonical masses: rho: m^2 = 0.2500000000 V_inf (double); i: m^2 = 0.08574 V_inf (along the mirror arc) and 1.6714 V_inf (along the imaginary axis).
+All match the locked analytic values to < 1e-9. PASS.
+**What it settles.** D2259's "canonical modulus mass^2 at rho: V_inf/4 (with 4/9) vs 9/16 V_inf (literal v4, without)" — the 4/9 is (2/3)^2 = 4a^2/...
+the prefactor the identity forces; the literal-v4 9/16 omitted it. Correct value: V_inf/4 (n = 1). One of the three D2259 disagreements CLOSED.
+**New numbers.** At the neutrino vacuum i the modulus has a light direction along the arc toward rho (m^2 = 0.0857 V_inf, 19.5x lighter than across)
+— the saddle's soft direction survives as the light mode after squaring. Note also: the identity needs Lambda = E_{3/2}^(-1/3) in our 4D
+normalisation, while 2310.07708's 10D form is E_{3/2}^(-1/6); the factor 2 is the (d-2) power (8 in 10D vs 2 in 4D, with F ~ E^(2/3) in 4D). To be
+checked against their 4D statement before claiming agreement. OPEN.
+**Verdict.** PASS. 4/9 disagreement resolved (V_inf/4). Remaining D2259 items: 32 vs 8 (V_w/(V0 E_2)), gauge 4.5 vs 7.79.
