@@ -1,5 +1,5 @@
 """Tests for Node 1 with stand-in models and no network. Run: python -m unittest -v test_node1"""
-import json, re, shutil, tempfile, unittest
+import json, re, shutil, tempfile, time, unittest
 from pathlib import Path
 import node1 as N, ufe_pack as U
 
@@ -36,7 +36,8 @@ class FakeLLM:
 
 class T(unittest.TestCase):
     def node(self, **kw):
-        d = Path(tempfile.mkdtemp()); cfg = dict(N.DEFAULT, home=str(d / 'data'), local_folders=[str(d / 'research')], sweep_first=False)
+        d = Path(tempfile.mkdtemp()); cfg = dict(N.DEFAULT, home=str(d / 'data'), local_folders=[str(d / 'research')], sweep_first=False,
+                                                 config_file=str(d / 'node1_config.json'))
         (d / 'research').mkdir(); (d / 'research' / 'eisenstein_fit_notes.md').write_text('Eisenstein series fit at rho. modular invariant Eisenstein series string effective action.')
         n = N.Node(cfg, llm=FakeLLM(**kw), fetch=lambda s: [dict(source='github', title='repo ' + s['id'], url='https://github.com/a/' + s['id'], text='t')])
         n.ix = N.FP.Index(d / 'data' / 'n.sqlite', 'Danny Eldridge', key='ab' * 32); n.web = N.NW.Web(n.ix); n.instr_path = d / 'INSTRUCTIONS.txt'; return n
@@ -137,6 +138,14 @@ class T(unittest.TestCase):
         self.assertTrue(all(p.exists() for p in root.iterdir()))                       # nothing on disk deleted
         self.assertEqual(out[-1], ['PASS'] * 8)                                           # sweep done: calculations resume
         before = sw['unique']; n.state['sweep']['scanned'] = 0; n.run_batch(8); self.assertEqual(n.state['sweep']['unique'], before)   # never redone
+    def test_a_restart_rebuilds_the_scan_list_instead_of_crashing(self):
+        n, root = self.staged(); self.assertGreater(len(n.sweep_pending()), 0)        # a fresh process builds its list
+        while n.sweep_pending(): n.sweep_batch(20)                                   # work it off: the node now sleeps until idle_until
+        self.assertEqual(n.sweep_pending(), []); saved = dict(n.state['sweep']); self.assertGreater(saved['idle_until'], time.time())
+        fresh = N.Node(n.cfg, llm=n.llm, fetch=n.fetch)                               # a restart: the saved state still says idle...
+        fresh.ix, fresh.web, fresh.local.files = n.ix, n.web, []                      # same database on disk, no in-memory list
+        fresh.state['sweep'] = saved
+        self.assertEqual(fresh.sweep_pending(), [])                                   # ...but the list is rebuilt, not assumed to exist
     def test_code_cartographer_maps_wiring_and_only_real_pathways(self):
         n = self.node(); n.cfg['sweep_first'] = True; root = Path(n.cfg['local_folders'][0])
         (root / 'alpha.py').write_text('"""Eisenstein at rho."""\nimport beta\ndef e2(t):\n    return beta.lattice(t)\n')
@@ -270,16 +279,25 @@ class T(unittest.TestCase):
         # it wants a tool; with install OFF nothing is installed, it only queues to WANTS.md
         self.assertTrue(n.state['wants']); self.assertIn('networkx', (n.home / 'WANTS.md').read_text())
         self.assertFalse(any(w.get('done') for w in n.state['wants']))
+    def test_tuning_saves_only_its_own_setting_and_never_the_real_config(self):
+        real = Path(__file__).with_name('node1_config.json'); before = real.read_bytes() if real.exists() else None
+        n = self.node(); n.handle_prog({'tune': {'setting': 'hints_per_batch', 'value': 5, 'why': 'go faster'}}, set())
+        self.assertEqual(n.cfg['hints_per_batch'], 5)
+        self.assertEqual(json.loads(Path(n.cfg['config_file']).read_text()), {'hints_per_batch': 5})   # one override, not the whole cfg
+        self.assertEqual(real.read_bytes() if real.exists() else None, before)                         # Danny's config is untouched
     def test_installs_only_run_when_danny_turns_them_on(self):
         n, root = self.staged(); ran = []
         class R: returncode = 0; stderr = ''
         n.install_run = lambda pkg: ran.append(pkg) or R()
+        n.pypi_check = lambda pkg: (pkg == 'networkx', 'checked')                            # only established packages pass
         n.state['wants'] = [dict(what='networkx', why='graphs', how='pip install networkx', t='now')]
         n.cfg['allow_install'] = False; n.wants_tick(); self.assertEqual(ran, [])          # off: nothing runs
         n.cfg['allow_install'] = True; n.wants_tick(); self.assertEqual(ran, ['networkx'])  # on: it installs
         self.assertTrue(n.state['wants'][0].get('done'))
         n.state['wants'] = [dict(what='mystery', why='x', how='git clone http://evil', t='now')]; ran.clear()
         n.cfg['allow_install'] = True; n.wants_tick(); self.assertEqual(ran, [])            # only plain pip installs, never arbitrary commands
+        n.state['wants'] = [dict(what='cmbfit', why='x', how='pip install cmbfit', t='now')]; ran.clear()
+        n.wants_tick(); self.assertEqual(ran, []); self.assertTrue(n.state['wants'][0]['result'].startswith('refused'))  # a made-up name is never installed
     def test_network_switchboard_and_vision(self):
         n, root = self.staged()
         net = n.state['network']['nodes']; self.assertIn('node2-builder', net); self.assertIn('node3-mind', net)

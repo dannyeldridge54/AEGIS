@@ -1555,8 +1555,11 @@ class Node:
             except (TypeError, ValueError): v = None
             if v is not None and lo <= v <= hi and self.cfg.get(tn['setting']) != v:
                 old = self.cfg.get(tn['setting']); self.cfg[tn['setting']] = v
-                try: (HERE / 'node1_config.json').write_text(json.dumps(self.cfg, indent=1))
-                except OSError: pass
+                try:                                                                 # save only this one setting; writing the whole cfg would freeze
+                    f = Path(self.cfg.get('config_file') or (HERE / 'node1_config.json'))   # paths into the file (a test run must not
+                    disk = json.loads(f.read_text()) if f.exists() else {}                  # overwrite home/local_folders)
+                    disk[tn['setting']] = v; f.write_text(json.dumps(disk, indent=1))
+                except (OSError, ValueError): pass
                 self.prog_action('tune', tn['setting'], 'accepted', f"{old} -> {v}: {str(tn.get('why', ''))[:80]}")
             elif v is not None: self.prog_action('tune', str(tn.get('setting')), 'refused', 'out of safe range')
         # it asks to install/adapt a tool; this is the one thing that needs Danny's yes (see WANTS.md / allow_install)
@@ -1588,7 +1591,11 @@ class Node:
             if w.get('done'): continue
             m = __import__('re').match(r'pip\s+install\s+([A-Za-z0-9._-]+)\s*$', str(w.get('how', '')).strip())
             if not m: continue                                                    # not a plain pip install: leave it for Danny
-            pkg = m.group(1); w['done'] = True; self.set_phase('processing', f'installing {pkg} (you allowed this)')
+            pkg = m.group(1); w['done'] = True
+            ok_pkg, why = self.pypi_ok(pkg)
+            if not ok_pkg:                                                        # made-up or brand-new names are never installed
+                w['result'] = f'refused: {why}'; self.prog_action('install', pkg, 'refused', why); self.log(f'install refused {pkg}: {why}'); return
+            self.set_phase('processing', f'installing {pkg} (you allowed this)')
             try:
                 import subprocess
                 r = (self.install_run(pkg) if hasattr(self, 'install_run')
@@ -1598,6 +1605,18 @@ class Node:
                 self.log(f'programmer installed {pkg}: {"ok" if ok else "failed"}')
             except Exception as e: w['result'] = 'error'; self.prog_action('install', pkg, 'failed', str(e)[:120])
             return                                                                # one install per tick
+    def pypi_ok(self, pkg):
+        """Safety check before any install: the package must exist on PyPI, be at least 180 days old and have 3+ releases.
+        This stops installs of names a model made up (or that someone registered recently to catch those made-up names)."""
+        if hasattr(self, 'pypi_check'): return self.pypi_check(pkg)
+        try:
+            import urllib.request, datetime
+            with urllib.request.urlopen(f'https://pypi.org/pypi/{pkg}/json', timeout=20) as r: info = json.loads(r.read())
+        except Exception as e: return False, f'not found on PyPI ({str(e)[:60]})'
+        rel = info.get('releases', {}); ups = [f['upload_time'] for v in rel.values() for f in v if f.get('upload_time')]
+        if len(rel) < 3 or not ups: return False, f'only {len(rel)} releases'
+        age = (datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None) - datetime.datetime.fromisoformat(min(ups)[:19])).days
+        return (True, f'{len(rel)} releases, {age} days old') if age >= 180 else (False, f'first release only {age} days ago')
     def repo_tick(self):
         """Download the repos the programmer chose, into a read-only library it can learn from and adapt. One repo per tick, paced per day.
         Reading and cataloguing is automatic. INSTALLING or RUNNING any of it happens only if Danny turned on allow_install (and even then, into the workbench)."""
@@ -1817,7 +1836,12 @@ class Node:
     def sweep_pending(self):
         """Files not yet handled. The list is rebuilt every 6 hours, so new files are picked up; handled files are never redone."""
         sw = self.state.setdefault('sweep', dict(total=0, unique=0, duplicates=0, catalogued=0, skipped=0, scanned=0, current=''))
-        if time.time() - sw.get('scanned', 0) > 6 * 3600 or not getattr(self, '_pending', None) and not sw.get('idle_until', 0) > time.time():
+        # Rebuild the list when the scan is over 6 hours old, or when the list is empty and the idle window has run out.
+        # A fresh process always has to rebuild once: the list lives in memory, so after a restart it does not exist yet
+        # (the saved state may still say "idle", which must not skip the rebuild).
+        stale = time.time() - sw.get('scanned', 0) > 6 * 3600
+        idle = sw.get('idle_until', 0) > time.time()
+        if stale or not hasattr(self, '_pending') or (not self._pending and not idle):
             self.local.build(); db = self._sweep_db(); done = {p for (p,) in db.execute('SELECT path FROM sweep_paths')}
             files = sorted(self.local.files, key=lambda p: (SWEEP_ORDER.get(p.suffix.lower(), 9), str(p)))
             self._pending = [p for p in files if str(p) not in done]; sw['total'] = len(files); sw['scanned'] = time.time()
@@ -2025,14 +2049,24 @@ def main(argv):
             except OSError: pass
             return 0
         lockf.write_text(str(os.getpid()))
+        hang = cfg.get('hang_minutes', 45) * 60                                  # a batch stuck this long: write every thread's stack to the log
+        try:                                                                     # and exit, so the Start loop restarts it fresh
+            import faulthandler; hf = open(HERE / cfg['home'] / 'node1.log', 'a'); faulthandler.dump_traceback_later(hang, exit=True, file=hf)
+        except Exception: faulthandler = None
         try:
             node.breathe(); vs = node.run_batch(); node.backup()
             print(time.strftime('%H:%M'), 'cycles to', node.state['cycle'], ' '.join(vs), flush=True)
+            node.state['beats'] = node.state.get('beats', 0) + 1
+            if node.state['beats'] % 10 == 0: node.log(f"heartbeat: cycle {node.state['cycle']} - {' '.join(vs)[:120]}")
         except Exception:
             node.log('cycle error:\n' + traceback.format_exc()); print('cycle error (logged); auto-diagnosing and continuing', flush=True)
             try: node.maintenance_tick()                                        # read the error, apply the known fix, keep going
             except Exception: pass
             time.sleep(2)
+        finally:
+            if faulthandler:
+                try: faulthandler.cancel_dump_traceback_later(); hf.close()
+                except Exception: pass
         if '--once' in argv: return 0
         if cfg['cycle_seconds']: time.sleep(cfg['cycle_seconds'])
 
