@@ -23255,3 +23255,19 @@ class than Feruglio's. Note x ~ 0.23 is no longer "at" i: the D2264 saddle matte
    potential is E-only, its "zero-energy vacuum at i" cannot be a minimum (it would be a saddle); if it is not E-only, it already IS the second
    modular piece the fork needed. Either way the Zhinu potential's form must be checked against D2261/D2264.
 4. delta_CP was left out of the D2268 table; added as P12 in `PREREG_D2268b_DELTA_CP.md` (286 deg at sin^2 theta23 = 0.561, 262 deg at 0.470).
+
+## D2269 (27 Nov 2026) — The Zhinu potential is gradient-squared, so it turns the i saddle into a bowl: D2268a item 3 resolved [CENTRE, analytic]
+**Our record.** The Zhinu / Casas-Ibanez potential is V ∝ y^2 |G2hat|^2 with G2hat = E2 - 3/(pi Im tau) (D555; arXiv:2407.12081), and the Zhinu
+identity reads V0/V_inf = 1/3 + (4/3) Lap ln Lambda (D1603). G2hat is (up to a constant) the tau-derivative of ln(y |eta|^4), so
+y^2 |G2hat|^2 ∝ y^2 |grad E1hat|^2, and Lap ln E = s(s-1) - y^2 |grad E|^2 / E^2. Both forms are built from the GRADIENT squared, not from E alone.
+**Why D2264 does not apply.** D2264 covers V = f(E). A gradient-squared potential vanishes at EVERY critical point of the underlying function and is
+>= 0 elsewhere. Near i, grad F ≈ H δ (H = Hessian of F at i), so V ≈ δ^T H^2 δ: positive definite because H has no zero eigenvalue (D2261: the
+eigenvalues of E's Hessian at i are -0.569 and +2.569 in y^2/E units). The saddle's curvature squared becomes a bowl. Same at rho.
+So i and rho are both zero-energy MINIMA of the Zhinu potential, as D555 found numerically ("minimum in all four tested directions") and as
+weave_flavour v3 assumes. No inconsistency.
+**Reading (Danny's "reverse flip").** The flip at i makes a saddle in E; squaring the slope reverses the downhill direction into uphill, so the
+Zhinu potential holds the vacuum at i where E alone cannot. The fork of D2264 is therefore only a fork for SERAPIS's f(E) landscape; the Weave's
+own vacuum potential already is the "second piece".
+**Remaining question.** Which potential governs the late vacuum in the full model: SERAPIS V_tau = f(E) (vacuum at rho only) or Zhinu (i and rho
+both)? They must be the same object or one must be the inflation stage and the other the vacuum stage. OPEN, now well posed.
+**Verdict.** RESOLVED (D2268a item 3): no contradiction; i is a true minimum of the Zhinu potential.
