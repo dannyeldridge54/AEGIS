@@ -23433,3 +23433,14 @@ D2271 and D2280 (V_inf/4 at rho; 0.0857 and 1.671 V_inf at i) are unchanged.
 WEAVE_FULL_EQUATION.md; with the literature's species scale the coefficient is 8/3. The D1603 pattern "1/3 = (s-1)/s" is unaffected (it is the
 constant term). Follow-up: update WEAVE_FULL_EQUATION.md's identity to the standard convention (doc edit, not physics).
 **Verdict.** CLOSED: no physics conflict with the quantum-gravity literature; one coefficient to restate.
+
+## D2282 (27 Nov 2026) — Ping-pong "Z3 x Z6 fold", step A: geometry PASS — every torus is hexagonal (rho), every torus has N = 2 sectors [LEFT/builder]
+**Lock.** `PREREG_D2282_Z3Z6_GEOMETRY.md`, pushed first. Run once. No deviations. Script `tools/field_engine/z3z6_geometry.py`; output
+`field_tests/results/d2282_z3z6_geometry.json`.
+**Results.** Twists v1 = (1/3, 0, -1/3), v2 = (0, 1/6, -1/6); all 17 twisted sectors are N = 1 supersymmetric. Rotation orders per torus: T1 {3}, T2 {2,3,6},
+T3 {2,3,6} -> all three complex structures FROZEN at rho. N = 2 sectors: 9 in total — 5 fix T1 (the pure Z6 sectors l = 1..5), 2 fix T2 ((1,0), (2,0)),
+2 fix T3 ((1,4), (2,2)). PASS.
+**Consequences (as locked).** (1) In Z3 x Z6 the rho vacuum is pure geometry, on all three tori. (2) The i vacuum cannot be a complex-structure value; it
+must be a Kahler modulus T (or a Wilson-line / twisted modulus) held dynamically by Zhinu (D2269). (3) Moduli-dependent thresholds come from all three
+tori, Delta_a = -sum_j b'^j_a ln(T2_j |eta(T_j)|^4) + (U parts constant at rho: E1hat(rho) = 1.0335 each).
+**Next (step B).** Matter placement: gauge shift and Wilson lines -> spectrum -> b'^j_a. Referee opened (background) to attack step A and scope step B.
