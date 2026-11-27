@@ -134,16 +134,20 @@ class Web:
             db.execute('INSERT INTO web_syn VALUES (?,?,1.0) ON CONFLICT(a,b) DO UPDATE SET w = w + 1.0', (a, b))
     def synapses(self): return self.ix.db.execute('SELECT a, b, w FROM web_syn ORDER BY w DESC').fetchall()
     # ---------------------------------------------------------------- mining
-    def mine(self, nid, radius=0.5, limit=10):
-        """Proposed links from this neuron's records to nearby records in other neurons, not already linked. Suggestions only."""
-        mine_ = self.members(nid); others = [(r, v, vec, n) for r, v, n, vec in ((r, v, n, json.loads(x)) for r, v, n, x in
-                  self.ix.db.execute('SELECT record, view, node, vec FROM web_place WHERE node != ?', (nid,)))]
-        props = []
+    def mine(self, nid, radius=0.5, limit=10, members=24, sample=4000):
+        """Proposed links from this neuron's records to nearby records in other neurons, not already linked. Suggestions only.
+        Bounded work: the newest `members` records of this neuron against a random `sample` of other placements (the full pairwise
+        search grew with the square of the web and froze the node once the scan had placed ~100k records)."""
+        mine_ = [(r, v, json.loads(x)) for r, v, x in self.ix.db.execute(
+            'SELECT record, view, vec FROM web_place WHERE node=? ORDER BY rowid DESC LIMIT ?', (nid, members))]
+        others = [(r, v, json.loads(x), n) for r, v, n, x in self.ix.db.execute(
+            'SELECT record, view, node, vec FROM web_place WHERE node != ? ORDER BY random() LIMIT ?', (nid, sample))]
+        props, r2 = [], radius * radius
         for r, _, vec in mine_:
             linked = {l['target'] for l in self.ix.links_of(r)}
             for o, _, ovec, n in others:
-                d = math.sqrt(_d2(vec, ovec))
-                if o != r and o not in linked and d <= radius: props.append(dict(src=r, dst=o, neuron=n, distance=round(d, 4)))
+                d2 = _d2(vec, ovec)
+                if d2 <= r2 and o != r and o not in linked: props.append(dict(src=r, dst=o, neuron=n, distance=round(math.sqrt(d2), 4)))
         return sorted(props, key=lambda p: p['distance'])[:limit]
     # ---------------------------------------------------------------- grading
     def trust(self, rid):

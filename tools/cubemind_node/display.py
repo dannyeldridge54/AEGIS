@@ -40,8 +40,12 @@ def _prog(s):
                 prog_cp=[dict(at=c['at'], t=c['t'], next=c.get('next', '')) for c in s.get('prog_checkpoints', [])[:4]], prog_next_cp=s.get('prog_next_cp', 25),
                 instructions=list(s.get('instructions', [])[:8]), wants=list(s.get('wants', [])[:8]), repos=list(s.get('repos_seen', [])[-8:]))
 
-def _tail(p, n):
-    try: return p.read_text(encoding='utf-8', errors='ignore').splitlines()[-n:]
+def _tail(p, n, nbytes=16384):
+    """Last n lines, reading only the end of the file (the log is megabytes; reading it whole every tick was slow)."""
+    try:
+        with open(p, 'rb') as f:
+            f.seek(0, 2); size = f.tell(); f.seek(max(0, size - nbytes))
+            return f.read().decode('utf-8', errors='ignore').splitlines()[-n:]
     except OSError: return []
 
 PAGE = r"""<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
