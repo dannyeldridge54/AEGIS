@@ -42,7 +42,17 @@ tau is the shape of the small torus left over when 6D folds down to 4D. Almost e
 | Hubble tension | Axio-dilaton early dark energy: the dilaton holds energy early, then is destabilised when H drops below the axion mass and fast-rolls with w = 1 (kination), redshifting as a^-6 (1904.08912). Our model already has a kination phase and an axio-dilaton sector; this is the same mechanism at a later time | LITERATURE + HYPOTHESIS |
 | Quantum gravity | The species scale (where gravity turns quantum) depends on the moduli and is highest at a "desert point" at the centre of moduli space (2212.06841, 2310.07708). For a torus the natural candidate function is our E1hat = -log(Im tau |eta|^4); our values put its minimum at rho (1.0335 vs 1.0547 at i), so the cutoff would be highest at rho | LITERATURE (framework) + OURS (values) + HYPOTHESIS (that E1hat is the right function, not confirmed from the paper) |
 
-**Updated reading.** The rho-vs-i fork now has weight on both sides: i is favoured by flavour data and can give a small mu; rho is the E-only vacuum and the likely desert point (highest quantum-gravity cutoff). Every item on the missing list now has at least a candidate link to tau except none; the weakest are Hubble (later-time kination) and quantum gravity (function not confirmed).
+**Updated reading.** The rho-vs-i fork now has weight on both sides: i is favoured by flavour data and can give a small mu; rho is the E-only vacuum and the desert point (highest quantum-gravity cutoff, but only 0.3% higher than near i; see fourth pass). Every item on the missing list now has at least a candidate link to tau except none; the weakest are Hubble (later-time kination) and quantum gravity (function not confirmed).
+
+## Fourth pass (27 Nov 2026)
+
+- **Quantum gravity link confirmed and sharpened.** van de Heisteeg, Vafa, Wiesner, Wu (arXiv:2310.07708) place the desert point at tau = rho
+  and propose, for type IIB, Lambda_QG = E_{3/2}(tau)^{-1/6}: the same E_{3/2} our engine checks (D2259: E_{3/2}(rho) = 8.8927; isotropy 3/8;
+  D2261: minimum at rho). So the "s = 3/2" write-up's function is literally the quantum-gravity cutoff function. (Their log form uses our E1hat.)
+- **But the weight is small (ESTIMATE, ours, not locked).** Lambda_QG(rho)/Lambda_QG(i) = (E_{3/2}(i)/E_{3/2}(rho))^{1/6} = (9.0336/8.8927)^{1/6}
+  = 1.0026; versus the octave point 1.0685 i: 1.0030. Sitting near i costs only ~0.3% of the cutoff, so quantum gravity does not decide the fork.
+- **Cross-check to run (from the chain):** the same distance |u| must fit flavour (Feruglio sample |u| ~ 0.1; octave paper u = 0.033), a small mu
+  (2412.07642) and the quark ladder at once. If one |u| cannot do all three, the near-i picture fails. This is a clean, cheap test.
 
 ## The chain, in the order it unlocks
 1. Settle the write-up disagreements, holding the vacuum choice open (bookkeeping, cheap).
