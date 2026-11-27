@@ -23234,3 +23234,12 @@ class than Feruglio's. Note x ~ 0.23 is no longer "at" i: the D2264 saddle matte
   Koide-type rule is reported. Hint for us: our Koide 2/3 (to 2e-6) uses pole masses; if the relation is born at a high scale, the right
   comparison is the running ratio, and 280 TeV is a candidate scale to compare with our soft/gravitino scales. OPEN.
 **Verdict.** No status changes; theta12 stays EDGE (+1.0 sigma, JUNO), beta consistent but post-data, Koide scale hint recorded.
+
+## D2268 (27 Nov 2026) — Forward predictions locked; Koide scale hint [CENTRE]
+- Eleven forward predictions locked in `PREREG_D2268_FORWARD_PREDICTIONS.md` (+ .sha256), each with the experiment that scores it and a fail line.
+  Scored only on data released after this commit.
+- **Koide hint (estimate, not computed here):** 2606.10060 finds the running Koide ratio = 2/3 near 280 TeV (central masses). Our mini-split soft
+  scale is m_soft ~ 130-160 TeV (D2259-era wino/RPV notes). Same order (factor ~2). If Koide is born at the SUSY-breaking scale, our soft scale is
+  the natural place. A real check needs our own lepton running to m_soft (two-loop, with thresholds). OPEN.
+- **rho-vs-i link already in our engine:** D2271-era note (line "PINNED to rho"): Re S = 1 at i lowers m3/2 by 7%, putting the wino at 0.639 TeV,
+  below its 0.67 band. So wino dark matter also prefers rho. This weighs the D2264 fork toward rho; flavour data weighs toward i (D2266).
