@@ -23495,3 +23495,17 @@ re-derived with the D2282a F2 formula.
   model's SM is the real low-energy SM. The Orbifolder's vev-config tools (find D-flat, analyze config) are the route.
 **Status.** Step B in progress; no b' yet. Estimated effort: several hours of scripted Orbifolder work per model (branching, hypercharge, exotics,
 three subgroups). Item stays OPEN.
+
+## D2284 (27 Nov 2026) — The rings engine now takes string thresholds; the alpha_s target region is fixed, and fixing alpha_s this way keeps the wino [CENTRE]
+**Lock.** `PREREG_D2284_THRESHOLD_TARGET.md`, pushed before the script. Run once. Script `tools/rings/thresholds.py`; output
+`field_tests/results/d2284_threshold_target.json`.
+**Target (one loop, MSSM, k_Y = 5/3).** Btilde = sum_j Ehat_j (b'^j_3 - 12/7 b'^j_2 + 5/7 b'^j_1), Ehat_j = E1hat(T_j) + E1hat(rho):
+- centre Btilde = -3.54 (alpha_s = 0.11800, pull -0.004); 1 sigma: [-4.34, -2.73]; 2 sigma: [-5.14, -1.90].
+- With Ehat ~ 2.07 per plane (T at rho or i), one active plane needs (b'_3 - 12/7 b'_2 + 5/7 b'_1) ~ -1.7 (1 sigma: -2.1 to -1.3), where b' already
+  carries |G_j|/|G|.
+- Proton: Dtilde = sum_j Ehat_j (b'_1 - b'_2) <= 5.3 keeps p -> e+ pi0 above 2.4e34 yr (more negative only lengthens the lifetime).
+**Conflict check: PASS.** At the centre, with s_m32 = 1: wino 0.687 TeV (pull 0), alpha_s 0.1180 (pull 0), proton 1.6e35 yr. Bloom lnL -9.80 -> -0.88
+(+8.9). The D2210/D2227 one-lever conflict dissolves as D2276 argued: thresholds fix alpha_s, m3/2 stays where the wino needs it.
+**What a model must now supply.** Two numbers: Btilde in [-4.3, -2.7] and Dtilde <= 5.3. Model 1 (D2283a) is not scored yet: its b' need the
+branching of the N = 2 spectra into SU(3)_c x SU(2)_L x U(1)_Y.
+**Verdict.** Target LOCKED; conflict check PASS. alpha_s status: OUT today, with a precise two-number condition for a fold to bring it IN.

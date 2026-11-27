@@ -1,0 +1,35 @@
+{
+ "base": {
+  "lnL": -9.795547038577341,
+  "alpha_s": 0.1142,
+  "pull_as": -4.22222222222222,
+  "proton": 16.0,
+  "pull_p": 0.0,
+  "wino": 0.687,
+  "pull_w": 0.0
+ },
+ "Btilde_within_1sigma": [
+  -4.34,
+  -2.73
+ ],
+ "Btilde_within_2sigma": [
+  -5.14,
+  -1.9
+ ],
+ "Btilde_centre": -3.54,
+ "at_centre": {
+  "lnL": -0.8819766422068903,
+  "alpha_s": 0.11799600526848808,
+  "pull_as": -0.00443859056879307,
+  "proton": 16.0,
+  "pull_p": 0.0,
+  "wino": 0.687,
+  "pull_w": 0.0
+ },
+ "Dtilde_proton_allowed": [
+  -20.0,
+  5.3
+ ],
+ "conflict_check": "PASS",
+ "dlnL_vs_none": 8.913570396370451
+}
