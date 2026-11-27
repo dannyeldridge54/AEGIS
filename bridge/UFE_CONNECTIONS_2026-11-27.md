@@ -63,3 +63,18 @@ tau is the shape of the small torus left over when 6D folds down to 4D. Almost e
 
 ## Not connected yet
 None of the physics items is fully unlinked; weakest links: Hubble (kination at a later time), quantum gravity (desert-point function unconfirmed). Off the physics list: Yang-Mills gap, Navier-Stokes, black-hole information, measurement problem.
+
+## Dependency order (after D2261-D2274, 27 Nov 2026)
+What feeds what (arrow = "must be settled first"):
+- **Root: the fold's sector content.** Our two vacua sit at the Z2 point (i) and the Z3 point (rho); a fold containing both (Z6 = Z2 x Z3 type)
+  hosts both naturally, and its Z2 part brings the N = 2 sectors that alpha_s thresholds need (D2273). -> decides: which vacua exist, whether the
+  threshold route is open, the string scale.
+- **Level 1: the scales.** String scale and the gravitino/soft scale (m3/2, m_soft 130-160 TeV). The one-lever conflict (alpha_s wants m3/2 2.6x
+  lower; wino pins it) is the SAME problem as alpha_s: if N = 2 thresholds fix alpha_s, m3/2 is free for the wino and the conflict dissolves.
+- **Level 2 (needs the scales):** Koide running scale (280 TeV vs m_soft), Higgs mu, proton lifetime, wino prediction P10.
+- **Level 2 (needs the vacua):** flavour (charged leptons at rho, neutrinos at i), CP: exact fixed-point vacua conserve CP, yet we predict
+  delta_CP = 286/262 deg — check where the CP phase comes from (open, possible tension).
+- **Independent, can run any time:** stability math (perturbations, LaSalle, resonance, ADM, quantum probe) — LaSalle/perturbations also confirm the
+  vacua are real attractors, so they support level 1. Hubble (kination timing) and BKL are leaves.
+- **Recommended order:** (1) fold sector content -> (2) N = 2 threshold Delta b'_3 and the m3/2 conflict together -> (3) the CP-phase source at
+  fixed-point vacua -> (4) Koide scale, Higgs mu -> (5) stability math in parallel -> (6) Hubble, BKL, map refresh.
