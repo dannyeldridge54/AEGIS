@@ -23349,3 +23349,20 @@ refutes a small Delta b'_3. The heterotic-type DKL route (N = 2 sectors, modest 
 **Next (step 2).** For a Z6-II embedding of our matter, get b'_a of the two N = 2 planes and compute Delta(1/alpha_s) with U_SU(3) = rho fixed and the
 SO(4) plane's U, T as the free inputs; test jointly with the m3/2 / wino conflict.
 **Verdict.** STRUCTURAL hint: Z6-II is the natural fold for our pair of vacua (rho frozen, i dynamical) and keeps the alpha_s route open.
+
+## D2276 (27 Nov 2026) — Step 2: which folds can fix alpha_s with moduli near 1; the m3/2 conflict dissolves if they do [CENTRE, literature]
+**Literature.**
+- arXiv:1412.7327 (heterotic orbifold thresholds, ar5iv): without Wilson lines, unification needs large Kahler moduli (T ~ 26); with discrete Wilson
+  lines it is "easily possible" with T ~ 1 for Z8-I and Z3 x Z6 — stated as resting on a conjecture (thresholds simulated by eta-function sums).
+  Z6-I and Z12-I cannot unify; Z6-II is not analysed there. Numeric b'_a are not tabulated (general DKL form only).
+- arXiv:1009.3931 (Z6-II MSSM-like models, moduli stabilisation): threshold terms appear with coefficients of order (1/12 to 7/6)/pi^2 in front of
+  log eta^2 for hidden groups; their stabilised moduli sit far from 1, i, rho (Re U ~ 26-113), and all vacua found are unstable dS. No alpha_s test.
+**Reading for our chain.**
+1. Fold choice refines: Z3 x Z6 contains both a Z3 (freezes a plane at rho, D2275) and a Z2 factor (N = 2 sectors), AND is a literature candidate
+   for unification at T ~ 1. It is a better match to our pair of vacua than Z6-II, whose known MSSM vacua sit far from the fixed points.
+2. The m3/2 conflict (D2210/D2227: alpha_s wanted s_m32 <= 0.37, wino needs 0.975-1.019) only exists because the m3/2 lever was the sole handle on
+   alpha_s. If a threshold Delta(1/alpha_s) = -0.28 comes from the fold, alpha_s no longer pulls on m3/2, so s_m32 can sit at ~1 for the wino:
+   the two problems are one, and both close together. LOGIC, not a computation; it holds only if the threshold is independent of m3/2 (true at
+   one loop: thresholds depend on T, U, not on the SUSY-breaking scale).
+**Still missing.** A concrete b'_3 relative to b'_1, b'_2 for a Z3 x Z6 embedding of our matter. Without it, the fix is possible, not shown.
+**Verdict.** HINT: candidate fold Z3 x Z6; the alpha_s and wino problems merge into one threshold question. alpha_s still OUT.
