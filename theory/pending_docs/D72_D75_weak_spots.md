@@ -23206,3 +23206,16 @@ approach to the singularity quiescent (no infinite oscillations). This bears on 
 post-inflation, so no new constraint follows.
 **No computation.** No new prediction or observable for our model found.
 **Verdict.** NULL: the link is real but already in our notes and gives nothing testable. Loop ends (D2261-D2265).
+
+## D2266 (27 Nov 2026) — One distance from i cannot do both lepton jobs [CENTRE]
+**Lock.** `PREREG_D2266_ONE_U_TEST.md`, pushed before the script. Run once. No deviations.
+**Script / output.** `tools/field_engine/one_u.py`; `field_tests/results/d2266_one_u.json`.
+**Result.** With x = |u|, u = (tau - i)/(tau + i): the neutrino data (NuFIT 6.0 NO: r = 0.0298, sin^2 theta13 = 0.02195) in Feruglio's near-i class
+(r ~ x^3, sin^2 theta13 ~ x^2) give O(1) coefficients only for x in [0.215, 0.257]. The charged-lepton "octave" point (2609.09262) sits at
+x = 0.0331; there the coefficients would be c_r = 821 and c_13 = 20, far from O(1). FAIL as locked: one |u| does not do both.
+**Reading.** The two near-i readings in the literature are not the same vacuum: the neutrino pattern wants tau about a quarter of the way out
+from i (x ~ 0.23); the octave pattern wants it 7 times closer. If our model sits near i, it must either (a) take x ~ 0.23 and get the charged-lepton
+ladder another way (charges or the q-expansion, as the octave paper does), or (b) take x ~ 0.03 and get the neutrino ratios from a different
+class than Feruglio's. Note x ~ 0.23 is no longer "at" i: the D2264 saddle matters less there, and the vacuum must be held by the second piece.
+**Limits.** O(1) window [1/3, 3] is a convention; coefficients are model-dependent; mu term and quarks not tested (no near-i power law in hand).
+**Verdict.** FAIL (single |u| for both lepton readings). Sharpens the fork: near-i at x ~ 0.23 (neutrino-led) vs x ~ 0.03 (charged-lepton-led).
