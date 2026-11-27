@@ -23219,3 +23219,18 @@ ladder another way (charges or the q-expansion, as the octave paper does), or (b
 class than Feruglio's. Note x ~ 0.23 is no longer "at" i: the D2264 saddle matters less there, and the vacuum must be held by the second piece.
 **Limits.** O(1) window [1/3, 3] is a convention; coefficients are model-dependent; mu term and quarks not tested (no near-i power law in hand).
 **Verdict.** FAIL (single |u| for both lepton readings). Sharpens the fork: near-i at x ~ 0.23 (neutrino-led) vs x ~ 0.03 (charged-lepton-led).
+
+## D2267 (27 Nov 2026) — Gap research: newest data against our numbers [RESEARCH, no computation]
+- **theta12 (JUNO first data, arXiv:2511.14593, 59.1 days):** sin^2 theta12 = 0.3092 +- 0.0087, dm2_21 = (7.50 +- 0.12)e-5 eV^2 (NO).
+  Ours 0.318: +1.0 sigma. Unchanged from the EDGE label. JUNO confirms the mild solar-vs-reactor difference (1.5 sigma). Next JUNO releases
+  shrink the error ~1.6x per year-scale step: this is the nearest live test of our theta12.
+- **Birefringence (ACT+Planck joint, arXiv:2608.06480):** beta = 0.277 +- 0.057 deg (4.8 sigma); robust cut 0.236 +- 0.067 (3.5 sigma); without
+  calibration priors 0.442 +- 0.098. Our beta ~ 0.28 deg (twin-cycle, D1767/D1776) sits on the central value, BUT it was set on 21 Nov 2026,
+  after this data: POST-DATA, consistency only. Our forward items: the ratio beta_reio/beta_rec = 0.997-0.999 (D403/D404) and a thawing beta;
+  those are what LiteBIRD-class data can score.
+- **Dark energy (DESI DR2, arXiv:2503.14738):** evolving dark energy preferred at 2.8-4.2 sigma depending on supernova set. DR3 timing not
+  confirmed in this search.
+- **Koide (arXiv:2606.10060):** with running masses the Koide ratio reaches exactly 2/3 near 280 TeV (central values); a down-quark "inverse"
+  Koide-type rule is reported. Hint for us: our Koide 2/3 (to 2e-6) uses pole masses; if the relation is born at a high scale, the right
+  comparison is the running ratio, and 280 TeV is a candidate scale to compare with our soft/gravitino scales. OPEN.
+**Verdict.** No status changes; theta12 stays EDGE (+1.0 sigma, JUNO), beta consistent but post-data, Koide scale hint recorded.
