@@ -23444,3 +23444,26 @@ T3 {2,3,6} -> all three complex structures FROZEN at rho. N = 2 sectors: 9 in to
 must be a Kahler modulus T (or a Wilson-line / twisted modulus) held dynamically by Zhinu (D2269). (3) Moduli-dependent thresholds come from all three
 tori, Delta_a = -sum_j b'^j_a ln(T2_j |eta(T_j)|^4) + (U parts constant at rho: E1hat(rho) = 1.0335 each).
 **Next (step B).** Matter placement: gauge shift and Wilson lines -> spectrum -> b'^j_a. Referee opened (background) to attack step A and scope step B.
+
+## D2282a (27 Nov 2026) — Referee round 1 on D2282: corrections accepted [CORRECTION, CENTRE]
+Referee (independent agent) confirmed the step-A geometry (twists, 9 N = 2 elements, all tori hexagonal, E1hat values) and found four MAJOR issues in
+the consequences. Accepted:
+- **F1 (MAJOR, accepted).** In heterotic Z3 planes the modular flavour group acts on the KAHLER modulus T; U is a frozen constant. Twisted-sector
+  Yukawas are modular forms of T (eclectic scheme, arXiv:2010.13798; 2204.06581). So D2282's "the rho vacuum is pure geometry" is WRONG as stated:
+  both vacua are Kahler values — T1 = rho (charged leptons), T2 or T3 at an image of i (neutrinos) — and both need stabilisation (Zhinu provides it,
+  D2269). Step A shows rho is ALLOWED, not that it is fixed. (D2275's "rho comes free from the lattice" carries the same error.)
+- **F2 (MAJOR, accepted).** Threshold normalisation must be fixed once: Delta_a = -sum_j b'^j_a ln(T2_j |eta(T_j)|^4 U2_j |eta(U_j)|^4) with
+  b'^j_a = b^{N=2,j}_a |G_j|/|G| (1/3 for T1, 1/6 for T2, T3). Counting the U parts doubles E1hat to ~2.07 and halves the D2273 target to ~-1.7;
+  with the |G_j|/|G| factor the RAW N = 2 beta difference needed is ~5 (T1) or ~10 (T2/T3) for that target, or ~10/~20 for the -3.4 target.
+  Target to be re-derived in the step-B prereg with one stated formula.
+- **F3 (MAJOR, accepted as a step-B pass/fail).** Discrete Wilson lines reduce the threshold modular group to Gamma0(4), Gamma0(9) or Gamma0(36), which
+  have NO elliptic points: i and rho stop being symmetry points. Three generations usually need Wilson lines in the Z3 plane. Step B must check
+  that the planes carrying our vacua keep full SL(2,Z) (no Wilson line on T1; A3^T C A4 even on T2/T3).
+- **F4 (MAJOR, accepted).** arXiv:1412.7327's T ~ 1 unification is conjecture-level (eta-sum simulation); D2276 cites it as support — downgrade to
+  "conjectural candidate".
+- **F5/F6/F7 (MINOR, accepted).** Drop "Wilson-line or twisted modulus" as hosts of i; count thresholds per stabiliser subgroup (3: Z6, Z3, Z3), not per
+  element; check lattice alternatives (arXiv:1209.3906).
+**Step B scope (from the referee).** Gauge shift V and Wilson lines consistent with F3 -> spectrum -> b^{N=2,j}_a. No published explicit Z3 x Z6 MSSM
+spectrum was found; the practical route is an Orbifolder scan (arXiv:1110.5229) on Z3 x Z6, with Z6-II mini-landscape (0807.4384) as template.
+**Status.** Item OPEN — not balanced (F1-F4 recorded; F3 becomes the key constraint). Step B needs the Orbifolder (a C++ tool) — a download/build
+needing Danny's OK.
