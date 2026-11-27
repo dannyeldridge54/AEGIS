@@ -1,0 +1,12 @@
+create orbifold(A) with point group(3,6)
+cd A
+cd model
+set heterotic string type(E8xE8)
+print available space groups
+use space group(1)
+set shift standard embedding
+cd ..
+cd ..
+create random orbifold from(A) if(inequivalent SM 3generations) save to(z3z6_sm10.txt) #models(5) print info
+exit
+yes

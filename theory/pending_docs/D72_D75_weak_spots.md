@@ -23467,3 +23467,18 @@ the consequences. Accepted:
 spectrum was found; the practical route is an Orbifolder scan (arXiv:1110.5229) on Z3 x Z6, with Z6-II mini-landscape (0807.4384) as template.
 **Status.** Item OPEN — not balanced (F1-F4 recorded; F3 becomes the key constraint). Step B needs the Orbifolder (a C++ tool) — a download/build
 needing Danny's OK.
+
+## D2283 (27 Nov 2026) — Step B begins: five 3-generation SM-like Z3 x Z6 models, all with NO Wilson lines — the referee's F3 constraint is met [LEFT/builder]
+**Tool.** The C++ Orbifolder v1.2.1 (Nilles, Ramos-Sanchez, Vaudrevange, Wingerter; arXiv:1110.5229), official JuliaBinaryWrappers release, sha256 checked
+(383f58af...89f9); GSL 2.8.2 from the same channel (sha256 c1570d17...dc37). Installed in the cloud workspace only (/home/claude/tools_ext), with Danny's OK.
+**Search.** Geometry Z3xZ6_1_1 (twists (0,1/3,-1/3), (1/6,0,-1/6) in the Orbifolder's labelling: the same structure as D2282 with tori relabelled), E8 x E8,
+random shifts and Wilson lines, filter "inequivalent SM 3generations", 5 models (9 min 55 s). Program and model file: field_tests/results/orbifolder/.
+**Result.** All five 3-generation SM-like models have ALL SIX Wilson lines ZERO; the three generations come from the two gauge shifts alone.
+(An earlier 1-model trial without the 3-generation filter had a Wilson-line pair on the middle torus.)
+**Bearing on D2282a F3.** F3 said Wilson lines reduce the threshold modular group to Gamma0(N) groups with no elliptic points, removing i and rho as
+symmetry points. With no Wilson lines, every torus keeps full SL(2,Z) threshold symmetry: i and rho remain protected points on all three tori. F3 is
+MET by these models (MET, not proven generic). Caveats: the Orbifolder's "SM" filter means SM gauge group and three net generations; vector-like
+exotics and the hypercharge normalisation k_Y must still be checked per model before b' is meaningful.
+**Next (step B, to be locked).** For each model: sub-orbifolds for the three N = 2 stabiliser subgroups (Orbifolder "create suborbifold with factor"),
+their massless spectra -> b^{N=2,j}_a for SU(3)_c, SU(2)_L, U(1)_Y -> b'^j_a = b^{N=2,j}_a |G_j|/|G| -> Delta(1/alpha_s) relative, against the target
+re-derived with the D2282a F2 formula.
