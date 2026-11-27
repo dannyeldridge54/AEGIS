@@ -23165,3 +23165,17 @@ and from each saddle one uphill direction leads to the cusp. The network of mini
 repeats under every flip and shrinks toward each rational point on the real axis: the fractal is the honeycomb of these valleys.
 Mohseni-Vafa (arXiv:2510.19927) leave the Hessian sign at i and omega open for N=1 potentials; D2261-D2262 settle it for E-only potentials.
 **Verdict.** H2 PASS; H1 FAIL (test-design: wrong coordinate). UFE status unchanged.
+
+## D2263 (27 Nov 2026) — On the true circles the flips are exact: three-fold at rho, two-fold at i [CENTRE]
+**Lock.** `PREREG_D2263_U_CIRCLES.md` (commit de25a37a), pushed first. Run once. No deviations. Follows the D2262 H1 test-design FAIL.
+**Script / output.** `tools/field_engine/u_circles.py`; `field_tests/results/d2263_u_circles.json`.
+**Results** (circles |u| = r in u = (tau - tau0)/(tau - conj tau0), r = 0.02 and 0.05, s = 2 and 3/2, 72 points, dps 30):
+- H1 PASS: at rho only modes 0, 3, 6 survive; |c1|, |c2|, |c4| / |c3| < 3e-27 (numerical zero).
+- H2 PASS: at i only even modes survive; |c1|, |c3| / |c2| < 6e-29.
+- H3 PASS: the surviving lead mode has phase 0 (to 1e-27): its axis lies on the CP mirror.
+- H4 (measured): |c3| at rho grows as r^3.0011 (s=2), r^3.0004 (s=3/2); |c2| at i grows as r^2.0015 and r^2.0006.
+**Reading.** In the flip's own coordinate the picture is exact: at rho the bowl is round to second order and its first shape is a pure
+three-lobed r^3 cos 3theta (the triangle of D2262); at i the first shape is a pure two-lobed r^2 cos 2theta (the saddle of D2261).
+The order of the flip IS the number of lobes, and the power of r is the order of the flip. These are symmetry facts, guaranteed once the
+coordinate is right; the test confirms the code and corrects D2262's design, but adds no new physics.
+**Verdict.** PASS (H1-H3), H4 measured. Closes the D2262 H1 FAIL as a design error. UFE status unchanged.
