@@ -23300,3 +23300,12 @@ the prefactor the identity forces; the literal-v4 9/16 omitted it. Correct value
 normalisation, while 2310.07708's 10D form is E_{3/2}^(-1/6); the factor 2 is the (d-2) power (8 in 10D vs 2 in 4D, with F ~ E^(2/3) in 4D). To be
 checked against their 4D statement before claiming agreement. OPEN.
 **Verdict.** PASS. 4/9 disagreement resolved (V_inf/4). Remaining D2259 items: 32 vs 8 (V_w/(V0 E_2)), gauge 4.5 vs 7.79.
+
+## D2272 (27 Nov 2026) — The other two D2259 disagreements: gauge already settled by record; 32 vs 8 is a bridge choice, not decided by Zhinu [CENTRE]
+- **Gauge coefficient 4.5 vs 7.79.** 9 |Re rho| = 4.5; 9 Im rho = 9 sqrt(3)/2 = 7.7942, which is the quoted 7.79 to its 3 figures. The source number
+  is therefore 9 Im S, as D2257 recorded (1/g_s = Im S) and D2260 proposed closing RESOLVED-BY-RECORD. Nothing new; arithmetic confirms the reading.
+- **V_w/(V0 E_2(rho)) = 32 vs 8.** Both values come from two SERAPIS-E (E_2, v3-generation) bridges: the loop-metric bridge tunes m_S = 2 m_U, the
+  flux bridge matches m_S = m_U. The Zhinu masses of D2271 are the two U-directions (degenerate at rho, V_inf/4) and say nothing about the dilaton S,
+  so they cannot pick between the bridges. It is a modelling choice inside the superseded E_2 landscape. Status: OPEN, low priority (it only matters
+  if a bridge is carried into the v4/Zhinu model).
+**Verdict.** No new result (D2259 list: 4/9 CLOSED in D2271, gauge CLOSED by record, 32 vs 8 OPEN as a v3 bridge choice).
