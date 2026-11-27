@@ -23366,3 +23366,21 @@ SO(4) plane's U, T as the free inputs; test jointly with the m3/2 / wino conflic
    one loop: thresholds depend on T, U, not on the SUSY-breaking scale).
 **Still missing.** A concrete b'_3 relative to b'_1, b'_2 for a Z3 x Z6 embedding of our matter. Without it, the fix is possible, not shown.
 **Verdict.** HINT: candidate fold Z3 x Z6; the alpha_s and wino problems merge into one threshold question. alpha_s still OUT.
+
+## D2277 (27 Nov 2026) — Step 3: the leptonic CP phase has no modular source in our vacua; delta_CP = 286 deg rests on postulate P1, which pulls against the axion-free strong-CP route [CENTRE, tension]
+**Our own records, put side by side.**
+- Line ~17274 (R-series): CP is conserved on the boundary of the fundamental domain (arXiv:2106.10919); rho and i are CP-conserving; leptons at rho,
+  neutrinos at i => NO leptonic modular CP phase. CP violation lives only in the quark modulus tau_q (arg ~ 50 deg, off the arc).
+- D1599 / weave_flavour v3: delta_CP = 286 deg (sin^2 theta23 = 0.561) or 262 deg (0.470), from the TM1 sum rule. A sum rule fixes |cos delta| from the
+  angles; a non-trivial value (not 0 or 180 deg) needs CP to be broken somewhere in the lepton sector.
+- D~730-850 (line ~7335, ~8702): that breaking is postulate P1 — explicit CP-violating couplings in the flavour sector (or a racetrack Kahler axion
+  with CP-odd minima, P1').
+**The tension.** With exact fixed-point vacua, the only way to get delta_CP = 286 deg is P1 (explicit leptonic CP violation). The axion-free strong-CP
+route on the connections map (Feruglio-Strumia-Titov, 2406.01689 / 2505.20395) needs CP as an exact symmetry broken ONLY by moduli. The two cannot
+both hold unless the leptonic phase is fed from tau_q (the one modulus off the CP locus) through a coupling between sectors, which we have not written.
+**Three ways out (to test, in this order).**
+(a) Leptonic phase from tau_q: a term coupling the quark modulus to the neutrino sector; predicts delta_CP correlated with the CKM phase.
+(b) Neutrino vacuum slightly off i (small Re shift): breaks CP spontaneously; but the Zhinu potential holds i exactly (D2269), so it needs a tilt.
+(c) Keep P1 and drop the axion-free strong-CP route (use the axion we already carry for birefringence/dark sector instead).
+**Effect on the locked predictions.** P12 (delta_CP = 286/262 deg, D2268b) is conditional on P1; recorded here, not changed in the lock.
+**Verdict.** TENSION found (P1 vs CP-as-symmetry). OPEN; (a) is the cleanest unifying option.
