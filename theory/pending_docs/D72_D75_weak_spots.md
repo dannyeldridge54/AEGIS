@@ -23243,3 +23243,15 @@ class than Feruglio's. Note x ~ 0.23 is no longer "at" i: the D2264 saddle matte
   the natural place. A real check needs our own lepton running to m_soft (two-loop, with thresholds). OPEN.
 - **rho-vs-i link already in our engine:** D2271-era note (line "PINNED to rho"): Re S = 1 at i lowers m3/2 by 7%, putting the wino at 0.639 TeV,
   below its 0.67 band. So wino dark matter also prefers rho. This weighs the D2264 fork toward rho; flavour data weighs toward i (D2266).
+
+## D2268a (27 Nov 2026) — Corrections to D2264, D2266, D2268 [CORRECTION]
+1. D2268 cites the wino "PINNED to rho" line as "D2271-era"; it is in D2227 (23 Nov). Label error only.
+2. D2264/D2266 missed our own flavour sector. weave_flavour v3 (D1599-D1620 era) already uses TWO vacua: charged leptons at tau = omega
+   (equivalent to rho) and neutrinos at tau_SU = -1/2 + i/2 (equivalent to i), with the claim that both are zero-energy vacua of the Zhinu
+   potential (line "all images are equally deep"). So the model is not "one tau at rho OR near i": it already splits the two roles, and it uses
+   residual symmetry EXACTLY at the fixed points (x = 0), not Feruglio's near-point scaling. D2266's FAIL therefore tests two outside readings,
+   not our flavour sector; for ours the relevant question is different.
+3. New consistency check this raises (OPEN, high priority): D2264 proves no potential built from E alone can have a minimum at i. If the Zhinu
+   potential is E-only, its "zero-energy vacuum at i" cannot be a minimum (it would be a saddle); if it is not E-only, it already IS the second
+   modular piece the fork needed. Either way the Zhinu potential's form must be checked against D2261/D2264.
+4. delta_CP was left out of the D2268 table; added as P12 in `PREREG_D2268b_DELTA_CP.md` (286 deg at sin^2 theta23 = 0.561, 262 deg at 0.470).
