@@ -23309,3 +23309,15 @@ checked against their 4D statement before claiming agreement. OPEN.
   so they cannot pick between the bridges. It is a modelling choice inside the superseded E_2 landscape. Status: OPEN, low priority (it only matters
   if a bridge is carried into the v4/Zhinu model).
 **Verdict.** No new result (D2259 list: 4/9 CLOSED in D2271, gauge CLOSED by record, 32 vs 8 OPEN as a v3 bridge choice).
+
+## D2273 (27 Nov 2026) — alpha_s via string thresholds needs N = 2 sectors: closed for a pure Z3 fold, open for Z2 x Z6' [CENTRE, estimate]
+**Need (arithmetic, ESTIMATE, not locked: no model change).** alpha_s(M_Z) from 0.1142 to 0.118 needs Delta(1/alpha_s) = -0.282. With DKL thresholds
+Delta(1/alpha_a) = b'_a E1hat(T)/(4 pi) (relative to the unified part), the needed effective Delta b' = -3.43 at T = rho (E1hat 1.0335), -3.36 at i
+(1.0547). Real orbifold b' are O(1-30), so |Delta b'| ~ 3.4 is natural in size.
+**Catch (our own record, line ~1178).** Moduli-dependent thresholds come only from N = 2 sectors (Dixon-Kaplunovsky-Louis); Z3 has none, so on a
+pure Z3 fold the SM couplings do not depend on T at one loop and this route is CLOSED (also stated for the Z3 orbifold in hep-th/9205070).
+Our Loom uses both T2/Z2 (pyramid, at i) and T2/Z3 (turnover, at rho). A fold with a Z2 factor (e.g. the Z2 x Z6' track, papers/z2z6p_ps) has
+N = 2 sectors, so there the route is OPEN.
+**Reading.** alpha_s (-4.2 sigma, our worst miss) is a discriminator between folds: Z3-only cannot fix it by thresholds; Z2 x Z6' can if its
+N = 2 sectors give Delta b'_3 (relative) ~ -3.4. Next concrete step: read off b'_a for the Z2 x Z6' sectors from the z2z6p_ps model and compute.
+**Verdict.** HINT with a sharp test. Status of alpha_s unchanged (OUT).
