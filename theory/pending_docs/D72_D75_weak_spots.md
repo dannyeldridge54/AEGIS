@@ -23321,3 +23321,12 @@ N = 2 sectors, so there the route is OPEN.
 **Reading.** alpha_s (-4.2 sigma, our worst miss) is a discriminator between folds: Z3-only cannot fix it by thresholds; Z2 x Z6' can if its
 N = 2 sectors give Delta b'_3 (relative) ~ -3.4. Next concrete step: read off b'_a for the Z2 x Z6' sectors from the z2z6p_ps model and compute.
 **Verdict.** HINT with a sharp test. Status of alpha_s unchanged (OUT).
+
+## D2274 (27 Nov 2026) — The Z2 x Z6' route for alpha_s, checked against our own paper: different regime, does not apply as is [CENTRE]
+**Record.** papers/z2z6p_ps (the HRS Pati-Salam model on T6/(Z2 x Z6'), IIA intersecting branes): with the consistent threshold reading, matching
+the three measured couplings needs M_s ~ 8e12 GeV and one-loop thresholds >= 77% of tree level (min 0.82 reduced-M_Pl); the locked control (< 0.3)
+FAILS, robustly under two-loop running. There the thresholds are not a small correction; they carry most of the coupling.
+**Comparison with D2273.** D2273 asked for a SMALL relative shift (Delta(1/alpha_s) = -0.28, Delta b' ~ -3.4 on top of our Weave unification at
+M12 ~ 1e16 GeV, 1/alpha(M12) = 27.9). The z2z6p_ps model is a different regime (M_s 570x below M_GUT, thresholds ~ tree), so it neither supplies nor
+refutes a small Delta b'_3. The heterotic-type DKL route (N = 2 sectors, modest b') remains the open option; the IIA PS model is not it.
+**Verdict.** No new route; alpha_s stays OUT. The threshold fix needs a fold with N = 2 sectors AND near-GUT string scale; none in our current models.
