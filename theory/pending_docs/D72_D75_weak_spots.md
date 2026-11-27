@@ -23408,3 +23408,15 @@ both hold unless the leptonic phase is fed from tau_q (the one modulus off the C
   so no test available. Left OPEN.
 **Verdict.** NULL for new physics; one hint downgraded. Loop paused here: the next steps (5: stability math; the tau_q -> neutrino CP coupling;
 a b'_3 for a Z3 x Z6 embedding) are computations, not 1-minute research ticks.
+
+## D2280 (27 Nov 2026) — The "light" mode at i is 2.7e12 GeV: no moduli problem, no fifth force [CENTRE, estimate]
+**Estimate (not locked: no model change; inputs from D2271 and our locked r).** V_inf set by the plateau, V ≈ (3 pi^2/2) A_s r M_P^4 with A_s = 2.1e-9,
+r = 4.8e-4 (P6) => H_inf = pi sqrt(A_s r/2) M_P = 5.4e12 GeV. Zhinu masses (D2271, n = 1): m^2 = c V_inf / M_P^2 with c = 0.0857 (i, along the arc),
+1.671 (i, across), 0.25 (rho):
+- i, light: 2.7e12 GeV (m/H_inf = 0.51); i, heavy: 1.2e13 GeV (2.24); rho: 4.7e12 GeV (0.87).
+**Reading.** "Light" was only relative. At ~1e12-1e13 GeV the modulus decays long before BBN (cosmological moduli problem needs m below ~30 TeV) and
+its range is ~1e-28 m (no fifth force). D2275's open item #10 CLOSED as harmless, on two conditions: (1) the vacuum stage carries the same V_inf as the
+plateau (true if Zhinu is both, D2270); (2) Kahler weight n = 1 (n = 3 lowers masses by sqrt(3), still ~1e12 GeV).
+**Side note.** During inflation the field sits far from i (large Im tau), so m/H = 0.51 at i says nothing about isocurvature; the F4 check stays with
+the inflation track at x = 1/2.
+**Verdict.** CLOSED (estimate): the soft direction at the neutrino vacuum is heavy in absolute terms.
