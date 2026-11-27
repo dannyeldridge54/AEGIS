@@ -34,6 +34,16 @@ tau is the shape of the small torus left over when 6D folds down to 4D. Almost e
 
 **Updated reading.** One choice (where tau sits, how far off the fixed point, and the coefficient b'_3 the fold produces) now reaches flavour, neutrinos, leptogenesis, vacuum energy, dark matter vs alpha_s, alpha_s directly, strong CP and the quark hierarchy. Still unlinked: Hubble tension, quantum gravity, the Higgs hierarchy (weak link only).
 
+## Third pass: the last unlinked items (27 Nov 2026)
+
+| Missing item | Link to the tau chain | Status |
+|---|---|---|
+| Higgs sector, electroweak scale (mu problem) | Modular symmetry forbids a bare mu-term; an effective mu appears once tau is fixed, and is suppressed by tau's distance from a fixed point, giving mu_eff << SUSY scale (2412.07642). The same |u| that sets the flavour hierarchies could set mu | LITERATURE + HYPOTHESIS |
+| Hubble tension | Axio-dilaton early dark energy: the dilaton holds energy early, then is destabilised when H drops below the axion mass and fast-rolls with w = 1 (kination), redshifting as a^-6 (1904.08912). Our model already has a kination phase and an axio-dilaton sector; this is the same mechanism at a later time | LITERATURE + HYPOTHESIS |
+| Quantum gravity | The species scale (where gravity turns quantum) depends on the moduli and is highest at a "desert point" at the centre of moduli space (2212.06841, 2310.07708). For a torus the natural candidate function is our E1hat = -log(Im tau |eta|^4); our values put its minimum at rho (1.0335 vs 1.0547 at i), so the cutoff would be highest at rho | LITERATURE (framework) + OURS (values) + HYPOTHESIS (that E1hat is the right function, not confirmed from the paper) |
+
+**Updated reading.** The rho-vs-i fork now has weight on both sides: i is favoured by flavour data and can give a small mu; rho is the E-only vacuum and the likely desert point (highest quantum-gravity cutoff). Every item on the missing list now has at least a candidate link to tau except none; the weakest are Hubble (later-time kination) and quantum gravity (function not confirmed).
+
 ## The chain, in the order it unlocks
 1. Settle the write-up disagreements, holding the vacuum choice open (bookkeeping, cheap).
 2. Decide rho vs i, and how far off the fixed point: test whether one eta-type term moves the vacuum to (near) i without breaking inflation, n_s or the alpha-drift filter. A small step off the CP mirror is needed for the CKM phase (strong CP row).
@@ -42,4 +52,4 @@ tau is the shape of the small torus left over when 6D folds down to 4D. Almost e
 5. The cusp end ties the same geometry to the Big Bang (qualitative for now).
 
 ## Not connected yet
-Hubble/DESI tension (beyond the existing dark-energy work), quantum gravity and the quantum probe, Higgs hierarchy (weak link only). Off the physics list: Yang-Mills gap, Navier-Stokes, black-hole information, measurement problem.
+None of the physics items is fully unlinked; weakest links: Hubble (kination at a later time), quantum gravity (desert-point function unconfirmed). Off the physics list: Yang-Mills gap, Navier-Stokes, black-hole information, measurement problem.
