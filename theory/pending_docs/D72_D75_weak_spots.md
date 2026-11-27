@@ -23397,3 +23397,14 @@ both hold unless the leptonic phase is fed from tau_q (the one modulus off the C
 - **Next test (well posed).** Write the minimal tau_q -> neutrino coupling allowed by the S4 weights and check whether one tau_q reproduces both the
   CKM phase and delta_CP ~ 270-286 deg. Locked before computing when attempted.
 **Verdict.** HINT: option (a) is viable in principle and keeps the axion-free strong-CP route; P1 becomes unnecessary if the coupling works. OPEN.
+
+## D2279 (27 Nov 2026) — Step 4: the Koide-scale hint is too weak to use; downgraded [CENTRE, estimate, NULL-ish]
+- 2606.10060: running Koide ratio 0.6678 at its low scale, 2/3 near 280 TeV (central values). Implied drift ~ (0.6678 - 0.6667)/ln(280 TeV/M_Z)
+  = 1.4e-4 per e-fold (ESTIMATE, linear). Between our m_soft ~ 150 TeV and 280 TeV the ratio moves only ~9e-5.
+- The crossing scale is therefore set by a 1e-3 effect over 8 e-folds; it shifts by order-one factors with two-loop running, the scheme, and any SUSY
+  thresholds below 280 TeV (our m_soft 130-160 TeV would switch on MSSM running before the crossing). "2/3 at 280 TeV vs our 150 TeV" cannot
+  discriminate anything without our own running with our thresholds. Downgrade D2268's Koide hint from "candidate link" to "not informative as is".
+- Higgs mu (2412.07642): suppression by distance from a fixed point needs a model with tau off the point; our Higgs-sector modulus is not specified,
+  so no test available. Left OPEN.
+**Verdict.** NULL for new physics; one hint downgraded. Loop paused here: the next steps (5: stability math; the tau_q -> neutrino CP coupling;
+a b'_3 for a Z3 x Z6 embedding) are computations, not 1-minute research ticks.
