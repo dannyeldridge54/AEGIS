@@ -23330,3 +23330,22 @@ FAILS, robustly under two-loop running. There the thresholds are not a small cor
 M12 ~ 1e16 GeV, 1/alpha(M12) = 27.9). The z2z6p_ps model is a different regime (M_s 570x below M_GUT, thresholds ~ tree), so it neither supplies nor
 refutes a small Delta b'_3. The heterotic-type DKL route (N = 2 sectors, modest b') remains the open option; the IIA PS model is not it.
 **Verdict.** No new route; alpha_s stays OUT. The threshold fix needs a fold with N = 2 sectors AND near-GUT string scale; none in our current models.
+
+## D2275 (27 Nov 2026) — Step 1 of the reordered chain: the fold's sector content. In a Z6-II fold rho comes free from the lattice; i does not [CENTRE, standard geometry]
+**Standard orbifold facts (textbook; not re-derived here).** Z6-II acts on T2 x T2 x T2 (G2 x SU(3) x SO(4) lattices) with twist v = (1/6, 1/3, -1/2).
+- The Z3 rotation of the SU(3) plane is a lattice symmetry only for the hexagonal shape: that plane's complex structure U is FROZEN at rho.
+- A Z2 rotation (-1) is a symmetry of every lattice, so a Z2-rotated plane keeps its shape U free. Freezing U at i needs an order-4 rotation (Z4).
+- N = 2 sectors (one plane left untouched): theta^2 = (1/3, 2/3, -1) fixes the SO(4) plane; theta^3 = (1/2, 1, -3/2) fixes the SU(3) plane. Both exist,
+  so DKL thresholds depend on (T, U) of those two planes: Delta_a = -b'_a ln(T2 |eta(T)|^4 U2 |eta(U)|^4) per plane (standard DKL form).
+- Literature: Z6-II "mini-landscape" MSSM-like models reach unification only with anisotropic compactification and an intermediate exotic scale
+  (Dundee, Raby, Wingerter, arXiv:0805.4186; 3% GUT-scale threshold to alpha_3^-1 used there).
+**What this does for our chain.**
+1. Our rho vacuum need not be dynamical: in a Z6-II fold it is the frozen hexagonal (SU(3)) plane, exact, no potential needed. E1hat(rho) = 1.0335 then
+   enters the SU(3)-plane threshold as a fixed number.
+2. Our i vacuum (neutrinos) is NOT frozen by a Z2 factor; it needs either a Z4 element (a different fold, e.g. Z4 x Z3 = Z12-type) or dynamics
+   (the Zhinu potential holds it, D2269). So the two vacua have different origins in Z6-II: rho by geometry, i by dynamics.
+3. The alpha_s threshold route is OPEN in Z6-II (both N = 2 planes present) — consistent with D2273's requirement — but the mini-landscape needs
+   anisotropy and exotics to unify; whether a modest relative Delta b'_3 ~ -3.4 is available is model-by-model.
+**Next (step 2).** For a Z6-II embedding of our matter, get b'_a of the two N = 2 planes and compute Delta(1/alpha_s) with U_SU(3) = rho fixed and the
+SO(4) plane's U, T as the free inputs; test jointly with the m3/2 / wino conflict.
+**Verdict.** STRUCTURAL hint: Z6-II is the natural fold for our pair of vacua (rho frozen, i dynamical) and keeps the alpha_s route open.
