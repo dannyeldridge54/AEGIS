@@ -23509,3 +23509,11 @@ three subgroups). Item stays OPEN.
 **What a model must now supply.** Two numbers: Btilde in [-4.3, -2.7] and Dtilde <= 5.3. Model 1 (D2283a) is not scored yet: its b' need the
 branching of the N = 2 spectra into SU(3)_c x SU(2)_L x U(1)_Y.
 **Verdict.** Target LOCKED; conflict check PASS. alpha_s status: OUT today, with a precise two-number condition for a fold to bring it IN.
+
+## D2283b (28 Nov 2026) — Scorer groundwork (paused): the Orbifolder identifies the SM inside Model_SM1 and prints Y [LEFT/builder, progress]
+- "analyze config" on Model_SM1 gives SMConfig1 = SU(3)_C x SU(2)_L x U(1)_Y with Y = (0^8) x (-1/2, 1/3, -1/6, -1/2, 1/6, -1/6, -1/3, 1/6) in the second E8
+  (k_Y = 2|Y|^2 = 2 x 0.8333 = 5/3 if |Y|^2 = 5/6; to be computed in the scorer). Simple roots of SU(3)_C and SU(2)_L are printed by "print simple roots".
+- The spectrum carries many vector-like exotics (18 (3,1)_{-1/3}, 15 (-3,1)_{1/3}, 15 (3,1)_{1/6} and conjugates, 48+48 (1,1)_{-+1/2}, 18 (1,2)_0 ...),
+  consistent with b_SU(3) = 31. Log: field_tests/results/orbifolder/model1_sm_identification.log.
+- Scorer plan unchanged: N = 2 sub-orbifold states with internal momenta -> indices T_a(R) = sum_w (w.alpha_a)^2 / 4 with the SM roots and
+  q_Y = w.Y / k_Y-normalised -> b'^j_a -> Btilde, Dtilde vs D2284. Paused at Danny's request to return to CubeMind.
